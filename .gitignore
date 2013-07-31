@@ -1,3 +1,6 @@
+# My cmake build directory
+/build
+
 # Compiled Object files
 *.slo
 *.lo
@@ -11,3 +14,17 @@
 *.lai
 *.la
 *.a
+
+#
+# Ignore artifacts from editors, patching, etc.
+#
+*~
+*.bak
+\#*\#
+.\#*
+.*.swp
+*.orig
+*.rej
+gmon.out
+core
+*.safe
