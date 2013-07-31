@@ -18,3 +18,11 @@ add_executable(test-debug-renderer
 target_link_libraries(test-debug-renderer
   glbarcode
 )
+
+add_executable(test-svg-renderer
+  test-svg-renderer.cpp
+)
+
+target_link_libraries(test-svg-renderer
+  glbarcode
+)

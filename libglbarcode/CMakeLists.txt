@@ -8,4 +8,5 @@ add_library(glbarcode
   BarcodeCode39.cpp
   Renderer.cpp
   RendererDebug.cpp
+  RendererSvg.cpp
 )

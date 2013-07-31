@@ -1,4 +1,4 @@
-/*  Renderer.cpp
+/*  RendererDebug.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
