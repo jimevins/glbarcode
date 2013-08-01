@@ -39,7 +39,7 @@ namespace glbarcode
 					     bool        checksum_flag );
 
 	/**
-	 * Base class for all barcode types
+	 * Barcode Factory Class
 	 */
 	class Factory
 	{
