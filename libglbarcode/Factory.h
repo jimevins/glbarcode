@@ -1,4 +1,4 @@
-/*  BarcodeCode39.h
+/*  Factory.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,39 +18,52 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glbarcode_BarcodeCode39_h
-#define glbarcode_BarcodeCode39_h
-
+#ifndef glbarcode_Factory_h
+#define glbarcode_Factory_h
 
 #include "Barcode.h"
+
+#include <string>
+#include <map>
 
 
 namespace glbarcode
 {
+	/**
+	 * Barcode Create Function Signature
+	 */
+	typedef Barcode* (*BarcodeCreateFct)(std::string data,
+					     double      w,
+					     double      h,
+					     bool        text_flag,
+					     bool        checksum_flag );
 
 	/**
-	 * Code39 Barcode
+	 * Base class for all barcode types
 	 */
-	class BarcodeCode39 : public Barcode
+	class Factory
 	{
 	public:
-		static Barcode* create( std::string data,
-					double      w,
-					double      h,
-					bool        text_flag,
-					bool        checksum_flag );
+		static Factory* instance( void );
 
-	protected:
-		bool validate( std::string data );
+		static void register_type( std::string type, BarcodeCreateFct fct );
 
-		std::string encode( std::string canon_data );
+		static Barcode* create_barcode( std::string type,
+						std::string data,
+						double      w,
+						double      h,
+						bool        text_flag,
+						bool        checksum_flag );
 
-		void vectorize( std::string coded_data,
-				std::string data,
-				std::string text );
+	private:
+		static void init( void );
+
+		typedef std::map<std::string,BarcodeCreateFct> BarcodeTypeMap;
+		static BarcodeTypeMap barcode_type_map;
+
 	};
 
 }
 
 
-#endif // glbarcode_BarcodeCode39_h
+#endif // glbarcode_Factory_h

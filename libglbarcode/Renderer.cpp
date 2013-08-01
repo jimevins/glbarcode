@@ -20,6 +20,7 @@
 
 #include "Renderer.h"
 
+
 void glbarcode::Renderer::render( double w, double h, std::list<Primitive*> primitives )
 {
 	draw_begin( w, h );

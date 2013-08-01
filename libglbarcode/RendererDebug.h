@@ -31,13 +31,13 @@ namespace glbarcode
 	class RendererDebug : public Renderer
 	{
 	protected:
-		virtual void draw_begin( double w, double h );
-		virtual void draw_end( void );
+		void draw_begin( double w, double h );
+		void draw_end( void );
 
-		virtual void draw_box( PrimitiveBox *box );
-		virtual void draw_text( PrimitiveText *text );
-		virtual void draw_ring( PrimitiveRing *ring );
-		virtual void draw_hexagon( PrimitiveHexagon *hexagon );
+		void draw_box( PrimitiveBox *box );
+		void draw_text( PrimitiveText *text );
+		void draw_ring( PrimitiveRing *ring );
+		void draw_hexagon( PrimitiveHexagon *hexagon );
 	};
 
 }

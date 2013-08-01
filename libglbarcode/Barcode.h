@@ -38,6 +38,8 @@ namespace glbarcode
 	class Barcode
 	{
 	public:
+		virtual     ~Barcode();
+
 		void        render( Renderer &renderer );
 
 		bool        is_empty( void );
@@ -46,24 +48,28 @@ namespace glbarcode
 		double      get_w( void );
 		double      get_h( void );
 
-		/*
-		 * Build barcode from parameters.
-		 */
-		void                build( bool text_flag, bool checksum_flag, double w, double h, std::string data );
-
 	protected:
+		/*
+		 * Initialize and build barcode from parameters.
+		 */
+		void init( std::string data,
+			   double      w,
+			   double      h,
+			   bool        text_flag,
+			   bool        checksum_flag );
+
 		/*
 		 * Virtual methods called by construct method.
 		 */
-		virtual bool        validate(     std::string data ) = 0;
+		virtual bool validate( std::string data ) = 0;
 
-		virtual std::string preprocess(   std::string data );
+		virtual std::string preprocess( std::string data );
 
-		virtual std::string encode(       std::string canon_data ) = 0;
+		virtual std::string encode( std::string canon_data ) = 0;
 
-		virtual void        vectorize(    std::string coded_data,
-						  std::string cooked_data,
-						  std::string display_text ) = 0;
+		virtual void vectorize( std::string coded_data,
+					std::string cooked_data,
+					std::string display_text ) = 0;
 
 		virtual std::string prepare_text( std::string data );
 
@@ -76,14 +82,13 @@ namespace glbarcode
 		void add_hexagon( double x, double y, double h );
 
 	protected:
-		bool        text_flag;
-		bool        checksum_flag;
+		std::string raw_data;
 		double      w;
 		double      h;
+		bool        text_flag;
+		bool        checksum_flag;
 
 	private:
-		std::string data;
-
 		bool        empty_flag;
 		bool        data_valid_flag;
 
