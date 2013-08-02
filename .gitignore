@@ -1,6 +1,9 @@
 # My cmake build directory
 /build
 
+# Doxygen generated documentation
+/doc/html
+
 # Compiled Object files
 *.slo
 *.lo
