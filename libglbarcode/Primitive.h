@@ -34,19 +34,21 @@ namespace glbarcode
 	class Primitive
 	{
 	public:
+		/**
+		 * Destructor
+		 */
 		virtual ~Primitive() { }
 
-		double x;
-		double y;
+		double x;    /**< X coordinate of primitive's origin (points). */
+		double y;    /**< Y coordinate of primitive's origin (points). */
 	};
 
 
 	/**
 	 * A solid box drawing primitive.
 	 *
-	 *<programlisting>
 	 *
-	 * @ =  origin (x,y) from top left corner of barcode
+	 *     @ =  origin (x,y) from top left corner of barcode
 	 *
 	 *              @---------+
 	 *              |         |
@@ -59,26 +61,32 @@ namespace glbarcode
 	 *              +---------+
 	 *                   w
 	 *
-	 *</programlisting>
 	 *
 	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
 	class PrimitiveBox : public Primitive
 	{
 	public:
+		/**
+		 * Box constructor
+		 *
+		 * @param x X coordinate of box's origin (points)
+		 * @param y Y coordinate of box's origin (points)
+		 * @param w Width of box (points)
+		 * @param h Height of box (points)
+		 */
 		PrimitiveBox( double x, double y, double w, double h );
 
-		double  w;
-		double  h;
+		double  w;    /**< Width of box (points). */
+		double  h;    /**< Height of box (points). */
 	};
 
 
 	/**
 	 * A character string drawing primitive.
 	 *
-	 *<programlisting>
 	 *
-	 * @ =  origin (x,y) from top left corner of barcode
+	 *     @ =  origin (x,y) from top left corner of barcode
 	 *
 	 *              ____        _  ------------------
 	 *             /    \      | |                  ^
@@ -91,26 +99,32 @@ namespace glbarcode
 	 *                           @ ------------------
 	 *                           x = horizontal center
 	 *
-	 *</programlisting>
 	 *
 	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
 	class PrimitiveText : public Primitive
 	{
 	public:
+		/**
+		 * Text constructor
+		 *
+		 * @param x X coordinate of text's origin (points)
+		 * @param y Y coordinate of text's origin (points)
+		 * @param fsize Font size of text (points)
+		 * @param s Text
+		 */
 		PrimitiveText( double x, double y, double fsize, std::string s );
 
-		double       fsize;
-		std::string  s;
+		double       fsize;    /**< Font size of text (points). */
+		std::string  s;        /**< Text. */
 	};
 
 
 	/**
 	 * A ring (an open circle) drawing primitive.
 	 *
-	 *<programlisting>
 	 *
-	 * @ = origin (x,y) is centre of circle
+	 *     @ = origin (x,y) is centre of circle
 	 *
 	 *                v  line_width
 	 *           _.-""""-._
@@ -123,26 +137,32 @@ namespace glbarcode
 	 *         `._    ...._.'.......v
 	 *            `-....-'
 	 *
-	 *</programlisting>
 	 *
 	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
 	class PrimitiveRing : public Primitive
 	{
 	public:
+		/**
+		 * Ring constructor
+		 *
+		 * @param x X coordinate of ring's origin (points)
+		 * @param y Y coordinate of ring's origin (points)
+		 * @param r Radius of ring (points)
+		 * @param line_width Line width of ring (points)
+		 */
 		PrimitiveRing( double x, double y, double r, double line_width );
 
-		double  r;
-		double  line_width;
+		double  r;             /**< Radius of ring (points). */
+		double  line_width;    /**< Line width of ring (points). */
 	};
 
 
 	/**
 	 * A solid regular hexagon (oriented with vertexes at top and bottom) drawing primitive.
 	 *
-	 *<programlisting>
 	 *
-	 * @ = origin (x,y) is top of hexagon
+	 *     @ = origin (x,y) is top of hexagon
 	 *
 	 *                  @ ------------------
 	 *              _-"   "-_              ^
@@ -159,16 +179,22 @@ namespace glbarcode
 	 *               "-_ _-"               v
 	 *                  " ------------------
 	 *
-	 *</programlisting>
 	 *
 	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
 	class PrimitiveHexagon : public Primitive
 	{
 	public:
+		/**
+		 * Hexagon constructor
+		 *
+		 * @param x X coordinate of hexagon's origin (points)
+		 * @param y Y coordinate of hexagon's origin (points)
+		 * @param h Height of hexagon (points)
+		 */
 		PrimitiveHexagon( double x, double y, double h );
 
-		double  h;
+		double  h;    /**< Height of hexagon (points). */
 	};
 
 }

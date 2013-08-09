@@ -46,7 +46,7 @@ namespace glbarcode
 	}
 
 
-	void Factory::register_type( std::string type, BarcodeCreateFct fct )
+	void Factory::register_type( std::string type, Factory::BarcodeCreateFct fct )
 	{
 		barcode_type_map[ type ] = fct;
 	}

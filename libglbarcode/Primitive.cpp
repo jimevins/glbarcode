@@ -21,36 +21,41 @@
 #include "Primitive.h"
 
 
-glbarcode::PrimitiveBox::PrimitiveBox( double x, double y, double w, double h )
+namespace glbarcode
 {
-	this->x = x;
-	this->y = y;
-	this->w = w;
-	this->h = h;
-}
+
+	PrimitiveBox::PrimitiveBox( double x, double y, double w, double h )
+	{
+		this->x = x;
+		this->y = y;
+		this->w = w;
+		this->h = h;
+	}
 
 
-glbarcode::PrimitiveText::PrimitiveText( double x, double y, double fsize, std::string s )
-{
-	this->x     = x;
-	this->y     = y;
-	this->fsize = fsize;
-	this->s     = s;
-}
+	PrimitiveText::PrimitiveText( double x, double y, double fsize, std::string s )
+	{
+		this->x     = x;
+		this->y     = y;
+		this->fsize = fsize;
+		this->s     = s;
+	}
 
 
-glbarcode::PrimitiveRing::PrimitiveRing( double x, double y, double r, double line_width )
-{
-	this->x          = x;
-	this->y          = y;
-	this->r          = r;
-	this->line_width = line_width;
-}
+	PrimitiveRing::PrimitiveRing( double x, double y, double r, double line_width )
+	{
+		this->x          = x;
+		this->y          = y;
+		this->r          = r;
+		this->line_width = line_width;
+	}
 
 
-glbarcode::PrimitiveHexagon::PrimitiveHexagon( double x, double y, double h )
-{
-	this->x = x;
-	this->y = y;
-	this->h = h;
+	PrimitiveHexagon::PrimitiveHexagon( double x, double y, double h )
+	{
+		this->x = x;
+		this->y = y;
+		this->h = h;
+	}
+
 }

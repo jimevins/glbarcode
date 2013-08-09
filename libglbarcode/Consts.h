@@ -28,10 +28,11 @@ namespace glbarcode
 	namespace consts
 	{
 
-		const double PTS_PER_INCH = 72.0;
-		const double PTS_PER_MM   =  2.83464566929;
-		const double PTS_PER_CM   = 10*PTS_PER_MM;
+		const double PTS_PER_INCH = 72.0;            /**< Points per inch. */
+		const double PTS_PER_MM   =  2.83464566929;  /**< Points per millimeter. */
+		const double PTS_PER_CM   = 10*PTS_PER_MM;   /**< Points per centimeter. */
 
+		/** How much to shrink lines to account for ink bleed. */
 		const double INK_BLEED   = ( 0.00325 * PTS_PER_INCH );
 	}
 

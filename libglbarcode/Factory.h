@@ -30,15 +30,6 @@
 namespace glbarcode
 {
 	/**
-	 * Barcode Create Function Signature
-	 */
-	typedef Barcode* (*BarcodeCreateFct)(std::string data,
-					     double      w,
-					     double      h,
-					     bool        text_flag,
-					     bool        checksum_flag );
-
-	/**
 	 * Barcode Factory Class
 	 */
 	class Factory
@@ -46,14 +37,20 @@ namespace glbarcode
 	public:
 		static Factory* instance( void );
 
-		static void register_type( std::string type, BarcodeCreateFct fct );
-
 		static Barcode* create_barcode( std::string type,
 						std::string data,
 						double      w,
 						double      h,
 						bool        text_flag,
 						bool        checksum_flag );
+
+		typedef Barcode* (*BarcodeCreateFct)(std::string data,
+						     double      w,
+						     double      h,
+						     bool        text_flag,
+						     bool        checksum_flag );
+
+		static void register_type( std::string type, BarcodeCreateFct fct );
 
 	private:
 		static void init( void );
