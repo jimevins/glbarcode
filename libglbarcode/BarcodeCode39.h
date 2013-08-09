@@ -29,7 +29,7 @@ namespace glbarcode
 {
 
 	/**
-	 * Code39 Barcode
+	 * Code39 barcode, implements Barcode
 	 */
 	class BarcodeCode39 : public Barcode
 	{
@@ -40,14 +40,13 @@ namespace glbarcode
 					bool        text_flag,
 					bool        checksum_flag );
 
-	protected:
+	private:
 		bool validate( std::string data );
 
 		std::string encode( std::string canon_data );
 
 		void vectorize( std::string coded_data,
-				std::string data,
-				std::string text );
+				std::string display_text );
 	};
 
 }

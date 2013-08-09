@@ -148,13 +148,24 @@ namespace glbarcode
 		 * primitives which can later be rendered.
 		 *
 		 * @param encoded_data Data to vectorize
-		 * @param cooked_data Original cooked data
 		 * @param display_text Text to display
 		 * @return encoded data
 		 */
 		virtual void vectorize( std::string encoded_data,
-					std::string cooked_data,
 					std::string display_text ) = 0;
+
+
+		/**
+		 * Add line drawing primitive (PrimitiveLine)
+		 *
+		 * Used by vectorize implementation.
+		 *
+		 * @param x X coordinate of line's origin (points)
+		 * @param y Y coordinate of line's origin (points)
+		 * @param length Line length (points)
+		 * @param width Line width (points)
+		 */
+		void add_line( double x, double y, double length, double width );
 
 
 		/**
@@ -209,17 +220,21 @@ namespace glbarcode
 
 
 	protected:
-		std::string raw_data;       /**< Raw data */
-		double      w;              /**< Width of barcode (points) */
-		double      h;              /**< Height of barcode (points) */
-		bool        text_flag;      /**< Display text flag */
-		bool        checksum_flag;  /**< Add checksum flag */
+		std::string m_raw_data;       /**< Raw data */
+		std::string m_cooked_data;    /**< Preprocessed data */
+		std::string m_display_text;   /**< Text data to be displayed */
+		std::string m_coded_data;     /**< Encoded data */
+
+		double      m_w;              /**< Width of barcode (points) */
+		double      m_h;              /**< Height of barcode (points) */
+		bool        m_text_flag;      /**< Display text flag */
+		bool        m_checksum_flag;  /**< Add checksum flag */
 
 	private:
-		bool        empty_flag;      /**< Empty data flag */
-		bool        data_valid_flag; /**< Valid data flag */
+		bool        m_empty_flag;      /**< Empty data flag */
+		bool        m_data_valid_flag; /**< Valid data flag */
 
-		std::list<Primitive *> primitives; /**< List of drawing primitives */
+		std::list<Primitive *> m_primitives; /**< List of drawing primitives */
 
 	};
 

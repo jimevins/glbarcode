@@ -45,6 +45,44 @@ namespace glbarcode
 
 
 	/**
+	 * A solid vertical line drawing primitive.
+	 *
+	 *
+	 *     @ =  origin (x,y) from top left corner of barcode
+	 *
+	 *              +--@--+
+	 *              |     |
+	 *              |     |
+	 *              |     |
+	 *              |     | length
+	 *              |     |
+	 *              |     |
+	 *              |     |
+	 *              +-----+
+	 *               width
+	 *
+	 *
+	 * All units are in points ( 1 point = 1/72 inch ).
+	 */
+	class PrimitiveLine : public Primitive
+	{
+	public:
+		/**
+		 * Line constructor
+		 *
+		 * @param x X coordinate of line's origin (points)
+		 * @param y Y coordinate of line's origin (points)
+		 * @param length Line length (points)
+		 * @param width Line width (points)
+		 */
+		PrimitiveLine( double x, double y, double length, double width );
+
+		double  length;    /**< Line length (points). */
+		double  width;     /**< Line width (points). */
+	};
+
+
+	/**
 	 * A solid box drawing primitive.
 	 *
 	 *

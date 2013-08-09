@@ -152,7 +152,7 @@ namespace glbarcode
 			sum += c_value;
 		}
 
-		if ( checksum_flag )
+		if ( m_checksum_flag )
 		{
 			code += symbols[sum % 43];
 			code += "i";
@@ -169,28 +169,28 @@ namespace glbarcode
 	 * Code39 vectorize method
 	 */
 	void BarcodeCode39::vectorize( std::string coded_data,
-				       std::string data,
-				       std::string text )
+				       std::string display_text )
 	{
 		/* determine width and establish horizontal scale */
+		double data_size = m_cooked_data.size();
 		double min_l;
-		if (!checksum_flag)
+		if (!m_checksum_flag)
 		{
-			min_l = (data.size() + 2)*(3*N + 6)*MIN_X + (data.size() + 1)*MIN_I;
+			min_l = (data_size + 2)*(3*N + 6)*MIN_X + (data_size + 1)*MIN_I;
 		}
 		else
 		{
-			min_l = (data.size() + 3)*(3*N + 6)*MIN_X + (data.size() + 2)*MIN_I;
+			min_l = (data_size + 3)*(3*N + 6)*MIN_X + (data_size + 2)*MIN_I;
 		}
         
 		double scale;
-		if ( w == 0 )
+		if ( m_w == 0 )
 		{
 			scale = 1.0;
 		}
 		else
 		{
-			scale = w / (min_l + 2*MIN_QUIET);
+			scale = m_w / (min_l + 2*MIN_QUIET);
 
 			if ( scale < 1.0 )
 			{
@@ -204,7 +204,7 @@ namespace glbarcode
 		double text_size   = scale * MIN_TEXT_SIZE;
 
 		/* determine height of barcode */
-		double height = text_flag ? h - h_text_area : h;
+		double height = m_text_flag ? m_h - h_text_area : m_h;
 		height = std::max( height, std::max( 0.15*width, MIN_HEIGHT ) );
 
 		/* determine horizontal quiet zone */
@@ -214,6 +214,7 @@ namespace glbarcode
 		double x1 = x_quiet;
 		for ( int i=0; i < coded_data.size(); i++ )
 		{
+			double lwidth;
 				
 			switch ( coded_data[i] )
 			{
@@ -225,13 +226,15 @@ namespace glbarcode
 
 			case 'N':
 				/* Narrow bar */
-				add_box( x1, 0.0, (scale*MIN_X - consts::INK_BLEED), height );
+				lwidth = scale*MIN_X;
+				add_line( x1+lwidth/2, 0.0, height, (lwidth - consts::INK_BLEED) );
 				x1 += scale*MIN_X;
 				break;
 
 			case 'W':
 				/* Wide bar */
-				add_box( x1, 0.0, (scale*N*MIN_X - consts::INK_BLEED), height );
+				lwidth = scale*N*MIN_X;
+				add_line( x1+lwidth/2, 0.0, height, (lwidth - consts::INK_BLEED) );
 				x1 += scale * N * MIN_X;
 				break;
 
@@ -251,15 +254,15 @@ namespace glbarcode
 			}
 		}
 
-		if ( text_flag )
+		if ( m_text_flag )
 		{
-			std::string starred_text = "*" + text + "*";
+			std::string starred_text = "*" + display_text + "*";
 			add_text( x_quiet + width/2, height + (h_text_area-text_size)/2, text_size, starred_text );
 		}
 
 		/* Overwrite requested size with actual size. */
-		w = width + 2*x_quiet;
-		h = text_flag ? height + h_text_area : height;
+		m_w = width + 2*x_quiet;
+		m_h = m_text_flag ? height + h_text_area : height;
 	}
 
 }

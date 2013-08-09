@@ -24,20 +24,66 @@
 
 #include "Renderer.h"
 
+#include <stdio.h>
+
 
 namespace glbarcode
 {
 
+	/**
+	 * Simple text renderer for debug and testing
+	 */
 	class RendererDebug : public Renderer
 	{
-	protected:
-		void draw_begin( double w, double h );
-		void draw_end( void );
 
-		void draw_box( PrimitiveBox *box );
-		void draw_text( PrimitiveText *text );
-		void draw_ring( PrimitiveRing *ring );
-		void draw_hexagon( PrimitiveHexagon *hexagon );
+	private:
+
+		void draw_begin( double w, double h )
+		{
+			printf( "DRAW_BEGIN( w = %f, h = %f )\n", w, h );
+		}
+
+
+		void draw_end( void )
+		{
+			printf( "DRAW_END()\n\n" );
+		}
+
+
+		void draw_line( PrimitiveLine *line )
+		{
+			printf( "\tDRAW_LINE( x = %f, y = %f, length = %f, width = %f )\n",
+				line->x, line->y, line->length, line->width );
+		}
+
+
+		void draw_box( PrimitiveBox *box )
+		{
+			printf( "\tDRAW_BOX( x = %f, y = %f, w = %f, h = %f )\n",
+				box->x, box->y, box->w, box->h );
+		}
+
+
+		void draw_text( PrimitiveText *text )
+		{
+			printf( "\tDRAW_TEXT( x = %f, y = %f, fsize = %f, s = \"%s\" )\n",
+				text->x, text->y, text->fsize, text->s.c_str() );
+		}
+
+
+		void draw_ring( PrimitiveRing *ring )
+		{
+			printf( "\tDRAW_RING( x = %f, y = %f, r = %f, line_width = %f )\n",
+				ring->x, ring->y, ring->r, ring->line_width );
+		}
+
+
+		void draw_hexagon( PrimitiveHexagon *hexagon )
+		{
+			printf( "\tDRAW_HEXAGON( x = %f, y = %f, h = %f )\n",
+				hexagon->x, hexagon->y, hexagon->h );
+		}
+
 	};
 
 }

@@ -23,49 +23,60 @@
 #include <stdio.h>
 
 
-void glbarcode::RendererSvg::draw_begin( double w, double h )
+namespace glbarcode
 {
-	printf( "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"%f\" height=\"%f\" >\n",
-		w, h );
+
+	void RendererSvg::draw_begin( double w, double h )
+	{
+		printf( "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"%f\" height=\"%f\" >\n",
+			w, h );
+	}
+
+
+	void RendererSvg::draw_end( void )
+	{
+		printf( "</svg>\n" );
+	}
+
+
+	void RendererSvg::draw_line( PrimitiveLine *line )
+	{
+		printf( "  <line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\" style=\"stroke-width:%f;stroke:rgb(0,0,0)\" />\n",
+			line->x, line->y, line->x, line->y+line->length, line->width );
+	}
+
+
+	void RendererSvg::draw_box( PrimitiveBox *box )
+	{
+		printf( "  <rect x=\"%f\" y=\"%f\" width=\"%f\" height=\"%f\" style=\"fill:rgb(0,0,0)\" />\n",
+			box->x, box->y, box->w, box->h );
+	}
+
+
+	void RendererSvg::draw_text( PrimitiveText *text )
+	{
+		printf( "  <text x=\"%f\" y=\"%f\" style=\"font-family:monospace;font-size:%f;text-anchor:middle;fill:rgb(0,0,0)\" >%s</text>\n",
+			text->x, text->y+text->fsize, text->fsize, text->s.c_str() );
+	}
+
+
+	void RendererSvg::draw_ring( PrimitiveRing *ring )
+	{
+		printf( "  <circle cx=\"%f\" cy=\"%f\" style=\"stroke-width:%f;stroke:rgb(0,0,0)\" />\n",
+			ring->x, ring->y, ring->r, ring->line_width );
+	}
+
+
+	void RendererSvg::draw_hexagon( PrimitiveHexagon *hexagon )
+	{
+		printf( "  <polygon points=\"%f,%f %f,%f %f,%f %f,%f %f,%f %f,%f\" style=\"fill:rgb(0,0,0)\" />\n",
+			hexagon->x,                    hexagon->y,
+			hexagon->x + 0.433*hexagon->h, hexagon->y + 0.25*hexagon->h,
+			hexagon->x + 0.433*hexagon->h, hexagon->y + 0.75*hexagon->h,
+			hexagon->x,                    hexagon->y +      hexagon->h,
+			hexagon->x - 0.433*hexagon->h, hexagon->y + 0.75*hexagon->h,
+			hexagon->x - 0.433*hexagon->h, hexagon->y + 0.25*hexagon->h );
+	}
+
+
 }
-
-
-void glbarcode::RendererSvg::draw_end( void )
-{
-	printf( "</svg>\n" );
-}
-
-
-void glbarcode::RendererSvg::draw_box( PrimitiveBox *box )
-{
-	printf( "  <rect x=\"%f\" y=\"%f\" width=\"%f\" height=\"%f\" style=\"fill:rgb(0,0,0)\" />\n",
-		box->x, box->y, box->w, box->h );
-}
-
-
-void glbarcode::RendererSvg::draw_text( PrimitiveText *text )
-{
-	printf( "  <text x=\"%f\" y=\"%f\" style=\"font-family:monospace;font-size:%f;text-anchor:middle;fill:rgb(0,0,0)\" >%s</text>\n",
-		text->x, text->y+text->fsize, text->fsize, text->s.c_str() );
-}
-
-
-void glbarcode::RendererSvg::draw_ring( PrimitiveRing *ring )
-{
-	printf( "  <circle cx=\"%f\" cy=\"%f\" style=\"stroke-width:%f;stroke:rgb(0,0,0)\" />\n",
-		ring->x, ring->y, ring->r, ring->line_width );
-}
-
-
-void glbarcode::RendererSvg::draw_hexagon( PrimitiveHexagon *hexagon )
-{
-	printf( "  <polygon points=\"%f,%f %f,%f %f,%f %f,%f %f,%f %f,%f\" style=\"fill:rgb(0,0,0)\" />\n",
-		hexagon->x,                    hexagon->y,
-		hexagon->x + 0.433*hexagon->h, hexagon->y + 0.25*hexagon->h,
-		hexagon->x + 0.433*hexagon->h, hexagon->y + 0.75*hexagon->h,
-		hexagon->x,                    hexagon->y +      hexagon->h,
-		hexagon->x - 0.433*hexagon->h, hexagon->y + 0.75*hexagon->h,
-		hexagon->x - 0.433*hexagon->h, hexagon->y + 0.25*hexagon->h );
-}
-
-

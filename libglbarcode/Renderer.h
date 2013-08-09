@@ -30,18 +30,91 @@
 namespace glbarcode
 {
 
+	/**
+	 * Base class for all renderers
+	 */
 	class Renderer
 	{
 	public:
+		/**
+		 * Render list of primitives
+		 *
+		 * @param w Width of barcode bounding box (points)
+		 * @param h Height of barcode bounding box (points)
+		 * @param primitives List of drawing primitives
+		 */
 		void render( double w, double h, std::list<Primitive*> primitives );
 
+
 	protected:
+		/**
+		 * Draw begin
+		 * 
+		 * Required virtual method to perform rendering setup, such as opening devices and/or
+		 * initializing drawing contexts.
+		 *
+		 * @param w Width of barcode bounding box (points)
+		 * @param h Height of barcode bounding box (points)
+		 */
 		virtual void draw_begin( double w, double h ) = 0;
+
+
+		/**
+		 * Draw end
+		 * 
+		 * Required virtual method to perform rendering cleanup, such as closing devices
+		 * and/or drawing contexts.
+		 */
 		virtual void draw_end( void ) = 0;
 
+
+		/**
+		 * Draw line primitive
+		 * 
+		 * Required virtual method to draw or render PrimitiveLine.
+		 *
+		 * @param line Line primitive to draw
+		 */
+		virtual void draw_line( PrimitiveLine *line ) = 0;
+
+
+		/**
+		 * Draw box primitive
+		 * 
+		 * Required virtual method to draw or render PrimitiveBox.
+		 *
+		 * @param box Box primitive to draw
+		 */
 		virtual void draw_box( PrimitiveBox *box ) = 0;
+
+
+		/**
+		 * Draw text primitive
+		 * 
+		 * Required virtual method to draw or render PrimitiveText.
+		 *
+		 * @param text Text primitive to draw
+		 */
 		virtual void draw_text( PrimitiveText *text ) = 0;
+
+
+		/**
+		 * Draw ring primitive
+		 * 
+		 * Required virtual method to draw or render PrimitiveRing.
+		 *
+		 * @param ring Ring primitive to draw
+		 */
 		virtual void draw_ring( PrimitiveRing *ring ) = 0;
+
+
+		/**
+		 * Draw hexagon primitive
+		 * 
+		 * Required virtual method to draw or render PrimitiveHexagon.
+		 *
+		 * @param hexagon Hexagon primitive to draw
+		 */
 		virtual void draw_hexagon( PrimitiveHexagon *hexagon ) = 0;
 
 	};

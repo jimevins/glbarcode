@@ -28,12 +28,18 @@
 namespace glbarcode
 {
 
+	/**
+	 * Simple SVG Renderer
+	 *
+	 * Renders Scalable Vector Graphics format to stdout.
+	 */
 	class RendererSvg : public Renderer
 	{
-	protected:
+	private:
 		void draw_begin( double w, double h );
 		void draw_end( void );
 
+		void draw_line( PrimitiveLine *line );
 		void draw_box( PrimitiveBox *box );
 		void draw_text( PrimitiveText *text );
 		void draw_ring( PrimitiveRing *ring );

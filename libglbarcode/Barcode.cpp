@@ -29,7 +29,7 @@ namespace glbarcode
 	{
 		std::list<Primitive*>::iterator primitive;
 
-		for ( primitive = primitives.begin(); primitive != primitives.end(); primitive++ )
+		for ( primitive = m_primitives.begin(); primitive != m_primitives.end(); primitive++ )
 		{
 			delete *primitive;
 		}
@@ -38,25 +38,25 @@ namespace glbarcode
 
 	bool Barcode::is_empty( void )
 	{
-		return empty_flag;
+		return m_empty_flag;
 	}
 
 
 	bool Barcode::is_data_valid( void )
 	{
-		return data_valid_flag;
+		return m_data_valid_flag;
 	}
 
 
 	double Barcode::get_w( void )
 	{
-		return w;
+		return m_w;
 	}
 
 
 	double Barcode::get_h( void )
 	{
-		return h;
+		return m_h;
 	}
 
 
@@ -66,35 +66,35 @@ namespace glbarcode
 			    bool        text_flag,
 			    bool        checksum_flag )
 	{
-		this->text_flag     = text_flag;
-		this->checksum_flag = checksum_flag;
-		this->w             = w;
-		this->h             = h;
-		this->raw_data      = raw_data;
+		m_text_flag     = text_flag;
+		m_checksum_flag = checksum_flag;
+		m_w             = w;
+		m_h             = h;
+		m_raw_data      = raw_data;
 
-		if ( raw_data.empty() )
+		if ( m_raw_data.empty() )
 		{
-			empty_flag = true;
-			data_valid_flag = false;
+			m_empty_flag = true;
+			m_data_valid_flag = false;
 		}
 		else
 		{
-			empty_flag = false;
+			m_empty_flag = false;
 
-			if ( validate( raw_data ) )
+			if ( validate( m_raw_data ) )
 			{
-				data_valid_flag = true;
+				m_data_valid_flag = true;
 
-				std::string cooked_data  = preprocess( raw_data );
-				std::string coded_data   = encode( cooked_data );
+				m_cooked_data  = preprocess( m_raw_data );
+				m_coded_data   = encode( m_cooked_data );
 
-				std::string display_text = prepare_text( raw_data );
+				m_display_text = prepare_text( m_raw_data );
 
-				vectorize( coded_data, cooked_data, display_text );
+				vectorize( m_coded_data, m_display_text );
 			}
 			else
 			{
-				data_valid_flag = false;
+				m_data_valid_flag = false;
 			}
 		}
 	}
@@ -112,33 +112,39 @@ namespace glbarcode
 	}
 
 
+	void Barcode::add_line( double x, double y, double length, double width )
+	{
+		m_primitives.push_back( new PrimitiveLine( x, y, length, width ) );
+	}
+
+
 	void Barcode::add_box( double x, double y, double w, double h )
 	{
-		primitives.push_back( new PrimitiveBox( x, y, w, h ) );
+		m_primitives.push_back( new PrimitiveBox( x, y, w, h ) );
 	}
 
 
 	void Barcode::add_text( double x, double y, double fsize, std::string s )
 	{
-		primitives.push_back( new PrimitiveText( x, y, fsize, s ) );
+		m_primitives.push_back( new PrimitiveText( x, y, fsize, s ) );
 	}
 
 
 	void Barcode::add_ring( double x, double y, double r, double line_width )
 	{
-		primitives.push_back( new PrimitiveRing( x, y, r, line_width ) );
+		m_primitives.push_back( new PrimitiveRing( x, y, r, line_width ) );
 	}
 
 
 	void Barcode::add_hexagon( double x, double y, double h )
 	{
-		primitives.push_back( new PrimitiveHexagon( x, y, h ) );
+		m_primitives.push_back( new PrimitiveHexagon( x, y, h ) );
 	}
 
 
 	void Barcode::render( Renderer &renderer )
 	{
-		renderer.render( w, h, primitives );
+		renderer.render( m_w, m_h, m_primitives );
 	}
 
 }

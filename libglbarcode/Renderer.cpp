@@ -29,7 +29,11 @@ void glbarcode::Renderer::render( double w, double h, std::list<Primitive*> prim
 
 	for ( primitive = primitives.begin(); primitive != primitives.end(); primitive++ )
 	{
-		if ( PrimitiveBox *box = dynamic_cast<PrimitiveBox*>(*primitive) )
+		if ( PrimitiveLine *line = dynamic_cast<PrimitiveLine*>(*primitive) )
+		{
+			draw_line( line );
+		}
+		else if ( PrimitiveBox *box = dynamic_cast<PrimitiveBox*>(*primitive) )
 		{
 			draw_box( box );
 		}

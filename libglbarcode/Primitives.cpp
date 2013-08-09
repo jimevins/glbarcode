@@ -24,6 +24,15 @@
 namespace glbarcode
 {
 
+	PrimitiveLine::PrimitiveLine( double x, double y, double length, double width )
+	{
+		this->x      = x;
+		this->y      = y;
+		this->length = length;
+		this->width  = width;
+	}
+
+
 	PrimitiveBox::PrimitiveBox( double x, double y, double w, double h )
 	{
 		this->x = x;
