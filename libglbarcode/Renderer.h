@@ -24,7 +24,7 @@
 
 #include <list>
 
-#include "Primitive.h"
+#include "Primitives.h"
 
 
 namespace glbarcode

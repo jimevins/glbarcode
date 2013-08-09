@@ -4,7 +4,7 @@ project (libglbarcode CXX)
 
 add_library(glbarcode
   Factory.cpp
-  Primitive.cpp
+  Primitives.cpp
   Barcode.cpp
   BarcodeCode39.cpp
   Renderer.cpp

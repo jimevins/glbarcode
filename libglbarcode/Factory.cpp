@@ -29,9 +29,6 @@ namespace glbarcode
 	Factory::BarcodeTypeMap Factory::barcode_type_map;
 
 
-	/**
-	 * Get singleton instance of Factory, create if uninitialized.
-	 */
 	Factory* Factory::instance( void )
 	{
 		static Factory* singleton_instance = NULL;

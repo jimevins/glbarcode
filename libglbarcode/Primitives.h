@@ -1,4 +1,4 @@
-/*  Primitive.h
+/*  Primitives.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,8 +18,8 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glbarcode_Primitive_h
-#define glbarcode_Primitive_h
+#ifndef glbarcode_Primitives_h
+#define glbarcode_Primitives_h
 
 
 #include <string>
@@ -200,4 +200,4 @@ namespace glbarcode
 }
 
 
-#endif // glbarcode_Primitive_h
+#endif // glbarcode_Primitives_h

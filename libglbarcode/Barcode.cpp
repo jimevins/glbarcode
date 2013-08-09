@@ -24,6 +24,7 @@
 namespace glbarcode
 {
 
+
 	Barcode::~Barcode()
 	{
 		std::list<Primitive*>::iterator primitive;
@@ -117,7 +118,7 @@ namespace glbarcode
 	}
 
 
-	void Barcode::add_string( double x, double y, double fsize, std::string s )
+	void Barcode::add_text( double x, double y, double fsize, std::string s )
 	{
 		primitives.push_back( new PrimitiveText( x, y, fsize, s ) );
 	}

@@ -1,4 +1,4 @@
-/*  Primitive.cpp
+/*  Primitives.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,7 +18,7 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "Primitive.h"
+#include "Primitives.h"
 
 
 namespace glbarcode

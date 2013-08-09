@@ -30,13 +30,44 @@
 namespace glbarcode
 {
 	/**
-	 * Barcode Factory Class
+	 * Barcode factory class
 	 */
 	class Factory
 	{
+
 	public:
+		/**
+		 * Barcode creation function signature
+		 */
+		typedef Barcode* (*BarcodeCreateFct)(std::string data,
+						     double      w,
+						     double      h,
+						     bool        text_flag,
+						     bool        checksum_flag );
+
+	private:
+		/**
+		 * Map barcode type strings to creation functions
+		 */
+		typedef std::map<std::string,BarcodeCreateFct> BarcodeTypeMap;
+
+
+	public:
+		/**
+		 * Get singleton instance of Factory, create if uninitialized.
+		 */
 		static Factory* instance( void );
 
+		/**
+		 * Create barcode based on type string.
+		 *
+		 * @param type Barcode type string
+		 * @param data Data to encode in barcode
+		 * @param w Requested width of barcode (0 = auto size)
+		 * @param h Requested height of barcode (0 = auto size)
+		 * @param text_flag Show text flag
+		 * @param checksum_flag Add checksum flag (honored only if checksum is optional)
+		 */
 		static Barcode* create_barcode( std::string type,
 						std::string data,
 						double      w,
@@ -44,18 +75,24 @@ namespace glbarcode
 						bool        text_flag,
 						bool        checksum_flag );
 
-		typedef Barcode* (*BarcodeCreateFct)(std::string data,
-						     double      w,
-						     double      h,
-						     bool        text_flag,
-						     bool        checksum_flag );
-
+		/**
+		 * Register barcode type
+		 *
+		 * @param type Barcode type string
+		 * @param fct Function to create barcode object of concrete Barcode class
+		 */
 		static void register_type( std::string type, BarcodeCreateFct fct );
 
+
 	private:
+		/**
+		 * Initialize factory by registering all built-in Barcode types
+		 */
 		static void init( void );
 
-		typedef std::map<std::string,BarcodeCreateFct> BarcodeTypeMap;
+		/**
+		 * Map barcode type strings to creation functions
+		 */
 		static BarcodeTypeMap barcode_type_map;
 
 	};

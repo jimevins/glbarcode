@@ -254,7 +254,7 @@ namespace glbarcode
 		if ( text_flag )
 		{
 			std::string starred_text = "*" + text + "*";
-			add_string( x_quiet + width/2, height + (h_text_area-text_size)/2, text_size, starred_text );
+			add_text( x_quiet + width/2, height + (h_text_area-text_size)/2, text_size, starred_text );
 		}
 
 		/* Overwrite requested size with actual size. */
