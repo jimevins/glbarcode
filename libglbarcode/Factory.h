@@ -83,6 +83,17 @@ namespace glbarcode
 		 */
 		static void register_type( std::string type, BarcodeCreateFct fct );
 
+		/**
+		 * Is barcode type supported?
+		 */
+		static bool is_type_supported( std::string type );
+
+
+		/**
+		 * Get list of supported types
+		 */
+		const std::list<std::string> get_supported_types( void );
+
 
 	private:
 		/**
@@ -93,7 +104,12 @@ namespace glbarcode
 		/**
 		 * Map barcode type strings to creation functions
 		 */
-		static BarcodeTypeMap barcode_type_map;
+		static BarcodeTypeMap m_barcode_type_map;
+
+		/**
+		 * Supported barcode types
+		 */
+		static std::list<std::string> m_supported_types;
 
 	};
 

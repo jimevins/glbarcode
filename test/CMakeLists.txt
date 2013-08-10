@@ -16,7 +16,7 @@ add_executable(test-debug-renderer
 )
 
 target_link_libraries(test-debug-renderer
-  glbarcode
+  glbarcode-${API_VERSION}
 )
 
 add_executable(test-svg-renderer
@@ -24,5 +24,5 @@ add_executable(test-svg-renderer
 )
 
 target_link_libraries(test-svg-renderer
-  glbarcode
+  glbarcode-${API_VERSION}
 )

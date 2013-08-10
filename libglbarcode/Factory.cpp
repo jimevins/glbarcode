@@ -26,7 +26,8 @@
 namespace glbarcode
 {
 
-	Factory::BarcodeTypeMap Factory::barcode_type_map;
+	Factory::BarcodeTypeMap Factory::m_barcode_type_map;
+	std::list<std::string> Factory::m_supported_types;
 
 
 	Factory* Factory::instance( void )
@@ -45,7 +46,22 @@ namespace glbarcode
 
 	void Factory::register_type( std::string type, Factory::BarcodeCreateFct fct )
 	{
-		barcode_type_map[ type ] = fct;
+		m_barcode_type_map[ type ] = fct;
+		m_supported_types.push_back( type );
+	}
+
+
+	bool Factory::is_type_supported( std::string type )
+	{
+		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type );
+
+		return ( i != m_barcode_type_map.end() );
+	}
+
+
+	const std::list<std::string> Factory::get_supported_types( void )
+	{
+		return m_supported_types;
 	}
 
 
@@ -56,9 +72,9 @@ namespace glbarcode
 					  bool        text_flag,
 					  bool        checksum_flag )
 	{
-		BarcodeTypeMap::iterator i = barcode_type_map.find( type );
+		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type );
 
-		if( i != barcode_type_map.end() )
+		if( i != m_barcode_type_map.end() )
 		{
 			return i->second( data, w, h, text_flag, checksum_flag );
 		}
