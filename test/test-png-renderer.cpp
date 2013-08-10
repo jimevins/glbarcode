@@ -1,4 +1,4 @@
-/*  Constants.h
+/*  test-png-renderer.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,26 +18,29 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glbarcode_Constants_h
-#define glbarcode_Constants_h
+#include "libglbarcode/Factory.h"
+#include "libglbarcode/RendererPng.h"
+
+#include <iostream>
+#include <string>
 
 
-namespace glbarcode
+int main( int argc, char **argv )
 {
+	glbarcode::RendererPng renderer( "output.png", 300.0 );
 
-	namespace consts
+	if ( argc != 2 )
 	{
-
-		const double PTS_PER_INCH = 72.0;            /**< Points per inch. */
-		const double PTS_PER_MM   =  2.83464566929;  /**< Points per millimeter. */
-		const double PTS_PER_CM   = 10*PTS_PER_MM;   /**< Points per centimeter. */
-
-		/** How much to shrink lines to account for ink bleed. */
-		//const double INK_BLEED   = ( 0.00325 * PTS_PER_INCH );
-		const double INK_BLEED   = 0;
+		std::cerr << "Usage: " << argv[0] << "data";
 	}
 
+	glbarcode::Barcode* bc = glbarcode::Factory::instance()->create_barcode( "code39",
+										 argv[1],
+										 0, 0,
+										 true,
+										 true );
+
+	bc->render( renderer );
+
+	delete bc;
 }
-
-
-#endif // glbarcode_Constants_h

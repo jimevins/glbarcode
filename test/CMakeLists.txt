@@ -26,3 +26,21 @@ add_executable(test-svg-renderer
 target_link_libraries(test-svg-renderer
   glbarcode-${API_VERSION}
 )
+
+if (PNG_FOUND)
+
+  include_directories(
+    ${PNG_INCLUDE_DIRS}
+  )
+
+  add_executable(test-png-renderer
+    test-png-renderer.cpp
+  )
+
+  target_link_libraries(test-png-renderer
+    glbarcode-${API_VERSION}
+    ${PNG_LIBRARIES}
+  )
+
+endif (PNG_FOUND)
+

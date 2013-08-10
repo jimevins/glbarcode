@@ -2,7 +2,10 @@ cmake_minimum_required (VERSION 2.8)
 
 project (doc)
 
-# add a target to generate API documentation with Doxygen
+
+#####################################################
+# Optional API documentation generation with Doxygen
+#####################################################
 find_package (Doxygen)
 if (DOXYGEN_FOUND)
 
