@@ -20,10 +20,13 @@
 
 #include "BarcodeCode39.h"
 
-#include "Consts.h"
+#include "Constants.h"
 
 #include <ctype.h>
 #include <algorithm>
+
+
+using namespace glbarcode::Constants;
 
 
 namespace
@@ -82,11 +85,11 @@ namespace
 	const std::string frame_symbol = "NwNnWnWnN";
 
 	/* Vectorization constants */
-	const double MIN_X       = ( 0.01 *  glbarcode::consts::PTS_PER_INCH );
+	const double MIN_X       = ( 0.01 *  PTS_PER_INCH );
 	const double N           = 2.5;
 	const double MIN_I       = MIN_X;
-	const double MIN_HEIGHT  = ( 0.25 *  glbarcode::consts::PTS_PER_INCH );
-	const double MIN_QUIET   = ( 0.10 *  glbarcode::consts::PTS_PER_INCH );
+	const double MIN_HEIGHT  = ( 0.25 *  PTS_PER_INCH );
+	const double MIN_QUIET   = ( 0.10 *  PTS_PER_INCH );
 
 	const double MIN_TEXT_AREA_HEIGHT = 14.0;
 	const double MIN_TEXT_SIZE        = 10.0;
@@ -227,14 +230,14 @@ namespace glbarcode
 			case 'N':
 				/* Narrow bar */
 				lwidth = scale*MIN_X;
-				add_line( x1+lwidth/2, 0.0, height, (lwidth - consts::INK_BLEED) );
-				x1 += scale*MIN_X;
+				add_line( x1+lwidth/2, 0.0, height, lwidth );
+				x1 += scale * MIN_X;
 				break;
 
 			case 'W':
 				/* Wide bar */
 				lwidth = scale*N*MIN_X;
-				add_line( x1+lwidth/2, 0.0, height, (lwidth - consts::INK_BLEED) );
+				add_line( x1+lwidth/2, 0.0, height, lwidth );
 				x1 += scale * N * MIN_X;
 				break;
 
