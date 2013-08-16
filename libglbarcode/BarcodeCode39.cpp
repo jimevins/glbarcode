@@ -117,11 +117,11 @@ namespace glbarcode
 	/**
 	 * Code39 data validation method
 	 */
-	bool BarcodeCode39::validate( std::string data )
+	bool BarcodeCode39::validate( std::string raw_data )
 	{
-		for ( int i = 0; i < data.size(); i++ )
+		for ( int i = 0; i < raw_data.size(); i++ )
 		{
-			char c = toupper( data[i] );
+			char c = toupper( raw_data[i] );
 
 			if ( alphabet.find(c) == std::string::npos )
 			{
@@ -130,6 +130,22 @@ namespace glbarcode
 		}
 
 		return true;
+	}
+
+
+	/**
+	 * Code39 prepare display text method
+	 */
+	std::string BarcodeCode39::prepare_text( std::string raw_data )
+	{
+		std::string display_text;
+
+		for ( int i = 0; i < raw_data.size(); i++ )
+		{
+			display_text += toupper( raw_data[i] );
+		}
+
+		return display_text;
 	}
 
 

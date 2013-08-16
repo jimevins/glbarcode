@@ -43,6 +43,8 @@ namespace glbarcode
 	private:
 		bool validate( std::string data );
 
+		std::string prepare_text( std::string raw_data );
+
 		std::string encode( std::string canon_data );
 
 		void vectorize( std::string coded_data,
