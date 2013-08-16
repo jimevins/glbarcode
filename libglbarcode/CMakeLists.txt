@@ -7,6 +7,7 @@ add_library(glbarcode-${API_VERSION}
   Primitives.cpp
   Barcode.cpp
   BarcodeCode39.cpp
+  BarcodeCode39Ext.cpp
   Renderer.cpp
   RendererSvg.cpp
 )

@@ -21,6 +21,7 @@
 #include "Factory.h"
 
 #include "BarcodeCode39.h"
+#include "BarcodeCode39Ext.h"
 
 
 namespace glbarcode
@@ -85,7 +86,8 @@ namespace glbarcode
 
 	void Factory::init( void )
 	{
-		register_type( "code39", &BarcodeCode39::create );
+		register_type( "code39",    &BarcodeCode39::create );
+		register_type( "code39ext", &BarcodeCode39Ext::create );
 	}
 
 
