@@ -189,7 +189,7 @@ namespace glbarcode
 		 * @param x X coordinate of ring's origin (points)
 		 * @param y Y coordinate of ring's origin (points)
 		 * @param r Radius of ring (points)
-		 * @param line_w Line width of ring (points)
+		 * @param lwidth Line width of ring (points)
 		 */
 		PrimitiveRing( double x, double y, double r, double lwidth );
 

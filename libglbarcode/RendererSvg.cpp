@@ -20,14 +20,21 @@
 
 #include "RendererSvg.h"
 
+#include "Constants.h"
+
 #include <stdio.h>
 
+
+using namespace glbarcode::Constants;
 
 namespace glbarcode
 {
 
 	void RendererSvg::draw_begin( double w, double h )
 	{
+		printf( "<?xml version=\"1.0\" standalone=\"no\"?>\n" );
+		printf( "<!-- Created with %s version %s (%s) -->\n",
+			PACKAGE_NAME.c_str(), PACKAGE_VERSION.c_str(), PACKAGE_URL.c_str() );
 		printf( "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"%f\" height=\"%f\" >\n",
 			w, h );
 	}
