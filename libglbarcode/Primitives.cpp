@@ -24,12 +24,12 @@
 namespace glbarcode
 {
 
-	PrimitiveLine::PrimitiveLine( double x, double y, double length, double width )
+	PrimitiveLine::PrimitiveLine( double x, double y, double w, double h )
 	{
-		this->x      = x;
-		this->y      = y;
-		this->length = length;
-		this->width  = width;
+		this->x = x;
+		this->y = y;
+		this->w = w;
+		this->h = h;
 	}
 
 
@@ -51,12 +51,12 @@ namespace glbarcode
 	}
 
 
-	PrimitiveRing::PrimitiveRing( double x, double y, double r, double line_width )
+	PrimitiveRing::PrimitiveRing( double x, double y, double r, double lwidth )
 	{
-		this->x          = x;
-		this->y          = y;
-		this->r          = r;
-		this->line_width = line_width;
+		this->x      = x;
+		this->y      = y;
+		this->r      = r;
+		this->lwidth = lwidth;
 	}
 
 

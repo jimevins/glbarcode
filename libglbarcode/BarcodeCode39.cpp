@@ -258,14 +258,14 @@ namespace glbarcode
 			case 'N':
 				/* Narrow bar */
 				lwidth = scale*MIN_X;
-				add_line( x1+lwidth/2, 0.0, height, lwidth );
+				add_line( x1, 0.0, lwidth, height );
 				x1 += scale * MIN_X;
 				break;
 
 			case 'W':
 				/* Wide bar */
 				lwidth = scale*N*MIN_X;
-				add_line( x1+lwidth/2, 0.0, height, lwidth );
+				add_line( x1, 0.0, lwidth, height );
 				x1 += scale * N * MIN_X;
 				break;
 

@@ -112,9 +112,9 @@ namespace glbarcode
 	}
 
 
-	void Barcode::add_line( double x, double y, double length, double width )
+	void Barcode::add_line( double x, double y, double w, double h )
 	{
-		m_primitives.push_back( new PrimitiveLine( x, y, length, width ) );
+		m_primitives.push_back( new PrimitiveLine( x, y, w, h ) );
 	}
 
 
@@ -130,9 +130,9 @@ namespace glbarcode
 	}
 
 
-	void Barcode::add_ring( double x, double y, double r, double line_width )
+	void Barcode::add_ring( double x, double y, double r, double lwidth )
 	{
-		m_primitives.push_back( new PrimitiveRing( x, y, r, line_width ) );
+		m_primitives.push_back( new PrimitiveRing( x, y, r, lwidth ) );
 	}
 
 

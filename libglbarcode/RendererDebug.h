@@ -52,8 +52,8 @@ namespace glbarcode
 
 		void draw_line( PrimitiveLine *line )
 		{
-			printf( "\tDRAW_LINE( x = %f, y = %f, length = %f, width = %f )\n",
-				line->x, line->y, line->length, line->width );
+			printf( "\tDRAW_LINE( x = %f, y = %f, w = %f, h = %f )\n",
+				line->x, line->y, line->w, line->h );
 		}
 
 
@@ -73,8 +73,8 @@ namespace glbarcode
 
 		void draw_ring( PrimitiveRing *ring )
 		{
-			printf( "\tDRAW_RING( x = %f, y = %f, r = %f, line_width = %f )\n",
-				ring->x, ring->y, ring->r, ring->line_width );
+			printf( "\tDRAW_RING( x = %f, y = %f, r = %f, lwidth = %f )\n",
+				ring->x, ring->y, ring->r, ring->lwidth );
 		}
 
 

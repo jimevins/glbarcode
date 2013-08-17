@@ -162,10 +162,10 @@ namespace glbarcode
 		 *
 		 * @param x X coordinate of line's origin (points)
 		 * @param y Y coordinate of line's origin (points)
-		 * @param length Line length (points)
-		 * @param width Line width (points)
+		 * @param w Bar width (points)
+		 * @param h Bar height (points)
 		 */
-		void add_line( double x, double y, double length, double width );
+		void add_line( double x, double y, double w, double h );
 
 
 		/**
@@ -202,9 +202,9 @@ namespace glbarcode
 		 * @param x X coordinate of ring's origin (points)
 		 * @param y Y coordinate of ring's origin (points)
 		 * @param r Radius of ring (points)
-		 * @param line_width Line width of ring (points)
+		 * @param lwidth Line width of ring (points)
 		 */
-		void add_ring( double x, double y, double r, double line_width );
+		void add_ring( double x, double y, double r, double lwidth );
 
 
 		/**

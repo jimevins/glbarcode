@@ -50,16 +50,16 @@ namespace glbarcode
 	 *
 	 *     @ =  origin (x,y) from top left corner of barcode
 	 *
-	 *              +--@--+
+	 *              @-----+
 	 *              |     |
 	 *              |     |
 	 *              |     |
-	 *              |     | length
+	 *              |     | h
 	 *              |     |
 	 *              |     |
 	 *              |     |
 	 *              +-----+
-	 *               width
+	 *                 w
 	 *
 	 *
 	 * All units are in points ( 1 point = 1/72 inch ).
@@ -72,13 +72,13 @@ namespace glbarcode
 		 *
 		 * @param x X coordinate of line's origin (points)
 		 * @param y Y coordinate of line's origin (points)
-		 * @param length Line length (points)
-		 * @param width Line width (points)
+		 * @param w Line width (points)
+		 * @param h Line height (points)
 		 */
-		PrimitiveLine( double x, double y, double length, double width );
+		PrimitiveLine( double x, double y, double w, double h );
 
-		double  length;    /**< Line length (points). */
-		double  width;     /**< Line width (points). */
+		double  w;    /**< Line width (points). */
+		double  h;    /**< Line length (points). */
 	};
 
 
@@ -164,7 +164,9 @@ namespace glbarcode
 	 *
 	 *     @ = origin (x,y) is centre of circle
 	 *
-	 *                v  line_width
+	 *              lwidth
+	 *                |
+	 *                v
 	 *           _.-""""-._
 	 *         .'   ____   `.
 	 *        /   .'  ^ `.   \
@@ -187,12 +189,12 @@ namespace glbarcode
 		 * @param x X coordinate of ring's origin (points)
 		 * @param y Y coordinate of ring's origin (points)
 		 * @param r Radius of ring (points)
-		 * @param line_width Line width of ring (points)
+		 * @param line_w Line width of ring (points)
 		 */
-		PrimitiveRing( double x, double y, double r, double line_width );
+		PrimitiveRing( double x, double y, double r, double lwidth );
 
-		double  r;             /**< Radius of ring (points). */
-		double  line_width;    /**< Line width of ring (points). */
+		double  r;        /**< Radius of ring (points). */
+		double  lwidth;   /**< Line width of ring (points). */
 	};
 
 

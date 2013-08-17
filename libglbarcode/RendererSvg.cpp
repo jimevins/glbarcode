@@ -41,8 +41,10 @@ namespace glbarcode
 
 	void RendererSvg::draw_line( PrimitiveLine *line )
 	{
-		printf( "  <line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\" style=\"stroke-width:%f;stroke:rgb(0,0,0)\" />\n",
-			line->x, line->y, line->x, line->y+line->length, line->width );
+		double x = line->x + line->w/2; /* Offset line origin by 1/2 line width. */
+
+		printf( "  <line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
+			x, line->y, x, line->y+line->h, line->w );
 	}
 
 
@@ -55,15 +57,15 @@ namespace glbarcode
 
 	void RendererSvg::draw_text( PrimitiveText *text )
 	{
-		printf( "  <text x=\"%f\" y=\"%f\" style=\"font-family:monospace;font-size:%f;text-anchor:middle;fill:rgb(0,0,0)\" >%s</text>\n",
+		printf( "  <text x=\"%f\" y=\"%f\" font-size=\"%f\" style=\"font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)\" >%s</text>\n",
 			text->x, text->y+text->fsize, text->fsize, text->s.c_str() );
 	}
 
 
 	void RendererSvg::draw_ring( PrimitiveRing *ring )
 	{
-		printf( "  <circle cx=\"%f\" cy=\"%f\" style=\"stroke-width:%f;stroke:rgb(0,0,0)\" />\n",
-			ring->x, ring->y, ring->r, ring->line_width );
+		printf( "  <circle cx=\"%f\" cy=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
+			ring->x, ring->y, ring->r, ring->lwidth );
 	}
 
 

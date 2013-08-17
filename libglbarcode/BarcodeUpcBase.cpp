@@ -270,8 +270,7 @@ namespace glbarcode
 
 			/* Bar */
 			int w_bar = coded_data[i] - '0';
-			double w_bar_pts = w_bar*scale*BASE_MODULE_SIZE;
-			add_line( x1 + w_bar_pts/2, 0.0, h_bar, w_bar_pts );
+			add_line( x1, 0.0, w_bar*scale*BASE_MODULE_SIZE, h_bar );
 			x1 += w_bar * scale * BASE_MODULE_SIZE;
 
 			/* Space */
