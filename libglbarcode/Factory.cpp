@@ -24,6 +24,11 @@
 #include "BarcodeCode39Ext.h"
 #include "BarcodeUpcA.h"
 #include "BarcodeEan13.h"
+#include "BarcodePostnet.h"
+#include "BarcodePostnet5.h"
+#include "BarcodePostnet9.h"
+#include "BarcodePostnet11.h"
+#include "BarcodeCepnet.h"
 
 
 namespace glbarcode
@@ -88,10 +93,15 @@ namespace glbarcode
 
 	void Factory::init( void )
 	{
-		register_type( "code39",    &BarcodeCode39::create );
-		register_type( "code39ext", &BarcodeCode39Ext::create );
-		register_type( "upc-a",     &BarcodeUpcA::create );
-		register_type( "ean-13",    &BarcodeEan13::create );
+		register_type( "code39",      &BarcodeCode39::create );
+		register_type( "code39ext",   &BarcodeCode39Ext::create );
+		register_type( "upc-a",       &BarcodeUpcA::create );
+		register_type( "ean-13",      &BarcodeEan13::create );
+		register_type( "postnet",     &BarcodePostnet::create );
+		register_type( "postnet-5",   &BarcodePostnet5::create );
+		register_type( "postnet-9",   &BarcodePostnet9::create );
+		register_type( "postnet-11",  &BarcodePostnet11::create );
+		register_type( "cepnet",      &BarcodeCepnet::create );
 	}
 
 

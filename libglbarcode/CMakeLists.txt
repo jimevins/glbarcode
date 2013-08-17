@@ -11,6 +11,11 @@ add_library(glbarcode-${API_VERSION}
   BarcodeUpcBase.cpp
   BarcodeUpcA.cpp
   BarcodeEan13.cpp
+  BarcodePostnet.cpp
+  BarcodePostnet5.cpp
+  BarcodePostnet9.cpp
+  BarcodePostnet11.cpp
+  BarcodeCepnet.cpp
   Renderer.cpp
   RendererSvg.cpp
 )

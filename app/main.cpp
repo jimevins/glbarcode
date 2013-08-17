@@ -48,11 +48,11 @@ void usage( std::list<std::string> supported_types )
 	std::cerr << "  --help                display this help and exit\n";
 	std::cerr << "  --usage               display this help and exit\n";
 	std::cerr << "  -t, --type=TYPE       set barcode type\n";
-	std::cerr << "  -x, --text            print text with barcode, if supported\n";
-	std::cerr << "  -c, --checksum        include checksum in barcode, if supported\n";
 	std::cerr << "  -w, --width=W         request barcode width (points, 1 point = 1/72 inch)\n";
 	std::cerr << "  -h, --height=H        request barcode height (points, 1 point = 1/72 inch)\n";
-	std::cerr << "  -r, --resolution=PPI  set resolution (Pixels per Inch) for bitmap outputs\n";
+	std::cerr << "  -x, --text            print text with barcode, if supported\n";
+	std::cerr << "  -c, --checksum        include checksum in barcode, if supported\n";
+	//std::cerr << "  -r, --resolution=PPI  set resolution (Pixels per Inch) for bitmap outputs\n";
 
 
 	std::cerr << "\n";
@@ -81,10 +81,10 @@ int main( int argc, char **argv )
 	 * Options and Data storage and initialization
 	 */
 	std::string type          = "code39";
-	bool        text_flag     = false;
-	bool        checksum_flag = false;
 	double      w             = 144;
 	double      h             = 72;
+	bool        text_flag     = false;
+	bool        checksum_flag = false;
 	double      ppi           = 72;
 
 	std::string data;
@@ -93,14 +93,14 @@ int main( int argc, char **argv )
 	/*
 	 * Option definitions for getopt_long()
 	 */
-	const char *short_options = "+t:xcw:h:r:";
+	const char *short_options = "+t:w:h:xcr:";
 
 	const struct option long_options[] = {
 		{ "type",       required_argument, NULL, 't' },
-		{ "text",       no_argument,       NULL, 'x' },
-		{ "checksum",   no_argument,       NULL, 'c' },
 		{ "width",      required_argument, NULL, 'w' },
 		{ "height",     required_argument, NULL, 'h' },
+		{ "text",       no_argument,       NULL, 'x' },
+		{ "checksum",   no_argument,       NULL, 'c' },
 		{ "resolution", required_argument, NULL, 'r' },
 		{ "help",       no_argument,       NULL, 0 },
 		{ "usage",      no_argument,       NULL, 0 },
