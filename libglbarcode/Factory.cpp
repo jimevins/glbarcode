@@ -22,6 +22,8 @@
 
 #include "BarcodeCode39.h"
 #include "BarcodeCode39Ext.h"
+#include "BarcodeUpcA.h"
+#include "BarcodeEan13.h"
 
 
 namespace glbarcode
@@ -88,6 +90,8 @@ namespace glbarcode
 	{
 		register_type( "code39",    &BarcodeCode39::create );
 		register_type( "code39ext", &BarcodeCode39Ext::create );
+		register_type( "upc-a",     &BarcodeUpcA::create );
+		register_type( "ean-13",    &BarcodeEan13::create );
 	}
 
 

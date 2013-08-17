@@ -1,4 +1,4 @@
-/*  BarcodeCode39.h
+/*  BarcodeUpcA.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,24 +18,24 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glbarcode_BarcodeCode39_h
-#define glbarcode_BarcodeCode39_h
+#ifndef glbarcode_BarcodeUpcA_h
+#define glbarcode_BarcodeUpcA_h
 
 
-#include "Barcode.h"
+#include "BarcodeUpcBase.h"
 
 
 namespace glbarcode
 {
 
 	/**
-	 * Code39 barcode, implements Barcode
+	 * UPC-A barcode, implements BarcodeUpcBase
 	 */
-	class BarcodeCode39 : public Barcode
+	class BarcodeUpcA : public BarcodeUpcBase
 	{
 	public:
 		/**
-		 * Static Code39 barcode creation method
+		 * Static UPC-A barcode creation method
 		 *
 		 * Used by glbarcode::Factory
 		 */
@@ -46,33 +46,27 @@ namespace glbarcode
 					bool        checksum_flag );
 
 		/**
-		 * Code39 barcode constructor
+		 * UPC-A barcode constructor
 		 */
-		BarcodeCode39( std::string data,
-			       double      w,
-			       double      h,
-			       bool        text_flag,
-			       bool        checksum_flag );
-
-	protected:
-		/**
-		 * Dummy Code39 barcode constructor for derived types
-		 */
-		BarcodeCode39() { };
-
+		BarcodeUpcA( std::string data,
+			     double      w,
+			     double      h,
+			     bool        text_flag,
+			     bool        checksum_flag );
 
 	private:
-		bool validate( std::string data );
+		bool validate_digits( int n_digits );
 
-		std::string prepare_text( std::string raw_data );
+		std::string preprocess( std::string raw_data );
 
-		std::string encode( std::string canon_data );
+		void vectorize_text( std::string display_text,
+				     double size1, double size2,
+				     double x1_left, double x1_right, double y1,
+				     double x2_left, double x2_right, double y2 );
 
-		void vectorize( std::string coded_data,
-				std::string display_text );
 	};
 
 }
 
 
-#endif // glbarcode_BarcodeCode39_h
+#endif // glbarcode_BarcodeUpcA_h

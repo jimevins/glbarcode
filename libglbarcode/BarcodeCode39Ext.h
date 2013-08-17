@@ -29,16 +29,30 @@ namespace glbarcode
 {
 
 	/**
-	 * Code39Ext barcode, extends BarcodeCode39
+	 * Extended Code39 barcode, extends BarcodeCode39
 	 */
 	class BarcodeCode39Ext : public BarcodeCode39
 	{
 	public:
+		/**
+		 * Static Extended Code39 barcode creation method
+		 *
+		 * Used by glbarcode::Factory
+		 */
 		static Barcode* create( std::string data,
 					double      w,
 					double      h,
 					bool        text_flag,
 					bool        checksum_flag );
+
+		/**
+		 * Extended Code39 barcode constructor
+		 */
+		BarcodeCode39Ext( std::string data,
+				  double      w,
+				  double      h,
+				  bool        text_flag,
+				  bool        checksum_flag );
 
 	private:
 		bool validate( std::string raw_data );

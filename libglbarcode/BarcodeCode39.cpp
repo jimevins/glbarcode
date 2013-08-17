@@ -100,22 +100,34 @@ namespace
 namespace glbarcode
 {
 
+	/*
+	 * Static Code39 barcode creation method
+	 */
 	Barcode* BarcodeCode39::create( std::string data,
 					double      w,
 					double      h,
 					bool        text_flag,
 					bool        checksum_flag )
 	{
-		BarcodeCode39* barcode = new BarcodeCode39();
-
-		barcode->init( data, w, h, text_flag, checksum_flag );
-
-		return barcode;
+		return new BarcodeCode39( data, w, h, text_flag, checksum_flag );
 	}
 
 
-	/**
-	 * Code39 data validation method
+	/*
+	 * Code39 barcode constructor
+	 */
+	BarcodeCode39::BarcodeCode39( std::string data,
+		       double      w,
+		       double      h,
+		       bool        text_flag,
+		       bool        checksum_flag )
+	{
+		init( data, w, h, text_flag, checksum_flag );
+	}
+
+
+	/*
+	 * Code39 data validation, implements Barcode::validate()
 	 */
 	bool BarcodeCode39::validate( std::string raw_data )
 	{
@@ -133,24 +145,8 @@ namespace glbarcode
 	}
 
 
-	/**
-	 * Code39 prepare display text method
-	 */
-	std::string BarcodeCode39::prepare_text( std::string raw_data )
-	{
-		std::string display_text;
-
-		for ( int i = 0; i < raw_data.size(); i++ )
-		{
-			display_text += toupper( raw_data[i] );
-		}
-
-		return display_text;
-	}
-
-
-	/**
-	 * Code39 data encoding method
+	/*
+	 * Code39 data encoding, implements Barcode::encode()
 	 */
 	std::string BarcodeCode39::encode( std::string canon_data )
 	{
@@ -184,8 +180,24 @@ namespace glbarcode
 	}
 
 
-	/**
-	 * Code39 vectorize method
+	/*
+	 * Code39 prepare text for display, implements Barcode::prepare_text()
+	 */
+	std::string BarcodeCode39::prepare_text( std::string raw_data )
+	{
+		std::string display_text;
+
+		for ( int i = 0; i < raw_data.size(); i++ )
+		{
+			display_text += toupper( raw_data[i] );
+		}
+
+		return display_text;
+	}
+
+
+	/*
+	 * Code39 vectorization, implements Barcode::vectorize()
 	 */
 	void BarcodeCode39::vectorize( std::string coded_data,
 				       std::string display_text )
