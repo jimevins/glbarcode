@@ -20,6 +20,7 @@
 
 #include "BarcodeUpcA.h"
 
+#include <cctype>
 #include <string>
 
 

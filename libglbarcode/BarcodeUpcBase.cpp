@@ -22,11 +22,10 @@
 
 #include "Constants.h"
 
+#include <cctype>
 #include <string>
 #include <algorithm>
 #include <iostream>
-
-#include <ctype.h>
 
 
 using namespace glbarcode::Constants;

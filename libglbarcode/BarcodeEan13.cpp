@@ -20,6 +20,7 @@
 
 #include "BarcodeEan13.h"
 
+#include <cctype>
 #include <string>
 
 

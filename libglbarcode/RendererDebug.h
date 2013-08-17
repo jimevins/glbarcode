@@ -24,7 +24,7 @@
 
 #include "Renderer.h"
 
-#include <stdio.h>
+#include <cstdio>
 
 
 namespace glbarcode

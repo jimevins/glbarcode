@@ -22,7 +22,7 @@
 
 #include "Constants.h"
 
-#include <stdio.h>
+#include <cstdio>
 
 
 using namespace glbarcode::Constants;

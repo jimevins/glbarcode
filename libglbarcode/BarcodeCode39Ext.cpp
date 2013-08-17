@@ -20,8 +20,6 @@
 
 #include "BarcodeCode39Ext.h"
 
-#include <ctype.h>
-
 
 namespace
 {

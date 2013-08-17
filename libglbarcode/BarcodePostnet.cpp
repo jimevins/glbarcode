@@ -22,7 +22,7 @@
 
 #include "Constants.h"
 
-#include <ctype.h>
+#include <cctype>
 #include <algorithm>
 
 
