@@ -73,18 +73,17 @@ namespace glbarcode
 	}
 
 
-	Barcode* Factory::create_barcode( std::string type,
-					  std::string data,
-					  double      w,
-					  double      h,
-					  bool        text_flag,
-					  bool        checksum_flag )
+	Barcode* Factory::create_barcode( std::string           type,
+					  std::string           data,
+					  double                w,
+					  double                h,
+					  BarcodeOptions const& options )
 	{
 		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type );
 
 		if( i != m_barcode_type_map.end() )
 		{
-			return i->second( data, w, h, text_flag, checksum_flag );
+			return i->second( data, w, h, options );
 		}
 
 		return NULL;

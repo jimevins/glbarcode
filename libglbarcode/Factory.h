@@ -39,11 +39,10 @@ namespace glbarcode
 		/**
 		 * Barcode creation function signature
 		 */
-		typedef Barcode* (*BarcodeCreateFct)(std::string data,
-						     double      w,
-						     double      h,
-						     bool        text_flag,
-						     bool        checksum_flag );
+		typedef Barcode* (*BarcodeCreateFct)(std::string           data,
+						     double                w,
+						     double                h,
+						     BarcodeOptions const& options );
 
 	private:
 		/**
@@ -65,15 +64,13 @@ namespace glbarcode
 		 * @param data Data to encode in barcode
 		 * @param w Requested width of barcode (0 = auto size)
 		 * @param h Requested height of barcode (0 = auto size)
-		 * @param text_flag Show text flag
-		 * @param checksum_flag Add checksum flag (honored only if checksum is optional)
+		 * @param options Barcode options
 		 */
-		static Barcode* create_barcode( std::string type,
-						std::string data,
-						double      w,
-						double      h,
-						bool        text_flag,
-						bool        checksum_flag );
+		static Barcode* create_barcode( std::string           type,
+						std::string           data,
+						double                w,
+						double                h,
+						BarcodeOptions const& options );
 
 		/**
 		 * Register barcode type

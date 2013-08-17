@@ -69,26 +69,24 @@ namespace glbarcode
 	/*
 	 * Static Extended Code39 barcode creation method
 	 */
-	Barcode* BarcodeCode39Ext::create( std::string data,
-					   double      w,
-					   double      h,
-					   bool        text_flag,
-					   bool        checksum_flag )
+	Barcode* BarcodeCode39Ext::create( std::string           data,
+					   double                w,
+					   double                h,
+					   BarcodeOptions const& options )
 	{
-		return new BarcodeCode39Ext( data, w, h, text_flag, checksum_flag );
+		return new BarcodeCode39Ext( data, w, h, options );
 	}
 
 
 	/*
 	 * Extended Code39 barcode constructor
 	 */
-	BarcodeCode39Ext::BarcodeCode39Ext( std::string data,
-			  double      w,
-			  double      h,
-			  bool        text_flag,
-			  bool        checksum_flag )
+	BarcodeCode39Ext::BarcodeCode39Ext( std::string           data,
+					    double                w,
+					    double                h,
+					    BarcodeOptions const& options )
 	{
-		init( data, w, h, text_flag, checksum_flag );
+		init( data, w, h, options );
 	}
 
 

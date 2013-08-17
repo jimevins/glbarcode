@@ -29,29 +29,27 @@ namespace glbarcode
 	/*
 	 * Static UPC-A barcode creation method
 	 */
-	Barcode* BarcodeUpcA::create( std::string data,
-				      double      w,
-				      double      h,
-				      bool        text_flag,
-				      bool        checksum_flag )
+	Barcode* BarcodeUpcA::create( std::string           data,
+				      double                w,
+				      double                h,
+				      BarcodeOptions const& options )
 	{
-		return new BarcodeUpcA( data, w, h, text_flag, checksum_flag );
+		return new BarcodeUpcA( data, w, h, options );
 	}
 
 
 	/*
 	 * UPC-A barcode constructor
 	 */
-	BarcodeUpcA::BarcodeUpcA( std::string data,
-				  double      w,
-				  double      h,
-				  bool        text_flag,
-				  bool        checksum_flag )
+	BarcodeUpcA::BarcodeUpcA( std::string           data,
+				  double                w,
+				  double                h,
+				  BarcodeOptions const& options )
 	{
 		m_end_bars_thresh  = 7;
 		m_end_bars_modules = 7;
 
-		init( data, w, h, text_flag, checksum_flag );
+		init( data, w, h, options );
 	}
 
 

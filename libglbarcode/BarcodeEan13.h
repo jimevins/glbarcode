@@ -39,20 +39,18 @@ namespace glbarcode
 		 *
 		 * Used by glbarcode::Factory
 		 */
-		static Barcode* create( std::string data,
-					double      w,
-					double      h,
-					bool        text_flag,
-					bool        checksum_flag );
+		static Barcode* create( std::string           data,
+					double                w,
+					double                h,
+					BarcodeOptions const& options );
 
 		/**
 		 * EAN-13 barcode constructor
 		 */
-		BarcodeEan13( std::string data,
-			      double      w,
-			      double      h,
-			      bool        text_flag,
-			      bool        checksum_flag );
+		BarcodeEan13( std::string           data,
+			      double                w,
+			      double                h,
+			      BarcodeOptions const& options );
 
 	private:
 		bool validate_digits( int n_digits );

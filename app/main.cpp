@@ -71,10 +71,12 @@ void usage( std::list<std::string> supported_types )
 
 int main( int argc, char **argv )
 {
+	using namespace glbarcode;
+
 	/*
 	 * Get singleton instance of barcode factory
 	 */
-	glbarcode::Factory *factory = glbarcode::Factory::instance();
+	Factory *factory = Factory::instance();
 
 
 	/*
@@ -169,7 +171,8 @@ int main( int argc, char **argv )
 	/*
 	 * Build barcode
 	 */
-	glbarcode::Barcode* bc = factory->create_barcode( type, data, w, h, text_flag, checksum_flag );
+	BarcodeOptions options = BarcodeOptions().text(text_flag).checksum(checksum_flag);
+	Barcode* bc = factory->create_barcode( type, data, w, h, options );
 
 	if ( bc == NULL )
 	{
@@ -191,7 +194,7 @@ int main( int argc, char **argv )
 	/*
 	 * Render barcode
 	 */
-	glbarcode::RendererSvg renderer;
+	RendererSvg renderer;
 
 	bc->render( renderer );
 

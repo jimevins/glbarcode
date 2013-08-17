@@ -60,17 +60,15 @@ namespace glbarcode
 	}
 
 
-	void Barcode::init( std::string raw_data,
-			    double      w,
-			    double      h,
-			    bool        text_flag,
-			    bool        checksum_flag )
+	void Barcode::init( std::string           raw_data,
+			    double                w,
+			    double                h,
+			    BarcodeOptions const& options )
 	{
-		m_text_flag     = text_flag;
-		m_checksum_flag = checksum_flag;
+		m_raw_data      = raw_data;
 		m_w             = w;
 		m_h             = h;
-		m_raw_data      = raw_data;
+		m_options       = options;
 
 		if ( m_raw_data.empty() )
 		{

@@ -25,6 +25,7 @@
 #include <string>
 #include <list>
 
+#include "BarcodeOptions.h"
 #include "Primitives.h"
 #include "Renderer.h"
 
@@ -83,14 +84,12 @@ namespace glbarcode
 		 * @param data Data to encode in barcode
 		 * @param w Requested width of barcode (0 = auto size)
 		 * @param h Requested height of barcode (0 = auto size)
-		 * @param text_flag Show text flag
-		 * @param checksum_flag Add checksum flag (honored only if checksum is optional)
+		 * @param options Barcode options
 		 */
-		void init( std::string data,
-			   double      w,
-			   double      h,
-			   bool        text_flag,
-			   bool        checksum_flag );
+		void init( std::string           data,
+			   double                w,
+			   double                h,
+			   BarcodeOptions const& options );
 
 
 		/**
@@ -225,10 +224,9 @@ namespace glbarcode
 		std::string m_display_text;   /**< Text data to be displayed */
 		std::string m_coded_data;     /**< Encoded data */
 
-		double      m_w;              /**< Width of barcode (points) */
-		double      m_h;              /**< Height of barcode (points) */
-		bool        m_text_flag;      /**< Display text flag */
-		bool        m_checksum_flag;  /**< Add checksum flag */
+		double         m_w;           /**< Width of barcode (points) */
+		double         m_h;           /**< Height of barcode (points) */
+		BarcodeOptions m_options;     /**< Barcode options */
 
 	private:
 		bool        m_empty_flag;      /**< Empty data flag */

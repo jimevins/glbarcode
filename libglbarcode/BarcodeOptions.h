@@ -1,4 +1,4 @@
-/*  test-svg-renderer.cpp
+/*  BarcodeOptions.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,29 +18,41 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "libglbarcode/Factory.h"
-#include "libglbarcode/RendererSvg.h"
-
-#include <iostream>
-#include <string>
+#ifndef glbarcode_BarcodeOptions_h
+#define glbarcode_BarcodeOptions_h
 
 
-int main( int argc, char **argv )
+namespace glbarcode
 {
-	glbarcode::RendererSvg renderer;
 
-	if ( argc != 2 )
+	class BarcodeOptions
 	{
-		std::cerr << "Usage: " << argv[0] << "data";
-	}
+	public:
+		BarcodeOptions( void )
+			: m_text_flag( false )
+			, m_checksum_flag( false )
+		{
+		}
 
-	glbarcode::BarcodeOptions options;
-	glbarcode::Barcode* bc = glbarcode::Factory::instance()->create_barcode( "code39",
-										 argv[1],
-										 0, 0,
-										 options );
 
-	bc->render( renderer );
+		BarcodeOptions& text( bool text_flag )
+		{
+			m_text_flag = text_flag; return *this;
+		}
 
-	delete bc;
+
+		BarcodeOptions& checksum( bool checksum_flag )
+		{
+			m_checksum_flag = checksum_flag; return *this;
+		}
+
+
+	public:
+		bool m_text_flag;      /**< Display text flag */
+		bool m_checksum_flag;  /**< Add checksum flag */
+	};
+
 }
+
+
+#endif // glbarcode_BarcodeOptions_h

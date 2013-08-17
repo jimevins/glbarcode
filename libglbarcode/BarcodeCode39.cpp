@@ -103,26 +103,24 @@ namespace glbarcode
 	/*
 	 * Static Code39 barcode creation method
 	 */
-	Barcode* BarcodeCode39::create( std::string data,
-					double      w,
-					double      h,
-					bool        text_flag,
-					bool        checksum_flag )
+	Barcode* BarcodeCode39::create( std::string           data,
+					double                w,
+					double                h,
+					BarcodeOptions const& options )
 	{
-		return new BarcodeCode39( data, w, h, text_flag, checksum_flag );
+		return new BarcodeCode39( data, w, h, options );
 	}
 
 
 	/*
 	 * Code39 barcode constructor
 	 */
-	BarcodeCode39::BarcodeCode39( std::string data,
-		       double      w,
-		       double      h,
-		       bool        text_flag,
-		       bool        checksum_flag )
+	BarcodeCode39::BarcodeCode39( std::string           data,
+				      double                w,
+				      double                h,
+				      BarcodeOptions const& options )
 	{
-		init( data, w, h, text_flag, checksum_flag );
+		init( data, w, h, options );
 	}
 
 
@@ -167,7 +165,7 @@ namespace glbarcode
 			sum += c_value;
 		}
 
-		if ( m_checksum_flag )
+		if ( m_options.m_checksum_flag )
 		{
 			code += symbols[sum % 43];
 			code += "i";
@@ -205,7 +203,7 @@ namespace glbarcode
 		/* determine width and establish horizontal scale */
 		double data_size = m_cooked_data.size();
 		double min_l;
-		if (!m_checksum_flag)
+		if (!m_options.m_checksum_flag)
 		{
 			min_l = (data_size + 2)*(3*N + 6)*MIN_X + (data_size + 1)*MIN_I;
 		}
@@ -235,7 +233,7 @@ namespace glbarcode
 		double text_size   = scale * MIN_TEXT_SIZE;
 
 		/* determine height of barcode */
-		double height = m_text_flag ? m_h - h_text_area : m_h;
+		double height = m_options.m_text_flag ? m_h - h_text_area : m_h;
 		height = std::max( height, std::max( 0.15*width, MIN_HEIGHT ) );
 
 		/* determine horizontal quiet zone */
@@ -285,7 +283,7 @@ namespace glbarcode
 			}
 		}
 
-		if ( m_text_flag )
+		if ( m_options.m_text_flag )
 		{
 			std::string starred_text = "*" + display_text + "*";
 			add_text( x_quiet + width/2, height + (h_text_area-text_size)/2, text_size, starred_text );
@@ -293,7 +291,7 @@ namespace glbarcode
 
 		/* Overwrite requested size with actual size. */
 		m_w = width + 2*x_quiet;
-		m_h = m_text_flag ? height + h_text_area : height;
+		m_h = m_options.m_text_flag ? height + h_text_area : height;
 	}
 
 }

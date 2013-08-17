@@ -29,29 +29,27 @@ namespace glbarcode
 	/*
 	 * Static EAN-13 barcode creation method
 	 */
-	Barcode* BarcodeEan13::create( std::string data,
-				       double      w,
-				       double      h,
-				       bool        text_flag,
-				       bool        checksum_flag )
+	Barcode* BarcodeEan13::create( std::string           data,
+				       double                w,
+				       double                h,
+				       BarcodeOptions const& options )
 	{
-		return new BarcodeEan13( data, w, h, text_flag, checksum_flag );
+		return new BarcodeEan13( data, w, h, options );
 	}
 
 
 	/*
 	 * EAN-13 barcode constructor
 	 */
-	BarcodeEan13::BarcodeEan13( std::string data,
-				    double      w,
-				    double      h,
-				    bool        text_flag,
-				    bool        checksum_flag )
+	BarcodeEan13::BarcodeEan13( std::string           data,
+				    double                w,
+				    double                h,
+				    BarcodeOptions const& options )
 	{
 		m_end_bars_thresh  = 3;
 		m_end_bars_modules = 3;
 
-		init( data, w, h, text_flag, checksum_flag );
+		init( data, w, h, options );
 	}
 
 
