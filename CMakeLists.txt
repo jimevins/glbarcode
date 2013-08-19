@@ -1,10 +1,19 @@
 cmake_minimum_required (VERSION 2.8)
 
-project (glbarcode)
+project (GLBARCODE_PP)
 
-set (API_VERSION 4.0)
+set (Package_Name "glbarcode++")
 
-add_subdirectory (libglbarcode)
+set (API_Version     "0")
+set (Feature_Version "0")
+set (Bugfix_Version  "0")
+
+set (Package_Version "${API_Version}.${Feature_Version}.${Bugfix_Version}")
+set (Package_URL "https://github.com/jimevins/test-glbarcode")
+
+set (Lib_Name ${Package_Name}-${API_Version})
+
+add_subdirectory (glbarcode)
 add_subdirectory (app)
 add_subdirectory (test)
 add_subdirectory (doc)

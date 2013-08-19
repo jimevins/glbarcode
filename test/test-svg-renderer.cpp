@@ -18,8 +18,8 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "libglbarcode/Factory.h"
-#include "libglbarcode/RendererSvg.h"
+#include "glbarcode/Factory.h"
+#include "glbarcode/RendererSvg.h"
 
 #include <iostream>
 #include <string>

@@ -4,11 +4,11 @@ project (app CXX)
 
 
 include_directories (
-  ${glbarcode_SOURCE_DIR}
+  ${GLBARCODE_PP_SOURCE_DIR}
 )
 
 link_directories (
-  ${glbarcode_SOURCE_DIR}/libglbarcode
+  ${GLBARCODE_PP_SOURCE_DIR}/glbarcode
 )
 
 add_executable (glbarcode
@@ -16,6 +16,6 @@ add_executable (glbarcode
 )
 
 target_link_libraries (glbarcode
-  glbarcode-${API_VERSION}
+  ${Lib_Name}
 )
 

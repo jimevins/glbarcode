@@ -27,9 +27,9 @@ namespace glbarcode
 
 	namespace Constants
 	{
-		const std::string PACKAGE_NAME    = "glbarcode++";
-		const std::string PACKAGE_VERSION = "0.0.0";
-		const std::string PACKAGE_URL     = "https://github.com/jimevins/test-glbarcode";
+		const std::string PACKAGE_NAME    = MY_PACKAGE_NAME;
+		const std::string PACKAGE_VERSION = MY_PACKAGE_VERSION;
+		const std::string PACKAGE_URL     = MY_PACKAGE_URL;
 
 		const double PTS_PER_INCH = 72.0;            /**< Points per inch. */
 		const double PTS_PER_MM   =  2.83464566929;  /**< Points per millimeter. */

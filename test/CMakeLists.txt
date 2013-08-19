@@ -4,11 +4,11 @@ project (test CXX)
 
 
 include_directories(
-  ${glbarcode_SOURCE_DIR}
+  ${GLBARCODE_PP_SOURCE_DIR}
 )
 
 link_directories(
-  ${glbarcode_SOURCE_DIR}/libglbarcode
+  ${GLBARCODE_PP_SOURCE_DIR}/glbarcode
 )
 
 add_executable(test-debug-renderer
@@ -16,7 +16,7 @@ add_executable(test-debug-renderer
 )
 
 target_link_libraries(test-debug-renderer
-  glbarcode-${API_VERSION}
+  ${Lib_Name}
 )
 
 add_executable(test-svg-renderer
@@ -24,5 +24,5 @@ add_executable(test-svg-renderer
 )
 
 target_link_libraries(test-svg-renderer
-  glbarcode-${API_VERSION}
+  ${Lib_Name}
 )
