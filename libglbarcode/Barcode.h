@@ -83,25 +83,19 @@ namespace glbarcode
 		double height( void );
 
 
-		/**
-		 * Get barcode options data.
-		 */
-		const BarcodeOptions& options( void );
-
-
 	protected:
 		/**
-		 * Initialize and build barcode from parameters.  Used by constructors of derived classes.
+		 * Build barcode from parameters.  Used by constructors of derived classes.
 		 *
 		 * @param data Data to encode in barcode
 		 * @param w Requested width of barcode (0 = auto size)
 		 * @param h Requested height of barcode (0 = auto size)
 		 * @param options Barcode options
 		 */
-		void init( std::string           data,
-			   double                w,
-			   double                h,
-			   BarcodeOptions const& options );
+		void build( std::string           data,
+			    double                w,
+			    double                h,
+			    BarcodeOptions const& options );
 
 
 		/**
@@ -110,10 +104,12 @@ namespace glbarcode
 		 * Required virtual method to test if data is valid for encoding with
 		 * barcode type.
 		 *
-		 * @param data Data to validate
+		 * @param raw_data Data to validate
+		 * @param options Barcode options
 		 * @return true if data is valid data for barcode type
 		 */
-		virtual bool validate( std::string data ) = 0;
+		virtual bool validate( std::string           raw_data,
+				       BarcodeOptions const& options ) = 0;
 
 
 		/**
@@ -123,9 +119,11 @@ namespace glbarcode
 		 * before encoding.  (E.g. encoding an extended alphabet into a simpler one).
 		 *
 		 * @param raw_data Data to preprocess
+		 * @param options Barcode options
 		 * @return preprocessed data
 		 */
-		virtual std::string preprocess( std::string raw_data );
+		virtual std::string preprocess( std::string           raw_data,
+						BarcodeOptions const& options );
 
 
 		/**
@@ -135,10 +133,12 @@ namespace glbarcode
 		 * The encoded data is usually a list of characters that represent an atomic
 		 * barcode element (e.g. 'w' = a wide line & 'n' = a narrow line).
 		 *
-		 * @param cooked_data Data to preprocess
+		 * @param cooked_data Data to encode
+		 * @param options Barcode options
 		 * @return encoded data
 		 */
-		virtual std::string encode( std::string cooked_data ) = 0;
+		virtual std::string encode( std::string           cooked_data,
+					    BarcodeOptions const& options ) = 0;
 
 
 		/**
@@ -147,9 +147,11 @@ namespace glbarcode
 		 * Optional virtual method to prepare text to be displayed as part of barcode.
 		 *
 		 * @param raw_data Data to prepare
+		 * @param options Barcode options
 		 * @return text in display form
 		 */
-		virtual std::string prepare_text( std::string raw_data );
+		virtual std::string prepare_text( std::string           raw_data,
+						  BarcodeOptions const& options );
 
 
 		/**
@@ -160,10 +162,17 @@ namespace glbarcode
 		 *
 		 * @param encoded_data Data to vectorize
 		 * @param display_text Text to display
-		 * @return encoded data
+		 * @param cooked_data Original data prior to encoding (may be needed for sizing)
+		 * @param w Requested width of barcode (0 = auto size)
+		 * @param h Requested height of barcode (0 = auto size)
+		 * @param options Barcode options
 		 */
-		virtual void vectorize( std::string encoded_data,
-					std::string display_text ) = 0;
+		virtual void vectorize( std::string           encoded_data,
+					std::string           display_text,
+					std::string           cooked_data,
+					double                w,
+					double                h,
+					BarcodeOptions const& options ) = 0;
 
 
 		/**
@@ -228,30 +237,6 @@ namespace glbarcode
 		 * @param h Height of hexagon (points)
 		 */
 		void add_hexagon( double x, double y, double h );
-
-
-		/**
-		 * Get raw barcode data.
-		 */
-		const std::string& raw_data( void );
-
-
-		/**
-		 * Get cooked barcode data.
-		 */
-		const std::string& cooked_data( void );
-
-
-		/**
-		 * Get display text.
-		 */
-		const std::string& display_text( void );
-
-
-		/**
-		 * Get coded barcode data.
-		 */
-		const std::string& coded_data( void );
 
 
 		/**

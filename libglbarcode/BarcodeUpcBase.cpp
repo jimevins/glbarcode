@@ -95,7 +95,8 @@ namespace glbarcode
 	/*
 	 * UPC data validation, implements Barcode::validate()
 	 */
-	bool BarcodeUpcBase::validate( std::string raw_data )
+	bool BarcodeUpcBase::validate( std::string           raw_data,
+				       BarcodeOptions const& options )
 	{
 		int n_digits = 0;
 
@@ -120,7 +121,8 @@ namespace glbarcode
 	/*
 	 * UPC data encoding, implements Barcode::encode()
 	 */
-	std::string BarcodeUpcBase::encode( std::string canon_data )
+	std::string BarcodeUpcBase::encode( std::string           cooked_data,
+					    BarcodeOptions const& options )
 	{
 		int sum_odd  = 0;
 		int sum_even = m_first_digit_val;
@@ -133,7 +135,7 @@ namespace glbarcode
 		/* Left 6 digits */
 		for ( int i = 0; i < 6; i++ )
 		{
-			int c_value = canon_data[i] - '0';
+			int c_value = cooked_data[i] - '0';
 			code += symbols[ c_value ][ parity[ m_first_digit_val ][ i ] ];
 
 			if ( (i & 1) == 0 )
@@ -152,7 +154,7 @@ namespace glbarcode
 		/* Right 5 digits */
 		for ( int i = 6; i < 11; i++ )
 		{
-			int c_value = canon_data[i] - '0';
+			int c_value = cooked_data[i] - '0';
 			code += symbols[c_value][P_ODD];
 
 			if ( (i & 1) == 0 )
@@ -187,7 +189,8 @@ namespace glbarcode
 	/*
 	 * UPC prepare text for display, implements Barcode::prepare_text()
 	 */
-	std::string BarcodeUpcBase::prepare_text( std::string raw_data )
+	std::string BarcodeUpcBase::prepare_text( std::string           raw_data,
+						  BarcodeOptions const& options )
 	{
 		std::string display_text;
 
@@ -208,14 +211,15 @@ namespace glbarcode
 	/*
 	 * UPC vectorization, implements Barcode::vectorize()
 	 */
-	void BarcodeUpcBase::vectorize( std::string coded_data,
-					std::string display_text )
+	void BarcodeUpcBase::vectorize( std::string           coded_data,
+					std::string           display_text,
+					std::string           cooked_data,
+					double                w,
+					double                h,
+					BarcodeOptions const& options )
 	{
-		double w           = width();
-		double h           = height();
-
 		/* determine width and establish horizontal scale */
-		int n_modules     = 7*(cooked_data().size()+1) + 11;
+		int n_modules     = 7*(cooked_data.size()+1) + 11;
 
 		double scale;
 		if ( w == 0 )

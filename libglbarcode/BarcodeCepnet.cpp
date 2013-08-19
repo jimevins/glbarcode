@@ -44,7 +44,7 @@ namespace glbarcode
 				      double                h,
 				      BarcodeOptions const& options )
 	{
-		init( data, w, h, options );
+		build( data, w, h, options );
 	}
 
 

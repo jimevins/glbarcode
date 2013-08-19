@@ -313,14 +313,15 @@ namespace glbarcode
 					double                h,
 					BarcodeOptions const& options )
 	{
-		init( data, w, h, options );
+		build( data, w, h, options );
 	}
 
 
 	/*
 	 * Onecode data validation, implements Barcode::validate()
 	 */
-	bool BarcodeOnecode::validate( std::string raw_data )
+	bool BarcodeOnecode::validate( std::string           raw_data,
+				       BarcodeOptions const& options )
 	{
 		if ( (raw_data.size() != 20) &&
 		     (raw_data.size() != 25) &&
@@ -350,7 +351,8 @@ namespace glbarcode
 	/*
 	 * Onecode data encoding, implements Barcode::encode()
 	 */
-	std::string BarcodeOnecode::encode( std::string data )
+	std::string BarcodeOnecode::encode( std::string           cooked_data,
+					    BarcodeOptions const& options )
 	{
 		Int104 value;
 
@@ -360,10 +362,10 @@ namespace glbarcode
 
 		/* Step 1.a -- Routing Code */
 		int j;
-		for ( j = 20; data[j] != 0; j++ )
+		for ( j = 20; cooked_data[j] != 0; j++ )
 		{
 			value.mult_uint( 10 );
-			value.add_uint64( data[j] - '0' );
+			value.add_uint64( cooked_data[j] - '0' );
 		}
 		switch ( j-20 )
 		{
@@ -388,14 +390,14 @@ namespace glbarcode
 
 		/* Step 1.b -- Tracking Code */
 		value.mult_uint( 10 );
-		value.add_uint64( data[0] - '0' );
+		value.add_uint64( cooked_data[0] - '0' );
 		value.mult_uint( 5 );
-		value.add_uint64( data[1] - '0' );
+		value.add_uint64( cooked_data[1] - '0' );
 
 		for ( int i = 2; i < 20; i++ )
 		{
 			value.mult_uint( 10 );
-			value.add_uint64( data[i] - '0' );
+			value.add_uint64( cooked_data[i] - '0' );
 		}
 
 
@@ -464,8 +466,12 @@ namespace glbarcode
 	/*
 	 * Onecode vectorization, implements Barcode::vectorize()
 	 */
-	void BarcodeOnecode::vectorize( std::string coded_data,
-					std::string display_text )
+	void BarcodeOnecode::vectorize( std::string           coded_data,
+					std::string           display_text,
+					std::string           cooked_data,
+					double                w,
+					double                h,
+					BarcodeOptions const& options )
 	{
 		double x = ONECODE_HORIZ_MARGIN;
 		for ( int i = 0; i < coded_data.size(); i++ )

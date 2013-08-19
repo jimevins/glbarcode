@@ -50,7 +50,7 @@ namespace glbarcode
 		m_end_bars_thresh  = 7;
 		m_end_bars_modules = 7;
 
-		init( data, w, h, options );
+		build( data, w, h, options );
 	}
 
 

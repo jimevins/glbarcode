@@ -53,11 +53,15 @@ namespace glbarcode
 				  BarcodeOptions const& options );
 
 	private:
-		bool validate( std::string raw_data );
+		bool validate( std::string           raw_data,
+			       BarcodeOptions const& options );
 
-		std::string prepare_text( std::string raw_data );
+		std::string preprocess( std::string           raw_data,
+					BarcodeOptions const& options );
 
-		std::string preprocess( std::string raw_data );
+		std::string prepare_text( std::string           raw_data,
+					  BarcodeOptions const& options );
+
 	};
 
 }

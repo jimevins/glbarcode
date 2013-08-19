@@ -56,13 +56,18 @@ namespace glbarcode
 
 
 	private:
-		bool validate( std::string data );
+		bool validate( std::string           raw_data,
+			       BarcodeOptions const& options );
 
-		std::string encode( std::string canon_data );
+		std::string encode( std::string           cooked_data,
+				    BarcodeOptions const& options );
 
-		void vectorize( std::string coded_data,
-				std::string display_text );
-
+		void vectorize( std::string           coded_data,
+				std::string           display_text,
+				std::string           cooked_data,
+				double                w,
+				double                h,
+				BarcodeOptions const& options );
 
 	private:
 		uint32_t USPS_MSB_Math_CRC11GenerateFrameCheckSequence( uint8_t* ByteArrayPtr );

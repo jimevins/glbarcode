@@ -36,20 +36,11 @@ namespace glbarcode
 		double                 m_w;               /**< Width of barcode (points) */
 		double                 m_h;               /**< Height of barcode (points) */
 
-		BarcodeOptions         m_options;         /**< Barcode options */
-
 		bool                   m_empty_flag;      /**< Empty data flag */
 		bool                   m_data_valid_flag; /**< Valid data flag */
 
 		std::list<Primitive *> m_primitives;      /**< List of drawing primitives */
 
-		/*
-		 * Data to be made available to derived classes:
-		 */
-		std::string            m_raw_data;        /**< Raw data */
-		std::string            m_cooked_data;     /**< Preprocessed data */
-		std::string            m_display_text;    /**< Text data to be displayed */
-		std::string            m_coded_data;      /**< Encoded data */
 	};
 
 
@@ -114,17 +105,19 @@ namespace glbarcode
 	}
 
 
-	void Barcode::init( std::string           raw_data,
-			    double                w,
-			    double                h,
-			    BarcodeOptions const& options )
+	void Barcode::build( std::string           raw_data,
+			     double                w,
+			     double                h,
+			     BarcodeOptions const& options )
 	{
-		d->m_raw_data      = raw_data;
+		std::string cooked_data;     /* Preprocessed data */
+		std::string display_text;    /* Text data to be displayed */
+		std::string coded_data;      /* Encoded data */
+
 		d->m_w             = w;
 		d->m_h             = h;
-		d->m_options       = options;
 
-		if ( d->m_raw_data.empty() )
+		if ( raw_data.empty() )
 		{
 			d->m_empty_flag = true;
 			d->m_data_valid_flag = false;
@@ -133,16 +126,15 @@ namespace glbarcode
 		{
 			d->m_empty_flag = false;
 
-			if ( validate( d->m_raw_data ) )
+			if ( validate( raw_data, options ) )
 			{
 				d->m_data_valid_flag = true;
 
-				d->m_cooked_data  = preprocess( d->m_raw_data );
-				d->m_coded_data   = encode( d->m_cooked_data );
+				cooked_data  = preprocess( raw_data, options );
+				coded_data   = encode( cooked_data, options );
+				display_text = prepare_text( raw_data, options );
 
-				d->m_display_text = prepare_text( d->m_raw_data );
-
-				vectorize( d->m_coded_data, d->m_display_text );
+				vectorize( coded_data, display_text, cooked_data, w, h, options );
 			}
 			else
 			{
@@ -155,7 +147,8 @@ namespace glbarcode
 	/*
 	 * Default preprocess method
 	 */
-	std::string Barcode::preprocess( std::string raw_data )
+	std::string Barcode::preprocess( std::string           raw_data,
+					 BarcodeOptions const& options )
 	{
 		return raw_data;
 	}
@@ -164,7 +157,8 @@ namespace glbarcode
 	/*
 	 * Default prepare_text method
 	 */
-	std::string Barcode::prepare_text( std::string raw_data )
+	std::string Barcode::prepare_text( std::string           raw_data,
+					   BarcodeOptions const& options )
 	{
 		return raw_data;
 	}
@@ -197,36 +191,6 @@ namespace glbarcode
 	void Barcode::add_hexagon( double x, double y, double h )
 	{
 		d->m_primitives.push_back( new PrimitiveHexagon( x, y, h ) );
-	}
-
-
-	const std::string& Barcode::raw_data( void )
-	{
-		return d->m_raw_data;
-	}
-
-
-	const std::string& Barcode::cooked_data( void )
-	{
-		return d->m_cooked_data;
-	}
-
-
-	const std::string& Barcode::display_text( void )
-	{
-		return d->m_display_text;
-	}
-
-
-	const std::string& Barcode::coded_data( void )
-	{
-		return d->m_coded_data;
-	}
-
-
-	const BarcodeOptions& Barcode::options( void )
-	{
-		return d->m_options;
 	}
 
 
