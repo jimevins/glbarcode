@@ -146,7 +146,7 @@ namespace glbarcode
 	/*
 	 * Code39 data encoding, implements Barcode::encode()
 	 */
-	std::string BarcodeCode39::encode( std::string canon_data )
+	std::string BarcodeCode39::encode( std::string cooked_data )
 	{
 		std::string code;
 
@@ -155,9 +155,9 @@ namespace glbarcode
 		code += "i";
 
 		int sum = 0;
-		for ( int i=0; i < canon_data.size(); i++ )
+		for ( int i=0; i < cooked_data.size(); i++ )
 		{
-			int c_value = alphabet.find( toupper( canon_data[i] ) );
+			int c_value = alphabet.find( toupper( cooked_data[i] ) );
 
 			code += symbols[c_value];
 			code += "i";
@@ -165,7 +165,7 @@ namespace glbarcode
 			sum += c_value;
 		}
 
-		if ( m_options.m_checksum_flag )
+		if ( options().m_checksum_flag )
 		{
 			code += symbols[sum % 43];
 			code += "i";
@@ -200,10 +200,15 @@ namespace glbarcode
 	void BarcodeCode39::vectorize( std::string coded_data,
 				       std::string display_text )
 	{
-		/* determine width and establish horizontal scale */
-		double data_size = m_cooked_data.size();
+		double w           = width();
+		double h           = height();
+		bool text_flag     = options().m_text_flag;
+		bool checksum_flag = options().m_checksum_flag;
+
+		/* determine width and establish horizontal scale, based on original cooked data */
+		double data_size = cooked_data().size();
 		double min_l;
-		if (!m_options.m_checksum_flag)
+		if (!checksum_flag)
 		{
 			min_l = (data_size + 2)*(3*N + 6)*MIN_X + (data_size + 1)*MIN_I;
 		}
@@ -213,13 +218,13 @@ namespace glbarcode
 		}
         
 		double scale;
-		if ( m_w == 0 )
+		if ( w == 0 )
 		{
 			scale = 1.0;
 		}
 		else
 		{
-			scale = m_w / (min_l + 2*MIN_QUIET);
+			scale = w / (min_l + 2*MIN_QUIET);
 
 			if ( scale < 1.0 )
 			{
@@ -233,7 +238,7 @@ namespace glbarcode
 		double text_size   = scale * MIN_TEXT_SIZE;
 
 		/* determine height of barcode */
-		double height = m_options.m_text_flag ? m_h - h_text_area : m_h;
+		double height = text_flag ? h - h_text_area : h;
 		height = std::max( height, std::max( 0.15*width, MIN_HEIGHT ) );
 
 		/* determine horizontal quiet zone */
@@ -283,15 +288,15 @@ namespace glbarcode
 			}
 		}
 
-		if ( m_options.m_text_flag )
+		if ( text_flag )
 		{
 			std::string starred_text = "*" + display_text + "*";
 			add_text( x_quiet + width/2, height + (h_text_area-text_size)/2, text_size, starred_text );
 		}
 
 		/* Overwrite requested size with actual size. */
-		m_w = width + 2*x_quiet;
-		m_h = m_options.m_text_flag ? height + h_text_area : height;
+		set_width( width + 2*x_quiet );
+		set_height( text_flag ? height + h_text_area : height );
 	}
 
 }

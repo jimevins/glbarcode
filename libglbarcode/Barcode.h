@@ -23,10 +23,8 @@
 
 
 #include <string>
-#include <list>
 
 #include "BarcodeOptions.h"
-#include "Primitives.h"
 #include "Renderer.h"
 
 
@@ -38,11 +36,19 @@ namespace glbarcode
 	 */
 	class Barcode
 	{
+
+	protected:
+		/**
+		 * Constructor
+		 */
+		Barcode();
+
+
 	public:
 		/**
 		 * Destructor
 		 */
-		virtual     ~Barcode();
+		virtual ~Barcode();
 
 
 		/**
@@ -50,36 +56,42 @@ namespace glbarcode
 		 *
 		 * @param renderer a Renderer object
 		 */
-		void        render( Renderer &renderer );
+		void render( Renderer &renderer );
 
 
 		/**
 		 * Is barcode data empty?
 		 */
-		bool        is_empty( void );
+		bool is_empty( void );
 
 
 		/**
 		 * Is barcode data valid?
 		 */
-		bool        is_data_valid( void );
+		bool is_data_valid( void );
 
 
 		/**
 		 * Get actual width of barcode (may differ from requested width)
 		 */
-		double      get_w( void );
+		double width( void );
 
 
 		/**
 		 * Get actual height of barcode (may differ from requested height)
 		 */
-		double      get_h( void );
+		double height( void );
+
+
+		/**
+		 * Get barcode options data.
+		 */
+		const BarcodeOptions& options( void );
 
 
 	protected:
 		/**
-		 * Initialize and build barcode from parameters.
+		 * Initialize and build barcode from parameters.  Used by constructors of derived classes.
 		 *
 		 * @param data Data to encode in barcode
 		 * @param w Requested width of barcode (0 = auto size)
@@ -218,21 +230,48 @@ namespace glbarcode
 		void add_hexagon( double x, double y, double h );
 
 
-	protected:
-		std::string m_raw_data;       /**< Raw data */
-		std::string m_cooked_data;    /**< Preprocessed data */
-		std::string m_display_text;   /**< Text data to be displayed */
-		std::string m_coded_data;     /**< Encoded data */
+		/**
+		 * Get raw barcode data.
+		 */
+		const std::string& raw_data( void );
 
-		double         m_w;           /**< Width of barcode (points) */
-		double         m_h;           /**< Height of barcode (points) */
-		BarcodeOptions m_options;     /**< Barcode options */
+
+		/**
+		 * Get cooked barcode data.
+		 */
+		const std::string& cooked_data( void );
+
+
+		/**
+		 * Get display text.
+		 */
+		const std::string& display_text( void );
+
+
+		/**
+		 * Get coded barcode data.
+		 */
+		const std::string& coded_data( void );
+
+
+		/**
+		 * Set new width of barcode.
+		 */
+		void set_width( double w );
+
+
+		/**
+		 * Set new height of barcode.
+		 */
+		void set_height( double h );
+
 
 	private:
-		bool        m_empty_flag;      /**< Empty data flag */
-		bool        m_data_valid_flag; /**< Valid data flag */
-
-		std::list<Primitive *> m_primitives; /**< List of drawing primitives */
+		/**
+		 * Barcode Private data
+		 */
+		struct PrivateData;
+		PrivateData *d;
 
 	};
 

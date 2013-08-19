@@ -190,8 +190,8 @@ namespace glbarcode
 		}
 
 		/* Overwrite requested size with actual size. */
-		m_w = x + POSTNET_HORIZ_MARGIN;
-		m_h = POSTNET_FULLBAR_HEIGHT + 2 * POSTNET_VERT_MARGIN;
+		set_width( x + POSTNET_HORIZ_MARGIN );
+		set_height( POSTNET_FULLBAR_HEIGHT + 2 * POSTNET_VERT_MARGIN );
 	}
 
 }

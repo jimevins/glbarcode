@@ -31,3 +31,4 @@
 gmon.out
 core
 *.safe
+*.sav*

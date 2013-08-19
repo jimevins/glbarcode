@@ -503,8 +503,8 @@ namespace glbarcode
 		}
 
 		/* Overwrite requested size with actual size. */
-		m_w = x + ONECODE_HORIZ_MARGIN;
-		m_h = ONECODE_FULL_HEIGHT + 2 * ONECODE_VERT_MARGIN;
+		set_width( x + ONECODE_HORIZ_MARGIN );
+		set_height(ONECODE_FULL_HEIGHT + 2 * ONECODE_VERT_MARGIN );
 	}
 
 
