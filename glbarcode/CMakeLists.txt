@@ -4,6 +4,7 @@ project (lib CXX)
 
 set (PUBLIC_HEADERS
   Barcode.h
+  BarcodeOptions.h
   BarcodeCepnet.h
   BarcodeCode39Ext.h
   BarcodeCode39.h
@@ -25,9 +26,8 @@ set (PUBLIC_HEADERS
 )
 
 set (LIB_SOURCES
-  Factory.cpp
-  Primitives.cpp
   Barcode.cpp
+  BarcodeOptions.cpp
   BarcodeCode39.cpp
   BarcodeCode39Ext.cpp
   BarcodeUpcBase.cpp
@@ -39,6 +39,8 @@ set (LIB_SOURCES
   BarcodePostnet11.cpp
   BarcodeCepnet.cpp
   BarcodeOnecode.cpp
+  Factory.cpp
+  Primitives.cpp
   Renderer.cpp
   RendererSvg.cpp
 )

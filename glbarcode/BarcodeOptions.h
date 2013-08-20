@@ -27,29 +27,60 @@ namespace glbarcode
 
 	class BarcodeOptions
 	{
-	public:
-		BarcodeOptions( void )
-			: m_text_flag( false )
-			, m_checksum_flag( false )
-		{
-		}
-
-
-		BarcodeOptions& text( bool text_flag )
-		{
-			m_text_flag = text_flag; return *this;
-		}
-
-
-		BarcodeOptions& checksum( bool checksum_flag )
-		{
-			m_checksum_flag = checksum_flag; return *this;
-		}
-
 
 	public:
-		bool m_text_flag;      /**< Display text flag */
-		bool m_checksum_flag;  /**< Add checksum flag */
+		/**
+		 * Constructor
+		 */
+		BarcodeOptions();
+
+		/**
+		 * Destructor
+		 */
+		virtual ~BarcodeOptions();
+
+
+		/**
+		 * Set "show_text" parameter
+		 *
+		 * @param value Boolean value
+		 * @returns reference to this BarcodeOptions object for parameter chaining
+		 */
+		BarcodeOptions& show_text( bool value );
+
+
+		/**
+		 * Get "show_text" parameter
+		 *
+		 * @returns value of boolean "show_text" parameter
+		 */
+		bool show_text( void ) const;
+
+
+		/**
+		 * Set "checksum" parameter
+		 *
+		 * @param value Boolean value
+		 * @returns reference to this BarcodeOptions object for parameter chaining
+		 */
+		BarcodeOptions& checksum( bool value );
+
+
+		/**
+		 * Get "checksum" parameter
+		 *
+		 * @returns value of boolean "checksum" parameter
+		 */
+		bool checksum( void ) const;
+
+
+	private:
+		/**
+		 * Barcode options private data
+		 */
+		struct PrivateData;
+		PrivateData *d;
+
 	};
 
 }

@@ -168,7 +168,7 @@ namespace glbarcode
 			sum += c_value;
 		}
 
-		if ( options.m_checksum_flag )
+		if ( options.checksum() )
 		{
 			code += symbols[sum % 43];
 			code += "i";
@@ -212,7 +212,7 @@ namespace glbarcode
 		/* determine width and establish horizontal scale, based on original cooked data */
 		double data_size = cooked_data.size();
 		double min_l;
-		if (!options.m_checksum_flag)
+		if ( !options.checksum() )
 		{
 			min_l = (data_size + 2)*(3*N + 6)*MIN_X + (data_size + 1)*MIN_I;
 		}
@@ -242,7 +242,7 @@ namespace glbarcode
 		double text_size   = scale * MIN_TEXT_SIZE;
 
 		/* determine height of barcode */
-		double height = options.m_text_flag ? h - h_text_area : h;
+		double height = options.show_text() ? h - h_text_area : h;
 		height = std::max( height, std::max( 0.15*width, MIN_HEIGHT ) );
 
 		/* determine horizontal quiet zone */
@@ -292,7 +292,7 @@ namespace glbarcode
 			}
 		}
 
-		if ( options.m_text_flag )
+		if ( options.show_text() )
 		{
 			std::string starred_text = "*" + display_text + "*";
 			add_text( x_quiet + width/2, height + (h_text_area-text_size)/2, text_size, starred_text );
@@ -300,7 +300,7 @@ namespace glbarcode
 
 		/* Overwrite requested size with actual size. */
 		set_width( width + 2*x_quiet );
-		set_height( options.m_text_flag ? height + h_text_area : height );
+		set_height( options.show_text() ? height + h_text_area : height );
 
 	}
 
