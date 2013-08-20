@@ -89,7 +89,7 @@ namespace glbarcode
 		/**
 		 * Get list of supported types
 		 */
-		const std::list<std::string> get_supported_types( void );
+		static const std::list<std::string> get_supported_types( void );
 
 
 	private:
