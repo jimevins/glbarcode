@@ -30,14 +30,31 @@ namespace glbarcode
 
 	public:
 		/**
-		 * Constructor
+		 * Default onstructor
 		 */
 		BarcodeOptions();
+
+
+		/** Copy constructor.
+		 * 
+		 * @param from The value to copy to this object.
+		 */
+		BarcodeOptions(const BarcodeOptions& from);
+
 
 		/**
 		 * Destructor
 		 */
 		virtual ~BarcodeOptions();
+
+
+		/** Assignment operator.
+		 *
+		 * @param from The value to assign to this object.
+		 *
+		 * @return A reference to this object.
+		 */
+		BarcodeOptions& operator=(const BarcodeOptions& from);  
 
 
 		/**

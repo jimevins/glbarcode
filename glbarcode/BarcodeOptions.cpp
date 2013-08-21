@@ -40,9 +40,25 @@ namespace glbarcode
 	}
 
 
+	BarcodeOptions::BarcodeOptions(const BarcodeOptions& from)
+	{
+		d = new BarcodeOptions::PrivateData;
+
+		*d = *from.d;
+	}
+
+
 	BarcodeOptions::~BarcodeOptions()
 	{
 		delete d;
+	}
+
+
+	BarcodeOptions& BarcodeOptions::operator=(const BarcodeOptions& from)
+	{
+		*d = *from.d;
+
+		return *this;
 	}
 
 
