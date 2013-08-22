@@ -21,31 +21,31 @@
 #include "Renderer.h"
 
 
-void glbarcode::Renderer::render( double w, double h, std::list<Primitive*> primitives )
+void glbarcode::Renderer::render( double w, double h, std::list<DrawingPrimitive*> primitives )
 {
 	draw_begin( w, h );
 
-	std::list<Primitive*>::iterator primitive;
+	std::list<DrawingPrimitive*>::iterator primitive;
 
 	for ( primitive = primitives.begin(); primitive != primitives.end(); primitive++ )
 	{
-		if ( PrimitiveLine *line = dynamic_cast<PrimitiveLine*>(*primitive) )
+		if ( DrawingPrimitiveLine *line = dynamic_cast<DrawingPrimitiveLine*>(*primitive) )
 		{
 			draw_line( line );
 		}
-		else if ( PrimitiveBox *box = dynamic_cast<PrimitiveBox*>(*primitive) )
+		else if ( DrawingPrimitiveBox *box = dynamic_cast<DrawingPrimitiveBox*>(*primitive) )
 		{
 			draw_box( box );
 		}
-		else if ( PrimitiveText *text = dynamic_cast<PrimitiveText*>(*primitive) )
+		else if ( DrawingPrimitiveText *text = dynamic_cast<DrawingPrimitiveText*>(*primitive) )
 		{
 			draw_text( text );
 		}
-		else if ( PrimitiveRing *ring = dynamic_cast<PrimitiveRing*>(*primitive) )
+		else if ( DrawingPrimitiveRing *ring = dynamic_cast<DrawingPrimitiveRing*>(*primitive) )
 		{
 			draw_ring( ring );
 		}
-		else if ( PrimitiveHexagon *hex = dynamic_cast<PrimitiveHexagon*>(*primitive) )
+		else if ( DrawingPrimitiveHexagon *hex = dynamic_cast<DrawingPrimitiveHexagon*>(*primitive) )
 		{
 			draw_hexagon( hex );
 		}

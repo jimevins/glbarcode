@@ -18,7 +18,7 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glbarcode/Factory.h"
+#include "glbarcode/BarcodeFactory.h"
 #include "glbarcode/RendererSvg.h"
 
 #include <iostream>
@@ -76,7 +76,7 @@ int main( int argc, char **argv )
 	/*
 	 * Get singleton instance of barcode factory
 	 */
-	Factory *factory = Factory::instance();
+	BarcodeFactory *factory = BarcodeFactory::instance();
 
 
 	/*

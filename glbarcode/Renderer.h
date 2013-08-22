@@ -24,7 +24,7 @@
 
 #include <list>
 
-#include "Primitives.h"
+#include "DrawingPrimitives.h"
 
 
 namespace glbarcode
@@ -43,7 +43,7 @@ namespace glbarcode
 		 * @param h Height of barcode bounding box (points)
 		 * @param primitives List of drawing primitives
 		 */
-		void render( double w, double h, std::list<Primitive*> primitives );
+		void render( double w, double h, std::list<DrawingPrimitive*> primitives );
 
 
 	protected:
@@ -71,51 +71,51 @@ namespace glbarcode
 		/**
 		 * Draw line primitive
 		 * 
-		 * Required virtual method to draw or render PrimitiveLine.
+		 * Required virtual method to draw or render DrawingPrimitiveLine.
 		 *
 		 * @param line Line primitive to draw
 		 */
-		virtual void draw_line( PrimitiveLine *line ) = 0;
+		virtual void draw_line( DrawingPrimitiveLine *line ) = 0;
 
 
 		/**
 		 * Draw box primitive
 		 * 
-		 * Required virtual method to draw or render PrimitiveBox.
+		 * Required virtual method to draw or render DrawingPrimitiveBox.
 		 *
 		 * @param box Box primitive to draw
 		 */
-		virtual void draw_box( PrimitiveBox *box ) = 0;
+		virtual void draw_box( DrawingPrimitiveBox *box ) = 0;
 
 
 		/**
 		 * Draw text primitive
 		 * 
-		 * Required virtual method to draw or render PrimitiveText.
+		 * Required virtual method to draw or render DrawingPrimitiveText.
 		 *
 		 * @param text Text primitive to draw
 		 */
-		virtual void draw_text( PrimitiveText *text ) = 0;
+		virtual void draw_text( DrawingPrimitiveText *text ) = 0;
 
 
 		/**
 		 * Draw ring primitive
 		 * 
-		 * Required virtual method to draw or render PrimitiveRing.
+		 * Required virtual method to draw or render DrawingPrimitiveRing.
 		 *
 		 * @param ring Ring primitive to draw
 		 */
-		virtual void draw_ring( PrimitiveRing *ring ) = 0;
+		virtual void draw_ring( DrawingPrimitiveRing *ring ) = 0;
 
 
 		/**
 		 * Draw hexagon primitive
 		 * 
-		 * Required virtual method to draw or render PrimitiveHexagon.
+		 * Required virtual method to draw or render DrawingPrimitiveHexagon.
 		 *
 		 * @param hexagon Hexagon primitive to draw
 		 */
-		virtual void draw_hexagon( PrimitiveHexagon *hexagon ) = 0;
+		virtual void draw_hexagon( DrawingPrimitiveHexagon *hexagon ) = 0;
 
 	};
 

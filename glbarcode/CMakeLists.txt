@@ -3,6 +3,7 @@ cmake_minimum_required (VERSION 2.8)
 project (lib CXX)
 
 set (PUBLIC_HEADERS
+  BarcodeFactory.h
   Barcode.h
   BarcodeOptions.h
   BarcodeCepnet.h
@@ -18,14 +19,14 @@ set (PUBLIC_HEADERS
   BarcodeUpcA.h
   BarcodeUpcBase.h
   Constants.h
-  Factory.h
-  Primitives.h
+  DrawingPrimitives.h
   RendererDebug.h
   Renderer.h
   RendererSvg.h
 )
 
 set (LIB_SOURCES
+  BarcodeFactory.cpp
   Barcode.cpp
   BarcodeOptions.cpp
   BarcodeCode39.cpp
@@ -39,8 +40,7 @@ set (LIB_SOURCES
   BarcodePostnet11.cpp
   BarcodeCepnet.cpp
   BarcodeOnecode.cpp
-  Factory.cpp
-  Primitives.cpp
+  DrawingPrimitives.cpp
   Renderer.cpp
   RendererSvg.cpp
 )

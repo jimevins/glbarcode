@@ -1,4 +1,4 @@
-/*  Primitives.cpp
+/*  DrawingPrimitives.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,13 +18,13 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "Primitives.h"
+#include "DrawingPrimitives.h"
 
 
 namespace glbarcode
 {
 
-	PrimitiveLine::PrimitiveLine( double x, double y, double w, double h )
+	DrawingPrimitiveLine::DrawingPrimitiveLine( double x, double y, double w, double h )
 	{
 		this->x = x;
 		this->y = y;
@@ -33,7 +33,7 @@ namespace glbarcode
 	}
 
 
-	PrimitiveBox::PrimitiveBox( double x, double y, double w, double h )
+	DrawingPrimitiveBox::DrawingPrimitiveBox( double x, double y, double w, double h )
 	{
 		this->x = x;
 		this->y = y;
@@ -42,7 +42,7 @@ namespace glbarcode
 	}
 
 
-	PrimitiveText::PrimitiveText( double x, double y, double fsize, std::string s )
+	DrawingPrimitiveText::DrawingPrimitiveText( double x, double y, double fsize, std::string s )
 	{
 		this->x     = x;
 		this->y     = y;
@@ -51,7 +51,7 @@ namespace glbarcode
 	}
 
 
-	PrimitiveRing::PrimitiveRing( double x, double y, double r, double lwidth )
+	DrawingPrimitiveRing::DrawingPrimitiveRing( double x, double y, double r, double lwidth )
 	{
 		this->x      = x;
 		this->y      = y;
@@ -60,7 +60,7 @@ namespace glbarcode
 	}
 
 
-	PrimitiveHexagon::PrimitiveHexagon( double x, double y, double h )
+	DrawingPrimitiveHexagon::DrawingPrimitiveHexagon( double x, double y, double h )
 	{
 		this->x = x;
 		this->y = y;

@@ -176,7 +176,7 @@ namespace glbarcode
 
 
 		/**
-		 * Add line drawing primitive (PrimitiveLine)
+		 * Add line drawing primitive (DrawingPrimitiveLine)
 		 *
 		 * Used by vectorize implementation.
 		 *
@@ -189,7 +189,7 @@ namespace glbarcode
 
 
 		/**
-		 * Add box drawing primitive (PrimitiveBox)
+		 * Add box drawing primitive (DrawingPrimitiveBox)
 		 *
 		 * Used by vectorize implementation.
 		 *
@@ -202,7 +202,7 @@ namespace glbarcode
 
 
 		/**
-		 * Add text drawing primitive (PrimitiveText)
+		 * Add text drawing primitive (DrawingPrimitiveText)
 		 *
 		 * Used by vectorize implementation.
 		 *
@@ -215,7 +215,7 @@ namespace glbarcode
 
 
 		/**
-		 * Add ring drawing primitive (PrimitiveRing)
+		 * Add ring drawing primitive (DrawingPrimitiveRing)
 		 *
 		 * Used by vectorize implementation.
 		 *
@@ -228,7 +228,7 @@ namespace glbarcode
 
 
 		/**
-		 * Add hexagon drawing primitive (PrimitiveHexagon)
+		 * Add hexagon drawing primitive (DrawingPrimitiveHexagon)
 		 *
 		 * Used by vectorize implementation.
 		 *

@@ -1,4 +1,4 @@
-/*  Primitives.h
+/*  DrawingPrimitives.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,8 +18,8 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glbarcode_Primitives_h
-#define glbarcode_Primitives_h
+#ifndef glbarcode_DrawingPrimitives_h
+#define glbarcode_DrawingPrimitives_h
 
 
 #include <string>
@@ -31,13 +31,13 @@ namespace glbarcode
 	/**
 	 * Base class for all drawing primitives
 	 */
-	class Primitive
+	class DrawingPrimitive
 	{
 	public:
 		/**
 		 * Destructor
 		 */
-		virtual ~Primitive() { }
+		virtual ~DrawingPrimitive() { }
 
 		double x;    /**< X coordinate of primitive's origin (points). */
 		double y;    /**< Y coordinate of primitive's origin (points). */
@@ -64,7 +64,7 @@ namespace glbarcode
 	 *
 	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
-	class PrimitiveLine : public Primitive
+	class DrawingPrimitiveLine : public DrawingPrimitive
 	{
 	public:
 		/**
@@ -75,7 +75,7 @@ namespace glbarcode
 		 * @param w Line width (points)
 		 * @param h Line height (points)
 		 */
-		PrimitiveLine( double x, double y, double w, double h );
+		DrawingPrimitiveLine( double x, double y, double w, double h );
 
 		double  w;    /**< Line width (points). */
 		double  h;    /**< Line length (points). */
@@ -102,7 +102,7 @@ namespace glbarcode
 	 *
 	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
-	class PrimitiveBox : public Primitive
+	class DrawingPrimitiveBox : public DrawingPrimitive
 	{
 	public:
 		/**
@@ -113,7 +113,7 @@ namespace glbarcode
 		 * @param w Width of box (points)
 		 * @param h Height of box (points)
 		 */
-		PrimitiveBox( double x, double y, double w, double h );
+		DrawingPrimitiveBox( double x, double y, double w, double h );
 
 		double  w;    /**< Width of box (points). */
 		double  h;    /**< Height of box (points). */
@@ -140,7 +140,7 @@ namespace glbarcode
 	 *
 	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
-	class PrimitiveText : public Primitive
+	class DrawingPrimitiveText : public DrawingPrimitive
 	{
 	public:
 		/**
@@ -151,7 +151,7 @@ namespace glbarcode
 		 * @param fsize Font size of text (points)
 		 * @param s Text
 		 */
-		PrimitiveText( double x, double y, double fsize, std::string s );
+		DrawingPrimitiveText( double x, double y, double fsize, std::string s );
 
 		double       fsize;    /**< Font size of text (points). */
 		std::string  s;        /**< Text. */
@@ -180,7 +180,7 @@ namespace glbarcode
 	 *
 	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
-	class PrimitiveRing : public Primitive
+	class DrawingPrimitiveRing : public DrawingPrimitive
 	{
 	public:
 		/**
@@ -191,7 +191,7 @@ namespace glbarcode
 		 * @param r Radius of ring (points)
 		 * @param lwidth Line width of ring (points)
 		 */
-		PrimitiveRing( double x, double y, double r, double lwidth );
+		DrawingPrimitiveRing( double x, double y, double r, double lwidth );
 
 		double  r;        /**< Radius of ring (points). */
 		double  lwidth;   /**< Line width of ring (points). */
@@ -222,7 +222,7 @@ namespace glbarcode
 	 *
 	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
-	class PrimitiveHexagon : public Primitive
+	class DrawingPrimitiveHexagon : public DrawingPrimitive
 	{
 	public:
 		/**
@@ -232,7 +232,7 @@ namespace glbarcode
 		 * @param y Y coordinate of hexagon's origin (points)
 		 * @param h Height of hexagon (points)
 		 */
-		PrimitiveHexagon( double x, double y, double h );
+		DrawingPrimitiveHexagon( double x, double y, double h );
 
 		double  h;    /**< Height of hexagon (points). */
 	};
@@ -240,4 +240,4 @@ namespace glbarcode
 }
 
 
-#endif // glbarcode_Primitives_h
+#endif // glbarcode_DrawingPrimitives_h

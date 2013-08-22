@@ -39,11 +39,11 @@ namespace glbarcode
 		void draw_begin( double w, double h );
 		void draw_end( void );
 
-		void draw_line( PrimitiveLine *line );
-		void draw_box( PrimitiveBox *box );
-		void draw_text( PrimitiveText *text );
-		void draw_ring( PrimitiveRing *ring );
-		void draw_hexagon( PrimitiveHexagon *hexagon );
+		void draw_line( DrawingPrimitiveLine *line );
+		void draw_box( DrawingPrimitiveBox *box );
+		void draw_text( DrawingPrimitiveText *text );
+		void draw_ring( DrawingPrimitiveRing *ring );
+		void draw_hexagon( DrawingPrimitiveHexagon *hexagon );
 	};
 
 }

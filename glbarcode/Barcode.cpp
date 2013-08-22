@@ -22,7 +22,7 @@
 
 #include <list>
 
-#include "Primitives.h"
+#include "DrawingPrimitives.h"
 
 
 namespace glbarcode
@@ -39,7 +39,7 @@ namespace glbarcode
 		bool                   m_empty_flag;      /**< Empty data flag */
 		bool                   m_data_valid_flag; /**< Valid data flag */
 
-		std::list<Primitive *> m_primitives;      /**< List of drawing primitives */
+		std::list<DrawingPrimitive *> m_primitives;      /**< List of drawing primitives */
 
 	};
 
@@ -52,7 +52,7 @@ namespace glbarcode
 
 	Barcode::~Barcode()
 	{
-		std::list<Primitive*>::iterator primitive;
+		std::list<DrawingPrimitive*>::iterator primitive;
 
 		for ( primitive = d->m_primitives.begin(); primitive != d->m_primitives.end(); primitive++ )
 		{
@@ -166,31 +166,31 @@ namespace glbarcode
 
 	void Barcode::add_line( double x, double y, double w, double h )
 	{
-		d->m_primitives.push_back( new PrimitiveLine( x, y, w, h ) );
+		d->m_primitives.push_back( new DrawingPrimitiveLine( x, y, w, h ) );
 	}
 
 
 	void Barcode::add_box( double x, double y, double w, double h )
 	{
-		d->m_primitives.push_back( new PrimitiveBox( x, y, w, h ) );
+		d->m_primitives.push_back( new DrawingPrimitiveBox( x, y, w, h ) );
 	}
 
 
 	void Barcode::add_text( double x, double y, double fsize, std::string s )
 	{
-		d->m_primitives.push_back( new PrimitiveText( x, y, fsize, s ) );
+		d->m_primitives.push_back( new DrawingPrimitiveText( x, y, fsize, s ) );
 	}
 
 
 	void Barcode::add_ring( double x, double y, double r, double lwidth )
 	{
-		d->m_primitives.push_back( new PrimitiveRing( x, y, r, lwidth ) );
+		d->m_primitives.push_back( new DrawingPrimitiveRing( x, y, r, lwidth ) );
 	}
 
 
 	void Barcode::add_hexagon( double x, double y, double h )
 	{
-		d->m_primitives.push_back( new PrimitiveHexagon( x, y, h ) );
+		d->m_primitives.push_back( new DrawingPrimitiveHexagon( x, y, h ) );
 	}
 
 
