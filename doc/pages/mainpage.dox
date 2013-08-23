@@ -1,0 +1,154 @@
+/**
+
+
+@mainpage Overview
+
+glbarcode++ is a C++ port of the glabels barcode library.
+
+
+@section usage Basic Usage
+
+@verbatim
+#include <glbarcode/BarcodeFactory.h>;
+#include <glbarcode/RendererSvg.h>;
+
+void example( const std::string & data )
+{
+        using namespace glbarcode;
+
+	/* Get singleton instance to barcode factory. */
+        BarcodeFactory *factory = BarcodeFactory().instance();
+
+        /* Create a "Code39" barcode object for data. */
+        Barcode *bc = factory->create_barcode( "code39", data, 0, 0,
+                                                BarcodeOptions()
+                                                  .checksum(true)
+                                                  .show_text(true) );
+
+        /* Render barcode to SVG on standard output. */
+        bc->render( RendererSvg() );
+
+        delete bc;
+}
+@endverbatim
+
+
+
+@section extending Extending glbarcode++
+
+
+@subsection new_barcode_types Implementing new barcode types
+
+The barcode subclass must implement the following virtual methods:
+<ul>
+	<li>glbarcode::Barcode::validate()
+	<li>glbarcode::Barcode::encode()
+	<li>glbarcode::Barcode::vectorize()
+</ul>
+The barcode subclass may also need to implement the following virtual methods:
+<ul>
+	<li>glbarcode::Barcode::preprocess()
+	<li>glbarcode::Barcode::prepare_text()
+</ul>
+
+
+@subsection implementing_renderers Implementing Renderers
+
+The internal structure of a glbarcode::Barcode contains a simple vectorized representation of the
+barcode.  This representation is simply a list of device-independent and barcode-type-independent
+drawing primitives.  New renderers can be created by simply extending the glbarcode::Renderer base class.  
+The glbarcode::Renderer baseclass simply traverses this list of drawing primitives and calls the
+appropriate virtual method to translate into native drawing commands for the target format or
+drawing context.
+
+The renderer must implement the following virtual methods:
+<ul>
+	<li>glbarcode::Renderer::draw_begin()
+	    Initialize drawing of barcode.
+	<li>glbarcode::Renderer::draw_end()
+	    Finalize drawing of barcode.
+	<li>glbarcode::Renderer::draw_line()
+	    Draw or render glbarcode::DrawingPrimitiveLine.
+	<li>glbarcode::Renderer::draw_box()
+	    Draw or render glbarcode::DrawingPrimitiveBox.
+	<li>glbarcode::Renderer::draw_text()
+	    Draw or render glbarcode::DrawingPrimitiveText.
+	<li>glbarcode::Renderer::draw_ring()
+	    Draw or render glbarcode::DrawingPrimitiveRing.
+	<li>glbarcode::Renderer::draw_hexagon()
+	    Draw or render glbarcode::DrawingPrimitiveHexagon.
+</ul>
+
+The following is a simple example of a renderer for a fictitious drawing library called "xxx":
+
+@verbatim
+#include "Renderer.h"
+
+#include <cstdio>
+#include <xxx.h>
+
+
+/**
+ * Xxx renderer implementation
+ */
+class RendererXxx : public Renderer
+{
+public:
+	RendererXxx( XxxContext & xc )
+	{
+		m_xc = xc;
+	}
+
+private:
+
+        void draw_begin( double w, double h )
+        {
+                xxx_open( m_xc, w, h );
+        }
+
+
+        void draw_end( void )
+        {
+                xxx_close( m_xc );
+        }
+
+
+        void draw_line( DrawingPrimitiveLine *line )
+        {
+                xxx_draw_line( m_xc, line->x + line->w/2, line->y, line->w, line->h );
+        }
+
+
+        void draw_box( DrawingPrimitiveBox *box )
+        {
+                xxx_draw_rect( m_xc, box->x, box->y, box->w, box->h );
+        }
+
+
+        void draw_text( DrawingPrimitiveText *text )
+        {
+                xxx_draw_text( m_xc, text->x, text->y, text->fsize, text->s.c_str() );
+        }
+
+
+        void draw_ring( DrawingPrimitiveRing *ring )
+        {
+                xxx_draw_circle( m_xc, ring->x, ring->y, ring->r, ring->lwidth );
+        }
+
+
+        void draw_hexagon( DrawingPrimitiveHexagon *hexagon )
+        {
+                xxx_draw_hexagon( m_xc, hexagon->x, hexagon->y, hexagon->h );
+        }
+
+
+	XxxContext & m_xc;
+
+};
+@endverbatim
+
+
+
+
+*/
