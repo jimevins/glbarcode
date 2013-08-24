@@ -66,7 +66,8 @@ namespace glbarcode
 	/*
 	 * EAN-13 Pre-process data before encoding, implements Barcode::preprocess()
 	 */
-	std::string BarcodeEan13::preprocess( std::string raw_data )
+	std::string BarcodeEan13::preprocess( std::string raw_data,
+					      BarcodeOptions const& options )
 	{
 		std::string cooked_data;
 

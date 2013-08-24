@@ -55,7 +55,8 @@ namespace glbarcode
 	private:
 		bool validate_digits( int n_digits );
 
-		std::string preprocess( std::string raw_data );
+		std::string preprocess( std::string           raw_data,
+					BarcodeOptions const& options );
 
 		void vectorize_text( std::string display_text,
 				     double size1, double size2,

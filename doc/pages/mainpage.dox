@@ -6,6 +6,19 @@
 glbarcode++ is a C++ port of the glabels barcode library.
 
 
+@image html example-code39.svg "Code39"
+@image html example-code39ext.svg "Extended Code39"
+@image html example-upc-a.svg "UPC-A"
+@image html example-ean-13.svg "EAN-13"
+@image html example-onecode.svg "Onecode"
+@image html example-postnet.svg "POSTNET"
+@image html example-postnet-5.svg "POSTNET-5"
+@image html example-postnet-9.svg "POSTNET-9"
+@image html example-postnet-11.svg "POSTNET-11"
+@image html example-cepnet.svg "CEPNET"
+
+
+
 @section usage Basic Usage
 
 @verbatim

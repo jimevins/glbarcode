@@ -11,6 +11,7 @@ link_directories(
   ${GLBARCODE_PP_SOURCE_DIR}/glbarcode
 )
 
+
 add_executable(test-debug-renderer
   test-debug-renderer.cpp
 )
@@ -18,6 +19,7 @@ add_executable(test-debug-renderer
 target_link_libraries(test-debug-renderer
   ${Lib_Name}
 )
+
 
 add_executable(test-svg-renderer
   test-svg-renderer.cpp

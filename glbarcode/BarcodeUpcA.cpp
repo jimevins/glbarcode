@@ -66,7 +66,8 @@ namespace glbarcode
 	/*
 	 * UPC-A Pre-process data before encoding, implements Barcode::preprocess()
 	 */
-	std::string BarcodeUpcA::preprocess( std::string raw_data )
+	std::string BarcodeUpcA::preprocess( std::string           raw_data,
+					     BarcodeOptions const& options )
 	{
 		std::string cooked_data;
 
