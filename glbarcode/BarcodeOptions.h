@@ -39,7 +39,7 @@ namespace glbarcode
 		 * 
 		 * @param from The value to copy to this object.
 		 */
-		BarcodeOptions(const BarcodeOptions& from);
+		BarcodeOptions( const BarcodeOptions& from );
 
 
 		/**
@@ -52,9 +52,9 @@ namespace glbarcode
 		 *
 		 * @param from The value to assign to this object.
 		 *
-		 * @return A reference to this object.
+		 * @returns A reference to this object.
 		 */
-		BarcodeOptions& operator=(const BarcodeOptions& from);  
+		BarcodeOptions& operator=( const BarcodeOptions& from );
 
 
 		/**

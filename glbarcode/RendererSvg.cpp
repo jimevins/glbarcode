@@ -30,19 +30,92 @@ using namespace glbarcode::Constants;
 namespace glbarcode
 {
 
+	struct RendererSvg::PrivateData
+	{
+		std::string filename;  /**< Output filename for SVG file */
+		FILE        *fp;
+	};
+
+
+	RendererSvg::RendererSvg()
+	{
+		d = new RendererSvg::PrivateData;
+
+		d->filename = "";
+	}
+
+
+	RendererSvg::RendererSvg( std::string filename )
+	{
+		d = new RendererSvg::PrivateData;
+
+		d->filename = filename;
+	}
+
+
+	RendererSvg::RendererSvg( const RendererSvg& from )
+	{
+		d = new RendererSvg::PrivateData;
+
+		*d = *from.d;
+	}
+
+
+	RendererSvg::~RendererSvg()
+	{
+		delete d;
+	}
+
+
+	RendererSvg& RendererSvg::operator=(const RendererSvg& from)
+	{
+		*d = *from.d;
+
+		return *this;
+	}
+
+
+	std::string RendererSvg::filename( void ) const
+	{
+		return d->filename;
+	}
+
+
+	RendererSvg& RendererSvg::filename( const std::string & filename )
+	{
+		d->filename = filename;
+
+		return *this;
+	}
+
+
 	void RendererSvg::draw_begin( double w, double h )
 	{
-		printf( "<?xml version=\"1.0\" standalone=\"no\"?>\n" );
-		printf( "<!-- Created with %s version %s (%s) -->\n",
+		if ( d->filename.empty() || ( d->filename == "-" ) )
+		{
+			d->fp = stdout;
+		}
+		else
+		{
+			d->fp = fopen( d->filename.c_str(), "w" );
+		}
+
+		fprintf( d->fp, "<?xml version=\"1.0\" standalone=\"no\"?>\n" );
+		fprintf( d->fp, "<!-- Created with %s version %s (%s) -->\n",
 			PACKAGE_NAME.c_str(), PACKAGE_VERSION.c_str(), PACKAGE_URL.c_str() );
-		printf( "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"%f\" height=\"%f\" >\n",
+		fprintf( d->fp, "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"%f\" height=\"%f\" >\n",
 			w, h );
 	}
 
 
 	void RendererSvg::draw_end( void )
 	{
-		printf( "</svg>\n" );
+		fprintf( d->fp, "</svg>\n" );
+
+		if ( !d->filename.empty() || ( d->filename != "-" ) )
+		{
+			fclose( d->fp );
+		}
 	}
 
 
@@ -50,35 +123,35 @@ namespace glbarcode
 	{
 		double x = line->x + line->w/2; /* Offset line origin by 1/2 line width. */
 
-		printf( "  <line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
+		fprintf( d->fp, "  <line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
 			x, line->y, x, line->y+line->h, line->w );
 	}
 
 
 	void RendererSvg::draw_box( DrawingPrimitiveBox *box )
 	{
-		printf( "  <rect x=\"%f\" y=\"%f\" width=\"%f\" height=\"%f\" style=\"fill:rgb(0,0,0)\" />\n",
+		fprintf( d->fp, "  <rect x=\"%f\" y=\"%f\" width=\"%f\" height=\"%f\" style=\"fill:rgb(0,0,0)\" />\n",
 			box->x, box->y, box->w, box->h );
 	}
 
 
 	void RendererSvg::draw_text( DrawingPrimitiveText *text )
 	{
-		printf( "  <text x=\"%f\" y=\"%f\" font-size=\"%f\" style=\"font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)\" >%s</text>\n",
+		fprintf( d->fp, "  <text x=\"%f\" y=\"%f\" font-size=\"%f\" style=\"font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)\" >%s</text>\n",
 			text->x, text->y+text->fsize, text->fsize, text->s.c_str() );
 	}
 
 
 	void RendererSvg::draw_ring( DrawingPrimitiveRing *ring )
 	{
-		printf( "  <circle cx=\"%f\" cy=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
+		fprintf( d->fp, "  <circle cx=\"%f\" cy=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
 			ring->x, ring->y, ring->r, ring->lwidth );
 	}
 
 
 	void RendererSvg::draw_hexagon( DrawingPrimitiveHexagon *hexagon )
 	{
-		printf( "  <polygon points=\"%f,%f %f,%f %f,%f %f,%f %f,%f %f,%f\" style=\"fill:rgb(0,0,0)\" />\n",
+		fprintf( d->fp, "  <polygon points=\"%f,%f %f,%f %f,%f %f,%f %f,%f %f,%f\" style=\"fill:rgb(0,0,0)\" />\n",
 			hexagon->x,                    hexagon->y,
 			hexagon->x + 0.433*hexagon->h, hexagon->y + 0.25*hexagon->h,
 			hexagon->x + 0.433*hexagon->h, hexagon->y + 0.75*hexagon->h,

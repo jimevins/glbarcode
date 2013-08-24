@@ -35,15 +35,73 @@ namespace glbarcode
 	 */
 	class RendererSvg : public Renderer
 	{
+	public:
+		/**
+		 * Default Constructor (output goes to stdout).
+		 */
+		RendererSvg();
+
+
+		/**
+		 * Constructor with output filename
+		 */
+		RendererSvg( std::string filename );
+
+
+		/**
+		 * Copy Constructor
+		 */
+		RendererSvg( const RendererSvg& from );
+
+
+		/**
+		 * Destructor
+		 */
+		virtual ~RendererSvg();
+
+
+		/** Assignment operator.
+		 *
+		 * @param from The value to assign to this object.
+		 *
+		 * @return A reference to this object.
+		 */
+		RendererSvg& operator=( const RendererSvg& from );
+
+
+		/** Get "filename" parameter
+		 *
+		 * @returns filename parameter
+		 */
+		std::string filename( void ) const;
+
+
+		/** Set "filename" parameter
+		 *
+		 * @param filename new value of the output filename
+		 * @returns reference to this RendererSvg object for parameter chaining
+		 */
+		RendererSvg& filename( const std::string & filename );
+
+
 	private:
+		/*
+		 * Virtual methods implemented by SVG renderer.
+		 */
 		void draw_begin( double w, double h );
 		void draw_end( void );
-
 		void draw_line( DrawingPrimitiveLine *line );
 		void draw_box( DrawingPrimitiveBox *box );
 		void draw_text( DrawingPrimitiveText *text );
 		void draw_ring( DrawingPrimitiveRing *ring );
 		void draw_hexagon( DrawingPrimitiveHexagon *hexagon );
+
+	private:
+		/**
+		 * Private data for SVG Renderer
+		 */
+		struct PrivateData;
+		PrivateData *d;
 	};
 
 }

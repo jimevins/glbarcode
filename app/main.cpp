@@ -52,6 +52,7 @@ void usage( std::list<std::string> supported_types )
 	std::cerr << "  -h, --height=H        request barcode height (points, 1 point = 1/72 inch)\n";
 	std::cerr << "  -x, --text            print text with barcode, if supported\n";
 	std::cerr << "  -c, --checksum        include checksum in barcode, if supported\n";
+	std::cerr << "  -o, --output=FILENAME set output filename\n";
 	//std::cerr << "  -r, --resolution=PPI  set resolution (Pixels per Inch) for bitmap outputs\n";
 
 
@@ -88,6 +89,7 @@ int main( int argc, char **argv )
 	bool        text_flag     = false;
 	bool        checksum_flag = false;
 	double      ppi           = 72;
+	std::string ofilename     = "-";
 
 	std::string data;
 
@@ -95,7 +97,7 @@ int main( int argc, char **argv )
 	/*
 	 * Option definitions for getopt_long()
 	 */
-	const char *short_options = "+t:w:h:xcr:";
+	const char *short_options = "+t:w:h:xcr:o:";
 
 	const struct option long_options[] = {
 		{ "type",       required_argument, NULL, 't' },
@@ -103,6 +105,7 @@ int main( int argc, char **argv )
 		{ "height",     required_argument, NULL, 'h' },
 		{ "text",       no_argument,       NULL, 'x' },
 		{ "checksum",   no_argument,       NULL, 'c' },
+		{ "output",     required_argument, NULL, 'o' },
 		{ "resolution", required_argument, NULL, 'r' },
 		{ "help",       no_argument,       NULL, 0 },
 		{ "usage",      no_argument,       NULL, 0 },
@@ -137,6 +140,9 @@ int main( int argc, char **argv )
 			break;
 		case 'h':
 			h = atof( optarg );
+			break;
+		case 'o':
+			ofilename = optarg;
 			break;
 		case 'r':
 			ppi = atof( optarg );
@@ -199,7 +205,7 @@ int main( int argc, char **argv )
 	 */
 	RendererSvg renderer;
 
-	bc->render( renderer );
+	bc->render( renderer.filename( ofilename ) );
 
 
 	/*
