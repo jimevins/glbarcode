@@ -39,6 +39,46 @@ void example( const std::string & data )
 
 @subsection new_barcode_types Implementing new barcode types
 
+@dot
+digraph init {
+	rankdir=LR;
+
+	node [shape=plaintext style=solid fontsize=8];
+	raw_data;
+	primitives [label="\"Drawing Primitives\""];
+
+	node [shape=box style=solid];
+	validate     [label=validate     URL="@ref glbarcode::Barcode::validate()"    ]; 
+	preprocess   [label=preprocess   URL="@ref glbarcode::Barcode::preprocess()"  ];
+	encode       [label=encode       URL="@ref glbarcode::Barcode::encode()"      ];
+	prepare_text [label=prepare_text URL="@ref glbarcode::Barcode::prepare_text()"];
+	vectorize    [label=vectorize    URL="@ref glbarcode::Barcode::vectorize()"   ];
+
+	node [shape=plaintext style=solid fontcolor="gray"];
+	null1 [label=""];
+	null2 [label=""];
+	step1 [label="Step 1"];
+	step2 [label="Step 2"];
+	step3 [label="Step 3"];
+	step4 [label="Step 4"];
+
+	{rank=same; step1 validate}
+	{rank=same; step2 preprocess}
+	{rank=same; step3 encode prepare_text}
+	{rank=same; step4 vectorize}
+
+	null1 -> step1 -> step2 -> step3 -> step4 -> null2 [style=solid color="gray"];
+
+	raw_data -> validate;
+	raw_data -> preprocess;
+	raw_data -> prepare_text;
+	preprocess -> encode [label=cooked_data fontsize=8];
+	encode -> vectorize [label=encoded_data fontsize=8];
+	prepare_text -> vectorize [label=display_text fontsize=8];
+	vectorize -> primitives;
+}
+@enddot
+
 The barcode subclass must implement the following virtual methods:
 <ul>
 	<li>glbarcode::Barcode::validate()
@@ -69,10 +109,13 @@ The renderer must implement the following virtual methods:
 	    Finalize drawing of barcode.
 	<li>glbarcode::Renderer::draw_line()
 	    Draw or render glbarcode::DrawingPrimitiveLine.
+	    @image html figure-primitive-line.svg "Line primitive properties"
 	<li>glbarcode::Renderer::draw_box()
 	    Draw or render glbarcode::DrawingPrimitiveBox.
+	    @image html figure-primitive-box.svg "Box primitive properties"
 	<li>glbarcode::Renderer::draw_text()
 	    Draw or render glbarcode::DrawingPrimitiveText.
+	    @image html figure-primitive-text.svg "Text primitive properties"
 	<li>glbarcode::Renderer::draw_ring()
 	    Draw or render glbarcode::DrawingPrimitiveRing.
 	<li>glbarcode::Renderer::draw_hexagon()
