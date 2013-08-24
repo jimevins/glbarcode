@@ -118,8 +118,10 @@ The renderer must implement the following virtual methods:
 	    @image html figure-primitive-text.svg "Text primitive properties"
 	<li>glbarcode::Renderer::draw_ring()
 	    Draw or render glbarcode::DrawingPrimitiveRing.
+	    @image html figure-primitive-ring.svg "Ring primitive properties"
 	<li>glbarcode::Renderer::draw_hexagon()
 	    Draw or render glbarcode::DrawingPrimitiveHexagon.
+	    @image html figure-primitive-hexagon.svg "Hexagon primitive properties"
 </ul>
 
 The following is a simple example of a renderer for a fictitious drawing library called "xxx":
