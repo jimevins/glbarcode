@@ -33,28 +33,28 @@ int main( int argc, char **argv )
 	/*
 	 * Code39
 	 */
-	bc = factory->create_barcode( "code39", "ABC123", 0, 0, options );
+	bc = factory->create_barcode( "code39", "ABC123", 216, 72, options );
 	bc->render( RendererSvg().filename( "example-code39.svg" ) );
 	delete bc;
 
 	/*
 	 * Extended Code39
 	 */
-	bc = factory->create_barcode( "code39ext", "Abc123", 0, 0, options );
+	bc = factory->create_barcode( "code39ext", "Abc123", 216, 72, options );
 	bc->render( RendererSvg().filename( "example-code39ext.svg" ) );
 	delete bc;
 
 	/*
 	 * UPC-A
 	 */
-	bc = factory->create_barcode( "upc-a", "12345678901", 0, 0, options );
+	bc = factory->create_barcode( "upc-a", "12345678901", 162, 81, options );
 	bc->render( RendererSvg().filename( "example-upc-a.svg" ) );
 	delete bc;
 
 	/*
 	 * EAN-13
 	 */
-	bc = factory->create_barcode( "ean-13", "123456789012", 0, 0, options );
+	bc = factory->create_barcode( "ean-13", "123456789012", 162, 81, options );
 	bc->render( RendererSvg().filename( "example-ean-13.svg" ) );
 	delete bc;
 

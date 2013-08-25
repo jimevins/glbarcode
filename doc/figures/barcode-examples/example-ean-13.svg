@@ -1,37 +1,37 @@
 <?xml version="1.0" standalone="no"?>
 <!-- Created with glbarcode++ version 0.0.0 (https://github.com/jimevins/test-glbarcode) -->
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="81.360000" height="51.680000" >
-  <line x1="6.840000" y1="0.000000" x2="6.840000" y2="46.180000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="8.280000" y1="0.000000" x2="8.280000" y2="46.180000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="10.440000" y1="0.000000" x2="10.440000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="12.960000" y1="0.000000" x2="12.960000" y2="40.680000" stroke-width="1.440000" style="stroke:rgb(0,0,0)" />
-  <line x1="15.840000" y1="0.000000" x2="15.840000" y2="40.680000" stroke-width="2.880000" style="stroke:rgb(0,0,0)" />
-  <line x1="18.360000" y1="0.000000" x2="18.360000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="21.240000" y1="0.000000" x2="21.240000" y2="40.680000" stroke-width="2.160000" style="stroke:rgb(0,0,0)" />
-  <line x1="23.400000" y1="0.000000" x2="23.400000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="25.200000" y1="0.000000" x2="25.200000" y2="40.680000" stroke-width="1.440000" style="stroke:rgb(0,0,0)" />
-  <line x1="28.440000" y1="0.000000" x2="28.440000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="32.040000" y1="0.000000" x2="32.040000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="33.480000" y1="0.000000" x2="33.480000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="35.640000" y1="0.000000" x2="35.640000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="38.520000" y1="0.000000" x2="38.520000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="39.960000" y1="0.000000" x2="39.960000" y2="46.180000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="41.400000" y1="0.000000" x2="41.400000" y2="46.180000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="42.840000" y1="0.000000" x2="42.840000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="45.000000" y1="0.000000" x2="45.000000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="48.600000" y1="0.000000" x2="48.600000" y2="40.680000" stroke-width="2.160000" style="stroke:rgb(0,0,0)" />
-  <line x1="50.760000" y1="0.000000" x2="50.760000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="53.640000" y1="0.000000" x2="53.640000" y2="40.680000" stroke-width="2.160000" style="stroke:rgb(0,0,0)" />
-  <line x1="56.520000" y1="0.000000" x2="56.520000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="58.320000" y1="0.000000" x2="58.320000" y2="40.680000" stroke-width="1.440000" style="stroke:rgb(0,0,0)" />
-  <line x1="61.200000" y1="0.000000" x2="61.200000" y2="40.680000" stroke-width="1.440000" style="stroke:rgb(0,0,0)" />
-  <line x1="63.360000" y1="0.000000" x2="63.360000" y2="40.680000" stroke-width="1.440000" style="stroke:rgb(0,0,0)" />
-  <line x1="65.520000" y1="0.000000" x2="65.520000" y2="40.680000" stroke-width="1.440000" style="stroke:rgb(0,0,0)" />
-  <line x1="68.040000" y1="0.000000" x2="68.040000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="70.200000" y1="0.000000" x2="70.200000" y2="40.680000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="73.080000" y1="0.000000" x2="73.080000" y2="46.180000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <line x1="74.520000" y1="0.000000" x2="74.520000" y2="46.180000" stroke-width="0.720000" style="stroke:rgb(0,0,0)" />
-  <text x="3.240000" y="48.805000" font-size="5.250000" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >1</text>
-  <text x="23.580000" y="49.680000" font-size="7.000000" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >234567</text>
-  <text x="57.780000" y="49.680000" font-size="7.000000" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >890128</text>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="162.000000" height="102.902655" >
+  <line x1="13.619469" y1="0.000000" x2="13.619469" y2="91.951327" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="16.486726" y1="0.000000" x2="16.486726" y2="91.951327" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="20.787611" y1="0.000000" x2="20.787611" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="25.805310" y1="0.000000" x2="25.805310" y2="81.000000" stroke-width="2.867257" style="stroke:rgb(0,0,0)" />
+  <line x1="31.539823" y1="0.000000" x2="31.539823" y2="81.000000" stroke-width="5.734513" style="stroke:rgb(0,0,0)" />
+  <line x1="36.557522" y1="0.000000" x2="36.557522" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="42.292035" y1="0.000000" x2="42.292035" y2="81.000000" stroke-width="4.300885" style="stroke:rgb(0,0,0)" />
+  <line x1="46.592920" y1="0.000000" x2="46.592920" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="50.176991" y1="0.000000" x2="50.176991" y2="81.000000" stroke-width="2.867257" style="stroke:rgb(0,0,0)" />
+  <line x1="56.628319" y1="0.000000" x2="56.628319" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="63.796460" y1="0.000000" x2="63.796460" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="66.663717" y1="0.000000" x2="66.663717" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="70.964602" y1="0.000000" x2="70.964602" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="76.699115" y1="0.000000" x2="76.699115" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="79.566372" y1="0.000000" x2="79.566372" y2="91.951327" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="82.433628" y1="0.000000" x2="82.433628" y2="91.951327" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="85.300885" y1="0.000000" x2="85.300885" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="89.601770" y1="0.000000" x2="89.601770" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="96.769912" y1="0.000000" x2="96.769912" y2="81.000000" stroke-width="4.300885" style="stroke:rgb(0,0,0)" />
+  <line x1="101.070796" y1="0.000000" x2="101.070796" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="106.805310" y1="0.000000" x2="106.805310" y2="81.000000" stroke-width="4.300885" style="stroke:rgb(0,0,0)" />
+  <line x1="112.539823" y1="0.000000" x2="112.539823" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="116.123894" y1="0.000000" x2="116.123894" y2="81.000000" stroke-width="2.867257" style="stroke:rgb(0,0,0)" />
+  <line x1="121.858407" y1="0.000000" x2="121.858407" y2="81.000000" stroke-width="2.867257" style="stroke:rgb(0,0,0)" />
+  <line x1="126.159292" y1="0.000000" x2="126.159292" y2="81.000000" stroke-width="2.867257" style="stroke:rgb(0,0,0)" />
+  <line x1="130.460177" y1="0.000000" x2="130.460177" y2="81.000000" stroke-width="2.867257" style="stroke:rgb(0,0,0)" />
+  <line x1="135.477876" y1="0.000000" x2="135.477876" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="139.778761" y1="0.000000" x2="139.778761" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="145.513274" y1="0.000000" x2="145.513274" y2="91.951327" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <line x1="148.380531" y1="0.000000" x2="148.380531" y2="91.951327" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
+  <text x="6.451327" y="97.178097" font-size="10.453540" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >1</text>
+  <text x="46.951327" y="98.920354" font-size="13.938053" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >234567</text>
+  <text x="115.048673" y="98.920354" font-size="13.938053" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >890128</text>
 </svg>

@@ -1,0 +1,34 @@
+/**
+
+
+@page usage Usage
+
+@section Basic Usage
+
+@verbatim
+#include <glbarcode/BarcodeFactory.h>;
+#include <glbarcode/RendererSvg.h>;
+
+void example( const std::string & data )
+{
+        using namespace glbarcode;
+
+	/* Get singleton instance to barcode factory. */
+        BarcodeFactory *factory = BarcodeFactory().instance();
+
+        /* Create a "Code39" barcode object for data. */
+        Barcode *bc = factory->create_barcode( "code39", data, 0, 0,
+                                                BarcodeOptions()
+                                                  .checksum(true)
+                                                  .show_text(true) );
+
+        /* Render barcode to SVG on standard output. */
+        bc->render( RendererSvg() );
+
+        delete bc;
+}
+@endverbatim
+
+
+
+*/
