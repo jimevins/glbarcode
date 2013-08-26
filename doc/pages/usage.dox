@@ -4,6 +4,7 @@
 @page usage Usage
 @tableofcontents
 
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 @section options Barcode Options
 
 The glbarcode::BarcodeOptions class is a collection of options that are supported by glbarcode++ barcode implementations.
@@ -39,6 +40,7 @@ bool text_flag = options.show_text(); /* Is the show_text option set? */
 
 
 
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 @section barcode_classes Concrete Barcode Classes
 
 Generating a barcode is accomplished by instantiating the appropriate concrete barcode class with given data, size and options.
@@ -83,6 +85,7 @@ where
 
 
 
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 @section the_factory The Barcode Factory
 
 Barcodes can also be instantiated using the glbarcode::BarcodeFactory barcode factory.  glbarcode::BarcodeFactory has only a singleton
@@ -145,6 +148,7 @@ where
    
 
 
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 @section rendering Renderering Barcodes
 
 Barcodes are rendered using the glbarcode::Barcode::render() method:
@@ -176,6 +180,7 @@ barcode->render( RendererSvg().filename( "example.svg" ) );
 
 
 
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 @section putting_together Putting It All Together
 
 The following simple program will create a Code39 barcode object encoding the data "EXAMPLE-123" and rendering it to an SVG file
@@ -187,5 +192,8 @@ This example will produce the following SVG file:
 
 @image html Example.svg Example.svg
 
+
+
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
 
 */
