@@ -3,32 +3,175 @@
 
 @page usage Usage
 
-@section Basic Usage
+
+@section options Barcode Options
+
+The glbarcode::BarcodeOptions class is a collection of options that are supported by glbarcode++ barcode implementations.
+Currently the following options are supported:
+
+@li @b show_text is a boolean option to control whether or not text is included in the final barcode rendering.  This option
+    is not honored by all barcode types.
+
+@li @b checksum is a boolean option to control whether or not a checksum or check digit is automatically generated for the barcode.
+    This option is not honored by all barcode types (i.e. this behaviour is mandatory for some barcode types).
+
+Options are set using the appropriate @a set accessor methods.  These @a set accessors are designed to allow chaining of multiple
+accessors as in the following example code:
 
 @verbatim
-#include <glbarcode/BarcodeFactory.h>;
-#include <glbarcode/RendererSvg.h>;
+using namespace glbarcode;
 
-void example( const std::string & data )
-{
-        using namespace glbarcode;
-
-	/* Get singleton instance to barcode factory. */
-        BarcodeFactory *factory = BarcodeFactory().instance();
-
-        /* Create a "Code39" barcode object for data. */
-        Barcode *bc = factory->create_barcode( "code39", data, 0, 0,
-                                                BarcodeOptions()
-                                                  .checksum(true)
-                                                  .show_text(true) );
-
-        /* Render barcode to SVG on standard output. */
-        bc->render( RendererSvg() );
-
-        delete bc;
-}
+/* Create and initialize options. */
+BarcodeOptions options = BarcodeOptions().checksum(true).show_text(true);
 @endverbatim
 
+Options can also be queried using the appropriate @a get accessors, as in the following example code:
+
+@verbatim
+bool = options.show_text(); /* Is the show_text option set? */
+@endverbatim
+
+
+
+@section barcode_classes Concrete Barcode Classes
+
+Generating a barcode is accomplished by instantiating the appropriate concrete barcode class with given data, size and options.
+These concrete classes are derived from the glbarcode::Barcode base class.  glbarcode++ currently includes the following concrete
+barcode classes:
+
+| Class                          | Symbology       | Type ID       | Notes       |
+|--------------------------------|-----------------|---------------|-------------|
+| glbarcode::BarcodeCode39       | Code39          | "code39"      | |
+| glbarcode::BarcodeCode39Ext    | Extended Code39 | "code39ext"   | Code39 with extended encoding to support full ASCII data. |
+| glbarcode::BarcodeUpcA         | UPC-A           | "upc-a"       | |
+| glbarcode::BarcodeEan13        | EAN-13          | "ean-13"      | |
+| glbarcode::BarcodeOnecode      | USPS ONECODE    | "onecode"     | |
+| glbarcode::BarcodePostnet      | USPS POSTNET    | "postnet"     | Supports all valid USPS data lengths: 5, 8 and 11. |
+| glbarcode::BarcodePostnet5     | USPS POSTNET-5  | "postnet-5"   | Only supports data length of 5 (ZIP only) |
+| glbarcode::BarcodePostnet9     | USPS POSTNET-9  | "postnet-9"   | Only supports data length of 9 (ZIP+4) |
+| glbarcode::BarcodePostnet11    | USPS POSTNET-11 | "postnet-11"  | Only supports data length of 11 (ZIP+4+DC) |
+| glbarcode::BarcodeCepnet       | CEPNET          | "cepnet"      | Brazilian Post barcode.  Based on USPS POSTNET. |
+
+Constructors for these barcode classes follow the same pattern:
+
+@verbatim
+glbarcode::BarcodeXxx( std::string                      data,
+                       double                           w,
+                       double                           h,
+                       glbarcode::BarcodeOptions const& options );
+@endverbatim
+
+where
+
+@li @c data is a @c string containing the raw barcode data to be encoded
+
+@li @c w is the requested width of the barcode in @a points (1 @a point = 1/72 @a inch).  This parameter is only a suggestion --
+    the actual width of the resulting barcode may differ due to requirements for minimum symbol sizes for the specific symbology
+    standard.  Setting w=0 will allow the barcode's height to be autosized based on a nominal symbol size.
+
+@li @c h is the requested height of the barcode in @a points (1 @a point = 1/72 @a inch).  This parameter is only a suggestion --
+    the actual height of the resulting barcode may differ due to requirements for minimum symbol sizes for the specific symbology
+    standard.  Setting w=0 will allow the barcode's height to be autosized based on a nominal symbol size.
+
+@li @c options is a glbarcode::BarcodeOptions object described @link options above @endlink.
+
+
+
+@section the_factory The Barcode Factory
+
+Barcodes can also be instantiated using the glbarcode::BarcodeFactory barcode factory.  glbarcode::BarcodeFactory has only a singleton
+instance which is accessed with the @c instance() method.  For example:
+
+@verbatim
+    using namespace glbarcode;
+
+    /* Get singleton instance to barcode factory. */
+    BarcodeFactory *factory = BarcodeFactory().instance();
+@endverbatim
+
+A list (@c const @c std::list<std::string>) of supported barcode types can be obtained with the @c get_supported_types() method.
+For example:
+
+@verbatim
+    std::list<std::string> supported_types = factory->get_supported_types();
+
+    std::list<std::string>::iterator type;
+
+    for ( type = supported_types.begin(); type != supported_types.end(); type++ )
+    {
+        std::cerr << "  " << *type << "\n";
+    }
+@endverbatim
+
+Finally, a barcode is instantiated using the @c create_barcode() method:
+
+@verbatim
+glbarcode::Barcode *
+glbarcode::BarcodeFactory::create_barcode( std::string                      type,
+                                           std::string                      data,
+                                           double                           w,
+                                           double                           h,
+                                           glbarcode::BarcodeOptions const& options );
+@endverbatim
+
+where
+
+@li @c type is a @c string containing a type ID.  See table in @ref barcode_classes.  Valid IDs can also be obtained using the
+    @c get_supported_types() method as described above.
+
+@li @c data is a @c string containing the raw barcode data to be encoded
+
+@li @c w is the requested width of the barcode in @a points (1 @a point = 1/72 @a inch).  This parameter is only a suggestion --
+    the actual width of the resulting barcode may differ due to requirements for minimum symbol sizes for the specific symbology
+    standard.  Setting w=0 will allow the barcode's height to be autosized based on a nominal symbol size.
+
+@li @c h is the requested height of the barcode in @a points (1 @a point = 1/72 @a inch).  This parameter is only a suggestion --
+    the actual height of the resulting barcode may differ due to requirements for minimum symbol sizes for the specific symbology
+    standard.  Setting w=0 will allow the barcode's height to be autosized based on a nominal symbol size.
+
+@li @c options is a glbarcode::BarcodeOptions object described @link options above @endlink.
+
+@li @b returns a pointer to an instantiation of a concrete barcode class or @c NULL if @c type is invalid.
+   
+
+
+@section rendering Renderering Barcodes
+
+Barcodes are rendered using the glbarcode::Barcode::render() method:
+
+@verbatim
+void glbarcode::Barcode::render( glbarcode::Renderer & renderer );
+@endverbatim
+
+where
+
+@li @c renderer is a glbarcode::Renderer.
+
+glbarcode++ currently provides the following renderers:
+
+| Class                    | Description          |
+|--------------------------|----------------------|
+| glbarcode::RendererDebug | A renderer that simply prints drawing information to @c stdout. |
+| glbarcode::RendererSvg   | Scalable Vector Graphics (SVG) renderer.  Can render to a given filename of to @c stdout. |
+
+For example, the following will render @c barcode to an SVG file named "example.svg":
+
+@verbatim
+    barcode->render( RendererSvg().filename( "example.svg" ) );
+@endverbatim
+
+
+
+@section putting_together Putting It All Together
+
+The following simple program will create a Code39 barcode object encoding the data "EXAMPLE-123" and rendering it to an SVG file
+named "Example.svg":
+
+@includelineno usage-example-1.cpp
+
+This example will produce the following SVG file:
+
+@image html Example.svg Example.svg
 
 
 */

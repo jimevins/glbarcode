@@ -1,27 +1,20 @@
 /**
+@mainpage
 
 
-@mainpage Overview
 
-@section Contents
+Introduction
+============
 
-- @link overview         Overview @endlink
- - @link intro            Introduction @endlink
- - @link supported_types  Supported Barcode Symbologies @endlink
- - @link license          glbarcode++ License @endlink
-- @link usage            Usage @endlink
-- @link extending        Extending glbarcode++ @endlink
-
-
-@section intro Introduction
-
-glbarcode++ is a free C++ library for generating barcodes.  The library is designed to be easily extended to support new barcode types and output formats.
+glbarcode++ is a free C++ library for generating barcodes.  It is a port of the original glbarcode library from
+<a href="http://glabels.org">gLabels</a>. The library is designed to be easily extended to support new barcode types and output formats.
 
 glbarcode++ is a C++ port of the glabels barcode library and is currently early in development.  Expect the API to be somewhat unstable in the 0.x series.
 
-@section supported_types Supported Barcode Symbologies
 
-glbarcode++ currently supports the followin barcode symbologies.
+Supported Symbologies
+---------------------
+glbarcode++ currently supports the following barcode symbologies.
 
 
 | Name             | Example                              | Data Length      | Data Format                    | Text\n Visible | Checksum\n Generated | Notes |
@@ -41,7 +34,22 @@ Notes
 1. Lowercase letters (`a`-`z`) are upshifted
 2. Spaces and dashes ('-') in input are ignored
 
-@section license glbarcode++ License
+
+Overview
+========
+
+This manual is divided into two parts, each of which is divided into separate sections.
+
+The first part is the general user manual:
+
+- @link usage Usage @endlink - This section describes the basic usage of the library.
+- @link extending Extending glbarcode++ @endlink - This section describes how to extend the functionality of the library.
+
+The second part is the detailed API reference:
+
+
+glbarcode++ License
+===================
 
 Copyright &copy; 2013 Jim Evins <evins\@snaught.com>
 
@@ -57,6 +65,7 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 
 You should have received a copy of the @link lgpl GNU Lesser General Public License@endlink
 along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
+
 
 
 
