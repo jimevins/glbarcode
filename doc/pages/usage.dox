@@ -28,7 +28,13 @@ BarcodeOptions options = BarcodeOptions().checksum(true).show_text(true);
 Options can also be queried using the appropriate @a get accessors, as in the following example code:
 
 @code{.cpp}
-    bool text_flag = options.show_text(); /* Is the show_text option set? */
+using namespace glbarcode;
+ 
+BarcodeOptions options;
+ 
+...
+ 
+bool text_flag = options.show_text(); /* Is the show_text option set? */
 @endcode
 
 
@@ -83,24 +89,28 @@ Barcodes can also be instantiated using the glbarcode::BarcodeFactory barcode fa
 instance which is accessed with the @c instance() method.  For example:
 
 @code{.cpp}
-    using namespace glbarcode;
+using namespace glbarcode;
  
-    /* Get singleton instance to barcode factory. */
-    BarcodeFactory *factory = BarcodeFactory().instance();
+/* Get singleton instance to barcode factory. */
+BarcodeFactory *factory = BarcodeFactory().instance();
 @endcode
 
 A list (@c const @c std::list<std::string>) of supported barcode types can be obtained with the @c get_supported_types() method.
 For example:
 
 @code{.cpp}
-    std::list<std::string> supported_types = factory->get_supported_types();
+using namespace glbarcode;
  
-    std::list<std::string>::iterator type;
+/* Get singleton instance to barcode factory. */
+BarcodeFactory *factory = BarcodeFactory().instance();
  
-    for ( type = supported_types.begin(); type != supported_types.end(); type++ )
-    {
-        std::cerr << "  " << *type << "\n";
-    }
+std::list<std::string> supported_types = factory->get_supported_types();
+std::list<std::string>::iterator type;
+ 
+for ( type = supported_types.begin(); type != supported_types.end(); type++ )
+{
+    std::cerr << "  " << *type << "\n";
+}
 @endcode
 
 Finally, a barcode is instantiated using the @c create_barcode() method:
@@ -157,7 +167,11 @@ glbarcode++ currently provides the following renderers:
 For example, the following will render @c barcode to an SVG file named "example.svg":
 
 @code{.cpp}
-    barcode->render( RendererSvg().filename( "example.svg" ) );
+using namespace glbarcode;
+ 
+Barcode *barcode = ...
+ 
+barcode->render( RendererSvg().filename( "example.svg" ) );
 @endcode
 
 
