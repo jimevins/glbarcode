@@ -1,4 +1,4 @@
-/*  generate-examples.cpp
+/*  generate-samples.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -34,69 +34,69 @@ int main( int argc, char **argv )
 	 * Code39
 	 */
 	bc = factory->create_barcode( "code39", "ABC123", 216, 72, options );
-	bc->render( RendererSvg().filename( "example-code39.svg" ) );
+	bc->render( RendererSvg().filename( "sample-code39.svg" ) );
 	delete bc;
 
 	/*
 	 * Extended Code39
 	 */
 	bc = factory->create_barcode( "code39ext", "Abc123", 216, 72, options );
-	bc->render( RendererSvg().filename( "example-code39ext.svg" ) );
+	bc->render( RendererSvg().filename( "sample-code39ext.svg" ) );
 	delete bc;
 
 	/*
 	 * UPC-A
 	 */
 	bc = factory->create_barcode( "upc-a", "12345678901", 162, 81, options );
-	bc->render( RendererSvg().filename( "example-upc-a.svg" ) );
+	bc->render( RendererSvg().filename( "sample-upc-a.svg" ) );
 	delete bc;
 
 	/*
 	 * EAN-13
 	 */
 	bc = factory->create_barcode( "ean-13", "123456789012", 162, 81, options );
-	bc->render( RendererSvg().filename( "example-ean-13.svg" ) );
+	bc->render( RendererSvg().filename( "sample-ean-13.svg" ) );
 	delete bc;
 
 	/*
 	 * POSTNET
 	 */
 	bc = factory->create_barcode( "postnet", "12345678901", 0, 0, options );
-	bc->render( RendererSvg().filename( "example-postnet.svg" ) );
+	bc->render( RendererSvg().filename( "sample-postnet.svg" ) );
 	delete bc;
 
 	/*
 	 * POSTNET-5
 	 */
 	bc = factory->create_barcode( "postnet-5", "12345", 0, 0, options );
-	bc->render( RendererSvg().filename( "example-postnet-5.svg" ) );
+	bc->render( RendererSvg().filename( "sample-postnet-5.svg" ) );
 	delete bc;
 
 	/*
 	 * POSTNET-9
 	 */
 	bc = factory->create_barcode( "postnet-9", "123456789", 0, 0, options );
-	bc->render( RendererSvg().filename( "example-postnet-9.svg" ) );
+	bc->render( RendererSvg().filename( "sample-postnet-9.svg" ) );
 	delete bc;
 
 	/*
 	 * POSTNET-11
 	 */
 	bc = factory->create_barcode( "postnet-11", "12345678901", 0, 0, options );
-	bc->render( RendererSvg().filename( "example-postnet-11.svg" ) );
+	bc->render( RendererSvg().filename( "sample-postnet-11.svg" ) );
 	delete bc;
 
 	/*
 	 * CEPNET
 	 */
 	bc = factory->create_barcode( "cepnet", "12345678", 0, 0, options );
-	bc->render( RendererSvg().filename( "example-cepnet.svg" ) );
+	bc->render( RendererSvg().filename( "sample-cepnet.svg" ) );
 	delete bc;
 
 	/*
 	 * ONECODE
 	 */
 	bc = factory->create_barcode( "onecode", "12345678901234567890", 0, 0, options );
-	bc->render( RendererSvg().filename( "example-onecode.svg" ) );
+	bc->render( RendererSvg().filename( "sample-onecode.svg" ) );
 	delete bc;
 }

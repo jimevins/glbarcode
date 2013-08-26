@@ -12,11 +12,11 @@ link_directories(
 )
 
 
-add_executable(generate-examples
-  generate-examples.cpp
+add_executable(generate-samples
+  generate-samples.cpp
 )
 
-target_link_libraries(generate-examples
+target_link_libraries(generate-samples
   ${Lib_Name}
 )
 

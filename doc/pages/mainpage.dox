@@ -19,16 +19,16 @@ glbarcode++ currently supports the following barcode symbologies.
 
 | Name             | Example                              | Data Length      | Data Format                    | Text\n Visible | Checksum\n Generated | Notes |
 |------------------|--------------------------------------|------------------|--------------------------------|:--------------:|:--------------------:|-------|
-|Code39            |@image html example-code39.svg ""     | Variable         | `A`-`Z`, `0`-`9`\n space\n special:`-.$/+%` | Optional       | Optional             | 1     |
-|Extended\n Code39 |@image html example-code39ext.svg ""  | Variable         | Full ASCII range\n (0-127)     | Optional       | Optional             |       |
-|UPC-A             |@image html example-upc-a.svg ""      | 11               | `0`-`9`                        | Always         | Always               |       |
-|EAN-13            |@image html example-ean-13.svg ""     | 12               | `0`-`9`                        | Always         | Always               |       |
-|ONECODE           |@image html example-onecode.svg ""    | 20, 25, 29 or 31 | `0`-`9`                        | Never          | Always               |       |
-|POSTNET           |@image html example-postnet.svg ""    | 5, 9 or 11       | `0`-`9`                        | Never          | Always               | 2     |
-|POSTNET-5         |@image html example-postnet-5.svg ""  | 5                | `0`-`9`                        | Never          | Always               | 2     |
-|POSTNET-9         |@image html example-postnet-9.svg ""  | 9                | `0`-`9`                        | Never          | Always               | 2     |
-|POSTNET-11        |@image html example-postnet-11.svg "" | 11               | `0`-`9`                        | Never          | Always               | 2     |
-|CEPNET            |@image html example-cepnet.svg ""     | 8                | `0`-`9`                        | Never          | Always               | 2     |
+|Code39            |@image html sample-code39.svg ""      | Variable         | `A`-`Z`, `0`-`9`\n space\n special:`-.$/+%` | Optional       | Optional             | 1     |
+|Extended\n Code39 |@image html sample-code39ext.svg ""   | Variable         | Full ASCII range\n (0-127)     | Optional       | Optional             |       |
+|UPC-A             |@image html sample-upc-a.svg ""       | 11               | `0`-`9`                        | Always         | Always               |       |
+|EAN-13            |@image html sample-ean-13.svg ""      | 12               | `0`-`9`                        | Always         | Always               |       |
+|ONECODE           |@image html sample-onecode.svg ""     | 20, 25, 29 or 31 | `0`-`9`                        | Never          | Always               |       |
+|POSTNET           |@image html sample-postnet.svg ""     | 5, 9 or 11       | `0`-`9`                        | Never          | Always               | 2     |
+|POSTNET-5         |@image html sample-postnet-5.svg ""   | 5                | `0`-`9`                        | Never          | Always               | 2     |
+|POSTNET-9         |@image html sample-postnet-9.svg ""   | 9                | `0`-`9`                        | Never          | Always               | 2     |
+|POSTNET-11        |@image html sample-postnet-11.svg ""  | 11               | `0`-`9`                        | Never          | Always               | 2     |
+|CEPNET            |@image html sample-cepnet.svg ""      | 8                | `0`-`9`                        | Never          | Always               | 2     |
 
 Notes
 1. Lowercase letters (`a`-`z`) are upshifted

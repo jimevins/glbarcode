@@ -744,7 +744,7 @@ EXAMPLE_RECURSIVE      = NO
 
 IMAGE_PATH             = \
 	@CMAKE_CURRENT_SOURCE_DIR@/figures \
-	@CMAKE_CURRENT_SOURCE_DIR@/figures/barcode-examples
+	@CMAKE_CURRENT_SOURCE_DIR@/figures/barcode-samples
 
 # The INPUT_FILTER tag can be used to specify a program that doxygen should
 # invoke to filter for each input file. Doxygen will invoke the filter program
