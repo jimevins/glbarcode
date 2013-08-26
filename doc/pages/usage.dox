@@ -18,18 +18,18 @@ Currently the following options are supported:
 Options are set using the appropriate @a set accessor methods.  These @a set accessors are designed to allow chaining of multiple
 accessors as in the following example code:
 
-@verbatim
+@code{.cpp}
 using namespace glbarcode;
-
+ 
 /* Create and initialize options. */
 BarcodeOptions options = BarcodeOptions().checksum(true).show_text(true);
-@endverbatim
+@endcode
 
 Options can also be queried using the appropriate @a get accessors, as in the following example code:
 
-@verbatim
-bool = options.show_text(); /* Is the show_text option set? */
-@endverbatim
+@code{.cpp}
+    bool text_flag = options.show_text(); /* Is the show_text option set? */
+@endcode
 
 
 
@@ -54,12 +54,12 @@ barcode classes:
 
 Constructors for these barcode classes follow the same pattern:
 
-@verbatim
+@code{.cpp}
 glbarcode::BarcodeXxx( std::string                      data,
                        double                           w,
                        double                           h,
                        glbarcode::BarcodeOptions const& options );
-@endverbatim
+@endcode
 
 where
 
@@ -82,37 +82,37 @@ where
 Barcodes can also be instantiated using the glbarcode::BarcodeFactory barcode factory.  glbarcode::BarcodeFactory has only a singleton
 instance which is accessed with the @c instance() method.  For example:
 
-@verbatim
+@code{.cpp}
     using namespace glbarcode;
-
+ 
     /* Get singleton instance to barcode factory. */
     BarcodeFactory *factory = BarcodeFactory().instance();
-@endverbatim
+@endcode
 
 A list (@c const @c std::list<std::string>) of supported barcode types can be obtained with the @c get_supported_types() method.
 For example:
 
-@verbatim
+@code{.cpp}
     std::list<std::string> supported_types = factory->get_supported_types();
-
+ 
     std::list<std::string>::iterator type;
-
+ 
     for ( type = supported_types.begin(); type != supported_types.end(); type++ )
     {
         std::cerr << "  " << *type << "\n";
     }
-@endverbatim
+@endcode
 
 Finally, a barcode is instantiated using the @c create_barcode() method:
 
-@verbatim
+@code{.cpp}
 glbarcode::Barcode *
 glbarcode::BarcodeFactory::create_barcode( std::string                      type,
                                            std::string                      data,
                                            double                           w,
                                            double                           h,
                                            glbarcode::BarcodeOptions const& options );
-@endverbatim
+@endcode
 
 where
 
@@ -139,9 +139,9 @@ where
 
 Barcodes are rendered using the glbarcode::Barcode::render() method:
 
-@verbatim
+@code{.cpp}
 void glbarcode::Barcode::render( glbarcode::Renderer & renderer );
-@endverbatim
+@endcode
 
 where
 
@@ -156,9 +156,9 @@ glbarcode++ currently provides the following renderers:
 
 For example, the following will render @c barcode to an SVG file named "example.svg":
 
-@verbatim
+@code{.cpp}
     barcode->render( RendererSvg().filename( "example.svg" ) );
-@endverbatim
+@endcode
 
 
 
