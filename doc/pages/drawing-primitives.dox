@@ -1,0 +1,81 @@
+/**
+
+
+@page drawing_primitives Drawing Primitives
+
+The main characteristic of glbarcode++ that contributes to its extensibility is that barcodes are internally represented in a
+symbology-independent and device independent format.  This format is a collection atomic drawing elements or "Drawing Primitives."
+
+All drawing primitives are derived from the glbarcode::DrawingPrimitive class.  This class provides the following properties:
+
+@li @c x -- X coordinate of the drawing primitives origin (@a points) as measured from the upper left corner of the barcode.
+@li @c y -- Y coordinate of the drawing primitives origin (@a points) as measured from the upper left corner of the barcode.
+
+
+
+Line Drawing Primitive
+----------------------
+
+The line primitive is the primary building block for 1-D barcodes and describes a simple vertical line.  It is represented by the
+glbarcode::DrawingPrimitiveLine class.  This class extends glbarcode::DrawingPrimitive and provides the following properties:
+
+@li @c w -- Line width (@a points)
+@li @c h -- Height or length of the line (@a points)
+
+The following illustrates these properties:
+
+@image html figure-primitive-line.svg "Line primitive properties"
+
+
+
+Box Drawing Primitive
+---------------------
+
+The box primitive is intended to be the primary building block for 2-D barcodes and describes a solid box.  It is represented by the
+glbarcode::DrawingPrimitiveBox class.  This class extends glbarcode::DrawingPrimitive and provides the following properties:
+
+@li @c w -- Box width (@a points)
+@li @c h -- Box height (@a points)
+
+The following illustrates these properties:
+
+@image html figure-primitive-box.svg "Box primitive properties"
+
+
+
+Text Drawing Primitive
+----------------------
+
+The line primitive is intended to provide a human readable text representing the encoded data.  It is represented by the
+glbarcode::DrawingPrimitiveText class.  This class extends glbarcode::DrawingPrimitive and provides the following properties:
+
+@li @c fsize -- Font size (@a points)
+@li @c s -- String containing the text to render
+
+The following illustrates these properties:
+
+@image html figure-primitive-text.svg "Text primitive properties"
+
+
+
+Ring Drawing Primitive
+----------------------
+
+The ring primitive is a special-purpose drawing element which is intended to be used by the Maxicode symbology, which is not currently
+implemented by glbarcode++.  This primitive exists because glabels supports it indirectly with its zint backend.
+
+@image html figure-primitive-ring.svg "Ring primitive properties"
+
+
+
+Hexagon Drawing Primitive
+-------------------------
+
+The hexagon primitive is a special-purpose drawing element which is intended to be used by the Maxicode symbology, which is not currently
+implemented by glbarcode++.  This primitive exists because glabels supports it indirectly with its zint backend.
+
+@image html figure-primitive-hexagon.svg "Hexagon primitive properties"
+
+
+
+*/
