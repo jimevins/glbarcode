@@ -1,0 +1,4 @@
+<map id="glbarcode::BarcodeUpcA" name="glbarcode::BarcodeUpcA">
+<area shape="rect" id="node2" href="$classglbarcode_1_1BarcodeUpcBase.html" title="{glbarcode::BarcodeUpcBase\n|# m_end_bars_thresh\l# m_end_bars_modules\l# m_first_digit_val\l|# validate_digits()\l# vectorize_text()\l}" alt="" coords="5,470,192,607"/>
+<area shape="rect" id="node4" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ render()\l+ is_empty()\l+ is_data_valid()\l+ width()\l+ height()\l# Barcode()\l# build()\l# validate()\l# preprocess()\l# encode()\l# prepare_text()\l# vectorize()\l# add_line()\l# add_box()\l# add_text()\l# add_ring()\l# add_hexagon()\l# set_width()\l# set_height()\l}" alt="" coords="32,6,165,421"/>
+</map>

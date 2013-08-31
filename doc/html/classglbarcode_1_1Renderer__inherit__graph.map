@@ -1,0 +1,4 @@
+<map id="glbarcode::Renderer" name="glbarcode::Renderer">
+<area shape="rect" id="node3" href="$classglbarcode_1_1RendererDebug.html" title="{glbarcode::RendererDebug\n||}" alt="" coords="5,313,181,399"/>
+<area shape="rect" id="node5" href="$classglbarcode_1_1RendererSvg.html" title="{glbarcode::RendererSvg\n||+ RendererSvg()\l+ RendererSvg()\l+ RendererSvg()\l+ ~RendererSvg()\l+ operator=()\l+ filename()\l+ filename()\l}" alt="" coords="205,261,368,451"/>
+</map>
