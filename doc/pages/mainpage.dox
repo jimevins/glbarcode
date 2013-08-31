@@ -42,10 +42,17 @@ This manual is divided into two parts, each of which is divided into separate se
 
 The first part is the general user manual:
 
-- @link usage Usage @endlink - This section describes the basic usage of the library.
-- @link extending Extending glbarcode++ @endlink - This section describes how to extend the functionality of the library.
+- @ref usage -- This section describes the basic usage of the library.
+- @ref extending -- This section describes how to extend the functionality of the library.
+  - @ref drawing_primitives -- This section describes the internal representation of atomic drawing elements of a barcode.
+  - @ref impl_barcodes -- This section describes how to implement new barcode types (or symbologies).
+  - @ref impl_renderers -- This section describes how to implement new renderers for different output formats.
+- @ref lgpl -- The glbarcode++ license (see below).
 
 The second part is the detailed API reference:
+
+- <a href="annotated.html">Class List</a>
+- <a href="files.html">Namespace List</a>
 
 
 glbarcode++ License

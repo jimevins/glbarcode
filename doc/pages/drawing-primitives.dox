@@ -4,7 +4,8 @@
 @page drawing_primitives Drawing Primitives
 
 The main characteristic of glbarcode++ that contributes to its extensibility is that barcodes are internally represented in a
-symbology-independent and device independent format.  This format is a collection atomic drawing elements or "Drawing Primitives."
+format that is independent of both symbology and output format.  This format is a collection atomic drawing elements or
+"Drawing Primitives."
 
 All drawing primitives are derived from the glbarcode::DrawingPrimitive class.  This class provides the following properties:
 

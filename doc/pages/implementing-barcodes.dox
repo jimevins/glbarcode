@@ -1,6 +1,6 @@
 /**
 
-@page impl_barcodes Implementing New Barcode Types
+@page impl_barcodes Implementing Barcodes
 
 
 Creating new barcode types (or symbologies) is accomplished by implementing a subclass of the abstract glbarcode::Barcode class.
@@ -33,14 +33,19 @@ A barcode subclass must implement the following virtual methods (or callbacks):
   Other encoding examples can be found in the existing barcode implementations.
 
 - glbarcode::Barcode::vectorize() -- The vectorize method converts the encoded data into a list of @ref drawing_primitives
-  drawing primitives @endref suitable for rendering.  The following protected methods are available to the vectorize implementation
-  to create this list:
+  suitable for rendering.  The following protected methods are available to the vectorize implementation to create this list:
 
   - glbarcode::Barcode::add_line()
   - glbarcode::Barcode::add_box()
   - glbarcode::Barcode::add_text()
   - glbarcode::Barcode::add_ring()
   - glbarcode::Barcode::add_hexagon()
+
+  Additionally, if the actual size of the vectorized barcode is different from the requested size, the vectorize method should
+  call the following methods:
+
+  - glbarcode::Barcode::set_width()
+  - glbarcode::Barcode::set_height()
 
 A barcode subclass may also need to implement the following virtual methods:
 
@@ -55,7 +60,7 @@ The following figure illustrates the data flow between these methods:
 
 @dot
 digraph init {
-	rankdir=LR;
+	rankdir=TD;
 
 	node [shape=plaintext style=solid fontsize=8];
 	raw_data;
@@ -63,6 +68,8 @@ digraph init {
 
 	node [shape=box style=solid];
 	validate     [label=validate     URL="@ref glbarcode::Barcode::validate()"    ]; 
+
+	node [shape=box style=solid];
 	preprocess   [label=preprocess   URL="@ref glbarcode::Barcode::preprocess()"  ];
 	encode       [label=encode       URL="@ref glbarcode::Barcode::encode()"      ];
 	prepare_text [label=prepare_text URL="@ref glbarcode::Barcode::prepare_text()"];
@@ -84,8 +91,8 @@ digraph init {
 	null1 -> step1 -> step2 -> step3 -> step4 -> null2 [style=solid color="gray"];
 
 	raw_data -> validate;
-	raw_data -> preprocess;
-	raw_data -> prepare_text;
+	validate -> preprocess;
+	validate -> prepare_text;
 	preprocess -> encode [label=cooked_data fontsize=8];
 	encode -> vectorize [label=encoded_data fontsize=8];
 	prepare_text -> vectorize [label=display_text fontsize=8];
@@ -98,9 +105,88 @@ digraph init {
 Constructors
 ------------
 
+Barcode implementations should implement a constructor with the following signature:
 
-Registering with Barcode Factory
---------------------------------
+@code{.cpp}
+BarcodeXxx( std::string                      data,
+	    double                           w,
+            double                           h,
+            glbarcode::BarcodeOptions const& options );
+@endcode
+
+This constructor should call the glbarcode::Barcode::build() method to do the actual initialization and building of the barcode:
+
+@code{.cpp}
+using namespace glbarcode;
+ 
+BarcodeXxx( std::string           data,
+	    double                w,
+            double                h,
+            BarcodeOptions const& options )
+{
+	build( data, w, h, options );
+}
+@endcode
+
+
+
+
+Registering With The Barcode Factory
+------------------------------------
+
+To be able to register a barcode type with the barcode factory, it must implement a static create method that returns a pointer to a
+newly allocated barcode:
+
+@code{.cpp}
+using namespace glbarcode;
+ 
+Barcode* BarcodeXxx::create( std::string           data,
+                             double                w,
+                             double                h,
+                             BarcodeOptions const& options )
+{
+        return new BarcodeXxx( data, w, h, options );
+}
+@endcode
+
+This is used to register the barcode using glbarcode::BarcodeFactory::register_type:
+
+@code{.cpp}
+using namespace glbarcode;
+ 
+BarcodeFactory::register_type( "xxx", &BarcodeXxx::create )
+@endcode
+
+
+Full Example
+------------
+
+As a complete example, the following is the glbarcode++ implementation of the Code39 barcode type.
+
+BarcodeCode39.h:
+@includelineno BarcodeCode39.h
+
+BarcodeCode39.cpp:
+@includelineno BarcodeCode39.cpp
+
+Finally, as a built-in barcode type, the Code39 barcode type is registered in the glbarcode::BarcodeFactory::init() method using the
+glbarcode::BarcodeFactory::register_type() method:
+
+@code
+#include <glbarcode/BarcodeCode39.h>
+ 
+namespace glbarcode
+{
+	...
+
+	void BarcodeFactory::init( void )
+	{
+		register_type( "code39",      &BarcodeCode39::create );
+		...
+	}
+ 
+}
+@endcode
 
 
 */

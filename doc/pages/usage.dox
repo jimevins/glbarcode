@@ -4,6 +4,7 @@
 @page usage Usage
 @tableofcontents
 
+
 <!-- -------------------------------------------------------------------------------------------------------------------------- -->
 @section options Barcode Options
 
@@ -112,7 +113,7 @@ std::list<std::string>::iterator type;
  
 for ( type = supported_types.begin(); type != supported_types.end(); type++ )
 {
-    std::cerr << "  " << *type << "\n";
+    std::cerr << *type << std::endl;
 }
 @endcode
 
@@ -120,7 +121,7 @@ Finally, a barcode is instantiated using the @c create_barcode() method:
 
 @code{.cpp}
 glbarcode::Barcode *
-glbarcode::BarcodeFactory::create_barcode( std::string                      type,
+glbarcode::BarcodeFactory::create_barcode( std::string                      type_id,
                                            std::string                      data,
                                            double                           w,
                                            double                           h,
@@ -129,7 +130,7 @@ glbarcode::BarcodeFactory::create_barcode( std::string                      type
 
 where
 
-@li @c type is a @c string containing a type ID.  See table in @ref barcode_classes.  Valid IDs can also be obtained using the
+@li @c type_id is a @c string containing a type ID.  See table in @ref barcode_classes.  Valid IDs can also be obtained using the
     @c get_supported_types() method as described above.
 
 @li @c data is a @c string containing the raw barcode data to be encoded
@@ -166,7 +167,7 @@ glbarcode++ currently provides the following renderers:
 | Class                    | Description          |
 |--------------------------|----------------------|
 | glbarcode::RendererDebug | A renderer that simply prints drawing information to @c stdout. |
-| glbarcode::RendererSvg   | Scalable Vector Graphics (SVG) renderer.  Can render to a given filename of to @c stdout. |
+| glbarcode::RendererSvg   | Scalable Vector Graphics (SVG) renderer.  Can render to a given filename or to @c stdout. |
 
 For example, the following will render @c barcode to an SVG file named "example.svg":
 
