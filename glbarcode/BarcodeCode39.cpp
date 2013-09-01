@@ -295,7 +295,7 @@ namespace glbarcode
 		if ( options.show_text() )
 		{
 			std::string starred_text = "*" + display_text + "*";
-			add_text( x_quiet + width/2, height + (h_text_area-text_size)/2, text_size, starred_text );
+			add_text( x_quiet + width/2, height + (h_text_area+0.7*text_size)/2, text_size, starred_text );
 		}
 
 		/* Overwrite requested size with actual size. */

@@ -255,8 +255,8 @@ namespace glbarcode
 		double text_x2_left  = 0.5*x_quiet;
 		double text_x2_right = 1.5*x_quiet + mscale*n_modules;
 
-		double text_y1       = h_bar2 - text_size1/2;
-		double text_y2       = h_bar2 - text_size2/2;
+		double text_y1       = h_bar2 + text_size1/4;
+		double text_y2       = h_bar2 + text_size2/4;
 
 
 		/* now traverse the code string and draw each bar */
@@ -267,7 +267,7 @@ namespace glbarcode
 		{
 			double h_bar;
 
-			if ( ( (x_modules > m_end_bars_modules)   && (x_modules < (n_modules/2-1))               ) ||
+			if ( ( (x_modules > m_end_bars_modules) && (x_modules < (n_modules/2-1))               ) ||
 			     ( (x_modules > (n_modules/2+1)) && (x_modules < (n_modules-m_end_bars_modules)) ) )
 			{
 				h_bar = h_bar1;

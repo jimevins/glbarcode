@@ -138,7 +138,7 @@ namespace glbarcode
 	void RendererSvg::draw_text( DrawingPrimitiveText *text )
 	{
 		fprintf( d->fp, "  <text x=\"%f\" y=\"%f\" font-size=\"%f\" style=\"font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)\" >%s</text>\n",
-			text->x, text->y+text->fsize, text->fsize, text->s.c_str() );
+			text->x, text->y, text->fsize, text->s.c_str() );
 	}
 
 
