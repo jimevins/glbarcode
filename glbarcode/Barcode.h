@@ -193,6 +193,8 @@ namespace glbarcode
 		 *
 		 * To be used by vectorize() implementations.
 		 *
+		 * @image html figure-primitive-line.svg "Line primitive properties"
+		 *
 		 * @param x X coordinate of line's origin (points)
 		 * @param y Y coordinate of line's origin (points)
 		 * @param w Bar width (points)
@@ -205,6 +207,8 @@ namespace glbarcode
 		 * Add box drawing primitive (DrawingPrimitiveBox)
 		 *
 		 * To be used by vectorize() implementations.
+		 *
+		 * @image html figure-primitive-box.svg "Box primitive properties"
 		 *
 		 * @param x X coordinate of box's origin (points)
 		 * @param y Y coordinate of box's origin (points)
@@ -219,6 +223,8 @@ namespace glbarcode
 		 *
 		 * To be used by vectorize() implementations.
 		 *
+		 * @image html figure-primitive-text.svg "Text primitive properties"
+		 *
 		 * @param x X coordinate of text's origin (points)
 		 * @param y Y coordinate of text's origin (points)
 		 * @param fsize Font size of text (points)
@@ -232,6 +238,8 @@ namespace glbarcode
 		 *
 		 * To be used by vectorize() implementations.
 		 *
+		 * @image html figure-primitive-ring.svg "Ring primitive properties"
+		 *
 		 * @param x X coordinate of ring's origin (points)
 		 * @param y Y coordinate of ring's origin (points)
 		 * @param r Radius of ring (points)
@@ -244,6 +252,8 @@ namespace glbarcode
 		 * Add hexagon drawing primitive (DrawingPrimitiveHexagon)
 		 *
 		 * To be used by vectorize() implementations.
+		 *
+		 * @image html figure-primitive-hexagon.svg "Hexagon primitive properties"
 		 *
 		 * @param x X coordinate of hexagon's origin (points)
 		 * @param y Y coordinate of hexagon's origin (points)

@@ -75,6 +75,8 @@ namespace glbarcode
 		 * 
 		 * Required virtual method to draw or render DrawingPrimitiveLine.
 		 *
+		 * @image html figure-primitive-line.svg "Line primitive properties"
+		 *
 		 * @param line Line primitive to draw
 		 */
 		virtual void draw_line( DrawingPrimitiveLine *line ) = 0;
@@ -84,6 +86,8 @@ namespace glbarcode
 		 * Draw box primitive.
 		 * 
 		 * Required virtual method to draw or render DrawingPrimitiveBox.
+		 *
+		 * @image html figure-primitive-box.svg "Box primitive properties"
 		 *
 		 * @param box Box primitive to draw
 		 */
@@ -95,6 +99,8 @@ namespace glbarcode
 		 * 
 		 * Required virtual method to draw or render DrawingPrimitiveText.
 		 *
+		 * @image html figure-primitive-text.svg "Text primitive properties"
+		 *
 		 * @param text Text primitive to draw
 		 */
 		virtual void draw_text( DrawingPrimitiveText *text ) = 0;
@@ -105,6 +111,8 @@ namespace glbarcode
 		 * 
 		 * Required virtual method to draw or render DrawingPrimitiveRing.
 		 *
+		 * @image html figure-primitive-ring.svg "Ring primitive properties"
+		 *
 		 * @param ring Ring primitive to draw
 		 */
 		virtual void draw_ring( DrawingPrimitiveRing *ring ) = 0;
@@ -114,6 +122,8 @@ namespace glbarcode
 		 * Draw hexagon primitive.
 		 * 
 		 * Required virtual method to draw or render DrawingPrimitiveHexagon.
+		 *
+		 * @image html figure-primitive-hexagon.svg "Hexagon primitive properties"
 		 *
 		 * @param hexagon Hexagon primitive to draw
 		 */

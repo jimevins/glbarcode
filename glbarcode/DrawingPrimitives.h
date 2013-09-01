@@ -51,22 +51,8 @@ namespace glbarcode
 	 *
 	 * A solid vertical line drawing primitive.
 	 *
+	 * @image html figure-primitive-line.svg "Line primitive properties"
 	 *
-	 *     @ =  origin (x,y) from top left corner of barcode
-	 *
-	 *              @-----+
-	 *              |     |
-	 *              |     |
-	 *              |     |
-	 *              |     | h
-	 *              |     |
-	 *              |     |
-	 *              |     |
-	 *              +-----+
-	 *                 w
-	 *
-	 *
-	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
 	class DrawingPrimitiveLine : public DrawingPrimitive
 	{
@@ -91,22 +77,8 @@ namespace glbarcode
 	 *
 	 * A solid box drawing primitive.
 	 *
+	 * @image html figure-primitive-box.svg "Box primitive properties"
 	 *
-	 *     @ =  origin (x,y) from top left corner of barcode
-	 *
-	 *              @---------+
-	 *              |         |
-	 *              |         |
-	 *              |         |
-	 *              |         | h
-	 *              |         |
-	 *              |         |
-	 *              |         |
-	 *              +---------+
-	 *                   w
-	 *
-	 *
-	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
 	class DrawingPrimitiveBox : public DrawingPrimitive
 	{
@@ -131,22 +103,8 @@ namespace glbarcode
 	 *
 	 * A character string drawing primitive.
 	 *
+	 * @image html figure-primitive-text.svg "Text primitive properties"
 	 *
-	 *     @ =  origin (x,y) from top left corner of barcode
-	 *
-	 *              ____        _  ------------------
-	 *             /    \      | |                  ^
-	 *            /  /\  \     | |                  |
-	 *           /  /__\  \    | |___     ____      |
-	 *          /  ______  \   | ._  \   /  __|     | ~fsize
-	 *         /  /      \  \  | |_)  | |  (__      |
-	 *        /__/        \__\ |_.___/   \____|     |
-	 *                                              v
-	 *                           @ ------------------
-	 *                           x = horizontal center
-	 *
-	 *
-	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
 	class DrawingPrimitiveText : public DrawingPrimitive
 	{
@@ -171,24 +129,8 @@ namespace glbarcode
 	 *
 	 * A ring (an open circle) drawing primitive.
 	 *
+	 * @image html figure-primitive-ring.svg "Ring primitive properties"
 	 *
-	 *     @ = origin (x,y) is centre of circle
-	 *
-	 *              lwidth
-	 *                |
-	 *                v
-	 *           _.-""""-._
-	 *         .'   ____   `.
-	 *        /   .'  ^ `.   \
-	 *       |   /        \   |
-	 *       |   |    @---|---|------
-	 *       |   \        /   |     |
-	 *        \   `.____.'   /      | r
-	 *         `._    ...._.'.......v
-	 *            `-....-'
-	 *
-	 *
-	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
 	class DrawingPrimitiveRing : public DrawingPrimitive
 	{
@@ -213,26 +155,8 @@ namespace glbarcode
 	 *
 	 * A solid regular hexagon (oriented with vertexes at top and bottom) drawing primitive.
 	 *
+	 * @image html figure-primitive-hexagon.svg "Hexagon primitive properties"
 	 *
-	 *     @ = origin (x,y) is top of hexagon
-	 *
-	 *                  @ ------------------
-	 *              _-"   "-_              ^
-	 *          _-"           "-_          |
-	 *       +"                   "+       |
-	 *       |                     |       |
-	 *       |                     |       |
-	 *       |                     |       | h
-	 *       |                     |       |
-	 *       |                     |       |
-	 *       +_                   _+       |
-	 *         "-_             _-"         |
-	 *            "-_       _-"            |
-	 *               "-_ _-"               v
-	 *                  " ------------------
-	 *
-	 *
-	 * All units are in points ( 1 point = 1/72 inch ).
 	 */
 	class DrawingPrimitiveHexagon : public DrawingPrimitive
 	{
