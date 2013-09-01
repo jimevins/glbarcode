@@ -179,6 +179,7 @@ namespace glbarcode
 		code += e_symbol;
 
 		/* Append a final zero length space to make the length of the encoded string even. */
+		/* This is because vectorize() handles bars and spaces in pairs. */
 		code += "0";
 
 		return code;
@@ -235,8 +236,10 @@ namespace glbarcode
 				scale = 1.0;
 			}
 		}
-		double width       = scale * BASE_MODULE_SIZE * (n_modules + 2*QUIET_MODULES);
-		double x_quiet     = scale * BASE_MODULE_SIZE * QUIET_MODULES;
+		double mscale = scale * BASE_MODULE_SIZE;
+
+		double width       = mscale * (n_modules + 2*QUIET_MODULES);
+		double x_quiet     = mscale * QUIET_MODULES;
 
 		/* determine bar height */
 		double h_text_area = scale * BASE_TEXT_AREA_HEIGHT;
@@ -247,10 +250,10 @@ namespace glbarcode
 		double text_size1    = scale * BASE_FONT_SIZE;
 		double text_size2    = 0.75*text_size1;
 
-		double text_x1_left  = scale * BASE_MODULE_SIZE * (QUIET_MODULES + 0.25*n_modules + m_end_bars_modules - 3);
-		double text_x1_right = scale * BASE_MODULE_SIZE * (QUIET_MODULES + 0.75*n_modules - m_end_bars_modules + 3);
-		double text_x2_left  = scale * BASE_MODULE_SIZE * 0.5*QUIET_MODULES;
-		double text_x2_right = scale * BASE_MODULE_SIZE * (n_modules + 1.5*QUIET_MODULES);
+		double text_x1_left  = x_quiet + mscale*(0.25*n_modules + 0.5*m_end_bars_modules - 0.75);
+		double text_x1_right = x_quiet + mscale*(0.75*n_modules - 0.5*m_end_bars_modules + 0.75);
+		double text_x2_left  = 0.5*x_quiet;
+		double text_x2_right = 1.5*x_quiet + mscale*n_modules;
 
 		double text_y1       = h_bar2 - text_size1/2;
 		double text_y2       = h_bar2 - text_size2/2;
@@ -259,13 +262,13 @@ namespace glbarcode
 		/* now traverse the code string and draw each bar */
 		int n_bars_spaces = coded_data.size() - 1; /* coded data has dummy "0" on end. */
 
-		double x1 = x_quiet;
+		double x_modules = 0;
 		for ( int i = 0; i < n_bars_spaces; i += 2 )
 		{
 			double h_bar;
 
-			if ( ( (i > m_end_bars_thresh)   && (i < (n_bars_spaces/2-1))               ) ||
-			     ( (i > (n_bars_spaces/2+1)) && (i < (n_bars_spaces-m_end_bars_thresh)) ) )
+			if ( ( (x_modules > m_end_bars_modules)   && (x_modules < (n_modules/2-1))               ) ||
+			     ( (x_modules > (n_modules/2+1)) && (x_modules < (n_modules-m_end_bars_modules)) ) )
 			{
 				h_bar = h_bar1;
 			}
@@ -276,12 +279,12 @@ namespace glbarcode
 
 			/* Bar */
 			int w_bar = coded_data[i] - '0';
-			add_line( x1, 0.0, w_bar*scale*BASE_MODULE_SIZE, h_bar );
-			x1 += w_bar * scale * BASE_MODULE_SIZE;
+			add_line( x_quiet + mscale*x_modules, 0.0, mscale*w_bar, h_bar );
+			x_modules += w_bar;
 
 			/* Space */
 			int w_space = coded_data[i+1] - '0';
-			x1 += w_space * scale * BASE_MODULE_SIZE;
+			x_modules += w_space;
 		}
 
 		/* draw text (call implementation from concrete class) */

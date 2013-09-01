@@ -47,7 +47,6 @@ namespace glbarcode
 				  double                h,
 				  BarcodeOptions const& options )
 	{
-		m_end_bars_thresh  = 7;
 		m_end_bars_modules = 7;
 
 		build( data, w, h, options );

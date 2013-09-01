@@ -61,9 +61,7 @@ namespace glbarcode
 				BarcodeOptions const& options );
 
 	protected:
-		int m_end_bars_thresh;
 		int m_end_bars_modules;
-
 		int m_first_digit_val;
 
 	private:
