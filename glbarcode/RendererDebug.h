@@ -31,7 +31,9 @@ namespace glbarcode
 {
 
 	/**
-	 * Simple text renderer for debug and testing
+	 * @class RendererDebug RendererDebug.h glbarcode/RendererDebug.h
+	 *
+	 * Simple text renderer for debug and testing.
 	 */
 	class RendererDebug : public Renderer
 	{

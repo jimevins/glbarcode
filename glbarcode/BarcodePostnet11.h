@@ -29,6 +29,8 @@ namespace glbarcode
 {
 
 	/**
+	 * @class BarcodePostnet11 BarcodePostnet11.h glbarcode/BarcodePostnet11.h
+	 *
 	 * Postnet-11 barcode (ZIP only), extends BarcodePostnet
 	 */
 	class BarcodePostnet11 : public BarcodePostnet

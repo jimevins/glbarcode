@@ -29,7 +29,9 @@ namespace glbarcode
 {
 
 	/**
-	 * Simple SVG Renderer
+	 * @class RendererSvg RendererSvg.h glbarcode/RendererSvg.h
+	 *
+	 * Simple SVG Renderer.
 	 *
 	 * Renders Scalable Vector Graphics format to stdout.
 	 */

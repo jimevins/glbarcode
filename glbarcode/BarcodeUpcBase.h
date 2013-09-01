@@ -29,6 +29,8 @@ namespace glbarcode
 {
 
 	/**
+	 * @class BarcodeUpcBase BarcodeUpcBase.h glbarcode/BarcodeUpcBase.h
+	 *
 	 * UpcBase barcode, base class for UPC-A and EAN-13 barcode types, implements Barcode
 	 */
 	class BarcodeUpcBase : public Barcode

@@ -31,13 +31,15 @@ namespace glbarcode
 {
 
 	/**
-	 * Base class for all renderers
+	 * @class Renderer Renderer.h glbarcode/Renderer.h
+	 *
+	 * Base class for all renderers.
 	 */
 	class Renderer
 	{
 	public:
 		/**
-		 * Render list of primitives
+		 * Render list of primitives.
 		 *
 		 * @param w Width of barcode bounding box (points)
 		 * @param h Height of barcode bounding box (points)
@@ -48,7 +50,7 @@ namespace glbarcode
 
 	protected:
 		/**
-		 * Draw begin
+		 * Draw begin.
 		 * 
 		 * Required virtual method to perform rendering setup, such as opening devices and/or
 		 * initializing drawing contexts.
@@ -60,7 +62,7 @@ namespace glbarcode
 
 
 		/**
-		 * Draw end
+		 * Draw end.
 		 * 
 		 * Required virtual method to perform rendering cleanup, such as closing devices
 		 * and/or drawing contexts.
@@ -69,7 +71,7 @@ namespace glbarcode
 
 
 		/**
-		 * Draw line primitive
+		 * Draw line primitive.
 		 * 
 		 * Required virtual method to draw or render DrawingPrimitiveLine.
 		 *
@@ -79,7 +81,7 @@ namespace glbarcode
 
 
 		/**
-		 * Draw box primitive
+		 * Draw box primitive.
 		 * 
 		 * Required virtual method to draw or render DrawingPrimitiveBox.
 		 *
@@ -89,7 +91,7 @@ namespace glbarcode
 
 
 		/**
-		 * Draw text primitive
+		 * Draw text primitive.
 		 * 
 		 * Required virtual method to draw or render DrawingPrimitiveText.
 		 *
@@ -99,7 +101,7 @@ namespace glbarcode
 
 
 		/**
-		 * Draw ring primitive
+		 * Draw ring primitive.
 		 * 
 		 * Required virtual method to draw or render DrawingPrimitiveRing.
 		 *
@@ -109,7 +111,7 @@ namespace glbarcode
 
 
 		/**
-		 * Draw hexagon primitive
+		 * Draw hexagon primitive.
 		 * 
 		 * Required virtual method to draw or render DrawingPrimitiveHexagon.
 		 *

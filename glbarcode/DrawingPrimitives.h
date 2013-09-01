@@ -29,6 +29,8 @@ namespace glbarcode
 {
 
 	/**
+	 * @class DrawingPrimitive DrawingPrimitives.h glbarcode/DrawingPrimitives.h
+	 *
 	 * Base class for all drawing primitives
 	 */
 	class DrawingPrimitive
@@ -45,6 +47,8 @@ namespace glbarcode
 
 
 	/**
+	 * @class DrawingPrimitiveLine DrawingPrimitives.h glbarcode/DrawingPrimitives.h
+	 *
 	 * A solid vertical line drawing primitive.
 	 *
 	 *
@@ -83,6 +87,8 @@ namespace glbarcode
 
 
 	/**
+	 * @class DrawingPrimitiveBox DrawingPrimitives.h glbarcode/DrawingPrimitives.h
+	 *
 	 * A solid box drawing primitive.
 	 *
 	 *
@@ -121,6 +127,8 @@ namespace glbarcode
 
 
 	/**
+	 * @class DrawingPrimitiveText DrawingPrimitives.h glbarcode/DrawingPrimitives.h
+	 *
 	 * A character string drawing primitive.
 	 *
 	 *
@@ -159,6 +167,8 @@ namespace glbarcode
 
 
 	/**
+	 * @class DrawingPrimitiveRing DrawingPrimitives.h glbarcode/DrawingPrimitives.h
+	 *
 	 * A ring (an open circle) drawing primitive.
 	 *
 	 *
@@ -199,6 +209,8 @@ namespace glbarcode
 
 
 	/**
+	 * @class DrawingPrimitiveHexagon DrawingPrimitives.h glbarcode/DrawingPrimitives.h
+	 *
 	 * A solid regular hexagon (oriented with vertexes at top and bottom) drawing primitive.
 	 *
 	 *

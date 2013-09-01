@@ -29,6 +29,8 @@ namespace glbarcode
 {
 
 	/**
+	 * @class BarcodeCode39 BarcodeCode39.h glbarcode/BarcodeCode39.h
+	 *
 	 * Code39 barcode, implements Barcode
 	 */
 	class BarcodeCode39 : public Barcode

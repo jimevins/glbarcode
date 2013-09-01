@@ -30,14 +30,16 @@
 namespace glbarcode
 {
 	/**
-	 * Barcode factory class
+	 * @class BarcodeFactory BarcodeFactory.h glbarcode/BarcodeFactory.h
+	 *
+	 * Singleton Barcode factory class.
 	 */
 	class BarcodeFactory
 	{
 
 	public:
 		/**
-		 * Barcode creation function signature
+		 * Barcode creation function signature.
 		 */
 		typedef Barcode* (*BarcodeCreateFct)(std::string           data,
 						     double                w,
@@ -46,7 +48,7 @@ namespace glbarcode
 
 	private:
 		/**
-		 * Map barcode type strings to creation functions
+		 * Map barcode type strings to creation functions.
 		 */
 		typedef std::map<std::string,BarcodeCreateFct> BarcodeTypeMap;
 
@@ -73,7 +75,7 @@ namespace glbarcode
 						BarcodeOptions const& options );
 
 		/**
-		 * Register barcode type
+		 * Register barcode type.
 		 *
 		 * @param type Barcode type string
 		 * @param fct Function to create barcode object of concrete Barcode class
@@ -87,24 +89,24 @@ namespace glbarcode
 
 
 		/**
-		 * Get list of supported types
+		 * Get list of supported types.
 		 */
 		static const std::list<std::string> get_supported_types( void );
 
 
 	private:
 		/**
-		 * Initialize factory by registering all built-in Barcode types
+		 * Initialize factory by registering all built-in Barcode types.
 		 */
 		static void init( void );
 
 		/**
-		 * Map barcode type strings to creation functions
+		 * Map barcode type strings to creation functions.
 		 */
 		static BarcodeTypeMap m_barcode_type_map;
 
 		/**
-		 * Supported barcode types
+		 * Supported barcode types.
 		 */
 		static std::list<std::string> m_supported_types;
 

@@ -29,6 +29,8 @@ namespace glbarcode
 {
 
 	/**
+	 * @class BarcodeUpcA BarcodeUpcA.h glbarcode/BarcodeUpcA.h
+	 *
 	 * UPC-A barcode, implements BarcodeUpcBase
 	 */
 	class BarcodeUpcA : public BarcodeUpcBase

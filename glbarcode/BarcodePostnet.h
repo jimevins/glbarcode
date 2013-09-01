@@ -29,6 +29,8 @@ namespace glbarcode
 {
 
 	/**
+	 * @class BarcodePostnet BarcodePostnet.h glbarcode/BarcodePostnet.h
+	 *
 	 * Postnet barcode (All USPS sizes: ZIP, ZIP+4, ZIP+4+DC), implements Barcode
 	 */
 	class BarcodePostnet : public Barcode

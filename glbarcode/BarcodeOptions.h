@@ -25,68 +25,73 @@
 namespace glbarcode
 {
 
+	/**
+	 * @class BarcodeOptions BarcodeOptions.h glbarcode/BarcodeOptions.h
+	 *
+	 * Collection of options for Barcode objects.
+	 */
 	class BarcodeOptions
 	{
 
 	public:
 		/**
-		 * Default onstructor
+		 * Default constructor.
 		 */
 		BarcodeOptions();
 
 
 		/** Copy constructor.
 		 * 
-		 * @param from The value to copy to this object.
+		 * @param from The value to copy to this object
 		 */
 		BarcodeOptions( const BarcodeOptions& from );
 
 
 		/**
-		 * Destructor
+		 * Destructor.
 		 */
 		virtual ~BarcodeOptions();
 
 
 		/** Assignment operator.
 		 *
-		 * @param from The value to assign to this object.
+		 * @param from The value to assign to this object
 		 *
-		 * @returns A reference to this object.
+		 * @returns A reference to this object
 		 */
 		BarcodeOptions& operator=( const BarcodeOptions& from );
 
 
 		/**
-		 * Set "show_text" parameter
+		 * Set accessor for "show_text" parameter.
 		 *
 		 * @param value Boolean value
-		 * @returns reference to this BarcodeOptions object for parameter chaining
+		 * @returns A reference to this BarcodeOptions object for parameter chaining
 		 */
 		BarcodeOptions& show_text( bool value );
 
 
 		/**
-		 * Get "show_text" parameter
+		 * Get accessor for "show_text" parameter.
 		 *
-		 * @returns value of boolean "show_text" parameter
+		 * @returns Value of boolean "show_text" parameter
 		 */
 		bool show_text( void ) const;
 
 
 		/**
-		 * Set "checksum" parameter
+		 * Set accessor for "checksum" parameter.
 		 *
 		 * @param value Boolean value
-		 * @returns reference to this BarcodeOptions object for parameter chaining
+		 * @returns A reference to this BarcodeOptions object for parameter chaining
 		 */
 		BarcodeOptions& checksum( bool value );
 
 
 		/**
-		 * Get "checksum" parameter
+		 * Get accessor for "checksum" parameter.
 		 *
-		 * @returns value of boolean "checksum" parameter
+		 * @returns Value of boolean "checksum" parameter
 		 */
 		bool checksum( void ) const;
 

@@ -32,53 +32,65 @@ namespace glbarcode
 {
 
 	/**
-	 * Base class for all barcode types
+	 * @class Barcode Barcode.h glbarcode/Barcode.h
+	 *
+	 * Base class for all barcode types.
 	 */
 	class Barcode
 	{
 
 	protected:
 		/**
-		 * Constructor
+		 * Default constructor.
 		 */
 		Barcode();
 
 
 	public:
 		/**
-		 * Destructor
+		 * Destructor.
 		 */
 		virtual ~Barcode();
 
 
 		/**
-		 * Render barcode using given Renderer object
+		 * Render barcode using given Renderer object.
 		 *
-		 * @param renderer a Renderer object
+		 * @param renderer A Renderer object
 		 */
 		void render( Renderer &renderer );
 
 
 		/**
 		 * Is barcode data empty?
+		 *
+		 * @return True if barcode data is empty
+		 * @return False if barcode data is not empty
 		 */
 		bool is_empty( void );
 
 
 		/**
 		 * Is barcode data valid?
+		 *
+		 * @return True if barcode data is valid
+		 * @return False if barcode data is not valid for implemented barcode type
 		 */
 		bool is_data_valid( void );
 
 
 		/**
-		 * Get actual width of barcode (may differ from requested width)
+		 * Get actual width of barcode (may differ from requested width).
+		 *
+		 * @return Actual width of barcode (points)
 		 */
 		double width( void );
 
 
 		/**
-		 * Get actual height of barcode (may differ from requested height)
+		 * Get actual height of barcode (may differ from requested height).
+		 *
+		 * @return Actual height of barcode (points)
 		 */
 		double height( void );
 
@@ -99,28 +111,29 @@ namespace glbarcode
 
 
 		/**
-		 * Validate barcode data
+		 * Validate barcode data.
 		 *
 		 * Required virtual method to test if data is valid for encoding with
 		 * barcode type.
 		 *
 		 * @param raw_data Data to validate
 		 * @param options Barcode options
-		 * @return true if data is valid data for barcode type
+		 * @return True if data is valid data for barcode type
+		 * @return False if data is not valid data for barcode type
 		 */
 		virtual bool validate( std::string           raw_data,
 				       BarcodeOptions const& options ) = 0;
 
 
 		/**
-		 * Preprocess barcode data
+		 * Preprocess barcode data.
 		 *
 		 * Optional virtual method to perform any transformation of the data needed
 		 * before encoding.  (E.g. encoding an extended alphabet into a simpler one).
 		 *
 		 * @param raw_data Data to preprocess
 		 * @param options Barcode options
-		 * @return preprocessed data
+		 * @return Preprocessed data
 		 */
 		virtual std::string preprocess( std::string           raw_data,
 						BarcodeOptions const& options );
@@ -135,7 +148,7 @@ namespace glbarcode
 		 *
 		 * @param cooked_data Data to encode
 		 * @param options Barcode options
-		 * @return encoded data
+		 * @return Encoded data
 		 */
 		virtual std::string encode( std::string           cooked_data,
 					    BarcodeOptions const& options ) = 0;
@@ -178,7 +191,7 @@ namespace glbarcode
 		/**
 		 * Add line drawing primitive (DrawingPrimitiveLine)
 		 *
-		 * Used by vectorize implementation.
+		 * To be used by vectorize() implementations.
 		 *
 		 * @param x X coordinate of line's origin (points)
 		 * @param y Y coordinate of line's origin (points)
@@ -191,7 +204,7 @@ namespace glbarcode
 		/**
 		 * Add box drawing primitive (DrawingPrimitiveBox)
 		 *
-		 * Used by vectorize implementation.
+		 * To be used by vectorize() implementations.
 		 *
 		 * @param x X coordinate of box's origin (points)
 		 * @param y Y coordinate of box's origin (points)
@@ -204,7 +217,7 @@ namespace glbarcode
 		/**
 		 * Add text drawing primitive (DrawingPrimitiveText)
 		 *
-		 * Used by vectorize implementation.
+		 * To be used by vectorize() implementations.
 		 *
 		 * @param x X coordinate of text's origin (points)
 		 * @param y Y coordinate of text's origin (points)
@@ -217,7 +230,7 @@ namespace glbarcode
 		/**
 		 * Add ring drawing primitive (DrawingPrimitiveRing)
 		 *
-		 * Used by vectorize implementation.
+		 * To be used by vectorize() implementations.
 		 *
 		 * @param x X coordinate of ring's origin (points)
 		 * @param y Y coordinate of ring's origin (points)
@@ -230,7 +243,7 @@ namespace glbarcode
 		/**
 		 * Add hexagon drawing primitive (DrawingPrimitiveHexagon)
 		 *
-		 * Used by vectorize implementation.
+		 * To be used by vectorize() implementations.
 		 *
 		 * @param x X coordinate of hexagon's origin (points)
 		 * @param y Y coordinate of hexagon's origin (points)
@@ -241,12 +254,20 @@ namespace glbarcode
 
 		/**
 		 * Set new width of barcode.
+		 *
+		 * To be used by vectorize() implementations to override requested width of barcode.
+		 *
+		 * @param w Actual width of barcode (points)
 		 */
 		void set_width( double w );
 
 
 		/**
 		 * Set new height of barcode.
+		 *
+		 * To be used by vectorize() implementations to override requested height of barcode.
+		 *
+		 * @param h Actual height of barcode (points)
 		 */
 		void set_height( double h );
 
