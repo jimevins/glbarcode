@@ -20,9 +20,10 @@ set (PUBLIC_HEADERS
   BarcodeUpcBase.h
   Constants.h
   DrawingPrimitives.h
-  RendererDebug.h
   Renderer.h
   RendererSvg.h
+  RendererEps.h
+  RendererDebug.h
 )
 
 set (LIB_SOURCES
@@ -43,6 +44,7 @@ set (LIB_SOURCES
   DrawingPrimitives.cpp
   Renderer.cpp
   RendererSvg.cpp
+  RendererEps.cpp
 )
 
 add_definitions (

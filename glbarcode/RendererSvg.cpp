@@ -102,9 +102,9 @@ namespace glbarcode
 
 		fprintf( d->fp, "<?xml version=\"1.0\" standalone=\"no\"?>\n" );
 		fprintf( d->fp, "<!-- Created with %s version %s (%s) -->\n",
-			PACKAGE_NAME.c_str(), PACKAGE_VERSION.c_str(), PACKAGE_URL.c_str() );
+			 PACKAGE_NAME.c_str(), PACKAGE_VERSION.c_str(), PACKAGE_URL.c_str() );
 		fprintf( d->fp, "<svg xmlns=\"http://www.w3.org/2000/svg\" version=\"1.1\" width=\"%f\" height=\"%f\" >\n",
-			w, h );
+			 w, h );
 	}
 
 
@@ -124,7 +124,7 @@ namespace glbarcode
 		double x = line->x + line->w/2; /* Offset line origin by 1/2 line width. */
 
 		fprintf( d->fp, "  <line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
-			x, line->y, x, line->y+line->h, line->w );
+			 x, line->y, x, line->y+line->h, line->w );
 	}
 
 
@@ -138,26 +138,26 @@ namespace glbarcode
 	void RendererSvg::draw_text( DrawingPrimitiveText *text )
 	{
 		fprintf( d->fp, "  <text x=\"%f\" y=\"%f\" font-size=\"%f\" style=\"font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)\" >%s</text>\n",
-			text->x, text->y, text->fsize, text->s.c_str() );
+			 text->x, text->y, text->fsize, text->s.c_str() );
 	}
 
 
 	void RendererSvg::draw_ring( DrawingPrimitiveRing *ring )
 	{
 		fprintf( d->fp, "  <circle cx=\"%f\" cy=\"%f\" r=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
-			ring->x, ring->y, ring->r, ring->lwidth );
+			 ring->x, ring->y, ring->r, ring->lwidth );
 	}
 
 
 	void RendererSvg::draw_hexagon( DrawingPrimitiveHexagon *hexagon )
 	{
 		fprintf( d->fp, "  <polygon points=\"%f,%f %f,%f %f,%f %f,%f %f,%f %f,%f\" style=\"fill:rgb(0,0,0)\" />\n",
-			hexagon->x,                    hexagon->y,
-			hexagon->x + 0.433*hexagon->h, hexagon->y + 0.25*hexagon->h,
-			hexagon->x + 0.433*hexagon->h, hexagon->y + 0.75*hexagon->h,
-			hexagon->x,                    hexagon->y +      hexagon->h,
-			hexagon->x - 0.433*hexagon->h, hexagon->y + 0.75*hexagon->h,
-			hexagon->x - 0.433*hexagon->h, hexagon->y + 0.25*hexagon->h );
+			 hexagon->x,                    hexagon->y,
+			 hexagon->x + 0.433*hexagon->h, hexagon->y + 0.25*hexagon->h,
+			 hexagon->x + 0.433*hexagon->h, hexagon->y + 0.75*hexagon->h,
+			 hexagon->x,                    hexagon->y +      hexagon->h,
+			 hexagon->x - 0.433*hexagon->h, hexagon->y + 0.75*hexagon->h,
+			 hexagon->x - 0.433*hexagon->h, hexagon->y + 0.25*hexagon->h );
 	}
 
 
