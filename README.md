@@ -14,6 +14,19 @@ A copy of the doxygen generated manual for glbarcode++ can be found
 [here](http://jimevins.github.io/glbarcode).
 
 
+Building
+--------
+
+glbarcode++ uses the cmake meta build system.  Use the following to build
+and install:
+
+    $ mkdir build
+    $ cd build
+    $ cmake /path/to/glbarcode/source
+    $ make
+    $ sudo make install
+
+
 glbarcode++ License
 -------------------
 
