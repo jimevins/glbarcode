@@ -144,7 +144,7 @@ namespace glbarcode
 
 	void RendererSvg::draw_ring( DrawingPrimitiveRing *ring )
 	{
-		fprintf( d->fp, "  <circle cx=\"%f\" cy=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
+		fprintf( d->fp, "  <circle cx=\"%f\" cy=\"%f\" r=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
 			ring->x, ring->y, ring->r, ring->lwidth );
 	}
 
