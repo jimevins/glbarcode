@@ -95,7 +95,7 @@ $(document).ready(function(){initNavTree('classglbarcode_1_1Renderer.html','');}
 </div><!--header-->
 <div class="contents">
 
-<p><code>#include &lt;<a class="el" href="Renderer_8h_source.html">Renderer.h</a>&gt;</code></p>
+<p><code>#include &lt;<a class="el" href="Renderer_8h_source.html">glbarcode/Renderer.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for glbarcode::Renderer:</div>
 <div class="dyncontent">
@@ -107,8 +107,6 @@ Inheritance diagram for glbarcode::Renderer:</div>
 Collaboration diagram for glbarcode::Renderer:</div>
 <div class="dyncontent">
 <div class="center"><img src="classglbarcode_1_1Renderer__coll__graph.png" border="0" usemap="#glbarcode_1_1Renderer_coll__map" alt="Collaboration graph"/></div>
-<map name="glbarcode_1_1Renderer_coll__map" id="glbarcode_1_1Renderer_coll__map">
-</map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -134,7 +132,7 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a7e942eed2fc4ff9e751be9f9117ae878"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Base class for all renderers </p>
+<div class="textblock"><p>Base class for all renderers. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a02686ab992f644a3b143497a3c753ebc"></a>
 <div class="memitem">
@@ -167,7 +165,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draw begin</p>
+<p>Draw begin.</p>
 <p>Required virtual method to perform rendering setup, such as opening devices and/or initializing drawing contexts.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
@@ -200,9 +198,13 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draw box primitive</p>
+<p>Draw box primitive.</p>
 <p>Required virtual method to draw or render <a class="el" href="classglbarcode_1_1DrawingPrimitiveBox.html">DrawingPrimitiveBox</a>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="image">
+<img src="figure-primitive-box.svg" alt="figure-primitive-box.svg"/>
+<div class="caption">
+Box primitive properties</div></div>
+ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">box</td><td>Box primitive to draw </td></tr>
   </table>
@@ -232,7 +234,7 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draw end</p>
+<p>Draw end.</p>
 <p>Required virtual method to perform rendering cleanup, such as closing devices and/or drawing contexts. </p>
 
 </div>
@@ -258,9 +260,13 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draw hexagon primitive</p>
+<p>Draw hexagon primitive.</p>
 <p>Required virtual method to draw or render <a class="el" href="classglbarcode_1_1DrawingPrimitiveHexagon.html">DrawingPrimitiveHexagon</a>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="image">
+<img src="figure-primitive-hexagon.svg" alt="figure-primitive-hexagon.svg"/>
+<div class="caption">
+Hexagon primitive properties</div></div>
+ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">hexagon</td><td>Hexagon primitive to draw </td></tr>
   </table>
@@ -290,9 +296,13 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draw line primitive</p>
+<p>Draw line primitive.</p>
 <p>Required virtual method to draw or render <a class="el" href="classglbarcode_1_1DrawingPrimitiveLine.html">DrawingPrimitiveLine</a>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="image">
+<img src="figure-primitive-line.svg" alt="figure-primitive-line.svg"/>
+<div class="caption">
+Line primitive properties</div></div>
+ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">line</td><td>Line primitive to draw </td></tr>
   </table>
@@ -322,9 +332,13 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draw ring primitive</p>
+<p>Draw ring primitive.</p>
 <p>Required virtual method to draw or render <a class="el" href="classglbarcode_1_1DrawingPrimitiveRing.html">DrawingPrimitiveRing</a>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="image">
+<img src="figure-primitive-ring.svg" alt="figure-primitive-ring.svg"/>
+<div class="caption">
+Ring primitive properties</div></div>
+ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">ring</td><td>Ring primitive to draw </td></tr>
   </table>
@@ -354,9 +368,13 @@ Protected Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Draw text primitive</p>
+<p>Draw text primitive.</p>
 <p>Required virtual method to draw or render <a class="el" href="classglbarcode_1_1DrawingPrimitiveText.html">DrawingPrimitiveText</a>.</p>
-<dl class="params"><dt>Parameters</dt><dd>
+<div class="image">
+<img src="figure-primitive-text.svg" alt="figure-primitive-text.svg"/>
+<div class="caption">
+Text primitive properties</div></div>
+ <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">text</td><td>Text primitive to draw </td></tr>
   </table>
@@ -394,7 +412,7 @@ Protected Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<p>Render list of primitives</p>
+<p>Render list of primitives.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">w</td><td>Width of barcode bounding box (points) </td></tr>
@@ -407,8 +425,8 @@ Protected Member Functions</h2></td></tr>
 </div>
 </div>
 <hr/>The documentation for this class was generated from the following files:<ul>
-<li>/home/evins/glbarcode/glbarcode/<a class="el" href="Renderer_8h_source.html">Renderer.h</a></li>
-<li>/home/evins/glbarcode/glbarcode/<a class="el" href="Renderer_8cpp.html">Renderer.cpp</a></li>
+<li><a class="el" href="Renderer_8h_source.html">Renderer.h</a></li>
+<li><a class="el" href="Renderer_8cpp.html">Renderer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -416,7 +434,7 @@ Protected Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceglbarcode.html">glbarcode</a></li><li class="navelem"><a class="el" href="classglbarcode_1_1Renderer.html">Renderer</a></li>
-    <li class="footer">Generated on Sat Aug 31 2013 17:01:34 for glbarcode++ by
+    <li class="footer">Generated on Sun Sep 1 2013 18:08:23 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

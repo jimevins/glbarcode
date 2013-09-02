@@ -2,7 +2,7 @@
 <area shape="rect" id="node3" href="$classglbarcode_1_1BarcodeCode39.html" title="{glbarcode::BarcodeCode39\n||+ BarcodeCode39()\l+ create()\l# BarcodeCode39()\l}" alt="" coords="124,479,303,599"/>
 <area shape="rect" id="node7" href="$classglbarcode_1_1BarcodeOnecode.html" title="{glbarcode::BarcodeOnecode\n||+ BarcodeOnecode()\l+ create()\l}" alt="" coords="329,487,516,590"/>
 <area shape="rect" id="node9" href="$classglbarcode_1_1BarcodePostnet.html" title="{glbarcode::BarcodePostnet\n||+ BarcodePostnet()\l+ create()\l# BarcodePostnet()\l# validate_digits()\l}" alt="" coords="540,470,719,607"/>
-<area shape="rect" id="node19" href="$classglbarcode_1_1BarcodeUpcBase.html" title="{glbarcode::BarcodeUpcBase\n|# m_end_bars_thresh\l# m_end_bars_modules\l# m_first_digit_val\l|# validate_digits()\l# vectorize_text()\l}" alt="" coords="1056,470,1243,607"/>
+<area shape="rect" id="node19" href="$classglbarcode_1_1BarcodeUpcBase.html" title="{glbarcode::BarcodeUpcBase\n|# m_end_bars_modules\l# m_first_digit_val\l|# validate_digits()\l# vectorize_text()\l}" alt="" coords="1056,479,1243,599"/>
 <area shape="rect" id="node5" href="$classglbarcode_1_1BarcodeCode39Ext.html" title="{glbarcode::BarcodeCode39Ext\n||+ BarcodeCode39Ext()\l+ create()\l}" alt="" coords="5,657,203,759"/>
 <area shape="rect" id="node11" href="$classglbarcode_1_1BarcodeCepnet.html" title="{glbarcode::BarcodeCepnet\n||+ BarcodeCepnet()\l+ create()\l}" alt="" coords="227,657,403,759"/>
 <area shape="rect" id="node13" href="$classglbarcode_1_1BarcodePostnet11.html" title="{glbarcode::BarcodePostnet11\n||+ BarcodePostnet11()\l+ create()\l}" alt="" coords="427,657,619,759"/>

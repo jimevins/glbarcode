@@ -1,5 +1,5 @@
 <map id="glbarcode::BarcodeUpcBase" name="glbarcode::BarcodeUpcBase">
-<area shape="rect" id="node5" href="$classglbarcode_1_1BarcodeEan13.html" title="{glbarcode::BarcodeEan13\n||+ BarcodeEan13()\l+ create()\l}" alt="" coords="5,657,176,759"/>
-<area shape="rect" id="node7" href="$classglbarcode_1_1BarcodeUpcA.html" title="{glbarcode::BarcodeUpcA\n||+ BarcodeUpcA()\l+ create()\l}" alt="" coords="200,657,365,759"/>
+<area shape="rect" id="node5" href="$classglbarcode_1_1BarcodeEan13.html" title="{glbarcode::BarcodeEan13\n||+ BarcodeEan13()\l+ create()\l}" alt="" coords="5,638,176,741"/>
+<area shape="rect" id="node7" href="$classglbarcode_1_1BarcodeUpcA.html" title="{glbarcode::BarcodeUpcA\n||+ BarcodeUpcA()\l+ create()\l}" alt="" coords="200,638,365,741"/>
 <area shape="rect" id="node2" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ render()\l+ is_empty()\l+ is_data_valid()\l+ width()\l+ height()\l# Barcode()\l# build()\l# validate()\l# preprocess()\l# encode()\l# prepare_text()\l# vectorize()\l# add_line()\l# add_box()\l# add_text()\l# add_ring()\l# add_hexagon()\l# set_width()\l# set_height()\l}" alt="" coords="120,6,253,421"/>
 </map>

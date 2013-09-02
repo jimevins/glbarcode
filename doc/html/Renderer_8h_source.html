@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>glbarcode++: /home/evins/glbarcode/glbarcode/Renderer.h Source File</title>
+<title>glbarcode++: Renderer.h Source File</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -122,45 +122,45 @@ $(document).ready(function(){initNavTree('Renderer_8h_source.html','');});
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">namespace </span>glbarcode</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;{</div>
 <div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno"><a class="code" href="classglbarcode_1_1Renderer.html">   36</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classglbarcode_1_1Renderer.html">Renderer</a></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a37e7873fca4b84b2b4688f7f19190579">render</a>( <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h, std::list&lt;DrawingPrimitive*&gt; primitives );</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a02686ab992f644a3b143497a3c753ebc">draw_begin</a>( <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h ) = 0;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a4ff963d0d0966a35945ecdb4725923ae">draw_end</a>( <span class="keywordtype">void</span> ) = 0;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a5b5b7dd70d4a827d67146ecaf4cc4f65">draw_line</a>( <a class="code" href="classglbarcode_1_1DrawingPrimitiveLine.html">DrawingPrimitiveLine</a> *line ) = 0;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#aa550d8f0aaee3dc0c136354a2ae882a2">draw_box</a>( <a class="code" href="classglbarcode_1_1DrawingPrimitiveBox.html">DrawingPrimitiveBox</a> *box ) = 0;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a04713f8e2141c3cccd84d3014d0d230d">draw_text</a>( <a class="code" href="classglbarcode_1_1DrawingPrimitiveText.html">DrawingPrimitiveText</a> *text ) = 0;</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#ae409042fce38fa929a7ac4f2a230286f">draw_ring</a>( <a class="code" href="classglbarcode_1_1DrawingPrimitiveRing.html">DrawingPrimitiveRing</a> *ring ) = 0;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a7e942eed2fc4ff9e751be9f9117ae878">draw_hexagon</a>( <a class="code" href="classglbarcode_1_1DrawingPrimitiveHexagon.html">DrawingPrimitiveHexagon</a> *hexagon ) = 0;</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="code" href="classglbarcode_1_1Renderer.html">   38</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classglbarcode_1_1Renderer.html">Renderer</a></div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        {</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a37e7873fca4b84b2b4688f7f19190579">render</a>( <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h, std::list&lt;DrawingPrimitive*&gt; primitives );</div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a02686ab992f644a3b143497a3c753ebc">draw_begin</a>( <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h ) = 0;</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a4ff963d0d0966a35945ecdb4725923ae">draw_end</a>( <span class="keywordtype">void</span> ) = 0;</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a5b5b7dd70d4a827d67146ecaf4cc4f65">draw_line</a>( <a class="code" href="classglbarcode_1_1DrawingPrimitiveLine.html">DrawingPrimitiveLine</a> *line ) = 0;</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#aa550d8f0aaee3dc0c136354a2ae882a2">draw_box</a>( <a class="code" href="classglbarcode_1_1DrawingPrimitiveBox.html">DrawingPrimitiveBox</a> *box ) = 0;</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a04713f8e2141c3cccd84d3014d0d230d">draw_text</a>( <a class="code" href="classglbarcode_1_1DrawingPrimitiveText.html">DrawingPrimitiveText</a> *text ) = 0;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#ae409042fce38fa929a7ac4f2a230286f">draw_ring</a>( <a class="code" href="classglbarcode_1_1DrawingPrimitiveRing.html">DrawingPrimitiveRing</a> *ring ) = 0;</div>
 <div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;        };</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;}</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;<span class="preprocessor">#endif // glbarcode_Renderer_h</span></div>
+<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a7e942eed2fc4ff9e751be9f9117ae878">draw_hexagon</a>( <a class="code" href="classglbarcode_1_1DrawingPrimitiveHexagon.html">DrawingPrimitiveHexagon</a> *hexagon ) = 0;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;        };</div>
+<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;</div>
+<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;}</div>
+<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;</div>
+<div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;<span class="preprocessor">#endif // glbarcode_Renderer_h</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f4b827c7c3ffa052657aad88689c8160.html">glbarcode</a></li><li class="navelem"><a class="el" href="Renderer_8h.html">Renderer.h</a></li>
-    <li class="footer">Generated on Sat Aug 31 2013 17:01:34 for glbarcode++ by
+    <li class="footer">Generated on Sun Sep 1 2013 18:08:23 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>
