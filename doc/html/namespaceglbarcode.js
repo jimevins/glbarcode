@@ -23,5 +23,6 @@ var namespaceglbarcode =
     [ "DrawingPrimitiveHexagon", "classglbarcode_1_1DrawingPrimitiveHexagon.html", "classglbarcode_1_1DrawingPrimitiveHexagon" ],
     [ "Renderer", "classglbarcode_1_1Renderer.html", "classglbarcode_1_1Renderer" ],
     [ "RendererDebug", "classglbarcode_1_1RendererDebug.html", null ],
+    [ "RendererEps", "classglbarcode_1_1RendererEps.html", "classglbarcode_1_1RendererEps" ],
     [ "RendererSvg", "classglbarcode_1_1RendererSvg.html", "classglbarcode_1_1RendererSvg" ]
 ];
