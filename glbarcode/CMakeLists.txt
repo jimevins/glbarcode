@@ -45,6 +45,7 @@ set (LIB_SOURCES
   Renderer.cpp
   RendererSvg.cpp
   RendererEps.cpp
+  RendererDebug.cpp
 )
 
 add_definitions (
