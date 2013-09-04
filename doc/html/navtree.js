@@ -2,9 +2,11 @@ var NAVTREE =
 [
   [ "glbarcode++", "index.html", [
     [ "Usage", "usage.html", [
-      [ "Barcode Options", "usage.html#options", null ],
+      [ "Abstract Barcode Class", "usage.html#base_class", null ],
       [ "Concrete Barcode Classes", "usage.html#barcode_classes", null ],
       [ "The Barcode Factory", "usage.html#the_factory", null ],
+      [ "Options", "usage.html#options", null ],
+      [ "Building Barcodes", "usage.html#building", null ],
       [ "Renderering Barcodes", "usage.html#rendering", null ],
       [ "Putting It All Together", "usage.html#putting_together", null ]
     ] ],

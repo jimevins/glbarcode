@@ -1,3 +1,3 @@
 <map id="glbarcode::BarcodeCode39" name="glbarcode::BarcodeCode39">
-<area shape="rect" id="node2" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ render()\l+ is_empty()\l+ is_data_valid()\l+ width()\l+ height()\l# Barcode()\l# build()\l# validate()\l# preprocess()\l# encode()\l# prepare_text()\l# vectorize()\l# add_line()\l# add_box()\l# add_text()\l# add_ring()\l# add_hexagon()\l# set_width()\l# set_height()\l}" alt="" coords="28,6,161,421"/>
+<area shape="rect" id="node2" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ show_text()\l+ show_text()\l+ checksum()\l+ checksum()\l+ build()\l+ render()\l+ is_empty()\l+ is_data_valid()\l+ width()\l+ height()\l# Barcode()\l# validate()\l# preprocess()\l# encode()\l# prepare_text()\l# vectorize()\l# add_line()\l# add_box()\l# add_text()\l# add_ring()\l# add_hexagon()\l# set_width()\l# set_height()\l}" alt="" coords="28,6,161,490"/>
 </map>

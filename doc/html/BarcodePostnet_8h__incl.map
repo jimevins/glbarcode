@@ -1,6 +1,5 @@
 <map id="BarcodePostnet.h" name="BarcodePostnet.h">
-<area shape="rect" id="node3" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="44,83,124,112"/>
-<area shape="rect" id="node7" href="$BarcodeOptions_8h.html" title="BarcodeOptions.h" alt="" coords="21,160,146,189"/>
-<area shape="rect" id="node9" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="170,160,256,189"/>
-<area shape="rect" id="node13" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="144,237,282,267"/>
+<area shape="rect" id="node3" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="28,83,108,112"/>
+<area shape="rect" id="node7" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="65,160,151,189"/>
+<area shape="rect" id="node11" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="127,237,265,267"/>
 </map>

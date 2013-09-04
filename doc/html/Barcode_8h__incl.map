@@ -1,5 +1,4 @@
 <map id="Barcode.h" name="Barcode.h">
-<area shape="rect" id="node5" href="$BarcodeOptions_8h.html" title="BarcodeOptions.h" alt="" coords="21,83,146,112"/>
-<area shape="rect" id="node7" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="170,83,256,112"/>
-<area shape="rect" id="node11" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="144,160,282,189"/>
+<area shape="rect" id="node5" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="43,83,128,112"/>
+<area shape="rect" id="node9" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="104,160,243,189"/>
 </map>

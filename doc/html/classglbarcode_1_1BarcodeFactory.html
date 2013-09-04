@@ -106,19 +106,19 @@ Collaboration diagram for glbarcode::BarcodeFactory:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a010288ae4abb98a7816b341ee8f2a0f7"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#a010288ae4abb98a7816b341ee8f2a0f7">BarcodeCreateFct</a> )(std::string data, double w, double h, <a class="el" href="classglbarcode_1_1BarcodeOptions.html">BarcodeOptions</a> const &amp;options)</td></tr>
-<tr class="separator:a010288ae4abb98a7816b341ee8f2a0f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af178a271e869e1707a4a2a2df82c7ab0"><td class="memItemLeft" align="right" valign="top">typedef <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> *(*&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#af178a271e869e1707a4a2a2df82c7ab0">BarcodeCreateFct</a> )(void)</td></tr>
+<tr class="separator:af178a271e869e1707a4a2a2df82c7ab0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a0799645494253d3e65e8873567dcee8f"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classglbarcode_1_1BarcodeFactory.html">BarcodeFactory</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#a0799645494253d3e65e8873567dcee8f">instance</a> (void)</td></tr>
 <tr class="separator:a0799645494253d3e65e8873567dcee8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aec7652d9fe3c3911cfb383e7638eb199"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#aec7652d9fe3c3911cfb383e7638eb199">create_barcode</a> (std::string type, std::string data, double w, double h, <a class="el" href="classglbarcode_1_1BarcodeOptions.html">BarcodeOptions</a> const &amp;options)</td></tr>
-<tr class="separator:aec7652d9fe3c3911cfb383e7638eb199"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad1a00862906b24a7c67085410bf89e5a"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#ad1a00862906b24a7c67085410bf89e5a">register_type</a> (std::string type, <a class="el" href="classglbarcode_1_1BarcodeFactory.html#a010288ae4abb98a7816b341ee8f2a0f7">BarcodeCreateFct</a> fct)</td></tr>
-<tr class="separator:ad1a00862906b24a7c67085410bf89e5a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8fa4463573ebf6c753aef92f34fa5e2a"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#a8fa4463573ebf6c753aef92f34fa5e2a">is_type_supported</a> (std::string type)</td></tr>
-<tr class="separator:a8fa4463573ebf6c753aef92f34fa5e2a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae509a6bd9d3650836c3e232bb80dc0c0"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#ae509a6bd9d3650836c3e232bb80dc0c0">create_barcode</a> (std::string type_id)</td></tr>
+<tr class="separator:ae509a6bd9d3650836c3e232bb80dc0c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5cdcd088bef0d79be275264d8738897f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#a5cdcd088bef0d79be275264d8738897f">register_type</a> (std::string type_id, <a class="el" href="classglbarcode_1_1BarcodeFactory.html#af178a271e869e1707a4a2a2df82c7ab0">BarcodeCreateFct</a> fct)</td></tr>
+<tr class="separator:a5cdcd088bef0d79be275264d8738897f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a771f947e9103e00d534c4a2087c90d03"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#a771f947e9103e00d534c4a2087c90d03">is_type_supported</a> (std::string type_id)</td></tr>
+<tr class="separator:a771f947e9103e00d534c4a2087c90d03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abfdc12b57b9e2961914bea79e1c0d08a"><td class="memItemLeft" align="right" valign="top">static const std::list<br class="typebreak"/>
 &lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#abfdc12b57b9e2961914bea79e1c0d08a">get_supported_types</a> (void)</td></tr>
 <tr class="separator:abfdc12b57b9e2961914bea79e1c0d08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -126,12 +126,12 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Singleton <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> factory class. </p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a class="anchor" id="a010288ae4abb98a7816b341ee8f2a0f7"></a>
+<a class="anchor" id="af178a271e869e1707a4a2a2df82c7ab0"></a>
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">typedef <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a>*(* glbarcode::BarcodeFactory::BarcodeCreateFct)(std::string data, double w, double h, <a class="el" href="classglbarcode_1_1BarcodeOptions.html">BarcodeOptions</a> const &amp;options)</td>
+          <td class="memname">typedef <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a>*(* glbarcode::BarcodeFactory::BarcodeCreateFct)(void)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -140,7 +140,7 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="aec7652d9fe3c3911cfb383e7638eb199"></a>
+<a class="anchor" id="ae509a6bd9d3650836c3e232bb80dc0c0"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -151,36 +151,8 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname"><a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> * glbarcode::BarcodeFactory::create_barcode </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>type_id</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>w</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">double&#160;</td>
-          <td class="paramname"><em>h</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classglbarcode_1_1BarcodeOptions.html">BarcodeOptions</a> const &amp;&#160;</td>
-          <td class="paramname"><em>options</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -189,14 +161,10 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Create barcode based on type string.</p>
+<p>Create barcode based on type ID string.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td><a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> type string </td></tr>
-    <tr><td class="paramname">data</td><td>Data to encode in barcode </td></tr>
-    <tr><td class="paramname">w</td><td>Requested width of barcode (0 = auto size) </td></tr>
-    <tr><td class="paramname">h</td><td>Requested height of barcode (0 = auto size) </td></tr>
-    <tr><td class="paramname">options</td><td><a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> options </td></tr>
+    <tr><td class="paramname">type_id</td><td><a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> type ID string </td></tr>
   </table>
   </dd>
 </dl>
@@ -253,7 +221,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a8fa4463573ebf6c753aef92f34fa5e2a"></a>
+<a class="anchor" id="a771f947e9103e00d534c4a2087c90d03"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -264,7 +232,7 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">bool glbarcode::BarcodeFactory::is_type_supported </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>type</em></td><td>)</td>
+          <td class="paramname"><em>type_id</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -278,7 +246,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="ad1a00862906b24a7c67085410bf89e5a"></a>
+<a class="anchor" id="a5cdcd088bef0d79be275264d8738897f"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -289,12 +257,12 @@ Static Public Member Functions</h2></td></tr>
           <td class="memname">void glbarcode::BarcodeFactory::register_type </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>type</em>, </td>
+          <td class="paramname"><em>type_id</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#a010288ae4abb98a7816b341ee8f2a0f7">BarcodeFactory::BarcodeCreateFct</a>&#160;</td>
+          <td class="paramtype"><a class="el" href="classglbarcode_1_1BarcodeFactory.html#af178a271e869e1707a4a2a2df82c7ab0">BarcodeFactory::BarcodeCreateFct</a>&#160;</td>
           <td class="paramname"><em>fct</em>&#160;</td>
         </tr>
         <tr>
@@ -309,10 +277,10 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Register barcode type.</p>
+<p>Register barcode type ID.</p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">type</td><td><a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> type string </td></tr>
+    <tr><td class="paramname">type_id</td><td><a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> type ID string </td></tr>
     <tr><td class="paramname">fct</td><td>Function to create barcode object of concrete <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> class </td></tr>
   </table>
   </dd>
@@ -330,7 +298,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceglbarcode.html">glbarcode</a></li><li class="navelem"><a class="el" href="classglbarcode_1_1BarcodeFactory.html">BarcodeFactory</a></li>
-    <li class="footer">Generated on Mon Sep 2 2013 19:43:19 for glbarcode++ by
+    <li class="footer">Generated on Tue Sep 3 2013 22:46:23 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

@@ -1,18 +1,17 @@
 <map id="BarcodeFactory.cpp" name="BarcodeFactory.cpp">
 <area shape="rect" id="node3" href="$BarcodeFactory_8h.html" title="BarcodeFactory.h" alt="" coords="5,160,131,189"/>
-<area shape="rect" id="node21" href="$BarcodeCode39_8h.html" title="BarcodeCode39.h" alt="" coords="155,160,280,189"/>
-<area shape="rect" id="node24" href="$BarcodeCode39Ext_8h.html" title="BarcodeCode39Ext.h" alt="" coords="144,83,291,112"/>
-<area shape="rect" id="node27" href="$BarcodeUpcA_8h.html" title="BarcodeUpcA.h" alt="" coords="315,83,429,112"/>
-<area shape="rect" id="node32" href="$BarcodeEan13_8h.html" title="BarcodeEan13.h" alt="" coords="453,83,571,112"/>
-<area shape="rect" id="node35" href="$BarcodePostnet_8h.html" title="BarcodePostnet.h" alt="" coords="728,160,853,189"/>
-<area shape="rect" id="node38" href="$BarcodePostnet5_8h.html" title="BarcodePostnet5.h" alt="" coords="645,83,779,112"/>
-<area shape="rect" id="node41" href="$BarcodePostnet9_8h.html" title="BarcodePostnet9.h" alt="" coords="803,83,936,112"/>
-<area shape="rect" id="node44" href="$BarcodePostnet11_8h.html" title="BarcodePostnet11.h" alt="" coords="960,83,1099,112"/>
-<area shape="rect" id="node47" href="$BarcodeCepnet_8h.html" title="BarcodeCepnet.h" alt="" coords="1123,83,1245,112"/>
-<area shape="rect" id="node50" href="$BarcodeOnecode_8h.html" title="BarcodeOnecode.h" alt="" coords="1269,83,1403,112"/>
-<area shape="rect" id="node5" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="329,237,409,267"/>
-<area shape="rect" id="node9" href="$BarcodeOptions_8h.html" title="BarcodeOptions.h" alt="" coords="176,315,301,344"/>
-<area shape="rect" id="node11" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="325,315,411,344"/>
-<area shape="rect" id="node15" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="199,392,337,421"/>
-<area shape="rect" id="node29" href="$BarcodeUpcBase_8h.html" title="BarcodeUpcBase.h" alt="" coords="305,160,439,189"/>
+<area shape="rect" id="node19" href="$BarcodeCode39_8h.html" title="BarcodeCode39.h" alt="" coords="161,160,287,189"/>
+<area shape="rect" id="node22" href="$BarcodeCode39Ext_8h.html" title="BarcodeCode39Ext.h" alt="" coords="151,83,297,112"/>
+<area shape="rect" id="node25" href="$BarcodeUpcA_8h.html" title="BarcodeUpcA.h" alt="" coords="321,83,436,112"/>
+<area shape="rect" id="node30" href="$BarcodeEan13_8h.html" title="BarcodeEan13.h" alt="" coords="460,83,577,112"/>
+<area shape="rect" id="node33" href="$BarcodePostnet_8h.html" title="BarcodePostnet.h" alt="" coords="735,160,860,189"/>
+<area shape="rect" id="node36" href="$BarcodePostnet5_8h.html" title="BarcodePostnet5.h" alt="" coords="652,83,785,112"/>
+<area shape="rect" id="node39" href="$BarcodePostnet9_8h.html" title="BarcodePostnet9.h" alt="" coords="809,83,943,112"/>
+<area shape="rect" id="node42" href="$BarcodePostnet11_8h.html" title="BarcodePostnet11.h" alt="" coords="967,83,1105,112"/>
+<area shape="rect" id="node45" href="$BarcodeCepnet_8h.html" title="BarcodeCepnet.h" alt="" coords="1129,83,1252,112"/>
+<area shape="rect" id="node48" href="$BarcodeOnecode_8h.html" title="BarcodeOnecode.h" alt="" coords="1276,83,1409,112"/>
+<area shape="rect" id="node5" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="344,237,424,267"/>
+<area shape="rect" id="node9" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="273,315,359,344"/>
+<area shape="rect" id="node13" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="159,392,297,421"/>
+<area shape="rect" id="node27" href="$BarcodeUpcBase_8h.html" title="BarcodeUpcBase.h" alt="" coords="317,160,451,189"/>
 </map>

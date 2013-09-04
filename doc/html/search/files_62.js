@@ -14,8 +14,6 @@ var searchData=
   ['barcodefactory_2eh',['BarcodeFactory.h',['../BarcodeFactory_8h.html',1,'']]],
   ['barcodeonecode_2ecpp',['BarcodeOnecode.cpp',['../BarcodeOnecode_8cpp.html',1,'']]],
   ['barcodeonecode_2eh',['BarcodeOnecode.h',['../BarcodeOnecode_8h.html',1,'']]],
-  ['barcodeoptions_2ecpp',['BarcodeOptions.cpp',['../BarcodeOptions_8cpp.html',1,'']]],
-  ['barcodeoptions_2eh',['BarcodeOptions.h',['../BarcodeOptions_8h.html',1,'']]],
   ['barcodepostnet_2ecpp',['BarcodePostnet.cpp',['../BarcodePostnet_8cpp.html',1,'']]],
   ['barcodepostnet_2eh',['BarcodePostnet.h',['../BarcodePostnet_8h.html',1,'']]],
   ['barcodepostnet11_2ecpp',['BarcodePostnet11.cpp',['../BarcodePostnet11_8cpp.html',1,'']]],

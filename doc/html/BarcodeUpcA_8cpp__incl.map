@@ -1,8 +1,7 @@
 <map id="BarcodeUpcA.cpp" name="BarcodeUpcA.cpp">
-<area shape="rect" id="node3" href="$BarcodeUpcA_8h.html" title="BarcodeUpcA.h" alt="" coords="121,83,236,112"/>
-<area shape="rect" id="node5" href="$BarcodeUpcBase_8h.html" title="BarcodeUpcBase.h" alt="" coords="77,160,211,189"/>
-<area shape="rect" id="node7" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="73,237,153,267"/>
-<area shape="rect" id="node11" href="$BarcodeOptions_8h.html" title="BarcodeOptions.h" alt="" coords="21,315,147,344"/>
-<area shape="rect" id="node13" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="171,315,256,344"/>
-<area shape="rect" id="node17" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="131,392,269,421"/>
+<area shape="rect" id="node3" href="$BarcodeUpcA_8h.html" title="BarcodeUpcA.h" alt="" coords="97,83,211,112"/>
+<area shape="rect" id="node5" href="$BarcodeUpcBase_8h.html" title="BarcodeUpcBase.h" alt="" coords="71,160,205,189"/>
+<area shape="rect" id="node7" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="74,237,154,267"/>
+<area shape="rect" id="node11" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="71,315,157,344"/>
+<area shape="rect" id="node15" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="89,392,227,421"/>
 </map>

@@ -1,7 +1,6 @@
 <map id="BarcodeCode39Ext.h" name="BarcodeCode39Ext.h">
-<area shape="rect" id="node3" href="$BarcodeCode39_8h.html" title="BarcodeCode39.h" alt="" coords="21,83,146,112"/>
-<area shape="rect" id="node5" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="44,160,124,189"/>
-<area shape="rect" id="node9" href="$BarcodeOptions_8h.html" title="BarcodeOptions.h" alt="" coords="21,237,146,267"/>
-<area shape="rect" id="node11" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="170,237,256,267"/>
-<area shape="rect" id="node15" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="144,315,282,344"/>
+<area shape="rect" id="node3" href="$BarcodeCode39_8h.html" title="BarcodeCode39.h" alt="" coords="16,83,141,112"/>
+<area shape="rect" id="node5" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="39,160,119,189"/>
+<area shape="rect" id="node9" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="76,237,161,267"/>
+<area shape="rect" id="node13" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="137,315,276,344"/>
 </map>
