@@ -69,24 +69,9 @@ namespace glbarcode
 	/*
 	 * Static Postnet barcode creation method
 	 */
-	Barcode* BarcodePostnet::create( std::string           data,
-					 double                w,
-					 double                h,
-					 BarcodeOptions const& options )
+	Barcode* BarcodePostnet::create( void )
 	{
-		return new BarcodePostnet( data, w, h, options );
-	}
-
-
-	/*
-	 * Postnet barcode constructor
-	 */
-	BarcodePostnet::BarcodePostnet( std::string           data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options )
-	{
-		build( data, w, h, options );
+		return new BarcodePostnet();
 	}
 
 
@@ -103,8 +88,7 @@ namespace glbarcode
 	/*
 	 * Postnet data validation, implements Barcode::validate()
 	 */
-	bool BarcodePostnet::validate( std::string           raw_data,
-				       BarcodeOptions const& options )
+	bool BarcodePostnet::validate( std::string raw_data )
 	{
 		int n_digits = 0;
 		for ( int i = 0; i < raw_data.size(); i++ )
@@ -127,8 +111,7 @@ namespace glbarcode
 	/*
 	 * Postnet data encoding, implements Barcode::encode()
 	 */
-	std::string BarcodePostnet::encode( std::string           cooked_data,
-					    BarcodeOptions const& options )
+	std::string BarcodePostnet::encode( std::string cooked_data )
 	{
 		std::string code;
 
@@ -161,12 +144,11 @@ namespace glbarcode
 	/*
 	 * Postnet vectorization, implements Barcode::vectorize()
 	 */
-	void BarcodePostnet::vectorize( std::string           coded_data,
-					std::string           display_text,
-					std::string           cooked_data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options )
+	void BarcodePostnet::vectorize( std::string coded_data,
+					std::string display_text,
+					std::string cooked_data,
+					double      w,
+					double      h )
 	{
 		double x = POSTNET_HORIZ_MARGIN;
 		for ( int i=0; i < coded_data.size(); i++ )

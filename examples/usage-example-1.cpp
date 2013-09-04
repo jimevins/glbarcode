@@ -8,11 +8,11 @@ int main( int argc, char **argv )
 	/* Get singleton instance to barcode factory. */
         BarcodeFactory *factory = BarcodeFactory().instance();
 
-	/* Show text and generate check digit. */
-	BarcodeOptions options = BarcodeOptions().checksum(true).show_text(true);
-
         /* Create barcode object. */
-        Barcode *bc = factory->create_barcode( "code39", "EXAMPLE-123", 288, 72, options );
+        Barcode *bc = factory->create_barcode( "code39" );
+
+	/* Set barcode options to show text and generate check digit, and then build */
+	bc->checksum(true).show_text(true).build( "EXAMPLE-123", 288, 72 );
 
         /* Render barcode. */
         bc->render( RendererSvg().filename( "Example.svg" ) );

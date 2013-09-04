@@ -27,24 +27,9 @@ namespace glbarcode
 	/*
 	 * Static CEPNET barcode creation method
 	 */
-	Barcode* BarcodeCepnet::create( std::string           data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options )
+	Barcode* BarcodeCepnet::create( void )
 	{
-		return new BarcodeCepnet( data, w, h, options );
-	}
-
-
-	/*
-	 * CEPNET barcode constructor
-	 */
-	BarcodeCepnet::BarcodeCepnet( std::string           data,
-				      double                w,
-				      double                h,
-				      BarcodeOptions const& options )
-	{
-		build( data, w, h, options );
+		return new BarcodeCepnet();
 	}
 
 

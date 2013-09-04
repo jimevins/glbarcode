@@ -67,32 +67,16 @@ namespace glbarcode
 	/*
 	 * Static Extended Code39 barcode creation method
 	 */
-	Barcode* BarcodeCode39Ext::create( std::string           data,
-					   double                w,
-					   double                h,
-					   BarcodeOptions const& options )
+	Barcode* BarcodeCode39Ext::create( void )
 	{
-		return new BarcodeCode39Ext( data, w, h, options );
-	}
-
-
-	/*
-	 * Extended Code39 barcode constructor
-	 */
-	BarcodeCode39Ext::BarcodeCode39Ext( std::string           data,
-					    double                w,
-					    double                h,
-					    BarcodeOptions const& options )
-	{
-		build( data, w, h, options );
+		return new BarcodeCode39Ext();
 	}
 
 
 	/*
 	 * Extended Code39 data validation, overrides BarcodeCode39::validate() implementation
 	 */
-	bool BarcodeCode39Ext::validate( std::string           raw_data,
-					 BarcodeOptions const& options )
+	bool BarcodeCode39Ext::validate( std::string raw_data )
 	{
 		for ( int i = 0; i < raw_data.size(); i++ )
 		{
@@ -109,8 +93,7 @@ namespace glbarcode
 	/*
 	 * Extened Code39 preprocessing of data, implements Barcode::preprocess()
 	 */
-	std::string BarcodeCode39Ext::preprocess( std::string           raw_data,
-						  BarcodeOptions const& options )
+	std::string BarcodeCode39Ext::preprocess( std::string raw_data )
 	{
 		std::string cooked_data;
 
@@ -126,8 +109,7 @@ namespace glbarcode
 	/*
 	 * Extended Code39 prepare text for display, overrides BarcodeCode39::prepare_text()
 	 */
-	std::string BarcodeCode39Ext::prepare_text( std::string           raw_data,
-						    BarcodeOptions const& options )
+	std::string BarcodeCode39Ext::prepare_text( std::string raw_data )
 	{
 		return raw_data;
 	}

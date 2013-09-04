@@ -56,7 +56,7 @@ A barcode subclass may also need to implement the following virtual methods:
 
 - glbarcode::Barcode::prepare_text() -- The prepare_text method performs any transformation of the data needed before it can be displayed.
 
-The following figure illustrates the data flow between these methods:
+The following figure illustrates the data flow between these methods, which are called by glbarcode::Barcode::build():
 
 @dot
 digraph init {
@@ -102,35 +102,6 @@ digraph init {
 
 
 
-Constructors
-------------
-
-Barcode implementations should implement a constructor with the following signature:
-
-@code{.cpp}
-BarcodeXxx( std::string                      data,
-	    double                           w,
-            double                           h,
-            glbarcode::BarcodeOptions const& options );
-@endcode
-
-This constructor should call the glbarcode::Barcode::build() method to do the actual initialization and building of the barcode:
-
-@code{.cpp}
-using namespace glbarcode;
- 
-BarcodeXxx( std::string           data,
-	    double                w,
-            double                h,
-            BarcodeOptions const& options )
-{
-	build( data, w, h, options );
-}
-@endcode
-
-
-
-
 Registering With The Barcode Factory
 ------------------------------------
 
@@ -140,12 +111,9 @@ newly allocated barcode:
 @code{.cpp}
 using namespace glbarcode;
  
-Barcode* BarcodeXxx::create( std::string           data,
-                             double                w,
-                             double                h,
-                             BarcodeOptions const& options )
+Barcode* BarcodeXxx::create( void )
 {
-        return new BarcodeXxx( data, w, h, options );
+        return new BarcodeXxx();
 }
 @endcode
 

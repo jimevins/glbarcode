@@ -39,26 +39,21 @@ namespace glbarcode
 		/**
 		 * Static UPC-A barcode creation method
 		 *
-		 * Used by glbarcode::Factory
+		 * Used by glbarcode::BarcodeFactory
 		 */
-		static Barcode* create( std::string           data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options );
+		static Barcode* create( void );
+
 
 		/**
-		 * UPC-A barcode constructor
+		 * Default constructor
 		 */
-		BarcodeUpcA( std::string           data,
-			     double                w,
-			     double                h,
-			     BarcodeOptions const& options );
+		BarcodeUpcA();
+
 
 	private:
 		bool validate_digits( int n_digits );
 
-		std::string preprocess( std::string           raw_data,
-					BarcodeOptions const& options );
+		std::string preprocess( std::string raw_data );
 
 		void vectorize_text( std::string display_text,
 				     double size1, double size2,

@@ -194,11 +194,9 @@ int main( int argc, char **argv )
 	/*
 	 * Build barcode
 	 */
-	BarcodeOptions options = BarcodeOptions()
-		.show_text(text_flag)
-		.checksum(checksum_flag);
-
-	Barcode* bc = factory->create_barcode( type, data, w, h, options );
+	Barcode* bc = factory->create_barcode( type );
+	bc->show_text(text_flag).checksum(checksum_flag);
+	bc->build( data, w, h );
 
 	if ( bc == NULL )
 	{

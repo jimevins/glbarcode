@@ -41,35 +41,22 @@ namespace glbarcode
 		/**
 		 * Static Onecode barcode creation method
 		 *
-		 * Used by glbarcode::Factory
+		 * Used by glbarcode::BarcodeFactory
 		 */
-		static Barcode* create( std::string           data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options );
-
-		/**
-		 * Onecode barcode constructor
-		 */
-		BarcodeOnecode( std::string           data,
-				double                w,
-				double                h,
-				BarcodeOptions const& options );
+		static Barcode* create( void );
 
 
 	private:
-		bool validate( std::string           raw_data,
-			       BarcodeOptions const& options );
+		bool validate( std::string raw_data );
 
-		std::string encode( std::string           cooked_data,
-				    BarcodeOptions const& options );
+		std::string encode( std::string cooked_data );
 
-		void vectorize( std::string           coded_data,
-				std::string           display_text,
-				std::string           cooked_data,
+		void vectorize( std::string coded_data,
+				std::string display_text,
+				std::string cooked_data,
 				double                w,
-				double                h,
-				BarcodeOptions const& options );
+				double                h );
+
 
 	private:
 		uint32_t USPS_MSB_Math_CRC11GenerateFrameCheckSequence( uint8_t* ByteArrayPtr );

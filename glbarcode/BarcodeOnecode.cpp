@@ -296,32 +296,16 @@ namespace glbarcode
 	/*
 	 * Static Onecode barcode creation method
 	 */
-	Barcode* BarcodeOnecode::create( std::string           data,
-					 double                w,
-					 double                h,
-					 BarcodeOptions const& options )
+	Barcode* BarcodeOnecode::create( void )
 	{
-		return new BarcodeOnecode( data, w, h, options );
-	}
-
-
-	/*
-	 * Onecode barcode constructor
-	 */
-	BarcodeOnecode::BarcodeOnecode( std::string           data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options )
-	{
-		build( data, w, h, options );
+		return new BarcodeOnecode();
 	}
 
 
 	/*
 	 * Onecode data validation, implements Barcode::validate()
 	 */
-	bool BarcodeOnecode::validate( std::string           raw_data,
-				       BarcodeOptions const& options )
+	bool BarcodeOnecode::validate( std::string raw_data )
 	{
 		if ( (raw_data.size() != 20) &&
 		     (raw_data.size() != 25) &&
@@ -351,8 +335,7 @@ namespace glbarcode
 	/*
 	 * Onecode data encoding, implements Barcode::encode()
 	 */
-	std::string BarcodeOnecode::encode( std::string           cooked_data,
-					    BarcodeOptions const& options )
+	std::string BarcodeOnecode::encode( std::string cooked_data )
 	{
 		Int104 value;
 
@@ -466,12 +449,11 @@ namespace glbarcode
 	/*
 	 * Onecode vectorization, implements Barcode::vectorize()
 	 */
-	void BarcodeOnecode::vectorize( std::string           coded_data,
-					std::string           display_text,
-					std::string           cooked_data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options )
+	void BarcodeOnecode::vectorize( std::string coded_data,
+					std::string display_text,
+					std::string cooked_data,
+					double      w,
+					double      h )
 	{
 		double x = ONECODE_HORIZ_MARGIN;
 		for ( int i = 0; i < coded_data.size(); i++ )

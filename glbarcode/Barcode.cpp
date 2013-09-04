@@ -33,6 +33,9 @@ namespace glbarcode
 	 */
 	struct Barcode::PrivateData {
 
+		bool                   m_show_text_flag;  /**< Display text flag */
+		bool                   m_checksum_flag;   /**< Add checksum flag */
+
 		double                 m_w;               /**< Width of barcode (points) */
 		double                 m_h;               /**< Height of barcode (points) */
 
@@ -47,19 +50,88 @@ namespace glbarcode
 	Barcode::Barcode()
 	{
 		d = new Barcode::PrivateData;
+
+		d->m_show_text_flag  = false;
+		d->m_checksum_flag   = false;
+
+		d->m_w               = 0;
+		d->m_h               = 0;
+
+		d->m_empty_flag      = true;
+		d->m_data_valid_flag = false;
 	}
 
 
 	Barcode::~Barcode()
 	{
-		std::list<DrawingPrimitive*>::iterator primitive;
-
-		for ( primitive = d->m_primitives.begin(); primitive != d->m_primitives.end(); primitive++ )
-		{
-			delete *primitive;
-		}
-
+		clear_drawing_primitives();
 		delete d;
+	}
+
+
+	Barcode& Barcode::show_text( bool value )
+	{
+		d->m_show_text_flag = value;
+		return *this;
+	}
+
+
+	bool Barcode::show_text( void ) const
+	{
+		return d->m_show_text_flag;
+	}
+
+
+	Barcode& Barcode::checksum( bool value )
+	{
+		d->m_checksum_flag = value;
+		return *this;
+	}
+
+
+	bool Barcode::checksum( void ) const
+	{
+		return d->m_checksum_flag;
+	}
+
+
+	void Barcode::build( std::string           raw_data,
+			     double                w,
+			     double                h )
+	{
+		std::string cooked_data;     /* Preprocessed data */
+		std::string display_text;    /* Text data to be displayed */
+		std::string coded_data;      /* Encoded data */
+
+		clear_drawing_primitives();
+
+		d->m_w             = w;
+		d->m_h             = h;
+
+		if ( raw_data.empty() )
+		{
+			d->m_empty_flag = true;
+			d->m_data_valid_flag = false;
+		}
+		else
+		{
+			d->m_empty_flag = false;
+
+			if ( validate( raw_data ) )
+			{
+				d->m_data_valid_flag = true;
+
+				cooked_data  = preprocess( raw_data );
+				coded_data   = encode( cooked_data );
+				display_text = prepare_text( raw_data );
+
+				vectorize( coded_data, display_text, cooked_data, w, h );
+			}
+			else
+			{
+				d->m_data_valid_flag = false;
+			}
+		}
 	}
 
 
@@ -105,50 +177,10 @@ namespace glbarcode
 	}
 
 
-	void Barcode::build( std::string           raw_data,
-			     double                w,
-			     double                h,
-			     BarcodeOptions const& options )
-	{
-		std::string cooked_data;     /* Preprocessed data */
-		std::string display_text;    /* Text data to be displayed */
-		std::string coded_data;      /* Encoded data */
-
-		d->m_w             = w;
-		d->m_h             = h;
-
-		if ( raw_data.empty() )
-		{
-			d->m_empty_flag = true;
-			d->m_data_valid_flag = false;
-		}
-		else
-		{
-			d->m_empty_flag = false;
-
-			if ( validate( raw_data, options ) )
-			{
-				d->m_data_valid_flag = true;
-
-				cooked_data  = preprocess( raw_data, options );
-				coded_data   = encode( cooked_data, options );
-				display_text = prepare_text( raw_data, options );
-
-				vectorize( coded_data, display_text, cooked_data, w, h, options );
-			}
-			else
-			{
-				d->m_data_valid_flag = false;
-			}
-		}
-	}
-
-
 	/*
 	 * Default preprocess method
 	 */
-	std::string Barcode::preprocess( std::string           raw_data,
-					 BarcodeOptions const& options )
+	std::string Barcode::preprocess( std::string raw_data )
 	{
 		return raw_data;
 	}
@@ -157,10 +189,22 @@ namespace glbarcode
 	/*
 	 * Default prepare_text method
 	 */
-	std::string Barcode::prepare_text( std::string           raw_data,
-					   BarcodeOptions const& options )
+	std::string Barcode::prepare_text( std::string raw_data )
 	{
 		return raw_data;
+	}
+
+
+	void Barcode::clear_drawing_primitives( void )
+	{
+		std::list<DrawingPrimitive*>::iterator primitive;
+
+		for ( primitive = d->m_primitives.begin(); primitive != d->m_primitives.end(); primitive++ )
+		{
+			delete *primitive;
+		}
+
+		d->m_primitives.clear();
 	}
 
 

@@ -92,11 +92,11 @@ namespace glbarcode
 		 */
 		void draw_begin( double w, double h );
 		void draw_end( void );
-		void draw_line( DrawingPrimitiveLine *line );
-		void draw_box( DrawingPrimitiveBox *box );
-		void draw_text( DrawingPrimitiveText *text );
-		void draw_ring( DrawingPrimitiveRing *ring );
-		void draw_hexagon( DrawingPrimitiveHexagon *hexagon );
+		void draw_line( const DrawingPrimitiveLine *line );
+		void draw_box( const DrawingPrimitiveBox *box );
+		void draw_text( const DrawingPrimitiveText *text );
+		void draw_ring( const DrawingPrimitiveRing *ring );
+		void draw_hexagon( const DrawingPrimitiveHexagon *hexagon );
 
 	private:
 		/**

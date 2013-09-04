@@ -53,16 +53,16 @@ namespace glbarcode
 	}
 
 
-	void BarcodeFactory::register_type( std::string type, BarcodeFactory::BarcodeCreateFct fct )
+	void BarcodeFactory::register_type( std::string type_id, BarcodeFactory::BarcodeCreateFct fct )
 	{
-		m_barcode_type_map[ type ] = fct;
-		m_supported_types.push_back( type );
+		m_barcode_type_map[ type_id ] = fct;
+		m_supported_types.push_back( type_id );
 	}
 
 
-	bool BarcodeFactory::is_type_supported( std::string type )
+	bool BarcodeFactory::is_type_supported( std::string type_id )
 	{
-		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type );
+		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type_id );
 
 		return ( i != m_barcode_type_map.end() );
 	}
@@ -74,17 +74,13 @@ namespace glbarcode
 	}
 
 
-	Barcode* BarcodeFactory::create_barcode( std::string           type,
-					  std::string           data,
-					  double                w,
-					  double                h,
-					  BarcodeOptions const& options )
+	Barcode* BarcodeFactory::create_barcode( std::string type_id )
 	{
-		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type );
+		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type_id );
 
 		if( i != m_barcode_type_map.end() )
 		{
-			return i->second( data, w, h, options );
+			return i->second();
 		}
 
 		return NULL;

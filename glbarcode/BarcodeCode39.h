@@ -39,44 +39,23 @@ namespace glbarcode
 		/**
 		 * Static Code39 barcode creation method
 		 *
-		 * Used by glbarcode::Factory
+		 * Used by glbarcode::BarcodeFactory
 		 */
-		static Barcode* create( std::string           data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options );
-
-		/**
-		 * Code39 barcode constructor
-		 */
-		BarcodeCode39( std::string           data,
-			       double                w,
-			       double                h,
-			       BarcodeOptions const& options );
-
-	protected:
-		/**
-		 * Dummy Code39 barcode constructor for derived types
-		 */
-		BarcodeCode39() { };
+		static Barcode* create( void );
 
 
 	private:
-		bool validate( std::string           raw_data,
-			       BarcodeOptions const& options );
+		bool validate( std::string raw_data );
 
-		std::string encode( std::string           cooked_data,
-				    BarcodeOptions const& options );
+		std::string encode( std::string cooked_data );
 
-		std::string prepare_text( std::string           raw_data,
-					  BarcodeOptions const& options );
+		std::string prepare_text( std::string raw_data );
 
-		void vectorize( std::string           coded_data,
-				std::string           display_text,
-				std::string           cooked_data,
-				double                w,
-				double                h,
-				BarcodeOptions const& options );
+		void vectorize( std::string coded_data,
+				std::string display_text,
+				std::string cooked_data,
+				double      w,
+				double      h );
 	};
 
 }

@@ -79,7 +79,7 @@ namespace glbarcode
 		 *
 		 * @param line Line primitive to draw
 		 */
-		virtual void draw_line( DrawingPrimitiveLine *line ) = 0;
+		virtual void draw_line( const DrawingPrimitiveLine *line ) = 0;
 
 
 		/**
@@ -91,7 +91,7 @@ namespace glbarcode
 		 *
 		 * @param box Box primitive to draw
 		 */
-		virtual void draw_box( DrawingPrimitiveBox *box ) = 0;
+		virtual void draw_box( const DrawingPrimitiveBox *box ) = 0;
 
 
 		/**
@@ -103,7 +103,7 @@ namespace glbarcode
 		 *
 		 * @param text Text primitive to draw
 		 */
-		virtual void draw_text( DrawingPrimitiveText *text ) = 0;
+		virtual void draw_text( const DrawingPrimitiveText *text ) = 0;
 
 
 		/**
@@ -115,7 +115,7 @@ namespace glbarcode
 		 *
 		 * @param ring Ring primitive to draw
 		 */
-		virtual void draw_ring( DrawingPrimitiveRing *ring ) = 0;
+		virtual void draw_ring( const DrawingPrimitiveRing *ring ) = 0;
 
 
 		/**
@@ -127,7 +127,7 @@ namespace glbarcode
 		 *
 		 * @param hexagon Hexagon primitive to draw
 		 */
-		virtual void draw_hexagon( DrawingPrimitiveHexagon *hexagon ) = 0;
+		virtual void draw_hexagon( const DrawingPrimitiveHexagon *hexagon ) = 0;
 
 	};
 

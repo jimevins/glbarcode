@@ -39,30 +39,17 @@ namespace glbarcode
 		/**
 		 * Static Extended Code39 barcode creation method
 		 *
-		 * Used by glbarcode::Factory
+		 * Used by glbarcode::BarcodeFactory
 		 */
-		static Barcode* create( std::string           data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options );
+		static Barcode* create( void );
 
-		/**
-		 * Extended Code39 barcode constructor
-		 */
-		BarcodeCode39Ext( std::string           data,
-				  double                w,
-				  double                h,
-				  BarcodeOptions const& options );
 
 	private:
-		bool validate( std::string           raw_data,
-			       BarcodeOptions const& options );
+		bool validate( std::string raw_data );
 
-		std::string preprocess( std::string           raw_data,
-					BarcodeOptions const& options );
+		std::string preprocess( std::string raw_data );
 
-		std::string prepare_text( std::string           raw_data,
-					  BarcodeOptions const& options );
+		std::string prepare_text( std::string raw_data );
 
 	};
 

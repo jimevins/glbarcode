@@ -39,20 +39,10 @@ namespace glbarcode
 		/**
 		 * Static Postnet-11 barcode creation method
 		 *
-		 * Used by glbarcode::Factory
+		 * Used by glbarcode::BarcodeFactory
 		 */
-		static Barcode* create( std::string           data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options );
+		static Barcode* create( void );
 
-		/**
-		 * Postnet-11 barcode constructor
-		 */
-		BarcodePostnet11( std::string           data,
-				  double                w,
-				  double                h,
-				  BarcodeOptions const& options );
 
 	private:
 		bool validate_digits( int n_digits );

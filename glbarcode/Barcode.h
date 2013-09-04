@@ -24,7 +24,6 @@
 
 #include <string>
 
-#include "BarcodeOptions.h"
 #include "Renderer.h"
 
 
@@ -51,6 +50,52 @@ namespace glbarcode
 		 * Destructor.
 		 */
 		virtual ~Barcode();
+
+
+		/**
+		 * Set accessor for "show_text" parameter.
+		 *
+		 * @param value Boolean value
+		 * @returns A reference to this Barcode object for parameter chaining
+		 */
+		Barcode& show_text( bool value );
+
+
+		/**
+		 * Get accessor for "show_text" parameter.
+		 *
+		 * @returns Value of boolean "show_text" parameter
+		 */
+		bool show_text( void ) const;
+
+
+		/**
+		 * Set accessor for "checksum" parameter.
+		 *
+		 * @param value Boolean value
+		 * @returns A reference to this Barcode object for parameter chaining
+		 */
+		Barcode& checksum( bool value );
+
+
+		/**
+		 * Get accessor for "checksum" parameter.
+		 *
+		 * @returns Value of boolean "checksum" parameter
+		 */
+		bool checksum( void ) const;
+
+
+		/**
+		 * Build barcode from data.
+		 *
+		 * @param data Data to encode in barcode
+		 * @param w Requested width of barcode (0 = auto size)
+		 * @param h Requested height of barcode (0 = auto size)
+		 */
+		void build( std::string           data,
+			    double                w = 0,
+			    double                h = 0 );
 
 
 		/**
@@ -97,32 +142,16 @@ namespace glbarcode
 
 	protected:
 		/**
-		 * Build barcode from parameters.  Used by constructors of derived classes.
-		 *
-		 * @param data Data to encode in barcode
-		 * @param w Requested width of barcode (0 = auto size)
-		 * @param h Requested height of barcode (0 = auto size)
-		 * @param options Barcode options
-		 */
-		void build( std::string           data,
-			    double                w,
-			    double                h,
-			    BarcodeOptions const& options );
-
-
-		/**
 		 * Validate barcode data.
 		 *
 		 * Required virtual method to test if data is valid for encoding with
 		 * barcode type.
 		 *
 		 * @param raw_data Data to validate
-		 * @param options Barcode options
 		 * @return True if data is valid data for barcode type
 		 * @return False if data is not valid data for barcode type
 		 */
-		virtual bool validate( std::string           raw_data,
-				       BarcodeOptions const& options ) = 0;
+		virtual bool validate( std::string raw_data ) = 0;
 
 
 		/**
@@ -132,11 +161,9 @@ namespace glbarcode
 		 * before encoding.  (E.g. encoding an extended alphabet into a simpler one).
 		 *
 		 * @param raw_data Data to preprocess
-		 * @param options Barcode options
 		 * @return Preprocessed data
 		 */
-		virtual std::string preprocess( std::string           raw_data,
-						BarcodeOptions const& options );
+		virtual std::string preprocess( std::string raw_data );
 
 
 		/**
@@ -147,11 +174,9 @@ namespace glbarcode
 		 * barcode element (e.g. 'w' = a wide line & 'n' = a narrow line).
 		 *
 		 * @param cooked_data Data to encode
-		 * @param options Barcode options
 		 * @return Encoded data
 		 */
-		virtual std::string encode( std::string           cooked_data,
-					    BarcodeOptions const& options ) = 0;
+		virtual std::string encode( std::string cooked_data ) = 0;
 
 
 		/**
@@ -160,11 +185,9 @@ namespace glbarcode
 		 * Optional virtual method to prepare text to be displayed as part of barcode.
 		 *
 		 * @param raw_data Data to prepare
-		 * @param options Barcode options
 		 * @return text in display form
 		 */
-		virtual std::string prepare_text( std::string           raw_data,
-						  BarcodeOptions const& options );
+		virtual std::string prepare_text( std::string raw_data );
 
 
 		/**
@@ -178,14 +201,12 @@ namespace glbarcode
 		 * @param cooked_data Original data prior to encoding (may be needed for sizing)
 		 * @param w Requested width of barcode (0 = auto size)
 		 * @param h Requested height of barcode (0 = auto size)
-		 * @param options Barcode options
 		 */
-		virtual void vectorize( std::string           encoded_data,
-					std::string           display_text,
-					std::string           cooked_data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options ) = 0;
+		virtual void vectorize( std::string encoded_data,
+					std::string display_text,
+					std::string cooked_data,
+					double      w,
+					double      h ) = 0;
 
 
 		/**
@@ -283,6 +304,12 @@ namespace glbarcode
 
 
 	private:
+		/**
+		 * Clear drawing primitives.
+		 */
+		void clear_drawing_primitives( void );
+
+
 		/**
 		 * Barcode Private data
 		 */

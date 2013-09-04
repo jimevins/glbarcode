@@ -6,45 +6,17 @@
 
 
 <!-- -------------------------------------------------------------------------------------------------------------------------- -->
-@section options Barcode Options
+@section base_class Abstract Barcode Class
 
-The glbarcode::BarcodeOptions class is a collection of options that are supported by glbarcode++ barcode implementations.
-Currently the following options are supported:
-
-@li @b show_text is a boolean option to control whether or not text is included in the final barcode rendering.  This option
-    is not honored by all barcode types.
-
-@li @b checksum is a boolean option to control whether or not a checksum or check digit is automatically generated for the barcode.
-    This option is not honored by all barcode types (i.e. this behaviour is mandatory for some barcode types).
-
-Options are set using the appropriate @a set accessor methods.  These @a set accessors are designed to allow chaining of multiple
-accessors as in the following example code:
-
-@code{.cpp}
-using namespace glbarcode;
- 
-/* Create and initialize options. */
-BarcodeOptions options = BarcodeOptions().checksum(true).show_text(true);
-@endcode
-
-Options can also be queried using the appropriate @a get accessors, as in the following example code:
-
-@code{.cpp}
-using namespace glbarcode;
- 
-BarcodeOptions options;
- 
-...
- 
-bool text_flag = options.show_text(); /* Is the show_text option set? */
-@endcode
+The abstract glbarcode::Barcode class is the base class for all glbarcode++ barcode types.  This class provides the core
+interface for these implementations.
 
 
 
 <!-- -------------------------------------------------------------------------------------------------------------------------- -->
 @section barcode_classes Concrete Barcode Classes
 
-Generating a barcode is accomplished by instantiating the appropriate concrete barcode class with given data, size and options.
+The first step in generating a barcode is accomplished by instantiating the appropriate concrete barcode class.
 These concrete classes are derived from the glbarcode::Barcode base class.  glbarcode++ currently includes the following concrete
 barcode classes:
 
@@ -60,29 +32,6 @@ barcode classes:
 | glbarcode::BarcodePostnet9     | USPS POSTNET-9  | "postnet-9"   | Only supports data length of 9 (ZIP+4) |
 | glbarcode::BarcodePostnet11    | USPS POSTNET-11 | "postnet-11"  | Only supports data length of 11 (ZIP+4+DC) |
 | glbarcode::BarcodeCepnet       | CEPNET          | "cepnet"      | Brazilian Post barcode.  Based on USPS POSTNET. |
-
-Constructors for these barcode classes follow the same pattern:
-
-@code{.cpp}
-glbarcode::BarcodeXxx( std::string                      data,
-                       double                           w,
-                       double                           h,
-                       glbarcode::BarcodeOptions const& options );
-@endcode
-
-where
-
-@li @c data is a @c string containing the raw barcode data to be encoded
-
-@li @c w is the requested width of the barcode in @a points (1 @a point = 1/72 @a inch).  This parameter is only a suggestion --
-    the actual width of the resulting barcode may differ due to requirements for minimum symbol sizes for the specific symbology
-    standard.  Setting w=0 will allow the barcode's height to be autosized based on a nominal symbol size.
-
-@li @c h is the requested height of the barcode in @a points (1 @a point = 1/72 @a inch).  This parameter is only a suggestion --
-    the actual height of the resulting barcode may differ due to requirements for minimum symbol sizes for the specific symbology
-    standard.  Setting w=0 will allow the barcode's height to be autosized based on a nominal symbol size.
-
-@li @c options is a glbarcode::BarcodeOptions object described @link options above @endlink.
 
 
 
@@ -121,17 +70,70 @@ Finally, a barcode is instantiated using the @c create_barcode() method:
 
 @code{.cpp}
 glbarcode::Barcode *
-glbarcode::BarcodeFactory::create_barcode( std::string                      type_id,
-                                           std::string                      data,
-                                           double                           w,
-                                           double                           h,
-                                           glbarcode::BarcodeOptions const& options );
+glbarcode::BarcodeFactory::create_barcode( std::string type_id );
 @endcode
 
 where
 
 @li @c type_id is a @c string containing a type ID.  See table in @ref barcode_classes.  Valid IDs can also be obtained using the
     @c get_supported_types() method as described above.
+
+
+
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
+@section options Options
+
+The glbarcode::Barcode class currently supports the following options that may be applied to any barcode type:
+
+@li @b show_text is a boolean option to control whether or not text is included in the final barcode rendering.  This option
+    is not honored by all barcode types.
+
+@li @b checksum is a boolean option to control whether or not a checksum or check digit is automatically generated for the barcode.
+    This option is not honored by all barcode types (i.e. this behaviour is mandatory for some barcode types).
+
+Options are set using the appropriate @a set accessor methods.  These @a set accessors are designed to allow chaining of multiple
+accessors as in the following example code:
+
+@code{.cpp}
+using namespace glbarcode;
+ 
+BarcodeCode39 bc;
+ 
+...
+ 
+/* Set options. */
+bc.checksum(true).show_text(true);
+@endcode
+
+Options can also be queried using the appropriate @a get accessors, as in the following example code:
+
+@code{.cpp}
+using namespace glbarcode;
+ 
+BarcodeCode39 bc;
+ 
+...
+ 
+bool text_flag = bc.show_text(); /* Is the show_text option set? */
+@endcode
+
+
+Individual concrete barcode classes may also implement options specific to its barcode type or symbology.
+
+
+
+<!-- -------------------------------------------------------------------------------------------------------------------------- -->
+@section building Building Barcodes
+
+A barcode is "built" using the glbarcode::Barcode::build() method.  It hase the following signature:
+
+@code{.cpp}
+glbarcode::Barcode::build( std::string data,
+                           double      w,
+                           double      h );
+@endcode
+
+where
 
 @li @c data is a @c string containing the raw barcode data to be encoded
 
@@ -143,10 +145,6 @@ where
     the actual height of the resulting barcode may differ due to requirements for minimum symbol sizes for the specific symbology
     standard.  Setting w=0 will allow the barcode's height to be autosized based on a nominal symbol size.
 
-@li @c options is a glbarcode::BarcodeOptions object described @link options above @endlink.
-
-@li @b returns a pointer to an instantiation of a concrete barcode class or @c NULL if @c type is invalid.
-   
 
 
 <!-- -------------------------------------------------------------------------------------------------------------------------- -->
@@ -168,6 +166,7 @@ glbarcode++ currently provides the following renderers:
 |--------------------------|----------------------|
 | glbarcode::RendererDebug | A renderer that simply prints drawing information to @c stdout. |
 | glbarcode::RendererSvg   | Scalable Vector Graphics (SVG) renderer.  Can render to a given filename or to @c stdout. |
+| glbarcode::RendererEps   | Encapsolated Postscript (EPS) renderer.  Can render to a given filename or to @c stdout. |
 
 For example, the following will render @c barcode to an SVG file named "example.svg":
 
@@ -191,7 +190,7 @@ named "Example.svg":
 
 This example will produce the following SVG file:
 
-@image html Example.svg Example.svg
+@image html Example.svg Output of above example 'Example.svg'
 
 
 

@@ -71,7 +71,7 @@ private:
         }
  
  
-        void draw_line( DrawingPrimitiveLine *line )
+        void draw_line( const DrawingPrimitiveLine *line )
         {
 		/* Note: offset x by w/2 so that x1 and x2 refer to center of line. */
                 xxx_draw_line( m_xc,
@@ -81,25 +81,25 @@ private:
         }
  
  
-        void draw_box( DrawingPrimitiveBox *box )
+        void draw_box( const DrawingPrimitiveBox *box )
         {
                 xxx_draw_rect( m_xc, box->x, box->y, box->w, box->h );
         }
  
  
-        void draw_text( DrawingPrimitiveText *text )
+        void draw_text( const DrawingPrimitiveText *text )
         {
                 xxx_draw_text( m_xc, text->x, text->y, text->fsize, text->s.c_str() );
         }
  
  
-        void draw_ring( DrawingPrimitiveRing *ring )
+        void draw_ring( const DrawingPrimitiveRing *ring )
         {
                 xxx_draw_circle( m_xc, ring->x, ring->y, ring->r, ring->lwidth );
         }
  
  
-        void draw_hexagon( DrawingPrimitiveHexagon *hexagon )
+        void draw_hexagon( const DrawingPrimitiveHexagon *hexagon )
         {
                 xxx_draw_hexagon( m_xc, hexagon->x, hexagon->y, hexagon->h );
         }

@@ -39,26 +39,21 @@ namespace glbarcode
 		/**
 		 * Static EAN-13 barcode creation method
 		 *
-		 * Used by glbarcode::Factory
+		 * Used by glbarcode::BarcodeFactory
 		 */
-		static Barcode* create( std::string           data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options );
+		static Barcode* create( void );
+
 
 		/**
-		 * EAN-13 barcode constructor
+		 * Default constructor
 		 */
-		BarcodeEan13( std::string           data,
-			      double                w,
-			      double                h,
-			      BarcodeOptions const& options );
+		BarcodeEan13();
+
 
 	private:
 		bool validate_digits( int n_digits );
 
-		std::string preprocess( std::string           raw_data,
-					BarcodeOptions const& options );
+		std::string preprocess( std::string raw_data );
 
 		void vectorize_text( std::string display_text,
 				     double size1, double size2,

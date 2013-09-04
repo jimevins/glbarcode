@@ -27,24 +27,9 @@ namespace glbarcode
 	/*
 	 * Static Postnet-11 barcode creation method
 	 */
-	Barcode* BarcodePostnet11::create( std::string           data,
-					   double                w,
-					   double                h,
-					   BarcodeOptions const& options )
+	Barcode* BarcodePostnet11::create( void )
 	{
-		return new BarcodePostnet11( data, w, h, options );
-	}
-
-
-	/*
-	 * Postnet-11 barcode constructor
-	 */
-	BarcodePostnet11::BarcodePostnet11( std::string           data,
-					    double                w,
-					    double                h,
-					    BarcodeOptions const& options )
-	{
-		build( data, w, h, options );
+		return new BarcodePostnet11();
 	}
 
 

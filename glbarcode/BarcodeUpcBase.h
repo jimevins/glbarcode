@@ -44,25 +44,23 @@ namespace glbarcode
 					     double x2_left, double x2_right, double y2 ) = 0;
 
 	private:
-		bool validate( std::string           raw_data,
-			       BarcodeOptions const& options );
+		bool validate( std::string raw_data );
 
-		std::string encode( std::string           cooked_data,
-				    BarcodeOptions const& options );
+		std::string encode( std::string cooked_data );
 
-		std::string prepare_text( std::string           raw_data,
-					  BarcodeOptions const& options );
+		std::string prepare_text( std::string raw_data );
 
-		void vectorize( std::string           coded_data,
-				std::string           display_text,
-				std::string           cooked_data,
-				double                w,
-				double                h,
-				BarcodeOptions const& options );
+		void vectorize( std::string coded_data,
+				std::string display_text,
+				std::string cooked_data,
+				double      w,
+				double      h );
+
 
 	protected:
 		int m_end_bars_modules;
 		int m_first_digit_val;
+
 
 	private:
 		int m_check_digit_val;

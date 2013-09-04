@@ -41,10 +41,8 @@ namespace glbarcode
 		/**
 		 * Barcode creation function signature.
 		 */
-		typedef Barcode* (*BarcodeCreateFct)(std::string           data,
-						     double                w,
-						     double                h,
-						     BarcodeOptions const& options );
+		typedef Barcode* (*BarcodeCreateFct)( void );
+
 
 	private:
 		/**
@@ -59,33 +57,28 @@ namespace glbarcode
 		 */
 		static BarcodeFactory* instance( void );
 
-		/**
-		 * Create barcode based on type string.
-		 *
-		 * @param type Barcode type string
-		 * @param data Data to encode in barcode
-		 * @param w Requested width of barcode (0 = auto size)
-		 * @param h Requested height of barcode (0 = auto size)
-		 * @param options Barcode options
-		 */
-		static Barcode* create_barcode( std::string           type,
-						std::string           data,
-						double                w,
-						double                h,
-						BarcodeOptions const& options );
 
 		/**
-		 * Register barcode type.
+		 * Create barcode based on type ID string.
 		 *
-		 * @param type Barcode type string
+		 * @param type_id Barcode type ID string
+		 */
+		static Barcode* create_barcode( std::string type_id );
+
+
+		/**
+		 * Register barcode type ID.
+		 *
+		 * @param type_id Barcode type ID string
 		 * @param fct Function to create barcode object of concrete Barcode class
 		 */
-		static void register_type( std::string type, BarcodeCreateFct fct );
+		static void register_type( std::string type_id, BarcodeCreateFct fct );
+
 
 		/**
 		 * Is barcode type supported?
 		 */
-		static bool is_type_supported( std::string type );
+		static bool is_type_supported( std::string type_id );
 
 
 		/**
@@ -100,10 +93,12 @@ namespace glbarcode
 		 */
 		static void init( void );
 
+
 		/**
 		 * Map barcode type strings to creation functions.
 		 */
 		static BarcodeTypeMap m_barcode_type_map;
+
 
 		/**
 		 * Supported barcode types.

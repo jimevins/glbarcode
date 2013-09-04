@@ -103,33 +103,16 @@ namespace glbarcode
 	/*
 	 * Static Code39 barcode creation method
 	 */
-	Barcode* BarcodeCode39::create( std::string           data,
-					double                w,
-					double                h,
-					BarcodeOptions const& options )
+	Barcode* BarcodeCode39::create( void )
 	{
-		return new BarcodeCode39( data, w, h, options );
-	}
-
-
-	/*
-	 * Code39 barcode constructor
-	 */
-	BarcodeCode39::BarcodeCode39( std::string           data,
-				      double                w,
-				      double                h,
-				      BarcodeOptions const& options )
-	{
-		build( data, w, h, options );
+		return new BarcodeCode39();
 	}
 
 
 	/*
 	 * Code39 data validation, implements Barcode::validate()
 	 */
-	bool BarcodeCode39::validate( std::string           raw_data,
-				      BarcodeOptions const& options )
-
+	bool BarcodeCode39::validate( std::string raw_data )
 	{
 		for ( int i = 0; i < raw_data.size(); i++ )
 		{
@@ -148,8 +131,7 @@ namespace glbarcode
 	/*
 	 * Code39 data encoding, implements Barcode::encode()
 	 */
-	std::string BarcodeCode39::encode( std::string           cooked_data,
-					   BarcodeOptions const& options )
+	std::string BarcodeCode39::encode( std::string cooked_data )
 	{
 		std::string code;
 
@@ -168,7 +150,7 @@ namespace glbarcode
 			sum += c_value;
 		}
 
-		if ( options.checksum() )
+		if ( checksum() )
 		{
 			code += symbols[sum % 43];
 			code += "i";
@@ -184,8 +166,7 @@ namespace glbarcode
 	/*
 	 * Code39 prepare text for display, implements Barcode::prepare_text()
 	 */
-	std::string BarcodeCode39::prepare_text( std::string           raw_data,
-						 BarcodeOptions const& options )
+	std::string BarcodeCode39::prepare_text( std::string raw_data )
 	{
 		std::string display_text;
 
@@ -201,18 +182,17 @@ namespace glbarcode
 	/*
 	 * Code39 vectorization, implements Barcode::vectorize()
 	 */
-	void BarcodeCode39::vectorize( std::string           coded_data,
-				       std::string           display_text,
-				       std::string           cooked_data,
-				       double                w,
-				       double                h,
-				       BarcodeOptions const& options )
+	void BarcodeCode39::vectorize( std::string coded_data,
+				       std::string display_text,
+				       std::string cooked_data,
+				       double      w,
+				       double      h )
 	{
 
 		/* determine width and establish horizontal scale, based on original cooked data */
 		double data_size = cooked_data.size();
 		double min_l;
-		if ( !options.checksum() )
+		if ( !checksum() )
 		{
 			min_l = (data_size + 2)*(3*N + 6)*MIN_X + (data_size + 1)*MIN_I;
 		}
@@ -242,7 +222,7 @@ namespace glbarcode
 		double text_size   = scale * MIN_TEXT_SIZE;
 
 		/* determine height of barcode */
-		double height = options.show_text() ? h - h_text_area : h;
+		double height = show_text() ? h - h_text_area : h;
 		height = std::max( height, std::max( 0.15*width, MIN_HEIGHT ) );
 
 		/* determine horizontal quiet zone */
@@ -292,7 +272,7 @@ namespace glbarcode
 			}
 		}
 
-		if ( options.show_text() )
+		if ( show_text() )
 		{
 			std::string starred_text = "*" + display_text + "*";
 			add_text( x_quiet + width/2, height + (h_text_area+0.7*text_size)/2, text_size, starred_text );
@@ -300,7 +280,7 @@ namespace glbarcode
 
 		/* Overwrite requested size with actual size. */
 		set_width( width + 2*x_quiet );
-		set_height( options.show_text() ? height + h_text_area : height );
+		set_height( show_text() ? height + h_text_area : height );
 
 	}
 

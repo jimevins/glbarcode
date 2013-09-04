@@ -52,35 +52,35 @@ namespace glbarcode
 		}
 
 
-		void draw_line( DrawingPrimitiveLine *line )
+		void draw_line( const DrawingPrimitiveLine *line )
 		{
 			printf( "\tDRAW_LINE( x = %f, y = %f, w = %f, h = %f )\n",
 				line->x, line->y, line->w, line->h );
 		}
 
 
-		void draw_box( DrawingPrimitiveBox *box )
+		void draw_box( const DrawingPrimitiveBox *box )
 		{
 			printf( "\tDRAW_BOX( x = %f, y = %f, w = %f, h = %f )\n",
 				box->x, box->y, box->w, box->h );
 		}
 
 
-		void draw_text( DrawingPrimitiveText *text )
+		void draw_text( const DrawingPrimitiveText *text )
 		{
 			printf( "\tDRAW_TEXT( x = %f, y = %f, fsize = %f, s = \"%s\" )\n",
 				text->x, text->y, text->fsize, text->s.c_str() );
 		}
 
 
-		void draw_ring( DrawingPrimitiveRing *ring )
+		void draw_ring( const DrawingPrimitiveRing *ring )
 		{
 			printf( "\tDRAW_RING( x = %f, y = %f, r = %f, lwidth = %f )\n",
 				ring->x, ring->y, ring->r, ring->lwidth );
 		}
 
 
-		void draw_hexagon( DrawingPrimitiveHexagon *hexagon )
+		void draw_hexagon( const DrawingPrimitiveHexagon *hexagon )
 		{
 			printf( "\tDRAW_HEXAGON( x = %f, y = %f, h = %f )\n",
 				hexagon->x, hexagon->y, hexagon->h );

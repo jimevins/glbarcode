@@ -34,11 +34,9 @@ int main( int argc, char **argv )
 		std::cerr << "Usage: " << argv[0] << "data";
 	}
 
-	glbarcode::BarcodeOptions options;
-	glbarcode::Barcode* bc = glbarcode::BarcodeFactory::instance()->create_barcode( "code39",
-											argv[1],
-											0, 0,
-											options );
+	glbarcode::Barcode* bc = glbarcode::BarcodeFactory::instance()->create_barcode( "code39" );
+
+	bc->build( argv[1] );
 
 	bc->render( renderer );
 

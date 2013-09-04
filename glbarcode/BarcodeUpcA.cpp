@@ -30,26 +30,18 @@ namespace glbarcode
 	/*
 	 * Static UPC-A barcode creation method
 	 */
-	Barcode* BarcodeUpcA::create( std::string           data,
-				      double                w,
-				      double                h,
-				      BarcodeOptions const& options )
+	Barcode* BarcodeUpcA::create( void )
 	{
-		return new BarcodeUpcA( data, w, h, options );
+		return new BarcodeUpcA();
 	}
 
 
 	/*
 	 * UPC-A barcode constructor
 	 */
-	BarcodeUpcA::BarcodeUpcA( std::string           data,
-				  double                w,
-				  double                h,
-				  BarcodeOptions const& options )
+	BarcodeUpcA::BarcodeUpcA()
 	{
 		m_end_bars_modules = 7;
-
-		build( data, w, h, options );
 	}
 
 
@@ -65,8 +57,7 @@ namespace glbarcode
 	/*
 	 * UPC-A Pre-process data before encoding, implements Barcode::preprocess()
 	 */
-	std::string BarcodeUpcA::preprocess( std::string           raw_data,
-					     BarcodeOptions const& options )
+	std::string BarcodeUpcA::preprocess( std::string raw_data )
 	{
 		std::string cooked_data;
 

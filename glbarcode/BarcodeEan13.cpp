@@ -30,26 +30,18 @@ namespace glbarcode
 	/*
 	 * Static EAN-13 barcode creation method
 	 */
-	Barcode* BarcodeEan13::create( std::string           data,
-				       double                w,
-				       double                h,
-				       BarcodeOptions const& options )
+	Barcode* BarcodeEan13::create( void )
 	{
-		return new BarcodeEan13( data, w, h, options );
+		return new BarcodeEan13();
 	}
 
 
 	/*
 	 * EAN-13 barcode constructor
 	 */
-	BarcodeEan13::BarcodeEan13( std::string           data,
-				    double                w,
-				    double                h,
-				    BarcodeOptions const& options )
+	BarcodeEan13::BarcodeEan13()
 	{
 		m_end_bars_modules = 3;
-
-		build( data, w, h, options );
 	}
 
 
@@ -65,8 +57,7 @@ namespace glbarcode
 	/*
 	 * EAN-13 Pre-process data before encoding, implements Barcode::preprocess()
 	 */
-	std::string BarcodeEan13::preprocess( std::string raw_data,
-					      BarcodeOptions const& options )
+	std::string BarcodeEan13::preprocess( std::string raw_data )
 	{
 		std::string cooked_data;
 
