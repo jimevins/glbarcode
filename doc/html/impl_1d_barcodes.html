@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.3.1"/>
-<title>glbarcode++: Implementing Barcodes</title>
+<title>glbarcode++: Implementing 1D Barcodes</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,7 +68,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('impl_barcodes.html','');});
+$(document).ready(function(){initNavTree('impl_1d_barcodes.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -87,17 +87,21 @@ $(document).ready(function(){initNavTree('impl_barcodes.html','');});
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Implementing Barcodes </div>  </div>
+<div class="title">Implementing 1D Barcodes </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>Creating new barcode types (or symbologies) is accomplished by implementing a subclass of the abstract <a class="el" href="classglbarcode_1_1Barcode.html">glbarcode::Barcode</a> class.</p>
+<div class="textblock"><p>Creating new 1D barcode types (or symbologies) is accomplished by implementing a subclass of the abstract <a class="el" href="classglbarcode_1_1Barcode1dBase.html">glbarcode::Barcode1dBase</a> class which is a subclass of the <a class="el" href="classglbarcode_1_1Barcode.html">glbarcode::Barcode</a> class.</p>
+<div align="center">
+<img src="dot_inline_dotgraph_1.png" alt="dot_inline_dotgraph_1.png" border="0" usemap="#dot_inline_dotgraph_1.map"/>
+<map name="dot_inline_dotgraph_1.map" id="dot_inline_dotgraph_1.map"><area shape="rect" id="node1" href="classglbarcode_1_1Barcode.html" title="glbarcode::Barcode" alt="" coords="36,5,167,53"/><area shape="rect" id="node2" href="classglbarcode_1_1Barcode1dBase.html" title="glbarcode::Barcode1dBase" alt="" coords="13,101,189,149"/></map>
+</div>
 <h2>Virtual Methods</h2>
-<p>A barcode subclass must implement the following virtual methods (or callbacks):</p>
+<p>A 1D barcode subclass must implement the following virtual methods (or callbacks):</p>
 <ul>
-<li><a class="el" href="classglbarcode_1_1Barcode.html#a4e44ac451d351edbdb9c36043cf7f38b">glbarcode::Barcode::validate()</a> &ndash; The validate method is used to test if data is valid for encoding with the intended symbology. This method must only validate data that can be encoded successfully as-is or after processing by the optional <a class="el" href="classglbarcode_1_1Barcode.html#aa3cf68412e46d2ef554b17173a7f5dd4">glbarcode::Barcode::preprocess()</a> method.</li>
+<li><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a117b592f4c19c7c141550c5138976b4a">glbarcode::Barcode1dBase::validate()</a> &ndash; The validate method is used to test if data is valid for encoding with the intended symbology. This method must only validate data that can be encoded successfully as-is or after processing by the optional <a class="el" href="classglbarcode_1_1Barcode1dBase.html#a2c612eae36722c0b326cc999c813f10e">glbarcode::Barcode1dBase::preprocess()</a> method.</li>
 </ul>
 <ul>
-<li><p class="startli"><a class="el" href="classglbarcode_1_1Barcode.html#a79d7eef43cebb81212540df206acee3c">glbarcode::Barcode::encode()</a> &ndash; The encode method is used to encode data such that it can later be vectorized. The encoded is usually a list of characters that represent an atomic barcode element. For example, the following is the character encoding used by the Code39 implementation:</p>
+<li><p class="startli"><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a48760e7d2d2189358f388af535dd8317">glbarcode::Barcode1dBase::encode()</a> &ndash; The encode method is used to encode data such that it can later be vectorized. The encoded data is usually a list of characters that represent an atomic barcode element. For example, the following is the character encoding used by the Code39 implementation:</p>
 <center> <table class="doxtable">
 <tr>
 <th align="center">Character </th><th align="left">Meaning </th></tr>
@@ -116,7 +120,7 @@ $(document).ready(function(){initNavTree('impl_barcodes.html','');});
 </li>
 </ul>
 <ul>
-<li><p class="startli"><a class="el" href="classglbarcode_1_1Barcode.html#abe89308fd548e409edd9e7e277a04ee3">glbarcode::Barcode::vectorize()</a> &ndash; The vectorize method converts the encoded data into a list of <a class="el" href="drawing_primitives.html">Drawing Primitives</a> suitable for rendering. The following protected methods are available to the vectorize implementation to create this list:</p>
+<li><p class="startli"><a class="el" href="classglbarcode_1_1Barcode1dBase.html#aa83b9227370ce254fec336630ce9188e">glbarcode::Barcode1dBase::vectorize()</a> &ndash; The vectorize method converts the encoded data into a list of <a class="el" href="drawing_primitives.html">Drawing Primitives</a> suitable for rendering. The following protected methods are available to the vectorize implementation to create this list:</p>
 <ul>
 <li><a class="el" href="classglbarcode_1_1Barcode.html#af84ab5824d0320133066dac885849fe0">glbarcode::Barcode::add_line()</a></li>
 <li><a class="el" href="classglbarcode_1_1Barcode.html#a5830b7bc56dd2db0e3cdb50cd09a734e">glbarcode::Barcode::add_box()</a></li>
@@ -124,24 +128,19 @@ $(document).ready(function(){initNavTree('impl_barcodes.html','');});
 <li><a class="el" href="classglbarcode_1_1Barcode.html#af32771fa6c76c3c06fd0d2a737af8f8f">glbarcode::Barcode::add_ring()</a></li>
 <li><a class="el" href="classglbarcode_1_1Barcode.html#ac23d0e6940daf19a96ef18a2f80e6603">glbarcode::Barcode::add_hexagon()</a></li>
 </ul>
-<p class="startli">Additionally, if the actual size of the vectorized barcode is different from the requested size, the vectorize method should call the following methods:</p>
-<ul>
-<li><a class="el" href="classglbarcode_1_1Barcode.html#a9386015896c8ff31a8b7dbe8e0ea4870">glbarcode::Barcode::set_width()</a></li>
-<li><a class="el" href="classglbarcode_1_1Barcode.html#a0ef719cd1f2073dc9ca25b0287ea3604">glbarcode::Barcode::set_height()</a></li>
-</ul>
 </li>
 </ul>
 <p>A barcode subclass may also need to implement the following virtual methods:</p>
 <ul>
-<li><a class="el" href="classglbarcode_1_1Barcode.html#aa3cf68412e46d2ef554b17173a7f5dd4">glbarcode::Barcode::preprocess()</a> &ndash; The preprocess method performs any transformation of the data needed before encoding. This method may be needed to perform a first-pass encoding to translate an extended alphabet into a simpler one. For example, this could be as simple as upshifting lowercase letters into uppercase if the symbology only supports uppercase. It is assumed that the data passed to this method has already been validated with the <a class="el" href="classglbarcode_1_1Barcode.html#a4e44ac451d351edbdb9c36043cf7f38b">glbarcode::Barcode::validate()</a> method.</li>
+<li><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a2c612eae36722c0b326cc999c813f10e">glbarcode::Barcode1dBase::preprocess()</a> &ndash; The preprocess method performs any transformation of the data needed before encoding. This method may be needed to perform a first-pass encoding to translate an extended alphabet into a simpler one. For example, this could be as simple as upshifting lowercase letters into uppercase if the symbology only supports uppercase. It is assumed that the data passed to this method has already been validated with the <a class="el" href="classglbarcode_1_1Barcode1dBase.html#a117b592f4c19c7c141550c5138976b4a">glbarcode::Barcode1dBase::validate()</a> method.</li>
 </ul>
 <ul>
-<li><a class="el" href="classglbarcode_1_1Barcode.html#a1df5d4c52ea1a21c3bff339aab4229b5">glbarcode::Barcode::prepare_text()</a> &ndash; The prepare_text method performs any transformation of the data needed before it can be displayed.</li>
+<li><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a54e0aac18674093ef2a1ef1c8c09193b">glbarcode::Barcode1dBase::prepare_text()</a> &ndash; The prepare_text method performs any transformation of the data needed before it can be displayed.</li>
 </ul>
-<p>The following figure illustrates the data flow between these methods, which are called by <a class="el" href="classglbarcode_1_1Barcode.html#a85426f6091339e5b87a9e1bcd0be6acd">glbarcode::Barcode::build()</a>:</p>
+<p>The following figure illustrates the data flow between these methods, which are called by <a class="el" href="classglbarcode_1_1Barcode1dBase.html#acc7fac08d928e4c0c4b191b4ead6adf0">glbarcode::Barcode1dBase::build()</a>:</p>
 <div align="center">
-<img src="dot_inline_dotgraph_1.png" alt="dot_inline_dotgraph_1.png" border="0" usemap="#dot_inline_dotgraph_1.map"/>
-<map name="dot_inline_dotgraph_1.map" id="dot_inline_dotgraph_1.map"><area shape="rect" id="node3" href="classglbarcode_1_1Barcode.html#a4e44ac451d351edbdb9c36043cf7f38b" title="validate" alt="" coords="89,104,161,152"/><area shape="rect" id="node4" href="classglbarcode_1_1Barcode.html#aa3cf68412e46d2ef554b17173a7f5dd4" title="preprocess" alt="" coords="12,203,97,251"/><area shape="rect" id="node6" href="classglbarcode_1_1Barcode.html#a1df5d4c52ea1a21c3bff339aab4229b5" title="prepare_text" alt="" coords="103,312,196,360"/><area shape="rect" id="node5" href="classglbarcode_1_1Barcode.html#a79d7eef43cebb81212540df206acee3c" title="encode" alt="" coords="5,312,77,360"/><area shape="rect" id="node7" href="classglbarcode_1_1Barcode.html#abe89308fd548e409edd9e7e277a04ee3" title="vectorize" alt="" coords="60,421,132,469"/></map>
+<img src="dot_inline_dotgraph_2.png" alt="dot_inline_dotgraph_2.png" border="0" usemap="#dot_inline_dotgraph_2.map"/>
+<map name="dot_inline_dotgraph_2.map" id="dot_inline_dotgraph_2.map"><area shape="rect" id="node3" href="classglbarcode_1_1Barcode1dBase.html#a117b592f4c19c7c141550c5138976b4a" title="validate" alt="" coords="89,104,161,152"/><area shape="rect" id="node4" href="classglbarcode_1_1Barcode1dBase.html#a2c612eae36722c0b326cc999c813f10e" title="preprocess" alt="" coords="12,203,97,251"/><area shape="rect" id="node6" href="classglbarcode_1_1Barcode1dBase.html#a54e0aac18674093ef2a1ef1c8c09193b" title="prepare_text" alt="" coords="103,312,196,360"/><area shape="rect" id="node5" href="classglbarcode_1_1Barcode1dBase.html#a48760e7d2d2189358f388af535dd8317" title="encode" alt="" coords="5,312,77,360"/><area shape="rect" id="node7" href="classglbarcode_1_1Barcode1dBase.html#aa83b9227370ce254fec336630ce9188e" title="vectorize" alt="" coords="60,421,132,469"/></map>
 </div>
 <h2>Registering With The Barcode Factory</h2>
 <p>To be able to register a barcode type with the barcode factory, it must implement a static create method that returns a pointer to a newly allocated barcode:</p>
@@ -182,13 +181,13 @@ $(document).ready(function(){initNavTree('impl_barcodes.html','');});
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor"></span><span class="preprocessor">#define glbarcode_BarcodeCode39_h</span></div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor"></span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Barcode_8h.html">Barcode.h</a>&quot;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Barcode1dBase_8h.html">Barcode1dBase.h</a>&quot;</span></div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
 <div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">namespace </span>glbarcode</div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;{</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">class </span>BarcodeCode39 : <span class="keyword">public</span> Barcode</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;        <span class="keyword">class </span>BarcodeCode39 : <span class="keyword">public</span> Barcode1dBase</div>
 <div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        {</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keyword">public</span>:</div>
 <div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;                <span class="keyword">static</span> <a class="code" href="classglbarcode_1_1Barcode.html#a99edd197081eea1997b4391d37db3009">Barcode</a>* <a class="code" href="classglbarcode_1_1BarcodeCode39.html#a29b1bbece77066ffb1033e83339758e9">create</a>( <span class="keywordtype">void</span> );</div>
@@ -204,8 +203,8 @@ $(document).ready(function(){initNavTree('impl_barcodes.html','');});
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;                <span class="keywordtype">void</span> vectorize( std::string coded_data,</div>
 <div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                                std::string display_text,</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                                std::string cooked_data,</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                <span class="keywordtype">double</span>      w,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                <span class="keywordtype">double</span>      h );</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                                <span class="keywordtype">double</span>      &amp;w,</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                <span class="keywordtype">double</span>      &amp;h );</div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        };</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
 <div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;}</div>
@@ -400,8 +399,8 @@ $(document).ready(function(){initNavTree('impl_barcodes.html','');});
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <span class="keywordtype">void</span> BarcodeCode39::vectorize( std::string coded_data,</div>
 <div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                                       std::string display_text,</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                                       std::string cooked_data,</div>
-<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                                       <span class="keywordtype">double</span>      w,</div>
-<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                       <span class="keywordtype">double</span>      h )</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                                       <span class="keywordtype">double</span>      &amp;w,</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                                       <span class="keywordtype">double</span>      &amp;h )</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;        {</div>
 <div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="comment">/* determine width and establish horizontal scale, based on original cooked data */</span></div>
@@ -494,8 +493,8 @@ $(document).ready(function(){initNavTree('impl_barcodes.html','');});
 <div class="line"><a name="l00279"></a><span class="lineno">  279</span>&#160;                }</div>
 <div class="line"><a name="l00280"></a><span class="lineno">  280</span>&#160;</div>
 <div class="line"><a name="l00281"></a><span class="lineno">  281</span>&#160;                <span class="comment">/* Overwrite requested size with actual size. */</span></div>
-<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                set_width( width + 2*x_quiet );</div>
-<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                set_height( show_text() ? height + h_text_area : height );</div>
+<div class="line"><a name="l00282"></a><span class="lineno">  282</span>&#160;                w = width + 2*x_quiet;</div>
+<div class="line"><a name="l00283"></a><span class="lineno">  283</span>&#160;                h = show_text() ? height + h_text_area : height;</div>
 <div class="line"><a name="l00284"></a><span class="lineno">  284</span>&#160;</div>
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
@@ -519,7 +518,7 @@ $(document).ready(function(){initNavTree('impl_barcodes.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 3 2013 22:46:23 for glbarcode++ by
+    <li class="footer">Generated on Thu Sep 5 2013 23:44:45 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

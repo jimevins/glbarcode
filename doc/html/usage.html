@@ -186,8 +186,8 @@ Options</h1>
 </div><!-- fragment --><p>Individual concrete barcode classes may also implement options specific to its barcode type or symbology.</p>
 <h1><a class="anchor" id="building"></a>
 Building Barcodes</h1>
-<p>A barcode is "built" using the <a class="el" href="classglbarcode_1_1Barcode.html#a85426f6091339e5b87a9e1bcd0be6acd">glbarcode::Barcode::build()</a> method. It hase the following signature:</p>
-<div class="fragment"><div class="line"><a class="code" href="classglbarcode_1_1Barcode.html#a85426f6091339e5b87a9e1bcd0be6acd">glbarcode::Barcode::build</a>( std::string data,</div>
+<p>A barcode is "built" using the <a class="el" href="classglbarcode_1_1Barcode.html#a98b21163b4fadd7b306b52dd702528fe">glbarcode::Barcode::build()</a> method. It hase the following signature:</p>
+<div class="fragment"><div class="line"><a class="code" href="classglbarcode_1_1Barcode.html#a98b21163b4fadd7b306b52dd702528fe">glbarcode::Barcode::build</a>( std::string data,</div>
 <div class="line">                           <span class="keywordtype">double</span>      w,</div>
 <div class="line">                           <span class="keywordtype">double</span>      h );</div>
 </div><!-- fragment --><p>where</p>
@@ -242,7 +242,7 @@ Putting It All Together</h1>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classglbarcode_1_1Barcode.html">Barcode</a> *bc = factory-&gt;<a class="code" href="classglbarcode_1_1BarcodeFactory.html#ae509a6bd9d3650836c3e232bb80dc0c0">create_barcode</a>( <span class="stringliteral">&quot;code39&quot;</span> );</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="comment">/* Set barcode options to show text and generate check digit, and then build */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        bc-&gt;<a class="code" href="classglbarcode_1_1Barcode.html#ad8e6c21474c17e895f0c7dab18eab9a6">checksum</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#af8e1cf4c774849dfadf76b337fd08b82">show_text</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#a85426f6091339e5b87a9e1bcd0be6acd">build</a>( <span class="stringliteral">&quot;EXAMPLE-123&quot;</span>, 288, 72 );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        bc-&gt;<a class="code" href="classglbarcode_1_1Barcode.html#ad8e6c21474c17e895f0c7dab18eab9a6">checksum</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#af8e1cf4c774849dfadf76b337fd08b82">show_text</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#a98b21163b4fadd7b306b52dd702528fe">build</a>( <span class="stringliteral">&quot;EXAMPLE-123&quot;</span>, 288, 72 );</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">/* Render barcode. */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        bc-&gt;<a class="code" href="classglbarcode_1_1Barcode.html#ac1a770020b4915e4d324dd18af3a06f5">render</a>( <a class="code" href="classglbarcode_1_1RendererSvg.html">RendererSvg</a>().filename( <span class="stringliteral">&quot;Example.svg&quot;</span> ) );</div>
@@ -260,7 +260,7 @@ Output of above example 'Example.svg'</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Tue Sep 3 2013 22:46:23 for glbarcode++ by
+    <li class="footer">Generated on Thu Sep 5 2013 23:44:45 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

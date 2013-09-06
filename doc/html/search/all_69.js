@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['implementing_20barcodes',['Implementing Barcodes',['../impl_barcodes.html',1,'extending']]],
+  ['implementing_201d_20barcodes',['Implementing 1D Barcodes',['../impl_1d_barcodes.html',1,'extending']]],
   ['implementing_20renderers',['Implementing Renderers',['../impl_renderers.html',1,'extending']]],
-  ['implementing_2dbarcodes_2edox',['implementing-barcodes.dox',['../implementing-barcodes_8dox.html',1,'']]],
+  ['implementing_2d1d_2dbarcodes_2edox',['implementing-1d-barcodes.dox',['../implementing-1d-barcodes_8dox.html',1,'']]],
   ['implementing_2drenderers_2edox',['implementing-renderers.dox',['../implementing-renderers_8dox.html',1,'']]],
   ['instance',['instance',['../classglbarcode_1_1BarcodeFactory.html#a0799645494253d3e65e8873567dcee8f',1,'glbarcode::BarcodeFactory']]],
   ['is_5fdata_5fvalid',['is_data_valid',['../classglbarcode_1_1Barcode.html#a26f0e128025b6435df64990a5ee1adb9',1,'glbarcode::Barcode']]],

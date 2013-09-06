@@ -1,6 +1,7 @@
 <map id="BarcodeCepnet.h" name="BarcodeCepnet.h">
-<area shape="rect" id="node3" href="$BarcodePostnet_8h.html" title="BarcodePostnet.h" alt="" coords="5,83,131,112"/>
-<area shape="rect" id="node5" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="28,160,108,189"/>
-<area shape="rect" id="node9" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="65,237,151,267"/>
-<area shape="rect" id="node13" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="127,315,265,344"/>
+<area shape="rect" id="node3" href="$BarcodePostnet_8h.html" title="BarcodePostnet.h" alt="" coords="7,83,132,112"/>
+<area shape="rect" id="node5" href="$Barcode1dBase_8h.html" title="Barcode1dBase.h" alt="" coords="7,160,132,189"/>
+<area shape="rect" id="node9" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="29,237,109,267"/>
+<area shape="rect" id="node12" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="97,315,183,344"/>
+<area shape="rect" id="node16" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="147,392,285,421"/>
 </map>

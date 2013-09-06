@@ -1,5 +1,6 @@
 <map id="BarcodeUpcBase.h" name="BarcodeUpcBase.h">
-<area shape="rect" id="node3" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="32,83,112,112"/>
-<area shape="rect" id="node7" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="69,160,155,189"/>
-<area shape="rect" id="node11" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="131,237,269,267"/>
+<area shape="rect" id="node3" href="$Barcode1dBase_8h.html" title="Barcode1dBase.h" alt="" coords="9,83,135,112"/>
+<area shape="rect" id="node7" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="32,160,112,189"/>
+<area shape="rect" id="node10" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="100,237,185,267"/>
+<area shape="rect" id="node14" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="149,315,288,344"/>
 </map>

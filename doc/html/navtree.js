@@ -36,7 +36,7 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"BarcodeCepnet_8cpp.html"
+"Barcode1dBase_8cpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

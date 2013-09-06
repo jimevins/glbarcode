@@ -6,6 +6,12 @@ var files =
     [ "Barcode.h", "Barcode_8h.html", [
       [ "Barcode", "classglbarcode_1_1Barcode.html", "classglbarcode_1_1Barcode" ]
     ] ],
+    [ "Barcode1dBase.cpp", "Barcode1dBase_8cpp.html", [
+      [ "PrivateData", "structglbarcode_1_1Barcode1dBase_1_1PrivateData.html", "structglbarcode_1_1Barcode1dBase_1_1PrivateData" ]
+    ] ],
+    [ "Barcode1dBase.h", "Barcode1dBase_8h.html", [
+      [ "Barcode1dBase", "classglbarcode_1_1Barcode1dBase.html", "classglbarcode_1_1Barcode1dBase" ]
+    ] ],
     [ "BarcodeCepnet.cpp", "BarcodeCepnet_8cpp.html", null ],
     [ "BarcodeCepnet.h", "BarcodeCepnet_8h.html", [
       [ "BarcodeCepnet", "classglbarcode_1_1BarcodeCepnet.html", null ]

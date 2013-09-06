@@ -16,10 +16,11 @@ var searchData=
   ['drawingprimitivehexagon',['DrawingPrimitiveHexagon',['../classglbarcode_1_1DrawingPrimitiveHexagon.html',1,'glbarcode']]],
   ['drawingprimitiveline',['DrawingPrimitiveLine',['../classglbarcode_1_1DrawingPrimitiveLine.html',1,'glbarcode']]],
   ['drawingprimitiveline',['DrawingPrimitiveLine',['../classglbarcode_1_1DrawingPrimitiveLine.html#a3172c5fbef4fe968bc634f5e0ac49e55',1,'glbarcode::DrawingPrimitiveLine']]],
-  ['drawingprimitivering',['DrawingPrimitiveRing',['../classglbarcode_1_1DrawingPrimitiveRing.html#a7d71ed80dd6ad677d2a5705c33bbfe16',1,'glbarcode::DrawingPrimitiveRing']]],
   ['drawingprimitivering',['DrawingPrimitiveRing',['../classglbarcode_1_1DrawingPrimitiveRing.html',1,'glbarcode']]],
+  ['drawingprimitivering',['DrawingPrimitiveRing',['../classglbarcode_1_1DrawingPrimitiveRing.html#a7d71ed80dd6ad677d2a5705c33bbfe16',1,'glbarcode::DrawingPrimitiveRing']]],
   ['drawingprimitives_2ecpp',['DrawingPrimitives.cpp',['../DrawingPrimitives_8cpp.html',1,'']]],
   ['drawingprimitives_2eh',['DrawingPrimitives.h',['../DrawingPrimitives_8h.html',1,'']]],
+  ['drawingprimitivetext',['DrawingPrimitiveText',['../classglbarcode_1_1DrawingPrimitiveText.html#a68e4df0e724d8e85290cdc97e7b6b0a2',1,'glbarcode::DrawingPrimitiveText']]],
   ['drawingprimitivetext',['DrawingPrimitiveText',['../classglbarcode_1_1DrawingPrimitiveText.html',1,'glbarcode']]],
-  ['drawingprimitivetext',['DrawingPrimitiveText',['../classglbarcode_1_1DrawingPrimitiveText.html#a68e4df0e724d8e85290cdc97e7b6b0a2',1,'glbarcode::DrawingPrimitiveText']]]
+  ['dummy',['dummy',['../structglbarcode_1_1Barcode1dBase_1_1PrivateData.html#af934006b460356436a5300a07a2042df',1,'glbarcode::Barcode1dBase::PrivateData']]]
 ];

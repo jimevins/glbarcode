@@ -2,6 +2,7 @@ var namespaceglbarcode =
 [
     [ "Constants", "namespaceglbarcode_1_1Constants.html", null ],
     [ "Barcode", "classglbarcode_1_1Barcode.html", "classglbarcode_1_1Barcode" ],
+    [ "Barcode1dBase", "classglbarcode_1_1Barcode1dBase.html", "classglbarcode_1_1Barcode1dBase" ],
     [ "BarcodeCepnet", "classglbarcode_1_1BarcodeCepnet.html", null ],
     [ "BarcodeCode39", "classglbarcode_1_1BarcodeCode39.html", null ],
     [ "BarcodeCode39Ext", "classglbarcode_1_1BarcodeCode39Ext.html", null ],
