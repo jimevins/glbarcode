@@ -93,9 +93,9 @@ namespace glbarcode
 		 * @param w Requested width of barcode (0 = auto size)
 		 * @param h Requested height of barcode (0 = auto size)
 		 */
-		void build( std::string           data,
-			    double                w = 0,
-			    double                h = 0 );
+		virtual void build( std::string           data,
+				    double                w = 0,
+				    double                h = 0 ) = 0;
 
 
 		/**
@@ -142,71 +142,9 @@ namespace glbarcode
 
 	protected:
 		/**
-		 * Validate barcode data.
-		 *
-		 * Required virtual method to test if data is valid for encoding with
-		 * barcode type.
-		 *
-		 * @param raw_data Data to validate
-		 * @return True if data is valid data for barcode type
-		 * @return False if data is not valid data for barcode type
+		 * Clear drawing primitives.
 		 */
-		virtual bool validate( std::string raw_data ) = 0;
-
-
-		/**
-		 * Preprocess barcode data.
-		 *
-		 * Optional virtual method to perform any transformation of the data needed
-		 * before encoding.  (E.g. encoding an extended alphabet into a simpler one).
-		 *
-		 * @param raw_data Data to preprocess
-		 * @return Preprocessed data
-		 */
-		virtual std::string preprocess( std::string raw_data );
-
-
-		/**
-		 * Encode barcode data
-		 *
-		 * Required virtual method to encode data such that it can be later vectorized.
-		 * The encoded data is usually a list of characters that represent an atomic
-		 * barcode element (e.g. 'w' = a wide line & 'n' = a narrow line).
-		 *
-		 * @param cooked_data Data to encode
-		 * @return Encoded data
-		 */
-		virtual std::string encode( std::string cooked_data ) = 0;
-
-
-		/**
-		 * Prepare text
-		 *
-		 * Optional virtual method to prepare text to be displayed as part of barcode.
-		 *
-		 * @param raw_data Data to prepare
-		 * @return text in display form
-		 */
-		virtual std::string prepare_text( std::string raw_data );
-
-
-		/**
-		 * Vectorize encoded data
-		 *
-		 * Required virtual method to convert encoded data into a list of drawing
-		 * primitives which can later be rendered.
-		 *
-		 * @param encoded_data Data to vectorize
-		 * @param display_text Text to display
-		 * @param cooked_data Original data prior to encoding (may be needed for sizing)
-		 * @param w Requested width of barcode (0 = auto size)
-		 * @param h Requested height of barcode (0 = auto size)
-		 */
-		virtual void vectorize( std::string encoded_data,
-					std::string display_text,
-					std::string cooked_data,
-					double      w,
-					double      h ) = 0;
+		void clear( void );
 
 
 		/**
@@ -284,9 +222,29 @@ namespace glbarcode
 
 
 		/**
+		 * Set empty flag.
+		 *
+		 * To be used by build() implementations to indicate if input data is empty
+		 *
+		 * @param value Boolean value of flag
+		 */
+		void set_empty_flag( bool value );
+
+
+		/**
+		 * Set data valid flag.
+		 *
+		 * To be used by build() implementations to indicate if input data is valid or not
+		 *
+		 * @param value Boolean value of flag
+		 */
+		void set_data_valid_flag( bool value );
+
+
+		/**
 		 * Set new width of barcode.
 		 *
-		 * To be used by vectorize() implementations to override requested width of barcode.
+		 * To be used by build() implementations to override requested width of barcode.
 		 *
 		 * @param w Actual width of barcode (points)
 		 */
@@ -296,7 +254,7 @@ namespace glbarcode
 		/**
 		 * Set new height of barcode.
 		 *
-		 * To be used by vectorize() implementations to override requested height of barcode.
+		 * To be used by build() implementations to override requested height of barcode.
 		 *
 		 * @param h Actual height of barcode (points)
 		 */
@@ -304,12 +262,6 @@ namespace glbarcode
 
 
 	private:
-		/**
-		 * Clear drawing primitives.
-		 */
-		void clear_drawing_primitives( void );
-
-
 		/**
 		 * Barcode Private data
 		 */

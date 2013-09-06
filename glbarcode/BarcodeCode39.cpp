@@ -185,8 +185,8 @@ namespace glbarcode
 	void BarcodeCode39::vectorize( std::string coded_data,
 				       std::string display_text,
 				       std::string cooked_data,
-				       double      w,
-				       double      h )
+				       double      &w,
+				       double      &h )
 	{
 
 		/* determine width and establish horizontal scale, based on original cooked data */
@@ -279,8 +279,8 @@ namespace glbarcode
 		}
 
 		/* Overwrite requested size with actual size. */
-		set_width( width + 2*x_quiet );
-		set_height( show_text() ? height + h_text_area : height );
+		w = width + 2*x_quiet;
+		h = show_text() ? height + h_text_area : height;
 
 	}
 

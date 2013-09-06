@@ -147,8 +147,8 @@ namespace glbarcode
 	void BarcodePostnet::vectorize( std::string coded_data,
 					std::string display_text,
 					std::string cooked_data,
-					double      w,
-					double      h )
+					double      &w,
+					double      &h )
 	{
 		double x = POSTNET_HORIZ_MARGIN;
 		for ( int i=0; i < coded_data.size(); i++ )
@@ -178,8 +178,8 @@ namespace glbarcode
 		}
 
 		/* Overwrite requested size with actual size. */
-		set_width( x + POSTNET_HORIZ_MARGIN );
-		set_height( POSTNET_FULLBAR_HEIGHT + 2 * POSTNET_VERT_MARGIN );
+		w = x + POSTNET_HORIZ_MARGIN;
+		h = POSTNET_FULLBAR_HEIGHT + 2 * POSTNET_VERT_MARGIN;
 	}
 
 }

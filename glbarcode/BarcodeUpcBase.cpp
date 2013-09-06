@@ -212,8 +212,8 @@ namespace glbarcode
 	void BarcodeUpcBase::vectorize( std::string coded_data,
 					std::string display_text,
 					std::string cooked_data,
-					double      w,
-					double      h )
+					double      &w,
+					double      &h )
 	{
 		/* determine width and establish horizontal scale */
 		int n_modules     = 7*(cooked_data.size()+1) + 11;
@@ -290,8 +290,8 @@ namespace glbarcode
 				text_x2_left, text_x2_right, text_y2 );
 
 		/* Overwrite requested size with actual size. */
-		set_width( width );
-		set_height( h_bar1 + h_text_area );
+		w = width;
+		h = h_bar1 + h_text_area;
 	}
 
 }

@@ -22,7 +22,7 @@
 #define glbarcode_BarcodePostnet_h
 
 
-#include "Barcode.h"
+#include "Barcode1dBase.h"
 
 
 namespace glbarcode
@@ -31,9 +31,9 @@ namespace glbarcode
 	/**
 	 * @class BarcodePostnet BarcodePostnet.h glbarcode/BarcodePostnet.h
 	 *
-	 * Postnet barcode (All USPS sizes: ZIP, ZIP+4, ZIP+4+DC), implements Barcode
+	 * Postnet barcode (All USPS sizes: ZIP, ZIP+4, ZIP+4+DC), implements Barcode1dBase
 	 */
-	class BarcodePostnet : public Barcode
+	class BarcodePostnet : public Barcode1dBase
 	{
 	public:
 		/**
@@ -59,8 +59,8 @@ namespace glbarcode
 		void vectorize( std::string coded_data,
 				std::string display_text,
 				std::string cooked_data,
-				double      w,
-				double      h );
+				double      &w,
+				double      &h );
 
 	};
 

@@ -22,7 +22,7 @@
 #define glbarcode_BarcodeOnecode_h
 
 
-#include "Barcode.h"
+#include "Barcode1dBase.h"
 
 #include <stdint.h>
 
@@ -33,9 +33,9 @@ namespace glbarcode
 	/**
 	 * @class BarcodeOnecode BarcodeOnecode.h glbarcode/BarcodeOnecode.h
 	 *
-	 * Onecode barcode, implements Barcode
+	 * Onecode barcode, implements Barcode1dBase
 	 */
-	class BarcodeOnecode : public Barcode
+	class BarcodeOnecode : public Barcode1dBase
 	{
 	public:
 		/**
@@ -54,8 +54,8 @@ namespace glbarcode
 		void vectorize( std::string coded_data,
 				std::string display_text,
 				std::string cooked_data,
-				double                w,
-				double                h );
+				double      &w,
+				double      &h );
 
 
 	private:

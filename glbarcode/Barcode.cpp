@@ -64,7 +64,7 @@ namespace glbarcode
 
 	Barcode::~Barcode()
 	{
-		clear_drawing_primitives();
+		clear(); /* Clear drawing primitives. */
 		delete d;
 	}
 
@@ -95,46 +95,6 @@ namespace glbarcode
 	}
 
 
-	void Barcode::build( std::string           raw_data,
-			     double                w,
-			     double                h )
-	{
-		std::string cooked_data;     /* Preprocessed data */
-		std::string display_text;    /* Text data to be displayed */
-		std::string coded_data;      /* Encoded data */
-
-		clear_drawing_primitives();
-
-		d->m_w             = w;
-		d->m_h             = h;
-
-		if ( raw_data.empty() )
-		{
-			d->m_empty_flag = true;
-			d->m_data_valid_flag = false;
-		}
-		else
-		{
-			d->m_empty_flag = false;
-
-			if ( validate( raw_data ) )
-			{
-				d->m_data_valid_flag = true;
-
-				cooked_data  = preprocess( raw_data );
-				coded_data   = encode( cooked_data );
-				display_text = prepare_text( raw_data );
-
-				vectorize( coded_data, display_text, cooked_data, w, h );
-			}
-			else
-			{
-				d->m_data_valid_flag = false;
-			}
-		}
-	}
-
-
 	void Barcode::render( Renderer &renderer )
 	{
 		renderer.render( d->m_w, d->m_h, d->m_primitives );
@@ -147,9 +107,21 @@ namespace glbarcode
 	}
 
 
+	void Barcode::set_empty_flag( bool value )
+	{
+		d->m_empty_flag = value;
+	}
+
+
 	bool Barcode::is_data_valid( void )
 	{
 		return d->m_data_valid_flag;
+	}
+
+
+	void Barcode::set_data_valid_flag( bool value )
+	{
+		d->m_data_valid_flag = value;
 	}
 
 
@@ -177,25 +149,7 @@ namespace glbarcode
 	}
 
 
-	/*
-	 * Default preprocess method
-	 */
-	std::string Barcode::preprocess( std::string raw_data )
-	{
-		return raw_data;
-	}
-
-
-	/*
-	 * Default prepare_text method
-	 */
-	std::string Barcode::prepare_text( std::string raw_data )
-	{
-		return raw_data;
-	}
-
-
-	void Barcode::clear_drawing_primitives( void )
+	void Barcode::clear( void )
 	{
 		std::list<DrawingPrimitive*>::iterator primitive;
 

@@ -5,6 +5,7 @@ project (lib CXX)
 set (PUBLIC_HEADERS
   BarcodeFactory.h
   Barcode.h
+  Barcode1dBase.h
   BarcodeCepnet.h
   BarcodeCode39Ext.h
   BarcodeCode39.h
@@ -28,6 +29,7 @@ set (PUBLIC_HEADERS
 set (LIB_SOURCES
   BarcodeFactory.cpp
   Barcode.cpp
+  Barcode1dBase.cpp
   BarcodeCode39.cpp
   BarcodeCode39Ext.cpp
   BarcodeUpcBase.cpp

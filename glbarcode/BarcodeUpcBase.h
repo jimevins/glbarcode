@@ -22,7 +22,7 @@
 #define glbarcode_BarcodeUpcBase_h
 
 
-#include "Barcode.h"
+#include "Barcode1dBase.h"
 
 
 namespace glbarcode
@@ -31,9 +31,9 @@ namespace glbarcode
 	/**
 	 * @class BarcodeUpcBase BarcodeUpcBase.h glbarcode/BarcodeUpcBase.h
 	 *
-	 * UpcBase barcode, base class for UPC-A and EAN-13 barcode types, implements Barcode
+	 * UpcBase barcode, base class for UPC-A and EAN-13 barcode types, implements Barcode1dBase
 	 */
-	class BarcodeUpcBase : public Barcode
+	class BarcodeUpcBase : public Barcode1dBase
 	{
 	protected:
 		virtual bool validate_digits( int n_digits ) = 0;
@@ -53,8 +53,8 @@ namespace glbarcode
 		void vectorize( std::string coded_data,
 				std::string display_text,
 				std::string cooked_data,
-				double      w,
-				double      h );
+				double      &w,
+				double      &h );
 
 
 	protected:

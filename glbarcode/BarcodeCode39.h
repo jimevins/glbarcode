@@ -22,7 +22,7 @@
 #define glbarcode_BarcodeCode39_h
 
 
-#include "Barcode.h"
+#include "Barcode1dBase.h"
 
 
 namespace glbarcode
@@ -31,9 +31,9 @@ namespace glbarcode
 	/**
 	 * @class BarcodeCode39 BarcodeCode39.h glbarcode/BarcodeCode39.h
 	 *
-	 * Code39 barcode, implements Barcode
+	 * Code39 barcode, implements Barcode1dBase
 	 */
-	class BarcodeCode39 : public Barcode
+	class BarcodeCode39 : public Barcode1dBase
 	{
 	public:
 		/**
@@ -54,8 +54,8 @@ namespace glbarcode
 		void vectorize( std::string coded_data,
 				std::string display_text,
 				std::string cooked_data,
-				double      w,
-				double      h );
+				double      &w,
+				double      &h );
 	};
 
 }

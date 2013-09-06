@@ -660,7 +660,7 @@ INPUT                  = \
 	@CMAKE_CURRENT_SOURCE_DIR@/pages/usage.dox \
 	@CMAKE_CURRENT_SOURCE_DIR@/pages/extending.dox \
 	@CMAKE_CURRENT_SOURCE_DIR@/pages/drawing-primitives.dox \
-	@CMAKE_CURRENT_SOURCE_DIR@/pages/implementing-barcodes.dox \
+	@CMAKE_CURRENT_SOURCE_DIR@/pages/implementing-1d-barcodes.dox \
 	@CMAKE_CURRENT_SOURCE_DIR@/pages/implementing-renderers.dox \
 	@CMAKE_CURRENT_SOURCE_DIR@/pages/lgpl.dox \
 	@CMAKE_CURRENT_SOURCE_DIR@/../glbarcode \

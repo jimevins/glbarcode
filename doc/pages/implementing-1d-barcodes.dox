@@ -1,24 +1,40 @@
 /**
 
-@page impl_barcodes Implementing Barcodes
+@page impl_1d_barcodes Implementing 1D Barcodes
 
 
-Creating new barcode types (or symbologies) is accomplished by implementing a subclass of the abstract glbarcode::Barcode class.
+Creating new 1D barcode types (or symbologies) is accomplished by implementing a subclass of the abstract glbarcode::Barcode1dBase
+class which is a subclass of the glbarcode::Barcode class.
+
+@dot
+digraph init {
+	rankdir=BT;
+
+	node [shape=box style=solid fontsize=8];
+	Barcode       [label="glbarcode::Barcode"       fontcolor="#0645AD" URL="@ref glbarcode::Barcode"    ]; 
+	Barcode1dBase [label="glbarcode::Barcode1dBase" fontcolor="#0645AD" URL="@ref glbarcode::Barcode1dBase"  ];
+	BarcodeXxx    [label="\"Barcode Implementation Xxx\"" ];
+
+	edge [arrowhead=empty];
+
+	BarcodeXxx -> Barcode1dBase ->Barcode;
+}
+@enddot
 
 
 
 Virtual Methods
 ---------------
 
-A barcode subclass must implement the following virtual methods (or callbacks):
+A 1D barcode subclass must implement the following virtual methods (or callbacks):
 
-- glbarcode::Barcode::validate() -- The validate method is used to test if data is valid for encoding with the intended symbology.
-  This method must only validate data that can be encoded successfully as-is or after processing by the optional
-  glbarcode::Barcode::preprocess() method.
+- glbarcode::Barcode1dBase::validate() -- The validate method is used to test if data is valid for encoding with the intended
+  symbology.  This method must only validate data that can be encoded successfully as-is or after processing by the optional
+  glbarcode::Barcode1dBase::preprocess() method.
 
-- glbarcode::Barcode::encode() -- The encode method is used to encode data such that it can later be vectorized.  The encoded is usually
-  a list of characters that represent an atomic barcode element.  For example, the following is the character encoding used by
-  the Code39 implementation:
+- glbarcode::Barcode1dBase::encode() -- The encode method is used to encode data such that it can later be vectorized.  The encoded
+  data is usually a list of characters that represent an atomic barcode element.  For example, the following is the character
+  encoding used by the Code39 implementation:
 
   <center>
   | Character | Meaning                           |
@@ -32,7 +48,7 @@ A barcode subclass must implement the following virtual methods (or callbacks):
 
   Other encoding examples can be found in the existing barcode implementations.
 
-- glbarcode::Barcode::vectorize() -- The vectorize method converts the encoded data into a list of @ref drawing_primitives
+- glbarcode::Barcode1dBase::vectorize() -- The vectorize method converts the encoded data into a list of @ref drawing_primitives
   suitable for rendering.  The following protected methods are available to the vectorize implementation to create this list:
 
   - glbarcode::Barcode::add_line()
@@ -41,39 +57,31 @@ A barcode subclass must implement the following virtual methods (or callbacks):
   - glbarcode::Barcode::add_ring()
   - glbarcode::Barcode::add_hexagon()
 
-  Additionally, if the actual size of the vectorized barcode is different from the requested size, the vectorize method should
-  call the following methods:
-
-  - glbarcode::Barcode::set_width()
-  - glbarcode::Barcode::set_height()
-
 A barcode subclass may also need to implement the following virtual methods:
 
-- glbarcode::Barcode::preprocess() -- The preprocess method performs any transformation of the data needed before encoding.  This
+- glbarcode::Barcode1dBase::preprocess() -- The preprocess method performs any transformation of the data needed before encoding.  This
   method may be needed to perform a first-pass encoding to translate an extended alphabet into a simpler one.  For example, this could
   be as simple as upshifting lowercase letters into uppercase if the symbology only supports uppercase. It is assumed that the data
-  passed to this method has already been validated with the glbarcode::Barcode::validate() method.
+  passed to this method has already been validated with the glbarcode::Barcode1dBase::validate() method.
 
-- glbarcode::Barcode::prepare_text() -- The prepare_text method performs any transformation of the data needed before it can be displayed.
+- glbarcode::Barcode1dBase::prepare_text() -- The prepare_text method performs any transformation of the data needed before it can be displayed.
 
-The following figure illustrates the data flow between these methods, which are called by glbarcode::Barcode::build():
+The following figure illustrates the data flow between these methods, which are called by glbarcode::Barcode1dBase::build():
 
 @dot
 digraph init {
-	rankdir=TD;
-
 	node [shape=plaintext style=solid fontsize=8];
 	raw_data;
 	primitives [label="\"Drawing\nPrimitives\""];
 
 	node [shape=box style=solid];
-	validate     [label=validate     URL="@ref glbarcode::Barcode::validate()"    ]; 
+	validate     [label=validate     URL="@ref glbarcode::Barcode1dBase::validate()"    ]; 
 
 	node [shape=box style=solid];
-	preprocess   [label=preprocess   URL="@ref glbarcode::Barcode::preprocess()"  ];
-	encode       [label=encode       URL="@ref glbarcode::Barcode::encode()"      ];
-	prepare_text [label=prepare_text URL="@ref glbarcode::Barcode::prepare_text()"];
-	vectorize    [label=vectorize    URL="@ref glbarcode::Barcode::vectorize()"   ];
+	preprocess   [label=preprocess   URL="@ref glbarcode::Barcode1dBase::preprocess()"  ];
+	encode       [label=encode       URL="@ref glbarcode::Barcode1dBase::encode()"      ];
+	prepare_text [label=prepare_text URL="@ref glbarcode::Barcode1dBase::prepare_text()"];
+	vectorize    [label=vectorize    URL="@ref glbarcode::Barcode1dBase::vectorize()"   ];
 
 	node [shape=plaintext style=solid fontcolor="gray"];
 	null1 [label=""];

@@ -452,8 +452,8 @@ namespace glbarcode
 	void BarcodeOnecode::vectorize( std::string coded_data,
 					std::string display_text,
 					std::string cooked_data,
-					double      w,
-					double      h )
+					double      &w,
+					double      &h )
 	{
 		double x = ONECODE_HORIZ_MARGIN;
 		for ( int i = 0; i < coded_data.size(); i++ )
@@ -491,8 +491,8 @@ namespace glbarcode
 		}
 
 		/* Overwrite requested size with actual size. */
-		set_width( x + ONECODE_HORIZ_MARGIN );
-		set_height(ONECODE_FULL_HEIGHT + 2 * ONECODE_VERT_MARGIN );
+		w = x + ONECODE_HORIZ_MARGIN;
+		h = ONECODE_FULL_HEIGHT + 2 * ONECODE_VERT_MARGIN;
 	}
 
 

@@ -7,7 +7,7 @@ The following sections are a tutorial on how to extend glbarcode++.  This can be
 future contributors.
 
 @li @subpage drawing_primitives
-@li @subpage impl_barcodes
+@li @subpage impl_1d_barcodes
 @li @subpage impl_renderers
 
 */
