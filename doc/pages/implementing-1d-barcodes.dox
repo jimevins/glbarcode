@@ -5,7 +5,7 @@
 
 All barcode implementations are derived from the abstract glbarcode::Barcode class.  The glbarcode::Barcode1dBase
 subclass of glbarcode::Barcode provides a common framework for the implementation of 1D barcodes.  Therefore, creating new 1D
-barcode types (or symbologies) would be typically accomplished by implementing a subclass this glbarcode::Barcode1dBase class
+barcode types (or symbologies) would be typically accomplished by implementing a subclass of this glbarcode::Barcode1dBase class
 rather than directly implementing the glbarcode::Barcode class.
 
 @dot
