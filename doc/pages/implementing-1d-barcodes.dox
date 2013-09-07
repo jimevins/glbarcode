@@ -3,8 +3,10 @@
 @page impl_1d_barcodes Implementing 1D Barcodes
 
 
-Creating new 1D barcode types (or symbologies) is accomplished by implementing a subclass of the abstract glbarcode::Barcode1dBase
-class which is a subclass of the glbarcode::Barcode class.
+All barcode implementations are derived from the abstract glbarcode::Barcode class.  The glbarcode::Barcode1dBase
+subclass of glbarcode::Barcode provides a common framework for the implementation of 1D barcodes.  Therefore, creating new 1D
+barcode types (or symbologies) would be typically accomplished by implementing a subclass this glbarcode::Barcode1dBase class
+rather than directly implementing the glbarcode::Barcode class.
 
 @dot
 digraph init {
