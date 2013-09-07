@@ -287,6 +287,62 @@ namespace
 		2049, 4098, 4097, 2050, 1028,  520,  272,  160
 	};
 
+
+	/*
+	 * Simple 104-bit integer type used during encoding
+	 */
+	class Int104
+	{
+	public:
+		Int104( void )
+		{
+			for ( int i = 0; i < 13; i++ )
+			{
+				byte[i] = 0;
+			}
+		}
+
+		void mult_uint( uint32_t y )
+		{
+			uint64_t carry = 0;
+			for ( int i = 12; i >= 0; i-- )
+			{
+				uint64_t temp = byte[i]*y + carry;
+
+				byte[i] = (uint8_t)(temp & 0xFF);
+				carry   = temp >> 8;
+			}
+		}
+
+		void add_uint64( uint64_t y )
+		{
+			uint64_t carry = 0;
+			for ( int i = 12; i >= 0; i-- )
+			{
+				uint64_t temp = byte[i] + (y&0xFF) + carry;
+
+				byte[i] = (uint8_t)(temp & 0xFF);
+				carry   = temp >> 8;
+				y       = y >> 8;
+			}
+		}
+
+		uint32_t div_uint( uint32_t y )
+		{
+			uint32_t carry = 0;
+			for ( int i = 0; i < 13; i++ )
+			{
+				uint32_t temp = byte[i] + (carry << 8);
+
+				byte[i] = (uint8_t)(temp / y);
+				carry   = temp % y;
+			}
+			return carry;
+		}
+
+		uint8_t byte[13];
+	};
+
 }
 
 
@@ -555,57 +611,6 @@ namespace glbarcode
 
 		return FrameCheckSequence;
 	}
-
-
-	BarcodeOnecode::Int104::Int104()
-	{
-		for ( int i = 0; i < 13; i++ )
-		{
-			byte[i] = 0;
-		}
-	}
-
-
-	void BarcodeOnecode::Int104::mult_uint( uint32_t y )
-	{
-		uint64_t carry = 0;
-		for ( int i = 12; i >= 0; i-- )
-		{
-			uint64_t temp = byte[i]*y + carry;
-
-			byte[i] = (uint8_t)(temp & 0xFF);
-			carry   = temp >> 8;
-		}
-	}
-
-
-	void BarcodeOnecode::Int104::add_uint64( uint64_t y )
-	{
-		uint64_t carry = 0;
-		for ( int i = 12; i >= 0; i-- )
-		{
-			uint64_t temp = byte[i] + (y&0xFF) + carry;
-
-			byte[i] = (uint8_t)(temp & 0xFF);
-			carry   = temp >> 8;
-			y       = y >> 8;
-		}
-	}
-
-
-	uint32_t BarcodeOnecode::Int104::div_uint( uint32_t y )
-	{
-		uint32_t carry = 0;
-		for ( int i = 0; i < 13; i++ )
-		{
-			uint32_t temp = byte[i] + (carry << 8);
-
-			byte[i] = (uint8_t)(temp / y);
-			carry   = temp % y;
-		}
-		return carry;
-	}
-
 
 
 }

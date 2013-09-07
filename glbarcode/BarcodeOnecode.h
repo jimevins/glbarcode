@@ -61,19 +61,6 @@ namespace glbarcode
 	private:
 		uint32_t USPS_MSB_Math_CRC11GenerateFrameCheckSequence( uint8_t* ByteArrayPtr );
 
-		class Int104
-		{
-		public:
-			Int104( void );
-
-			void mult_uint( uint32_t y );
-			void add_uint64( uint64_t y );
-			uint32_t div_uint( uint32_t y );
-
-			uint8_t byte[13];
-		};
-
-
 	};
 
 }
