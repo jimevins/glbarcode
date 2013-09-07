@@ -298,7 +298,7 @@ namespace
 		{
 			for ( int i = 0; i < 13; i++ )
 			{
-				byte[i] = 0;
+				byte_array[i] = 0;
 			}
 		}
 
@@ -307,9 +307,9 @@ namespace
 			uint64_t carry = 0;
 			for ( int i = 12; i >= 0; i-- )
 			{
-				uint64_t temp = byte[i]*y + carry;
+				uint64_t temp = byte_array[i]*y + carry;
 
-				byte[i] = (uint8_t)(temp & 0xFF);
+				byte_array[i] = (uint8_t)(temp & 0xFF);
 				carry   = temp >> 8;
 			}
 		}
@@ -319,9 +319,9 @@ namespace
 			uint64_t carry = 0;
 			for ( int i = 12; i >= 0; i-- )
 			{
-				uint64_t temp = byte[i] + (y&0xFF) + carry;
+				uint64_t temp = byte_array[i] + (y&0xFF) + carry;
 
-				byte[i] = (uint8_t)(temp & 0xFF);
+				byte_array[i] = (uint8_t)(temp & 0xFF);
 				carry   = temp >> 8;
 				y       = y >> 8;
 			}
@@ -332,15 +332,15 @@ namespace
 			uint32_t carry = 0;
 			for ( int i = 0; i < 13; i++ )
 			{
-				uint32_t temp = byte[i] + (carry << 8);
+				uint32_t temp = byte_array[i] + (carry << 8);
 
-				byte[i] = (uint8_t)(temp / y);
+				byte_array[i] = (uint8_t)(temp / y);
 				carry   = temp % y;
 			}
 			return carry;
 		}
 
-		uint8_t byte[13];
+		uint8_t byte_array[13];
 	};
 
 }
@@ -444,7 +444,7 @@ namespace glbarcode
 		/* Step 2 -- Generation of 11-Bit CRC on Binary Data         */
 		/*-----------------------------------------------------------*/
 
-		unsigned int crc11 = USPS_MSB_Math_CRC11GenerateFrameCheckSequence( value.byte );
+		unsigned int crc11 = USPS_MSB_Math_CRC11GenerateFrameCheckSequence( value.byte_array );
 
 
 		/*-----------------------------------------------------------*/
