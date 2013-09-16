@@ -8,6 +8,10 @@ var searchData=
   ['barcode1dbase',['Barcode1dBase',['../classglbarcode_1_1Barcode1dBase.html#a3e530cd3852260ae33ef79227d05a0cb',1,'glbarcode::Barcode1dBase']]],
   ['barcode1dbase_2ecpp',['Barcode1dBase.cpp',['../Barcode1dBase_8cpp.html',1,'']]],
   ['barcode1dbase_2eh',['Barcode1dBase.h',['../Barcode1dBase_8h.html',1,'']]],
+  ['barcode2dbase',['Barcode2dBase',['../classglbarcode_1_1Barcode2dBase.html',1,'glbarcode']]],
+  ['barcode2dbase',['Barcode2dBase',['../classglbarcode_1_1Barcode2dBase.html#a2d115eca91bedca1793e0cf9d1dead4a',1,'glbarcode::Barcode2dBase']]],
+  ['barcode2dbase_2ecpp',['Barcode2dBase.cpp',['../Barcode2dBase_8cpp.html',1,'']]],
+  ['barcode2dbase_2eh',['Barcode2dBase.h',['../Barcode2dBase_8h.html',1,'']]],
   ['barcodecepnet',['BarcodeCepnet',['../classglbarcode_1_1BarcodeCepnet.html',1,'glbarcode']]],
   ['barcodecepnet_2ecpp',['BarcodeCepnet.cpp',['../BarcodeCepnet_8cpp.html',1,'']]],
   ['barcodecepnet_2eh',['BarcodeCepnet.h',['../BarcodeCepnet_8h.html',1,'']]],
@@ -18,8 +22,11 @@ var searchData=
   ['barcodecode39ext_2ecpp',['BarcodeCode39Ext.cpp',['../BarcodeCode39Ext_8cpp.html',1,'']]],
   ['barcodecode39ext_2eh',['BarcodeCode39Ext.h',['../BarcodeCode39Ext_8h.html',1,'']]],
   ['barcodecreatefct',['BarcodeCreateFct',['../classglbarcode_1_1BarcodeFactory.html#af178a271e869e1707a4a2a2df82c7ab0',1,'glbarcode::BarcodeFactory']]],
-  ['barcodeean13',['BarcodeEan13',['../classglbarcode_1_1BarcodeEan13.html#ac85acc8b730d92ea98cafcb5ea0c3287',1,'glbarcode::BarcodeEan13']]],
+  ['barcodedatamatrix',['BarcodeDataMatrix',['../classglbarcode_1_1BarcodeDataMatrix.html',1,'glbarcode']]],
+  ['barcodedatamatrix_2ecpp',['BarcodeDataMatrix.cpp',['../BarcodeDataMatrix_8cpp.html',1,'']]],
+  ['barcodedatamatrix_2eh',['BarcodeDataMatrix.h',['../BarcodeDataMatrix_8h.html',1,'']]],
   ['barcodeean13',['BarcodeEan13',['../classglbarcode_1_1BarcodeEan13.html',1,'glbarcode']]],
+  ['barcodeean13',['BarcodeEan13',['../classglbarcode_1_1BarcodeEan13.html#ac85acc8b730d92ea98cafcb5ea0c3287',1,'glbarcode::BarcodeEan13']]],
   ['barcodeean13_2ecpp',['BarcodeEan13.cpp',['../BarcodeEan13_8cpp.html',1,'']]],
   ['barcodeean13_2eh',['BarcodeEan13.h',['../BarcodeEan13_8h.html',1,'']]],
   ['barcodefactory',['BarcodeFactory',['../classglbarcode_1_1BarcodeFactory.html',1,'glbarcode']]],
@@ -47,5 +54,5 @@ var searchData=
   ['barcodeupcbase',['BarcodeUpcBase',['../classglbarcode_1_1BarcodeUpcBase.html',1,'glbarcode']]],
   ['barcodeupcbase_2ecpp',['BarcodeUpcBase.cpp',['../BarcodeUpcBase_8cpp.html',1,'']]],
   ['barcodeupcbase_2eh',['BarcodeUpcBase.h',['../BarcodeUpcBase_8h.html',1,'']]],
-  ['build',['build',['../classglbarcode_1_1Barcode.html#a98b21163b4fadd7b306b52dd702528fe',1,'glbarcode::Barcode::build()'],['../classglbarcode_1_1Barcode1dBase.html#acc7fac08d928e4c0c4b191b4ead6adf0',1,'glbarcode::Barcode1dBase::build()']]]
+  ['build',['build',['../classglbarcode_1_1Barcode.html#a98b21163b4fadd7b306b52dd702528fe',1,'glbarcode::Barcode::build()'],['../classglbarcode_1_1Barcode1dBase.html#acc7fac08d928e4c0c4b191b4ead6adf0',1,'glbarcode::Barcode1dBase::build()'],['../classglbarcode_1_1Barcode2dBase.html#a2c4d96ec8c9a06f544e1d431b9278668',1,'glbarcode::Barcode2dBase::build()']]]
 ];

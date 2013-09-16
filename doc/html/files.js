@@ -12,6 +12,10 @@ var files =
     [ "Barcode1dBase.h", "Barcode1dBase_8h.html", [
       [ "Barcode1dBase", "classglbarcode_1_1Barcode1dBase.html", "classglbarcode_1_1Barcode1dBase" ]
     ] ],
+    [ "Barcode2dBase.cpp", "Barcode2dBase_8cpp.html", null ],
+    [ "Barcode2dBase.h", "Barcode2dBase_8h.html", [
+      [ "Barcode2dBase", "classglbarcode_1_1Barcode2dBase.html", "classglbarcode_1_1Barcode2dBase" ]
+    ] ],
     [ "BarcodeCepnet.cpp", "BarcodeCepnet_8cpp.html", null ],
     [ "BarcodeCepnet.h", "BarcodeCepnet_8h.html", [
       [ "BarcodeCepnet", "classglbarcode_1_1BarcodeCepnet.html", null ]
@@ -23,6 +27,10 @@ var files =
     [ "BarcodeCode39Ext.cpp", "BarcodeCode39Ext_8cpp.html", null ],
     [ "BarcodeCode39Ext.h", "BarcodeCode39Ext_8h.html", [
       [ "BarcodeCode39Ext", "classglbarcode_1_1BarcodeCode39Ext.html", null ]
+    ] ],
+    [ "BarcodeDataMatrix.cpp", "BarcodeDataMatrix_8cpp.html", null ],
+    [ "BarcodeDataMatrix.h", "BarcodeDataMatrix_8h.html", [
+      [ "BarcodeDataMatrix", "classglbarcode_1_1BarcodeDataMatrix.html", null ]
     ] ],
     [ "BarcodeEan13.cpp", "BarcodeEan13_8cpp.html", null ],
     [ "BarcodeEan13.h", "BarcodeEan13_8h.html", [
@@ -89,5 +97,8 @@ var files =
     ] ],
     [ "RendererSvg.h", "RendererSvg_8h.html", [
       [ "RendererSvg", "classglbarcode_1_1RendererSvg.html", "classglbarcode_1_1RendererSvg" ]
+    ] ],
+    [ "Simple2dMatrix.h", "Simple2dMatrix_8h.html", [
+      [ "Simple2dMatrix", "classglbarcode_1_1Simple2dMatrix.html", "classglbarcode_1_1Simple2dMatrix" ]
     ] ]
 ];

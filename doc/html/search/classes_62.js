@@ -2,9 +2,11 @@ var searchData=
 [
   ['barcode',['Barcode',['../classglbarcode_1_1Barcode.html',1,'glbarcode']]],
   ['barcode1dbase',['Barcode1dBase',['../classglbarcode_1_1Barcode1dBase.html',1,'glbarcode']]],
+  ['barcode2dbase',['Barcode2dBase',['../classglbarcode_1_1Barcode2dBase.html',1,'glbarcode']]],
   ['barcodecepnet',['BarcodeCepnet',['../classglbarcode_1_1BarcodeCepnet.html',1,'glbarcode']]],
   ['barcodecode39',['BarcodeCode39',['../classglbarcode_1_1BarcodeCode39.html',1,'glbarcode']]],
   ['barcodecode39ext',['BarcodeCode39Ext',['../classglbarcode_1_1BarcodeCode39Ext.html',1,'glbarcode']]],
+  ['barcodedatamatrix',['BarcodeDataMatrix',['../classglbarcode_1_1BarcodeDataMatrix.html',1,'glbarcode']]],
   ['barcodeean13',['BarcodeEan13',['../classglbarcode_1_1BarcodeEan13.html',1,'glbarcode']]],
   ['barcodefactory',['BarcodeFactory',['../classglbarcode_1_1BarcodeFactory.html',1,'glbarcode']]],
   ['barcodeonecode',['BarcodeOnecode',['../classglbarcode_1_1BarcodeOnecode.html',1,'glbarcode']]],

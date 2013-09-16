@@ -16,6 +16,9 @@ var hierarchy =
           [ "glbarcode::BarcodeEan13", "classglbarcode_1_1BarcodeEan13.html", null ],
           [ "glbarcode::BarcodeUpcA", "classglbarcode_1_1BarcodeUpcA.html", null ]
         ] ]
+      ] ],
+      [ "glbarcode::Barcode2dBase", "classglbarcode_1_1Barcode2dBase.html", [
+        [ "glbarcode::BarcodeDataMatrix", "classglbarcode_1_1BarcodeDataMatrix.html", null ]
       ] ]
     ] ],
     [ "glbarcode::BarcodeFactory", "classglbarcode_1_1BarcodeFactory.html", null ],
@@ -27,12 +30,13 @@ var hierarchy =
       [ "glbarcode::DrawingPrimitiveText", "classglbarcode_1_1DrawingPrimitiveText.html", null ]
     ] ],
     [ "glbarcode::Barcode::PrivateData", "structglbarcode_1_1Barcode_1_1PrivateData.html", null ],
-    [ "glbarcode::Barcode1dBase::PrivateData", "structglbarcode_1_1Barcode1dBase_1_1PrivateData.html", null ],
-    [ "glbarcode::RendererSvg::PrivateData", "structglbarcode_1_1RendererSvg_1_1PrivateData.html", null ],
     [ "glbarcode::RendererEps::PrivateData", "structglbarcode_1_1RendererEps_1_1PrivateData.html", null ],
+    [ "glbarcode::RendererSvg::PrivateData", "structglbarcode_1_1RendererSvg_1_1PrivateData.html", null ],
+    [ "glbarcode::Barcode1dBase::PrivateData", "structglbarcode_1_1Barcode1dBase_1_1PrivateData.html", null ],
     [ "glbarcode::Renderer", "classglbarcode_1_1Renderer.html", [
       [ "glbarcode::RendererDebug", "classglbarcode_1_1RendererDebug.html", null ],
       [ "glbarcode::RendererEps", "classglbarcode_1_1RendererEps.html", null ],
       [ "glbarcode::RendererSvg", "classglbarcode_1_1RendererSvg.html", null ]
-    ] ]
+    ] ],
+    [ "glbarcode::Simple2dMatrix< T >", "classglbarcode_1_1Simple2dMatrix.html", null ]
 ];

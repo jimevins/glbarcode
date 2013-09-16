@@ -3,9 +3,11 @@ var namespaceglbarcode =
     [ "Constants", "namespaceglbarcode_1_1Constants.html", null ],
     [ "Barcode", "classglbarcode_1_1Barcode.html", "classglbarcode_1_1Barcode" ],
     [ "Barcode1dBase", "classglbarcode_1_1Barcode1dBase.html", "classglbarcode_1_1Barcode1dBase" ],
+    [ "Barcode2dBase", "classglbarcode_1_1Barcode2dBase.html", "classglbarcode_1_1Barcode2dBase" ],
     [ "BarcodeCepnet", "classglbarcode_1_1BarcodeCepnet.html", null ],
     [ "BarcodeCode39", "classglbarcode_1_1BarcodeCode39.html", null ],
     [ "BarcodeCode39Ext", "classglbarcode_1_1BarcodeCode39Ext.html", null ],
+    [ "BarcodeDataMatrix", "classglbarcode_1_1BarcodeDataMatrix.html", null ],
     [ "BarcodeEan13", "classglbarcode_1_1BarcodeEan13.html", "classglbarcode_1_1BarcodeEan13" ],
     [ "BarcodeFactory", "classglbarcode_1_1BarcodeFactory.html", "classglbarcode_1_1BarcodeFactory" ],
     [ "BarcodeOnecode", "classglbarcode_1_1BarcodeOnecode.html", null ],
@@ -24,5 +26,6 @@ var namespaceglbarcode =
     [ "Renderer", "classglbarcode_1_1Renderer.html", "classglbarcode_1_1Renderer" ],
     [ "RendererDebug", "classglbarcode_1_1RendererDebug.html", null ],
     [ "RendererEps", "classglbarcode_1_1RendererEps.html", "classglbarcode_1_1RendererEps" ],
-    [ "RendererSvg", "classglbarcode_1_1RendererSvg.html", "classglbarcode_1_1RendererSvg" ]
+    [ "RendererSvg", "classglbarcode_1_1RendererSvg.html", "classglbarcode_1_1RendererSvg" ],
+    [ "Simple2dMatrix", "classglbarcode_1_1Simple2dMatrix.html", "classglbarcode_1_1Simple2dMatrix" ]
 ];
