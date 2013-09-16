@@ -32,6 +32,7 @@ barcode classes:
 | glbarcode::BarcodePostnet9     | USPS POSTNET-9  | "postnet-9"   | Only supports data length of 9 (ZIP+4) |
 | glbarcode::BarcodePostnet11    | USPS POSTNET-11 | "postnet-11"  | Only supports data length of 11 (ZIP+4+DC) |
 | glbarcode::BarcodeCepnet       | CEPNET          | "cepnet"      | Brazilian Post barcode.  Based on USPS POSTNET. |
+| glbarcode::BarcodeDataMatrix   | Data Matrix     | "datamatrix"  | Data Matrix IEC16022 ECC 200 |
 
 
 
