@@ -30,6 +30,7 @@
 #include "BarcodePostnet11.h"
 #include "BarcodeCepnet.h"
 #include "BarcodeOnecode.h"
+#include "BarcodeDataMatrix.h"
 
 
 namespace glbarcode
@@ -99,6 +100,7 @@ namespace glbarcode
 		register_type( "postnet-11",  &BarcodePostnet11::create );
 		register_type( "cepnet",      &BarcodeCepnet::create );
 		register_type( "onecode",     &BarcodeOnecode::create );
+		register_type( "datamatrix",  &BarcodeDataMatrix::create );
 	}
 
 

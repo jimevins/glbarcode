@@ -6,9 +6,11 @@ set (PUBLIC_HEADERS
   BarcodeFactory.h
   Barcode.h
   Barcode1dBase.h
+  Barcode2dBase.h
   BarcodeCepnet.h
   BarcodeCode39Ext.h
   BarcodeCode39.h
+  BarcodeDataMatrix.h
   BarcodeEan13.h
   BarcodeOnecode.h
   BarcodeOptions.h
@@ -24,12 +26,14 @@ set (PUBLIC_HEADERS
   RendererSvg.h
   RendererEps.h
   RendererDebug.h
+  Simple2dMatrix.h
 )
 
 set (LIB_SOURCES
   BarcodeFactory.cpp
   Barcode.cpp
   Barcode1dBase.cpp
+  Barcode2dBase.cpp
   BarcodeCode39.cpp
   BarcodeCode39Ext.cpp
   BarcodeUpcBase.cpp
@@ -41,6 +45,7 @@ set (LIB_SOURCES
   BarcodePostnet11.cpp
   BarcodeCepnet.cpp
   BarcodeOnecode.cpp
+  BarcodeDataMatrix.cpp
   DrawingPrimitives.cpp
   Renderer.cpp
   RendererSvg.cpp

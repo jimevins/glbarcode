@@ -108,4 +108,12 @@ int main( int argc, char **argv )
 	bc->build( "12345678901234567890", 0, 0 );
 	bc->render( RendererSvg().filename( "sample-onecode.svg" ) );
 	delete bc;
+
+	/*
+	 * DataMatrix
+	 */
+	bc = factory->create_barcode( "datamatrix" );
+	bc->build( "Data Matrix ECC200", 0, 0 );
+	bc->render( RendererSvg().filename( "sample-datamatrix.svg" ) );
+	delete bc;
 }
