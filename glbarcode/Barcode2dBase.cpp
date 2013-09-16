@@ -32,7 +32,7 @@ using namespace glbarcode::Constants;
 namespace
 {
 
-	const double MIN_CELL_SIZE  = ( 0.01 * PTS_PER_INCH );
+	const double MIN_CELL_SIZE  = ( 0.0625 * PTS_PER_INCH );
 
 }
 
