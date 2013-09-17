@@ -32,6 +32,9 @@ namespace glbarcode
 	 * @class BarcodeUpcA BarcodeUpcA.h glbarcode/BarcodeUpcA.h
 	 *
 	 * UPC-A barcode, implements BarcodeUpcBase
+	 *
+	 * @image html sample-upc-a.svg "Sample UPC-A Barcode"
+	 *
 	 */
 	class BarcodeUpcA : public BarcodeUpcBase
 	{

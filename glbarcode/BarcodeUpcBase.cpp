@@ -93,7 +93,7 @@ namespace glbarcode
 {
 
 	/*
-	 * UPC data validation, implements Barcode::validate()
+	 * UPC data validation, implements Barcode1dBase::validate()
 	 */
 	bool BarcodeUpcBase::validate( std::string raw_data )
 	{
@@ -118,7 +118,7 @@ namespace glbarcode
 
 
 	/*
-	 * UPC data encoding, implements Barcode::encode()
+	 * UPC data encoding, implements Barcode1dBase::encode()
 	 */
 	std::string BarcodeUpcBase::encode( std::string cooked_data )
 	{
@@ -186,7 +186,7 @@ namespace glbarcode
 
 
 	/*
-	 * UPC prepare text for display, implements Barcode::prepare_text()
+	 * UPC prepare text for display, implements Barcode1dBase::prepare_text()
 	 */
 	std::string BarcodeUpcBase::prepare_text( std::string raw_data )
 	{
@@ -207,7 +207,7 @@ namespace glbarcode
 
 
 	/*
-	 * UPC vectorization, implements Barcode::vectorize()
+	 * UPC vectorization, implements Barcode1dBase::vectorize()
 	 */
 	void BarcodeUpcBase::vectorize( std::string coded_data,
 					std::string display_text,

@@ -32,6 +32,9 @@ namespace glbarcode
 	 * @class BarcodeEan13 BarcodeEan13.h glbarcode/BarcodeEan13.h
 	 *
 	 * EAN-13 barcode, implements BarcodeUpcBase
+	 *
+	 * @image html sample-ean-13.svg "Sample EAN-13 Barcode"
+	 *
 	 */
 	class BarcodeEan13 : public BarcodeUpcBase
 	{

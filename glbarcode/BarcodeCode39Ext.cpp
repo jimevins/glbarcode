@@ -91,7 +91,7 @@ namespace glbarcode
 
 
 	/*
-	 * Extened Code39 preprocessing of data, implements Barcode::preprocess()
+	 * Extened Code39 preprocessing of data, implements Barcode1dBase::preprocess()
 	 */
 	std::string BarcodeCode39Ext::preprocess( std::string raw_data )
 	{

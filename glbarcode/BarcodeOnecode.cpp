@@ -359,7 +359,7 @@ namespace glbarcode
 
 
 	/*
-	 * Onecode data validation, implements Barcode::validate()
+	 * Onecode data validation, implements Barcode1dBase::validate()
 	 */
 	bool BarcodeOnecode::validate( std::string raw_data )
 	{
@@ -389,7 +389,7 @@ namespace glbarcode
 
 
 	/*
-	 * Onecode data encoding, implements Barcode::encode()
+	 * Onecode data encoding, implements Barcode1dBase::encode()
 	 */
 	std::string BarcodeOnecode::encode( std::string cooked_data )
 	{
@@ -503,7 +503,7 @@ namespace glbarcode
 
 
 	/*
-	 * Onecode vectorization, implements Barcode::vectorize()
+	 * Onecode vectorization, implements Barcode1dBase::vectorize()
 	 */
 	void BarcodeOnecode::vectorize( std::string coded_data,
 					std::string display_text,

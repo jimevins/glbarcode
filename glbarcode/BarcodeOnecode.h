@@ -34,6 +34,9 @@ namespace glbarcode
 	 * @class BarcodeOnecode BarcodeOnecode.h glbarcode/BarcodeOnecode.h
 	 *
 	 * Onecode barcode, implements Barcode1dBase
+	 *
+	 * @image html sample-onecode.svg "Sample USPS Onecode Barcode"
+	 *
 	 */
 	class BarcodeOnecode : public Barcode1dBase
 	{

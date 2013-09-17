@@ -110,7 +110,7 @@ namespace glbarcode
 
 
 	/*
-	 * Code39 data validation, implements Barcode::validate()
+	 * Code39 data validation, implements Barcode1dBase::validate()
 	 */
 	bool BarcodeCode39::validate( std::string raw_data )
 	{
@@ -129,7 +129,7 @@ namespace glbarcode
 
 
 	/*
-	 * Code39 data encoding, implements Barcode::encode()
+	 * Code39 data encoding, implements Barcode1dBase::encode()
 	 */
 	std::string BarcodeCode39::encode( std::string cooked_data )
 	{
@@ -164,7 +164,7 @@ namespace glbarcode
 
 
 	/*
-	 * Code39 prepare text for display, implements Barcode::prepare_text()
+	 * Code39 prepare text for display, implements Barcode1dBase::prepare_text()
 	 */
 	std::string BarcodeCode39::prepare_text( std::string raw_data )
 	{
@@ -180,7 +180,7 @@ namespace glbarcode
 
 
 	/*
-	 * Code39 vectorization, implements Barcode::vectorize()
+	 * Code39 vectorization, implements Barcode1dBase::vectorize()
 	 */
 	void BarcodeCode39::vectorize( std::string coded_data,
 				       std::string display_text,

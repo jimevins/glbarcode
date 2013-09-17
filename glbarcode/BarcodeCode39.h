@@ -32,6 +32,9 @@ namespace glbarcode
 	 * @class BarcodeCode39 BarcodeCode39.h glbarcode/BarcodeCode39.h
 	 *
 	 * Code39 barcode, implements Barcode1dBase
+	 *
+	 * @image html sample-code39.svg "Sample Code 39 Barcode"
+	 *
 	 */
 	class BarcodeCode39 : public Barcode1dBase
 	{

@@ -32,6 +32,9 @@ namespace glbarcode
 	 * @class BarcodeCode39Ext BarcodeCode39Ext.h glbarcode/BarcodeCode39Ext.h
 	 *
 	 * Extended Code39 barcode, extends BarcodeCode39
+	 *
+	 * @image html sample-code39ext.svg "Sample Extended Code 39 Barcode"
+	 *
 	 */
 	class BarcodeCode39Ext : public BarcodeCode39
 	{

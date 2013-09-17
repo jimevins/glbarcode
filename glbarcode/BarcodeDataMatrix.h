@@ -32,6 +32,9 @@ namespace glbarcode
 	 * @class BarcodeDataMatrix BarcodeDataMatrix.h glbarcode/BarcodeDataMatrix.h
 	 *
 	 * DataMatrix barcode, implements Barcode2dBase
+	 *
+	 * @image html sample-datamatrix.svg "Sample Data Matrix Barcode"
+	 *
 	 */
 	class BarcodeDataMatrix : public Barcode2dBase
 	{

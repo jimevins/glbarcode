@@ -32,6 +32,9 @@ namespace glbarcode
 	 * @class BarcodePostnet9 BarcodePostnet9.h glbarcode/BarcodePostnet9.h
 	 *
 	 * Postnet-9 barcode (ZIP+4 only), extends BarcodePostnet
+	 *
+	 * @image html sample-postnet-9.svg "Sample 9 digit USPS Postnet Barcode"
+	 *
 	 */
 	class BarcodePostnet9 : public BarcodePostnet
 	{

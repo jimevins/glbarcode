@@ -86,7 +86,7 @@ namespace glbarcode
 
 
 	/*
-	 * Postnet data validation, implements Barcode::validate()
+	 * Postnet data validation, implements Barcode1dBase::validate()
 	 */
 	bool BarcodePostnet::validate( std::string raw_data )
 	{
@@ -109,7 +109,7 @@ namespace glbarcode
 
 
 	/*
-	 * Postnet data encoding, implements Barcode::encode()
+	 * Postnet data encoding, implements Barcode1dBase::encode()
 	 */
 	std::string BarcodePostnet::encode( std::string cooked_data )
 	{
@@ -142,7 +142,7 @@ namespace glbarcode
 
 
 	/*
-	 * Postnet vectorization, implements Barcode::vectorize()
+	 * Postnet vectorization, implements Barcode1dBase::vectorize()
 	 */
 	void BarcodePostnet::vectorize( std::string coded_data,
 					std::string display_text,
