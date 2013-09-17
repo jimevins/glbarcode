@@ -72,7 +72,7 @@ namespace glbarcode
 		{
 			if ( m_d != NULL )
 			{
-				delete m_d;
+				delete[] m_d;
 			}
 		}
 
@@ -102,7 +102,7 @@ namespace glbarcode
 		{
 			if ( m_d != NULL )
 			{
-				delete m_d;
+				delete[] m_d;
 			}
 			m_nx = nx;
 			m_ny = ny;
