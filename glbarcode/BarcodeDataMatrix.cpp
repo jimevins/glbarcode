@@ -34,8 +34,10 @@ using namespace glbarcode::Constants;
 
 namespace
 {
-	const uint8_t CW_UPSHIFT = 235;
+	/* ASCII Encoding Codeword values */
 	const uint8_t CW_PAD     = 129;
+	const uint8_t CW_NUM_00  = 130;
+	const uint8_t CW_UPSHIFT = 235;
 
 	typedef struct
 	{
@@ -267,10 +269,23 @@ namespace
 
 			if ( c < 128 )
 			{
-				data_cw.push_back( c + 1 );
+				uint8_t c1 = data[i+1];
+
+				if ( (i < (data.size()-1)) && isdigit(c) && isdigit(c1) )
+				{
+					/* 2-digit data 00 - 99 */
+					data_cw.push_back( CW_NUM_00 + (c-'0')*10 + (c1-'0') );
+					i++; /* skip next input char */
+				}
+				else
+				{
+					/* Simple ASCII data (ASCII value + 1) */
+					data_cw.push_back( c + 1 );
+				}
 			}
 			else
 			{
+				/* Extended ASCII range (128-255) */
 				data_cw.push_back( CW_UPSHIFT );
 				data_cw.push_back( c - 127 );
 			}
