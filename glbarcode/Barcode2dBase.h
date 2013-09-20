@@ -27,7 +27,7 @@
 
 #include "Barcode.h"
 #include "Renderer.h"
-#include "Simple2dMatrix.h"
+#include "Matrix.h"
 
 
 namespace glbarcode
@@ -105,8 +105,8 @@ namespace glbarcode
 		 * @return True if data was encoded successfully
 		 * @return False if data could not be encoded (condition not discoverable by validate())
 		 */
-		virtual bool encode( std::string            cooked_data,
-				     Simple2dMatrix<bool> & encoded_data ) = 0;
+		virtual bool encode( std::string    cooked_data,
+				     Matrix<bool> & encoded_data ) = 0;
 
 
 		/**
@@ -119,9 +119,9 @@ namespace glbarcode
 		 * @param[in,out] w Requested width of barcode (0 = auto size), vectorize will overwrite with actual width
 		 * @param[in,out] h Requested height of barcode (0 = auto size), vectorize will overwrite with actual width
 		 */
-		virtual void vectorize( const Simple2dMatrix<bool> & encoded_data,
-					double                     & w,
-					double                     & h );
+		virtual void vectorize( const Matrix<bool> & encoded_data,
+					double             & w,
+					double             & h );
 
 
 	private:

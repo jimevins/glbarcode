@@ -1,4 +1,4 @@
-/*  Simple2dMatrix.h
+/*  Matrix.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,42 +18,42 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glbarcode_Simple2dMatrix_h
-#define glbarcode_Simple2dMatrix_h
+#ifndef glbarcode_Matrix_h
+#define glbarcode_Matrix_h
 
 
 namespace glbarcode
 {
 
 	/**
-	 * @class Simple2dMatrix Simple2dMatrix.h glbarcode/Simple2dMatrix.h
+	 * @class Matrix Matrix.h glbarcode/Matrix.h
 	 *
 	 * Simple 2D Matrix implementation
 	 */
-	template <class T> class Simple2dMatrix
+	template <class T> class Matrix
 	{
 		
 	public:
 		/**
 		 * Default constructor.
 		 */
-		Simple2dMatrix() : m_nx(0), m_ny(0), m_d(NULL) { }
+		Matrix() : m_nx(0), m_ny(0), m_d(NULL) { }
 
 
 		/**
 		 * Sized constructor.
 		 */
-		Simple2dMatrix( int nx, int ny ) : m_nx(nx),
-			                           m_ny(ny),
-			                           m_d((nx > 0 && ny > 0) ? new T[nx * ny] : NULL) { }
+		Matrix( int nx, int ny ) : m_nx(nx),
+			                   m_ny(ny),
+			                   m_d((nx > 0 && ny > 0) ? new T[nx * ny] : NULL) { }
 
 
 		/**
 		 * Copy constructor.
 		 */
-		Simple2dMatrix( const Simple2dMatrix<T> & src ) : m_nx(src.m_nx),
-			                                          m_ny(src.m_ny),
-			                                          m_d((src.m_nx > 0 && src.m_ny > 0) ? new T[src.m_nx * src.m_ny] : NULL)
+		Matrix( const Matrix<T> & src ) : m_nx(src.m_nx),
+			                          m_ny(src.m_ny),
+			                          m_d((src.m_nx > 0 && src.m_ny > 0) ? new T[src.m_nx * src.m_ny] : NULL)
 		{
 			for ( int iy = 0; iy < m_ny; iy++ )
 			{
@@ -68,13 +68,13 @@ namespace glbarcode
 		/**
 		 * Submatrix copy constructor.
 		 */
-		Simple2dMatrix( const Simple2dMatrix<T> & src,
-				int                       x0,
-				int                       y0,
-				int                       nx,
-				int                       ny ) : m_nx(nx),
-			                                         m_ny(ny),
-			                                         m_d((src.m_nx > 0 && src.m_ny > 0) ? new T[nx * ny] : NULL)
+		Matrix( const Matrix<T> & src,
+			int               x0,
+			int               y0,
+			int               nx,
+			int               ny ) : m_nx(nx),
+			                         m_ny(ny),
+			                         m_d((nx > 0 && ny > 0) ? new T[nx * ny] : NULL)
 		{
 			for ( int iy = 0; iy < m_ny; iy++ )
 			{
@@ -95,7 +95,7 @@ namespace glbarcode
 		/**
 		 * Destructor.
 		 */
-		~Simple2dMatrix()
+		~Matrix()
 		{
 			if ( m_d != NULL )
 			{
@@ -162,16 +162,16 @@ namespace glbarcode
 		/**
 		 * Extract sub-matrix from this matrix
 		 */
-		inline Simple2dMatrix<T> sub_matrix( int x0, int y0, int nx, int ny )
+		inline Matrix<T> sub_matrix( int x0, int y0, int nx, int ny )
 		{
-			return Simple2dMatrix<T>( *this, x0, y0, nx, ny );
+			return Matrix<T>( *this, x0, y0, nx, ny );
 		}
 
 
 		/**
 		 * Insert matrix into this matrix
 		 */
-		inline void insert( int x0, int y0, Simple2dMatrix<T> & a )
+		inline void insert( int x0, int y0, Matrix<T> & a )
 		{
 			for ( int iy = 0; iy < a.ny(); iy++ )
 			{
@@ -206,7 +206,7 @@ namespace glbarcode
 
 	private:
 		/**
-		 * Simple2dMatrix Private data
+		 * Matrix Private data
 		 */
 		int m_nx;
 		int m_ny;
@@ -217,4 +217,4 @@ namespace glbarcode
 }
 
 
-#endif // glbarcode_Simple2dMatrix_h
+#endif // glbarcode_Matrix_h

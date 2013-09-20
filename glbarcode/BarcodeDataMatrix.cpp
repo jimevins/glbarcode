@@ -372,12 +372,12 @@ namespace
 	}
 
 
-	void module( Simple2dMatrix<bool> & matrix,
-		     Simple2dMatrix<bool> & used,
-		     int                    ix,
-		     int                    iy,
-		     uint8_t                codeword,
-		     int                    bit )
+	void module( Matrix<bool> & matrix,
+		     Matrix<bool> & used,
+		     int            ix,
+		     int            iy,
+		     uint8_t        codeword,
+		     int            bit )
 	{
 		if ( iy < 0 )
 		{
@@ -400,9 +400,9 @@ namespace
 	}
 
 
-	void corner1( Simple2dMatrix<bool> & matrix,
-		      Simple2dMatrix<bool> & used,
-		      uint8_t                codeword )
+	void corner1( Matrix<bool> & matrix,
+		      Matrix<bool> & used,
+		      uint8_t        codeword )
 	{
 		int nx = matrix.nx();
 		int ny = matrix.ny();
@@ -418,9 +418,9 @@ namespace
 	}
 
 
-	void corner2( Simple2dMatrix<bool> & matrix,
-		      Simple2dMatrix<bool> & used,
-		      uint8_t                codeword )
+	void corner2( Matrix<bool> & matrix,
+		      Matrix<bool> & used,
+		      uint8_t        codeword )
 	{
 		int nx = matrix.nx();
 		int ny = matrix.ny();
@@ -436,9 +436,9 @@ namespace
 	}
 
 
-	void corner3( Simple2dMatrix<bool> & matrix,
-		      Simple2dMatrix<bool> & used,
-		      uint8_t                codeword )
+	void corner3( Matrix<bool> & matrix,
+		      Matrix<bool> & used,
+		      uint8_t        codeword )
 	{
 		int nx = matrix.nx();
 		int ny = matrix.ny();
@@ -454,9 +454,9 @@ namespace
 	}
 
 
-	void corner4( Simple2dMatrix<bool> & matrix,
-		      Simple2dMatrix<bool> & used,
-		      uint8_t                codeword )
+	void corner4( Matrix<bool> & matrix,
+		      Matrix<bool> & used,
+		      uint8_t        codeword )
 	{
 		int nx = matrix.nx();
 		int ny = matrix.ny();
@@ -472,11 +472,11 @@ namespace
 	}
 
 
-	void utah( Simple2dMatrix<bool> & matrix,
-		   Simple2dMatrix<bool> & used,
-		   int                    ix,
-		   int                    iy,
-		   uint8_t                codeword )
+	void utah( Matrix<bool> & matrix,
+		   Matrix<bool> & used,
+		   int            ix,
+		   int            iy,
+		   uint8_t        codeword )
 	{
 		module( matrix, used, ix-2, iy-2, codeword, 7 );
 		module( matrix, used, ix-1, iy-2, codeword, 6 );
@@ -489,12 +489,12 @@ namespace
 	}
 
 
-	void ecc200_fill_matrix( Simple2dMatrix<bool>       & matrix,
+	void ecc200_fill_matrix( Matrix<bool>               & matrix,
 				 const std::vector<uint8_t> & data_cw )
 	{
 		matrix.fill( false );
 
-		Simple2dMatrix<bool> used = matrix;
+		Matrix<bool> used = matrix;
 
 		int i  = 0;
 		int ix = 0;
@@ -534,7 +534,7 @@ namespace
 	}
 
 
-	void finder_pattern( Simple2dMatrix<bool> & encoded_data, int x0, int y0, int nx, int ny )
+	void finder_pattern( Matrix<bool> & encoded_data, int x0, int y0, int nx, int ny )
 	{
 		for ( int ix = 0; ix < nx; ix++ )
 		{
@@ -587,7 +587,7 @@ namespace glbarcode
 	/*
 	 * DataMatrix data encoding, implements Barcode2dBase::encode()
 	 */
-	bool BarcodeDataMatrix::encode( std::string cooked_data, Simple2dMatrix<bool> & encoded_data )
+	bool BarcodeDataMatrix::encode( std::string cooked_data, Matrix<bool> & encoded_data )
 	{
 		std::vector<uint8_t> data_cw;
 
@@ -646,8 +646,7 @@ namespace glbarcode
 		/*
 		 * Create raw data matrix
 		 */
-		Simple2dMatrix<bool> matrix( p->n_xregions * p->n_xregion,
-					     p->n_yregions * p->n_yregion );
+		Matrix<bool> matrix( p->n_xregions * p->n_xregion, p->n_yregions * p->n_yregion );
 		ecc200_fill_matrix( matrix, data_cw );
 
 
@@ -662,8 +661,8 @@ namespace glbarcode
 		{
 			for ( int i_yregion = 0; i_yregion < p->n_yregions; i_yregion++ )
 			{
-				Simple2dMatrix<bool> region = matrix.sub_matrix( i_xregion*p->n_xregion, i_yregion*p->n_yregion,
-										 p->n_xregion, p->n_yregion );
+				Matrix<bool> region = matrix.sub_matrix( i_xregion*p->n_xregion, i_yregion*p->n_yregion,
+									 p->n_xregion, p->n_yregion );
 
 				encoded_data.insert( i_xregion*xstride + 1, i_yregion*ystride + 1, region );
 				finder_pattern( encoded_data, i_xregion*xstride, i_yregion*ystride, xstride, ystride );

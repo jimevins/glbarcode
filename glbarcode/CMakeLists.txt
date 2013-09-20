@@ -22,11 +22,11 @@ set (PUBLIC_HEADERS
   BarcodeUpcBase.h
   Constants.h
   DrawingPrimitives.h
+  Matrix.h
   Renderer.h
   RendererSvg.h
   RendererEps.h
   RendererDebug.h
-  Simple2dMatrix.h
 )
 
 set (LIB_SOURCES

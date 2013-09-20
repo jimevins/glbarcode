@@ -50,8 +50,8 @@ namespace glbarcode
 	private:
 		bool validate( std::string raw_data );
 
-		bool encode( std::string            cooked_data,
-			     Simple2dMatrix<bool> & encoded_data );
+		bool encode( std::string    cooked_data,
+			     Matrix<bool> & encoded_data );
 
 	};
 

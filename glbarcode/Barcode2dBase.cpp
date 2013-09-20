@@ -64,8 +64,8 @@ namespace glbarcode
 				   double      w,
 				   double      h )
 	{
-		std::string          cooked_data;   /* Preprocessed data */
-		Simple2dMatrix<bool> encoded_data;  /* Encoded data matrix */
+		std::string  cooked_data;   /* Preprocessed data */
+		Matrix<bool> encoded_data;  /* Encoded data matrix */
 
 		clear();
 
@@ -116,9 +116,9 @@ namespace glbarcode
 	/*
 	 * Default 2D vectorization method
 	 */
-	void Barcode2dBase::vectorize( const Simple2dMatrix<bool> & encoded_data,
-				       double                     & w,
-				       double                     & h )
+	void Barcode2dBase::vectorize( const Matrix<bool> & encoded_data,
+				       double             & w,
+				       double             & h )
 	{
 
 		/* determine size and establish scale */
