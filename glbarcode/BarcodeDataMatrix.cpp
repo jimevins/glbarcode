@@ -39,48 +39,51 @@ namespace
 	const uint8_t CW_NUM_00  = 130;
 	const uint8_t CW_UPSHIFT = 235;
 
+
 	typedef struct
 	{
 		int   n_data_cw;
-		int   n_rows;
-		int   n_cols;
+		int   n_xtotal;
+		int   n_ytotal;
 		int   n_blocks_1;
 		int   n_blocks_2;
 		int   n_data_cw_block_1;
 		int   n_data_cw_block_2;
 		int   n_rs_cw_block;
 		int   a_select;
-		int   n_rows_region;
-		int   n_cols_region;
+		int   n_xregions;
+		int   n_yregions;
+		int   n_xregion;
+		int   n_yregion;
 	} DMParameterEntry;
 
 	const DMParameterEntry params[] =
 	{
-		{  1558, 144, 144, 8, 2, 166, 155, 62, 14, 22, 22 },
-		{  1304, 132, 132, 8, 0, 163,   0, 62, 14, 20, 20 },
-		{  1050, 120, 120, 6, 0, 175,   0, 68, 15, 18, 18 },
-		{   816, 104, 104, 6, 0, 136,   0, 56, 13, 24, 24 },
-		{   696,  96,  96, 4, 0, 174,   0, 68, 15, 22, 22 },
-		{   576,  88,  88, 4, 0, 144,   0, 56, 13, 20, 20 },
-		{   456,  80,  80, 4, 0, 114,   0, 48, 12, 18, 18 },
-		{   368,  72,  72, 4, 0,  92,   0, 36, 10, 16, 16 },
-		{   280,  64,  64, 2, 0, 140,   0, 56, 13, 14, 14 },
-		{   204,  52,  52, 2, 0, 102,   0, 42, 11, 24, 24 },
-		{   174,  48,  48, 1, 0, 174,   0, 68, 15, 22, 22 },
-		{   144,  44,  44, 1, 0, 144,   0, 56, 13, 20, 20 },
-		{   114,  40,  40, 1, 0, 114,   0, 48, 12, 18, 18 },
-		{    86,  36,  36, 1, 0,  86,   0, 42, 11, 16, 16 },
-		{    62,  32,  32, 1, 0,  62,   0, 36, 10, 14, 14 },
-		{    44,  26,  26, 1, 0,  44,   0, 28,  9, 24, 24 },
-		{    36,  24,  24, 1, 0,  36,   0, 24,  8, 22, 22 },
-		{    30,  22,  22, 1, 0,  30,   0, 20,  7, 20, 20 },
-		{    22,  20,  20, 1, 0,  22,   0, 18,  6, 18, 18 },
-		{    18,  18,  18, 1, 0,  18,   0, 14,  5, 16, 16 },
-		{    12,  16,  16, 1, 0,  12,   0, 12,  4, 14, 14 },
-		{     8,  14,  14, 1, 0,   8,   0, 10,  2, 12, 12 },
-		{     5,  12,  12, 1, 0,   5,   0,  7,  1, 10, 10 },
-		{     3,  10,  10, 1, 0,   3,   0,  5,  0,  8,  8 },
-		{     0,   0,   0, 0, 0,   0,   0,  0,  0,  0,  0 } /* End of Table */
+		{  1558, 144, 144, 8, 2, 166, 155, 62, 14, 6, 6, 22, 22 },
+		{  1304, 132, 132, 8, 0, 163,   0, 62, 14, 6, 6, 20, 20 },
+		{  1050, 120, 120, 6, 0, 175,   0, 68, 15, 6, 6, 18, 18 },
+		{   816, 104, 104, 6, 0, 136,   0, 56, 13, 4, 4, 24, 24 },
+		{   696,  96,  96, 4, 0, 174,   0, 68, 15, 4, 4, 22, 22 },
+		{   576,  88,  88, 4, 0, 144,   0, 56, 13, 4, 4, 20, 20 },
+		{   456,  80,  80, 4, 0, 114,   0, 48, 12, 4, 4, 18, 18 },
+		{   368,  72,  72, 4, 0,  92,   0, 36, 10, 4, 4, 16, 16 },
+		{   280,  64,  64, 2, 0, 140,   0, 56, 13, 4, 4, 14, 14 },
+		{   204,  52,  52, 2, 0, 102,   0, 42, 11, 2, 2, 24, 24 },
+		{   174,  48,  48, 1, 0, 174,   0, 68, 15, 2, 2, 22, 22 },
+		{   144,  44,  44, 1, 0, 144,   0, 56, 13, 2, 2, 20, 20 },
+		{   114,  40,  40, 1, 0, 114,   0, 48, 12, 2, 2, 18, 18 },
+		{    86,  36,  36, 1, 0,  86,   0, 42, 11, 2, 2, 16, 16 },
+		{    62,  32,  32, 1, 0,  62,   0, 36, 10, 2, 2, 14, 14 },
+		{    44,  26,  26, 1, 0,  44,   0, 28,  9, 1, 1, 24, 24 },
+		{    36,  24,  24, 1, 0,  36,   0, 24,  8, 1, 1, 22, 22 },
+		{    30,  22,  22, 1, 0,  30,   0, 20,  7, 1, 1, 20, 20 },
+		{    22,  20,  20, 1, 0,  22,   0, 18,  6, 1, 1, 18, 18 },
+		{    18,  18,  18, 1, 0,  18,   0, 14,  5, 1, 1, 16, 16 },
+		{    12,  16,  16, 1, 0,  12,   0, 12,  4, 1, 1, 14, 14 },
+		{     8,  14,  14, 1, 0,   8,   0, 10,  2, 1, 1, 12, 12 },
+		{     5,  12,  12, 1, 0,   5,   0,  7,  1, 1, 1, 10, 10 },
+		{     3,  10,  10, 1, 0,   3,   0,  5,  0, 1, 1,  8,  8 },
+		{     0,   0,   0, 0, 0,   0,   0,  0,  0, 0, 0,  0,  0 } /* End of Table */
 	};
 
 
@@ -303,10 +306,11 @@ namespace
 			return NULL;
 		}
 
-		int i_param;
+		int i_param = 0;
 
-		for ( i_param = 0; params[i_param].n_data_cw >= n_raw_cw; i_param++ )
+		while ( n_raw_cw < params[i_param].n_data_cw )
 		{
+			i_param++;
 		}
 
 		return &params[i_param-1];
@@ -368,7 +372,7 @@ namespace
 	}
 
 
-	void module( Simple2dMatrix<bool> & region,
+	void module( Simple2dMatrix<bool> & matrix,
 		     Simple2dMatrix<bool> & used,
 		     int                    ix,
 		     int                    iy,
@@ -377,137 +381,135 @@ namespace
 	{
 		if ( iy < 0 )
 		{
-			ix += 4 - ((region.ny()+4) % 8 );
-			iy += region.ny();
+			ix += 4 - ((matrix.ny()+4) % 8 );
+			iy += matrix.ny();
 		}
 
 		if ( ix < 0 )
 		{
-			ix += region.nx();
-			iy += 4 - ((region.nx()+4) % 8 );
+			ix += matrix.nx();
+			iy += 4 - ((matrix.nx()+4) % 8 );
 		}
 
 		used[iy][ix] = true;
 
 		if ( codeword & (1 << bit) )
 		{
-			region[iy][ix] = true;
+			matrix[iy][ix] = true;
 		}
 	}
 
 
-	void corner1( Simple2dMatrix<bool> & region,
+	void corner1( Simple2dMatrix<bool> & matrix,
 		      Simple2dMatrix<bool> & used,
 		      uint8_t                codeword )
 	{
-		int nx = region.nx();
-		int ny = region.ny();
+		int nx = matrix.nx();
+		int ny = matrix.ny();
 
-		module( region, used, 0,    ny-1, codeword, 7 );
-		module( region, used, 1,    ny-1, codeword, 6 );
-		module( region, used, 2,    ny-1, codeword, 5 );
-		module( region, used, nx-2, 0,    codeword, 4 );
-		module( region, used, nx-1, 0,    codeword, 3 );
-		module( region, used, nx-1, 1,    codeword, 2 );
-		module( region, used, nx-1, 2,    codeword, 1 );
-		module( region, used, nx-1, 3,    codeword, 0 );
+		module( matrix, used, 0,    ny-1, codeword, 7 );
+		module( matrix, used, 1,    ny-1, codeword, 6 );
+		module( matrix, used, 2,    ny-1, codeword, 5 );
+		module( matrix, used, nx-2, 0,    codeword, 4 );
+		module( matrix, used, nx-1, 0,    codeword, 3 );
+		module( matrix, used, nx-1, 1,    codeword, 2 );
+		module( matrix, used, nx-1, 2,    codeword, 1 );
+		module( matrix, used, nx-1, 3,    codeword, 0 );
 	}
 
 
-	void corner2( Simple2dMatrix<bool> & region,
+	void corner2( Simple2dMatrix<bool> & matrix,
 		      Simple2dMatrix<bool> & used,
 		      uint8_t                codeword )
 	{
-		int nx = region.nx();
-		int ny = region.ny();
+		int nx = matrix.nx();
+		int ny = matrix.ny();
 
-		module( region, used, 0,    ny-3, codeword, 7 );
-		module( region, used, 0,    ny-2, codeword, 6 );
-		module( region, used, 0,    ny-1, codeword, 5 );
-		module( region, used, nx-4, 0,    codeword, 4 );
-		module( region, used, nx-3, 0,    codeword, 3 );
-		module( region, used, nx-2, 0,    codeword, 2 );
-		module( region, used, nx-1, 0,    codeword, 1 );
-		module( region, used, nx-1, 1,    codeword, 0 );
+		module( matrix, used, 0,    ny-3, codeword, 7 );
+		module( matrix, used, 0,    ny-2, codeword, 6 );
+		module( matrix, used, 0,    ny-1, codeword, 5 );
+		module( matrix, used, nx-4, 0,    codeword, 4 );
+		module( matrix, used, nx-3, 0,    codeword, 3 );
+		module( matrix, used, nx-2, 0,    codeword, 2 );
+		module( matrix, used, nx-1, 0,    codeword, 1 );
+		module( matrix, used, nx-1, 1,    codeword, 0 );
 	}
 
 
-	void corner3( Simple2dMatrix<bool> & region,
+	void corner3( Simple2dMatrix<bool> & matrix,
 		      Simple2dMatrix<bool> & used,
 		      uint8_t                codeword )
 	{
-		int nx = region.nx();
-		int ny = region.ny();
+		int nx = matrix.nx();
+		int ny = matrix.ny();
 
-		module( region, used, 0,    ny-3, codeword, 7 );
-		module( region, used, 0,    ny-2, codeword, 6 );
-		module( region, used, 0,    ny-1, codeword, 5 );
-		module( region, used, nx-2, 0,    codeword, 4 );
-		module( region, used, nx-1, 0,    codeword, 3 );
-		module( region, used, nx-1, 1,    codeword, 2 );
-		module( region, used, nx-1, 2,    codeword, 1 );
-		module( region, used, nx-1, 3,    codeword, 0 );
+		module( matrix, used, 0,    ny-3, codeword, 7 );
+		module( matrix, used, 0,    ny-2, codeword, 6 );
+		module( matrix, used, 0,    ny-1, codeword, 5 );
+		module( matrix, used, nx-2, 0,    codeword, 4 );
+		module( matrix, used, nx-1, 0,    codeword, 3 );
+		module( matrix, used, nx-1, 1,    codeword, 2 );
+		module( matrix, used, nx-1, 2,    codeword, 1 );
+		module( matrix, used, nx-1, 3,    codeword, 0 );
 	}
 
 
-	void corner4( Simple2dMatrix<bool> & region,
+	void corner4( Simple2dMatrix<bool> & matrix,
 		      Simple2dMatrix<bool> & used,
 		      uint8_t                codeword )
 	{
-		int nx = region.nx();
-		int ny = region.ny();
+		int nx = matrix.nx();
+		int ny = matrix.ny();
 
-		module( region, used, 0,    ny-1, codeword, 7 );
-		module( region, used, nx-1, ny-1, codeword, 6 );
-		module( region, used, nx-3, 0,    codeword, 5 );
-		module( region, used, nx-2, 0,    codeword, 4 );
-		module( region, used, nx-1, 0,    codeword, 3 );
-		module( region, used, nx-3, 1,    codeword, 2 );
-		module( region, used, nx-2, 1,    codeword, 1 );
-		module( region, used, nx-1, 1,    codeword, 0 );
+		module( matrix, used, 0,    ny-1, codeword, 7 );
+		module( matrix, used, nx-1, ny-1, codeword, 6 );
+		module( matrix, used, nx-3, 0,    codeword, 5 );
+		module( matrix, used, nx-2, 0,    codeword, 4 );
+		module( matrix, used, nx-1, 0,    codeword, 3 );
+		module( matrix, used, nx-3, 1,    codeword, 2 );
+		module( matrix, used, nx-2, 1,    codeword, 1 );
+		module( matrix, used, nx-1, 1,    codeword, 0 );
 	}
 
 
-	void utah( Simple2dMatrix<bool> & region,
+	void utah( Simple2dMatrix<bool> & matrix,
 		   Simple2dMatrix<bool> & used,
 		   int                    ix,
 		   int                    iy,
 		   uint8_t                codeword )
 	{
-		module( region, used, ix-2, iy-2, codeword, 7 );
-		module( region, used, ix-1, iy-2, codeword, 6 );
-		module( region, used, ix-2, iy-1, codeword, 5 );
-		module( region, used, ix-1, iy-1, codeword, 4 );
-		module( region, used, ix,   iy-1, codeword, 3 );
-		module( region, used, ix-2, iy,   codeword, 2 );
-		module( region, used, ix-1, iy,   codeword, 1 );
-		module( region, used, ix,   iy,   codeword, 0 );
+		module( matrix, used, ix-2, iy-2, codeword, 7 );
+		module( matrix, used, ix-1, iy-2, codeword, 6 );
+		module( matrix, used, ix-2, iy-1, codeword, 5 );
+		module( matrix, used, ix-1, iy-1, codeword, 4 );
+		module( matrix, used, ix,   iy-1, codeword, 3 );
+		module( matrix, used, ix-2, iy,   codeword, 2 );
+		module( matrix, used, ix-1, iy,   codeword, 1 );
+		module( matrix, used, ix,   iy,   codeword, 0 );
 	}
 
 
-	void ecc200_fill_region( Simple2dMatrix<bool>       & region,
-				 const std::vector<uint8_t> & data_cw,
-				 int                          offset,
-				 int                          n )
+	void ecc200_fill_matrix( Simple2dMatrix<bool>       & matrix,
+				 const std::vector<uint8_t> & data_cw )
 	{
-		region.fill( false );
+		matrix.fill( false );
 
-		Simple2dMatrix<bool> used = region;
+		Simple2dMatrix<bool> used = matrix;
 
-		int i  = offset;
+		int i  = 0;
 		int ix = 0;
 		int iy = 4;
-		int nx = region.nx();
-		int ny = region.ny();
+		int nx = matrix.nx();
+		int ny = matrix.ny();
 		
 		do {
-			if ( (iy == ny)   && (ix == 0)                ) corner1( region, used, data_cw[i++] );
-			if ( (iy == ny-2) && (ix == 0) && (nx%4 != 0) ) corner2( region, used, data_cw[i++] );
-			if ( (iy == ny-2) && (ix == 0) && (nx%8 == 4) ) corner3( region, used, data_cw[i++] );
-			if ( (iy == ny+4) && (ix == 2) && (nx%8 == 0) ) corner4( region, used, data_cw[i++] );
+			if ( (iy == ny)   && (ix == 0)                ) corner1( matrix, used, data_cw[i++] );
+			if ( (iy == ny-2) && (ix == 0) && (nx%4 != 0) ) corner2( matrix, used, data_cw[i++] );
+			if ( (iy == ny-2) && (ix == 0) && (nx%8 == 4) ) corner3( matrix, used, data_cw[i++] );
+			if ( (iy == ny+4) && (ix == 2) && (nx%8 == 0) ) corner4( matrix, used, data_cw[i++] );
 
 			do {
-				if ( (iy < ny) && (ix >= 0) && !used[iy][ix] ) utah( region, used, ix, iy, data_cw[i++] );
+				if ( (iy < ny) && (ix >= 0) && !used[iy][ix] ) utah( matrix, used, ix, iy, data_cw[i++] );
 				ix += 2;
 				iy -= 2;
 			} while ( (iy >= 0) && (ix < nx) );
@@ -515,7 +517,7 @@ namespace
 			iy += 1;
 
 			do {
-				if ( (iy >= 0) && (ix < nx) && !used[iy][ix] ) utah( region, used, ix, iy, data_cw[i++] );
+				if ( (iy >= 0) && (ix < nx) && !used[iy][ix] ) utah( matrix, used, ix, iy, data_cw[i++] );
 				ix -= 2;
 				iy += 2;
 			} while ( (iy < ny) && (ix >= 0) );
@@ -526,8 +528,8 @@ namespace
 
 		if ( !used[ny-1][nx-1] )
 		{
-			region[ny-1][nx-1] = true;
-			region[ny-2][nx-2] = true;
+			matrix[ny-1][nx-1] = true;
+			matrix[ny-2][nx-2] = true;
 		}
 	}
 
@@ -602,7 +604,7 @@ namespace glbarcode
 		{
 			return false;
 		}
-		encoded_data.resize( p->n_cols, p->n_rows );
+		encoded_data.resize( p->n_xtotal, p->n_ytotal );
 			
 
 		/*
@@ -642,29 +644,28 @@ namespace glbarcode
 
 
 		/*
-		 * Fill in regions and add finder patterns
+		 * Create raw data matrix
 		 */
-		Simple2dMatrix<bool> region( p->n_cols_region, p->n_rows_region );
+		Simple2dMatrix<bool> matrix( p->n_xregions * p->n_xregion,
+					     p->n_yregions * p->n_yregion );
+		ecc200_fill_matrix( matrix, data_cw );
 
-		int n_x_regions = p->n_cols / (p->n_cols_region + 2 );
-		int n_y_regions = p->n_rows / (p->n_rows_region + 2 );
-		int n_regions = n_x_regions * n_y_regions;
 
-		int xstride = p->n_cols_region + 2;
-		int ystride = p->n_rows_region + 2;
 
-		int dsize = data_cw.size() / n_regions;
+		/*
+		 * Construct by separating out regions and inserting finder patterns
+		 */
+		int xstride = p->n_xregion + 2;
+		int ystride = p->n_yregion + 2;
 
-		for ( int i_xregion = 0; i_xregion < n_x_regions; i_xregion++ )
+		for ( int i_xregion = 0; i_xregion < p->n_xregions; i_xregion++ )
 		{
-			for ( int i_yregion = 0; i_yregion < n_y_regions; i_yregion++ )
+			for ( int i_yregion = 0; i_yregion < p->n_yregions; i_yregion++ )
 			{
-				int i_region = i_xregion*n_x_regions + i_yregion;
-
-				ecc200_fill_region( region, data_cw, i_region*dsize, dsize );
+				Simple2dMatrix<bool> region = matrix.sub_matrix( i_xregion*p->n_xregion, i_yregion*p->n_yregion,
+										 p->n_xregion, p->n_yregion );
 
 				encoded_data.insert( i_xregion*xstride + 1, i_yregion*ystride + 1, region );
-
 				finder_pattern( encoded_data, i_xregion*xstride, i_yregion*ystride, xstride, ystride );
 			}
 		}

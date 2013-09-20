@@ -66,6 +66,33 @@ namespace glbarcode
 
 
 		/**
+		 * Submatrix copy constructor.
+		 */
+		Simple2dMatrix( const Simple2dMatrix<T> & src,
+				int                       x0,
+				int                       y0,
+				int                       nx,
+				int                       ny ) : m_nx(nx),
+			                                         m_ny(ny),
+			                                         m_d((src.m_nx > 0 && src.m_ny > 0) ? new T[nx * ny] : NULL)
+		{
+			for ( int iy = 0; iy < m_ny; iy++ )
+			{
+				if ( (y0+iy) < src.ny() )
+				{
+					for ( int ix = 0; ix < m_nx; ix++ )
+					{
+						if ( (x0+ix) < src.nx() )
+						{
+							(*this)[iy][ix] = src[y0+iy][x0+ix];
+						}
+					}
+				}
+			}
+		}
+
+
+		/**
 		 * Destructor.
 		 */
 		~Simple2dMatrix()
@@ -129,6 +156,15 @@ namespace glbarcode
 		inline int ny( void ) const
 		{
 			return m_ny;
+		}
+
+
+		/**
+		 * Extract sub-matrix from this matrix
+		 */
+		inline Simple2dMatrix<T> sub_matrix( int x0, int y0, int nx, int ny )
+		{
+			return Simple2dMatrix<T>( *this, x0, y0, nx, ny );
 		}
 
 

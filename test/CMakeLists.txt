@@ -28,3 +28,12 @@ add_executable(test-svg-renderer
 target_link_libraries(test-svg-renderer
   ${Lib_Name}
 )
+
+
+add_executable(test-datamatrix
+  test-datamatrix.cpp
+)
+
+target_link_libraries(test-datamatrix
+  ${Lib_Name}
+)
