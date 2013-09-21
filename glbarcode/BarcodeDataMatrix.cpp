@@ -42,14 +42,14 @@ namespace
 
 	typedef struct
 	{
-		int   n_data_cw;
+		int   n_data_total;
 		int   n_xtotal;
 		int   n_ytotal;
 		int   n_blocks_1;
 		int   n_blocks_2;
-		int   n_data_cw_block_1;
-		int   n_data_cw_block_2;
-		int   n_rs_cw_block;
+		int   n_data_block_1;
+		int   n_data_block_2;
+		int   n_ecc_block;
 		int   a_select;
 		int   n_xregions;
 		int   n_yregions;
@@ -59,31 +59,31 @@ namespace
 
 	const DMParameterEntry params[] =
 	{
-		{  1558, 144, 144, 8, 2, 166, 155, 62, 14, 6, 6, 22, 22 },
-		{  1304, 132, 132, 8, 0, 163,   0, 62, 14, 6, 6, 20, 20 },
-		{  1050, 120, 120, 6, 0, 175,   0, 68, 15, 6, 6, 18, 18 },
-		{   816, 104, 104, 6, 0, 136,   0, 56, 13, 4, 4, 24, 24 },
-		{   696,  96,  96, 4, 0, 174,   0, 68, 15, 4, 4, 22, 22 },
-		{   576,  88,  88, 4, 0, 144,   0, 56, 13, 4, 4, 20, 20 },
-		{   456,  80,  80, 4, 0, 114,   0, 48, 12, 4, 4, 18, 18 },
-		{   368,  72,  72, 4, 0,  92,   0, 36, 10, 4, 4, 16, 16 },
-		{   280,  64,  64, 2, 0, 140,   0, 56, 13, 4, 4, 14, 14 },
-		{   204,  52,  52, 2, 0, 102,   0, 42, 11, 2, 2, 24, 24 },
-		{   174,  48,  48, 1, 0, 174,   0, 68, 15, 2, 2, 22, 22 },
-		{   144,  44,  44, 1, 0, 144,   0, 56, 13, 2, 2, 20, 20 },
-		{   114,  40,  40, 1, 0, 114,   0, 48, 12, 2, 2, 18, 18 },
-		{    86,  36,  36, 1, 0,  86,   0, 42, 11, 2, 2, 16, 16 },
-		{    62,  32,  32, 1, 0,  62,   0, 36, 10, 2, 2, 14, 14 },
-		{    44,  26,  26, 1, 0,  44,   0, 28,  9, 1, 1, 24, 24 },
-		{    36,  24,  24, 1, 0,  36,   0, 24,  8, 1, 1, 22, 22 },
-		{    30,  22,  22, 1, 0,  30,   0, 20,  7, 1, 1, 20, 20 },
-		{    22,  20,  20, 1, 0,  22,   0, 18,  6, 1, 1, 18, 18 },
-		{    18,  18,  18, 1, 0,  18,   0, 14,  5, 1, 1, 16, 16 },
-		{    12,  16,  16, 1, 0,  12,   0, 12,  4, 1, 1, 14, 14 },
-		{     8,  14,  14, 1, 0,   8,   0, 10,  2, 1, 1, 12, 12 },
-		{     5,  12,  12, 1, 0,   5,   0,  7,  1, 1, 1, 10, 10 },
 		{     3,  10,  10, 1, 0,   3,   0,  5,  0, 1, 1,  8,  8 },
-		{     0,   0,   0, 0, 0,   0,   0,  0,  0, 0, 0,  0,  0 } /* End of Table */
+		{     5,  12,  12, 1, 0,   5,   0,  7,  1, 1, 1, 10, 10 },
+		{     8,  14,  14, 1, 0,   8,   0, 10,  2, 1, 1, 12, 12 },
+		{    12,  16,  16, 1, 0,  12,   0, 12,  4, 1, 1, 14, 14 },
+		{    18,  18,  18, 1, 0,  18,   0, 14,  5, 1, 1, 16, 16 },
+		{    22,  20,  20, 1, 0,  22,   0, 18,  6, 1, 1, 18, 18 },
+		{    30,  22,  22, 1, 0,  30,   0, 20,  7, 1, 1, 20, 20 },
+		{    36,  24,  24, 1, 0,  36,   0, 24,  8, 1, 1, 22, 22 },
+		{    44,  26,  26, 1, 0,  44,   0, 28,  9, 1, 1, 24, 24 },
+		{    62,  32,  32, 1, 0,  62,   0, 36, 10, 2, 2, 14, 14 },
+		{    86,  36,  36, 1, 0,  86,   0, 42, 11, 2, 2, 16, 16 },
+		{   114,  40,  40, 1, 0, 114,   0, 48, 12, 2, 2, 18, 18 },
+		{   144,  44,  44, 1, 0, 144,   0, 56, 13, 2, 2, 20, 20 },
+		{   174,  48,  48, 1, 0, 174,   0, 68, 15, 2, 2, 22, 22 },
+		{   204,  52,  52, 2, 0, 102,   0, 42, 11, 2, 2, 24, 24 },
+		{   280,  64,  64, 2, 0, 140,   0, 56, 13, 4, 4, 14, 14 },
+		{   368,  72,  72, 4, 0,  92,   0, 36, 10, 4, 4, 16, 16 },
+		{   456,  80,  80, 4, 0, 114,   0, 48, 12, 4, 4, 18, 18 },
+		{   576,  88,  88, 4, 0, 144,   0, 56, 13, 4, 4, 20, 20 },
+		{   696,  96,  96, 4, 0, 174,   0, 68, 15, 4, 4, 22, 22 },
+		{   816, 104, 104, 6, 0, 136,   0, 56, 13, 4, 4, 24, 24 },
+		{  1050, 120, 120, 6, 0, 175,   0, 68, 15, 6, 6, 18, 18 },
+		{  1304, 132, 132, 8, 0, 163,   0, 62, 14, 6, 6, 20, 20 },
+		{  1558, 144, 144, 8, 2, 156, 155, 62, 14, 6, 6, 22, 22 },
+		{  9999,   0,   0, 0, 0,   0,   0,  0,  0, 0, 0,  0,  0 } /* End of Table */
 	};
 
 
@@ -91,7 +91,7 @@ namespace
 	{
 		/* 0. Factor table for 5 RS codewords */
 		{
-			228,  48,  15, 111,  62,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+			 62, 111,  15,  48, 228,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
@@ -99,7 +99,7 @@ namespace
 
 		/* 1. Factor table for 7 RS codewords */
 		{
-			 23,  68, 144, 134, 240,  92, 254,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+			254,  92, 240, 134, 144,  68,  23,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -107,7 +107,7 @@ namespace
 
 		/* 2. Factor table for 10 RS codewords */
 		{
-			 28,  24, 185, 166, 223, 248, 116, 255, 110,  61,   0,   0,   0,   0,   0,   0,   0,
+			 61, 110, 255, 116, 248, 223, 166, 185,  24,  28,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -115,7 +115,7 @@ namespace
 
 		/* 3. Factor table for 11 RS codewords */
 		{
-			175, 138, 205,  12, 194, 168,  39, 245,  60,  97, 120,   0,   0,   0,   0,   0,   0,
+			120,  97,  60, 245,  39, 168, 194,  12, 205, 138, 175,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -123,7 +123,7 @@ namespace
 
 		/* 4. Factor table for 12 RS codewords */
 		{
-			 41, 153, 158,  91,  61,  42, 142, 213,  97, 178, 100, 242,   0,   0,   0,   0,   0,
+			242, 100, 178,  97, 213, 142,  42,  61,  91, 158, 153,  41,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -131,7 +131,7 @@ namespace
 
 		/* 5. Factor table for 14 RS codewords */
 		{
-			156,  97, 192, 252,  95,   9, 157, 119, 138,  45,  18, 186,  83, 185,   0,   0,   0,
+			185,  83, 186,  18,  45, 138, 119, 157,   9,  95, 252, 192,  97, 156,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
@@ -139,82 +139,82 @@ namespace
 
 		/* 6. Factor table for 18 RS codewords */
 		{
-			 83, 195, 100,  39, 188,  75,  66,  61, 241, 213, 109, 129,  94, 254, 225,  48,	 90,
-			188,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+			188,  90,  48, 225, 254,  94, 129, 109, 213, 241,  61,  66,  75, 188,  39, 100, 195,
+			 83,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
 		},
 
 		/* 7. Factor table for 20 RS codewords */
 		{
-			 15, 195, 244,   9, 233,  71, 168,   2, 188, 160, 153, 145, 253,  79, 108,  82,	 27,
-			174, 186, 172,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+			172, 186, 174,  27,  82, 108,  79, 253, 145, 153, 160, 188,   2, 168,  71, 233,   9,
+			244, 195,  15,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
 		},
 
 		/* 8. Factor table for 24 RS codewords */
 		{
-			 52, 190,  88, 205, 109,  39, 176,  21, 155, 197, 251, 223, 155,  21,   5, 172,	254,
-			124,  12, 181, 184,  96,  50, 193,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+			193,  50,  96, 184, 181,  12, 124, 254, 172,   5,  21, 155, 223, 251, 197, 155,  21,
+			176,  39, 109, 205,  88, 190,  52,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
 		},
 
 		/* 9. Factor table for 28 RS codewords */
 		{
-			211, 231,  43,  97,  71,  96, 103, 174,  37, 151, 170,  53,  75,  34, 249, 121,  17,
-			138, 110, 213, 141, 136, 120, 151, 233, 168,  93, 255,   0,   0,   0,   0,   0,   0,
+			255,  93, 168, 233, 151, 120, 136, 141, 213, 110, 138,  17, 121, 249,  34,  75,  53,
+			170, 151,  37, 174, 103,  96,  71,  97,  43, 231, 211,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
 		},
 
 		/* 10. Factor table for 36 RS codewords */
 		{
-			245, 127, 242, 218, 130, 250, 162, 181, 102, 120,  84, 179, 220, 251,  80, 182,	229,
-			 18,   2,   4,  68,  33, 101, 137,  95, 119, 115,  44, 175, 184,  59,  25, 225,  98,
-			 81, 112,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+			112,  81,  98, 225,  25,  59, 184, 175,  44, 115, 119,  95, 137, 101,  33,  68,   4,
+			  2,  18, 229, 182,  80, 251, 220, 179,  84, 120, 102, 181, 162, 250, 130, 218, 242,
+			127, 245,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
 		},
 
 		/* 11. Factor table for 42 RS codewords */
 		{
-			 77, 193, 137,  31,  19,  38,  22, 153, 247, 105, 122,   2, 245, 133, 242,   8,	175,
-			 95, 100,   9, 167, 105, 214, 111,  57, 121,  21,   1, 253,  57,  54, 101, 248, 202,
-			 69,  50, 150, 177, 226,   5,   9,   5,   0,   0,   0,   0,   0,   0,   0,   0,   0,
+			  5,   9,   5, 226, 177, 150,  50,  69, 202, 248, 101,  54,  57, 253,   1,  21, 121,
+			 57, 111, 214, 105, 167,   9, 100,  95, 175,   8, 242, 133, 245,   2, 122, 105, 247,
+			153,  22,  38,  19,  31, 137, 193,  77,   0,   0,   0,   0,   0,   0,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
 		},
 
 		/* 12. Factor table for 48 RS codewords */
 		{
-			245, 132, 172, 223,  96,  32, 117,  22, 238, 133, 238, 231, 205, 188, 237,  87,	191,
-			106,  16, 147, 118,  23,  37,  90, 170, 205, 131,  88, 120, 100,  66, 138, 186, 240,
-			 82,  44, 176,  87, 187, 147, 160, 175,  69, 213,  92, 253, 225,  19,   0,   0,   0,
+			 19, 225, 253,  92, 213,  69, 175, 160, 147, 187,  87, 176,  44,  82, 240, 186, 138,
+			 66, 100, 120,  88, 131, 205, 170,  90,  37,  23, 118, 147,  16, 106, 191,  87, 237,
+			188, 205, 231, 238, 133, 238,  22, 117,  32,  96, 223, 172, 132, 245,   0,   0,   0,
 			  0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
 		},
 
 		/* 13. Factor table for 56 RS codewords */
 		{
-			175,   9, 223, 238,  12,  17, 220, 208, 100,  29, 175, 170, 230, 192, 215, 235,	150,
-			159,  36, 223,  38, 200, 132,  54, 228, 146, 218, 234, 117, 203,  29, 232, 144, 238,
-			 22, 150, 201, 117,  62, 207, 164,  13, 137, 245, 127,  67, 247,  28, 155,  43, 203,
-			107, 233,  53, 143,  46,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
+			 46, 143,  53, 233, 107, 203,  43, 155,  28, 247,  67, 127, 245, 137,  13, 164, 207,
+			 62, 117, 201, 150,  22, 238, 144, 232,  29, 203, 117, 234, 218, 146, 228,  54, 132,
+			200,  38, 223,  36, 159, 150, 235, 215, 192, 230, 170, 175,  29, 100, 208, 220,  17,
+			 12, 238, 223,   9, 175,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0
 		},
 
 		/* 14. Factor table for 62 RS codewords */
 		{
-			242,  93, 169,  50, 144, 210,  39, 118, 202, 188, 201, 189, 143, 108, 196,  37,	185,
-			112, 134, 230, 245,  63, 197, 190, 250, 106, 185, 221, 175,  64, 114,  71, 161,  44,
-			147,   6,  27, 218,  51,  63,  87,  10,  40, 130, 188,  17, 163,  31, 176, 170,   4,
-			107, 232,   7,  94, 166, 224, 124,  86,  47,  11, 204,   0,   0,   0,   0,   0,   0
+			204,  11,  47,  86, 124, 224, 166,  94,   7, 232, 107,   4, 170, 176,  31, 163,  17,
+			188, 130,  40,  10,  87,  63,  51, 218,  27,   6, 147,  44, 161,  71, 114,  64, 175,
+			221, 185, 106, 250, 190, 197,  63, 245, 230, 134, 112, 185,  37, 196, 108, 143, 189,
+			201, 188, 202, 118,  39, 210, 144,  50, 169,  93, 242,   0,   0,   0,   0,   0,   0
 		},
 
 		/* 15. Factor table for 68 RS codewords */
 		{
-			220, 228, 173,  89, 251, 149, 159,  56,  89,  33, 147, 244, 154,  36,  73, 127,	213,
-			136, 248, 180, 234, 197, 158, 177,  68, 122,  93, 213,  15, 160, 227, 236,  66, 139,
-			153, 185, 202, 167, 179,  25, 220, 232,  96, 210, 231, 136, 223, 239, 181, 241,  59,
-			 52, 172,  25,  49, 232, 211, 189,  64,  54, 108, 153, 132,  63,  96, 103,  82, 186
+			186,  82, 103,  96,  63, 132, 153, 108,  54,  64, 189, 211, 232,  49,  25, 172,  52,
+			 59, 241, 181, 239, 223, 136, 231, 210,  96, 232, 220,  25, 179, 167, 202, 185, 153,
+			139,  66, 236, 227, 160,  15, 213,  93, 122,  68, 177, 158, 197, 234, 180, 248, 136,
+			213, 127,  73,  36, 154, 244, 147,  33,  89,  56, 159, 149, 251,  89, 173, 228, 220
 		}
 	};
 
@@ -261,7 +261,7 @@ namespace
 	};
 
 
-	int ecc200_encode( const std::string & data, std::vector<uint8_t> & data_cw )
+	int ecc200_encode( const std::string & data, std::vector<uint8_t> & codewords )
 	{
 		/*
 		 * Encode data into codewords using ASCII encoding method.
@@ -277,24 +277,24 @@ namespace
 				if ( (i < (data.size()-1)) && isdigit(c) && isdigit(c1) )
 				{
 					/* 2-digit data 00 - 99 */
-					data_cw.push_back( CW_NUM_00 + (c-'0')*10 + (c1-'0') );
+					codewords.push_back( CW_NUM_00 + (c-'0')*10 + (c1-'0') );
 					i++; /* skip next input char */
 				}
 				else
 				{
 					/* Simple ASCII data (ASCII value + 1) */
-					data_cw.push_back( c + 1 );
+					codewords.push_back( c + 1 );
 				}
 			}
 			else
 			{
 				/* Extended ASCII range (128-255) */
-				data_cw.push_back( CW_UPSHIFT );
-				data_cw.push_back( c - 127 );
+				codewords.push_back( CW_UPSHIFT );
+				codewords.push_back( c - 127 );
 			}
 		}
 
-		return data_cw.size();
+		return codewords.size();
 	}
 
 
@@ -308,65 +308,65 @@ namespace
 
 		int i_param = 0;
 
-		while ( n_raw_cw < params[i_param].n_data_cw )
+		while ( n_raw_cw > params[i_param].n_data_total )
 		{
 			i_param++;
 		}
 
-		return &params[i_param-1];
+		return &params[i_param];
 	}
 
 
-	void ecc200_fill( std::vector<uint8_t> & data_cw, int n_raw_cw, int n_data_cw )
+	void ecc200_fill( std::vector<uint8_t> & codewords, int n_raw_cw, int n_data_total )
 	{
-		int n_fill_cw   = n_data_cw - n_raw_cw;
+		int n_fill_cw   = n_data_total - n_raw_cw;
 
 		if ( n_fill_cw > 0 )
 		{
-			data_cw.push_back( CW_PAD );
+			codewords.push_back( CW_PAD );
 		}
 
-		for ( int i = n_raw_cw + 1; i < n_data_cw; i++ )
+		for ( int i = n_raw_cw + 1; i < n_data_total; i++ )
 		{
 			int r = (149*(i+1))%253 + 1;
-			data_cw.push_back( (CW_PAD + r) % 254 );
+			codewords.push_back( (CW_PAD + r) % 254 );
 		}
 	}
 
 
-	void ecc200_rs_block( const std::vector<uint8_t> & data_cw,
-			      std::vector<uint8_t>       & rs_cw,
-			      int                          n,
-			      int                          nc,
-			      int                          a_select,
-			      int                          offset,
-			      int                          stride )
+	void ecc200_ecc_block( const std::vector<uint8_t> & codewords,
+			       std::vector<uint8_t>       & ecc,
+			       int                          n,
+			       int                          nc,
+			       int                          a_select,
+			       int                          offset,
+			       int                          stride )
 	{
 		for ( int i = 0; i < n; i++ )
 		{
-			uint8_t k = rs_cw[offset] ^ data_cw[i*stride + offset];
+			uint8_t k = ecc[offset] ^ codewords[i*stride + offset];
 
 			for ( int j = 0; j < (nc-1); j++ )
 			{
-				uint8_t c = a[a_select][nc-1-j];
+				uint8_t c = a[a_select][j];
 
 				if ( k != 0 )
 				{
-					rs_cw[j*stride+offset] = rs_cw[(j+1)*stride + offset] ^ Alog[ (Log[k] + Log[c]) % 255 ];
+					ecc[j*stride+offset] = ecc[(j+1)*stride + offset] ^ Alog[ (Log[k] + Log[c]) % 255 ];
 				}
 				else
 				{
-					rs_cw[j*stride+offset] = rs_cw[(j+1)*stride + offset];
+					ecc[j*stride+offset] = ecc[(j+1)*stride + offset];
 				}
 			}
-			uint8_t c = a[a_select][0];
+			uint8_t c = a[a_select][nc-1];
 			if ( k != 0 )
 			{
-				rs_cw[(nc-1)*stride + offset] = Alog[ (Log[k] + Log[c]) % 255 ];
+				ecc[(nc-1)*stride + offset] = Alog[ (Log[k] + Log[c]) % 255 ];
 			}
 			else
 			{
-				rs_cw[(nc-1)*stride + offset] = 0;
+				ecc[(nc-1)*stride + offset] = 0;
 			}
 		}
 	}
@@ -490,7 +490,7 @@ namespace
 
 
 	void ecc200_fill_matrix( Matrix<bool>               & matrix,
-				 const std::vector<uint8_t> & data_cw )
+				 const std::vector<uint8_t> & codewords )
 	{
 		matrix.fill( false );
 
@@ -503,13 +503,13 @@ namespace
 		int ny = matrix.ny();
 		
 		do {
-			if ( (iy == ny)   && (ix == 0)                ) corner1( matrix, used, data_cw[i++] );
-			if ( (iy == ny-2) && (ix == 0) && (nx%4 != 0) ) corner2( matrix, used, data_cw[i++] );
-			if ( (iy == ny-2) && (ix == 0) && (nx%8 == 4) ) corner3( matrix, used, data_cw[i++] );
-			if ( (iy == ny+4) && (ix == 2) && (nx%8 == 0) ) corner4( matrix, used, data_cw[i++] );
+			if ( (iy == ny)   && (ix == 0)                ) corner1( matrix, used, codewords[i++] );
+			if ( (iy == ny-2) && (ix == 0) && (nx%4 != 0) ) corner2( matrix, used, codewords[i++] );
+			if ( (iy == ny-2) && (ix == 0) && (nx%8 == 4) ) corner3( matrix, used, codewords[i++] );
+			if ( (iy == ny+4) && (ix == 2) && (nx%8 == 0) ) corner4( matrix, used, codewords[i++] );
 
 			do {
-				if ( (iy < ny) && (ix >= 0) && !used[iy][ix] ) utah( matrix, used, ix, iy, data_cw[i++] );
+				if ( (iy < ny) && (ix >= 0) && !used[iy][ix] ) utah( matrix, used, ix, iy, codewords[i++] );
 				ix += 2;
 				iy -= 2;
 			} while ( (iy >= 0) && (ix < nx) );
@@ -517,7 +517,7 @@ namespace
 			iy += 1;
 
 			do {
-				if ( (iy >= 0) && (ix < nx) && !used[iy][ix] ) utah( matrix, used, ix, iy, data_cw[i++] );
+				if ( (iy >= 0) && (ix < nx) && !used[iy][ix] ) utah( matrix, used, ix, iy, codewords[i++] );
 				ix -= 2;
 				iy += 2;
 			} while ( (iy < ny) && (ix >= 0) );
@@ -589,12 +589,12 @@ namespace glbarcode
 	 */
 	bool BarcodeDataMatrix::encode( std::string cooked_data, Matrix<bool> & encoded_data )
 	{
-		std::vector<uint8_t> data_cw;
+		std::vector<uint8_t> codewords;
 
 		/*
 		 * Encode data into codewords
 		 */
-		int n_raw_cw = ecc200_encode( cooked_data, data_cw );
+		int n_raw_cw = ecc200_encode( cooked_data, codewords );
 
 		/*
 		 * Determine parameters for "best size"
@@ -610,45 +610,34 @@ namespace glbarcode
 		/*
 		 * Fill any extra data codewords
 		 */
-		ecc200_fill( data_cw, n_raw_cw, p->n_data_cw );
+		ecc200_fill( codewords, n_raw_cw, p->n_data_total );
 
 
 		/*
 		 * Calculate Reed-Solomon correction codewords
 		 */
-		std::vector<uint8_t> rs_cw( p->n_rs_cw_block*(p->n_blocks_1 + p->n_blocks_2), 0 );
+		int n_total_blocks = p->n_blocks_1 + p->n_blocks_2;
+
+		std::vector<uint8_t> ecc( p->n_ecc_block*n_total_blocks, 0 );
 
 		for ( int i_block = 0; i_block < p->n_blocks_1; i_block++ )
 		{
-			ecc200_rs_block( data_cw,
-					 rs_cw,
-					 p->n_data_cw_block_1,
-					 p->n_rs_cw_block,
-					 p->a_select,
-					 i_block,
-					 p->n_blocks_1 + p->n_blocks_2 );
+			ecc200_ecc_block( codewords, ecc, p->n_data_block_1, p->n_ecc_block, p->a_select, i_block, n_total_blocks );
 		}
 
-		for ( int i_block = p->n_blocks_1; i_block < (p->n_blocks_1 + p->n_blocks_2); i_block++ )
+		for ( int i_block = p->n_blocks_1; i_block < n_total_blocks; i_block++ )
 		{
-			ecc200_rs_block( data_cw,
-					 rs_cw,
-					 p->n_data_cw_block_2,
-					 p->n_rs_cw_block,
-					 p->a_select,
-					 i_block,
-					 p->n_blocks_1 + p->n_blocks_2 );
+			ecc200_ecc_block( codewords, ecc, p->n_data_block_2, p->n_ecc_block, p->a_select, i_block, n_total_blocks );
 		}
 
-		data_cw.insert( data_cw.end(), rs_cw.begin(), rs_cw.end() );
+		codewords.insert( codewords.end(), ecc.begin(), ecc.end() ); /* Append to data */
 
 
 		/*
 		 * Create raw data matrix
 		 */
 		Matrix<bool> matrix( p->n_xregions * p->n_xregion, p->n_yregions * p->n_yregion );
-		ecc200_fill_matrix( matrix, data_cw );
-
+		ecc200_fill_matrix( matrix, codewords );
 
 
 		/*
