@@ -23,9 +23,9 @@ var namespaceglbarcode =
     [ "DrawingPrimitiveText", "classglbarcode_1_1DrawingPrimitiveText.html", "classglbarcode_1_1DrawingPrimitiveText" ],
     [ "DrawingPrimitiveRing", "classglbarcode_1_1DrawingPrimitiveRing.html", "classglbarcode_1_1DrawingPrimitiveRing" ],
     [ "DrawingPrimitiveHexagon", "classglbarcode_1_1DrawingPrimitiveHexagon.html", "classglbarcode_1_1DrawingPrimitiveHexagon" ],
+    [ "Matrix", "classglbarcode_1_1Matrix.html", "classglbarcode_1_1Matrix" ],
     [ "Renderer", "classglbarcode_1_1Renderer.html", "classglbarcode_1_1Renderer" ],
     [ "RendererDebug", "classglbarcode_1_1RendererDebug.html", null ],
     [ "RendererEps", "classglbarcode_1_1RendererEps.html", "classglbarcode_1_1RendererEps" ],
-    [ "RendererSvg", "classglbarcode_1_1RendererSvg.html", "classglbarcode_1_1RendererSvg" ],
-    [ "Simple2dMatrix", "classglbarcode_1_1Simple2dMatrix.html", "classglbarcode_1_1Simple2dMatrix" ]
+    [ "RendererSvg", "classglbarcode_1_1RendererSvg.html", "classglbarcode_1_1RendererSvg" ]
 ];

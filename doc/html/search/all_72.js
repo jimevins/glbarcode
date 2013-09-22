@@ -17,5 +17,5 @@ var searchData=
   ['renderersvg',['RendererSvg',['../classglbarcode_1_1RendererSvg.html#aaa7996e8bc059d117c3452f25b39e57a',1,'glbarcode::RendererSvg::RendererSvg()'],['../classglbarcode_1_1RendererSvg.html#a070e13e524c2c0dd34526117dfb89203',1,'glbarcode::RendererSvg::RendererSvg(std::string filename)'],['../classglbarcode_1_1RendererSvg.html#a2b929d286fcedca480373a6c94be3d58',1,'glbarcode::RendererSvg::RendererSvg(const RendererSvg &amp;from)']]],
   ['renderersvg_2ecpp',['RendererSvg.cpp',['../RendererSvg_8cpp.html',1,'']]],
   ['renderersvg_2eh',['RendererSvg.h',['../RendererSvg_8h.html',1,'']]],
-  ['resize',['resize',['../classglbarcode_1_1Simple2dMatrix.html#af94fd4c400f86f89978159dd51eaaa05',1,'glbarcode::Simple2dMatrix']]]
+  ['resize',['resize',['../classglbarcode_1_1Matrix.html#ad6b17eb9f23defbb680b77ee3ee5437c',1,'glbarcode::Matrix']]]
 ];

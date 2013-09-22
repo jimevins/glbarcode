@@ -78,6 +78,9 @@ var files =
       [ "DrawingPrimitiveRing", "classglbarcode_1_1DrawingPrimitiveRing.html", "classglbarcode_1_1DrawingPrimitiveRing" ],
       [ "DrawingPrimitiveHexagon", "classglbarcode_1_1DrawingPrimitiveHexagon.html", "classglbarcode_1_1DrawingPrimitiveHexagon" ]
     ] ],
+    [ "Matrix.h", "Matrix_8h.html", [
+      [ "Matrix", "classglbarcode_1_1Matrix.html", "classglbarcode_1_1Matrix" ]
+    ] ],
     [ "Renderer.cpp", "Renderer_8cpp.html", null ],
     [ "Renderer.h", "Renderer_8h.html", [
       [ "Renderer", "classglbarcode_1_1Renderer.html", "classglbarcode_1_1Renderer" ]
@@ -97,8 +100,5 @@ var files =
     ] ],
     [ "RendererSvg.h", "RendererSvg_8h.html", [
       [ "RendererSvg", "classglbarcode_1_1RendererSvg.html", "classglbarcode_1_1RendererSvg" ]
-    ] ],
-    [ "Simple2dMatrix.h", "Simple2dMatrix_8h.html", [
-      [ "Simple2dMatrix", "classglbarcode_1_1Simple2dMatrix.html", "classglbarcode_1_1Simple2dMatrix" ]
     ] ]
 ];
