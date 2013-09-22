@@ -8,6 +8,7 @@ future contributors.
 
 @li @subpage drawing_primitives
 @li @subpage impl_1d_barcodes
+@li @subpage impl_2d_barcodes
 @li @subpage impl_renderers
 
 */

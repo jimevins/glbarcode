@@ -51,6 +51,7 @@ The first part is the general user manual:
 - @ref extending -- This section describes how to extend the functionality of the library.
   - @ref drawing_primitives -- This section describes the internal representation of atomic drawing elements of a barcode.
   - @ref impl_1d_barcodes -- This section describes how to implement new 1D barcode types (or symbologies).
+  - @ref impl_2d_barcodes -- This section describes how to implement new 2D barcode types (or symbologies).
   - @ref impl_renderers -- This section describes how to implement new renderers for different output formats.
 - @ref lgpl -- The glbarcode++ license (see below).
 

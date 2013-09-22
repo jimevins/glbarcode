@@ -97,8 +97,6 @@ namespace glbarcode
 		 * Encode barcode data
 		 *
 		 * Required virtual method to encode data such that it can be later vectorized.
-		 * The encoded data is usually a list of characters that represent an atomic
-		 * barcode element (e.g. 'w' = a wide line & 'n' = a narrow line).
 		 *
 		 * @param[in]  cooked_data  Data to encode
 		 * @param[out] encoded_data Encoded data in the form of a matrix
