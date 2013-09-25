@@ -27,6 +27,12 @@
 #include <map>
 
 
+/**
+ * Barcode factory base for CAPI
+ */
+extern "C" struct glbBarcodeFactory {};
+
+
 namespace glbarcode
 {
 	/**
@@ -34,7 +40,7 @@ namespace glbarcode
 	 *
 	 * Singleton Barcode factory class.
 	 */
-	class BarcodeFactory
+	class BarcodeFactory : public glbBarcodeFactory
 	{
 
 	public:

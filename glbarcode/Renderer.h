@@ -27,6 +27,12 @@
 #include "DrawingPrimitives.h"
 
 
+/**
+ * Renderer base for CAPI
+ */
+extern "C" struct glbRenderer {};
+
+
 namespace glbarcode
 {
 
@@ -35,7 +41,7 @@ namespace glbarcode
 	 *
 	 * Base class for all renderers.
 	 */
-	class Renderer
+	class Renderer : public glbRenderer
 	{
 	public:
 		/**

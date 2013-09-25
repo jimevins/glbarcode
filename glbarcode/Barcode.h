@@ -27,6 +27,12 @@
 #include "Renderer.h"
 
 
+/**
+ * Barcode base for CAPI
+ */
+extern "C" struct glbBarcode {};
+
+
 namespace glbarcode
 {
 
@@ -35,7 +41,7 @@ namespace glbarcode
 	 *
 	 * Base class for all barcode types.
 	 */
-	class Barcode
+	class Barcode : public glbBarcode
 	{
 
 	protected:
