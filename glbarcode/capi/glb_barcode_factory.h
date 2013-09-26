@@ -67,8 +67,7 @@ extern "C" {
 	 *
 	 * @param[out] list Pointer to Receive newly allocated list of type ID strings. Terminated by NULL.
 	 */
-	void glb_barcode_factory_get_supported_types( glbBarcodeFactory *factory,
-						      char              **list[] );
+	char ** glb_barcode_factory_get_supported_types( glbBarcodeFactory *factory );
 
 
 	/**
@@ -76,8 +75,7 @@ extern "C" {
 	 *
 	 * @param[out] list List of type ID strings. Created by glb_barcode_factory_get_supported_types().
 	 */
-	void glb_barcode_factory_free_supported_types( glbBarcodeFactory *factory,
-						       char              *list[] );
+	void glb_barcode_factory_free_supported_types( char **list );
 
 
 

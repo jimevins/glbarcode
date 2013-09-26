@@ -22,3 +22,13 @@ target_link_libraries(capi-test-svg-renderer
   ${Lib_Name}
 )
 
+
+add_executable(capi-test-factory
+  capi-test-factory.c
+)
+
+target_link_libraries(capi-test-factory
+  ${CAPI_Lib_Name}
+  ${Lib_Name}
+)
+
