@@ -22,8 +22,6 @@
 
 #include <glbarcode/BarcodeFactory.h>
 
-#include <iostream>
-#include <list>
 #include <string>
 #include <string.h>
 #include <stdlib.h>
@@ -55,17 +53,16 @@ bool glb_barcode_factory_is_type_supported( glbBarcodeFactory *factory,
 
 char ** glb_barcode_factory_get_supported_types( glbBarcodeFactory  *factory )
 {
-	std::list<std::string> supported_types = static_cast<BarcodeFactory*>(factory)->get_supported_types();
+	std::vector<std::string> supported_types = static_cast<BarcodeFactory*>(factory)->get_supported_types();
+	int n = supported_types.size();
 
-	char **list = new char*[ supported_types.size() + 1 ];
+	char **list = new char*[ n + 1 ];
 
-	std::list<std::string>::iterator type;
-	int i = 0;
-	for ( type = supported_types.begin(); type != supported_types.end(); type++ )
+	for ( int i = 0; i < n; i++ )
 	{
-		list[i++] = strdup( type->c_str() );
+		list[i] = strdup( supported_types[i].c_str() );
 	}
-	list[i] = NULL;
+	list[n] = NULL;
 
 	return list;
 }

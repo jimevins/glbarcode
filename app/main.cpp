@@ -40,7 +40,7 @@ void exit_with_hint( void )
 }
 
 
-void usage( std::list<std::string> supported_types )
+void usage( std::vector<std::string> supported_types )
 {
 	std::cerr << "Usage:" << std::endl;
 	std::cerr << "  " << program_name << " [OPTION]... DATA" << std::endl;
@@ -61,11 +61,9 @@ void usage( std::list<std::string> supported_types )
 	std::cerr << std::endl;
 	std::cerr << "Supported barcode types:" << std::endl;
 
-	std::list<std::string>::iterator type;
-
-	for ( type = supported_types.begin(); type != supported_types.end(); type++ )
+	for ( int i = 0; i < supported_types.size(); i++ )
 	{
-		std::cerr << "  " << *type << std::endl;
+		std::cerr << "  " << supported_types[i] << std::endl;
 	}
 
 	std::cerr << std::endl;

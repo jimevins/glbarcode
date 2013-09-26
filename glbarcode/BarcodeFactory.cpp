@@ -37,7 +37,7 @@ namespace glbarcode
 {
 
 	BarcodeFactory::BarcodeTypeMap BarcodeFactory::m_barcode_type_map;
-	std::list<std::string> BarcodeFactory::m_supported_types;
+	std::vector<std::string> BarcodeFactory::m_supported_types;
 
 
 	BarcodeFactory* BarcodeFactory::instance( void )
@@ -69,7 +69,7 @@ namespace glbarcode
 	}
 
 
-	const std::list<std::string> BarcodeFactory::get_supported_types( void )
+	const std::vector<std::string> BarcodeFactory::get_supported_types( void )
 	{
 		return m_supported_types;
 	}

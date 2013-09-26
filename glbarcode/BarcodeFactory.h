@@ -24,6 +24,7 @@
 #include "Barcode.h"
 
 #include <string>
+#include <vector>
 #include <map>
 
 
@@ -90,7 +91,7 @@ namespace glbarcode
 		/**
 		 * Get list of supported types.
 		 */
-		static const std::list<std::string> get_supported_types( void );
+		static const std::vector<std::string> get_supported_types( void );
 
 
 	private:
@@ -109,7 +110,7 @@ namespace glbarcode
 		/**
 		 * Supported barcode types.
 		 */
-		static std::list<std::string> m_supported_types;
+		static std::vector<std::string> m_supported_types;
 
 	};
 
