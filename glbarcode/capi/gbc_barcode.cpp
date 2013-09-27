@@ -1,4 +1,4 @@
-/*  glb_barcode.cpp
+/*  gbc_barcode.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,7 +18,7 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glb_barcode.h"
+#include "gbc_barcode.h"
 
 #include <glbarcode/Barcode.h>
 
@@ -27,37 +27,37 @@ using namespace glbarcode;
 
 
 
-void glb_barcode_delete( glbBarcode *bc )
+void gbc_barcode_delete( gbcBarcode *bc )
 {
 	delete static_cast<Barcode*>(bc);
 }
 
 
-void glb_barcode_set_show_text( glbBarcode *bc, bool value )
+void gbc_barcode_set_show_text( gbcBarcode *bc, bool value )
 {
 	static_cast<Barcode*>(bc)->show_text( value );
 }
 
 
-bool glb_barcode_get_show_text( glbBarcode *bc )
+bool gbc_barcode_get_show_text( gbcBarcode *bc )
 {
 	return static_cast<Barcode*>(bc)->show_text();
 }
 
 
-void glb_barcode_set_checksum( glbBarcode *bc, bool value )
+void gbc_barcode_set_checksum( gbcBarcode *bc, bool value )
 {
 	static_cast<Barcode*>(bc)->checksum( value );
 }
 
 
-bool glb_barcode_get_checksum( glbBarcode *bc )
+bool gbc_barcode_get_checksum( gbcBarcode *bc )
 {
 	return static_cast<Barcode*>(bc)->checksum();
 }
 
 
-void glb_barcode_build( glbBarcode *bc,
+void gbc_barcode_build( gbcBarcode *bc,
 			char       *data,
 			double      w,
 			double      h)
@@ -67,32 +67,32 @@ void glb_barcode_build( glbBarcode *bc,
 
 
 
-void glb_barcode_render( glbBarcode  *bc,
-			 glbRenderer *renderer )
+void gbc_barcode_render( gbcBarcode  *bc,
+			 gbcRenderer *renderer )
 {
 	static_cast<Barcode*>(bc)->render( *static_cast<Renderer*>(renderer) );
 }
 
 
-bool glb_barcode_is_empty( glbBarcode *bc )
+bool gbc_barcode_is_empty( gbcBarcode *bc )
 {
 	return static_cast<Barcode*>(bc)->is_empty();
 }
 
 
-bool glb_barcode_is_data_valid( glbBarcode *bc )
+bool gbc_barcode_is_data_valid( gbcBarcode *bc )
 {
 	return static_cast<Barcode*>(bc)->is_data_valid();
 }
 
 
-double glb_barcode_get_width( glbBarcode *bc )
+double gbc_barcode_get_width( gbcBarcode *bc )
 {
 	return static_cast<Barcode*>(bc)->width();
 }
 
 
-double glb_barcode_get_height( glbBarcode *bc )
+double gbc_barcode_get_height( gbcBarcode *bc )
 {
 	return static_cast<Barcode*>(bc)->height();
 }

@@ -18,7 +18,7 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glbarcode/BarcodeFactory.h"
+#include "glbarcode/Factory.h"
 #include "glbarcode/RendererSvg.h"
 
 
@@ -26,8 +26,8 @@ using namespace glbarcode;
 
 int main( int argc, char **argv )
 {
-	glbarcode::BarcodeFactory* factory = glbarcode::BarcodeFactory::instance();
-	glbarcode::Barcode*        bc;
+	glbarcode::Factory* factory = glbarcode::Factory::instance();
+	glbarcode::Barcode* bc;
 
 	/*
 	 * Code39

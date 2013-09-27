@@ -3,7 +3,7 @@ cmake_minimum_required (VERSION 2.8)
 project (lib CXX)
 
 set (PUBLIC_HEADERS
-  BarcodeFactory.h
+  Factory.h
   Barcode.h
   Barcode1dBase.h
   Barcode2dBase.h
@@ -30,7 +30,7 @@ set (PUBLIC_HEADERS
 )
 
 set (LIB_SOURCES
-  BarcodeFactory.cpp
+  Factory.cpp
   Barcode.cpp
   Barcode1dBase.cpp
   Barcode2dBase.cpp

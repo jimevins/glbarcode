@@ -1,4 +1,4 @@
-/*  BarcodeFactory.cpp
+/*  Factory.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,7 +18,7 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "BarcodeFactory.h"
+#include "Factory.h"
 
 #include "BarcodeCode39.h"
 #include "BarcodeCode39Ext.h"
@@ -36,17 +36,17 @@
 namespace glbarcode
 {
 
-	BarcodeFactory::BarcodeTypeMap BarcodeFactory::m_barcode_type_map;
-	std::vector<std::string> BarcodeFactory::m_supported_types;
+	Factory::BarcodeTypeMap Factory::m_barcode_type_map;
+	std::vector<std::string> Factory::m_supported_types;
 
 
-	BarcodeFactory* BarcodeFactory::instance( void )
+	Factory* Factory::instance( void )
 	{
-		static BarcodeFactory* singleton_instance = NULL;
+		static Factory* singleton_instance = NULL;
 		
 		if ( singleton_instance == NULL )
 		{
-			singleton_instance = new BarcodeFactory();
+			singleton_instance = new Factory();
 			singleton_instance->init();
 		}
 
@@ -54,14 +54,14 @@ namespace glbarcode
 	}
 
 
-	void BarcodeFactory::register_type( std::string type_id, BarcodeFactory::BarcodeCreateFct fct )
+	void Factory::register_type( std::string type_id, Factory::BarcodeCreateFct fct )
 	{
 		m_barcode_type_map[ type_id ] = fct;
 		m_supported_types.push_back( type_id );
 	}
 
 
-	bool BarcodeFactory::is_type_supported( std::string type_id )
+	bool Factory::is_type_supported( std::string type_id )
 	{
 		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type_id );
 
@@ -69,13 +69,13 @@ namespace glbarcode
 	}
 
 
-	const std::vector<std::string> BarcodeFactory::get_supported_types( void )
+	const std::vector<std::string> Factory::get_supported_types( void )
 	{
 		return m_supported_types;
 	}
 
 
-	Barcode* BarcodeFactory::create_barcode( std::string type_id )
+	Barcode* Factory::create_barcode( std::string type_id )
 	{
 		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type_id );
 
@@ -88,7 +88,7 @@ namespace glbarcode
 	}
 
 
-	void BarcodeFactory::init( void )
+	void Factory::init( void )
 	{
 		register_type( "code39",      &BarcodeCode39::create );
 		register_type( "code39ext",   &BarcodeCode39Ext::create );

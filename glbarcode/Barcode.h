@@ -30,7 +30,7 @@
 /**
  * Barcode base for CAPI
  */
-extern "C" struct glbBarcode {};
+extern "C" struct gbcBarcode {};
 
 
 namespace glbarcode
@@ -41,7 +41,7 @@ namespace glbarcode
 	 *
 	 * Base class for all barcode types.
 	 */
-	class Barcode : public glbBarcode
+	class Barcode : public gbcBarcode
 	{
 
 	protected:

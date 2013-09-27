@@ -127,12 +127,12 @@ Barcode* BarcodeXxx::create( void )
 }
 @endcode
 
-This is used to register the barcode using glbarcode::BarcodeFactory::register_type:
+This is used to register the barcode using glbarcode::Factory::register_type:
 
 @code{.cpp}
 using namespace glbarcode;
  
-BarcodeFactory::register_type( "xxx", &BarcodeXxx::create )
+Factory::register_type( "xxx", &BarcodeXxx::create )
 @endcode
 
 
@@ -147,8 +147,8 @@ BarcodeCode39.h:
 BarcodeCode39.cpp:
 @includelineno BarcodeCode39.cpp
 
-Finally, as a built-in barcode type, the Code39 barcode type is registered in the glbarcode::BarcodeFactory::init() method using the
-glbarcode::BarcodeFactory::register_type() method:
+Finally, as a built-in barcode type, the Code39 barcode type is registered in the glbarcode::Factory::init() method using the
+glbarcode::Factory::register_type() method:
 
 @code
 #include <glbarcode/BarcodeCode39.h>
@@ -157,7 +157,7 @@ namespace glbarcode
 {
 	...
 
-	void BarcodeFactory::init( void )
+	void Factory::init( void )
 	{
 		register_type( "code39",      &BarcodeCode39::create );
 		...

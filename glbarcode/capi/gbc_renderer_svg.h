@@ -1,4 +1,4 @@
-/*  glb_renderer.cpp
+/*  gbc_renderer_svg.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,19 +18,47 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glb_renderer.h"
-
-#include <glbarcode/Renderer.h>
-
+#ifndef gbc_renderer_svg_h
+#define gbc_renderer_svg_h
 
 
-using namespace glbarcode;
+#include "gbc_renderer.h"
+
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+	/**
+	 * New RendererSvg object.
+	 */
+	gbcRenderer* gbc_renderer_svg_new( void );
+
+
+	/**
+	 * Set accessor for "filename" parameter.
+	 *
+	 * @param renderer Renderer
+	 * @param value Filename
+	 */
+	void gbc_renderer_svg_set_filename( gbcRenderer *renderer, char *value );
+
+
+	/**
+	 * Get accessor for "filename" parameter.
+	 *
+	 * @param renderer Renderer
+	 *
+	 * @returns Value of boolean "filename" parameter
+	 */
+	const char *gbc_renderer_svg_get_filename( gbcRenderer *renderer );
 
 
 
-void glb_renderer_delete( glbRenderer *renderer )
-{
-	delete static_cast<Renderer*>(renderer);
+#ifdef __cplusplus
 }
+#endif
 
 
+#endif // gbc_renderer_svg_h

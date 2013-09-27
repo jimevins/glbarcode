@@ -1,4 +1,4 @@
-/*  glb_barcode_factory.cpp
+/*  gbc_factory.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,9 +18,9 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glb_barcode_factory.h"
+#include "gbc_factory.h"
 
-#include <glbarcode/BarcodeFactory.h>
+#include <glbarcode/Factory.h>
 
 #include <string>
 #include <string.h>
@@ -31,29 +31,29 @@ using namespace glbarcode;
 
 
 
-glbBarcodeFactory *glb_barcode_factory_instance( void )
+gbcFactory *gbc_factory_instance( void )
 {
-	return BarcodeFactory::instance();
+	return Factory::instance();
 }
 
 
-glbBarcode *glb_barcode_factory_create_barcode( glbBarcodeFactory *factory,
-						char              *type_id )
+gbcBarcode *gbc_factory_create_barcode( gbcFactory *factory,
+					char       *type_id )
 {
-	return static_cast<BarcodeFactory*>(factory)->create_barcode( type_id );
+	return static_cast<Factory*>(factory)->create_barcode( type_id );
 }
 
 
-bool glb_barcode_factory_is_type_supported( glbBarcodeFactory *factory,
-					    char              *type_id )
+bool gbc_factory_is_type_supported( gbcFactory *factory,
+				    char       *type_id )
 {
-	return static_cast<BarcodeFactory*>(factory)->is_type_supported( type_id );
+	return static_cast<Factory*>(factory)->is_type_supported( type_id );
 }
 
 
-char ** glb_barcode_factory_get_supported_types( glbBarcodeFactory  *factory )
+char ** gbc_factory_get_supported_types( gbcFactory  *factory )
 {
-	std::vector<std::string> supported_types = static_cast<BarcodeFactory*>(factory)->get_supported_types();
+	std::vector<std::string> supported_types = static_cast<Factory*>(factory)->get_supported_types();
 	int n = supported_types.size();
 
 	char **list = new char*[ n + 1 ];
@@ -68,7 +68,7 @@ char ** glb_barcode_factory_get_supported_types( glbBarcodeFactory  *factory )
 }
 
 
-void glb_barcode_factory_free_supported_types( char **list )
+void gbc_factory_free_supported_types( char **list )
 {
 	for ( int i = 0; list[i] != NULL; i++ )
 	{

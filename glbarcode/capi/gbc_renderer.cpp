@@ -1,4 +1,4 @@
-/*  glb_renderer_debug.cpp
+/*  gbc_renderer.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,9 +18,9 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glb_renderer_debug.h"
+#include "gbc_renderer.h"
 
-#include <glbarcode/RendererDebug.h>
+#include <glbarcode/Renderer.h>
 
 
 
@@ -28,8 +28,9 @@ using namespace glbarcode;
 
 
 
-glbRenderer *glb_renderer_debug_new( void )
+void gbc_renderer_delete( gbcRenderer *renderer )
 {
-	return new RendererDebug();
+	delete static_cast<Renderer*>(renderer);
 }
+
 

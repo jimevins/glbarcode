@@ -1,4 +1,4 @@
-/*  BarcodeFactory.h
+/*  Factory.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,8 +18,8 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glbarcode_BarcodeFactory_h
-#define glbarcode_BarcodeFactory_h
+#ifndef glbarcode_Factory_h
+#define glbarcode_Factory_h
 
 #include "Barcode.h"
 
@@ -31,17 +31,17 @@
 /**
  * Barcode factory base for CAPI
  */
-extern "C" struct glbBarcodeFactory {};
+extern "C" struct gbcFactory {};
 
 
 namespace glbarcode
 {
 	/**
-	 * @class BarcodeFactory BarcodeFactory.h glbarcode/BarcodeFactory.h
+	 * @class Factory Factory.h glbarcode/Factory.h
 	 *
 	 * Singleton Barcode factory class.
 	 */
-	class BarcodeFactory : public glbBarcodeFactory
+	class Factory : public gbcFactory
 	{
 
 	public:
@@ -60,9 +60,9 @@ namespace glbarcode
 
 	public:
 		/**
-		 * Get singleton instance of BarcodeFactory, create if uninitialized.
+		 * Get singleton instance of Factory, create if uninitialized.
 		 */
-		static BarcodeFactory* instance( void );
+		static Factory* instance( void );
 
 
 		/**
@@ -117,4 +117,4 @@ namespace glbarcode
 }
 
 
-#endif // glbarcode_BarcodeFactory_h
+#endif // glbarcode_Factory_h

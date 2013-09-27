@@ -18,7 +18,7 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glbarcode/BarcodeFactory.h"
+#include "glbarcode/Factory.h"
 #include "glbarcode/RendererSvg.h"
 
 #include <iostream>
@@ -34,7 +34,7 @@ int main( int argc, char **argv )
 		std::cerr << "Usage: " << argv[0] << "data";
 	}
 
-	glbarcode::Barcode* bc = glbarcode::BarcodeFactory::instance()->create_barcode( "code39" );
+	glbarcode::Barcode* bc = glbarcode::Factory::instance()->create_barcode( "code39" );
 
 	bc->build( argv[1] );
 

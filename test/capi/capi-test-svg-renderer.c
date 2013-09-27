@@ -18,8 +18,8 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glbarcode/capi/glb_barcode_factory.h"
-#include "glbarcode/capi/glb_renderer_svg.h"
+#include "glbarcode/capi/gbc_factory.h"
+#include "glbarcode/capi/gbc_renderer_svg.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -27,9 +27,9 @@
 
 int main( int argc, char **argv )
 {
-	glbBarcodeFactory *factory;
-	glbRenderer       *renderer;
-	glbBarcode        *bc;
+	gbcFactory   *factory;
+	gbcRenderer  *renderer;
+	gbcBarcode   *bc;
 
 	if ( argc != 2 )
 	{
@@ -37,16 +37,16 @@ int main( int argc, char **argv )
 		exit( -1 );
 	}
 
-	factory = glb_barcode_factory_instance();
+	factory = gbc_factory_instance();
 
-	renderer = glb_renderer_svg_new();
+	renderer = gbc_renderer_svg_new();
 
-	bc = glb_barcode_factory_create_barcode( factory, "code39" );
-	glb_barcode_set_checksum( bc, true );
-	glb_barcode_set_show_text( bc, true );
-	glb_barcode_build( bc, argv[1], 0, 0 );
-	glb_barcode_render( bc, renderer );
-	glb_barcode_delete( bc );
+	bc = gbc_factory_create_barcode( factory, "code39" );
+	gbc_barcode_set_checksum( bc, true );
+	gbc_barcode_set_show_text( bc, true );
+	gbc_barcode_build( bc, argv[1], 0, 0 );
+	gbc_barcode_render( bc, renderer );
+	gbc_barcode_delete( bc );
 
-	glb_renderer_delete( renderer );
+	gbc_renderer_delete( renderer );
 }

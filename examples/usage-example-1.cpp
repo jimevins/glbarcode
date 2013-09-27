@@ -1,4 +1,4 @@
-#include <glbarcode/BarcodeFactory.h>
+#include <glbarcode/Factory.h>
 #include <glbarcode/RendererSvg.h>
 
 using namespace glbarcode;
@@ -6,7 +6,7 @@ using namespace glbarcode;
 int main( int argc, char **argv )
 {
 	/* Get singleton instance to barcode factory. */
-        BarcodeFactory *factory = BarcodeFactory().instance();
+        Factory *factory = Factory().instance();
 
         /* Create barcode object. */
         Barcode *bc = factory->create_barcode( "code39" );

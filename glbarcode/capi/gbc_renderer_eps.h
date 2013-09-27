@@ -1,4 +1,4 @@
-/*  glb_renderer_svg.h
+/*  gbc_renderer_eps.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,11 +18,11 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glb_renderer_svg_h
-#define glb_renderer_svg_h
+#ifndef gbc_renderer_eps_h
+#define gbc_renderer_eps_h
 
 
-#include "glb_renderer.h"
+#include "gbc_renderer.h"
 
 
 #ifdef __cplusplus
@@ -31,25 +31,28 @@ extern "C" {
 
 
 	/**
-	 * New RendererSvg object.
+	 * New RendererEps object.
 	 */
-	glbRenderer* glb_renderer_svg_new( void );
+	gbcRenderer* gbc_renderer_eps_new( void );
 
 
 	/**
 	 * Set accessor for "filename" parameter.
 	 *
+	 * @param renderer Renderer
 	 * @param value Filename
 	 */
-	void glb_renderer_svg_set_filename( glbRenderer *renderer, char *value );
+	void gbc_renderer_eps_set_filename( gbcRenderer *renderer, char *value );
 
 
 	/**
 	 * Get accessor for "filename" parameter.
 	 *
+	 * @param renderer Renderer
+	 *
 	 * @returns Value of boolean "filename" parameter
 	 */
-	const char *glb_renderer_svg_get_filename( glbRenderer *renderer );
+	const char *gbc_renderer_eps_get_filename( gbcRenderer *renderer );
 
 
 
@@ -58,4 +61,4 @@ extern "C" {
 #endif
 
 
-#endif // glb_renderer_svg_h
+#endif // gbc_renderer_eps_h

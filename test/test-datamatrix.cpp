@@ -18,7 +18,7 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glbarcode/BarcodeFactory.h"
+#include "glbarcode/Factory.h"
 #include "glbarcode/RendererSvg.h"
 
 
@@ -47,8 +47,8 @@ int main( int argc, char **argv )
 	std::string numeric_data( "1234567890" );
 
 
-	glbarcode::BarcodeFactory* factory = glbarcode::BarcodeFactory::instance();
-	glbarcode::Barcode*        bc;
+	glbarcode::Factory* factory = glbarcode::Factory::instance();
+	glbarcode::Barcode* bc;
 
 	bc = factory->create_barcode( "datamatrix" );
 

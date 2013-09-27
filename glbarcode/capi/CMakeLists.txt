@@ -7,21 +7,21 @@ include_directories (
 )
 
 set (PUBLIC_HEADERS
-  glb_barcode_factory.h
-  glb_barcode.h
-  glb_renderer.h
-  glb_renderer_debug.h
-  glb_renderer_eps.h
-  glb_renderer_svg.h
+  gbc_factory.h
+  gbc_barcode.h
+  gbc_renderer.h
+  gbc_renderer_debug.h
+  gbc_renderer_eps.h
+  gbc_renderer_svg.h
 )
 
 set (LIB_SOURCES
-  glb_barcode_factory.cpp
-  glb_barcode.cpp
-  glb_renderer.cpp
-  glb_renderer_debug.cpp
-  glb_renderer_eps.cpp
-  glb_renderer_svg.cpp
+  gbc_factory.cpp
+  gbc_barcode.cpp
+  gbc_renderer.cpp
+  gbc_renderer_debug.cpp
+  gbc_renderer_eps.cpp
+  gbc_renderer_svg.cpp
 )
 
 add_definitions (

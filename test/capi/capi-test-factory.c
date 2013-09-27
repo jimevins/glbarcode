@@ -18,7 +18,7 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glbarcode/capi/glb_barcode_factory.h"
+#include "glbarcode/capi/gbc_factory.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -26,18 +26,18 @@
 
 int main( int argc, char **argv )
 {
-	glbBarcodeFactory *factory;
+	gbcFactory *factory;
 	char **list;
 	int i;
 
-	factory = glb_barcode_factory_instance();
+	factory = gbc_factory_instance();
 
-	list = glb_barcode_factory_get_supported_types( factory );
+	list = gbc_factory_get_supported_types( factory );
 
 	for ( i = 0; list[i] != NULL; i++ )
 	{
 		printf( "supported_type[%d] = \"%s\"\n", i, list[i] );
 	}
 
-	glb_barcode_factory_free_supported_types( list );
+	gbc_factory_free_supported_types( list );
 }

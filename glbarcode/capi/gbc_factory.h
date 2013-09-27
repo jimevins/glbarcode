@@ -1,4 +1,4 @@
-/*  glb_barcode_factory.h
+/*  gbc_factory.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,11 +18,11 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glb_barcode_factory_h
-#define glb_barcode_factory_h
+#ifndef gbc_factory_h
+#define gbc_factory_h
 
 
-#include "glb_barcode.h"
+#include "gbc_barcode.h"
 
 
 #ifdef __cplusplus
@@ -31,51 +31,57 @@ extern "C" {
 
 
 	/**
-	 * @struct glbBarcodeFactory glb-barcode-factory.h glbarcode/capi/glb-barcode-factory.h
-	 *
 	 * CAPI Barcode factory.
 	 */
-	typedef struct glbBarcodeFactory glbBarcodeFactory;
+	typedef struct gbcFactory gbcFactory;
 	
 
 	/**
-	 * Get singleton instance of glbBarcodeFactory object.
+	 * Get singleton instance of gbcFactory object.
+	 *
+	 * @return pointer to singleton instance of barcode factory
 	 */
-	glbBarcodeFactory *glb_barcode_factory_instance( void );
+	gbcFactory *gbc_factory_instance( void );
 
 
 	/**
 	 * Create barcode based on type ID string.
 	 *
+	 * @param factory Barcode factory
 	 * @param type_id Barcode type ID string
+	 *
+	 * @return Pointer to newly allocated barcode object
 	 */
-	glbBarcode *glb_barcode_factory_create_barcode( glbBarcodeFactory *factory,
-							char              *type_id );
+	gbcBarcode *gbc_factory_create_barcode( gbcFactory *factory,
+						char       *type_id );
 
 
 	/**
 	 * Is barcode type supported?
 	 *
+	 * @param factory Barcode factory
 	 * @param type_id Barcode type ID string
 	 */
-	bool glb_barcode_factory_is_type_supported( glbBarcodeFactory *factory,
-						    char              *type_id );
+	bool gbc_factory_is_type_supported( gbcFactory *factory,
+					    char       *type_id );
 
 
 	/**
 	 * Get list of suppoted types.
 	 *
-	 * @param[out] list Pointer to Receive newly allocated list of type ID strings. Terminated by NULL.
+	 * @param factory Barcode factory
+	 *
+	 * @return Newly allocated list of type ID strings. Terminated by NULL.
 	 */
-	char ** glb_barcode_factory_get_supported_types( glbBarcodeFactory *factory );
+	char ** gbc_factory_get_supported_types( gbcFactory *factory );
 
 
 	/**
 	 * Free previously allocated list of suppoted types.
 	 *
-	 * @param[out] list List of type ID strings. Created by glb_barcode_factory_get_supported_types().
+	 * @param list List of type ID strings. Created by gbc_factory_get_supported_types().
 	 */
-	void glb_barcode_factory_free_supported_types( char **list );
+	void gbc_factory_free_supported_types( char **list );
 
 
 
@@ -84,4 +90,4 @@ extern "C" {
 #endif
 
 
-#endif // glb_barcode_factory_h
+#endif // gbc_factory_h

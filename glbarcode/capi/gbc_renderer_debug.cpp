@@ -1,4 +1,4 @@
-/*  glb_renderer_debug.h
+/*  gbc_renderer_debug.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,28 +18,18 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glb_renderer_debug_h
-#define glb_renderer_debug_h
+#include "gbc_renderer_debug.h"
 
-
-#include "glb_renderer.h"
-
-
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-
-	/**
-	 * New RendererDebug object.
-	 */
-	glbRenderer* glb_renderer_debug_new( void );
+#include <glbarcode/RendererDebug.h>
 
 
 
-#ifdef __cplusplus
+using namespace glbarcode;
+
+
+
+gbcRenderer *gbc_renderer_debug_new( void )
+{
+	return new RendererDebug();
 }
-#endif
 
-
-#endif // glb_renderer_debug_h

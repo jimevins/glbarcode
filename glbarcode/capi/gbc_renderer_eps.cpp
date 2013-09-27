@@ -1,4 +1,4 @@
-/*  glb_renderer_eps.cpp
+/*  gbc_renderer_eps.cpp
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,7 +18,7 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glb_renderer_eps.h"
+#include "gbc_renderer_eps.h"
 
 #include <glbarcode/RendererEps.h>
 
@@ -28,19 +28,19 @@ using namespace glbarcode;
 
 
 
-glbRenderer *glb_renderer_eps_new( void )
+gbcRenderer *gbc_renderer_eps_new( void )
 {
 	return new RendererEps();
 }
 
 
-void glb_renderer_eps_set_filename( glbRenderer *renderer, char *value )
+void gbc_renderer_eps_set_filename( gbcRenderer *renderer, char *value )
 {
 	static_cast<RendererEps*>(renderer)->filename( value );
 }
 
 
-const char *glb_renderer_eps_get_filename( glbRenderer *renderer )
+const char *gbc_renderer_eps_get_filename( gbcRenderer *renderer )
 {
 	return static_cast<RendererEps*>(renderer)->filename().c_str();
 }

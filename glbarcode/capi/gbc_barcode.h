@@ -1,4 +1,4 @@
-/*  glb_barcode.h
+/*  gbc_barcode.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,11 +18,11 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glb_barcode_h
-#define glb_barcode_h
+#ifndef gbc_barcode_h
+#define gbc_barcode_h
 
 
-#include "glb_renderer.h"
+#include "gbc_renderer.h"
 
 #include <stdbool.h>
 
@@ -33,59 +33,67 @@ extern "C" {
 
 
 	/**
-	 * @struct glbBarcode glb-barcode.h glbarcode/capi/glb-barcode.h
-	 *
 	 * CAPI Base class for all barcode types.
 	 */
-	typedef struct glbBarcode glbBarcode;
+	typedef struct gbcBarcode gbcBarcode;
 	
 
 	/**
-	 * Delete glbBarcode object.
+	 * Delete gbcBarcode object.
+	 *
+	 * @param bc pointer to barcode object
 	 */
-	void glb_barcode_delete( glbBarcode *bc );
+	void gbc_barcode_delete( gbcBarcode *bc );
 
 
 	/**
 	 * Set accessor for "show_text" parameter.
 	 *
+	 * @param bc pointer to barcode object
+	 *
 	 * @param value Boolean value
 	 */
-	void glb_barcode_set_show_text( glbBarcode *bc, bool value );
+	void gbc_barcode_set_show_text( gbcBarcode *bc, bool value );
 
 
 	/**
 	 * Get accessor for "show_text" parameter.
 	 *
+	 * @param bc pointer to barcode object
+	 *
 	 * @returns Value of boolean "show_text" parameter
 	 */
-	bool glb_barcode_get_show_text( glbBarcode *bc );
+	bool gbc_barcode_get_show_text( gbcBarcode *bc );
 
 
 	/**
 	 * Set accessor for "checksum" parameter.
 	 *
+	 * @param bc pointer to barcode object
 	 * @param value Boolean value
 	 */
-	void glb_barcode_set_checksum( glbBarcode *bc, bool value );
+	void gbc_barcode_set_checksum( gbcBarcode *bc, bool value );
 
 
 	/**
 	 * Get accessor for "checksum" parameter.
 	 *
+	 * @param bc pointer to barcode object
+	 *
 	 * @returns Value of boolean "checksum" parameter
 	 */
-	bool glb_barcode_get_checksum( glbBarcode *bc );
+	bool gbc_barcode_get_checksum( gbcBarcode *bc );
 
 
 	/**
 	 * Build barcode from data.
 	 *
+	 * @param bc pointer to barcode object
 	 * @param data Data to encode in barcode
 	 * @param w Requested width of barcode (0 = auto size)
 	 * @param h Requested height of barcode (0 = auto size)
 	 */
-	void glb_barcode_build( glbBarcode *bc,
+	void gbc_barcode_build( gbcBarcode *bc,
 				char       *data,
 				double      w,
 				double      h);
@@ -94,44 +102,53 @@ extern "C" {
 	/**
 	 * Render barcode using given Renderer object.
 	 *
-	 * @param renderer A glbRenderer object
+	 * @param bc pointer to barcode object
+	 * @param renderer A gbcRenderer object
 	 */
-	void glb_barcode_render( glbBarcode  *bc,
-				 glbRenderer *renderer );
+	void gbc_barcode_render( gbcBarcode  *bc,
+				 gbcRenderer *renderer );
 
 
 	/**
 	 * Is barcode data empty?
 	 *
+	 * @param bc pointer to barcode object
+	 *
 	 * @return True if barcode data is empty
 	 * @return False if barcode data is not empty
 	 */
-	bool glb_barcode_is_empty( glbBarcode *bc );
+	bool gbc_barcode_is_empty( gbcBarcode *bc );
 
 
 	/**
 	 * Is barcode data valid?
 	 *
+	 * @param bc pointer to barcode object
+	 *
 	 * @return True if barcode data is valid
 	 * @return False if barcode data is not valid for implemented barcode type
 	 */
-	bool glb_barcode_is_data_valid( glbBarcode *bc );
+	bool gbc_barcode_is_data_valid( gbcBarcode *bc );
 
 
 	/**
 	 * Get actual width of barcode (may differ from requested width).
 	 *
+	 * @param bc pointer to barcode object
+	 *
 	 * @return Actual width of barcode (points)
 	 */
-	double glb_barcode_get_width( glbBarcode *bc );
+	double gbc_barcode_get_width( gbcBarcode *bc );
 
 
 	/**
 	 * Get actual height of barcode (may differ from requested height).
 	 *
+	 * @param bc pointer to barcode object
+	 *
 	 * @return Actual height of barcode (points)
 	 */
-	double glb_barcode_get_height( glbBarcode *bc );
+	double gbc_barcode_get_height( gbcBarcode *bc );
 
 
 
@@ -140,4 +157,4 @@ extern "C" {
 #endif
 
 
-#endif // glb_barcode_h
+#endif // gbc_barcode_h

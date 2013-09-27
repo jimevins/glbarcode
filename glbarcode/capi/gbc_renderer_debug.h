@@ -1,4 +1,4 @@
-/*  glb_renderer.h
+/*  gbc_renderer_debug.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,8 +18,11 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glb_renderer_h
-#define glb_renderer_h
+#ifndef gbc_renderer_debug_h
+#define gbc_renderer_debug_h
+
+
+#include "gbc_renderer.h"
 
 
 #ifdef __cplusplus
@@ -28,17 +31,9 @@ extern "C" {
 
 
 	/**
-	 * @struct glbRenderer glb-renderer.h glbarcode/capi/glb-renderer.h
-	 *
-	 * CAPI Base class for all renderers.
+	 * New RendererDebug object.
 	 */
-	typedef struct glbRenderer glbRenderer;
-	
-
-	/**
-	 * Delete glbRenderer object.
-	 */
-	void glb_renderer_delete( glbRenderer *bc );
+	gbcRenderer* gbc_renderer_debug_new( void );
 
 
 
@@ -47,4 +42,4 @@ extern "C" {
 #endif
 
 
-#endif // glb_renderer_h
+#endif // gbc_renderer_debug_h

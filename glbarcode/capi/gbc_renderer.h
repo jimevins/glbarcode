@@ -1,4 +1,4 @@
-/*  glb_renderer_svg.cpp
+/*  gbc_renderer.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,33 +18,31 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#include "glb_renderer_svg.h"
-
-#include <glbarcode/RendererSvg.h>
-
+#ifndef gbc_renderer_h
+#define gbc_renderer_h
 
 
-using namespace glbarcode;
+#ifdef __cplusplus
+extern "C" {
+#endif
+
+
+	/**
+	 * CAPI Base class for all renderers.
+	 */
+	typedef struct gbcRenderer gbcRenderer;
+	
+
+	/**
+	 * Delete gbcRenderer object.
+	 */
+	void gbc_renderer_delete( gbcRenderer *bc );
 
 
 
-glbRenderer *glb_renderer_svg_new( void )
-{
-	return new RendererSvg();
+#ifdef __cplusplus
 }
+#endif
 
 
-void glb_renderer_svg_set_filename( glbRenderer *renderer, char *value )
-{
-	static_cast<RendererSvg*>(renderer)->filename( value );
-}
-
-
-const char *glb_renderer_svg_get_filename( glbRenderer *renderer )
-{
-	return static_cast<RendererSvg*>(renderer)->filename().c_str();
-}
-
-
-
-
+#endif // gbc_renderer_h
