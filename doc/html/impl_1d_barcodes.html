@@ -76,7 +76,7 @@ $(document).ready(function(){initNavTree('impl_1d_barcodes.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -98,7 +98,7 @@ $(document).ready(function(){initNavTree('impl_1d_barcodes.html','');});
 <h2>Virtual Methods</h2>
 <p>A 1D barcode subclass must implement the following virtual methods (or callbacks):</p>
 <ul>
-<li><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a117b592f4c19c7c141550c5138976b4a">glbarcode::Barcode1dBase::validate()</a> &ndash; The validate method is used to test if data is valid for encoding with the intended symbology. This method must only validate data that can be encoded successfully as-is or after processing by the optional <a class="el" href="classglbarcode_1_1Barcode1dBase.html#a2c612eae36722c0b326cc999c813f10e">glbarcode::Barcode1dBase::preprocess()</a> method.</li>
+<li><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a117b592f4c19c7c141550c5138976b4a">glbarcode::Barcode1dBase::validate()</a> &ndash; The validate method is used to test if data is valid for encoding with the intended symbology. This method must only validate data that can be encoded successfully as-is or after processing by the optional <a class="el" href="classglbarcode_1_1Barcode1dBase.html#a7a83eab09129d47958773d1b2b07209a">glbarcode::Barcode1dBase::preprocess()</a> method.</li>
 </ul>
 <ul>
 <li><p class="startli"><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a48760e7d2d2189358f388af535dd8317">glbarcode::Barcode1dBase::encode()</a> &ndash; The encode method is used to encode data such that it can later be vectorized. The encoded data is usually a list of characters that represent an atomic barcode element. For example, the following is the character encoding used by the Code39 implementation:</p>
@@ -132,15 +132,15 @@ $(document).ready(function(){initNavTree('impl_1d_barcodes.html','');});
 </ul>
 <p>A barcode subclass may also need to implement the following virtual methods:</p>
 <ul>
-<li><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a2c612eae36722c0b326cc999c813f10e">glbarcode::Barcode1dBase::preprocess()</a> &ndash; The preprocess method performs any transformation of the data needed before encoding. This method may be needed to perform a first-pass encoding to translate an extended alphabet into a simpler one. For example, this could be as simple as upshifting lowercase letters into uppercase if the symbology only supports uppercase. It is assumed that the data passed to this method has already been validated with the <a class="el" href="classglbarcode_1_1Barcode1dBase.html#a117b592f4c19c7c141550c5138976b4a">glbarcode::Barcode1dBase::validate()</a> method.</li>
+<li><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a7a83eab09129d47958773d1b2b07209a">glbarcode::Barcode1dBase::preprocess()</a> &ndash; The preprocess method performs any transformation of the data needed before encoding. This method may be needed to perform a first-pass encoding to translate an extended alphabet into a simpler one. For example, this could be as simple as upshifting lowercase letters into uppercase if the symbology only supports uppercase. It is assumed that the data passed to this method has already been validated with the <a class="el" href="classglbarcode_1_1Barcode1dBase.html#a117b592f4c19c7c141550c5138976b4a">glbarcode::Barcode1dBase::validate()</a> method.</li>
 </ul>
 <ul>
-<li><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a54e0aac18674093ef2a1ef1c8c09193b">glbarcode::Barcode1dBase::prepare_text()</a> &ndash; The prepare_text method performs any transformation of the data needed before it can be displayed.</li>
+<li><a class="el" href="classglbarcode_1_1Barcode1dBase.html#a13a6a942992c38b61ee654ff9248c132">glbarcode::Barcode1dBase::prepare_text()</a> &ndash; The prepare_text method performs any transformation of the data needed before it can be displayed.</li>
 </ul>
 <p>The following figure illustrates the data flow between these methods, which are called by <a class="el" href="classglbarcode_1_1Barcode1dBase.html#acc7fac08d928e4c0c4b191b4ead6adf0">glbarcode::Barcode1dBase::build()</a>:</p>
 <div align="center">
 <img src="dot_inline_dotgraph_2.png" alt="dot_inline_dotgraph_2.png" border="0" usemap="#dot_inline_dotgraph_2.map"/>
-<map name="dot_inline_dotgraph_2.map" id="dot_inline_dotgraph_2.map"><area shape="rect" id="node3" href="classglbarcode_1_1Barcode1dBase.html#a117b592f4c19c7c141550c5138976b4a" title="validate" alt="" coords="89,104,161,152"/><area shape="rect" id="node4" href="classglbarcode_1_1Barcode1dBase.html#a2c612eae36722c0b326cc999c813f10e" title="preprocess" alt="" coords="12,203,97,251"/><area shape="rect" id="node6" href="classglbarcode_1_1Barcode1dBase.html#a54e0aac18674093ef2a1ef1c8c09193b" title="prepare_text" alt="" coords="103,312,196,360"/><area shape="rect" id="node5" href="classglbarcode_1_1Barcode1dBase.html#a48760e7d2d2189358f388af535dd8317" title="encode" alt="" coords="5,312,77,360"/><area shape="rect" id="node7" href="classglbarcode_1_1Barcode1dBase.html#aa83b9227370ce254fec336630ce9188e" title="vectorize" alt="" coords="60,421,132,469"/></map>
+<map name="dot_inline_dotgraph_2.map" id="dot_inline_dotgraph_2.map"><area shape="rect" id="node3" href="classglbarcode_1_1Barcode1dBase.html#a117b592f4c19c7c141550c5138976b4a" title="validate" alt="" coords="89,104,161,152"/><area shape="rect" id="node4" href="classglbarcode_1_1Barcode1dBase.html#a7a83eab09129d47958773d1b2b07209a" title="preprocess" alt="" coords="12,203,97,251"/><area shape="rect" id="node6" href="classglbarcode_1_1Barcode1dBase.html#a13a6a942992c38b61ee654ff9248c132" title="prepare_text" alt="" coords="103,312,196,360"/><area shape="rect" id="node5" href="classglbarcode_1_1Barcode1dBase.html#a48760e7d2d2189358f388af535dd8317" title="encode" alt="" coords="5,312,77,360"/><area shape="rect" id="node7" href="classglbarcode_1_1Barcode1dBase.html#aa83b9227370ce254fec336630ce9188e" title="vectorize" alt="" coords="60,421,132,469"/></map>
 </div>
 <h2>Registering With The Barcode Factory</h2>
 <p>To be able to register a barcode type with the barcode factory, it must implement a static create method that returns a pointer to a newly allocated barcode:</p>
@@ -150,10 +150,10 @@ $(document).ready(function(){initNavTree('impl_1d_barcodes.html','');});
 <div class="line">{</div>
 <div class="line">        <span class="keywordflow">return</span> <span class="keyword">new</span> BarcodeXxx();</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>This is used to register the barcode using <a class="el" href="classglbarcode_1_1BarcodeFactory.html#a5cdcd088bef0d79be275264d8738897f">glbarcode::BarcodeFactory::register_type</a>:</p>
+</div><!-- fragment --><p>This is used to register the barcode using <a class="el" href="classglbarcode_1_1Factory.html#a5085a8dab5a127f3fce4e8bf2ba9e3fb">glbarcode::Factory::register_type</a>:</p>
 <div class="fragment"><div class="line"><span class="keyword">using namespace </span>glbarcode;</div>
 <div class="line"> </div>
-<div class="line"><a class="code" href="classglbarcode_1_1BarcodeFactory.html#a5cdcd088bef0d79be275264d8738897f">BarcodeFactory::register_type</a>( <span class="stringliteral">&quot;xxx&quot;</span>, &amp;BarcodeXxx::create )</div>
+<div class="line"><a class="code" href="classglbarcode_1_1Factory.html#a5085a8dab5a127f3fce4e8bf2ba9e3fb">Factory::register_type</a>( <span class="stringliteral">&quot;xxx&quot;</span>, &amp;BarcodeXxx::create )</div>
 </div><!-- fragment --><h2>Full Example</h2>
 <p>As a complete example, the following is the glbarcode++ implementation of the Code39 barcode type.</p>
 <p><a class="el" href="BarcodeCode39_8h.html">BarcodeCode39.h</a>: </p>
@@ -190,7 +190,7 @@ $(document).ready(function(){initNavTree('impl_1d_barcodes.html','');});
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;        <span class="keyword">class </span>BarcodeCode39 : <span class="keyword">public</span> Barcode1dBase</div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;        {</div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keyword">static</span> <a class="code" href="classglbarcode_1_1Barcode.html#a99edd197081eea1997b4391d37db3009">Barcode</a>* <a class="code" href="classglbarcode_1_1BarcodeCode39.html#a29b1bbece77066ffb1033e83339758e9">create</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;                <span class="keyword">static</span> <a class="code" href="classglbarcode_1_1Barcode.html#a99edd197081eea1997b4391d37db3009">Barcode</a>* <a class="code" href="classglbarcode_1_1BarcodeCode39.html#a309db5e6e390f4308219ca59265c290e">create</a>( <span class="keywordtype">void</span> );</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;</div>
 <div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <span class="keyword">private</span>:</div>
@@ -211,7 +211,7 @@ $(document).ready(function(){initNavTree('impl_1d_barcodes.html','');});
 <div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;<span class="preprocessor">#endif // glbarcode_BarcodeCode39_h</span></div>
-</div><!-- fragment --><p><a class="el" href="BarcodeCode39_8cpp.html">BarcodeCode39.cpp</a>: </p>
+</div><!-- fragment --><p>BarcodeCode39.cpp: </p>
 <div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/*  BarcodeCode39.cpp</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> *</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> *  Copyright (C) 2013  Jim Evins &lt;evins@snaught.com&gt;</span></div>
@@ -317,7 +317,7 @@ $(document).ready(function(){initNavTree('impl_1d_barcodes.html','');});
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">/*</span></div>
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;<span class="comment">         * Static Code39 barcode creation method</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;<span class="comment">         */</span></div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        Barcode* <a class="code" href="classglbarcode_1_1BarcodeCode39.html#a29b1bbece77066ffb1033e83339758e9">BarcodeCode39::create</a>( <span class="keywordtype">void</span> )</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        Barcode* <a class="code" href="classglbarcode_1_1BarcodeCode39.html#a309db5e6e390f4308219ca59265c290e">BarcodeCode39::create</a>( <span class="keywordtype">void</span> )</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keywordflow">return</span> <span class="keyword">new</span> BarcodeCode39();</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
@@ -499,16 +499,16 @@ $(document).ready(function(){initNavTree('impl_1d_barcodes.html','');});
 <div class="line"><a name="l00285"></a><span class="lineno">  285</span>&#160;        }</div>
 <div class="line"><a name="l00286"></a><span class="lineno">  286</span>&#160;</div>
 <div class="line"><a name="l00287"></a><span class="lineno">  287</span>&#160;}</div>
-</div><!-- fragment --><p>Finally, as a built-in barcode type, the Code39 barcode type is registered in the glbarcode::BarcodeFactory::init() method using the <a class="el" href="classglbarcode_1_1BarcodeFactory.html#a5cdcd088bef0d79be275264d8738897f">glbarcode::BarcodeFactory::register_type()</a> method:</p>
+</div><!-- fragment --><p>Finally, as a built-in barcode type, the Code39 barcode type is registered in the glbarcode::Factory::init() method using the <a class="el" href="classglbarcode_1_1Factory.html#a5085a8dab5a127f3fce4e8bf2ba9e3fb">glbarcode::Factory::register_type()</a> method:</p>
 <div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="BarcodeCode39_8h.html">glbarcode/BarcodeCode39.h</a>&gt;</span></div>
 <div class="line"> </div>
 <div class="line"><span class="keyword">namespace </span>glbarcode</div>
 <div class="line">{</div>
 <div class="line">        ...</div>
 <div class="line"></div>
-<div class="line">        <span class="keywordtype">void</span> BarcodeFactory::init( <span class="keywordtype">void</span> )</div>
+<div class="line">        <span class="keywordtype">void</span> Factory::init( <span class="keywordtype">void</span> )</div>
 <div class="line">        {</div>
-<div class="line">                <a class="code" href="classglbarcode_1_1BarcodeFactory.html#a5cdcd088bef0d79be275264d8738897f">register_type</a>( <span class="stringliteral">&quot;code39&quot;</span>,      &amp;<a class="code" href="classglbarcode_1_1BarcodeCode39.html#a29b1bbece77066ffb1033e83339758e9">BarcodeCode39::create</a> );</div>
+<div class="line">                <a class="code" href="classglbarcode_1_1Factory.html#a5085a8dab5a127f3fce4e8bf2ba9e3fb">register_type</a>( <span class="stringliteral">&quot;code39&quot;</span>,      &amp;<a class="code" href="classglbarcode_1_1BarcodeCode39.html#a309db5e6e390f4308219ca59265c290e">BarcodeCode39::create</a> );</div>
 <div class="line">                ...</div>
 <div class="line">        }</div>
 <div class="line"> </div>
@@ -518,7 +518,7 @@ $(document).ready(function(){initNavTree('impl_1d_barcodes.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Sep 21 2013 20:22:16 for glbarcode++ by
+    <li class="footer">Generated on Thu Sep 26 2013 23:17:11 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

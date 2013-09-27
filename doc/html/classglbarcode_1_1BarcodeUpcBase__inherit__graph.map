@@ -1,6 +1,7 @@
 <map id="glbarcode::BarcodeUpcBase" name="glbarcode::BarcodeUpcBase">
-<area shape="rect" id="node7" href="$classglbarcode_1_1BarcodeEan13.html" title="{glbarcode::BarcodeEan13\n||+ BarcodeEan13()\l+ create()\l}" alt="" coords="5,929,176,1031"/>
-<area shape="rect" id="node9" href="$classglbarcode_1_1BarcodeUpcA.html" title="{glbarcode::BarcodeUpcA\n||+ BarcodeUpcA()\l+ create()\l}" alt="" coords="200,929,365,1031"/>
-<area shape="rect" id="node2" href="$classglbarcode_1_1Barcode1dBase.html" title="{glbarcode::Barcode1dBase\n||+ ~Barcode1dBase()\l+ build()\l# Barcode1dBase()\l# validate()\l# preprocess()\l# encode()\l# prepare_text()\l# vectorize()\l}" alt="" coords="97,505,276,711"/>
-<area shape="rect" id="node4" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ show_text()\l+ show_text()\l+ checksum()\l+ checksum()\l+ build()\l+ render()\l+ is_empty()\l+ is_data_valid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# add_line()\l# add_box()\l# add_text()\l# add_ring()\l# add_hexagon()\l# set_empty_flag()\l# set_data_valid_flag()\l# set_width()\l# set_height()\l}" alt="" coords="111,6,263,455"/>
+<area shape="rect" id="node9" href="$classglbarcode_1_1BarcodeEan13.html" title="{glbarcode::BarcodeEan13\n||+ BarcodeEan13()\l+ create()\l}" alt="" coords="5,1062,176,1165"/>
+<area shape="rect" id="node11" href="$classglbarcode_1_1BarcodeUpcA.html" title="{glbarcode::BarcodeUpcA\n||+ BarcodeUpcA()\l+ create()\l}" alt="" coords="200,1062,365,1165"/>
+<area shape="rect" id="node2" href="$classglbarcode_1_1Barcode1dBase.html" title="{glbarcode::Barcode1dBase\n||+ ~Barcode1dBase()\l+ build()\l# Barcode1dBase()\l# validate()\l# preprocess()\l# encode()\l# prepare_text()\l# vectorize()\l}" alt="" coords="97,638,276,845"/>
+<area shape="rect" id="node4" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ show_text()\l+ show_text()\l+ checksum()\l+ checksum()\l+ build()\l+ render()\l+ is_empty()\l+ is_data_valid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# add_line()\l# add_box()\l# add_text()\l# add_ring()\l# add_hexagon()\l# set_empty_flag()\l# set_data_valid_flag()\l# set_width()\l# set_height()\l}" alt="" coords="111,139,263,589"/>
+<area shape="rect" id="node6" href="$structgbcBarcode.html" title="{gbcBarcode\n||}" alt="" coords="141,5,232,91"/>
 </map>

@@ -8,7 +8,6 @@ var searchData=
   ['barcodecode39ext',['BarcodeCode39Ext',['../classglbarcode_1_1BarcodeCode39Ext.html',1,'glbarcode']]],
   ['barcodedatamatrix',['BarcodeDataMatrix',['../classglbarcode_1_1BarcodeDataMatrix.html',1,'glbarcode']]],
   ['barcodeean13',['BarcodeEan13',['../classglbarcode_1_1BarcodeEan13.html',1,'glbarcode']]],
-  ['barcodefactory',['BarcodeFactory',['../classglbarcode_1_1BarcodeFactory.html',1,'glbarcode']]],
   ['barcodeonecode',['BarcodeOnecode',['../classglbarcode_1_1BarcodeOnecode.html',1,'glbarcode']]],
   ['barcodepostnet',['BarcodePostnet',['../classglbarcode_1_1BarcodePostnet.html',1,'glbarcode']]],
   ['barcodepostnet11',['BarcodePostnet11',['../classglbarcode_1_1BarcodePostnet11.html',1,'glbarcode']]],

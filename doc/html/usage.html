@@ -76,7 +76,7 @@ $(document).ready(function(){initNavTree('usage.html','');});
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Namespaces</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -134,18 +134,18 @@ Concrete Barcode Classes</h1>
 </table>
 <h1><a class="anchor" id="the_factory"></a>
 The Barcode Factory</h1>
-<p>Barcodes can also be instantiated using the <a class="el" href="classglbarcode_1_1BarcodeFactory.html">glbarcode::BarcodeFactory</a> barcode factory. <a class="el" href="classglbarcode_1_1BarcodeFactory.html">glbarcode::BarcodeFactory</a> has only a singleton instance which is accessed with the <code>instance()</code> method. For example:</p>
+<p>Barcodes can also be instantiated using the <a class="el" href="classglbarcode_1_1Factory.html">glbarcode::Factory</a> barcode factory. <a class="el" href="classglbarcode_1_1Factory.html">glbarcode::Factory</a> has only a singleton instance which is accessed with the <code>instance()</code> method. For example:</p>
 <div class="fragment"><div class="line"><span class="keyword">using namespace </span>glbarcode;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/* Get singleton instance to barcode factory. */</span></div>
-<div class="line"><a class="code" href="classglbarcode_1_1BarcodeFactory.html">BarcodeFactory</a> *factory = <a class="code" href="classglbarcode_1_1BarcodeFactory.html">BarcodeFactory</a>().<a class="code" href="classglbarcode_1_1BarcodeFactory.html#a0799645494253d3e65e8873567dcee8f">instance</a>();</div>
+<div class="line"><a class="code" href="classglbarcode_1_1Factory.html">Factory</a> *factory = <a class="code" href="classglbarcode_1_1Factory.html">Factory</a>().<a class="code" href="classglbarcode_1_1Factory.html#ae8be8f67d786ce102dc8eb5a3e90d7d3">instance</a>();</div>
 </div><!-- fragment --><p>A list (<code>const</code> <code>std::list&lt;std::string&gt;</code>) of supported barcode types can be obtained with the <code>get_supported_types()</code> method. For example:</p>
 <div class="fragment"><div class="line"><span class="keyword">using namespace </span>glbarcode;</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/* Get singleton instance to barcode factory. */</span></div>
-<div class="line"><a class="code" href="classglbarcode_1_1BarcodeFactory.html">BarcodeFactory</a> *factory = <a class="code" href="classglbarcode_1_1BarcodeFactory.html">BarcodeFactory</a>().<a class="code" href="classglbarcode_1_1BarcodeFactory.html#a0799645494253d3e65e8873567dcee8f">instance</a>();</div>
+<div class="line"><a class="code" href="classglbarcode_1_1Factory.html">Factory</a> *factory = <a class="code" href="classglbarcode_1_1Factory.html">Factory</a>().<a class="code" href="classglbarcode_1_1Factory.html#ae8be8f67d786ce102dc8eb5a3e90d7d3">instance</a>();</div>
 <div class="line"> </div>
-<div class="line">std::list&lt;std::string&gt; supported_types = factory-&gt;<a class="code" href="classglbarcode_1_1BarcodeFactory.html#abfdc12b57b9e2961914bea79e1c0d08a">get_supported_types</a>();</div>
+<div class="line">std::list&lt;std::string&gt; supported_types = factory-&gt;<a class="code" href="classglbarcode_1_1Factory.html#a5812eeb33ba5f4afceee90faa069ef19">get_supported_types</a>();</div>
 <div class="line">std::list&lt;std::string&gt;::iterator type;</div>
 <div class="line"> </div>
 <div class="line"><span class="keywordflow">for</span> ( type = supported_types.begin(); type != supported_types.end(); type++ )</div>
@@ -154,7 +154,7 @@ The Barcode Factory</h1>
 <div class="line">}</div>
 </div><!-- fragment --><p>Finally, a barcode is instantiated using the <code>create_barcode()</code> method:</p>
 <div class="fragment"><div class="line"><a class="code" href="classglbarcode_1_1Barcode.html">glbarcode::Barcode</a> *</div>
-<div class="line"><a class="code" href="classglbarcode_1_1BarcodeFactory.html#ae509a6bd9d3650836c3e232bb80dc0c0">glbarcode::BarcodeFactory::create_barcode</a>( std::string type_id );</div>
+<div class="line"><a class="code" href="classglbarcode_1_1Factory.html#a316701d7e59990491941f209bfdaf69c">glbarcode::Factory::create_barcode</a>( std::string type_id );</div>
 </div><!-- fragment --><p>where</p>
 <ul>
 <li><code>type_id</code> is a <code>string</code> containing a type ID. See table in <a class="el" href="usage.html#barcode_classes">Concrete Barcode Classes</a>. Valid IDs can also be obtained using the <code>get_supported_types()</code> method as described above.</li>
@@ -176,7 +176,7 @@ Options</h1>
 <div class="line">...</div>
 <div class="line"> </div>
 <div class="line"><span class="comment">/* Set options. */</span></div>
-<div class="line">bc.<a class="code" href="classglbarcode_1_1Barcode.html#ad8e6c21474c17e895f0c7dab18eab9a6">checksum</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#af8e1cf4c774849dfadf76b337fd08b82">show_text</a>(<span class="keyword">true</span>);</div>
+<div class="line">bc.<a class="code" href="classglbarcode_1_1Barcode.html#a066347587ac10e1dbaf3a760f6c22ba9">checksum</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#a2262fe3230623b4f834cf6b991622c76">show_text</a>(<span class="keyword">true</span>);</div>
 </div><!-- fragment --><p>Options can also be queried using the appropriate <em>get</em> accessors, as in the following example code:</p>
 <div class="fragment"><div class="line"><span class="keyword">using namespace </span>glbarcode;</div>
 <div class="line"> </div>
@@ -184,7 +184,7 @@ Options</h1>
 <div class="line"> </div>
 <div class="line">...</div>
 <div class="line"> </div>
-<div class="line"><span class="keywordtype">bool</span> text_flag = bc.<a class="code" href="classglbarcode_1_1Barcode.html#af8e1cf4c774849dfadf76b337fd08b82">show_text</a>(); <span class="comment">/* Is the show_text option set? */</span></div>
+<div class="line"><span class="keywordtype">bool</span> text_flag = bc.<a class="code" href="classglbarcode_1_1Barcode.html#a2262fe3230623b4f834cf6b991622c76">show_text</a>(); <span class="comment">/* Is the show_text option set? */</span></div>
 </div><!-- fragment --><p>Individual concrete barcode classes may also implement options specific to its barcode type or symbology.</p>
 <h1><a class="anchor" id="building"></a>
 Building Barcodes</h1>
@@ -230,7 +230,7 @@ Renderering Barcodes</h1>
 </div><!-- fragment --><h1><a class="anchor" id="putting_together"></a>
 Putting It All Together</h1>
 <p>The following simple program will create a Code39 barcode object encoding the data "EXAMPLE-123" and rendering it to an SVG file named "Example.svg":</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="BarcodeFactory_8h.html">glbarcode/BarcodeFactory.h</a>&gt;</span></div>
+<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Factory_8h.html">glbarcode/Factory.h</a>&gt;</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="RendererSvg_8h.html">glbarcode/RendererSvg.h</a>&gt;</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>glbarcode;</div>
@@ -238,13 +238,13 @@ Putting It All Together</h1>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv )</div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="comment">/* Get singleton instance to barcode factory. */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classglbarcode_1_1BarcodeFactory.html">BarcodeFactory</a> *factory = <a class="code" href="classglbarcode_1_1BarcodeFactory.html">BarcodeFactory</a>().<a class="code" href="classglbarcode_1_1BarcodeFactory.html#a0799645494253d3e65e8873567dcee8f">instance</a>();</div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classglbarcode_1_1Factory.html">Factory</a> *factory = <a class="code" href="classglbarcode_1_1Factory.html">Factory</a>().<a class="code" href="classglbarcode_1_1Factory.html#ae8be8f67d786ce102dc8eb5a3e90d7d3">instance</a>();</div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="comment">/* Create barcode object. */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classglbarcode_1_1Barcode.html">Barcode</a> *bc = factory-&gt;<a class="code" href="classglbarcode_1_1BarcodeFactory.html#ae509a6bd9d3650836c3e232bb80dc0c0">create_barcode</a>( <span class="stringliteral">&quot;code39&quot;</span> );</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classglbarcode_1_1Barcode.html">Barcode</a> *bc = factory-&gt;<a class="code" href="classglbarcode_1_1Factory.html#a316701d7e59990491941f209bfdaf69c">create_barcode</a>( <span class="stringliteral">&quot;code39&quot;</span> );</div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="comment">/* Set barcode options to show text and generate check digit, and then build */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        bc-&gt;<a class="code" href="classglbarcode_1_1Barcode.html#ad8e6c21474c17e895f0c7dab18eab9a6">checksum</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#af8e1cf4c774849dfadf76b337fd08b82">show_text</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#a98b21163b4fadd7b306b52dd702528fe">build</a>( <span class="stringliteral">&quot;EXAMPLE-123&quot;</span>, 288, 72 );</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        bc-&gt;<a class="code" href="classglbarcode_1_1Barcode.html#a066347587ac10e1dbaf3a760f6c22ba9">checksum</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#a2262fe3230623b4f834cf6b991622c76">show_text</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#a98b21163b4fadd7b306b52dd702528fe">build</a>( <span class="stringliteral">&quot;EXAMPLE-123&quot;</span>, 288, 72 );</div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
 <div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">/* Render barcode. */</span></div>
 <div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        bc-&gt;<a class="code" href="classglbarcode_1_1Barcode.html#ac1a770020b4915e4d324dd18af3a06f5">render</a>( <a class="code" href="classglbarcode_1_1RendererSvg.html">RendererSvg</a>().filename( <span class="stringliteral">&quot;Example.svg&quot;</span> ) );</div>
@@ -262,7 +262,7 @@ Output of above example 'Example.svg'</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Sep 21 2013 20:22:16 for glbarcode++ by
+    <li class="footer">Generated on Thu Sep 26 2013 23:17:11 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.3.1 </li>
   </ul>

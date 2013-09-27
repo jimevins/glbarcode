@@ -1,5 +1,0 @@
-<map id="glbarcode::BarcodePostnet11" name="glbarcode::BarcodePostnet11">
-<area shape="rect" id="node2" href="$classglbarcode_1_1BarcodePostnet.html" title="{glbarcode::BarcodePostnet\n||+ create()\l# validate_digits()\l}" alt="" coords="12,761,191,863"/>
-<area shape="rect" id="node4" href="$classglbarcode_1_1Barcode1dBase.html" title="{glbarcode::Barcode1dBase\n||+ ~Barcode1dBase()\l+ build()\l# Barcode1dBase()\l# validate()\l# preprocess()\l# encode()\l# prepare_text()\l# vectorize()\l}" alt="" coords="12,505,191,711"/>
-<area shape="rect" id="node6" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ show_text()\l+ show_text()\l+ checksum()\l+ checksum()\l+ build()\l+ render()\l+ is_empty()\l+ is_data_valid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# add_line()\l# add_box()\l# add_text()\l# add_ring()\l# add_hexagon()\l# set_empty_flag()\l# set_data_valid_flag()\l# set_width()\l# set_height()\l}" alt="" coords="25,6,177,455"/>
-</map>

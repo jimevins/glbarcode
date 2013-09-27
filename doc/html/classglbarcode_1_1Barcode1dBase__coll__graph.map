@@ -1,3 +1,0 @@
-<map id="glbarcode::Barcode1dBase" name="glbarcode::Barcode1dBase">
-<area shape="rect" id="node2" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ show_text()\l+ show_text()\l+ checksum()\l+ checksum()\l+ build()\l+ render()\l+ is_empty()\l+ is_data_valid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# add_line()\l# add_box()\l# add_text()\l# add_ring()\l# add_hexagon()\l# set_empty_flag()\l# set_data_valid_flag()\l# set_width()\l# set_height()\l}" alt="" coords="19,6,171,455"/>
-</map>

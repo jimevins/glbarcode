@@ -1,8 +1,0 @@
-<map id="BarcodeEan13.cpp" name="BarcodeEan13.cpp">
-<area shape="rect" id="node3" href="$BarcodeEan13_8h.html" title="BarcodeEan13.h" alt="" coords="114,83,231,112"/>
-<area shape="rect" id="node5" href="$BarcodeUpcBase_8h.html" title="BarcodeUpcBase.h" alt="" coords="66,160,199,189"/>
-<area shape="rect" id="node7" href="$Barcode1dBase_8h.html" title="Barcode1dBase.h" alt="" coords="34,237,159,267"/>
-<area shape="rect" id="node11" href="$Barcode_8h.html" title="Barcode.h" alt="" coords="21,315,101,344"/>
-<area shape="rect" id="node14" href="$Renderer_8h.html" title="Renderer.h" alt="" coords="83,392,169,421"/>
-<area shape="rect" id="node18" href="$DrawingPrimitives_8h.html" title="DrawingPrimitives.h" alt="" coords="133,469,271,499"/>
-</map>

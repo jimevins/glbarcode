@@ -1,15 +1,14 @@
 var classglbarcode_1_1Barcode =
 [
-    [ "PrivateData", "structglbarcode_1_1Barcode_1_1PrivateData.html", "structglbarcode_1_1Barcode_1_1PrivateData" ],
     [ "Barcode", "classglbarcode_1_1Barcode.html#a99edd197081eea1997b4391d37db3009", null ],
-    [ "~Barcode", "classglbarcode_1_1Barcode.html#acbc4b3808967bb55d73007246010820e", null ],
+    [ "~Barcode", "classglbarcode_1_1Barcode.html#a1a6d83dbece69742fcd4f145f0e8049d", null ],
     [ "add_box", "classglbarcode_1_1Barcode.html#a5830b7bc56dd2db0e3cdb50cd09a734e", null ],
     [ "add_hexagon", "classglbarcode_1_1Barcode.html#ac23d0e6940daf19a96ef18a2f80e6603", null ],
     [ "add_line", "classglbarcode_1_1Barcode.html#af84ab5824d0320133066dac885849fe0", null ],
     [ "add_ring", "classglbarcode_1_1Barcode.html#af32771fa6c76c3c06fd0d2a737af8f8f", null ],
     [ "add_text", "classglbarcode_1_1Barcode.html#ab07ee2f633e093cca65c6009116e285d", null ],
     [ "build", "classglbarcode_1_1Barcode.html#a98b21163b4fadd7b306b52dd702528fe", null ],
-    [ "checksum", "classglbarcode_1_1Barcode.html#ad8e6c21474c17e895f0c7dab18eab9a6", null ],
+    [ "checksum", "classglbarcode_1_1Barcode.html#a066347587ac10e1dbaf3a760f6c22ba9", null ],
     [ "checksum", "classglbarcode_1_1Barcode.html#a893997743373c80b952c25430218c56c", null ],
     [ "clear", "classglbarcode_1_1Barcode.html#a78bdb6d3543342f9f9f2380c8377d722", null ],
     [ "height", "classglbarcode_1_1Barcode.html#ac7b4703e0fe0b13e0e814e1bd2ce0188", null ],
@@ -20,7 +19,7 @@ var classglbarcode_1_1Barcode =
     [ "set_empty_flag", "classglbarcode_1_1Barcode.html#ad3dd67615c2457bea5d9969e7b397617", null ],
     [ "set_height", "classglbarcode_1_1Barcode.html#a0ef719cd1f2073dc9ca25b0287ea3604", null ],
     [ "set_width", "classglbarcode_1_1Barcode.html#a9386015896c8ff31a8b7dbe8e0ea4870", null ],
-    [ "show_text", "classglbarcode_1_1Barcode.html#af8e1cf4c774849dfadf76b337fd08b82", null ],
+    [ "show_text", "classglbarcode_1_1Barcode.html#a2262fe3230623b4f834cf6b991622c76", null ],
     [ "show_text", "classglbarcode_1_1Barcode.html#aaa57d0f975665bf205d15853949d72e1", null ],
     [ "width", "classglbarcode_1_1Barcode.html#ae1d5f923d540a364691d7a7e04375b2b", null ]
 ];
