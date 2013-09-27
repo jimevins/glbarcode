@@ -18,6 +18,12 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @file glbarcode/capi/gbc_renderer_eps.h
+ *
+ * CAPI front-end to glbarcode::RendererEps.
+ */
+
 #ifndef gbc_renderer_eps_h
 #define gbc_renderer_eps_h
 

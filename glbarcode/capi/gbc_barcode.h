@@ -18,6 +18,12 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @file glbarcode/capi/gbc_barcode.h
+ *
+ * CAPI front-end to glbarcode::Barcode.
+ */
+
 #ifndef gbc_barcode_h
 #define gbc_barcode_h
 

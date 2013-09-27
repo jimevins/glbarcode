@@ -18,6 +18,12 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @file glbarcode/capi/gbc_renderer_svg.h
+ *
+ * CAPI front-end to glbarcode::RendererSvg.
+ */
+
 #ifndef gbc_renderer_svg_h
 #define gbc_renderer_svg_h
 

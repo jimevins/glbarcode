@@ -18,6 +18,12 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
+/**
+ * @file glbarcode/capi/gbc_renderer_debug.h
+ *
+ * CAPI front-end to glbarcode::RendererDebug.
+ */
+
 #ifndef gbc_renderer_debug_h
 #define gbc_renderer_debug_h
 
