@@ -13,7 +13,6 @@ set (PUBLIC_HEADERS
   BarcodeDataMatrix.h
   BarcodeEan13.h
   BarcodeOnecode.h
-  BarcodeOptions.h
   BarcodePostnet11.h
   BarcodePostnet5.h
   BarcodePostnet9.h
@@ -63,5 +62,8 @@ add_library (${Lib_Name} SHARED
   ${LIB_SOURCES}
 )
 
+configure_file (${Unique_Package_Name}.pc.in ${CMAKE_CURRENT_BINARY_DIR}/${Unique_Package_Name}.pc @ONLY)
+
 install (TARGETS ${Lib_Name} LIBRARY DESTINATION lib)
-install (FILES ${PUBLIC_HEADERS} DESTINATION include/${Lib_Name}/glbarcode)
+install (FILES ${PUBLIC_HEADERS} DESTINATION include/${Unique_Package_Name}/glbarcode)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${Unique_Package_Name}.pc DESTINATION lib/pkgconfig)

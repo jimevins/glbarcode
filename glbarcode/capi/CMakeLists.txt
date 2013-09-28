@@ -34,5 +34,8 @@ add_library (${CAPI_Lib_Name} SHARED
   ${LIB_SOURCES}
 )
 
+configure_file (${Unique_CAPI_Package_Name}.pc.in ${CMAKE_CURRENT_BINARY_DIR}/${Unique_CAPI_Package_Name}.pc @ONLY)
+
 install (TARGETS ${CAPI_Lib_Name} LIBRARY DESTINATION lib)
-install (FILES ${PUBLIC_HEADERS} DESTINATION include/${Lib_Name}/glbarcode/capi)
+install (FILES ${PUBLIC_HEADERS} DESTINATION include/${Unique_Package_Name}/glbarcode/capi)
+install (FILES ${CMAKE_CURRENT_BINARY_DIR}/${Unique_CAPI_Package_Name}.pc DESTINATION lib/pkgconfig)

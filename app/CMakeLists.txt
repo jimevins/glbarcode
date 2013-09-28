@@ -19,3 +19,5 @@ target_link_libraries (glbarcode
   ${Lib_Name}
 )
 
+
+install (TARGETS glbarcode RUNTIME DESTINATION bin)
