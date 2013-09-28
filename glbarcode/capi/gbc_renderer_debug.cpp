@@ -28,7 +28,7 @@ using namespace glbarcode;
 
 
 
-gbcRenderer *gbc_renderer_debug_new( void )
+gbcRendererDebug *gbc_renderer_debug_new( void )
 {
 	return new RendererDebug();
 }

@@ -28,19 +28,19 @@ using namespace glbarcode;
 
 
 
-gbcRenderer *gbc_renderer_svg_new( void )
+gbcRendererSvg *gbc_renderer_svg_new( void )
 {
 	return new RendererSvg();
 }
 
 
-void gbc_renderer_svg_set_filename( gbcRenderer *renderer, char *value )
+void gbc_renderer_svg_set_filename( gbcRendererSvg *renderer, char *value )
 {
 	static_cast<RendererSvg*>(renderer)->filename( value );
 }
 
 
-const char *gbc_renderer_svg_get_filename( gbcRenderer *renderer )
+const char *gbc_renderer_svg_get_filename( gbcRendererSvg *renderer )
 {
 	return static_cast<RendererSvg*>(renderer)->filename().c_str();
 }

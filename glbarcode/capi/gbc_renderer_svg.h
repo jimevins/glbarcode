@@ -37,28 +37,34 @@ extern "C" {
 
 
 	/**
+	 * CAPI stand-in for glbarcode::RendererSvg.
+	 */
+	typedef struct gbcRenderer gbcRendererSvg;
+
+
+	/**
 	 * New RendererSvg object.
 	 */
-	gbcRenderer* gbc_renderer_svg_new( void );
+	gbcRendererSvg* gbc_renderer_svg_new( void );
 
 
 	/**
 	 * Set accessor for "filename" parameter.
 	 *
-	 * @param renderer Renderer
+	 * @param renderer SVG renderer
 	 * @param value Filename
 	 */
-	void gbc_renderer_svg_set_filename( gbcRenderer *renderer, char *value );
+	void gbc_renderer_svg_set_filename( gbcRendererSvg *renderer, char *value );
 
 
 	/**
 	 * Get accessor for "filename" parameter.
 	 *
-	 * @param renderer Renderer
+	 * @param renderer SVG renderer
 	 *
 	 * @returns Value of boolean "filename" parameter
 	 */
-	const char *gbc_renderer_svg_get_filename( gbcRenderer *renderer );
+	const char *gbc_renderer_svg_get_filename( gbcRendererSvg *renderer );
 
 
 
