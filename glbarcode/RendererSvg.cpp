@@ -130,7 +130,7 @@ namespace glbarcode
 
 	void RendererSvg::draw_box( const DrawingPrimitiveBox *box )
 	{
-		fprintf( d->fp, "  <rect x=\"%f\" y=\"%f\" width=\"%f\" height=\"%f\" style=\"fill:rgb(0,0,0)\" />\n",
+		fprintf( d->fp, "  <rect x=\"%f\" y=\"%f\" width=\"%f\" height=\"%f\" shape-rendering=\"crispEdges\" style=\"fill:rgb(0,0,0)\" />\n",
 			box->x, box->y, box->w, box->h );
 	}
 
