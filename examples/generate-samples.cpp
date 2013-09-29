@@ -116,4 +116,15 @@ int main( int argc, char **argv )
 	bc->build( "Data Matrix ECC200", 0, 0 );
 	bc->render( RendererSvg().filename( "sample-datamatrix.svg" ) );
 	delete bc;
+
+	/*
+	 * QRCode
+	 */
+#if HAVE_QRENCODE
+	bc = factory->create_barcode( "qrcode" );
+	bc->build( "http://glabels.org/", 0, 0 );
+	bc->render( RendererSvg().filename( "sample-qrcode.svg" ) );
+	delete bc;
+#endif
+
 }

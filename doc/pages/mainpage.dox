@@ -30,6 +30,7 @@ glbarcode++ currently supports the following barcode symbologies.
 |POSTNET-11        |@image html sample-postnet-11.svg ""  | 11               | `0`-`9`                        | Never          | Always               | 2     |
 |CEPNET            |@image html sample-cepnet.svg ""      | 8                | `0`-`9`                        | Never          | Always               | 2     |
 |Data Matrix       |@image html sample-datamatrix.svg ""  | Variable         | Full 8-bit values              | Never          | Always               | 3, 4, 5 |
+|QR Code           |@image html sample-qrcode.svg ""      | Variable         | Full 8-bit values, except 0    | Never          | Always               | 6 |
 
 Notes
 1. Lowercase letters (`a`-`z`) are upshifted
@@ -38,6 +39,7 @@ Notes
    entirely of ASCII digits (`0`-`9`), up to 3116 digits can be encoded.
 4. Only supports the ECC 200 version.
 5. Currently only uses the ASCII encoding method which may not be optimal for all data.
+6. QR Code encoding is currently not native to glbarcode++.  It is implemented as a thin wrapper around qrencode library (http://fukuchi.org/works/qrencode/index.html).
 
 
 Overview

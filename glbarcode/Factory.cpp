@@ -31,6 +31,7 @@
 #include "BarcodeCepnet.h"
 #include "BarcodeOnecode.h"
 #include "BarcodeDataMatrix.h"
+#include "BarcodeQrcode.h"
 
 
 namespace glbarcode
@@ -101,6 +102,9 @@ namespace glbarcode
 		register_type( "cepnet",      &BarcodeCepnet::create );
 		register_type( "onecode",     &BarcodeOnecode::create );
 		register_type( "datamatrix",  &BarcodeDataMatrix::create );
+#if HAVE_QRENCODE
+		register_type( "qrcode",      &BarcodeQrcode::create );
+#endif
 	}
 
 

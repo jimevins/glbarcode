@@ -19,6 +19,7 @@ set (PUBLIC_HEADERS
   BarcodePostnet.h
   BarcodeUpcA.h
   BarcodeUpcBase.h
+  BarcodeQrcode.h
   Constants.h
   DrawingPrimitives.h
   Matrix.h
@@ -45,6 +46,7 @@ set (LIB_SOURCES
   BarcodeCepnet.cpp
   BarcodeOnecode.cpp
   BarcodeDataMatrix.cpp
+  BarcodeQrcode.cpp
   DrawingPrimitives.cpp
   Renderer.cpp
   RendererSvg.cpp
@@ -58,9 +60,18 @@ add_definitions (
   -DMY_PACKAGE_URL=\"${Package_URL}\"
 )
 
+include_directories (
+  ${LIBQRENCODE_INCLUDE_DIR}
+)
+
 add_library (${Lib_Name} SHARED
   ${LIB_SOURCES}
 )
+
+target_link_libraries (${Lib_Name}
+  ${LIBQRENCODE_LIBRARIES}
+)
+
 
 configure_file (${Unique_Package_Name}.pc.in ${CMAKE_CURRENT_BINARY_DIR}/${Unique_Package_Name}.pc @ONLY)
 

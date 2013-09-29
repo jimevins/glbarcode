@@ -7,3 +7,4 @@ Description: C++ version of gLabels Barcode Generator Library
 Version: @Package_Version@
 Libs: -L${libdir} -l@Lib_Name@
 Cflags: -I${includedir}/@Unique_Package_Name@
+Requires: @Lib_Requires@
