@@ -3,6 +3,7 @@ cmake_minimum_required (VERSION 2.8)
 project (lib CXX)
 
 include_directories (
+  ${CMAKE_CURRENT_BINARY_DIR}
   ${GLBARCODE_PP_SOURCE_DIR}
 )
 
@@ -13,6 +14,7 @@ set (PUBLIC_HEADERS
   gbc_renderer_debug.h
   gbc_renderer_eps.h
   gbc_renderer_svg.h
+  ${CMAKE_CURRENT_BINARY_DIR}/gbc_version.h
 )
 
 set (LIB_SOURCES
@@ -24,16 +26,11 @@ set (LIB_SOURCES
   gbc_renderer_svg.cpp
 )
 
-add_definitions (
-  -DMY_PACKAGE_NAME=\"${Package_Name}\"
-  -DMY_PACKAGE_VERSION=\"${Package_Version}\"
-  -DMY_PACKAGE_URL=\"${Package_URL}\"
-)
-
 add_library (${CAPI_Lib_Name} SHARED
   ${LIB_SOURCES}
 )
 
+configure_file (gbc_version.h.in ${CMAKE_CURRENT_BINARY_DIR}/gbc_version.h @ONLY)
 configure_file (${Unique_CAPI_Package_Name}.pc.in ${CMAKE_CURRENT_BINARY_DIR}/${Unique_CAPI_Package_Name}.pc @ONLY)
 
 install (TARGETS ${CAPI_Lib_Name} LIBRARY DESTINATION lib)

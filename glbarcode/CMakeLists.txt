@@ -27,6 +27,7 @@ set (PUBLIC_HEADERS
   RendererSvg.h
   RendererEps.h
   RendererDebug.h
+  ${CMAKE_CURRENT_BINARY_DIR}/Version.h
 )
 
 set (LIB_SOURCES
@@ -54,13 +55,8 @@ set (LIB_SOURCES
   RendererDebug.cpp
 )
 
-add_definitions (
-  -DMY_PACKAGE_NAME=\"${Package_Name}\"
-  -DMY_PACKAGE_VERSION=\"${Package_Version}\"
-  -DMY_PACKAGE_URL=\"${Package_URL}\"
-)
-
 include_directories (
+  ${CMAKE_CURRENT_BINARY_DIR}
   ${LIBQRENCODE_INCLUDE_DIR}
 )
 
@@ -73,7 +69,9 @@ target_link_libraries (${Lib_Name}
 )
 
 
+configure_file (Version.h.in ${CMAKE_CURRENT_BINARY_DIR}/Version.h @ONLY)
 configure_file (${Unique_Package_Name}.pc.in ${CMAKE_CURRENT_BINARY_DIR}/${Unique_Package_Name}.pc @ONLY)
+
 
 install (TARGETS ${Lib_Name} LIBRARY DESTINATION lib)
 install (FILES ${PUBLIC_HEADERS} DESTINATION include/${Unique_Package_Name}/glbarcode)

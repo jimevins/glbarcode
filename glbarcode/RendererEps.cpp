@@ -20,12 +20,12 @@
 
 #include "RendererEps.h"
 
-#include "Constants.h"
+#include "Version.h"
 
 #include <cstdio>
 
 
-using namespace glbarcode::Constants;
+using namespace glbarcode::Version;
 
 namespace glbarcode
 {

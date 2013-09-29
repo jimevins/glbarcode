@@ -1,4 +1,4 @@
-/*  Constants.h
+/*  Version.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,21 +18,27 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glbarcode_Constants_h
-#define glbarcode_Constants_h
+#ifndef glbarcode_Version_h
+#define glbarcode_Version_h
 
 
 namespace glbarcode
 {
 
-	namespace Constants
+	namespace Version
 	{
-		const double PTS_PER_INCH = 72.0;            /**< Points per inch. */
-		const double PTS_PER_MM   =  2.83464566929;  /**< Points per millimeter. */
-		const double PTS_PER_CM   = 10*PTS_PER_MM;   /**< Points per centimeter. */
+		const std::string PACKAGE_NAME    = "@Package_Name@";
+		const std::string SHORT_NAME      = "@Short_Name@";
+		const std::string PACKAGE_URL     = "@Package_URL@";
+
+		const std::string PACKAGE_VERSION = "@Package_Version@";
+
+		const int         API_VERSION     = @API_Version@;
+		const int         FEATURE_VERSION = @Feature_Version@;
+		const int         BUGFIX_VERSION  = @Bugfix_Version@;
 	}
 
 }
 
 
-#endif // glbarcode_Constants_h
+#endif // glbarcode_Version_h

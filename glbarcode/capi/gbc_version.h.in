@@ -1,4 +1,4 @@
-/*  Constants.h
+/*  gbc_version.h
  *
  *  Copyright (C) 2013  Jim Evins <evins@snaught.com>
  *
@@ -18,21 +18,19 @@
  *  along with glbarcode++.  If not, see <http://www.gnu.org/licenses/>.
  */
 
-#ifndef glbarcode_Constants_h
-#define glbarcode_Constants_h
+#ifndef gbc_version_h
+#define gbc_version_h
 
 
-namespace glbarcode
-{
+#define GBC_PACKAGE_NAME    "@Package_Name@"
+#define GBC_SHORT_NAME      "@Short_Name@"
+#define GBC_PACKAGE_URL     "@Package_URL@"
 
-	namespace Constants
-	{
-		const double PTS_PER_INCH = 72.0;            /**< Points per inch. */
-		const double PTS_PER_MM   =  2.83464566929;  /**< Points per millimeter. */
-		const double PTS_PER_CM   = 10*PTS_PER_MM;   /**< Points per centimeter. */
-	}
+#define GBC_PACKAGE_VERSION "@Package_Version@"
 
-}
+#define GBC_API_VERSION     @API_Version@
+#define GBC_FEATURE_VERSION @Feature_Version@
+#define GBC_BUGFIX_VERSION  @Bugfix_Version@
 
 
-#endif // glbarcode_Constants_h
+#endif // gbc_version_h
