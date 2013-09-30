@@ -35,6 +35,9 @@ find_package (LibQrencode)
 if (${LIBQRENCODE_FOUND})
   add_definitions (-DHAVE_QRENCODE=1)
   set (Lib_Requires "libqrencode")
+else (${LIBQRENCODE_FOUND})
+  set (LIBQRENCODE_INCLUDE_DIR "")
+  set (LIBQRENCODE_LIBRARIES "")
 endif (${LIBQRENCODE_FOUND})
 
 #
