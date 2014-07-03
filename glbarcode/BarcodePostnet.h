@@ -51,17 +51,17 @@ namespace glbarcode
 		/**
 		 * Validate number of digits
 		 */
-		virtual bool validate_digits( int n_digits );
+		virtual bool validateDigits( int nDigits );
 
 
 	private:
-		bool validate( std::string raw_data );
+		bool validate( std::string rawData );
 
-		std::string encode( std::string cooked_data );
+		std::string encode( std::string cookedData );
 
-		void vectorize( std::string coded_data,
-				std::string display_text,
-				std::string cooked_data,
+		void vectorize( std::string codedData,
+				std::string displayText,
+				std::string cookedData,
 				double      &w,
 				double      &h );
 

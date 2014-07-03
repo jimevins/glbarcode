@@ -49,18 +49,18 @@ A barcode subclass may also need to implement the following virtual methods:
   suitable for rendering.  The glbarcode::Barcode2DBase class provides a default implementation that should be suitable for most
   2D symbologies.  The following protected methods are available to the vectorize implementation to create this list:
 
-  - glbarcode::Barcode::add_line()
-  - glbarcode::Barcode::add_box()
-  - glbarcode::Barcode::add_text()
-  - glbarcode::Barcode::add_ring()
-  - glbarcode::Barcode::add_hexagon()
+  - glbarcode::Barcode::addLine()
+  - glbarcode::Barcode::addBox()
+  - glbarcode::Barcode::addText()
+  - glbarcode::Barcode::addRing()
+  - glbarcode::Barcode::addHexagon()
 
 The following figure illustrates the data flow between these methods, which are called by glbarcode::Barcode2dBase::build():
 
 @dot
 digraph init {
 	node [shape=plaintext style=solid fontsize=8];
-	raw_data;
+	rawData;
 	primitives [label="\"Drawing\nPrimitives\""];
 
 	node [shape=box style=solid];
@@ -86,10 +86,10 @@ digraph init {
 
 	null1 -> step1 -> step2 -> step3 -> step4 -> null2 [style=solid color="gray"];
 
-	raw_data -> validate;
+	rawData -> validate;
 	validate -> preprocess;
-	preprocess -> encode [label=cooked_data fontsize=8];
-	encode -> vectorize [label=encoded_data fontsize=8];
+	preprocess -> encode [label=cookedData fontsize=8];
+	encode -> vectorize [label=encodedData fontsize=8];
 	vectorize -> primitives;
 }
 @enddot

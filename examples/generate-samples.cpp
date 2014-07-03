@@ -32,98 +32,98 @@ int main( int argc, char **argv )
 	/*
 	 * Code39
 	 */
-	bc = factory->create_barcode( "code39" );
-	bc->show_text(true).checksum(true).build( "ABC123", 216, 72 );
-	bc->render( RendererSvg().filename( "sample-code39.svg" ) );
+	bc = factory->createBarcode( "code39" );
+	bc->setShowText(true).setChecksum(true).build( "ABC123", 216, 72 );
+	bc->render( RendererSvg().setFilename( "sample-code39.svg" ) );
 	delete bc;
 
 	/*
 	 * Extended Code39
 	 */
-	bc = factory->create_barcode( "code39ext" );
-	bc->show_text(true).checksum(true).build( "Abc123", 216, 72 );
-	bc->render( RendererSvg().filename( "sample-code39ext.svg" ) );
+	bc = factory->createBarcode( "code39ext" );
+	bc->setShowText(true).setChecksum(true).build( "Abc123", 216, 72 );
+	bc->render( RendererSvg().setFilename( "sample-code39ext.svg" ) );
 	delete bc;
 
 	/*
 	 * UPC-A
 	 */
-	bc = factory->create_barcode( "upc-a" );
+	bc = factory->createBarcode( "upc-a" );
 	bc->build( "12345678901", 162, 81 );
-	bc->render( RendererSvg().filename( "sample-upc-a.svg" ) );
+	bc->render( RendererSvg().setFilename( "sample-upc-a.svg" ) );
 	delete bc;
 
 	/*
 	 * EAN-13
 	 */
-	bc = factory->create_barcode( "ean-13" );
+	bc = factory->createBarcode( "ean-13" );
 	bc->build( "123456789012", 162, 81 );
-	bc->render( RendererSvg().filename( "sample-ean-13.svg" ) );
+	bc->render( RendererSvg().setFilename( "sample-ean-13.svg" ) );
 	delete bc;
 
 	/*
 	 * POSTNET
 	 */
-	bc = factory->create_barcode( "postnet" );
+	bc = factory->createBarcode( "postnet" );
 	bc->build( "12345678901", 0, 0 );
-	bc->render( RendererSvg().filename( "sample-postnet.svg" ) );
+	bc->render( RendererSvg().setFilename( "sample-postnet.svg" ) );
 	delete bc;
 
 	/*
 	 * POSTNET-5
 	 */
-	bc = factory->create_barcode( "postnet-5" );
+	bc = factory->createBarcode( "postnet-5" );
 	bc->build( "12345", 0, 0 );
-	bc->render( RendererSvg().filename( "sample-postnet-5.svg" ) );
+	bc->render( RendererSvg().setFilename( "sample-postnet-5.svg" ) );
 	delete bc;
 
 	/*
 	 * POSTNET-9
 	 */
-	bc = factory->create_barcode( "postnet-9" );
+	bc = factory->createBarcode( "postnet-9" );
 	bc->build( "123456789", 0, 0 );
-	bc->render( RendererSvg().filename( "sample-postnet-9.svg" ) );
+	bc->render( RendererSvg().setFilename( "sample-postnet-9.svg" ) );
 	delete bc;
 
 	/*
 	 * POSTNET-11
 	 */
-	bc = factory->create_barcode( "postnet-11" );
+	bc = factory->createBarcode( "postnet-11" );
 	bc->build( "12345678901", 0, 0 );
-	bc->render( RendererSvg().filename( "sample-postnet-11.svg" ) );
+	bc->render( RendererSvg().setFilename( "sample-postnet-11.svg" ) );
 	delete bc;
 
 	/*
 	 * CEPNET
 	 */
-	bc = factory->create_barcode( "cepnet" );
+	bc = factory->createBarcode( "cepnet" );
 	bc->build( "12345678", 0, 0 );
-	bc->render( RendererSvg().filename( "sample-cepnet.svg" ) );
+	bc->render( RendererSvg().setFilename( "sample-cepnet.svg" ) );
 	delete bc;
 
 	/*
 	 * ONECODE
 	 */
-	bc = factory->create_barcode( "onecode" );
+	bc = factory->createBarcode( "onecode" );
 	bc->build( "12345678901234567890", 0, 0 );
-	bc->render( RendererSvg().filename( "sample-onecode.svg" ) );
+	bc->render( RendererSvg().setFilename( "sample-onecode.svg" ) );
 	delete bc;
 
 	/*
 	 * DataMatrix
 	 */
-	bc = factory->create_barcode( "datamatrix" );
+	bc = factory->createBarcode( "datamatrix" );
 	bc->build( "Data Matrix ECC200", 0, 0 );
-	bc->render( RendererSvg().filename( "sample-datamatrix.svg" ) );
+	bc->render( RendererSvg().setFilename( "sample-datamatrix.svg" ) );
 	delete bc;
 
 	/*
 	 * QRCode
 	 */
 #if HAVE_QRENCODE
-	bc = factory->create_barcode( "qrcode" );
+	bc = factory->createBarcode( "qrcode" );
 	bc->build( "http://glabels.org/", 0, 0 );
-	bc->render( RendererSvg().filename( "sample-qrcode.svg" ) );
+	bc->render( RendererSvg().setFilename( "sample-qrcode.svg" ) );
 	delete bc;
 #endif
 

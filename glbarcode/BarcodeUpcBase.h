@@ -36,34 +36,34 @@ namespace glbarcode
 	class BarcodeUpcBase : public Barcode1dBase
 	{
 	protected:
-		virtual bool validate_digits( int n_digits ) = 0;
+		virtual bool validateDigits( int nDigits ) = 0;
 
-		virtual void vectorize_text( std::string display_text,
-					     double size1, double size2,
-					     double x1_left, double x1_right, double y1,
-					     double x2_left, double x2_right, double y2 ) = 0;
+		virtual void vectorizeText( std::string displayText,
+		                            double size1, double size2,
+		                            double x1Left, double x1Right, double y1,
+		                            double x2Left, double x2Right, double y2 ) = 0;
 
 	private:
-		bool validate( std::string raw_data );
+		bool validate( std::string rawData );
 
-		std::string encode( std::string cooked_data );
+		std::string encode( std::string cookedData );
 
-		std::string prepare_text( std::string raw_data );
+		std::string prepareText( std::string rawData );
 
-		void vectorize( std::string coded_data,
-				std::string display_text,
-				std::string cooked_data,
+		void vectorize( std::string codedData,
+				std::string displayText,
+				std::string cookedData,
 				double      &w,
 				double      &h );
 
 
 	protected:
-		int m_end_bars_modules;
-		int m_first_digit_val;
+		int mEndBarsModules;
+		int mFirstDigitVal;
 
 
 	private:
-		int m_check_digit_val;
+		int mCheckDigitVal;
 
 	};
 

@@ -59,20 +59,20 @@ namespace glbarcode
 
 
 		/**
-		 * Set accessor for "show_text" parameter.
+		 * Set accessor for "showText" parameter.
 		 *
 		 * @param value Boolean value
 		 * @returns A reference to this Barcode object for parameter chaining
 		 */
-		Barcode& show_text( bool value );
+		Barcode& setShowText( bool value );
 
 
 		/**
-		 * Get accessor for "show_text" parameter.
+		 * Get accessor for "showText" parameter.
 		 *
-		 * @returns Value of boolean "show_text" parameter
+		 * @returns Value of boolean "showText" parameter
 		 */
-		bool show_text( void ) const;
+		bool showText( void ) const;
 
 
 		/**
@@ -81,7 +81,7 @@ namespace glbarcode
 		 * @param value Boolean value
 		 * @returns A reference to this Barcode object for parameter chaining
 		 */
-		Barcode& checksum( bool value );
+		Barcode& setChecksum( bool value );
 
 
 		/**
@@ -118,7 +118,7 @@ namespace glbarcode
 		 * @return True if barcode data is empty
 		 * @return False if barcode data is not empty
 		 */
-		bool is_empty( void );
+		bool isEmpty( void );
 
 
 		/**
@@ -127,7 +127,7 @@ namespace glbarcode
 		 * @return True if barcode data is valid
 		 * @return False if barcode data is not valid for implemented barcode type
 		 */
-		bool is_data_valid( void );
+		bool isDataValid( void );
 
 
 		/**
@@ -165,7 +165,7 @@ namespace glbarcode
 		 * @param w Bar width (points)
 		 * @param h Bar height (points)
 		 */
-		void add_line( double x, double y, double w, double h );
+		void addLine( double x, double y, double w, double h );
 
 
 		/**
@@ -180,7 +180,7 @@ namespace glbarcode
 		 * @param w Width of box (points)
 		 * @param h Height of box (points)
 		 */
-		void add_box( double x, double y, double w, double h );
+		void addBox( double x, double y, double w, double h );
 
 
 		/**
@@ -195,7 +195,7 @@ namespace glbarcode
 		 * @param fsize Font size of text (points)
 		 * @param s Text
 		 */
-		void add_text( double x, double y, double fsize, std::string s );
+		void addText( double x, double y, double fsize, std::string s );
 
 
 		/**
@@ -210,7 +210,7 @@ namespace glbarcode
 		 * @param r Radius of ring (points)
 		 * @param lwidth Line width of ring (points)
 		 */
-		void add_ring( double x, double y, double r, double lwidth );
+		void addRing( double x, double y, double r, double lwidth );
 
 
 		/**
@@ -224,7 +224,7 @@ namespace glbarcode
 		 * @param y Y coordinate of hexagon's origin (points)
 		 * @param h Height of hexagon (points)
 		 */
-		void add_hexagon( double x, double y, double h );
+		void addHexagon( double x, double y, double h );
 
 
 		/**
@@ -234,7 +234,7 @@ namespace glbarcode
 		 *
 		 * @param value Boolean value of flag
 		 */
-		void set_empty_flag( bool value );
+		void setEmptyFlag( bool value );
 
 
 		/**
@@ -244,7 +244,7 @@ namespace glbarcode
 		 *
 		 * @param value Boolean value of flag
 		 */
-		void set_data_valid_flag( bool value );
+		void setDataValidFlag( bool value );
 
 
 		/**
@@ -254,7 +254,7 @@ namespace glbarcode
 		 *
 		 * @param w Actual width of barcode (points)
 		 */
-		void set_width( double w );
+		void setWidth( double w );
 
 
 		/**
@@ -264,7 +264,7 @@ namespace glbarcode
 		 *
 		 * @param h Actual height of barcode (points)
 		 */
-		void set_height( double h );
+		void setHeight( double h );
 
 
 	private:

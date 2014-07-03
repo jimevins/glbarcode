@@ -40,27 +40,27 @@ gbcFactory *gbc_factory_instance( void )
 gbcBarcode *gbc_factory_create_barcode( gbcFactory *factory,
 					char       *type_id )
 {
-	return static_cast<Factory*>(factory)->create_barcode( type_id );
+	return static_cast<Factory*>(factory)->createBarcode( type_id );
 }
 
 
 bool gbc_factory_is_type_supported( gbcFactory *factory,
 				    char       *type_id )
 {
-	return static_cast<Factory*>(factory)->is_type_supported( type_id );
+	return static_cast<Factory*>(factory)->isTypeSupported( type_id );
 }
 
 
 char ** gbc_factory_get_supported_types( gbcFactory  *factory )
 {
-	std::vector<std::string> supported_types = static_cast<Factory*>(factory)->get_supported_types();
-	int n = supported_types.size();
+	std::vector<std::string> supportedTypes = static_cast<Factory*>(factory)->getSupportedTypes();
+	int n = supportedTypes.size();
 
 	char **list = new char*[ n + 1 ];
 
 	for ( int i = 0; i < n; i++ )
 	{
-		list[i] = strdup( supported_types[i].c_str() );
+		list[i] = strdup( supportedTypes[i].c_str() );
 	}
 	list[n] = NULL;
 

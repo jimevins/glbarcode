@@ -48,47 +48,47 @@ namespace glbarcode
 	}
 
 
-	void Barcode1dBase::build( std::string raw_data,
+	void Barcode1dBase::build( std::string rawData,
 				   double      w,
 				   double      h )
 	{
-		std::string cooked_data;     /* Preprocessed data */
-		std::string display_text;    /* Text data to be displayed */
-		std::string coded_data;      /* Encoded data */
+		std::string cookedData;     /* Preprocessed data */
+		std::string displayText;    /* Text data to be displayed */
+		std::string codedData;      /* Encoded data */
 
 		clear();
 
-		if ( raw_data.empty() )
+		if ( rawData.empty() )
 		{
-			set_empty_flag( true );
-			set_data_valid_flag( false );
+			setEmptyFlag( true );
+			setDataValidFlag( false );
 
-			set_width( 0 );
-			set_height( 0 );
+			setWidth( 0 );
+			setHeight( 0 );
 		}
 		else
 		{
-			set_empty_flag( false );
+			setEmptyFlag( false );
 
-			if ( !validate( raw_data ) )
+			if ( !validate( rawData ) )
 			{
-				set_data_valid_flag( false );
+				setDataValidFlag( false );
 
-				set_width( 0 );
-				set_height( 0 );
+				setWidth( 0 );
+				setHeight( 0 );
 			}
 			else
 			{
-				set_data_valid_flag( true );
+				setDataValidFlag( true );
 
-				cooked_data  = preprocess( raw_data );
-				coded_data   = encode( cooked_data );
-				display_text = prepare_text( raw_data );
+				cookedData  = preprocess( rawData );
+				codedData   = encode( cookedData );
+				displayText = prepareText( rawData );
 
-				vectorize( coded_data, display_text, cooked_data, w, h );
+				vectorize( codedData, displayText, cookedData, w, h );
 
-				set_width( w );
-				set_height( h );
+				setWidth( w );
+				setHeight( h );
 			}
 		}
 	}
@@ -97,18 +97,18 @@ namespace glbarcode
 	/*
 	 * Default preprocess method
 	 */
-	std::string Barcode1dBase::preprocess( std::string raw_data )
+	std::string Barcode1dBase::preprocess( std::string rawData )
 	{
-		return raw_data;
+		return rawData;
 	}
 
 
 	/*
-	 * Default prepare_text method
+	 * Default prepareText method
 	 */
-	std::string Barcode1dBase::prepare_text( std::string raw_data )
+	std::string Barcode1dBase::prepareText( std::string rawData )
 	{
-		return raw_data;
+		return rawData;
 	}
 
 

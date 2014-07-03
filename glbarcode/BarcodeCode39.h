@@ -48,15 +48,15 @@ namespace glbarcode
 
 
 	private:
-		bool validate( std::string raw_data );
+		bool validate( std::string rawData );
 
-		std::string encode( std::string cooked_data );
+		std::string encode( std::string cookedData );
 
-		std::string prepare_text( std::string raw_data );
+		std::string prepareText( std::string rawData );
 
-		void vectorize( std::string coded_data,
-				std::string display_text,
-				std::string cooked_data,
+		void vectorize( std::string codedData,
+				std::string displayText,
+				std::string cookedData,
 				double      &w,
 				double      &h );
 	};

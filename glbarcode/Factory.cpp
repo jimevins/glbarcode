@@ -37,50 +37,50 @@
 namespace glbarcode
 {
 
-	Factory::BarcodeTypeMap Factory::m_barcode_type_map;
-	std::vector<std::string> Factory::m_supported_types;
+	Factory::BarcodeTypeMap Factory::mBarcodeTypeMap;
+	std::vector<std::string> Factory::mSupportedTypes;
 
 
 	Factory* Factory::instance( void )
 	{
-		static Factory* singleton_instance = NULL;
+		static Factory* singletonInstance = NULL;
 		
-		if ( singleton_instance == NULL )
+		if ( singletonInstance == NULL )
 		{
-			singleton_instance = new Factory();
-			singleton_instance->init();
+			singletonInstance = new Factory();
+			singletonInstance->init();
 		}
 
-		return singleton_instance;
+		return singletonInstance;
 	}
 
 
-	void Factory::register_type( std::string type_id, Factory::BarcodeCreateFct fct )
+	void Factory::registerType( std::string typeId, Factory::BarcodeCreateFct fct )
 	{
-		m_barcode_type_map[ type_id ] = fct;
-		m_supported_types.push_back( type_id );
+		mBarcodeTypeMap[ typeId ] = fct;
+		mSupportedTypes.push_back( typeId );
 	}
 
 
-	bool Factory::is_type_supported( std::string type_id )
+	bool Factory::isTypeSupported( std::string typeId )
 	{
-		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type_id );
+		BarcodeTypeMap::iterator i = mBarcodeTypeMap.find( typeId );
 
-		return ( i != m_barcode_type_map.end() );
+		return ( i != mBarcodeTypeMap.end() );
 	}
 
 
-	const std::vector<std::string> Factory::get_supported_types( void )
+	const std::vector<std::string> Factory::getSupportedTypes( void )
 	{
-		return m_supported_types;
+		return mSupportedTypes;
 	}
 
 
-	Barcode* Factory::create_barcode( std::string type_id )
+	Barcode* Factory::createBarcode( std::string typeId )
 	{
-		BarcodeTypeMap::iterator i = m_barcode_type_map.find( type_id );
+		BarcodeTypeMap::iterator i = mBarcodeTypeMap.find( typeId );
 
-		if( i != m_barcode_type_map.end() )
+		if( i != mBarcodeTypeMap.end() )
 		{
 			return i->second();
 		}
@@ -91,19 +91,19 @@ namespace glbarcode
 
 	void Factory::init( void )
 	{
-		register_type( "code39",      &BarcodeCode39::create );
-		register_type( "code39ext",   &BarcodeCode39Ext::create );
-		register_type( "upc-a",       &BarcodeUpcA::create );
-		register_type( "ean-13",      &BarcodeEan13::create );
-		register_type( "postnet",     &BarcodePostnet::create );
-		register_type( "postnet-5",   &BarcodePostnet5::create );
-		register_type( "postnet-9",   &BarcodePostnet9::create );
-		register_type( "postnet-11",  &BarcodePostnet11::create );
-		register_type( "cepnet",      &BarcodeCepnet::create );
-		register_type( "onecode",     &BarcodeOnecode::create );
-		register_type( "datamatrix",  &BarcodeDataMatrix::create );
+		registerType( "code39",      &BarcodeCode39::create );
+		registerType( "code39ext",   &BarcodeCode39Ext::create );
+		registerType( "upc-a",       &BarcodeUpcA::create );
+		registerType( "ean-13",      &BarcodeEan13::create );
+		registerType( "postnet",     &BarcodePostnet::create );
+		registerType( "postnet-5",   &BarcodePostnet5::create );
+		registerType( "postnet-9",   &BarcodePostnet9::create );
+		registerType( "postnet-11",  &BarcodePostnet11::create );
+		registerType( "cepnet",      &BarcodeCepnet::create );
+		registerType( "onecode",     &BarcodeOnecode::create );
+		registerType( "datamatrix",  &BarcodeDataMatrix::create );
 #if HAVE_QRENCODE
-		register_type( "qrcode",      &BarcodeQrcode::create );
+		registerType( "qrcode",      &BarcodeQrcode::create );
 #endif
 	}
 

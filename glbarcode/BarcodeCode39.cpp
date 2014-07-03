@@ -82,7 +82,7 @@ namespace
 		/* % */  "NnNwNwNwN"
 	};
 
-	const std::string frame_symbol = "NwNnWnWnN";
+	const std::string frameSymbol = "NwNnWnWnN";
 
 	/* Vectorization constants */
 	const double MIN_X       = ( 0.01 *  PTS_PER_INCH );
@@ -112,11 +112,11 @@ namespace glbarcode
 	/*
 	 * Code39 data validation, implements Barcode1dBase::validate()
 	 */
-	bool BarcodeCode39::validate( std::string raw_data )
+	bool BarcodeCode39::validate( std::string rawData )
 	{
-		for ( int i = 0; i < raw_data.size(); i++ )
+		for ( int i = 0; i < rawData.size(); i++ )
 		{
-			char c = toupper( raw_data[i] );
+			char c = toupper( rawData[i] );
 
 			if ( alphabet.find(c) == std::string::npos )
 			{
@@ -131,23 +131,23 @@ namespace glbarcode
 	/*
 	 * Code39 data encoding, implements Barcode1dBase::encode()
 	 */
-	std::string BarcodeCode39::encode( std::string cooked_data )
+	std::string BarcodeCode39::encode( std::string cookedData )
 	{
 		std::string code;
 
 		/* Left frame symbol */
-		code += frame_symbol;
+		code += frameSymbol;
 		code += "i";
 
 		int sum = 0;
-		for ( int i=0; i < cooked_data.size(); i++ )
+		for ( int i=0; i < cookedData.size(); i++ )
 		{
-			int c_value = alphabet.find( toupper( cooked_data[i] ) );
+			int cValue = alphabet.find( toupper( cookedData[i] ) );
 
-			code += symbols[c_value];
+			code += symbols[cValue];
 			code += "i";
 
-			sum += c_value;
+			sum += cValue;
 		}
 
 		if ( checksum() )
@@ -157,48 +157,48 @@ namespace glbarcode
 		}
 
 		/* Right frame bar */
-		code += frame_symbol;
+		code += frameSymbol;
 
 		return code;
 	}
 
 
 	/*
-	 * Code39 prepare text for display, implements Barcode1dBase::prepare_text()
+	 * Code39 prepare text for display, implements Barcode1dBase::prepareText()
 	 */
-	std::string BarcodeCode39::prepare_text( std::string raw_data )
+	std::string BarcodeCode39::prepareText( std::string rawData )
 	{
-		std::string display_text;
+		std::string displayText;
 
-		for ( int i = 0; i < raw_data.size(); i++ )
+		for ( int i = 0; i < rawData.size(); i++ )
 		{
-			display_text += toupper( raw_data[i] );
+			displayText += toupper( rawData[i] );
 		}
 
-		return display_text;
+		return displayText;
 	}
 
 
 	/*
 	 * Code39 vectorization, implements Barcode1dBase::vectorize()
 	 */
-	void BarcodeCode39::vectorize( std::string coded_data,
-				       std::string display_text,
-				       std::string cooked_data,
+	void BarcodeCode39::vectorize( std::string codedData,
+				       std::string displayText,
+				       std::string cookedData,
 				       double      &w,
 				       double      &h )
 	{
 
 		/* determine width and establish horizontal scale, based on original cooked data */
-		double data_size = cooked_data.size();
-		double min_l;
+		double dataSize = cookedData.size();
+		double minL;
 		if ( !checksum() )
 		{
-			min_l = (data_size + 2)*(3*N + 6)*MIN_X + (data_size + 1)*MIN_I;
+			minL = (dataSize + 2)*(3*N + 6)*MIN_X + (dataSize + 1)*MIN_I;
 		}
 		else
 		{
-			min_l = (data_size + 3)*(3*N + 6)*MIN_X + (data_size + 2)*MIN_I;
+			minL = (dataSize + 3)*(3*N + 6)*MIN_X + (dataSize + 2)*MIN_I;
 		}
         
 		double scale;
@@ -208,21 +208,21 @@ namespace glbarcode
 		}
 		else
 		{
-			scale = w / (min_l + 2*MIN_QUIET);
+			scale = w / (minL + 2*MIN_QUIET);
 
 			if ( scale < 1.0 )
 			{
 				scale = 1.0;
 			}
 		}
-		double width = min_l * scale;
+		double width = minL * scale;
 
 		/* determine text parameters */
-		double h_text_area = scale * MIN_TEXT_AREA_HEIGHT;
-		double text_size   = scale * MIN_TEXT_SIZE;
+		double hTextArea = scale * MIN_TEXT_AREA_HEIGHT;
+		double textSize   = scale * MIN_TEXT_SIZE;
 
 		/* determine height of barcode */
-		double height = show_text() ? h - h_text_area : h;
+		double height = showText() ? h - hTextArea : h;
 		height = std::max( height, std::max( 0.15*width, MIN_HEIGHT ) );
 
 		/* determine horizontal quiet zone */
@@ -230,11 +230,11 @@ namespace glbarcode
 
 		/* Now traverse the code string and draw each bar */
 		double x1 = x_quiet;
-		for ( int i=0; i < coded_data.size(); i++ )
+		for ( int i=0; i < codedData.size(); i++ )
 		{
 			double lwidth;
 				
-			switch ( coded_data[i] )
+			switch ( codedData[i] )
 			{
 
 			case 'i':
@@ -245,14 +245,14 @@ namespace glbarcode
 			case 'N':
 				/* Narrow bar */
 				lwidth = scale*MIN_X;
-				add_line( x1, 0.0, lwidth, height );
+				addLine( x1, 0.0, lwidth, height );
 				x1 += scale * MIN_X;
 				break;
 
 			case 'W':
 				/* Wide bar */
 				lwidth = scale*N*MIN_X;
-				add_line( x1, 0.0, lwidth, height );
+				addLine( x1, 0.0, lwidth, height );
 				x1 += scale * N * MIN_X;
 				break;
 
@@ -272,15 +272,15 @@ namespace glbarcode
 			}
 		}
 
-		if ( show_text() )
+		if ( showText() )
 		{
-			std::string starred_text = "*" + display_text + "*";
-			add_text( x_quiet + width/2, height + (h_text_area+0.7*text_size)/2, text_size, starred_text );
+			std::string starredText = "*" + displayText + "*";
+			addText( x_quiet + width/2, height + (hTextArea+0.7*textSize)/2, textSize, starredText );
 		}
 
 		/* Overwrite requested size with actual size. */
 		w = width + 2*x_quiet;
-		h = show_text() ? height + h_text_area : height;
+		h = showText() ? height + hTextArea : height;
 
 	}
 

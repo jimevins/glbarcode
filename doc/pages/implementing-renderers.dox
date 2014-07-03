@@ -12,25 +12,25 @@ drawing context.
 
 The renderer must implement the following virtual methods:
 
-- glbarcode::Renderer::draw_begin()
+- glbarcode::Renderer::drawBegin()
   Initialize drawing of barcode.
 
-- glbarcode::Renderer::draw_end()
+- glbarcode::Renderer::drawEnd()
   Finalize drawing of barcode.
 
-- glbarcode::Renderer::draw_line()
+- glbarcode::Renderer::drawLine()
   Draw or render glbarcode::DrawingPrimitiveLine.
 
-- glbarcode::Renderer::draw_box()
+- glbarcode::Renderer::drawBox()
   Draw or render glbarcode::DrawingPrimitiveBox.
 
-- glbarcode::Renderer::draw_text()
+- glbarcode::Renderer::drawText()
   Draw or render glbarcode::DrawingPrimitiveText.
 
-- glbarcode::Renderer::draw_ring()
+- glbarcode::Renderer::drawRing()
   Draw or render glbarcode::DrawingPrimitiveRing.
 
-- glbarcode::Renderer::draw_hexagon()
+- glbarcode::Renderer::drawHexagon()
   Draw or render glbarcode::DrawingPrimitiveHexagon.
 
 
@@ -59,19 +59,19 @@ public:
 
  
 private:
-        void draw_begin( double w, double h )
+        void drawBegin( double w, double h )
         {
                 xxx_open( m_xc, w, h );
         }
  
  
-        void draw_end( void )
+        void drawEnd( void )
         {
                 xxx_close( m_xc );
         }
  
  
-        void draw_line( const DrawingPrimitiveLine *line )
+        void drawLine( const DrawingPrimitiveLine *line )
         {
 		/* Note: offset x by w/2 so that x1 and x2 refer to center of line. */
                 xxx_draw_line( m_xc,
@@ -81,25 +81,25 @@ private:
         }
  
  
-        void draw_box( const DrawingPrimitiveBox *box )
+        void drawBox( const DrawingPrimitiveBox *box )
         {
                 xxx_draw_rect( m_xc, box->x, box->y, box->w, box->h );
         }
  
  
-        void draw_text( const DrawingPrimitiveText *text )
+        void drawText( const DrawingPrimitiveText *text )
         {
                 xxx_draw_text( m_xc, text->x, text->y, text->fsize, text->s.c_str() );
         }
  
  
-        void draw_ring( const DrawingPrimitiveRing *ring )
+        void drawRing( const DrawingPrimitiveRing *ring )
         {
                 xxx_draw_circle( m_xc, ring->x, ring->y, ring->r, ring->lwidth );
         }
  
  
-        void draw_hexagon( const DrawingPrimitiveHexagon *hexagon )
+        void drawHexagon( const DrawingPrimitiveHexagon *hexagon )
         {
                 xxx_draw_hexagon( m_xc, hexagon->x, hexagon->y, hexagon->h );
         }

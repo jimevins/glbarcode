@@ -68,30 +68,30 @@ namespace glbarcode
 		/**
 		 * Create barcode based on type ID string.
 		 *
-		 * @param type_id Barcode type ID string
+		 * @param typeId Barcode type ID string
 		 */
-		static Barcode* create_barcode( std::string type_id );
+		static Barcode* createBarcode( std::string typeId );
 
 
 		/**
 		 * Register barcode type ID.
 		 *
-		 * @param type_id Barcode type ID string
+		 * @param typeId Barcode type ID string
 		 * @param fct Function to create barcode object of concrete Barcode class
 		 */
-		static void register_type( std::string type_id, BarcodeCreateFct fct );
+		static void registerType( std::string typeId, BarcodeCreateFct fct );
 
 
 		/**
 		 * Is barcode type supported?
 		 */
-		static bool is_type_supported( std::string type_id );
+		static bool isTypeSupported( std::string typeId );
 
 
 		/**
 		 * Get list of supported types.
 		 */
-		static const std::vector<std::string> get_supported_types( void );
+		static const std::vector<std::string> getSupportedTypes( void );
 
 
 	private:
@@ -104,13 +104,13 @@ namespace glbarcode
 		/**
 		 * Map barcode type strings to creation functions.
 		 */
-		static BarcodeTypeMap m_barcode_type_map;
+		static BarcodeTypeMap mBarcodeTypeMap;
 
 
 		/**
 		 * Supported barcode types.
 		 */
-		static std::vector<std::string> m_supported_types;
+		static std::vector<std::string> mSupportedTypes;
 
 	};
 

@@ -72,11 +72,11 @@ namespace glbarcode
 		 * Required virtual method to test if data is valid for encoding with
 		 * barcode type.
 		 *
-		 * @param raw_data Data to validate
+		 * @param rawData Data to validate
 		 * @return True if data is valid data for barcode type
 		 * @return False if data is not valid data for barcode type
 		 */
-		virtual bool validate( std::string raw_data ) = 0;
+		virtual bool validate( std::string rawData ) = 0;
 
 
 		/**
@@ -85,10 +85,10 @@ namespace glbarcode
 		 * Optional virtual method to perform any transformation of the data needed
 		 * before encoding.  (E.g. encoding an extended alphabet into a simpler one).
 		 *
-		 * @param raw_data Data to preprocess
+		 * @param rawData Data to preprocess
 		 * @return Preprocessed data
 		 */
-		virtual std::string preprocess( std::string raw_data );
+		virtual std::string preprocess( std::string rawData );
 
 
 		/**
@@ -98,10 +98,10 @@ namespace glbarcode
 		 * The encoded data is usually a list of characters that represent an atomic
 		 * barcode element (e.g. 'w' = a wide line & 'n' = a narrow line).
 		 *
-		 * @param cooked_data Data to encode
+		 * @param cookedData Data to encode
 		 * @return Encoded data
 		 */
-		virtual std::string encode( std::string cooked_data ) = 0;
+		virtual std::string encode( std::string cookedData ) = 0;
 
 
 		/**
@@ -109,10 +109,10 @@ namespace glbarcode
 		 *
 		 * Optional virtual method to prepare text to be displayed as part of barcode.
 		 *
-		 * @param raw_data Data to prepare
+		 * @param rawData Data to prepare
 		 * @return text in display form
 		 */
-		virtual std::string prepare_text( std::string raw_data );
+		virtual std::string prepareText( std::string rawData );
 
 
 		/**
@@ -121,15 +121,15 @@ namespace glbarcode
 		 * Required virtual method to convert encoded data into a list of drawing
 		 * primitives which can later be rendered.
 		 *
-		 * @param encoded_data Data to vectorize
-		 * @param display_text Text to display
-		 * @param cooked_data Original data prior to encoding (may be needed for sizing)
+		 * @param encodedData Data to vectorize
+		 * @param displayText Text to display
+		 * @param cookedData Original data prior to encoding (may be needed for sizing)
 		 * @param w Requested width of barcode (0 = auto size), vectorize will overwrite with actual width
 		 * @param h Requested height of barcode (0 = auto size), vectorize will overwrite with actual width
 		 */
-		virtual void vectorize( std::string encoded_data,
-					std::string display_text,
-					std::string cooked_data,
+		virtual void vectorize( std::string encodedData,
+					std::string displayText,
+					std::string cookedData,
 					double      &w,
 					double      &h ) = 0;
 

@@ -36,7 +36,7 @@ gbcRendererSvg *gbc_renderer_svg_new( void )
 
 void gbc_renderer_svg_set_filename( gbcRendererSvg *renderer, char *value )
 {
-	static_cast<RendererSvg*>(renderer)->filename( value );
+	static_cast<RendererSvg*>(renderer)->setFilename( value );
 }
 
 

@@ -41,51 +41,51 @@ namespace glbarcode
 	 */
 	BarcodeUpcA::BarcodeUpcA()
 	{
-		m_end_bars_modules = 7;
+		mEndBarsModules = 7;
 	}
 
 
 	/*
-	 * UPC-A validate number of digits, implements BarcodeUpcBase::validate_digits()
+	 * UPC-A validate number of digits, implements BarcodeUpcBase::validateDigits()
 	 */
-	bool BarcodeUpcA::validate_digits( int n_digits )
+	bool BarcodeUpcA::validateDigits( int nDigits )
 	{
-		return (n_digits == 11);
+		return (nDigits == 11);
 	}
 
 
 	/*
 	 * UPC-A Pre-process data before encoding, implements Barcode1dBase::preprocess()
 	 */
-	std::string BarcodeUpcA::preprocess( std::string raw_data )
+	std::string BarcodeUpcA::preprocess( std::string rawData )
 	{
-		std::string cooked_data;
+		std::string cookedData;
 
-		for ( int i = 0; i < raw_data.size(); i++ )
+		for ( int i = 0; i < rawData.size(); i++ )
 		{
-			if ( isdigit( raw_data[i] ) )
+			if ( isdigit( rawData[i] ) )
 			{
-				cooked_data += raw_data[i];
+				cookedData += rawData[i];
 			}
 		}
 
-		m_first_digit_val = 0;
-		return cooked_data;
+		mFirstDigitVal = 0;
+		return cookedData;
 	}
 
 
 	/*
-	 * UPC-A vectorize text, implements BarcodeUpcBase::vectorize_text()
+	 * UPC-A vectorize text, implements BarcodeUpcBase::vectorizeText()
 	 */
-	void BarcodeUpcA::vectorize_text( std::string display_text,
-					  double size1, double size2,
-					  double x1_left, double x1_right, double y1,
-					  double x2_left, double x2_right, double y2 )
+	void BarcodeUpcA::vectorizeText( std::string displayText,
+					 double size1, double size2,
+					 double x1Left, double x1Right, double y1,
+					 double x2Left, double x2Right, double y2 )
 	{
-		add_text( x2_left,  y2, size2, display_text.substr( 0, 1 ) );
-		add_text( x1_left,  y1, size1, display_text.substr( 1, 5 ) );
-		add_text( x1_right, y1, size1, display_text.substr( 6, 5 ) );
-		add_text( x2_right, y2, size2, display_text.substr( 11, 1 ) );
+		addText( x2Left,  y2, size2, displayText.substr( 0, 1 ) );
+		addText( x1Left,  y1, size1, displayText.substr( 1, 5 ) );
+		addText( x1Right, y1, size1, displayText.substr( 6, 5 ) );
+		addText( x2Right, y2, size2, displayText.substr( 11, 1 ) );
 	}
 
 }

@@ -54,14 +54,14 @@ namespace glbarcode
 
 
 	private:
-		bool validate_digits( int n_digits );
+		bool validateDigits( int nDigits );
 
-		std::string preprocess( std::string raw_data );
+		std::string preprocess( std::string rawData );
 
-		void vectorize_text( std::string display_text,
-				     double size1, double size2,
-				     double x1_left, double x1_right, double y1,
-				     double x2_left, double x2_right, double y2 );
+		void vectorizeText( std::string displayText,
+		                    double size1, double size2,
+		                    double x1Left, double x1Right, double y1,
+		                    double x2Left, double x2Right, double y2 );
 
 	};
 

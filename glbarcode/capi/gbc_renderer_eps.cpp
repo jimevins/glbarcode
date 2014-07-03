@@ -36,7 +36,7 @@ gbcRendererEps *gbc_renderer_eps_new( void )
 
 void gbc_renderer_eps_set_filename( gbcRendererEps *renderer, char *value )
 {
-	static_cast<RendererEps*>(renderer)->filename( value );
+	static_cast<RendererEps*>(renderer)->setFilename( value );
 }
 
 
