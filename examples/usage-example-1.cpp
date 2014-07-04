@@ -5,11 +5,11 @@ using namespace glbarcode;
 
 int main( int argc, char **argv )
 {
-	/* Get singleton instance to barcode factory. */
-        Factory *factory = Factory().instance();
+	/* Initialize barcode factory. */
+        Factory::init();
 
         /* Create barcode object. */
-        Barcode *bc = factory->create_barcode( "code39" );
+        Barcode *bc = Factory::createBarcode( "code39" );
 
 	/* Set barcode options to show text and generate check digit, and then build */
 	bc->checksum(true).show_text(true).build( "EXAMPLE-123", 288, 72 );

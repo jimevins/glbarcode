@@ -40,8 +40,10 @@ void exit_with_hint( void )
 }
 
 
-void usage( std::vector<std::string> supported_types )
+void usage( void )
 {
+	using namespace glbarcode;
+
 	std::cerr << "Usage:" << std::endl;
 	std::cerr << "  " << program_name << " [OPTION]... DATA" << std::endl;
 	std::cerr << std::endl;
@@ -61,6 +63,7 @@ void usage( std::vector<std::string> supported_types )
 	std::cerr << std::endl;
 	std::cerr << "Supported barcode types:" << std::endl;
 
+	std::vector<std::string> supported_types = Factory::getSupportedTypes();
 	for ( int i = 0; i < supported_types.size(); i++ )
 	{
 		std::cerr << "  " << supported_types[i] << std::endl;
@@ -80,9 +83,9 @@ int main( int argc, char **argv )
 	using namespace glbarcode;
 
 	/*
-	 * Get singleton instance of barcode factory
+	 * Initialize barcode factory
 	 */
-	Factory *factory = Factory::instance();
+	Factory::init();
 
 
 	/*
@@ -130,7 +133,7 @@ int main( int argc, char **argv )
 		{
 		case 't':
 			type = optarg;
-			if ( !factory->is_type_supported( type ) )
+			if ( !Factory::isTypeSupported( type ) )
 			{
 				std::cerr << argv[0] << ": unsupported barcode type -- '" << type << "'" << std::endl;
 				exit_with_hint();
@@ -163,7 +166,7 @@ int main( int argc, char **argv )
 			ppi = atof( optarg );
 			break;
 		case 0:
-			usage( factory->get_supported_types() );
+			usage();
 			break;
 		default:
 			exit_with_hint();
@@ -192,7 +195,7 @@ int main( int argc, char **argv )
 	/*
 	 * Build barcode
 	 */
-	Barcode* bc = factory->create_barcode( type );
+	Barcode* bc = Factory::createBarcode( type );
 	bc->show_text(text_flag).checksum(checksum_flag);
 	bc->build( data, w, h );
 

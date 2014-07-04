@@ -40,14 +40,13 @@ barcode classes:
 <!-- -------------------------------------------------------------------------------------------------------------------------- -->
 @section the_factory The Barcode Factory
 
-Barcodes can also be instantiated using the glbarcode::Factory barcode factory.  glbarcode::Factory has only a singleton
-instance which is accessed with the @c instance() method.  For example:
+Barcodes can also be instantiated using the glbarcode::Factory barcode factory.  glbarcode::Factory must be initialized with the @c init() method.  For example:
 
 @code{.cpp}
 using namespace glbarcode;
  
-/* Get singleton instance to barcode factory. */
-Factory *factory = Factory().instance();
+/* Initialize barcode factory. */
+Factory::init();
 @endcode
 
 A list (@c const @c std::list<std::string>) of supported barcode types can be obtained with the @c get_supported_types() method.
@@ -56,10 +55,10 @@ For example:
 @code{.cpp}
 using namespace glbarcode;
  
-/* Get singleton instance to barcode factory. */
-Factory *factory = Factory().instance();
+/* Initialize barcode factory. */
+Factory::init();
  
-std::list<std::string> supported_types = factory->get_supported_types();
+std::list<std::string> supported_types = Factory::get_supported_types();
 std::list<std::string>::iterator type;
  
 for ( type = supported_types.begin(); type != supported_types.end(); type++ )

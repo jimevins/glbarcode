@@ -27,7 +27,6 @@
 
 int main( int argc, char **argv )
 {
-	gbcFactory   *factory;
 	gbcRenderer  *renderer;
 	gbcBarcode   *bc;
 
@@ -37,11 +36,11 @@ int main( int argc, char **argv )
 		exit( -1 );
 	}
 
-	factory = gbc_factory_instance();
+	gbc_factory_init();
 
 	renderer = gbc_renderer_svg_new();
 
-	bc = gbc_factory_create_barcode( factory, "code39" );
+	bc = gbc_factory_create_barcode( "code39" );
 	gbc_barcode_set_checksum( bc, true );
 	gbc_barcode_set_show_text( bc, true );
 	gbc_barcode_build( bc, argv[1], 0, 0 );

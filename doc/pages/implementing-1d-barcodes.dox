@@ -147,23 +147,11 @@ BarcodeCode39.h:
 BarcodeCode39.cpp:
 @includelineno BarcodeCode39.cpp
 
-Finally, as a built-in barcode type, the Code39 barcode type is registered in the glbarcode::Factory::init() method using the
-glbarcode::Factory::register_type() method:
+Finally, as a built-in barcode type, the Code39 barcode type does not need to be registered.  If it were a user-defined type,
+it would be registered using the glbarcode::Factory::register_type():
 
 @code
-#include <glbarcode/BarcodeCode39.h>
- 
-namespace glbarcode
-{
-	...
-
-	void Factory::init( void )
-	{
-		register_type( "code39",      &BarcodeCode39::create );
-		...
-	}
- 
-}
+	glbarcode::Factory::register_type( "code39", &BarcodeCode39::create );
 @endcode
 
 

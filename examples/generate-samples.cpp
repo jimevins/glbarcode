@@ -26,13 +26,17 @@ using namespace glbarcode;
 
 int main( int argc, char **argv )
 {
-	glbarcode::Factory* factory = glbarcode::Factory::instance();
 	glbarcode::Barcode* bc;
+
+	/*
+	 * Initialize barcode factory.
+	 */
+	glbarcode::Factory::init();
 
 	/*
 	 * Code39
 	 */
-	bc = factory->create_barcode( "code39" );
+	bc = glbarcode::Factory::createBarcode( "code39" );
 	bc->show_text(true).checksum(true).build( "ABC123", 216, 72 );
 	bc->render( RendererSvg().filename( "sample-code39.svg" ) );
 	delete bc;
@@ -40,7 +44,7 @@ int main( int argc, char **argv )
 	/*
 	 * Extended Code39
 	 */
-	bc = factory->create_barcode( "code39ext" );
+	bc = glbarcode::Factory::createBarcode( "code39ext" );
 	bc->show_text(true).checksum(true).build( "Abc123", 216, 72 );
 	bc->render( RendererSvg().filename( "sample-code39ext.svg" ) );
 	delete bc;
@@ -48,7 +52,7 @@ int main( int argc, char **argv )
 	/*
 	 * UPC-A
 	 */
-	bc = factory->create_barcode( "upc-a" );
+	bc = glbarcode::Factory::createBarcode( "upc-a" );
 	bc->build( "12345678901", 162, 81 );
 	bc->render( RendererSvg().filename( "sample-upc-a.svg" ) );
 	delete bc;
@@ -56,7 +60,7 @@ int main( int argc, char **argv )
 	/*
 	 * EAN-13
 	 */
-	bc = factory->create_barcode( "ean-13" );
+	bc = glbarcode::Factory::createBarcode( "ean-13" );
 	bc->build( "123456789012", 162, 81 );
 	bc->render( RendererSvg().filename( "sample-ean-13.svg" ) );
 	delete bc;
@@ -64,7 +68,7 @@ int main( int argc, char **argv )
 	/*
 	 * POSTNET
 	 */
-	bc = factory->create_barcode( "postnet" );
+	bc = glbarcode::Factory::createBarcode( "postnet" );
 	bc->build( "12345678901", 0, 0 );
 	bc->render( RendererSvg().filename( "sample-postnet.svg" ) );
 	delete bc;
@@ -72,7 +76,7 @@ int main( int argc, char **argv )
 	/*
 	 * POSTNET-5
 	 */
-	bc = factory->create_barcode( "postnet-5" );
+	bc = glbarcode::Factory::createBarcode( "postnet-5" );
 	bc->build( "12345", 0, 0 );
 	bc->render( RendererSvg().filename( "sample-postnet-5.svg" ) );
 	delete bc;
@@ -80,7 +84,7 @@ int main( int argc, char **argv )
 	/*
 	 * POSTNET-9
 	 */
-	bc = factory->create_barcode( "postnet-9" );
+	bc = glbarcode::Factory::createBarcode( "postnet-9" );
 	bc->build( "123456789", 0, 0 );
 	bc->render( RendererSvg().filename( "sample-postnet-9.svg" ) );
 	delete bc;
@@ -88,7 +92,7 @@ int main( int argc, char **argv )
 	/*
 	 * POSTNET-11
 	 */
-	bc = factory->create_barcode( "postnet-11" );
+	bc = glbarcode::Factory::createBarcode( "postnet-11" );
 	bc->build( "12345678901", 0, 0 );
 	bc->render( RendererSvg().filename( "sample-postnet-11.svg" ) );
 	delete bc;
@@ -96,7 +100,7 @@ int main( int argc, char **argv )
 	/*
 	 * CEPNET
 	 */
-	bc = factory->create_barcode( "cepnet" );
+	bc = glbarcode::Factory::createBarcode( "cepnet" );
 	bc->build( "12345678", 0, 0 );
 	bc->render( RendererSvg().filename( "sample-cepnet.svg" ) );
 	delete bc;
@@ -104,7 +108,7 @@ int main( int argc, char **argv )
 	/*
 	 * ONECODE
 	 */
-	bc = factory->create_barcode( "onecode" );
+	bc = glbarcode::Factory::createBarcode( "onecode" );
 	bc->build( "12345678901234567890", 0, 0 );
 	bc->render( RendererSvg().filename( "sample-onecode.svg" ) );
 	delete bc;
@@ -112,7 +116,7 @@ int main( int argc, char **argv )
 	/*
 	 * DataMatrix
 	 */
-	bc = factory->create_barcode( "datamatrix" );
+	bc = glbarcode::Factory::createBarcode( "datamatrix" );
 	bc->build( "Data Matrix ECC200", 0, 0 );
 	bc->render( RendererSvg().filename( "sample-datamatrix.svg" ) );
 	delete bc;
@@ -121,7 +125,7 @@ int main( int argc, char **argv )
 	 * QRCode
 	 */
 #if HAVE_QRENCODE
-	bc = factory->create_barcode( "qrcode" );
+	bc = glbarcode::Factory::createBarcode( "qrcode" );
 	bc->build( "http://glabels.org/", 0, 0 );
 	bc->render( RendererSvg().filename( "sample-qrcode.svg" ) );
 	delete bc;

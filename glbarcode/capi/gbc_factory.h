@@ -37,49 +37,35 @@ extern "C" {
 
 
 	/**
-	 * CAPI Barcode factory.
+	 * Initialize barcode factory.
 	 */
-	typedef struct gbcFactory gbcFactory;
-	
-
-	/**
-	 * Get singleton instance of gbcFactory object.
-	 *
-	 * @return pointer to singleton instance of barcode factory
-	 */
-	gbcFactory *gbc_factory_instance( void );
+	void gbc_factory_init( void );
 
 
 	/**
 	 * Create barcode based on type ID string.
 	 *
-	 * @param factory Barcode factory
 	 * @param type_id Barcode type ID string
 	 *
 	 * @return Pointer to newly allocated barcode object
 	 */
-	gbcBarcode *gbc_factory_create_barcode( gbcFactory *factory,
-						char       *type_id );
+	gbcBarcode *gbc_factory_create_barcode(	char *type_id );
 
 
 	/**
 	 * Is barcode type supported?
 	 *
-	 * @param factory Barcode factory
 	 * @param type_id Barcode type ID string
 	 */
-	bool gbc_factory_is_type_supported( gbcFactory *factory,
-					    char       *type_id );
+	bool gbc_factory_is_type_supported( char *type_id );
 
 
 	/**
 	 * Get list of suppoted types.
 	 *
-	 * @param factory Barcode factory
-	 *
 	 * @return Newly allocated list of type ID strings. Terminated by NULL.
 	 */
-	char ** gbc_factory_get_supported_types( gbcFactory *factory );
+	char ** gbc_factory_get_supported_types( void );
 
 
 	/**

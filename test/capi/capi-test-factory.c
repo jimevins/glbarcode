@@ -26,13 +26,12 @@
 
 int main( int argc, char **argv )
 {
-	gbcFactory *factory;
 	char **list;
 	int i;
 
-	factory = gbc_factory_instance();
+	gbc_factory_init();
 
-	list = gbc_factory_get_supported_types( factory );
+	list = gbc_factory_get_supported_types();
 
 	for ( i = 0; list[i] != NULL; i++ )
 	{

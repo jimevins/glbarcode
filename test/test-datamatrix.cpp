@@ -47,10 +47,10 @@ int main( int argc, char **argv )
 	std::string numeric_data( "1234567890" );
 
 
-	glbarcode::Factory* factory = glbarcode::Factory::instance();
-	glbarcode::Barcode* bc;
+	glbarcode::Factory::init();
 
-	bc = factory->create_barcode( "datamatrix" );
+	glbarcode::Barcode* bc;
+	bc = Factory::createBarcode( "datamatrix" );
 
 
 	bc->build( alpha_data.substr( 0, 1 ), 0, 0 );
