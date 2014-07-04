@@ -35,19 +35,19 @@ void gbc_barcode_delete( gbcBarcode *bc )
 
 void gbc_barcode_set_show_text( gbcBarcode *bc, bool value )
 {
-	static_cast<Barcode*>(bc)->show_text( value );
+	static_cast<Barcode*>(bc)->setShowText( value );
 }
 
 
 bool gbc_barcode_get_show_text( gbcBarcode *bc )
 {
-	return static_cast<Barcode*>(bc)->show_text();
+	return static_cast<Barcode*>(bc)->showText();
 }
 
 
 void gbc_barcode_set_checksum( gbcBarcode *bc, bool value )
 {
-	static_cast<Barcode*>(bc)->checksum( value );
+	static_cast<Barcode*>(bc)->setChecksum( value );
 }
 
 
@@ -76,13 +76,13 @@ void gbc_barcode_render( gbcBarcode  *bc,
 
 bool gbc_barcode_is_empty( gbcBarcode *bc )
 {
-	return static_cast<Barcode*>(bc)->is_empty();
+	return static_cast<Barcode*>(bc)->isEmpty();
 }
 
 
 bool gbc_barcode_is_data_valid( gbcBarcode *bc )
 {
-	return static_cast<Barcode*>(bc)->is_data_valid();
+	return static_cast<Barcode*>(bc)->isDataValid();
 }
 
 

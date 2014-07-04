@@ -53,9 +53,9 @@ namespace
 		/* 9 */  { "3112", "2113" }
 	};
 
-	const std::string s_symbol = "111";   /* BsB */
-	const std::string e_symbol = "111";   /* BsB */
-	const std::string m_symbol = "11111"; /* sBsBs */
+	const std::string sSymbol = "111";   /* BsB */
+	const std::string eSymbol = "111";   /* BsB */
+	const std::string mSymbol = "11111"; /* sBsBs */
 
 
 	/*
@@ -95,86 +95,86 @@ namespace glbarcode
 	/*
 	 * UPC data validation, implements Barcode1dBase::validate()
 	 */
-	bool BarcodeUpcBase::validate( std::string raw_data )
+	bool BarcodeUpcBase::validate( std::string rawData )
 	{
-		int n_digits = 0;
+		int nDigits = 0;
 
-		for ( int i = 0; i < raw_data.size(); i++ )
+		for ( int i = 0; i < rawData.size(); i++ )
 		{
-			if ( isdigit( raw_data[i] ) )
+			if ( isdigit( rawData[i] ) )
 			{
-				n_digits++;
+				nDigits++;
 			}
-			else if ( raw_data[i] != ' ')
+			else if ( rawData[i] != ' ')
 			{
 				/* Only allow digits and spaces -- ignoring spaces. */
 				return false;
 			}
 		}
 
-		/* validate n_digits (call implementation from concrete class) */
-		return validate_digits( n_digits );
+		/* validate nDigits (call implementation from concrete class) */
+		return validateDigits( nDigits );
 	}
 
 
 	/*
 	 * UPC data encoding, implements Barcode1dBase::encode()
 	 */
-	std::string BarcodeUpcBase::encode( std::string cooked_data )
+	std::string BarcodeUpcBase::encode( std::string cookedData )
 	{
-		int sum_odd  = 0;
-		int sum_even = m_first_digit_val;
+		int sumOdd  = 0;
+		int sumEven = mFirstDigitVal;
 
 		std::string code;
 
 		/* Left frame symbol */
-		code += s_symbol;
+		code += sSymbol;
 
 		/* Left 6 digits */
 		for ( int i = 0; i < 6; i++ )
 		{
-			int c_value = cooked_data[i] - '0';
-			code += symbols[ c_value ][ parity[ m_first_digit_val ][ i ] ];
+			int cValue = cookedData[i] - '0';
+			code += symbols[ cValue ][ parity[ mFirstDigitVal ][ i ] ];
 
 			if ( (i & 1) == 0 )
 			{
-				sum_odd += c_value;
+				sumOdd += cValue;
 			}
 			else
 			{
-				sum_even += c_value;
+				sumEven += cValue;
 			}
 		}
 
 		/* Middle frame symbol */
-		code += m_symbol;
+		code += mSymbol;
 
 		/* Right 5 digits */
 		for ( int i = 6; i < 11; i++ )
 		{
-			int c_value = cooked_data[i] - '0';
-			code += symbols[c_value][P_ODD];
+			int cValue = cookedData[i] - '0';
+			code += symbols[cValue][P_ODD];
 
 			if ( (i & 1) == 0 )
 			{
-				sum_odd += c_value;
+				sumOdd += cValue;
 			}
 			else
 			{
-				sum_even += c_value;
+				sumEven += cValue;
 			}
 		}
 
 		/* Check digit */
-		m_check_digit_val = (3*sum_odd + sum_even) % 10;
-		if ( m_check_digit_val != 0 )
+		mCheckDigitVal = (3*sumOdd + sumEven) % 10;
+		if ( mCheckDigitVal != 0 )
 		{
-			m_check_digit_val = 10 - m_check_digit_val;
+			mCheckDigitVal = 10 - mCheckDigitVal;
 		}
-		code += symbols[m_check_digit_val][P_ODD];
+		code += symbols[mCheckDigitVal][P_ODD];
 
 		/* Right frame symbol */
-		code += e_symbol;
+		code += eSymbol;
 
 		/* Append a final zero length space to make the length of the encoded string even. */
 		/* This is because vectorize() handles bars and spaces in pairs. */
@@ -186,37 +186,37 @@ namespace glbarcode
 
 
 	/*
-	 * UPC prepare text for display, implements Barcode1dBase::prepare_text()
+	 * UPC prepare text for display, implements Barcode1dBase::prepareText()
 	 */
-	std::string BarcodeUpcBase::prepare_text( std::string raw_data )
+	std::string BarcodeUpcBase::prepareText( std::string rawData )
 	{
-		std::string display_text;
+		std::string displayText;
 
-		for ( int i = 0; i < raw_data.size(); i++ )
+		for ( int i = 0; i < rawData.size(); i++ )
 		{
-			if ( isdigit( raw_data[i] ) )
+			if ( isdigit( rawData[i] ) )
 			{
-				display_text += raw_data[i];
+				displayText += rawData[i];
 			}
 		}
 
-		display_text += (m_check_digit_val + '0');
+		displayText += (mCheckDigitVal + '0');
 
-		return display_text;
+		return displayText;
 	}
 
 
 	/*
 	 * UPC vectorization, implements Barcode1dBase::vectorize()
 	 */
-	void BarcodeUpcBase::vectorize( std::string coded_data,
-					std::string display_text,
-					std::string cooked_data,
+	void BarcodeUpcBase::vectorize( std::string codedData,
+					std::string displayText,
+					std::string cookedData,
 					double      &w,
 					double      &h )
 	{
 		/* determine width and establish horizontal scale */
-		int n_modules     = 7*(cooked_data.size()+1) + 11;
+		int nModules     = 7*(cookedData.size()+1) + 11;
 
 		double scale;
 		if ( w == 0 )
@@ -225,73 +225,73 @@ namespace glbarcode
 		}
 		else
 		{
-			scale = w / ((n_modules + 2*QUIET_MODULES) * BASE_MODULE_SIZE);
+			scale = w / ((nModules + 2*QUIET_MODULES) * BASE_MODULE_SIZE);
 
 			if ( scale < 1.0 )
 			{
 				scale = 1.0;
 			}
 		}
-		double mscale = scale * BASE_MODULE_SIZE;
+		double mscale     = scale * BASE_MODULE_SIZE;
 
-		double width       = mscale * (n_modules + 2*QUIET_MODULES);
-		double x_quiet     = mscale * QUIET_MODULES;
+		double width      = mscale * (nModules + 2*QUIET_MODULES);
+		double xQuiet     = mscale * QUIET_MODULES;
 
 		/* determine bar height */
-		double h_text_area = scale * BASE_TEXT_AREA_HEIGHT;
-		double h_bar1      = std::max( (h - h_text_area), width/2 );
-		double h_bar2      = h_bar1 + h_text_area/2;
+		double hTextArea   = scale * BASE_TEXT_AREA_HEIGHT;
+		double hBar1       = std::max( (h - hTextArea), width/2 );
+		double hBar2       = hBar1 + hTextArea/2;
 
 		/* determine text parameters */
-		double text_size1    = scale * BASE_FONT_SIZE;
-		double text_size2    = 0.75*text_size1;
+		double textSize1   = scale * BASE_FONT_SIZE;
+		double textSize2   = 0.75*textSize1;
 
-		double text_x1_left  = x_quiet + mscale*(0.25*n_modules + 0.5*m_end_bars_modules - 0.75);
-		double text_x1_right = x_quiet + mscale*(0.75*n_modules - 0.5*m_end_bars_modules + 0.75);
-		double text_x2_left  = 0.5*x_quiet;
-		double text_x2_right = 1.5*x_quiet + mscale*n_modules;
+		double textX1Left  = xQuiet + mscale*(0.25*nModules + 0.5*mEndBarsModules - 0.75);
+		double textX1Right = xQuiet + mscale*(0.75*nModules - 0.5*mEndBarsModules + 0.75);
+		double textX2Left  = 0.5*xQuiet;
+		double textX2Right = 1.5*xQuiet + mscale*nModules;
 
-		double text_y1       = h_bar2 + text_size1/4;
-		double text_y2       = h_bar2 + text_size2/4;
+		double textY1      = hBar2 + textSize1/4;
+		double textY2      = hBar2 + textSize2/4;
 
 
 		/* now traverse the code string and draw each bar */
-		int n_bars_spaces = coded_data.size() - 1; /* coded data has dummy "0" on end. */
+		int nBarsSpaces = codedData.size() - 1; /* coded data has dummy "0" on end. */
 
-		double x_modules = 0;
-		for ( int i = 0; i < n_bars_spaces; i += 2 )
+		double xModules = 0;
+		for ( int i = 0; i < nBarsSpaces; i += 2 )
 		{
-			double h_bar;
+			double hBar;
 
-			if ( ( (x_modules > m_end_bars_modules) && (x_modules < (n_modules/2-1))               ) ||
-			     ( (x_modules > (n_modules/2+1)) && (x_modules < (n_modules-m_end_bars_modules)) ) )
+			if ( ( (xModules > mEndBarsModules) && (xModules < (nModules/2-1))               ) ||
+			     ( (xModules > (nModules/2+1)) && (xModules < (nModules-mEndBarsModules)) ) )
 			{
-				h_bar = h_bar1;
+				hBar = hBar1;
 			}
 			else
 			{
-				h_bar = h_bar2;
+				hBar = hBar2;
 			}
 
 			/* Bar */
-			int w_bar = coded_data[i] - '0';
-			add_line( x_quiet + mscale*x_modules, 0.0, mscale*w_bar, h_bar );
-			x_modules += w_bar;
+			int wBar = codedData[i] - '0';
+			addLine( xQuiet + mscale*xModules, 0.0, mscale*wBar, hBar );
+			xModules += wBar;
 
 			/* Space */
-			int w_space = coded_data[i+1] - '0';
-			x_modules += w_space;
+			int wSpace = codedData[i+1] - '0';
+			xModules += wSpace;
 		}
 
 		/* draw text (call implementation from concrete class) */
-		vectorize_text( display_text,
-				text_size1, text_size2,
-				text_x1_left, text_x1_right, text_y1,
-				text_x2_left, text_x2_right, text_y2 );
+		vectorizeText( displayText,
+			       textSize1, textSize2,
+			       textX1Left, textX1Right, textY1,
+			       textX2Left, textX2Right, textY2 );
 
 		/* Overwrite requested size with actual size. */
 		w = width;
-		h = h_bar1 + h_text_area;
+		h = hBar1 + hTextArea;
 	}
 
 }

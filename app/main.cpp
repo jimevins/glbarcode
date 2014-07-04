@@ -29,12 +29,12 @@
 #include <getopt.h>
 
 
-const std::string program_name = "glbarcode";
+const std::string programName = "glbarcode";
 
 
-void exit_with_hint( void )
+void exitWithHint( void )
 {
-	std::cerr << "Try '" << program_name << " --help' for more information" << std::endl;
+	std::cerr << "Try '" << programName << " --help' for more information" << std::endl;
 
 	exit( EXIT_FAILURE );
 }
@@ -45,7 +45,7 @@ void usage( void )
 	using namespace glbarcode;
 
 	std::cerr << "Usage:" << std::endl;
-	std::cerr << "  " << program_name << " [OPTION]... DATA" << std::endl;
+	std::cerr << "  " << programName << " [OPTION]... DATA" << std::endl;
 	std::cerr << std::endl;
 	std::cerr << "Options:" << std::endl;
 	std::cerr << "  --help                display this help and exit" << std::endl;
@@ -63,10 +63,10 @@ void usage( void )
 	std::cerr << std::endl;
 	std::cerr << "Supported barcode types:" << std::endl;
 
-	std::vector<std::string> supported_types = Factory::getSupportedTypes();
-	for ( int i = 0; i < supported_types.size(); i++ )
+	std::vector<std::string> supportedTypes = Factory::getSupportedTypes();
+	for ( int i = 0; i < supportedTypes.size(); i++ )
 	{
-		std::cerr << "  " << supported_types[i] << std::endl;
+		std::cerr << "  " << supportedTypes[i] << std::endl;
 	}
 
 	std::cerr << std::endl;
@@ -94,8 +94,8 @@ int main( int argc, char **argv )
 	std::string type          = "code39";
 	double      w             = 144;
 	double      h             = 72;
-	bool        text_flag     = false;
-	bool        checksum_flag = false;
+	bool        textFlag      = false;
+	bool        checksumFlag  = false;
 	double      ppi           = 72;
 	std::string oformat       = "svg";
 	std::string ofilename     = "-";
@@ -136,14 +136,14 @@ int main( int argc, char **argv )
 			if ( !Factory::isTypeSupported( type ) )
 			{
 				std::cerr << argv[0] << ": unsupported barcode type -- '" << type << "'" << std::endl;
-				exit_with_hint();
+				exitWithHint();
 			}
 			break;
 		case 'x':
-			text_flag = true;
+			textFlag = true;
 			break;
 		case 'c':
-			checksum_flag = true;
+			checksumFlag = true;
 			break;
 		case 'w':
 			w = atof( optarg );
@@ -156,7 +156,7 @@ int main( int argc, char **argv )
 			if ( (oformat != "svg") && (oformat != "eps") )
 			{
 				std::cerr << argv[0] << ": unsupported output format -- '" << oformat << "'" << std::endl;
-				exit_with_hint();
+				exitWithHint();
 			}
 			break;
 		case 'o':
@@ -169,7 +169,7 @@ int main( int argc, char **argv )
 			usage();
 			break;
 		default:
-			exit_with_hint();
+			exitWithHint();
 		}
 	}
 
@@ -179,12 +179,12 @@ int main( int argc, char **argv )
 	if ( optind == argc )
 	{
 		std::cerr << argv[0] << ": missing barcode data" << std::endl;
-		exit_with_hint();
+		exitWithHint();
 	}
 	else if ( optind != (argc-1) )
 	{
 		std::cerr << argv[0] << ": too many arguments" << std::endl;
-		exit_with_hint();
+		exitWithHint();
 	}
 	else
 	{
@@ -196,20 +196,20 @@ int main( int argc, char **argv )
 	 * Build barcode
 	 */
 	Barcode* bc = Factory::createBarcode( type );
-	bc->show_text(text_flag).checksum(checksum_flag);
+	bc->setShowText(textFlag).setChecksum(checksumFlag);
 	bc->build( data, w, h );
 
 	if ( bc == NULL )
 	{
 		std::cerr << "Error creating barcode of type '" << type << "'" << std::endl;
-		exit_with_hint();
+		exitWithHint();
 	}
-	if ( bc->is_empty() )
+	if ( bc->isEmpty() )
 	{
 		std::cerr << argv[0] << ": barcode data is empty" << std::endl;
 		exit( EXIT_FAILURE );
 	}
-	if ( !bc->is_data_valid() )
+	if ( !bc->isDataValid() )
 	{
 		std::cerr << argv[0] << ": invalid data for barcode type -- '" << type << "'" << std::endl;
 		exit( EXIT_FAILURE );
@@ -221,11 +221,11 @@ int main( int argc, char **argv )
 	 */
 	if ( oformat == "svg" )
 	{
-		bc->render( RendererSvg().filename( ofilename ) );
+		bc->render( RendererSvg().setFilename( ofilename ) );
 	}
 	else if ( oformat == "eps" )
 	{
-		bc->render( RendererEps().filename( ofilename ) );
+		bc->render( RendererEps().setFilename( ofilename ) );
 	}
 	else
 	{

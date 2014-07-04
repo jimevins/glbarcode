@@ -53,11 +53,11 @@ A 1D barcode subclass must implement the following virtual methods (or callbacks
 - glbarcode::Barcode1dBase::vectorize() -- The vectorize method converts the encoded data into a list of @ref drawing_primitives
   suitable for rendering.  The following protected methods are available to the vectorize implementation to create this list:
 
-  - glbarcode::Barcode::add_line()
-  - glbarcode::Barcode::add_box()
-  - glbarcode::Barcode::add_text()
-  - glbarcode::Barcode::add_ring()
-  - glbarcode::Barcode::add_hexagon()
+  - glbarcode::Barcode::addLine()
+  - glbarcode::Barcode::addBox()
+  - glbarcode::Barcode::addText()
+  - glbarcode::Barcode::addRing()
+  - glbarcode::Barcode::addHexagon()
 
 A barcode subclass may also need to implement the following virtual methods:
 
@@ -66,14 +66,14 @@ A barcode subclass may also need to implement the following virtual methods:
   be as simple as upshifting lowercase letters into uppercase if the symbology only supports uppercase. It is assumed that the data
   passed to this method has already been validated with the glbarcode::Barcode1dBase::validate() method.
 
-- glbarcode::Barcode1dBase::prepare_text() -- The prepare_text method performs any transformation of the data needed before it can be displayed.
+- glbarcode::Barcode1dBase::prepareText() -- The prepareText method performs any transformation of the data needed before it can be displayed.
 
 The following figure illustrates the data flow between these methods, which are called by glbarcode::Barcode1dBase::build():
 
 @dot
 digraph init {
 	node [shape=plaintext style=solid fontsize=8];
-	raw_data;
+	rawData;
 	primitives [label="\"Drawing\nPrimitives\""];
 
 	node [shape=box style=solid];
@@ -82,7 +82,7 @@ digraph init {
 	node [shape=box style=solid];
 	preprocess   [label=preprocess   URL="@ref glbarcode::Barcode1dBase::preprocess()"  ];
 	encode       [label=encode       URL="@ref glbarcode::Barcode1dBase::encode()"      ];
-	prepare_text [label=prepare_text URL="@ref glbarcode::Barcode1dBase::prepare_text()"];
+	prepareText  [label=prepareText  URL="@ref glbarcode::Barcode1dBase::prepareText()"];
 	vectorize    [label=vectorize    URL="@ref glbarcode::Barcode1dBase::vectorize()"   ];
 
 	node [shape=plaintext style=solid fontcolor="gray"];
@@ -95,17 +95,17 @@ digraph init {
 
 	{rank=same; step1 validate}
 	{rank=same; step2 preprocess}
-	{rank=same; step3 encode prepare_text}
+	{rank=same; step3 encode prepareText}
 	{rank=same; step4 vectorize}
 
 	null1 -> step1 -> step2 -> step3 -> step4 -> null2 [style=solid color="gray"];
 
-	raw_data -> validate;
+	rawData -> validate;
 	validate -> preprocess;
-	validate -> prepare_text;
-	preprocess -> encode [label=cooked_data fontsize=8];
-	encode -> vectorize [label=encoded_data fontsize=8];
-	prepare_text -> vectorize [label=display_text fontsize=8];
+	validate -> prepareText;
+	preprocess -> encode [label=cookedData fontsize=8];
+	encode -> vectorize [label=encodedData fontsize=8];
+	prepareText -> vectorize [label=displayText fontsize=8];
 	vectorize -> primitives;
 }
 @enddot
@@ -127,12 +127,12 @@ Barcode* BarcodeXxx::create( void )
 }
 @endcode
 
-This is used to register the barcode using glbarcode::Factory::register_type:
+This is used to register the barcode using glbarcode::Factory::registerType:
 
 @code{.cpp}
 using namespace glbarcode;
  
-Factory::register_type( "xxx", &BarcodeXxx::create )
+Factory::registerType( "xxx", &BarcodeXxx::create )
 @endcode
 
 

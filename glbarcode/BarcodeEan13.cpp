@@ -41,50 +41,50 @@ namespace glbarcode
 	 */
 	BarcodeEan13::BarcodeEan13()
 	{
-		m_end_bars_modules = 3;
+		mEndBarsModules = 3;
 	}
 
 
 	/*
-	 * EAN-13 validate number of digits, implements BarcodeUpcBase::validate_digits()
+	 * EAN-13 validate number of digits, implements BarcodeUpcBase::validateDigits()
 	 */
-	bool BarcodeEan13::validate_digits( int n_digits )
+	bool BarcodeEan13::validateDigits( int nDigits )
 	{
-		return (n_digits == 12);
+		return (nDigits == 12);
 	}
 
 
 	/*
 	 * EAN-13 Pre-process data before encoding, implements Barcode1dBase::preprocess()
 	 */
-	std::string BarcodeEan13::preprocess( std::string raw_data )
+	std::string BarcodeEan13::preprocess( std::string rawData )
 	{
-		std::string cooked_data;
+		std::string cookedData;
 
-		for ( int i = 0; i < raw_data.size(); i++ )
+		for ( int i = 0; i < rawData.size(); i++ )
 		{
-			if ( isdigit( raw_data[i] ) )
+			if ( isdigit( rawData[i] ) )
 			{
-				cooked_data += raw_data[i];
+				cookedData += rawData[i];
 			}
 		}
 
-		m_first_digit_val = (cooked_data[0] - '0');
-		return cooked_data.substr( 1, cooked_data.size()-1 );
+		mFirstDigitVal = (cookedData[0] - '0');
+		return cookedData.substr( 1, cookedData.size()-1 );
 	}
 
 
 	/*
-	 * EAN-13 vectorize text, implements BarcodeUpcBase::vectorize_text()
+	 * EAN-13 vectorize text, implements BarcodeUpcBase::vectorizeText()
 	 */
-	void BarcodeEan13::vectorize_text( std::string display_text,
+	void BarcodeEan13::vectorizeText( std::string displayText,
 					  double size1, double size2,
-					  double x1_left, double x1_right, double y1,
-					  double x2_left, double x2_right, double y2 )
+					  double x1Left, double x1Right, double y1,
+					  double x2Left, double x2Right, double y2 )
 	{
-		add_text( x2_left,  y2, size2, display_text.substr( 0, 1 ) );
-		add_text( x1_left,  y1, size1, display_text.substr( 1, 6 ) );
-		add_text( x1_right, y1, size1, display_text.substr( 7, 6 ) );
+		addText( x2Left,  y2, size2, displayText.substr( 0, 1 ) );
+		addText( x1Left,  y1, size1, displayText.substr( 1, 6 ) );
+		addText( x1Right, y1, size1, displayText.substr( 7, 6 ) );
 	}
 
 }

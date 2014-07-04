@@ -23,7 +23,7 @@
 
 void glbarcode::Renderer::render( double w, double h, std::list<DrawingPrimitive*> primitives )
 {
-	draw_begin( w, h );
+	drawBegin( w, h );
 
 	std::list<DrawingPrimitive*>::iterator primitive;
 
@@ -31,23 +31,23 @@ void glbarcode::Renderer::render( double w, double h, std::list<DrawingPrimitive
 	{
 		if ( DrawingPrimitiveLine *line = dynamic_cast<DrawingPrimitiveLine*>(*primitive) )
 		{
-			draw_line( line );
+			drawLine( line );
 		}
 		else if ( DrawingPrimitiveBox *box = dynamic_cast<DrawingPrimitiveBox*>(*primitive) )
 		{
-			draw_box( box );
+			drawBox( box );
 		}
 		else if ( DrawingPrimitiveText *text = dynamic_cast<DrawingPrimitiveText*>(*primitive) )
 		{
-			draw_text( text );
+			drawText( text );
 		}
 		else if ( DrawingPrimitiveRing *ring = dynamic_cast<DrawingPrimitiveRing*>(*primitive) )
 		{
-			draw_ring( ring );
+			drawRing( ring );
 		}
 		else if ( DrawingPrimitiveHexagon *hex = dynamic_cast<DrawingPrimitiveHexagon*>(*primitive) )
 		{
-			draw_hexagon( hex );
+			drawHexagon( hex );
 		}
 		else
 		{
@@ -55,5 +55,5 @@ void glbarcode::Renderer::render( double w, double h, std::list<DrawingPrimitive
 		}
 	}
 
-	draw_end();
+	drawEnd();
 }

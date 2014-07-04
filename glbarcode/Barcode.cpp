@@ -33,16 +33,16 @@ namespace glbarcode
 	 */
 	struct Barcode::PrivateData {
 
-		bool                   m_show_text_flag;  /**< Display text flag */
-		bool                   m_checksum_flag;   /**< Add checksum flag */
+		bool                   mShowTextFlag;  /**< Display text flag */
+		bool                   mChecksumFlag;  /**< Add checksum flag */
 
-		double                 m_w;               /**< Width of barcode (points) */
-		double                 m_h;               /**< Height of barcode (points) */
+		double                 mW;             /**< Width of barcode (points) */
+		double                 mH;             /**< Height of barcode (points) */
 
-		bool                   m_empty_flag;      /**< Empty data flag */
-		bool                   m_data_valid_flag; /**< Valid data flag */
+		bool                   mEmptyFlag;     /**< Empty data flag */
+		bool                   mDataValidFlag; /**< Valid data flag */
 
-		std::list<DrawingPrimitive *> m_primitives;      /**< List of drawing primitives */
+		std::list<DrawingPrimitive *> mPrimitives;      /**< List of drawing primitives */
 
 	};
 
@@ -51,14 +51,14 @@ namespace glbarcode
 	{
 		d = new Barcode::PrivateData;
 
-		d->m_show_text_flag  = false;
-		d->m_checksum_flag   = false;
+		d->mShowTextFlag  = false;
+		d->mChecksumFlag  = false;
 
-		d->m_w               = 0;
-		d->m_h               = 0;
+		d->mW             = 0;
+		d->mH             = 0;
 
-		d->m_empty_flag      = true;
-		d->m_data_valid_flag = false;
+		d->mEmptyFlag     = true;
+		d->mDataValidFlag = false;
 	}
 
 
@@ -69,83 +69,83 @@ namespace glbarcode
 	}
 
 
-	Barcode& Barcode::show_text( bool value )
+	Barcode& Barcode::setShowText( bool value )
 	{
-		d->m_show_text_flag = value;
+		d->mShowTextFlag = value;
 		return *this;
 	}
 
 
-	bool Barcode::show_text( void ) const
+	bool Barcode::showText( void ) const
 	{
-		return d->m_show_text_flag;
+		return d->mShowTextFlag;
 	}
 
 
-	Barcode& Barcode::checksum( bool value )
+	Barcode& Barcode::setChecksum( bool value )
 	{
-		d->m_checksum_flag = value;
+		d->mChecksumFlag = value;
 		return *this;
 	}
 
 
 	bool Barcode::checksum( void ) const
 	{
-		return d->m_checksum_flag;
+		return d->mChecksumFlag;
 	}
 
 
 	void Barcode::render( Renderer &renderer )
 	{
-		renderer.render( d->m_w, d->m_h, d->m_primitives );
+		renderer.render( d->mW, d->mH, d->mPrimitives );
 	}
 
 
-	bool Barcode::is_empty( void )
+	bool Barcode::isEmpty( void )
 	{
-		return d->m_empty_flag;
+		return d->mEmptyFlag;
 	}
 
 
-	void Barcode::set_empty_flag( bool value )
+	void Barcode::setEmptyFlag( bool value )
 	{
-		d->m_empty_flag = value;
+		d->mEmptyFlag = value;
 	}
 
 
-	bool Barcode::is_data_valid( void )
+	bool Barcode::isDataValid( void )
 	{
-		return d->m_data_valid_flag;
+		return d->mDataValidFlag;
 	}
 
 
-	void Barcode::set_data_valid_flag( bool value )
+	void Barcode::setDataValidFlag( bool value )
 	{
-		d->m_data_valid_flag = value;
+		d->mDataValidFlag = value;
 	}
 
 
 	double Barcode::width( void )
 	{
-		return d->m_w;
+		return d->mW;
 	}
 
 
 	double Barcode::height( void )
 	{
-		return d->m_h;
+		return d->mH;
 	}
 
 
-	void Barcode::set_width( double w )
+	void Barcode::setWidth( double w )
 	{
-		d->m_w = w;
+		d->mW = w;
 	}
 
 
-	void Barcode::set_height( double h )
+	void Barcode::setHeight( double h )
 	{
-		d->m_h = h;
+		d->mH = h;
 	}
 
 
@@ -153,42 +153,42 @@ namespace glbarcode
 	{
 		std::list<DrawingPrimitive*>::iterator primitive;
 
-		for ( primitive = d->m_primitives.begin(); primitive != d->m_primitives.end(); primitive++ )
+		for ( primitive = d->mPrimitives.begin(); primitive != d->mPrimitives.end(); primitive++ )
 		{
 			delete *primitive;
 		}
 
-		d->m_primitives.clear();
+		d->mPrimitives.clear();
 	}
 
 
-	void Barcode::add_line( double x, double y, double w, double h )
+	void Barcode::addLine( double x, double y, double w, double h )
 	{
-		d->m_primitives.push_back( new DrawingPrimitiveLine( x, y, w, h ) );
+		d->mPrimitives.push_back( new DrawingPrimitiveLine( x, y, w, h ) );
 	}
 
 
-	void Barcode::add_box( double x, double y, double w, double h )
+	void Barcode::addBox( double x, double y, double w, double h )
 	{
-		d->m_primitives.push_back( new DrawingPrimitiveBox( x, y, w, h ) );
+		d->mPrimitives.push_back( new DrawingPrimitiveBox( x, y, w, h ) );
 	}
 
 
-	void Barcode::add_text( double x, double y, double fsize, std::string s )
+	void Barcode::addText( double x, double y, double fsize, std::string s )
 	{
-		d->m_primitives.push_back( new DrawingPrimitiveText( x, y, fsize, s ) );
+		d->mPrimitives.push_back( new DrawingPrimitiveText( x, y, fsize, s ) );
 	}
 
 
-	void Barcode::add_ring( double x, double y, double r, double lwidth )
+	void Barcode::addRing( double x, double y, double r, double lwidth )
 	{
-		d->m_primitives.push_back( new DrawingPrimitiveRing( x, y, r, lwidth ) );
+		d->mPrimitives.push_back( new DrawingPrimitiveRing( x, y, r, lwidth ) );
 	}
 
 
-	void Barcode::add_hexagon( double x, double y, double h )
+	void Barcode::addHexagon( double x, double y, double h )
 	{
-		d->m_primitives.push_back( new DrawingPrimitiveHexagon( x, y, h ) );
+		d->mPrimitives.push_back( new DrawingPrimitiveHexagon( x, y, h ) );
 	}
 
 

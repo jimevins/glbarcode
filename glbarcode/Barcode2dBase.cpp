@@ -60,45 +60,45 @@ namespace glbarcode
 	}
 
 
-	void Barcode2dBase::build( std::string raw_data,
+	void Barcode2dBase::build( std::string rawData,
 				   double      w,
 				   double      h )
 	{
-		std::string  cooked_data;   /* Preprocessed data */
-		Matrix<bool> encoded_data;  /* Encoded data matrix */
+		std::string  cookedData;   /* Preprocessed data */
+		Matrix<bool> encodedData;  /* Encoded data matrix */
 
 		clear();
 
-		if ( raw_data.empty() )
+		if ( rawData.empty() )
 		{
-			set_empty_flag( true );
-			set_data_valid_flag( false );
+			setEmptyFlag( true );
+			setDataValidFlag( false );
 
-			set_width( 0 );
-			set_height( 0 );
+			setWidth( 0 );
+			setHeight( 0 );
 		}
 		else
 		{
-			set_empty_flag( false );
+			setEmptyFlag( false );
 
-			if ( !validate( raw_data ) )
+			if ( !validate( rawData ) )
 			{
-				set_data_valid_flag( false );
+				setDataValidFlag( false );
 
-				set_width( 0 );
-				set_height( 0 );
+				setWidth( 0 );
+				setHeight( 0 );
 			}
 			else
 			{
-				set_data_valid_flag( true );
+				setDataValidFlag( true );
 
-				cooked_data  = preprocess( raw_data );
-				encode( cooked_data, encoded_data );
+				cookedData  = preprocess( rawData );
+				encode( cookedData, encodedData );
 
-				vectorize( encoded_data, w, h );
+				vectorize( encodedData, w, h );
 
-				set_width( w );
-				set_height( h );
+				setWidth( w );
+				setHeight( h );
 			}
 		}
 	}
@@ -107,61 +107,61 @@ namespace glbarcode
 	/*
 	 * Default preprocess method
 	 */
-	std::string Barcode2dBase::preprocess( std::string raw_data )
+	std::string Barcode2dBase::preprocess( std::string rawData )
 	{
-		return raw_data;
+		return rawData;
 	}
 
 
 	/*
 	 * Default 2D vectorization method
 	 */
-	void Barcode2dBase::vectorize( const Matrix<bool> & encoded_data,
+	void Barcode2dBase::vectorize( const Matrix<bool> & encodedData,
 				       double             & w,
 				       double             & h )
 	{
 
 		/* determine size and establish scale */
 		double scale;
-		double min_w = MIN_CELL_SIZE*encoded_data.nx() + 2*MIN_CELL_SIZE;
-		double min_h = MIN_CELL_SIZE*encoded_data.ny() + 2*MIN_CELL_SIZE;
+		double minW = MIN_CELL_SIZE*encodedData.nx() + 2*MIN_CELL_SIZE;
+		double minH = MIN_CELL_SIZE*encodedData.ny() + 2*MIN_CELL_SIZE;
 
-		if ( (w <= min_w) && (h <= min_h) )
+		if ( (w <= minW) && (h <= minH) )
 		{
 			scale = MIN_CELL_SIZE;
-			w     = min_w;
-			h     = min_h;
+			w     = minW;
+			h     = minH;
 		}
-		else if ( w <= min_w )
+		else if ( w <= minW )
 		{
-			scale = ( h / min_h ) * MIN_CELL_SIZE;
-			w     = scale * min_w;
+			scale = ( h / minH ) * MIN_CELL_SIZE;
+			w     = scale * minW;
 		}
-		else if ( h <= min_h )
+		else if ( h <= minH )
 		{
-			scale = ( w / min_w ) * MIN_CELL_SIZE;
-			h     = scale * min_h;
+			scale = ( w / minW ) * MIN_CELL_SIZE;
+			h     = scale * minH;
 		}
 		else
 		{
-			scale = std::min( w / min_w, h / min_h ) * MIN_CELL_SIZE;
-			w     = scale * min_w;
-			h     = scale * min_h;
+			scale = std::min( w / minW, h / minH ) * MIN_CELL_SIZE;
+			w     = scale * minW;
+			h     = scale * minH;
 		}
-		double cell_size  = scale;
-		double quiet_size = scale;
+		double cellSize  = scale;
+		double quietSize = scale;
 		
 		
-		for ( int iy = 0; iy < encoded_data.ny(); iy++ )
+		for ( int iy = 0; iy < encodedData.ny(); iy++ )
 		{
-			for ( int ix = 0; ix < encoded_data.nx(); ix++ )
+			for ( int ix = 0; ix < encodedData.nx(); ix++ )
 			{
-				if ( encoded_data[iy][ix] )
+				if ( encodedData[iy][ix] )
 				{
-					add_box( quiet_size + ix*cell_size,
-						 quiet_size + iy*cell_size,
-						 cell_size,
-						 cell_size );
+					addBox( quietSize + ix*cellSize,
+						quietSize + iy*cellSize,
+						cellSize,
+						cellSize );
 				}
 			}
 		}

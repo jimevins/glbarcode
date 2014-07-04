@@ -64,7 +64,7 @@ namespace glbarcode
 		 * @param w Width of barcode bounding box (points)
 		 * @param h Height of barcode bounding box (points)
 		 */
-		virtual void draw_begin( double w, double h ) = 0;
+		virtual void drawBegin( double w, double h ) = 0;
 
 
 		/**
@@ -73,7 +73,7 @@ namespace glbarcode
 		 * Required virtual method to perform rendering cleanup, such as closing devices
 		 * and/or drawing contexts.
 		 */
-		virtual void draw_end( void ) = 0;
+		virtual void drawEnd( void ) = 0;
 
 
 		/**
@@ -85,7 +85,7 @@ namespace glbarcode
 		 *
 		 * @param line Line primitive to draw
 		 */
-		virtual void draw_line( const DrawingPrimitiveLine *line ) = 0;
+		virtual void drawLine( const DrawingPrimitiveLine *line ) = 0;
 
 
 		/**
@@ -97,7 +97,7 @@ namespace glbarcode
 		 *
 		 * @param box Box primitive to draw
 		 */
-		virtual void draw_box( const DrawingPrimitiveBox *box ) = 0;
+		virtual void drawBox( const DrawingPrimitiveBox *box ) = 0;
 
 
 		/**
@@ -109,7 +109,7 @@ namespace glbarcode
 		 *
 		 * @param text Text primitive to draw
 		 */
-		virtual void draw_text( const DrawingPrimitiveText *text ) = 0;
+		virtual void drawText( const DrawingPrimitiveText *text ) = 0;
 
 
 		/**
@@ -121,7 +121,7 @@ namespace glbarcode
 		 *
 		 * @param ring Ring primitive to draw
 		 */
-		virtual void draw_ring( const DrawingPrimitiveRing *ring ) = 0;
+		virtual void drawRing( const DrawingPrimitiveRing *ring ) = 0;
 
 
 		/**
@@ -133,7 +133,7 @@ namespace glbarcode
 		 *
 		 * @param hexagon Hexagon primitive to draw
 		 */
-		virtual void draw_hexagon( const DrawingPrimitiveHexagon *hexagon ) = 0;
+		virtual void drawHexagon( const DrawingPrimitiveHexagon *hexagon ) = 0;
 
 	};
 

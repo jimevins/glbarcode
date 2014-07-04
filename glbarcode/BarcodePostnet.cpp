@@ -47,7 +47,7 @@ namespace
 		/* 9 */ "10100"
 	};
 
-	const std::string frame_symbol = "1";
+	const std::string frameSymbol = "1";
 
 
 	/*
@@ -78,54 +78,54 @@ namespace glbarcode
 	/*
 	 * Postnet validate number of digits
 	 */
-	bool BarcodePostnet::validate_digits( int n_digits )
+	bool BarcodePostnet::validateDigits( int nDigits )
 	{
 		/* Accept any valid USPS POSTNET length. */
-		return (n_digits == 5) || (n_digits == 9) || (n_digits == 11);
+		return (nDigits == 5) || (nDigits == 9) || (nDigits == 11);
 	}
 
 
 	/*
 	 * Postnet data validation, implements Barcode1dBase::validate()
 	 */
-	bool BarcodePostnet::validate( std::string raw_data )
+	bool BarcodePostnet::validate( std::string rawData )
 	{
-		int n_digits = 0;
-		for ( int i = 0; i < raw_data.size(); i++ )
+		int nDigits = 0;
+		for ( int i = 0; i < rawData.size(); i++ )
 		{
-			if ( isdigit( raw_data[i] ) )
+			if ( isdigit( rawData[i] ) )
 			{
-				n_digits++;
+				nDigits++;
 			}
-			else if ( (raw_data[i] != '-') && (raw_data[i] != ' ') )
+			else if ( (rawData[i] != '-') && (rawData[i] != ' ') )
 			{
 				/* Only allow digits, dashes, and spaces. */
 				return false;
 			}
 		}
 
-		return validate_digits( n_digits );
+		return validateDigits( nDigits );
 	}
 
 
 	/*
 	 * Postnet data encoding, implements Barcode1dBase::encode()
 	 */
-	std::string BarcodePostnet::encode( std::string cooked_data )
+	std::string BarcodePostnet::encode( std::string cookedData )
 	{
 		std::string code;
 
 		/* Left frame bar */
-		code += frame_symbol;
+		code += frameSymbol;
 
 		/* process each digit, adding approptiate symbol */
 		int sum = 0;
-		for ( int i = 0; i < cooked_data.size(); i++ )
+		for ( int i = 0; i < cookedData.size(); i++ )
 		{
-			if ( isdigit( cooked_data[i] ) )
+			if ( isdigit( cookedData[i] ) )
 			{
 				/* Only translate the digits (0-9) */
-				int d = cooked_data[i] - '0';
+				int d = cookedData[i] - '0';
 				code += symbols[d];
 				sum += d;
 			}
@@ -135,7 +135,7 @@ namespace glbarcode
 		code += symbols[ (10 - (sum % 10)) % 10 ];
 
 		/* Right frame bar */
-		code += frame_symbol;
+		code += frameSymbol;
 
 		return code;
 	}
@@ -144,20 +144,20 @@ namespace glbarcode
 	/*
 	 * Postnet vectorization, implements Barcode1dBase::vectorize()
 	 */
-	void BarcodePostnet::vectorize( std::string coded_data,
-					std::string display_text,
-					std::string cooked_data,
+	void BarcodePostnet::vectorize( std::string codedData,
+					std::string displayText,
+					std::string cookedData,
 					double      &w,
 					double      &h )
 	{
 		double x = POSTNET_HORIZ_MARGIN;
-		for ( int i=0; i < coded_data.size(); i++ )
+		for ( int i=0; i < codedData.size(); i++ )
 		{
 			double length, width;
 
 			double y = POSTNET_VERT_MARGIN;
 
-			switch ( coded_data[i] )
+			switch ( codedData[i] )
 			{
 			case '0':
 				y += POSTNET_FULLBAR_HEIGHT - POSTNET_HALFBAR_HEIGHT;
@@ -172,7 +172,7 @@ namespace glbarcode
 			}
 			width = POSTNET_BAR_WIDTH;
 
-			add_line( x, y, width, length );
+			addLine( x, y, width, length );
 
 			x += POSTNET_BAR_PITCH;
 		}

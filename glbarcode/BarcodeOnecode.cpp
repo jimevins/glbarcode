@@ -73,7 +73,7 @@ namespace
 		Bar ascender;
 	} BarMapEntry;
 
-	const BarMapEntry bar_map[] = {
+	const BarMapEntry barMap[] = {
 		/*  1 */ { { CHAR_H, 1<<2  }, { CHAR_E, 1<<3  } },
 		/*  2 */ { { CHAR_B, 1<<10 }, { CHAR_A, 1<<0  } },
 		/*  3 */ { { CHAR_J, 1<<12 }, { CHAR_C, 1<<8  } },
@@ -142,10 +142,10 @@ namespace
 	};
 
 
-	const std::string tdaf_table[] = { "T", "D", "A", "F" };
+	const std::string tdafTable[] = { "T", "D", "A", "F" };
 
 
-	const unsigned int character_table[] = {
+	const unsigned int characterTable[] = {
 		/* Table I 5 of 13. */
 		  31, 7936,   47, 7808,   55, 7552,   59, 7040,   61, 6016,
 		  62, 3968,   79, 7744,   87, 7488,   91, 6976,   93, 5952,
@@ -298,49 +298,49 @@ namespace
 		{
 			for ( int i = 0; i < 13; i++ )
 			{
-				byte_array[i] = 0;
+				mByteArray[i] = 0;
 			}
 		}
 
-		void mult_uint( uint32_t y )
+		void multUint( uint32_t y )
 		{
 			uint64_t carry = 0;
 			for ( int i = 12; i >= 0; i-- )
 			{
-				uint64_t temp = byte_array[i]*y + carry;
+				uint64_t temp = mByteArray[i]*y + carry;
 
-				byte_array[i] = (uint8_t)(temp & 0xFF);
+				mByteArray[i] = (uint8_t)(temp & 0xFF);
 				carry   = temp >> 8;
 			}
 		}
 
-		void add_uint64( uint64_t y )
+		void addUint64( uint64_t y )
 		{
 			uint64_t carry = 0;
 			for ( int i = 12; i >= 0; i-- )
 			{
-				uint64_t temp = byte_array[i] + (y&0xFF) + carry;
+				uint64_t temp = mByteArray[i] + (y&0xFF) + carry;
 
-				byte_array[i] = (uint8_t)(temp & 0xFF);
+				mByteArray[i] = (uint8_t)(temp & 0xFF);
 				carry   = temp >> 8;
 				y       = y >> 8;
 			}
 		}
 
-		uint32_t div_uint( uint32_t y )
+		uint32_t divUint( uint32_t y )
 		{
 			uint32_t carry = 0;
 			for ( int i = 0; i < 13; i++ )
 			{
-				uint32_t temp = byte_array[i] + (carry << 8);
+				uint32_t temp = mByteArray[i] + (carry << 8);
 
-				byte_array[i] = (uint8_t)(temp / y);
+				mByteArray[i] = (uint8_t)(temp / y);
 				carry   = temp % y;
 			}
 			return carry;
 		}
 
-		uint8_t byte_array[13];
+		uint8_t mByteArray[13];
 	};
 
 }
@@ -361,25 +361,25 @@ namespace glbarcode
 	/*
 	 * Onecode data validation, implements Barcode1dBase::validate()
 	 */
-	bool BarcodeOnecode::validate( std::string raw_data )
+	bool BarcodeOnecode::validate( std::string rawData )
 	{
-		if ( (raw_data.size() != 20) &&
-		     (raw_data.size() != 25) &&
-		     (raw_data.size() != 29) &&
-		     (raw_data.size() != 31) )
+		if ( (rawData.size() != 20) &&
+		     (rawData.size() != 25) &&
+		     (rawData.size() != 29) &&
+		     (rawData.size() != 31) )
 		{
 			return false;
 		}
 
-		for ( int i = 0; i < raw_data.size(); i++ )
+		for ( int i = 0; i < rawData.size(); i++ )
 		{
-			if ( !isdigit( raw_data[i] ) )
+			if ( !isdigit( rawData[i] ) )
 			{
 				return false;
 			}
 		}
 
-		if (raw_data[1] > '4')
+		if (rawData[1] > '4')
 		{
 			return false; /* Invalid Barcode Identifier. */
 		}
@@ -391,7 +391,7 @@ namespace glbarcode
 	/*
 	 * Onecode data encoding, implements Barcode1dBase::encode()
 	 */
-	std::string BarcodeOnecode::encode( std::string cooked_data )
+	std::string BarcodeOnecode::encode( std::string cookedData )
 	{
 		Int104 value;
 
@@ -401,26 +401,26 @@ namespace glbarcode
 
 		/* Step 1.a -- Routing Code */
 		int j;
-		for ( j = 20; cooked_data[j] != 0; j++ )
+		for ( j = 20; cookedData[j] != 0; j++ )
 		{
-			value.mult_uint( 10 );
-			value.add_uint64( cooked_data[j] - '0' );
+			value.multUint( 10 );
+			value.addUint64( cookedData[j] - '0' );
 		}
 		switch ( j-20 )
 		{
 		case 0:
 			break;
 		case 5:
-			value.add_uint64( 1 );
+			value.addUint64( 1 );
 			break;
 		case 9:
-			value.add_uint64( 1 );
-			value.add_uint64( 100000 );
+			value.addUint64( 1 );
+			value.addUint64( 100000 );
 			break;
 		case 11:
-			value.add_uint64( 1 );
-			value.add_uint64( 100000 );
-			value.add_uint64( 1000000000 );
+			value.addUint64( 1 );
+			value.addUint64( 100000 );
+			value.addUint64( 1000000000 );
 			break;
 		default:
 			// Not reached
@@ -428,15 +428,15 @@ namespace glbarcode
 		}
 
 		/* Step 1.b -- Tracking Code */
-		value.mult_uint( 10 );
-		value.add_uint64( cooked_data[0] - '0' );
-		value.mult_uint( 5 );
-		value.add_uint64( cooked_data[1] - '0' );
+		value.multUint( 10 );
+		value.addUint64( cookedData[0] - '0' );
+		value.multUint( 5 );
+		value.addUint64( cookedData[1] - '0' );
 
 		for ( int i = 2; i < 20; i++ )
 		{
-			value.mult_uint( 10 );
-			value.add_uint64( cooked_data[i] - '0' );
+			value.multUint( 10 );
+			value.addUint64( cookedData[i] - '0' );
 		}
 
 
@@ -444,7 +444,7 @@ namespace glbarcode
 		/* Step 2 -- Generation of 11-Bit CRC on Binary Data         */
 		/*-----------------------------------------------------------*/
 
-		unsigned int crc11 = USPS_MSB_Math_CRC11GenerateFrameCheckSequence( value.byte_array );
+		unsigned int crc11 = USPS_MSB_Math_CRC11GenerateFrameCheckSequence( value.mByteArray );
 
 
 		/*-----------------------------------------------------------*/
@@ -452,12 +452,12 @@ namespace glbarcode
 		/*-----------------------------------------------------------*/
 		unsigned int codeword[10];
 
-		codeword[9] = value.div_uint( 636 );
+		codeword[9] = value.divUint( 636 );
 		for ( int i = 8; i >= 1; i-- )
 		{
-			codeword[i] = value.div_uint( 1365 );
+			codeword[i] = value.divUint( 1365 );
 		}
-		codeword[0] = value.div_uint( 659 );
+		codeword[0] = value.divUint( 659 );
 
 
 		/*-----------------------------------------------------------*/
@@ -475,7 +475,7 @@ namespace glbarcode
 
 		for ( int i = 0; i < 10; i++ )
 		{
-			character[i] = character_table[ codeword[i] ];
+			character[i] = characterTable[ codeword[i] ];
 
 			if ( (crc11 & (1<<i)) != 0 )
 			{
@@ -491,10 +491,10 @@ namespace glbarcode
 
 		for ( int i = 0; i < 65; i++ )
 		{
-			int d = (character[ bar_map[i].descender.i ] & bar_map[i].descender.mask) != 0 ? 1 : 0;
-			int a = (character[ bar_map[i].ascender.i ]  & bar_map[i].ascender.mask)  != 0 ? 1 : 0;
+			int d = (character[ barMap[i].descender.i ] & barMap[i].descender.mask) != 0 ? 1 : 0;
+			int a = (character[ barMap[i].ascender.i ]  & barMap[i].ascender.mask)  != 0 ? 1 : 0;
 
-			code += tdaf_table[ (a<<1) + d ];
+			code += tdafTable[ (a<<1) + d ];
 		}
 
 
@@ -505,19 +505,19 @@ namespace glbarcode
 	/*
 	 * Onecode vectorization, implements Barcode1dBase::vectorize()
 	 */
-	void BarcodeOnecode::vectorize( std::string coded_data,
-					std::string display_text,
-					std::string cooked_data,
+	void BarcodeOnecode::vectorize( std::string codedData,
+					std::string displayText,
+					std::string cookedData,
 					double      &w,
 					double      &h )
 	{
 		double x = ONECODE_HORIZ_MARGIN;
-		for ( int i = 0; i < coded_data.size(); i++ )
+		for ( int i = 0; i < codedData.size(); i++ )
 		{
 			double y = ONECODE_VERT_MARGIN;
 			double length;
 
-			switch ( coded_data[i] )
+			switch ( codedData[i] )
 			{
 			case 'T':
 				y      += ONECODE_TRACKER_OFFSET;
@@ -541,7 +541,7 @@ namespace glbarcode
 			}
 			double width = ONECODE_BAR_WIDTH;
 
-			add_line( x, y, width, length );
+			addLine( x, y, width, length );
 
 			x += ONECODE_BAR_PITCH;
 		}
