@@ -101,7 +101,7 @@ namespace glbarcode
 	}
 
 
-	bool Barcode::isEmpty( void )
+	bool Barcode::isEmpty( void ) const
 	{
 		return d->mEmptyFlag;
 	}
@@ -113,7 +113,7 @@ namespace glbarcode
 	}
 
 
-	bool Barcode::isDataValid( void )
+	bool Barcode::isDataValid( void ) const
 	{
 		return d->mDataValidFlag;
 	}
@@ -125,13 +125,13 @@ namespace glbarcode
 	}
 
 
-	double Barcode::width( void )
+	double Barcode::width( void ) const
 	{
 		return d->mW;
 	}
 
 
-	double Barcode::height( void )
+	double Barcode::height( void ) const
 	{
 		return d->mH;
 	}
@@ -174,7 +174,7 @@ namespace glbarcode
 	}
 
 
-	void Barcode::addText( double x, double y, double fsize, std::string s )
+	void Barcode::addText( double x, double y, double fsize, const std::string& s )
 	{
 		d->mPrimitives.push_back( new DrawingPrimitiveText( x, y, fsize, s ) );
 	}

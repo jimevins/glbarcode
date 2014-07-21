@@ -74,7 +74,7 @@ namespace glbarcode
 	}
 
 
-	void Factory::registerType( std::string typeId, Factory::BarcodeCreateFct fct )
+	void Factory::registerType( const std::string& typeId, Factory::BarcodeCreateFct fct )
 	{
 		init();
 
@@ -82,7 +82,7 @@ namespace glbarcode
 	}
 
 
-	bool Factory::isTypeSupported( std::string typeId )
+	bool Factory::isTypeSupported( const std::string& typeId )
 	{
 		init();
 
@@ -100,7 +100,7 @@ namespace glbarcode
 	}
 
 
-	Barcode* Factory::createBarcode( std::string typeId )
+	Barcode* Factory::createBarcode( const std::string& typeId )
 	{
 		init();
 
@@ -115,7 +115,7 @@ namespace glbarcode
 	}
 
 
-	void Factory::internalRegisterType( std::string typeId, Factory::BarcodeCreateFct fct )
+	void Factory::internalRegisterType( const std::string& typeId, Factory::BarcodeCreateFct fct )
 	{
 		mBarcodeTypeMap[ typeId ] = fct;
 		mSupportedTypes.push_back( typeId );

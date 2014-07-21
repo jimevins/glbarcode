@@ -95,7 +95,7 @@ namespace glbarcode
 	/*
 	 * UPC data validation, implements Barcode1dBase::validate()
 	 */
-	bool BarcodeUpcBase::validate( std::string rawData )
+	bool BarcodeUpcBase::validate( const std::string& rawData )
 	{
 		int nDigits = 0;
 
@@ -120,7 +120,7 @@ namespace glbarcode
 	/*
 	 * UPC data encoding, implements Barcode1dBase::encode()
 	 */
-	std::string BarcodeUpcBase::encode( std::string cookedData )
+	std::string BarcodeUpcBase::encode( const std::string& cookedData )
 	{
 		int sumOdd  = 0;
 		int sumEven = mFirstDigitVal;
@@ -188,7 +188,7 @@ namespace glbarcode
 	/*
 	 * UPC prepare text for display, implements Barcode1dBase::prepareText()
 	 */
-	std::string BarcodeUpcBase::prepareText( std::string rawData )
+	std::string BarcodeUpcBase::prepareText( const std::string& rawData )
 	{
 		std::string displayText;
 
@@ -209,11 +209,11 @@ namespace glbarcode
 	/*
 	 * UPC vectorization, implements Barcode1dBase::vectorize()
 	 */
-	void BarcodeUpcBase::vectorize( std::string codedData,
-					std::string displayText,
-					std::string cookedData,
-					double&     w,
-					double&     h )
+	void BarcodeUpcBase::vectorize( const std::string& codedData,
+					const std::string& displayText,
+					const std::string& cookedData,
+					double&            w,
+					double&            h )
 	{
 		/* determine width and establish horizontal scale */
 		int nModules     = 7*(cookedData.size()+1) + 11;

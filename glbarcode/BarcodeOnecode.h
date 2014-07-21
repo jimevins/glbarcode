@@ -50,19 +50,19 @@ namespace glbarcode
 
 
 	private:
-		bool validate( std::string rawData );
+		bool validate( const std::string& rawData );
 
-		std::string encode( std::string cookedData );
+		std::string encode( const std::string& cookedData );
 
-		void vectorize( std::string codedData,
-				std::string displayText,
-				std::string cookedData,
-				double&     w,
-				double&     h );
+		void vectorize( const std::string& codedData,
+				const std::string& displayText,
+				const std::string& cookedData,
+				double&            w,
+				double&            h );
 
 
 	private:
-		uint32_t USPS_MSB_Math_CRC11GenerateFrameCheckSequence( uint8_t* ByteArrayPtr );
+		uint32_t USPS_MSB_Math_CRC11GenerateFrameCheckSequence( const uint8_t* ByteArrayPtr );
 
 	};
 

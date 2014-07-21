@@ -47,7 +47,7 @@ namespace glbarcode
 		/**
 		 * Constructor with output filename
 		 */
-		RendererEps( std::string filename );
+		RendererEps( const std::string& filename );
 
 
 		/**

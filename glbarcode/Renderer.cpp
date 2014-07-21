@@ -21,11 +21,11 @@
 #include "Renderer.h"
 
 
-void glbarcode::Renderer::render( double w, double h, std::list<DrawingPrimitive*> primitives )
+void glbarcode::Renderer::render( double w, double h, const std::list<DrawingPrimitive*>& primitives )
 {
 	drawBegin( w, h );
 
-	std::list<DrawingPrimitive*>::iterator primitive;
+	std::list<DrawingPrimitive*>::const_iterator primitive;
 
 	for ( primitive = primitives.begin(); primitive != primitives.end(); primitive++ )
 	{

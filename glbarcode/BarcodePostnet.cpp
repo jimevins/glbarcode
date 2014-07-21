@@ -88,7 +88,7 @@ namespace glbarcode
 	/*
 	 * Postnet data validation, implements Barcode1dBase::validate()
 	 */
-	bool BarcodePostnet::validate( std::string rawData )
+	bool BarcodePostnet::validate( const std::string& rawData )
 	{
 		int nDigits = 0;
 		for ( int i = 0; i < rawData.size(); i++ )
@@ -111,7 +111,7 @@ namespace glbarcode
 	/*
 	 * Postnet data encoding, implements Barcode1dBase::encode()
 	 */
-	std::string BarcodePostnet::encode( std::string cookedData )
+	std::string BarcodePostnet::encode( const std::string& cookedData )
 	{
 		std::string code;
 
@@ -144,11 +144,11 @@ namespace glbarcode
 	/*
 	 * Postnet vectorization, implements Barcode1dBase::vectorize()
 	 */
-	void BarcodePostnet::vectorize( std::string codedData,
-					std::string displayText,
-					std::string cookedData,
-					double      &w,
-					double      &h )
+	void BarcodePostnet::vectorize( const std::string& codedData,
+					const std::string& displayText,
+					const std::string& cookedData,
+					double&            w,
+					double&            h )
 	{
 		double x = POSTNET_HORIZ_MARGIN;
 		for ( int i=0; i < codedData.size(); i++ )

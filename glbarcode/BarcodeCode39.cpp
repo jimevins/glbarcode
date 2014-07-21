@@ -112,7 +112,7 @@ namespace glbarcode
 	/*
 	 * Code39 data validation, implements Barcode1dBase::validate()
 	 */
-	bool BarcodeCode39::validate( std::string rawData )
+	bool BarcodeCode39::validate( const std::string& rawData )
 	{
 		for ( int i = 0; i < rawData.size(); i++ )
 		{
@@ -131,7 +131,7 @@ namespace glbarcode
 	/*
 	 * Code39 data encoding, implements Barcode1dBase::encode()
 	 */
-	std::string BarcodeCode39::encode( std::string cookedData )
+	std::string BarcodeCode39::encode( const std::string& cookedData )
 	{
 		std::string code;
 
@@ -166,7 +166,7 @@ namespace glbarcode
 	/*
 	 * Code39 prepare text for display, implements Barcode1dBase::prepareText()
 	 */
-	std::string BarcodeCode39::prepareText( std::string rawData )
+	std::string BarcodeCode39::prepareText( const std::string& rawData )
 	{
 		std::string displayText;
 
@@ -182,11 +182,11 @@ namespace glbarcode
 	/*
 	 * Code39 vectorization, implements Barcode1dBase::vectorize()
 	 */
-	void BarcodeCode39::vectorize( std::string codedData,
-	                               std::string displayText,
-	                               std::string cookedData,
-	                               double&     w,
-	                               double&     h )
+	void BarcodeCode39::vectorize( const std::string& codedData,
+	                               const std::string& displayText,
+	                               const std::string& cookedData,
+	                               double&            w,
+	                               double&            h )
 	{
 
 		/* determine width and establish horizontal scale, based on original cooked data */

@@ -56,12 +56,17 @@ namespace glbarcode
 	private:
 		bool validateDigits( int nDigits );
 
-		std::string preprocess( std::string rawData );
+		std::string preprocess( const std::string& rawData );
 
-		void vectorizeText( std::string displayText,
-		                    double size1, double size2,
-		                    double x1Left, double x1Right, double y1,
-		                    double x2Left, double x2Right, double y2 );
+		void vectorizeText( const std::string& displayText,
+		                    double             size1,
+		                    double             size2,
+		                    double             x1Left,
+		                    double             x1Right,
+		                    double             y1,
+		                    double             x2Left,
+		                    double             x2Right,
+		                    double             y2 );
 
 	};
 

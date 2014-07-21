@@ -335,7 +335,7 @@ namespace
 
 
 	void ecc200EccBlock( const std::vector<uint8_t>& codewords,
-			     std::vector<uint8_t>      & ecc,
+			     std::vector<uint8_t>&       ecc,
 			     int                         n,
 			     int                         nc,
 			     int                         aSelect,
@@ -578,7 +578,7 @@ namespace glbarcode
 	/*
 	 * DataMatrix data validation, implements Barcode2dBase::validate()
 	 */
-	bool BarcodeDataMatrix::validate( std::string rawData )
+	bool BarcodeDataMatrix::validate( const std::string& rawData )
 	{
 		return true;
 	}
@@ -587,7 +587,7 @@ namespace glbarcode
 	/*
 	 * DataMatrix data encoding, implements Barcode2dBase::encode()
 	 */
-	bool BarcodeDataMatrix::encode( std::string cookedData, Matrix<bool>& encodedData )
+	bool BarcodeDataMatrix::encode( const std::string& cookedData, Matrix<bool>& encodedData )
 	{
 		std::vector<uint8_t> codewords;
 

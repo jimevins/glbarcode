@@ -45,7 +45,7 @@ namespace glbarcode
 	}
 
 
-	RendererSvg::RendererSvg( std::string filename )
+	RendererSvg::RendererSvg( const std::string& filename )
 	{
 		d = new RendererSvg::PrivateData;
 

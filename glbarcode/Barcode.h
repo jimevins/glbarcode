@@ -99,7 +99,7 @@ namespace glbarcode
 		 * @param w Requested width of barcode (0 = auto size)
 		 * @param h Requested height of barcode (0 = auto size)
 		 */
-		virtual void build( std::string           data,
+		virtual void build( const std::string&    data,
 				    double                w = 0,
 				    double                h = 0 ) = 0;
 
@@ -118,7 +118,7 @@ namespace glbarcode
 		 * @return True if barcode data is empty
 		 * @return False if barcode data is not empty
 		 */
-		bool isEmpty( void );
+		bool isEmpty( void ) const;
 
 
 		/**
@@ -127,7 +127,7 @@ namespace glbarcode
 		 * @return True if barcode data is valid
 		 * @return False if barcode data is not valid for implemented barcode type
 		 */
-		bool isDataValid( void );
+		bool isDataValid( void ) const;
 
 
 		/**
@@ -135,7 +135,7 @@ namespace glbarcode
 		 *
 		 * @return Actual width of barcode (points)
 		 */
-		double width( void );
+		double width( void ) const;
 
 
 		/**
@@ -143,7 +143,7 @@ namespace glbarcode
 		 *
 		 * @return Actual height of barcode (points)
 		 */
-		double height( void );
+		double height( void ) const;
 
 
 	protected:
@@ -195,7 +195,7 @@ namespace glbarcode
 		 * @param fsize Font size of text (points)
 		 * @param s Text
 		 */
-		void addText( double x, double y, double fsize, std::string s );
+		void addText( double x, double y, double fsize, const std::string& s );
 
 
 		/**

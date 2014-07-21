@@ -38,23 +38,28 @@ namespace glbarcode
 	protected:
 		virtual bool validateDigits( int nDigits ) = 0;
 
-		virtual void vectorizeText( std::string displayText,
-		                            double size1, double size2,
-		                            double x1Left, double x1Right, double y1,
-		                            double x2Left, double x2Right, double y2 ) = 0;
+		virtual void vectorizeText( const std::string& displayText,
+		                            double             size1,
+		                            double             size2,
+		                            double             x1Left,
+		                            double             x1Right,
+		                            double             y1,
+		                            double             x2Left,
+		                            double             x2Right,
+		                            double             y2 ) = 0;
 
 	private:
-		bool validate( std::string rawData );
+		bool validate( const std::string& rawData );
 
-		std::string encode( std::string cookedData );
+		std::string encode( const std::string& cookedData );
 
-		std::string prepareText( std::string rawData );
+		std::string prepareText( const std::string& rawData );
 
-		void vectorize( std::string codedData,
-				std::string displayText,
-				std::string cookedData,
-				double&     w,
-				double&     h );
+		void vectorize( const std::string& codedData,
+				const std::string& displayText,
+				const std::string& cookedData,
+				double&            w,
+				double&            h );
 
 
 	protected:

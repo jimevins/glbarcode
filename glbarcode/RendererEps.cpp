@@ -45,7 +45,7 @@ namespace glbarcode
 	}
 
 
-	RendererEps::RendererEps( std::string filename )
+	RendererEps::RendererEps( const std::string& filename )
 	{
 		d = new RendererEps::PrivateData;
 

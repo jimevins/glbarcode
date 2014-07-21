@@ -47,7 +47,7 @@ namespace glbarcode
 		/**
 		 * Constructor with output filename
 		 */
-		RendererSvg( std::string filename );
+		RendererSvg( const std::string& filename );
 
 
 		/**

@@ -40,7 +40,7 @@ namespace glbarcode
 	/*
 	 * Qrcode data validation, implements Barcode2dBase::validate()
 	 */
-	bool BarcodeQrcode::validate( std::string rawData )
+	bool BarcodeQrcode::validate( const std::string& rawData )
 	{
 		if ( rawData.size() == 0 )
 		{
@@ -53,7 +53,7 @@ namespace glbarcode
 	/*
 	 * Qrcode data encoding, implements Barcode2dBase::encode()
 	 */
-	bool BarcodeQrcode::encode( std::string cookedData, Matrix<bool>& encodedData )
+	bool BarcodeQrcode::encode( const std::string& cookedData, Matrix<bool>& encodedData )
 	{
 		QRcode *qrcode = QRcode_encodeString( cookedData.c_str(), 0, QR_ECLEVEL_M, QR_MODE_8, 1 );
 		if ( qrcode == NULL )

@@ -51,7 +51,7 @@ namespace glbarcode
 		 * @param h Height of barcode bounding box (points)
 		 * @param primitives List of drawing primitives
 		 */
-		void render( double w, double h, std::list<DrawingPrimitive*> primitives );
+		void render( double w, double h, const std::list<DrawingPrimitive*>& primitives );
 
 
 	protected:

@@ -60,7 +60,7 @@ namespace glbarcode
 		 * @param w Requested width of barcode (0 = auto size)
 		 * @param h Requested height of barcode (0 = auto size)
 		 */
-		void build( std::string           data,
+		void build( const std::string&    data,
 		            double                w = 0,
 		            double                h = 0 );
 
@@ -76,7 +76,7 @@ namespace glbarcode
 		 * @return True if data is valid data for barcode type
 		 * @return False if data is not valid data for barcode type
 		 */
-		virtual bool validate( std::string rawData ) = 0;
+		virtual bool validate( const std::string& rawData ) = 0;
 
 
 		/**
@@ -88,7 +88,7 @@ namespace glbarcode
 		 * @param rawData Data to preprocess
 		 * @return Preprocessed data
 		 */
-		virtual std::string preprocess( std::string rawData );
+		virtual std::string preprocess( const std::string& rawData );
 
 
 		/**
@@ -101,7 +101,7 @@ namespace glbarcode
 		 * @param cookedData Data to encode
 		 * @return Encoded data
 		 */
-		virtual std::string encode( std::string cookedData ) = 0;
+		virtual std::string encode( const std::string& cookedData ) = 0;
 
 
 		/**
@@ -112,7 +112,7 @@ namespace glbarcode
 		 * @param rawData Data to prepare
 		 * @return text in display form
 		 */
-		virtual std::string prepareText( std::string rawData );
+		virtual std::string prepareText( const std::string& rawData );
 
 
 		/**
@@ -127,11 +127,11 @@ namespace glbarcode
 		 * @param w Requested width of barcode (0 = auto size), vectorize will overwrite with actual width
 		 * @param h Requested height of barcode (0 = auto size), vectorize will overwrite with actual width
 		 */
-		virtual void vectorize( std::string encodedData,
-		                        std::string displayText,
-		                        std::string cookedData,
-		                        double&     w,
-		                        double&     h ) = 0;
+		virtual void vectorize( const std::string& encodedData,
+		                        const std::string& displayText,
+		                        const std::string& cookedData,
+		                        double&            w,
+		                        double&            h ) = 0;
 
 
 	private:

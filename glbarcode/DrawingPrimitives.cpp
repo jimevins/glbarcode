@@ -42,7 +42,7 @@ namespace glbarcode
 	}
 
 
-	DrawingPrimitiveText::DrawingPrimitiveText( double x, double y, double fsize, std::string s )
+	DrawingPrimitiveText::DrawingPrimitiveText( double x, double y, double fsize, const std::string& s )
 	{
 		this->x     = x;
 		this->y     = y;

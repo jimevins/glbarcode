@@ -60,9 +60,9 @@ namespace glbarcode
 	}
 
 
-	void Barcode2dBase::build( std::string rawData,
-				   double      w,
-				   double      h )
+	void Barcode2dBase::build( const std::string& rawData,
+				   double             w,
+				   double             h )
 	{
 		std::string  cookedData;   /* Preprocessed data */
 		Matrix<bool> encodedData;  /* Encoded data matrix */
@@ -107,7 +107,7 @@ namespace glbarcode
 	/*
 	 * Default preprocess method
 	 */
-	std::string Barcode2dBase::preprocess( std::string rawData )
+	std::string Barcode2dBase::preprocess( const std::string& rawData )
 	{
 		return rawData;
 	}

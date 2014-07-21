@@ -51,9 +51,9 @@ namespace glbarcode
 		/**
 		 * Copy constructor.
 		 */
-		Matrix( const Matrix<T> & src ) : mNx(src.mNx),
-			                          mNy(src.mNy),
-			                          mData((src.mNx > 0 && src.mNy > 0) ? new T[src.mNx * src.mNy] : NULL)
+		Matrix( const Matrix<T>& src ) : mNx(src.mNx),
+			                         mNy(src.mNy),
+			                         mData((src.mNx > 0 && src.mNy > 0) ? new T[src.mNx * src.mNy] : NULL)
 		{
 			for ( int iy = 0; iy < mNy; iy++ )
 			{
@@ -68,13 +68,13 @@ namespace glbarcode
 		/**
 		 * Submatrix copy constructor.
 		 */
-		Matrix( const Matrix<T> & src,
-			int               x0,
-			int               y0,
-			int               nx,
-			int               ny ) : mNx(nx),
-			                         mNy(ny),
-			                         mData((nx > 0 && ny > 0) ? new T[nx * ny] : NULL)
+		Matrix( const Matrix<T>& src,
+			int              x0,
+			int              y0,
+			int              nx,
+			int              ny ) : mNx(nx),
+			                        mNy(ny),
+			                        mData((nx > 0 && ny > 0) ? new T[nx * ny] : NULL)
 		{
 			for ( int iy = 0; iy < mNy; iy++ )
 			{

@@ -117,7 +117,7 @@ namespace glbarcode
 		 * @param fsize Font size of text (points)
 		 * @param s Text
 		 */
-		DrawingPrimitiveText( double x, double y, double fsize, std::string s );
+		DrawingPrimitiveText( double x, double y, double fsize, const std::string& s );
 
 		double       fsize;    /**< Font size of text (points). */
 		std::string  s;        /**< Text. */

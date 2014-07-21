@@ -48,11 +48,11 @@ namespace glbarcode
 
 
 	private:
-		bool validate( std::string rawData );
+		bool validate( const std::string& rawData );
 
-		std::string preprocess( std::string rawData );
+		std::string preprocess( const std::string& rawData );
 
-		std::string prepareText( std::string rawData );
+		std::string prepareText( const std::string& rawData );
 
 	};
 

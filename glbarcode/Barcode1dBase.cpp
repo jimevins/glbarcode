@@ -48,9 +48,9 @@ namespace glbarcode
 	}
 
 
-	void Barcode1dBase::build( std::string rawData,
-	                           double      w,
-	                           double      h )
+	void Barcode1dBase::build( const std::string& rawData,
+	                           double             w,
+	                           double             h )
 	{
 		std::string cookedData;     /* Preprocessed data */
 		std::string displayText;    /* Text data to be displayed */
@@ -97,7 +97,7 @@ namespace glbarcode
 	/*
 	 * Default preprocess method
 	 */
-	std::string Barcode1dBase::preprocess( std::string rawData )
+	std::string Barcode1dBase::preprocess( const std::string& rawData )
 	{
 		return rawData;
 	}
@@ -106,7 +106,7 @@ namespace glbarcode
 	/*
 	 * Default prepareText method
 	 */
-	std::string Barcode1dBase::prepareText( std::string rawData )
+	std::string Barcode1dBase::prepareText( const std::string& rawData )
 	{
 		return rawData;
 	}

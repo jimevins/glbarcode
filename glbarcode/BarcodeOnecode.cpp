@@ -361,7 +361,7 @@ namespace glbarcode
 	/*
 	 * Onecode data validation, implements Barcode1dBase::validate()
 	 */
-	bool BarcodeOnecode::validate( std::string rawData )
+	bool BarcodeOnecode::validate( const std::string& rawData )
 	{
 		if ( (rawData.size() != 20) &&
 		     (rawData.size() != 25) &&
@@ -391,7 +391,7 @@ namespace glbarcode
 	/*
 	 * Onecode data encoding, implements Barcode1dBase::encode()
 	 */
-	std::string BarcodeOnecode::encode( std::string cookedData )
+	std::string BarcodeOnecode::encode( const std::string& cookedData )
 	{
 		Int104 value;
 
@@ -505,11 +505,11 @@ namespace glbarcode
 	/*
 	 * Onecode vectorization, implements Barcode1dBase::vectorize()
 	 */
-	void BarcodeOnecode::vectorize( std::string codedData,
-					std::string displayText,
-					std::string cookedData,
-					double&     w,
-					double&     h )
+	void BarcodeOnecode::vectorize( const std::string& codedData,
+					const std::string& displayText,
+					const std::string& cookedData,
+					double&            w,
+					double&            h )
 	{
 		double x = ONECODE_HORIZ_MARGIN;
 		for ( int i = 0; i < codedData.size(); i++ )
@@ -565,7 +565,7 @@ namespace glbarcode
 	 **
 	 ** From Appendix C of USPS publication USPS-B-3200E, 07/08/05.
 	 ***************************************************************************/
-	uint32_t BarcodeOnecode::USPS_MSB_Math_CRC11GenerateFrameCheckSequence( uint8_t* ByteArrayPtr )
+	uint32_t BarcodeOnecode::USPS_MSB_Math_CRC11GenerateFrameCheckSequence( const uint8_t* ByteArrayPtr )
 	{
 		unsigned int  GeneratorPolynomial = 0x0F35;
 		unsigned int  FrameCheckSequence  = 0x07FF;

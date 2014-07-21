@@ -57,7 +57,7 @@ namespace glbarcode
 	/*
 	 * EAN-13 Pre-process data before encoding, implements Barcode1dBase::preprocess()
 	 */
-	std::string BarcodeEan13::preprocess( std::string rawData )
+	std::string BarcodeEan13::preprocess( const std::string& rawData )
 	{
 		std::string cookedData;
 
@@ -77,10 +77,15 @@ namespace glbarcode
 	/*
 	 * EAN-13 vectorize text, implements BarcodeUpcBase::vectorizeText()
 	 */
-	void BarcodeEan13::vectorizeText( std::string displayText,
-					  double size1, double size2,
-					  double x1Left, double x1Right, double y1,
-					  double x2Left, double x2Right, double y2 )
+	void BarcodeEan13::vectorizeText( const std::string& displayText,
+					  double             size1,
+					  double             size2,
+					  double             x1Left,
+					  double             x1Right,
+					  double             y1,
+					  double             x2Left,
+					  double             x2Right,
+					  double             y2 )
 	{
 		addText( x2Left,  y2, size2, displayText.substr( 0, 1 ) );
 		addText( x1Left,  y1, size1, displayText.substr( 1, 6 ) );

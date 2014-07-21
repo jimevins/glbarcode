@@ -62,7 +62,7 @@ namespace glbarcode
 		 * @param w Requested width of barcode (0 = auto size)
 		 * @param h Requested height of barcode (0 = auto size)
 		 */
-		void build( std::string           data,
+		void build( const std::string&    data,
 		            double                w = 0,
 		            double                h = 0 );
 
@@ -78,7 +78,7 @@ namespace glbarcode
 		 * @return True if data is valid data for barcode type
 		 * @return False if data is not valid data for barcode type
 		 */
-		virtual bool validate( std::string rawData ) = 0;
+		virtual bool validate( const std::string& rawData ) = 0;
 
 
 		/**
@@ -90,7 +90,7 @@ namespace glbarcode
 		 * @param rawData Data to preprocess
 		 * @return Preprocessed data
 		 */
-		virtual std::string preprocess( std::string rawData );
+		virtual std::string preprocess( const std::string& rawData );
 
 
 		/**
@@ -103,8 +103,8 @@ namespace glbarcode
 		 * @return True if data was encoded successfully
 		 * @return False if data could not be encoded (condition not discoverable by validate())
 		 */
-		virtual bool encode( std::string   cookedData,
-		                     Matrix<bool>& encodedData ) = 0;
+		virtual bool encode( const std::string&   cookedData,
+		                     Matrix<bool>&        encodedData ) = 0;
 
 
 		/**

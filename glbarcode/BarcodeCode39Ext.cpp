@@ -76,7 +76,7 @@ namespace glbarcode
 	/*
 	 * Extended Code39 data validation, overrides BarcodeCode39::validate() implementation
 	 */
-	bool BarcodeCode39Ext::validate( std::string rawData )
+	bool BarcodeCode39Ext::validate( const std::string& rawData )
 	{
 		for ( int i = 0; i < rawData.size(); i++ )
 		{
@@ -93,7 +93,7 @@ namespace glbarcode
 	/*
 	 * Extened Code39 preprocessing of data, implements Barcode1dBase::preprocess()
 	 */
-	std::string BarcodeCode39Ext::preprocess( std::string rawData )
+	std::string BarcodeCode39Ext::preprocess( const std::string& rawData )
 	{
 		std::string cookedData;
 
@@ -109,7 +109,7 @@ namespace glbarcode
 	/*
 	 * Extended Code39 prepare text for display, overrides BarcodeCode39::prepareText()
 	 */
-	std::string BarcodeCode39Ext::prepareText( std::string rawData )
+	std::string BarcodeCode39Ext::prepareText( const std::string& rawData )
 	{
 		return rawData;
 	}
