@@ -37,27 +37,27 @@ namespace glbarcode
 		/**
 		 * Default constructor.
 		 */
-		Matrix() : m_nx(0), m_ny(0), m_d(NULL) { }
+		Matrix() : mNx(0), mNy(0), mData(NULL) { }
 
 
 		/**
 		 * Sized constructor.
 		 */
-		Matrix( int nx, int ny ) : m_nx(nx),
-			                   m_ny(ny),
-			                   m_d((nx > 0 && ny > 0) ? new T[nx * ny] : NULL) { }
+		Matrix( int nx, int ny ) : mNx(nx),
+			                   mNy(ny),
+			                   mData((nx > 0 && ny > 0) ? new T[nx * ny] : NULL) { }
 
 
 		/**
 		 * Copy constructor.
 		 */
-		Matrix( const Matrix<T> & src ) : m_nx(src.m_nx),
-			                          m_ny(src.m_ny),
-			                          m_d((src.m_nx > 0 && src.m_ny > 0) ? new T[src.m_nx * src.m_ny] : NULL)
+		Matrix( const Matrix<T> & src ) : mNx(src.mNx),
+			                          mNy(src.mNy),
+			                          mData((src.mNx > 0 && src.mNy > 0) ? new T[src.mNx * src.mNy] : NULL)
 		{
-			for ( int iy = 0; iy < m_ny; iy++ )
+			for ( int iy = 0; iy < mNy; iy++ )
 			{
-				for ( int ix = 0; ix < m_nx; ix++ )
+				for ( int ix = 0; ix < mNx; ix++ )
 				{
 					(*this)[iy][ix] = src[iy][ix];
 				}
@@ -72,15 +72,15 @@ namespace glbarcode
 			int               x0,
 			int               y0,
 			int               nx,
-			int               ny ) : m_nx(nx),
-			                         m_ny(ny),
-			                         m_d((nx > 0 && ny > 0) ? new T[nx * ny] : NULL)
+			int               ny ) : mNx(nx),
+			                         mNy(ny),
+			                         mData((nx > 0 && ny > 0) ? new T[nx * ny] : NULL)
 		{
-			for ( int iy = 0; iy < m_ny; iy++ )
+			for ( int iy = 0; iy < mNy; iy++ )
 			{
 				if ( (y0+iy) < src.ny() )
 				{
-					for ( int ix = 0; ix < m_nx; ix++ )
+					for ( int ix = 0; ix < mNx; ix++ )
 					{
 						if ( (x0+ix) < src.nx() )
 						{
@@ -97,9 +97,9 @@ namespace glbarcode
 		 */
 		~Matrix()
 		{
-			if ( m_d != NULL )
+			if ( mData != NULL )
 			{
-				delete[] m_d;
+				delete[] mData;
 			}
 		}
 
@@ -109,7 +109,7 @@ namespace glbarcode
 		 */
 		inline T* operator[]( int i )
 		{
-			return (m_d + (m_nx * i));
+			return (mData + (mNx * i));
 		}
 
 
@@ -118,7 +118,7 @@ namespace glbarcode
 		 */
 		inline T const*const operator[]( int i ) const
 		{
-			return (m_d + (m_nx * i));
+			return (mData + (mNx * i));
 		}
 
 
@@ -127,13 +127,13 @@ namespace glbarcode
 		 */
 		inline void resize( int nx, int ny )
 		{
-			if ( m_d != NULL )
+			if ( mData != NULL )
 			{
-				delete[] m_d;
+				delete[] mData;
 			}
-			m_nx = nx;
-			m_ny = ny;
-			m_d = (nx > 0 && ny > 0) ? new T[nx * ny] : NULL;
+			mNx = nx;
+			mNy = ny;
+			mData = (nx > 0 && ny > 0) ? new T[nx * ny] : NULL;
 		}
 
 
@@ -144,7 +144,7 @@ namespace glbarcode
 		 */
 		inline int nx( void ) const
 		{
-			return m_nx;
+			return mNx;
 		}
 
 
@@ -155,14 +155,14 @@ namespace glbarcode
 		 */
 		inline int ny( void ) const
 		{
-			return m_ny;
+			return mNy;
 		}
 
 
 		/**
 		 * Extract sub-matrix from this matrix
 		 */
-		inline Matrix<T> sub_matrix( int x0, int y0, int nx, int ny )
+		inline Matrix<T> subMatrix( int x0, int y0, int nx, int ny )
 		{
 			return Matrix<T>( *this, x0, y0, nx, ny );
 		}
@@ -175,11 +175,11 @@ namespace glbarcode
 		{
 			for ( int iy = 0; iy < a.ny(); iy++ )
 			{
-				if ( (y0 + iy) < m_ny )
+				if ( (y0 + iy) < mNy )
 				{
 					for ( int ix = 0; ix < a.nx(); ix++ )
 					{
-						if ( (x0 + ix) < m_nx )
+						if ( (x0 + ix) < mNx )
 						{
 							(*this)[y0+iy][x0+ix] = a[iy][ix];
 						}
@@ -194,9 +194,9 @@ namespace glbarcode
 		 */
 		inline void fill( T val )
 		{
-			for ( int iy = 0; iy < m_ny; iy++ )
+			for ( int iy = 0; iy < mNy; iy++ )
 			{
-				for ( int ix = 0; ix < m_nx; ix++ )
+				for ( int ix = 0; ix < mNx; ix++ )
 				{
 					(*this)[iy][ix] = val;
 				}
@@ -208,9 +208,9 @@ namespace glbarcode
 		/**
 		 * Matrix Private data
 		 */
-		int m_nx;
-		int m_ny;
-		T*  m_d;
+		int mNx;
+		int mNy;
+		T*  mData;
 
 	};
 

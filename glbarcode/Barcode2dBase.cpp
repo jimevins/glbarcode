@@ -116,9 +116,9 @@ namespace glbarcode
 	/*
 	 * Default 2D vectorization method
 	 */
-	void Barcode2dBase::vectorize( const Matrix<bool> & encodedData,
-				       double             & w,
-				       double             & h )
+	void Barcode2dBase::vectorize( const Matrix<bool>& encodedData,
+				       double&             w,
+				       double&             h )
 	{
 
 		/* determine size and establish scale */

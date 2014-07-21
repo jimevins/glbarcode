@@ -34,11 +34,11 @@ namespace glbarcode
 
 
 	/*
-	 * Postnet-5 validation of number of digits, overrides BarcodePostnet::validate_digits()
+	 * Postnet-5 validation of number of digits, overrides BarcodePostnet::validateDigits()
 	 */
-	bool BarcodePostnet5::validate_digits( int n_digits )
+	bool BarcodePostnet5::validateDigits( int nDigits )
 	{
-		return n_digits == 5; /* Zip only */
+		return nDigits == 5; /* Zip only */
 	}
 
 }

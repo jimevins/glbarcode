@@ -42,19 +42,19 @@ namespace
 
 	typedef struct
 	{
-		int   n_data_total;
-		int   n_xtotal;
-		int   n_ytotal;
-		int   n_blocks_1;
-		int   n_blocks_2;
-		int   n_data_block_1;
-		int   n_data_block_2;
-		int   n_ecc_block;
-		int   a_select;
-		int   n_xregions;
-		int   n_yregions;
-		int   n_xregion;
-		int   n_yregion;
+		int   nDataTotal;
+		int   nXtotal;
+		int   nYtotal;
+		int   nBlocks1;
+		int   nBlocks2;
+		int   nDataBlock1;
+		int   nDataBlock2;
+		int   nEccBlock;
+		int   aSelect;
+		int   nXregions;
+		int   nYregions;
+		int   nXregion;
+		int   nYregion;
 	} DMParameterEntry;
 
 	const DMParameterEntry params[] =
@@ -261,7 +261,7 @@ namespace
 	};
 
 
-	int ecc200_encode( const std::string & data, std::vector<uint8_t> & codewords )
+	int ecc200Encode( const std::string& data, std::vector<uint8_t>& codewords )
 	{
 		/*
 		 * Encode data into codewords using ASCII encoding method.
@@ -298,35 +298,35 @@ namespace
 	}
 
 
-	const DMParameterEntry * ecc200_best_size_params( int n_raw_cw )
+	const DMParameterEntry* ecc200BestSizeParams( int nRawCw )
 	{
 
-		if ( n_raw_cw > 1558 )
+		if ( nRawCw > 1558 )
 		{
 			return NULL;
 		}
 
-		int i_param = 0;
+		int iParam = 0;
 
-		while ( n_raw_cw > params[i_param].n_data_total )
+		while ( nRawCw > params[iParam].nDataTotal )
 		{
-			i_param++;
+			iParam++;
 		}
 
-		return &params[i_param];
+		return &params[iParam];
 	}
 
 
-	void ecc200_fill( std::vector<uint8_t> & codewords, int n_raw_cw, int n_data_total )
+	void ecc200Fill( std::vector<uint8_t>& codewords, int nRawCw, int nDataTotal )
 	{
-		int n_fill_cw   = n_data_total - n_raw_cw;
+		int nFillCw   = nDataTotal - nRawCw;
 
-		if ( n_fill_cw > 0 )
+		if ( nFillCw > 0 )
 		{
 			codewords.push_back( CW_PAD );
 		}
 
-		for ( int i = n_raw_cw + 1; i < n_data_total; i++ )
+		for ( int i = nRawCw + 1; i < nDataTotal; i++ )
 		{
 			int r = (149*(i+1))%253 + 1;
 			codewords.push_back( (CW_PAD + r) % 254 );
@@ -334,13 +334,13 @@ namespace
 	}
 
 
-	void ecc200_ecc_block( const std::vector<uint8_t> & codewords,
-			       std::vector<uint8_t>       & ecc,
-			       int                          n,
-			       int                          nc,
-			       int                          a_select,
-			       int                          offset,
-			       int                          stride )
+	void ecc200EccBlock( const std::vector<uint8_t>& codewords,
+			     std::vector<uint8_t>      & ecc,
+			     int                         n,
+			     int                         nc,
+			     int                         aSelect,
+			     int                         offset,
+			     int                         stride )
 	{
 		for ( int i = 0; i < n; i++ )
 		{
@@ -348,7 +348,7 @@ namespace
 
 			for ( int j = 0; j < (nc-1); j++ )
 			{
-				uint8_t c = a[a_select][j];
+				uint8_t c = a[aSelect][j];
 
 				if ( k != 0 )
 				{
@@ -359,7 +359,7 @@ namespace
 					ecc[j*stride+offset] = ecc[(j+1)*stride + offset];
 				}
 			}
-			uint8_t c = a[a_select][nc-1];
+			uint8_t c = a[aSelect][nc-1];
 			if ( k != 0 )
 			{
 				ecc[(nc-1)*stride + offset] = Alog[ (Log[k] + Log[c]) % 255 ];
@@ -372,12 +372,12 @@ namespace
 	}
 
 
-	void module( Matrix<bool> & matrix,
-		     Matrix<bool> & used,
-		     int            ix,
-		     int            iy,
-		     uint8_t        codeword,
-		     int            bit )
+	void module( Matrix<bool>& matrix,
+		     Matrix<bool>& used,
+		     int           ix,
+		     int           iy,
+		     uint8_t       codeword,
+		     int           bit )
 	{
 		if ( iy < 0 )
 		{
@@ -400,9 +400,9 @@ namespace
 	}
 
 
-	void corner1( Matrix<bool> & matrix,
-		      Matrix<bool> & used,
-		      uint8_t        codeword )
+	void corner1( Matrix<bool>& matrix,
+		      Matrix<bool>& used,
+		      uint8_t       codeword )
 	{
 		int nx = matrix.nx();
 		int ny = matrix.ny();
@@ -418,9 +418,9 @@ namespace
 	}
 
 
-	void corner2( Matrix<bool> & matrix,
-		      Matrix<bool> & used,
-		      uint8_t        codeword )
+	void corner2( Matrix<bool>& matrix,
+		      Matrix<bool>& used,
+		      uint8_t       codeword )
 	{
 		int nx = matrix.nx();
 		int ny = matrix.ny();
@@ -436,9 +436,9 @@ namespace
 	}
 
 
-	void corner3( Matrix<bool> & matrix,
-		      Matrix<bool> & used,
-		      uint8_t        codeword )
+	void corner3( Matrix<bool>& matrix,
+		      Matrix<bool>& used,
+		      uint8_t       codeword )
 	{
 		int nx = matrix.nx();
 		int ny = matrix.ny();
@@ -454,9 +454,9 @@ namespace
 	}
 
 
-	void corner4( Matrix<bool> & matrix,
-		      Matrix<bool> & used,
-		      uint8_t        codeword )
+	void corner4( Matrix<bool>& matrix,
+		      Matrix<bool>& used,
+		      uint8_t       codeword )
 	{
 		int nx = matrix.nx();
 		int ny = matrix.ny();
@@ -472,11 +472,11 @@ namespace
 	}
 
 
-	void utah( Matrix<bool> & matrix,
-		   Matrix<bool> & used,
-		   int            ix,
-		   int            iy,
-		   uint8_t        codeword )
+	void utah( Matrix<bool>& matrix,
+		   Matrix<bool>& used,
+		   int           ix,
+		   int           iy,
+		   uint8_t       codeword )
 	{
 		module( matrix, used, ix-2, iy-2, codeword, 7 );
 		module( matrix, used, ix-1, iy-2, codeword, 6 );
@@ -489,8 +489,8 @@ namespace
 	}
 
 
-	void ecc200_fill_matrix( Matrix<bool>               & matrix,
-				 const std::vector<uint8_t> & codewords )
+	void ecc200FillMatrix( Matrix<bool>&               matrix,
+			       const std::vector<uint8_t>& codewords )
 	{
 		matrix.fill( false );
 
@@ -534,28 +534,28 @@ namespace
 	}
 
 
-	void finder_pattern( Matrix<bool> & encoded_data, int x0, int y0, int nx, int ny )
+	void finderPattern( Matrix<bool>& encodedData, int x0, int y0, int nx, int ny )
 	{
 		for ( int ix = 0; ix < nx; ix++ )
 		{
-			encoded_data[y0+ny-1][x0+ix] = true;
+			encodedData[y0+ny-1][x0+ix] = true;
 		}
 
 		for ( int iy = 0; iy < ny; iy++ )
 		{
-			encoded_data[y0+iy][x0] = true;
+			encodedData[y0+iy][x0] = true;
 		}
 
 		for ( int ix = 0; ix < nx; ix += 2 )
 		{
-			encoded_data[y0][x0+ix]   = true;
-			encoded_data[y0][x0+ix+1] = false;
+			encodedData[y0][x0+ix]   = true;
+			encodedData[y0][x0+ix+1] = false;
 		}
 
 		for ( int iy = 0; iy < ny; iy += 2 )
 		{
-			encoded_data[y0+iy][x0+nx-1]   = false;
-			encoded_data[y0+iy+1][x0+nx-1] = true;
+			encodedData[y0+iy][x0+nx-1]   = false;
+			encodedData[y0+iy+1][x0+nx-1] = true;
 		}
 
 	}
@@ -578,7 +578,7 @@ namespace glbarcode
 	/*
 	 * DataMatrix data validation, implements Barcode2dBase::validate()
 	 */
-	bool BarcodeDataMatrix::validate( std::string raw_data )
+	bool BarcodeDataMatrix::validate( std::string rawData )
 	{
 		return true;
 	}
@@ -587,47 +587,47 @@ namespace glbarcode
 	/*
 	 * DataMatrix data encoding, implements Barcode2dBase::encode()
 	 */
-	bool BarcodeDataMatrix::encode( std::string cooked_data, Matrix<bool> & encoded_data )
+	bool BarcodeDataMatrix::encode( std::string cookedData, Matrix<bool>& encodedData )
 	{
 		std::vector<uint8_t> codewords;
 
 		/*
 		 * Encode data into codewords
 		 */
-		int n_raw_cw = ecc200_encode( cooked_data, codewords );
+		int nRawCw = ecc200Encode( cookedData, codewords );
 
 		/*
 		 * Determine parameters for "best size"
 		 */
-		const DMParameterEntry * p = ecc200_best_size_params( n_raw_cw );
+		const DMParameterEntry * p = ecc200BestSizeParams( nRawCw );
 		if ( p == NULL )
 		{
 			return false;
 		}
-		encoded_data.resize( p->n_xtotal, p->n_ytotal );
+		encodedData.resize( p->nXtotal, p->nYtotal );
 			
 
 		/*
 		 * Fill any extra data codewords
 		 */
-		ecc200_fill( codewords, n_raw_cw, p->n_data_total );
+		ecc200Fill( codewords, nRawCw, p->nDataTotal );
 
 
 		/*
 		 * Calculate Reed-Solomon correction codewords
 		 */
-		int n_total_blocks = p->n_blocks_1 + p->n_blocks_2;
+		int nTotalBlocks = p->nBlocks1 + p->nBlocks2;
 
-		std::vector<uint8_t> ecc( p->n_ecc_block*n_total_blocks, 0 );
+		std::vector<uint8_t> ecc( p->nEccBlock*nTotalBlocks, 0 );
 
-		for ( int i_block = 0; i_block < p->n_blocks_1; i_block++ )
+		for ( int iBlock = 0; iBlock < p->nBlocks1; iBlock++ )
 		{
-			ecc200_ecc_block( codewords, ecc, p->n_data_block_1, p->n_ecc_block, p->a_select, i_block, n_total_blocks );
+			ecc200EccBlock( codewords, ecc, p->nDataBlock1, p->nEccBlock, p->aSelect, iBlock, nTotalBlocks );
 		}
 
-		for ( int i_block = p->n_blocks_1; i_block < n_total_blocks; i_block++ )
+		for ( int iBlock = p->nBlocks1; iBlock < nTotalBlocks; iBlock++ )
 		{
-			ecc200_ecc_block( codewords, ecc, p->n_data_block_2, p->n_ecc_block, p->a_select, i_block, n_total_blocks );
+			ecc200EccBlock( codewords, ecc, p->nDataBlock2, p->nEccBlock, p->aSelect, iBlock, nTotalBlocks );
 		}
 
 		codewords.insert( codewords.end(), ecc.begin(), ecc.end() ); /* Append to data */
@@ -636,25 +636,25 @@ namespace glbarcode
 		/*
 		 * Create raw data matrix
 		 */
-		Matrix<bool> matrix( p->n_xregions * p->n_xregion, p->n_yregions * p->n_yregion );
-		ecc200_fill_matrix( matrix, codewords );
+		Matrix<bool> matrix( p->nXregions * p->nXregion, p->nYregions * p->nYregion );
+		ecc200FillMatrix( matrix, codewords );
 
 
 		/*
 		 * Construct by separating out regions and inserting finder patterns
 		 */
-		int xstride = p->n_xregion + 2;
-		int ystride = p->n_yregion + 2;
+		int xstride = p->nXregion + 2;
+		int ystride = p->nYregion + 2;
 
-		for ( int i_xregion = 0; i_xregion < p->n_xregions; i_xregion++ )
+		for ( int iXregion = 0; iXregion < p->nXregions; iXregion++ )
 		{
-			for ( int i_yregion = 0; i_yregion < p->n_yregions; i_yregion++ )
+			for ( int iYregion = 0; iYregion < p->nYregions; iYregion++ )
 			{
-				Matrix<bool> region = matrix.sub_matrix( i_xregion*p->n_xregion, i_yregion*p->n_yregion,
-									 p->n_xregion, p->n_yregion );
+				Matrix<bool> region = matrix.subMatrix( iXregion*p->nXregion, iYregion*p->nYregion,
+									p->nXregion, p->nYregion );
 
-				encoded_data.insert( i_xregion*xstride + 1, i_yregion*ystride + 1, region );
-				finder_pattern( encoded_data, i_xregion*xstride, i_yregion*ystride, xstride, ystride );
+				encodedData.insert( iXregion*xstride + 1, iYregion*ystride + 1, region );
+				finderPattern( encodedData, iXregion*xstride, iYregion*ystride, xstride, ystride );
 			}
 		}
 

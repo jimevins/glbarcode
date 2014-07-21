@@ -53,8 +53,8 @@ namespace glbarcode
 		void vectorize( std::string codedData,
 				std::string displayText,
 				std::string cookedData,
-				double      &w,
-				double      &h );
+				double&     w,
+				double&     h );
 
 
 	protected:

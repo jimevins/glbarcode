@@ -55,10 +55,10 @@ namespace glbarcode
 		std::string prepareText( std::string rawData );
 
 		void vectorize( std::string codedData,
-				std::string displayText,
-				std::string cookedData,
-				double      &w,
-				double      &h );
+		                std::string displayText,
+		                std::string cookedData,
+		                double&     w,
+		                double&     h );
 	};
 
 }

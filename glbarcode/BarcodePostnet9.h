@@ -48,7 +48,7 @@ namespace glbarcode
 
 
 	private:
-		bool validate_digits( int n_digits );
+		bool validateDigits( int nDigits );
 
 	};
 

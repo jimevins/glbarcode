@@ -508,8 +508,8 @@ namespace glbarcode
 	void BarcodeOnecode::vectorize( std::string codedData,
 					std::string displayText,
 					std::string cookedData,
-					double      &w,
-					double      &h )
+					double&     w,
+					double&     h )
 	{
 		double x = ONECODE_HORIZ_MARGIN;
 		for ( int i = 0; i < codedData.size(); i++ )

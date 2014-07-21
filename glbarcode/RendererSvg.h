@@ -83,7 +83,7 @@ namespace glbarcode
 		 * @param filename new value of the output filename
 		 * @returns reference to this RendererSvg object for parameter chaining
 		 */
-		RendererSvg& setFilename( const std::string & filename );
+		RendererSvg& setFilename( const std::string& filename );
 
 
 	private:
@@ -92,11 +92,11 @@ namespace glbarcode
 		 */
 		void drawBegin( double w, double h );
 		void drawEnd( void );
-		void drawLine( const DrawingPrimitiveLine *line );
-		void drawBox( const DrawingPrimitiveBox *box );
-		void drawText( const DrawingPrimitiveText *text );
-		void drawRing( const DrawingPrimitiveRing *ring );
-		void drawHexagon( const DrawingPrimitiveHexagon *hexagon );
+		void drawLine( const DrawingPrimitiveLine* line );
+		void drawBox( const DrawingPrimitiveBox* box );
+		void drawText( const DrawingPrimitiveText* text );
+		void drawRing( const DrawingPrimitiveRing* ring );
+		void drawHexagon( const DrawingPrimitiveHexagon* hexagon );
 
 	private:
 		/**

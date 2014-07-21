@@ -95,7 +95,7 @@ namespace glbarcode
 	}
 
 
-	void Barcode::render( Renderer &renderer )
+	void Barcode::render( Renderer& renderer )
 	{
 		renderer.render( d->mW, d->mH, d->mPrimitives );
 	}

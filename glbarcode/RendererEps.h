@@ -83,7 +83,7 @@ namespace glbarcode
 		 * @param filename new value of the output filename
 		 * @returns reference to this RendererEps object for parameter chaining
 		 */
-		RendererEps& setFilename( const std::string & filename );
+		RendererEps& setFilename( const std::string& filename );
 
 
 	private:
@@ -92,11 +92,11 @@ namespace glbarcode
 		 */
 		void drawBegin( double w, double h );
 		void drawEnd( void );
-		void drawLine( const DrawingPrimitiveLine *line );
-		void drawBox( const DrawingPrimitiveBox *box );
-		void drawText( const DrawingPrimitiveText *text );
-		void drawRing( const DrawingPrimitiveRing *ring );
-		void drawHexagon( const DrawingPrimitiveHexagon *hexagon );
+		void drawLine( const DrawingPrimitiveLine* line );
+		void drawBox( const DrawingPrimitiveBox* box );
+		void drawText( const DrawingPrimitiveText* text );
+		void drawRing( const DrawingPrimitiveRing* ring );
+		void drawHexagon( const DrawingPrimitiveHexagon* hexagon );
 
 	private:
 		/**

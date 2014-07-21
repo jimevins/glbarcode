@@ -49,8 +49,8 @@ namespace glbarcode
 
 
 	void Barcode1dBase::build( std::string rawData,
-				   double      w,
-				   double      h )
+	                           double      w,
+	                           double      h )
 	{
 		std::string cookedData;     /* Preprocessed data */
 		std::string displayText;    /* Text data to be displayed */

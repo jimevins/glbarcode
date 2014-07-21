@@ -81,7 +81,7 @@ namespace glbarcode
 	}
 
 
-	RendererSvg& RendererSvg::setFilename( const std::string & filename )
+	RendererSvg& RendererSvg::setFilename( const std::string& filename )
 	{
 		d->filename = filename;
 
@@ -119,7 +119,7 @@ namespace glbarcode
 	}
 
 
-	void RendererSvg::drawLine( const DrawingPrimitiveLine *line )
+	void RendererSvg::drawLine( const DrawingPrimitiveLine* line )
 	{
 		double x = line->x + line->w/2; /* Offset line origin by 1/2 line width. */
 
@@ -128,28 +128,28 @@ namespace glbarcode
 	}
 
 
-	void RendererSvg::drawBox( const DrawingPrimitiveBox *box )
+	void RendererSvg::drawBox( const DrawingPrimitiveBox* box )
 	{
 		fprintf( d->fp, "  <rect x=\"%f\" y=\"%f\" width=\"%f\" height=\"%f\" shape-rendering=\"crispEdges\" style=\"fill:rgb(0,0,0)\" />\n",
 			box->x, box->y, box->w, box->h );
 	}
 
 
-	void RendererSvg::drawText( const DrawingPrimitiveText *text )
+	void RendererSvg::drawText( const DrawingPrimitiveText* text )
 	{
 		fprintf( d->fp, "  <text x=\"%f\" y=\"%f\" font-size=\"%f\" style=\"font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)\" >%s</text>\n",
 			 text->x, text->y, text->fsize, text->s.c_str() );
 	}
 
 
-	void RendererSvg::drawRing( const DrawingPrimitiveRing *ring )
+	void RendererSvg::drawRing( const DrawingPrimitiveRing* ring )
 	{
 		fprintf( d->fp, "  <circle cx=\"%f\" cy=\"%f\" r=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
 			 ring->x, ring->y, ring->r, ring->lwidth );
 	}
 
 
-	void RendererSvg::drawHexagon( const DrawingPrimitiveHexagon *hexagon )
+	void RendererSvg::drawHexagon( const DrawingPrimitiveHexagon* hexagon )
 	{
 		fprintf( d->fp, "  <polygon points=\"%f,%f %f,%f %f,%f %f,%f %f,%f %f,%f\" style=\"fill:rgb(0,0,0)\" />\n",
 			 hexagon->x,                    hexagon->y,

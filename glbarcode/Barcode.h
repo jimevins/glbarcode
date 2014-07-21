@@ -109,7 +109,7 @@ namespace glbarcode
 		 *
 		 * @param renderer A Renderer object
 		 */
-		void render( Renderer &renderer );
+		void render( Renderer& renderer );
 
 
 		/**

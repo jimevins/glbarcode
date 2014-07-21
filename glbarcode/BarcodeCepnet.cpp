@@ -34,11 +34,11 @@ namespace glbarcode
 
 
 	/*
-	 * CEPNET validation of number of digits, overrides BarcodePostnet::validate_digits()
+	 * CEPNET validation of number of digits, overrides BarcodePostnet::validateDigits()
 	 */
-	bool BarcodeCepnet::validate_digits( int n_digits )
+	bool BarcodeCepnet::validateDigits( int nDigits )
 	{
-		return n_digits == 8;
+		return nDigits == 8;
 	}
 
 }

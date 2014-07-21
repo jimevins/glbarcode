@@ -48,10 +48,10 @@ namespace glbarcode
 
 
 	private:
-		bool validate( std::string raw_data );
+		bool validate( std::string rawData );
 
-		bool encode( std::string    cooked_data,
-			     Matrix<bool> & encoded_data );
+		bool encode( std::string   cookedData,
+		             Matrix<bool>& encodedData );
 
 	};
 

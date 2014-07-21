@@ -81,7 +81,7 @@ namespace glbarcode
 	}
 
 
-	RendererEps& RendererEps::setFilename( const std::string & filename )
+	RendererEps& RendererEps::setFilename( const std::string& filename )
 	{
 		d->filename = filename;
 
@@ -123,7 +123,7 @@ namespace glbarcode
 	}
 
 
-	void RendererEps::drawLine( const DrawingPrimitiveLine *line )
+	void RendererEps::drawLine( const DrawingPrimitiveLine* line )
 	{
 		double x = line->x + line->w/2; /* Offset line origin by 1/2 line width. */
 
@@ -132,14 +132,14 @@ namespace glbarcode
 	}
 
 
-	void RendererEps::drawBox( const DrawingPrimitiveBox *box )
+	void RendererEps::drawBox( const DrawingPrimitiveBox* box )
 	{
 		fprintf( d->fp, "newpath %f %f moveto %f 0 rlineto 0 %f rlineto %f 0 rlineto closepath fill\n",
 			 box->x, box->y, box->w, box->h, -box->w );
 	}
 
 
-	void RendererEps::drawText( const DrawingPrimitiveText *text )
+	void RendererEps::drawText( const DrawingPrimitiveText* text )
 	{
 		fprintf( d->fp, "gsave\n" );
 		fprintf( d->fp, "%f %f translate\n", text->x, text->y );
@@ -151,14 +151,14 @@ namespace glbarcode
 	}
 
 
-	void RendererEps::drawRing( const DrawingPrimitiveRing *ring )
+	void RendererEps::drawRing( const DrawingPrimitiveRing* ring )
 	{
 		fprintf( d->fp, "newpath %f %f %f 0 360 arc closepath %f setlinewidth stroke\n",
 			 ring->x, ring->y, ring->r, ring->lwidth );
 	}
 
 
-	void RendererEps::drawHexagon( const DrawingPrimitiveHexagon *hexagon )
+	void RendererEps::drawHexagon( const DrawingPrimitiveHexagon* hexagon )
 	{
 		fprintf( d->fp, "newpath %f %f moveto %f %f lineto %f %f lineto %f %f lineto %f %f lineto %f %f lineto closepath fill\n",
 			 hexagon->x,                    hexagon->y,

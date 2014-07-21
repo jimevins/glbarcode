@@ -183,10 +183,10 @@ namespace glbarcode
 	 * Code39 vectorization, implements Barcode1dBase::vectorize()
 	 */
 	void BarcodeCode39::vectorize( std::string codedData,
-				       std::string displayText,
-				       std::string cookedData,
-				       double      &w,
-				       double      &h )
+	                               std::string displayText,
+	                               std::string cookedData,
+	                               double&     w,
+	                               double&     h )
 	{
 
 		/* determine width and establish horizontal scale, based on original cooked data */
@@ -226,10 +226,10 @@ namespace glbarcode
 		height = std::max( height, std::max( 0.15*width, MIN_HEIGHT ) );
 
 		/* determine horizontal quiet zone */
-		double x_quiet = std::max( (10 * scale * MIN_X), MIN_QUIET );
+		double xQuiet = std::max( (10 * scale * MIN_X), MIN_QUIET );
 
 		/* Now traverse the code string and draw each bar */
-		double x1 = x_quiet;
+		double x1 = xQuiet;
 		for ( int i=0; i < codedData.size(); i++ )
 		{
 			double lwidth;
@@ -275,11 +275,11 @@ namespace glbarcode
 		if ( showText() )
 		{
 			std::string starredText = "*" + displayText + "*";
-			addText( x_quiet + width/2, height + (hTextArea+0.7*textSize)/2, textSize, starredText );
+			addText( xQuiet + width/2, height + (hTextArea+0.7*textSize)/2, textSize, starredText );
 		}
 
 		/* Overwrite requested size with actual size. */
-		w = width + 2*x_quiet;
+		w = width + 2*xQuiet;
 		h = showText() ? height + hTextArea : height;
 
 	}

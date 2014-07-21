@@ -63,8 +63,8 @@ namespace glbarcode
 		 * @param h Requested height of barcode (0 = auto size)
 		 */
 		void build( std::string           data,
-			    double                w = 0,
-			    double                h = 0 );
+		            double                w = 0,
+		            double                h = 0 );
 
 
 	protected:
@@ -103,8 +103,8 @@ namespace glbarcode
 		 * @return True if data was encoded successfully
 		 * @return False if data could not be encoded (condition not discoverable by validate())
 		 */
-		virtual bool encode( std::string    cookedData,
-				     Matrix<bool> & encodedData ) = 0;
+		virtual bool encode( std::string   cookedData,
+		                     Matrix<bool>& encodedData ) = 0;
 
 
 		/**
@@ -117,9 +117,9 @@ namespace glbarcode
 		 * @param[in,out] w Requested width of barcode (0 = auto size), vectorize will overwrite with actual width
 		 * @param[in,out] h Requested height of barcode (0 = auto size), vectorize will overwrite with actual width
 		 */
-		virtual void vectorize( const Matrix<bool> & encodedData,
-					double             & w,
-					double             & h );
+		virtual void vectorize( const Matrix<bool>& encodedData,
+		                        double&             w,
+		                        double&             h );
 
 
 	private:

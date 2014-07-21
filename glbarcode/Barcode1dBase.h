@@ -61,8 +61,8 @@ namespace glbarcode
 		 * @param h Requested height of barcode (0 = auto size)
 		 */
 		void build( std::string           data,
-			    double                w = 0,
-			    double                h = 0 );
+		            double                w = 0,
+		            double                h = 0 );
 
 
 	protected:
@@ -128,10 +128,10 @@ namespace glbarcode
 		 * @param h Requested height of barcode (0 = auto size), vectorize will overwrite with actual width
 		 */
 		virtual void vectorize( std::string encodedData,
-					std::string displayText,
-					std::string cookedData,
-					double      &w,
-					double      &h ) = 0;
+		                        std::string displayText,
+		                        std::string cookedData,
+		                        double&     w,
+		                        double&     h ) = 0;
 
 
 	private:

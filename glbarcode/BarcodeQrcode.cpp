@@ -40,9 +40,9 @@ namespace glbarcode
 	/*
 	 * Qrcode data validation, implements Barcode2dBase::validate()
 	 */
-	bool BarcodeQrcode::validate( std::string raw_data )
+	bool BarcodeQrcode::validate( std::string rawData )
 	{
-		if ( raw_data.size() == 0 )
+		if ( rawData.size() == 0 )
 		{
 			return false;
 		}
@@ -53,9 +53,9 @@ namespace glbarcode
 	/*
 	 * Qrcode data encoding, implements Barcode2dBase::encode()
 	 */
-	bool BarcodeQrcode::encode( std::string cooked_data, Matrix<bool> & encoded_data )
+	bool BarcodeQrcode::encode( std::string cookedData, Matrix<bool>& encodedData )
 	{
-		QRcode *qrcode = QRcode_encodeString( cooked_data.c_str(), 0, QR_ECLEVEL_M, QR_MODE_8, 1 );
+		QRcode *qrcode = QRcode_encodeString( cookedData.c_str(), 0, QR_ECLEVEL_M, QR_MODE_8, 1 );
 		if ( qrcode == NULL )
 		{
 			return false;
@@ -63,14 +63,14 @@ namespace glbarcode
 
 
 		int w = qrcode->width;
-		encoded_data.resize( w, w );
+		encodedData.resize( w, w );
 		
 		
 		for ( int iy = 0; iy < w; iy++ )
 		{
 			for ( int ix = 0; ix < w; ix++ )
 			{
-				encoded_data[iy][ix] = qrcode->data[ iy*w + ix ] & 0x01;
+				encodedData[iy][ix] = qrcode->data[ iy*w + ix ] & 0x01;
 			}
 		}
 

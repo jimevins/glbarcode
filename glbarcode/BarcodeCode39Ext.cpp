@@ -24,7 +24,7 @@
 namespace
 {
 	/* Code 39Ext ASCII map. */
-	const std::string ascii_map[] = {
+	const std::string asciiMap[] = {
 			/* NUL */ "%U",   /* SOH */ "$A",   /* STX */ "$B",   /* ETX */ "$C",
 			/* EOT */ "$D",   /* ENQ */ "$E",   /* ACK */ "$F",   /* BEL */ "$G",
 			/* BS  */ "$H",   /* HT  */ "$I",   /* LF  */ "$J",   /* VT  */ "$K",
@@ -76,11 +76,11 @@ namespace glbarcode
 	/*
 	 * Extended Code39 data validation, overrides BarcodeCode39::validate() implementation
 	 */
-	bool BarcodeCode39Ext::validate( std::string raw_data )
+	bool BarcodeCode39Ext::validate( std::string rawData )
 	{
-		for ( int i = 0; i < raw_data.size(); i++ )
+		for ( int i = 0; i < rawData.size(); i++ )
 		{
-			if ( (raw_data[i] < 0) || (raw_data[i] > 0x7F) )
+			if ( (rawData[i] < 0) || (rawData[i] > 0x7F) )
 			{
 				return false;
 			}
@@ -93,25 +93,25 @@ namespace glbarcode
 	/*
 	 * Extened Code39 preprocessing of data, implements Barcode1dBase::preprocess()
 	 */
-	std::string BarcodeCode39Ext::preprocess( std::string raw_data )
+	std::string BarcodeCode39Ext::preprocess( std::string rawData )
 	{
-		std::string cooked_data;
+		std::string cookedData;
 
-		for ( int i = 0; i < raw_data.size(); i++ )
+		for ( int i = 0; i < rawData.size(); i++ )
 		{
-			cooked_data += ascii_map[ raw_data[i] ];
+			cookedData += asciiMap[ rawData[i] ];
 		}
 
-		return cooked_data;
+		return cookedData;
 	}
 
 
 	/*
-	 * Extended Code39 prepare text for display, overrides BarcodeCode39::prepare_text()
+	 * Extended Code39 prepare text for display, overrides BarcodeCode39::prepareText()
 	 */
-	std::string BarcodeCode39Ext::prepare_text( std::string raw_data )
+	std::string BarcodeCode39Ext::prepareText( std::string rawData )
 	{
-		return raw_data;
+		return rawData;
 	}
 
 
