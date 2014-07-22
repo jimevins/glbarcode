@@ -62,6 +62,7 @@ namespace glbarcode
 		 * Set accessor for "showText" parameter.
 		 *
 		 * @param value Boolean value
+		 *
 		 * @returns A reference to this Barcode object for parameter chaining
 		 */
 		Barcode& setShowText( bool value );
@@ -79,6 +80,7 @@ namespace glbarcode
 		 * Set accessor for "checksum" parameter.
 		 *
 		 * @param value Boolean value
+		 *
 		 * @returns A reference to this Barcode object for parameter chaining
 		 */
 		Barcode& setChecksum( bool value );
@@ -98,10 +100,12 @@ namespace glbarcode
 		 * @param data Data to encode in barcode
 		 * @param w Requested width of barcode (0 = auto size)
 		 * @param h Requested height of barcode (0 = auto size)
+		 *
+		 * @returns A reference to this Barcode object for chaining methods
 		 */
-		virtual void build( const std::string&    data,
-				    double                w = 0,
-				    double                h = 0 ) = 0;
+		virtual Barcode& build( const std::string&    data,
+		                        double                w = 0,
+		                        double                h = 0 ) = 0;
 
 
 		/**

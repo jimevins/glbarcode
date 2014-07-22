@@ -48,9 +48,9 @@ namespace glbarcode
 	}
 
 
-	void Barcode1dBase::build( const std::string& rawData,
-	                           double             w,
-	                           double             h )
+	Barcode& Barcode1dBase::build( const std::string& rawData,
+				       double             w,
+				       double             h )
 	{
 		std::string cookedData;     /* Preprocessed data */
 		std::string displayText;    /* Text data to be displayed */
@@ -91,6 +91,8 @@ namespace glbarcode
 				setHeight( h );
 			}
 		}
+
+		return *this;
 	}
 
 

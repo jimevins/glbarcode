@@ -59,10 +59,12 @@ namespace glbarcode
 		 * @param data Data to encode in barcode
 		 * @param w Requested width of barcode (0 = auto size)
 		 * @param h Requested height of barcode (0 = auto size)
+		 *
+		 * @returns A reference to this Barcode object for chaining methods
 		 */
-		void build( const std::string&    data,
-		            double                w = 0,
-		            double                h = 0 );
+		Barcode& build( const std::string&    data,
+		                double                w = 0,
+		                double                h = 0 );
 
 
 	protected:
