@@ -58,9 +58,9 @@ namespace glbarcode
 		/**
 		 * Build barcode from data.
 		 *
-		 * @param data Data to encode in barcode
-		 * @param w Requested width of barcode (0 = auto size)
-		 * @param h Requested height of barcode (0 = auto size)
+		 * @param[in] data Data to encode in barcode
+		 * @param[in] w    Requested width of barcode (0 = auto size)
+		 * @param[in] h    Requested height of barcode (0 = auto size)
 		 *
 		 * @returns A reference to this Barcode object for chaining methods
 		 */
@@ -76,7 +76,8 @@ namespace glbarcode
 		 * Required virtual method to test if data is valid for encoding with
 		 * barcode type.
 		 *
-		 * @param rawData Data to validate
+		 * @param[in] rawData Data to validate
+		 *
 		 * @return True if data is valid data for barcode type
 		 * @return False if data is not valid data for barcode type
 		 */
@@ -89,7 +90,8 @@ namespace glbarcode
 		 * Optional virtual method to perform any transformation of the data needed
 		 * before encoding.  (E.g. encoding an extended alphabet into a simpler one).
 		 *
-		 * @param rawData Data to preprocess
+		 * @param[in] rawData Data to preprocess
+		 *
 		 * @return Preprocessed data
 		 */
 		virtual std::string preprocess( const std::string& rawData );
@@ -102,6 +104,7 @@ namespace glbarcode
 		 *
 		 * @param[in]  cookedData  Data to encode
 		 * @param[out] encodedData Encoded data in the form of a matrix
+		 *
 		 * @return True if data was encoded successfully
 		 * @return False if data could not be encoded (condition not discoverable by validate())
 		 */
@@ -115,9 +118,9 @@ namespace glbarcode
 		 * Optional virtual method to convert encoded data into a list of drawing
 		 * primitives which can later be rendered.
 		 *
-		 * @param[in] encodedData Data to vectorize
-		 * @param[in,out] w Requested width of barcode (0 = auto size), vectorize will overwrite with actual width
-		 * @param[in,out] h Requested height of barcode (0 = auto size), vectorize will overwrite with actual width
+		 * @param[in]     encodedData Data to vectorize
+		 * @param[in,out] w           Requested width of barcode (0 = auto size), vectorize will overwrite with actual width
+		 * @param[in,out] h           Requested height of barcode (0 = auto size), vectorize will overwrite with actual width
 		 */
 		virtual void vectorize( const Matrix<bool>& encodedData,
 		                        double&             w,

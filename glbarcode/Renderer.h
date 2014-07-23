@@ -47,9 +47,9 @@ namespace glbarcode
 		/**
 		 * Render list of primitives.
 		 *
-		 * @param w Width of barcode bounding box (points)
-		 * @param h Height of barcode bounding box (points)
-		 * @param primitives List of drawing primitives
+		 * @param[in] w          Width of barcode bounding box (points)
+		 * @param[in] h          Height of barcode bounding box (points)
+		 * @param[in] primitives List of drawing primitives
 		 */
 		void render( double w, double h, const std::list<DrawingPrimitive*>& primitives );
 
@@ -61,8 +61,8 @@ namespace glbarcode
 		 * Required virtual method to perform rendering setup, such as opening devices and/or
 		 * initializing drawing contexts.
 		 *
-		 * @param w Width of barcode bounding box (points)
-		 * @param h Height of barcode bounding box (points)
+		 * @param[in] w Width of barcode bounding box (points)
+		 * @param[in] h Height of barcode bounding box (points)
 		 */
 		virtual void drawBegin( double w, double h ) = 0;
 
@@ -83,7 +83,7 @@ namespace glbarcode
 		 *
 		 * @image html figure-primitive-line.svg "Line primitive properties"
 		 *
-		 * @param line Line primitive to draw
+		 * @param[in] line Line primitive to draw
 		 */
 		virtual void drawLine( const DrawingPrimitiveLine* line ) = 0;
 
@@ -95,7 +95,7 @@ namespace glbarcode
 		 *
 		 * @image html figure-primitive-box.svg "Box primitive properties"
 		 *
-		 * @param box Box primitive to draw
+		 * @param[in] box Box primitive to draw
 		 */
 		virtual void drawBox( const DrawingPrimitiveBox* box ) = 0;
 
@@ -107,7 +107,7 @@ namespace glbarcode
 		 *
 		 * @image html figure-primitive-text.svg "Text primitive properties"
 		 *
-		 * @param text Text primitive to draw
+		 * @param[in] text Text primitive to draw
 		 */
 		virtual void drawText( const DrawingPrimitiveText* text ) = 0;
 
@@ -119,7 +119,7 @@ namespace glbarcode
 		 *
 		 * @image html figure-primitive-ring.svg "Ring primitive properties"
 		 *
-		 * @param ring Ring primitive to draw
+		 * @param[in] ring Ring primitive to draw
 		 */
 		virtual void drawRing( const DrawingPrimitiveRing* ring ) = 0;
 
@@ -131,7 +131,7 @@ namespace glbarcode
 		 *
 		 * @image html figure-primitive-hexagon.svg "Hexagon primitive properties"
 		 *
-		 * @param hexagon Hexagon primitive to draw
+		 * @param[in] hexagon Hexagon primitive to draw
 		 */
 		virtual void drawHexagon( const DrawingPrimitiveHexagon* hexagon ) = 0;
 

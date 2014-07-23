@@ -64,7 +64,7 @@ namespace glbarcode
 
 		/** Assignment operator.
 		 *
-		 * @param from The value to assign to this object.
+		 * @param[in] from The value to assign to this object.
 		 *
 		 * @return A reference to this object.
 		 */
@@ -80,7 +80,8 @@ namespace glbarcode
 
 		/** Set "filename" parameter
 		 *
-		 * @param filename new value of the output filename
+		 * @param[in] filename new value of the output filename
+		 *
 		 * @returns reference to this RendererSvg object for parameter chaining
 		 */
 		RendererSvg& setFilename( const std::string& filename );

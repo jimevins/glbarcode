@@ -61,7 +61,7 @@ namespace glbarcode
 		/**
 		 * Set accessor for "showText" parameter.
 		 *
-		 * @param value Boolean value
+		 * @param[in] value Boolean value
 		 *
 		 * @returns A reference to this Barcode object for parameter chaining
 		 */
@@ -79,7 +79,7 @@ namespace glbarcode
 		/**
 		 * Set accessor for "checksum" parameter.
 		 *
-		 * @param value Boolean value
+		 * @param[in] value Boolean value
 		 *
 		 * @returns A reference to this Barcode object for parameter chaining
 		 */
@@ -97,9 +97,9 @@ namespace glbarcode
 		/**
 		 * Build barcode from data.
 		 *
-		 * @param data Data to encode in barcode
-		 * @param w Requested width of barcode (0 = auto size)
-		 * @param h Requested height of barcode (0 = auto size)
+		 * @param[in] data Data to encode in barcode
+		 * @param[in] w    Requested width of barcode (0 = auto size)
+		 * @param[in] h    Requested height of barcode (0 = auto size)
 		 *
 		 * @returns A reference to this Barcode object for chaining methods
 		 */
@@ -111,7 +111,7 @@ namespace glbarcode
 		/**
 		 * Render barcode using given Renderer object.
 		 *
-		 * @param renderer A Renderer object
+		 * @param[in] renderer A Renderer object
 		 */
 		void render( Renderer& renderer );
 
@@ -164,10 +164,10 @@ namespace glbarcode
 		 *
 		 * @image html figure-primitive-line.svg "Line primitive properties"
 		 *
-		 * @param x X coordinate of line's origin (points)
-		 * @param y Y coordinate of line's origin (points)
-		 * @param w Bar width (points)
-		 * @param h Bar height (points)
+		 * @param[in] x X coordinate of line's origin (points)
+		 * @param[in] y Y coordinate of line's origin (points)
+		 * @param[in] w Bar width (points)
+		 * @param[in] h Bar height (points)
 		 */
 		void addLine( double x, double y, double w, double h );
 
@@ -179,10 +179,10 @@ namespace glbarcode
 		 *
 		 * @image html figure-primitive-box.svg "Box primitive properties"
 		 *
-		 * @param x X coordinate of box's origin (points)
-		 * @param y Y coordinate of box's origin (points)
-		 * @param w Width of box (points)
-		 * @param h Height of box (points)
+		 * @param[in] x X coordinate of box's origin (points)
+		 * @param[in] y Y coordinate of box's origin (points)
+		 * @param[in] w Width of box (points)
+		 * @param[in] h Height of box (points)
 		 */
 		void addBox( double x, double y, double w, double h );
 
@@ -194,10 +194,10 @@ namespace glbarcode
 		 *
 		 * @image html figure-primitive-text.svg "Text primitive properties"
 		 *
-		 * @param x X coordinate of text's origin (points)
-		 * @param y Y coordinate of text's origin (points)
-		 * @param fsize Font size of text (points)
-		 * @param s Text
+		 * @param[in] x     X coordinate of text's origin (points)
+		 * @param[in] y     Y coordinate of text's origin (points)
+		 * @param[in] fsize Font size of text (points)
+		 * @param[in] s     Text
 		 */
 		void addText( double x, double y, double fsize, const std::string& s );
 
@@ -209,10 +209,10 @@ namespace glbarcode
 		 *
 		 * @image html figure-primitive-ring.svg "Ring primitive properties"
 		 *
-		 * @param x X coordinate of ring's origin (points)
-		 * @param y Y coordinate of ring's origin (points)
-		 * @param r Radius of ring (points)
-		 * @param lwidth Line width of ring (points)
+		 * @param[in] x      X coordinate of ring's origin (points)
+		 * @param[in] y      Y coordinate of ring's origin (points)
+		 * @param[in] r      Radius of ring (points)
+		 * @param[in] lwidth Line width of ring (points)
 		 */
 		void addRing( double x, double y, double r, double lwidth );
 
@@ -224,9 +224,9 @@ namespace glbarcode
 		 *
 		 * @image html figure-primitive-hexagon.svg "Hexagon primitive properties"
 		 *
-		 * @param x X coordinate of hexagon's origin (points)
-		 * @param y Y coordinate of hexagon's origin (points)
-		 * @param h Height of hexagon (points)
+		 * @param[in] x X coordinate of hexagon's origin (points)
+		 * @param[in] y Y coordinate of hexagon's origin (points)
+		 * @param[in] h Height of hexagon (points)
 		 */
 		void addHexagon( double x, double y, double h );
 
@@ -236,7 +236,7 @@ namespace glbarcode
 		 *
 		 * To be used by build() implementations to indicate if input data is empty
 		 *
-		 * @param value Boolean value of flag
+		 * @param[in] value Boolean value of flag
 		 */
 		void setEmptyFlag( bool value );
 
@@ -246,7 +246,7 @@ namespace glbarcode
 		 *
 		 * To be used by build() implementations to indicate if input data is valid or not
 		 *
-		 * @param value Boolean value of flag
+		 * @param[in] value Boolean value of flag
 		 */
 		void setDataValidFlag( bool value );
 
@@ -256,7 +256,7 @@ namespace glbarcode
 		 *
 		 * To be used by build() implementations to override requested width of barcode.
 		 *
-		 * @param w Actual width of barcode (points)
+		 * @param[in] w Actual width of barcode (points)
 		 */
 		void setWidth( double w );
 
@@ -266,7 +266,7 @@ namespace glbarcode
 		 *
 		 * To be used by build() implementations to override requested height of barcode.
 		 *
-		 * @param h Actual height of barcode (points)
+		 * @param[in] h Actual height of barcode (points)
 		 */
 		void setHeight( double h );
 

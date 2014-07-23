@@ -60,10 +60,10 @@ namespace glbarcode
 		/**
 		 * Line constructor
 		 *
-		 * @param x X coordinate of line's origin (points)
-		 * @param y Y coordinate of line's origin (points)
-		 * @param w Line width (points)
-		 * @param h Line height (points)
+		 * @param[in] x X coordinate of line's origin (points)
+		 * @param[in] y Y coordinate of line's origin (points)
+		 * @param[in] w Line width (points)
+		 * @param[in] h Line height (points)
 		 */
 		DrawingPrimitiveLine( double x, double y, double w, double h );
 
@@ -86,10 +86,10 @@ namespace glbarcode
 		/**
 		 * Box constructor
 		 *
-		 * @param x X coordinate of box's origin (points)
-		 * @param y Y coordinate of box's origin (points)
-		 * @param w Width of box (points)
-		 * @param h Height of box (points)
+		 * @param[in] x X coordinate of box's origin (points)
+		 * @param[in] y Y coordinate of box's origin (points)
+		 * @param[in] w Width of box (points)
+		 * @param[in] h Height of box (points)
 		 */
 		DrawingPrimitiveBox( double x, double y, double w, double h );
 
@@ -112,10 +112,10 @@ namespace glbarcode
 		/**
 		 * Text constructor
 		 *
-		 * @param x X coordinate of text's origin (points)
-		 * @param y Y coordinate of text's origin (points)
-		 * @param fsize Font size of text (points)
-		 * @param s Text
+		 * @param[in] x     X coordinate of text's origin (points)
+		 * @param[in] y     Y coordinate of text's origin (points)
+		 * @param[in] fsize Font size of text (points)
+		 * @param[in] s     Text
 		 */
 		DrawingPrimitiveText( double x, double y, double fsize, const std::string& s );
 
@@ -138,10 +138,10 @@ namespace glbarcode
 		/**
 		 * Ring constructor
 		 *
-		 * @param x X coordinate of ring's origin (points)
-		 * @param y Y coordinate of ring's origin (points)
-		 * @param r Radius of ring (points)
-		 * @param lwidth Line width of ring (points)
+		 * @param[in] x      X coordinate of ring's origin (points)
+		 * @param[in] y      Y coordinate of ring's origin (points)
+		 * @param[in] r      Radius of ring (points)
+		 * @param[in] lwidth Line width of ring (points)
 		 */
 		DrawingPrimitiveRing( double x, double y, double r, double lwidth );
 
@@ -164,9 +164,9 @@ namespace glbarcode
 		/**
 		 * Hexagon constructor
 		 *
-		 * @param x X coordinate of hexagon's origin (points)
-		 * @param y Y coordinate of hexagon's origin (points)
-		 * @param h Height of hexagon (points)
+		 * @param[in] x X coordinate of hexagon's origin (points)
+		 * @param[in] y Y coordinate of hexagon's origin (points)
+		 * @param[in] h Height of hexagon (points)
 		 */
 		DrawingPrimitiveHexagon( double x, double y, double h );
 

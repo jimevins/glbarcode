@@ -72,7 +72,7 @@ namespace glbarcode
 		/**
 		 * Create barcode based on type ID string.
 		 *
-		 * @param typeId Barcode type ID string
+		 * @param[in] typeId Barcode type ID string
 		 */
 		static Barcode* createBarcode( const std::string& typeId );
 
@@ -80,8 +80,8 @@ namespace glbarcode
 		/**
 		 * Register barcode type ID.
 		 *
-		 * @param typeId Barcode type ID string
-		 * @param fct Function to create barcode object of concrete Barcode class
+		 * @param[in] typeId Barcode type ID string
+		 * @param[in] fct Function to create barcode object of concrete Barcode class
 		 */
 		static void registerType( const std::string& typeId, BarcodeCreateFct fct );
 
@@ -102,8 +102,8 @@ namespace glbarcode
 		/**
 		 * Internal register barcode type ID.
 		 *
-		 * @param typeId Barcode type ID string
-		 * @param fct Function to create barcode object of concrete Barcode class
+		 * @param[in] typeId Barcode type ID string
+		 * @param[in] fct Function to create barcode object of concrete Barcode class
 		 */
 		static void internalRegisterType( const std::string& typeId, BarcodeCreateFct fct );
 
