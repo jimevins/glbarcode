@@ -24,47 +24,115 @@
 namespace glbarcode
 {
 
-	DrawingPrimitiveLine::DrawingPrimitiveLine( double x, double y, double w, double h )
+	DrawingPrimitive::DrawingPrimitive( double x, double y )
+		: mX(x), mY(y)
 	{
-		this->x = x;
-		this->y = y;
-		this->w = w;
-		this->h = h;
 	}
+
+
+	DrawingPrimitive::~DrawingPrimitive()
+	{
+	}
+
+
+	double DrawingPrimitive::x() const
+	{
+		return mX;
+	}
+
+
+	double DrawingPrimitive::y() const
+	{
+		return mY;
+	}
+
+
+
+	DrawingPrimitiveLine::DrawingPrimitiveLine( double x, double y, double w, double h )
+		: DrawingPrimitive( x, y ), mW(w), mH(h)
+	{
+	}
+
+
+	double DrawingPrimitiveLine::w() const
+	{
+		return mW;
+	}
+
+
+	double DrawingPrimitiveLine::h() const
+	{
+		return mH;
+	}
+
 
 
 	DrawingPrimitiveBox::DrawingPrimitiveBox( double x, double y, double w, double h )
+		: DrawingPrimitive( x, y ), mW(w), mH(h)
 	{
-		this->x = x;
-		this->y = y;
-		this->w = w;
-		this->h = h;
 	}
 
 
-	DrawingPrimitiveText::DrawingPrimitiveText( double x, double y, double fsize, const std::string& s )
+	double DrawingPrimitiveBox::w() const
 	{
-		this->x     = x;
-		this->y     = y;
-		this->fsize = fsize;
-		this->s     = s;
+		return mW;
 	}
 
 
-	DrawingPrimitiveRing::DrawingPrimitiveRing( double x, double y, double r, double lwidth )
+	double DrawingPrimitiveBox::h() const
 	{
-		this->x      = x;
-		this->y      = y;
-		this->r      = r;
-		this->lwidth = lwidth;
+		return mH;
 	}
+
+
+
+	DrawingPrimitiveText::DrawingPrimitiveText( double x, double y, double size, const std::string& text )
+		: DrawingPrimitive( x, y ), mSize(size), mText(text)
+	{
+	}
+
+
+	double DrawingPrimitiveText::size() const
+	{
+		return mSize;
+	}
+
+
+	const std::string& DrawingPrimitiveText::text() const
+	{
+		return mText;
+	}
+
+
+
+	DrawingPrimitiveRing::DrawingPrimitiveRing( double x, double y, double r, double w )
+		: DrawingPrimitive( x, y ), mR(r), mW(w)
+	{
+	}
+
+
+	double DrawingPrimitiveRing::r() const
+	{
+		return mR;
+	}
+
+
+	double DrawingPrimitiveRing::w() const
+	{
+		return mW;
+	}
+
 
 
 	DrawingPrimitiveHexagon::DrawingPrimitiveHexagon( double x, double y, double h )
+		: DrawingPrimitive( x, y ), mH(h)
 	{
-		this->x = x;
-		this->y = y;
-		this->h = h;
+	}
+
+
+	double DrawingPrimitiveHexagon::h() const
+	{
+		return mH;
 	}
 
 }

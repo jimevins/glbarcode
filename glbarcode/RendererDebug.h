@@ -55,35 +55,35 @@ namespace glbarcode
 		void drawLine( const DrawingPrimitiveLine* line )
 		{
 			printf( "\tDRAW_LINE( x = %f, y = %f, w = %f, h = %f )\n",
-				line->x, line->y, line->w, line->h );
+				line->x(), line->y(), line->w(), line->h() );
 		}
 
 
 		void drawBox( const DrawingPrimitiveBox* box )
 		{
 			printf( "\tDRAW_BOX( x = %f, y = %f, w = %f, h = %f )\n",
-				box->x, box->y, box->w, box->h );
+				box->x(), box->y(), box->w(), box->h() );
 		}
 
 
 		void drawText( const DrawingPrimitiveText* text )
 		{
-			printf( "\tDRAW_TEXT( x = %f, y = %f, fsize = %f, s = \"%s\" )\n",
-				text->x, text->y, text->fsize, text->s.c_str() );
+			printf( "\tDRAW_TEXT( x = %f, y = %f, size = %f, text = \"%s\" )\n",
+			        text->x(), text->y(), text->size(), text->text().c_str() );
 		}
 
 
 		void drawRing( const DrawingPrimitiveRing* ring )
 		{
-			printf( "\tDRAW_RING( x = %f, y = %f, r = %f, lwidth = %f )\n",
-				ring->x, ring->y, ring->r, ring->lwidth );
+			printf( "\tDRAW_RING( x = %f, y = %f, r = %f, w = %f )\n",
+			        ring->x(), ring->y(), ring->r(), ring->w() );
 		}
 
 
 		void drawHexagon( const DrawingPrimitiveHexagon* hexagon )
 		{
 			printf( "\tDRAW_HEXAGON( x = %f, y = %f, h = %f )\n",
-				hexagon->x, hexagon->y, hexagon->h );
+				hexagon->x(), hexagon->y(), hexagon->h() );
 		}
 
 	};

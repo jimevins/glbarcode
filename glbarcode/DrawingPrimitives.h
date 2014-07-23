@@ -35,15 +35,36 @@ namespace glbarcode
 	 */
 	class DrawingPrimitive
 	{
+	protected:
+		/**
+		 * Constructor
+		 *
+		 * @param[in] x X coordinate of primitive's origin (points)
+		 * @param[in] y Y coordinate of primitive's origin (points)
+		 */
+		DrawingPrimitive( double x, double y );
+
 	public:
 		/**
 		 * Destructor
 		 */
-		virtual ~DrawingPrimitive() { }
+		virtual ~DrawingPrimitive();
 
-		double x;    /**< X coordinate of primitive's origin (points). */
-		double y;    /**< Y coordinate of primitive's origin (points). */
+		/**
+		 * Get X coordinate of primitive's origin (points).
+		 */
+		double x() const;
+
+		/**
+		 * Get Y coordinate of primitive's origin (points).
+		 */
+		double y() const;
+
+	private:
+		double mX;    /**< X coordinate of primitive's origin (points). */
+		double mY;    /**< Y coordinate of primitive's origin (points). */
 	};
+
 
 
 	/**
@@ -67,9 +88,21 @@ namespace glbarcode
 		 */
 		DrawingPrimitiveLine( double x, double y, double w, double h );
 
-		double  w;    /**< Line width (points). */
-		double  h;    /**< Line length (points). */
+		/**
+		 * Get line width (points).
+		 */
+		double w() const;
+
+		/**
+		 * Get line height (points).
+		 */
+		double h() const;
+
+	private:
+		double  mW;    /**< Line width (points). */
+		double  mH;    /**< Line length (points). */
 	};
+
 
 
 	/**
@@ -93,9 +126,21 @@ namespace glbarcode
 		 */
 		DrawingPrimitiveBox( double x, double y, double w, double h );
 
-		double  w;    /**< Width of box (points). */
-		double  h;    /**< Height of box (points). */
+		/**
+		 * Get box width (points).
+		 */
+		double w() const;
+
+		/**
+		 * Get box height (points).
+		 */
+		double h() const;
+
+	private:
+		double  mW;    /**< Width of box (points). */
+		double  mH;    /**< Height of box (points). */
 	};
+
 
 
 	/**
@@ -112,16 +157,28 @@ namespace glbarcode
 		/**
 		 * Text constructor
 		 *
-		 * @param[in] x     X coordinate of text's origin (points)
-		 * @param[in] y     Y coordinate of text's origin (points)
-		 * @param[in] fsize Font size of text (points)
-		 * @param[in] s     Text
+		 * @param[in] x    X coordinate of text's origin (points)
+		 * @param[in] y    Y coordinate of text's origin (points)
+		 * @param[in] size Font size of text (points)
+		 * @param[in] text Text
 		 */
-		DrawingPrimitiveText( double x, double y, double fsize, const std::string& s );
+		DrawingPrimitiveText( double x, double y, double size, const std::string& text );
 
-		double       fsize;    /**< Font size of text (points). */
-		std::string  s;        /**< Text. */
+		/**
+		 * Get font size (points).
+		 */
+		double size() const;
+
+		/**
+		 * Get text.
+		 */
+		const std::string& text() const;
+
+	private:
+		double       mSize;    /**< Font size of text (points). */
+		std::string  mText;    /**< Text. */
 	};
+
 
 
 	/**
@@ -138,16 +195,28 @@ namespace glbarcode
 		/**
 		 * Ring constructor
 		 *
-		 * @param[in] x      X coordinate of ring's origin (points)
-		 * @param[in] y      Y coordinate of ring's origin (points)
-		 * @param[in] r      Radius of ring (points)
-		 * @param[in] lwidth Line width of ring (points)
+		 * @param[in] x X coordinate of ring's origin (points)
+		 * @param[in] y Y coordinate of ring's origin (points)
+		 * @param[in] r Radius of ring (points)
+		 * @param[in] w Line width of ring (points)
 		 */
-		DrawingPrimitiveRing( double x, double y, double r, double lwidth );
+		DrawingPrimitiveRing( double x, double y, double r, double w );
 
-		double  r;        /**< Radius of ring (points). */
-		double  lwidth;   /**< Line width of ring (points). */
+		/**
+		 * Get radius of ring (points).
+		 */
+		double r() const;
+
+		/**
+		 * Get line width (points).
+		 */
+		double w() const;
+
+	private:
+		double  mR;   /**< Radius of ring (points). */
+		double  mW;   /**< Line width of ring (points). */
 	};
+
 
 
 	/**
@@ -170,7 +239,13 @@ namespace glbarcode
 		 */
 		DrawingPrimitiveHexagon( double x, double y, double h );
 
-		double  h;    /**< Height of hexagon (points). */
+		/**
+		 * Get Hexagon height (points).
+		 */
+		double h() const;
+
+	private:
+		double  mH;    /**< Height of hexagon (points). */
 	};
 
 }
