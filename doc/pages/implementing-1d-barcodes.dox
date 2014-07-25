@@ -70,45 +70,7 @@ A barcode subclass may also need to implement the following virtual methods:
 
 The following figure illustrates the data flow between these methods, which are called by glbarcode::Barcode1dBase::build():
 
-@dot
-digraph init {
-	node [shape=plaintext style=solid fontsize=8];
-	rawData;
-	primitives [label="\"Drawing\nPrimitives\""];
-
-	node [shape=box style=solid];
-	validate     [label=validate     URL="@ref glbarcode::Barcode1dBase::validate()"    ]; 
-
-	node [shape=box style=solid];
-	preprocess   [label=preprocess   URL="@ref glbarcode::Barcode1dBase::preprocess()"  ];
-	encode       [label=encode       URL="@ref glbarcode::Barcode1dBase::encode()"      ];
-	prepareText  [label=prepareText  URL="@ref glbarcode::Barcode1dBase::prepareText()"];
-	vectorize    [label=vectorize    URL="@ref glbarcode::Barcode1dBase::vectorize()"   ];
-
-	node [shape=plaintext style=solid fontcolor="gray"];
-	null1 [label=""];
-	null2 [label=""];
-	step1 [label="Step 1"];
-	step2 [label="Step 2"];
-	step3 [label="Step 3"];
-	step4 [label="Step 4"];
-
-	{rank=same; step1 validate}
-	{rank=same; step2 preprocess}
-	{rank=same; step3 encode prepareText}
-	{rank=same; step4 vectorize}
-
-	null1 -> step1 -> step2 -> step3 -> step4 -> null2 [style=solid color="gray"];
-
-	rawData -> validate;
-	validate -> preprocess;
-	validate -> prepareText;
-	preprocess -> encode [label=cookedData fontsize=8];
-	encode -> vectorize [label=encodedData fontsize=8];
-	prepareText -> vectorize [label=displayText fontsize=8];
-	vectorize -> primitives;
-}
-@enddot
+@dotfile figure-1d-build.dot "1D build() data flow"
 
 
 
@@ -148,10 +110,10 @@ BarcodeCode39.cpp:
 @includelineno BarcodeCode39.cpp
 
 Finally, as a built-in barcode type, the Code39 barcode type does not need to be registered.  If it were a user-defined type,
-it would be registered using the glbarcode::Factory::register_type():
+it would be registered using the glbarcode::Factory::registerType() method:
 
 @code
-	glbarcode::Factory::register_type( "code39", &BarcodeCode39::create );
+	glbarcode::Factory::registerType( "code39", &BarcodeCode39::create );
 @endcode
 
 

@@ -1,0 +1,34 @@
+digraph init {
+	node [shape=plaintext style=solid fontsize=8];
+	data;
+	primitives [label="\"Drawing\nPrimitives\""];
+
+	node [shape=box style=solid];
+	validate     [label=validate     URL="@ref glbarcode::Barcode2dBase::validate()"    ]; 
+
+	node [shape=box style=solid];
+	preprocess   [label=preprocess   URL="@ref glbarcode::Barcode1dBase::preprocess()"  ];
+	encode       [label=encode       URL="@ref glbarcode::Barcode2dBase::encode()"      ];
+	vectorize    [label=vectorize    URL="@ref glbarcode::Barcode2dBase::vectorize()"   ];
+
+	node [shape=plaintext style=solid fontcolor="gray"];
+	null1 [label=""];
+	null2 [label=""];
+	step1 [label="Step 1"];
+	step2 [label="Step 2"];
+	step3 [label="Step 3"];
+	step4 [label="Step 4"];
+
+	{rank=same; step1 validate}
+	{rank=same; step2 preprocess}
+	{rank=same; step3 encode}
+	{rank=same; step4 vectorize}
+
+	null1 -> step1 -> step2 -> step3 -> step4 -> null2 [style=solid color="gray"];
+
+	data -> validate;
+	validate -> preprocess;
+	preprocess -> encode [label=cookedData fontsize=8];
+	encode -> vectorize [label=encodedData fontsize=8];
+	vectorize -> primitives;
+}

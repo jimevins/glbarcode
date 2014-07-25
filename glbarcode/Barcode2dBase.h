@@ -56,7 +56,12 @@ namespace glbarcode
 
 
 		/**
-		 * Build barcode from data.
+		 * Build 2D barcode from data.
+		 *
+		 * Implements glbarcode::Barcode::build().  Calls the validate(), preprocess(),
+		 * encode(), and vectorize() virtual methods, as shown:
+		 *
+		 * @dotfile figure-2d-build.dot "2D build() data flow"
 		 *
 		 * @param[in] data Data to encode in barcode
 		 * @param[in] w    Requested width of barcode (0 = auto size)

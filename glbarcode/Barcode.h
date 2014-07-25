@@ -160,7 +160,7 @@ namespace glbarcode
 		/**
 		 * Add line drawing primitive (DrawingPrimitiveLine)
 		 *
-		 * To be used by vectorize() implementations.
+		 * To be used by build() implementations during vectorization.
 		 *
 		 * @image html figure-primitive-line.svg "Line primitive properties"
 		 *
@@ -175,7 +175,7 @@ namespace glbarcode
 		/**
 		 * Add box drawing primitive (DrawingPrimitiveBox)
 		 *
-		 * To be used by vectorize() implementations.
+		 * To be used by build() implementations during vectorization.
 		 *
 		 * @image html figure-primitive-box.svg "Box primitive properties"
 		 *
@@ -190,7 +190,7 @@ namespace glbarcode
 		/**
 		 * Add text drawing primitive (DrawingPrimitiveText)
 		 *
-		 * To be used by vectorize() implementations.
+		 * To be used by build() implementations during vectorization.
 		 *
 		 * @image html figure-primitive-text.svg "Text primitive properties"
 		 *
@@ -205,7 +205,7 @@ namespace glbarcode
 		/**
 		 * Add ring drawing primitive (DrawingPrimitiveRing)
 		 *
-		 * To be used by vectorize() implementations.
+		 * To be used by build() implementations during vectorization.
 		 *
 		 * @image html figure-primitive-ring.svg "Ring primitive properties"
 		 *
@@ -220,7 +220,7 @@ namespace glbarcode
 		/**
 		 * Add hexagon drawing primitive (DrawingPrimitiveHexagon)
 		 *
-		 * To be used by vectorize() implementations.
+		 * To be used by build() implementations during vectorization.
 		 *
 		 * @image html figure-primitive-hexagon.svg "Hexagon primitive properties"
 		 *
