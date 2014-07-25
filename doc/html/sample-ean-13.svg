@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<!-- Created with glbarcode++ version 0.0.0 (https://github.com/jimevins/test-glbarcode) -->
+<!-- Created with glbarcode++ version 0.0.0 (https://github.com/jimevins/glbarcode) -->
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="162.000000" height="102.902655" >
   <line x1="13.619469" y1="0.000000" x2="13.619469" y2="91.951327" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
   <line x1="16.486726" y1="0.000000" x2="16.486726" y2="91.951327" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
@@ -31,7 +31,7 @@
   <line x1="139.778761" y1="0.000000" x2="139.778761" y2="81.000000" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
   <line x1="145.513274" y1="0.000000" x2="145.513274" y2="91.951327" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
   <line x1="148.380531" y1="0.000000" x2="148.380531" y2="91.951327" stroke-width="1.433628" style="stroke:rgb(0,0,0)" />
-  <text x="6.451327" y="97.178097" font-size="10.453540" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >1</text>
-  <text x="46.951327" y="98.920354" font-size="13.938053" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >234567</text>
-  <text x="115.048673" y="98.920354" font-size="13.938053" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >890128</text>
+  <text x="6.451327" y="94.564712" font-size="10.453540" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >1</text>
+  <text x="48.026549" y="95.435841" font-size="13.938053" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >234567</text>
+  <text x="113.973451" y="95.435841" font-size="13.938053" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >890128</text>
 </svg>

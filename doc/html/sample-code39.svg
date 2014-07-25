@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no"?>
-<!-- Created with glbarcode++ version 0.0.0 (https://github.com/jimevins/test-glbarcode) -->
+<!-- Created with glbarcode++ version 0.0.0 (https://github.com/jimevins/glbarcode) -->
 <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="216.000000" height="72.000000" >
   <line x1="15.170569" y1="0.000000" x2="15.170569" y2="43.906355" stroke-width="1.444816" style="stroke:rgb(0,0,0)" />
   <line x1="20.227425" y1="0.000000" x2="20.227425" y2="43.906355" stroke-width="1.444816" style="stroke:rgb(0,0,0)" />
@@ -46,5 +46,5 @@
   <line x1="191.799331" y1="0.000000" x2="191.799331" y2="43.906355" stroke-width="3.612040" style="stroke:rgb(0,0,0)" />
   <line x1="196.856187" y1="0.000000" x2="196.856187" y2="43.906355" stroke-width="3.612040" style="stroke:rgb(0,0,0)" />
   <line x1="200.829431" y1="0.000000" x2="200.829431" y2="43.906355" stroke-width="1.444816" style="stroke:rgb(0,0,0)" />
-  <text x="108.000000" y="67.986622" font-size="20.066890" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >*ABC123*</text>
+  <text x="108.000000" y="64.976589" font-size="20.066890" style="font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)" >*ABC123*</text>
 </svg>

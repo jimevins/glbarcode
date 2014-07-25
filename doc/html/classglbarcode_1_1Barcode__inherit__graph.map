@@ -1,17 +1,18 @@
 <map id="glbarcode::Barcode" name="glbarcode::Barcode">
-<area shape="rect" id="node5" href="$classglbarcode_1_1Barcode1dBase.html" title="{glbarcode::Barcode1dBase\n||+ ~Barcode1dBase()\l+ build()\l# Barcode1dBase()\l# validate()\l# preprocess()\l# encode()\l# prepare_text()\l# vectorize()\l}" alt="" coords="647,638,825,845"/>
-<area shape="rect" id="node29" href="$classglbarcode_1_1Barcode2dBase.html" title="{glbarcode::Barcode2dBase\n||+ ~Barcode2dBase()\l+ build()\l# Barcode2dBase()\l# validate()\l# preprocess()\l# encode()\l# vectorize()\l}" alt="" coords="959,647,1137,836"/>
-<area shape="rect" id="node2" href="$structgbcBarcode.html" title="{gbcBarcode\n||}" alt="" coords="792,5,883,91"/>
-<area shape="rect" id="node7" href="$classglbarcode_1_1BarcodeCode39.html" title="{glbarcode::BarcodeCode39\n||+ create()\l}" alt="" coords="124,911,303,996"/>
-<area shape="rect" id="node11" href="$classglbarcode_1_1BarcodeOnecode.html" title="{glbarcode::BarcodeOnecode\n||+ create()\l}" alt="" coords="436,911,623,996"/>
-<area shape="rect" id="node13" href="$classglbarcode_1_1BarcodePostnet.html" title="{glbarcode::BarcodePostnet\n||+ create()\l# validate_digits()\l}" alt="" coords="647,902,825,1005"/>
-<area shape="rect" id="node23" href="$classglbarcode_1_1BarcodeUpcBase.html" title="{glbarcode::BarcodeUpcBase\n|# m_end_bars_modules\l# m_first_digit_val\l|# validate_digits()\l# vectorize_text()\l}" alt="" coords="952,893,1139,1013"/>
-<area shape="rect" id="node9" href="$classglbarcode_1_1BarcodeCode39Ext.html" title="{glbarcode::BarcodeCode39Ext\n||+ create()\l}" alt="" coords="5,1071,203,1156"/>
-<area shape="rect" id="node15" href="$classglbarcode_1_1BarcodeCepnet.html" title="{glbarcode::BarcodeCepnet\n||+ create()\l}" alt="" coords="227,1071,403,1156"/>
-<area shape="rect" id="node17" href="$classglbarcode_1_1BarcodePostnet11.html" title="{glbarcode::BarcodePostnet11\n||+ create()\l}" alt="" coords="427,1071,619,1156"/>
-<area shape="rect" id="node19" href="$classglbarcode_1_1BarcodePostnet5.html" title="{glbarcode::BarcodePostnet5\n||+ create()\l}" alt="" coords="643,1071,829,1156"/>
-<area shape="rect" id="node21" href="$classglbarcode_1_1BarcodePostnet9.html" title="{glbarcode::BarcodePostnet9\n||+ create()\l}" alt="" coords="853,1071,1040,1156"/>
-<area shape="rect" id="node25" href="$classglbarcode_1_1BarcodeEan13.html" title="{glbarcode::BarcodeEan13\n||+ BarcodeEan13()\l+ create()\l}" alt="" coords="1064,1062,1235,1165"/>
-<area shape="rect" id="node27" href="$classglbarcode_1_1BarcodeUpcA.html" title="{glbarcode::BarcodeUpcA\n||+ BarcodeUpcA()\l+ create()\l}" alt="" coords="1259,1062,1424,1165"/>
-<area shape="rect" id="node31" href="$classglbarcode_1_1BarcodeDataMatrix.html" title="{glbarcode::BarcodeDataMatrix\n||+ create()\l}" alt="" coords="1163,911,1360,996"/>
+<area shape="rect" id="node3" href="$classglbarcode_1_1Barcode1dBase.html" title="{glbarcode::Barcode1dBase\n||+ ~Barcode1dBase()\l+ build()\l# Barcode1dBase()\l# validate()\l# preprocess()\l# encode()\l# prepareText()\l# vectorize()\l}" alt="" coords="651,566,829,746"/>
+<area shape="rect" id="node15" href="$classglbarcode_1_1Barcode2dBase.html" title="{glbarcode::Barcode2dBase\n||+ ~Barcode2dBase()\l+ build()\l# Barcode2dBase()\l# validate()\l# preprocess()\l# encode()\l# vectorize()\l}" alt="" coords="1179,573,1357,739"/>
+<area shape="rect" id="node2" href="$structgbcBarcode.html" title="{gbcBarcode\n||}" alt="" coords="907,5,997,83"/>
+<area shape="rect" id="node4" href="$classglbarcode_1_1BarcodeCode39.html" title="{glbarcode::BarcodeCode39\n||+ create()\l}" alt="" coords="125,809,304,887"/>
+<area shape="rect" id="node6" href="$classglbarcode_1_1BarcodeOnecode.html" title="{glbarcode::BarcodeOnecode\n||+ create()\l}" alt="" coords="440,809,627,887"/>
+<area shape="rect" id="node7" href="$classglbarcode_1_1BarcodePostnet.html" title="{glbarcode::BarcodePostnet\n||+ create()\l# validateDigits()\l}" alt="" coords="651,802,829,894"/>
+<area shape="rect" id="node12" href="$classglbarcode_1_1BarcodeUpcBase.html" title="{glbarcode::BarcodeUpcBase\n|# mEndBarsModules\l# mFirstDigitVal\l|# validateDigits()\l# vectorizeText()\l}" alt="" coords="957,795,1144,901"/>
+<area shape="rect" id="node5" href="$classglbarcode_1_1BarcodeCode39Ext.html" title="{glbarcode::BarcodeCode39Ext\n||+ create()\l}" alt="" coords="5,957,203,1035"/>
+<area shape="rect" id="node8" href="$classglbarcode_1_1BarcodeCepnet.html" title="{glbarcode::BarcodeCepnet\n||+ create()\l}" alt="" coords="228,957,404,1035"/>
+<area shape="rect" id="node9" href="$classglbarcode_1_1BarcodePostnet11.html" title="{glbarcode::BarcodePostnet11\n||+ create()\l}" alt="" coords="429,957,621,1035"/>
+<area shape="rect" id="node10" href="$classglbarcode_1_1BarcodePostnet5.html" title="{glbarcode::BarcodePostnet5\n||+ create()\l}" alt="" coords="647,957,833,1035"/>
+<area shape="rect" id="node11" href="$classglbarcode_1_1BarcodePostnet9.html" title="{glbarcode::BarcodePostnet9\n||+ create()\l}" alt="" coords="857,957,1044,1035"/>
+<area shape="rect" id="node13" href="$classglbarcode_1_1BarcodeEan13.html" title="{glbarcode::BarcodeEan13\n||+ BarcodeEan13()\l+ create()\l}" alt="" coords="1068,950,1239,1042"/>
+<area shape="rect" id="node14" href="$classglbarcode_1_1BarcodeUpcA.html" title="{glbarcode::BarcodeUpcA\n||+ BarcodeUpcA()\l+ create()\l}" alt="" coords="1263,950,1429,1042"/>
+<area shape="rect" id="node16" href="$classglbarcode_1_1BarcodeDataMatrix.html" title="{glbarcode::BarcodeDataMatrix\n||+ create()\l}" alt="" coords="1169,809,1367,887"/>
+<area shape="rect" id="node17" href="$classglbarcode_1_1BarcodeQrcode.html" title="{glbarcode::BarcodeQrcode\n||+ create()\l}" alt="" coords="1392,809,1568,887"/>
 </map>

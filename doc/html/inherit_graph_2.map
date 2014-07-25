@@ -1,7 +1,7 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$structgbcRenderer.html" title="gbcRenderer" alt="" coords="5,59,101,88"/>
-<area shape="rect" id="node3" href="$classglbarcode_1_1Renderer.html" title="glbarcode::Renderer" alt="" coords="149,59,288,88"/>
-<area shape="rect" id="node5" href="$classglbarcode_1_1RendererDebug.html" title="glbarcode::RendererDebug" alt="" coords="337,5,513,35"/>
-<area shape="rect" id="node7" href="$classglbarcode_1_1RendererEps.html" title="glbarcode::RendererEps" alt="" coords="344,59,507,88"/>
-<area shape="rect" id="node9" href="$classglbarcode_1_1RendererSvg.html" title="glbarcode::RendererSvg" alt="" coords="344,112,507,141"/>
+<area shape="rect" id="node1" href="$structgbcRenderer.html" title="gbcRenderer" alt="" coords="5,56,101,83"/>
+<area shape="rect" id="node2" href="$classglbarcode_1_1Renderer.html" title="glbarcode::Renderer" alt="" coords="149,56,288,83"/>
+<area shape="rect" id="node3" href="$classglbarcode_1_1RendererDebug.html" title="glbarcode::RendererDebug" alt="" coords="337,5,514,32"/>
+<area shape="rect" id="node4" href="$classglbarcode_1_1RendererEps.html" title="glbarcode::RendererEps" alt="" coords="344,56,507,83"/>
+<area shape="rect" id="node5" href="$classglbarcode_1_1RendererSvg.html" title="glbarcode::RendererSvg" alt="" coords="344,107,507,133"/>
 </map>

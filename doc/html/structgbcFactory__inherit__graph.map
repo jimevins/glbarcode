@@ -1,3 +1,3 @@
 <map id="gbcFactory" name="gbcFactory">
-<area shape="rect" id="node3" href="$classglbarcode_1_1Factory.html" title="{glbarcode::Factory\n||+ instance()\l+ create_barcode()\l+ register_type()\l+ is_type_supported()\l+ get_supported_types()\l}" alt="" coords="5,139,168,293"/>
+<area shape="rect" id="node2" href="$classglbarcode_1_1Factory.html" title="{glbarcode::Factory\n||+ init()\l+ createBarcode()\l+ registerType()\l+ isTypeSupported()\l+ getSupportedTypes()\l}" alt="" coords="4,131,157,267"/>
 </map>

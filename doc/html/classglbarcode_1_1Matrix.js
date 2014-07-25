@@ -12,5 +12,5 @@ var classglbarcode_1_1Matrix =
     [ "operator[]", "classglbarcode_1_1Matrix.html#a2e420e5d81b7fd36b06db3fc0af06a3c", null ],
     [ "operator[]", "classglbarcode_1_1Matrix.html#a084e33fbbebd78a1ffa7f6188823922a", null ],
     [ "resize", "classglbarcode_1_1Matrix.html#ad6b17eb9f23defbb680b77ee3ee5437c", null ],
-    [ "sub_matrix", "classglbarcode_1_1Matrix.html#a29d7c97b833ec111c4f1ee32f615073b", null ]
+    [ "subMatrix", "classglbarcode_1_1Matrix.html#ac426e99951751ee21ee806f48ee9d941", null ]
 ];

@@ -1,6 +1,6 @@
 <map id="glbarcode::BarcodePostnet5" name="glbarcode::BarcodePostnet5">
-<area shape="rect" id="node2" href="$classglbarcode_1_1BarcodePostnet.html" title="{glbarcode::BarcodePostnet\n||+ create()\l# validate_digits()\l}" alt="" coords="9,894,188,997"/>
-<area shape="rect" id="node4" href="$classglbarcode_1_1Barcode1dBase.html" title="{glbarcode::Barcode1dBase\n||+ ~Barcode1dBase()\l+ build()\l# Barcode1dBase()\l# validate()\l# preprocess()\l# encode()\l# prepare_text()\l# vectorize()\l}" alt="" coords="9,638,188,845"/>
-<area shape="rect" id="node6" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ show_text()\l+ show_text()\l+ checksum()\l+ checksum()\l+ build()\l+ render()\l+ is_empty()\l+ is_data_valid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# add_line()\l# add_box()\l# add_text()\l# add_ring()\l# add_hexagon()\l# set_empty_flag()\l# set_data_valid_flag()\l# set_width()\l# set_height()\l}" alt="" coords="23,139,175,589"/>
-<area shape="rect" id="node8" href="$structgbcBarcode.html" title="{gbcBarcode\n||}" alt="" coords="53,5,144,91"/>
+<area shape="rect" id="node2" href="$classglbarcode_1_1BarcodePostnet.html" title="{glbarcode::BarcodePostnet\n||+ create()\l# validateDigits()\l}" alt="" coords="9,795,188,887"/>
+<area shape="rect" id="node3" href="$classglbarcode_1_1Barcode1dBase.html" title="{glbarcode::Barcode1dBase\n||+ ~Barcode1dBase()\l+ build()\l# Barcode1dBase()\l# validate()\l# preprocess()\l# encode()\l# prepareText()\l# vectorize()\l}" alt="" coords="9,566,188,746"/>
+<area shape="rect" id="node4" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ setShowText()\l+ showText()\l+ setChecksum()\l+ checksum()\l+ build()\l+ render()\l+ isEmpty()\l+ isDataValid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# addLine()\l# addBox()\l# addText()\l# addRing()\l# addHexagon()\l# setEmptyFlag()\l# setDataValidFlag()\l# setWidth()\l# setHeight()\l}" alt="" coords="28,131,168,517"/>
+<area shape="rect" id="node5" href="$structgbcBarcode.html" title="{gbcBarcode\n||}" alt="" coords="53,5,144,83"/>
 </map>

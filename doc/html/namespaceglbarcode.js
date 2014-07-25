@@ -1,6 +1,7 @@
 var namespaceglbarcode =
 [
     [ "Constants", "namespaceglbarcode_1_1Constants.html", null ],
+    [ "Version", "namespaceglbarcode_1_1Version.html", null ],
     [ "Barcode", "classglbarcode_1_1Barcode.html", "classglbarcode_1_1Barcode" ],
     [ "Barcode1dBase", "classglbarcode_1_1Barcode1dBase.html", "classglbarcode_1_1Barcode1dBase" ],
     [ "Barcode2dBase", "classglbarcode_1_1Barcode2dBase.html", "classglbarcode_1_1Barcode2dBase" ],
@@ -14,6 +15,7 @@ var namespaceglbarcode =
     [ "BarcodePostnet11", "classglbarcode_1_1BarcodePostnet11.html", null ],
     [ "BarcodePostnet5", "classglbarcode_1_1BarcodePostnet5.html", null ],
     [ "BarcodePostnet9", "classglbarcode_1_1BarcodePostnet9.html", null ],
+    [ "BarcodeQrcode", "classglbarcode_1_1BarcodeQrcode.html", null ],
     [ "BarcodeUpcA", "classglbarcode_1_1BarcodeUpcA.html", "classglbarcode_1_1BarcodeUpcA" ],
     [ "BarcodeUpcBase", "classglbarcode_1_1BarcodeUpcBase.html", "classglbarcode_1_1BarcodeUpcBase" ],
     [ "DrawingPrimitive", "classglbarcode_1_1DrawingPrimitive.html", "classglbarcode_1_1DrawingPrimitive" ],

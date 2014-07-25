@@ -1,7 +1,7 @@
 <map id="glbarcode::DrawingPrimitive" name="glbarcode::DrawingPrimitive">
-<area shape="rect" id="node3" href="$classglbarcode_1_1DrawingPrimitiveBox.html" title="{glbarcode::DrawingPrimitiveBox\n|+ w\l+ h\l|+ DrawingPrimitiveBox()\l}" alt="" coords="5,158,213,261"/>
-<area shape="rect" id="node5" href="$classglbarcode_1_1DrawingPrimitiveHexagon.html" title="{glbarcode::DrawingPrimitive\lHexagon\n|+ h\l|+ DrawingPrimitiveHexagon()\l}" alt="" coords="237,158,429,261"/>
-<area shape="rect" id="node7" href="$classglbarcode_1_1DrawingPrimitiveLine.html" title="{glbarcode::DrawingPrimitiveLine\n|+ w\l+ h\l|+ DrawingPrimitiveLine()\l}" alt="" coords="453,158,661,261"/>
-<area shape="rect" id="node9" href="$classglbarcode_1_1DrawingPrimitiveRing.html" title="{glbarcode::DrawingPrimitiveRing\n|+ r\l+ lwidth\l|+ DrawingPrimitiveRing()\l}" alt="" coords="685,158,896,261"/>
-<area shape="rect" id="node11" href="$classglbarcode_1_1DrawingPrimitiveText.html" title="{glbarcode::DrawingPrimitiveText\n|+ fsize\l+ s\l|+ DrawingPrimitiveText()\l}" alt="" coords="920,158,1131,261"/>
+<area shape="rect" id="node2" href="$classglbarcode_1_1DrawingPrimitiveBox.html" title="{glbarcode::DrawingPrimitiveBox\n||+ DrawingPrimitiveBox()\l+ w()\l+ h()\l}" alt="" coords="5,176,213,283"/>
+<area shape="rect" id="node3" href="$classglbarcode_1_1DrawingPrimitiveHexagon.html" title="{glbarcode::DrawingPrimitive\lHexagon\n||+ DrawingPrimitiveHexagon()\l+ h()\l}" alt="" coords="238,176,431,283"/>
+<area shape="rect" id="node4" href="$classglbarcode_1_1DrawingPrimitiveLine.html" title="{glbarcode::DrawingPrimitiveLine\n||+ DrawingPrimitiveLine()\l+ w()\l+ h()\l}" alt="" coords="455,176,664,283"/>
+<area shape="rect" id="node5" href="$classglbarcode_1_1DrawingPrimitiveRing.html" title="{glbarcode::DrawingPrimitiveRing\n||+ DrawingPrimitiveRing()\l+ r()\l+ w()\l}" alt="" coords="689,176,900,283"/>
+<area shape="rect" id="node6" href="$classglbarcode_1_1DrawingPrimitiveText.html" title="{glbarcode::DrawingPrimitiveText\n||+ DrawingPrimitiveText()\l+ size()\l+ text()\l}" alt="" coords="924,176,1133,283"/>
 </map>

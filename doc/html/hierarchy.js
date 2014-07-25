@@ -26,7 +26,8 @@ var hierarchy =
           ] ]
         ] ],
         [ "glbarcode::Barcode2dBase", "classglbarcode_1_1Barcode2dBase.html", [
-          [ "glbarcode::BarcodeDataMatrix", "classglbarcode_1_1BarcodeDataMatrix.html", null ]
+          [ "glbarcode::BarcodeDataMatrix", "classglbarcode_1_1BarcodeDataMatrix.html", null ],
+          [ "glbarcode::BarcodeQrcode", "classglbarcode_1_1BarcodeQrcode.html", null ]
         ] ]
       ] ]
     ] ],

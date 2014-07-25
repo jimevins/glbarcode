@@ -1,7 +1,7 @@
 var classglbarcode_1_1BarcodeUpcBase =
 [
-    [ "validate_digits", "classglbarcode_1_1BarcodeUpcBase.html#aee5ae0008555ddb9b66532c505c88231", null ],
-    [ "vectorize_text", "classglbarcode_1_1BarcodeUpcBase.html#a36c2917fa43f7527a5291f0128ebd0bd", null ],
-    [ "m_end_bars_modules", "classglbarcode_1_1BarcodeUpcBase.html#a1169d0986a2ef25d5bdaa8152bf6a25b", null ],
-    [ "m_first_digit_val", "classglbarcode_1_1BarcodeUpcBase.html#af84745516d9a0bb67e440629cef5f78a", null ]
+    [ "validateDigits", "classglbarcode_1_1BarcodeUpcBase.html#adc07a3d6c691cc075e12ca88f034d797", null ],
+    [ "vectorizeText", "classglbarcode_1_1BarcodeUpcBase.html#a17fa8c16a8c2d16f5a4c480d1ef4fffa", null ],
+    [ "mEndBarsModules", "classglbarcode_1_1BarcodeUpcBase.html#a24e4f882330935f8b9cfb232679f5ec1", null ],
+    [ "mFirstDigitVal", "classglbarcode_1_1BarcodeUpcBase.html#ae8ae6af3868af09f84a8b798c9bb82c4", null ]
 ];

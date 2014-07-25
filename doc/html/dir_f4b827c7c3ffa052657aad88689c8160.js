@@ -41,6 +41,9 @@ var dir_f4b827c7c3ffa052657aad88689c8160 =
     [ "BarcodePostnet9.h", "BarcodePostnet9_8h.html", [
       [ "BarcodePostnet9", "classglbarcode_1_1BarcodePostnet9.html", null ]
     ] ],
+    [ "BarcodeQrcode.h", "BarcodeQrcode_8h.html", [
+      [ "BarcodeQrcode", "classglbarcode_1_1BarcodeQrcode.html", null ]
+    ] ],
     [ "BarcodeUpcA.h", "BarcodeUpcA_8h.html", [
       [ "BarcodeUpcA", "classglbarcode_1_1BarcodeUpcA.html", "classglbarcode_1_1BarcodeUpcA" ]
     ] ],
