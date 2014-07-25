@@ -1,0 +1,5 @@
+<map id="glbarcode::BarcodeQrcode" name="glbarcode::BarcodeQrcode">
+<area shape="rect" id="node2" href="$classglbarcode_1_1Barcode2dBase.html" title="{glbarcode::Barcode2dBase\n||+ ~Barcode2dBase()\l+ build()\l# Barcode2dBase()\l# validate()\l# preprocess()\l# encode()\l# vectorize()\l}" alt="" coords="5,565,184,731"/>
+<area shape="rect" id="node3" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ setShowText()\l+ showText()\l+ setChecksum()\l+ checksum()\l+ build()\l+ render()\l+ isEmpty()\l+ isDataValid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# addLine()\l# addBox()\l# addText()\l# addRing()\l# addHexagon()\l# setEmptyFlag()\l# setDataValidFlag()\l# setWidth()\l# setHeight()\l}" alt="" coords="24,131,164,517"/>
+<area shape="rect" id="node4" href="$structgbcBarcode.html" title="{gbcBarcode\n||}" alt="" coords="49,5,140,83"/>
+</map>
