@@ -31,9 +31,42 @@ namespace glbarcode
 	/**
 	 * @class BarcodeCode39 BarcodeCode39.h glbarcode/BarcodeCode39.h
 	 *
-	 * Code39 barcode, implements Barcode1dBase
+	 * *Code 39* 1D barcode symbology.
 	 *
 	 * @image html sample-code39.svg "Sample Code 39 Barcode"
+	 *
+	 *
+	 * ### Input Data Format ###
+	 * 
+	 * The *Code 39* specification defines 43 characters, consisting of upper
+	 * case letters (A-Z), decimal digits (0-9), space, and several special
+	 * characters (-.$/+%). The BarcodeCode39 validator will also accept
+	 * lower case letters (a-z).  The encoder will automatically upshift
+	 * any lower case letters prior to encoding.
+	 *
+	 * For full ASCII support see BarcodeCode39Ext.
+	 *
+	 *
+	 * ### Checksum Property ###
+	 *
+	 * If the *checksum* property is *true*, a modulo 43 check digit will be
+	 * automatically generated and appended to input data before encoding.
+	 * By default, the check digit will not be generated.
+	 *
+	 * See setChecksum().
+	 * 
+	 *
+	 * ### Show Text Property ###
+	 *
+	 * If the *Show Text* property is *true*, the input data will be printed
+	 * below the barcode.  By default, the data will not be printed.
+	 *
+	 * See setShowText().
+	 *
+	 *
+	 * ### References ###
+	 *
+	 * - http://en.wikipedia.org/wiki/Code_39
 	 *
 	 */
 	class BarcodeCode39 : public Barcode1dBase

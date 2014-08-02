@@ -39,8 +39,8 @@ namespace glbarcode
 		double                 mW;             /**< Width of barcode (points) */
 		double                 mH;             /**< Height of barcode (points) */
 
-		bool                   mEmptyFlag;     /**< Empty data flag */
-		bool                   mDataValidFlag; /**< Valid data flag */
+		bool                   mIsEmpty;       /**< Empty data flag */
+		bool                   mIsDataValid;   /**< Valid data flag */
 
 		std::list<DrawingPrimitive *> mPrimitives;      /**< List of drawing primitives */
 
@@ -57,8 +57,8 @@ namespace glbarcode
 		d->mW             = 0;
 		d->mH             = 0;
 
-		d->mEmptyFlag     = true;
-		d->mDataValidFlag = false;
+		d->mIsEmpty       = true;
+		d->mIsDataValid   = false;
 	}
 
 
@@ -103,25 +103,25 @@ namespace glbarcode
 
 	bool Barcode::isEmpty( void ) const
 	{
-		return d->mEmptyFlag;
+		return d->mIsEmpty;
 	}
 
 
-	void Barcode::setEmptyFlag( bool value )
+	void Barcode::setIsEmpty( bool value )
 	{
-		d->mEmptyFlag = value;
+		d->mIsEmpty = value;
 	}
 
 
 	bool Barcode::isDataValid( void ) const
 	{
-		return d->mDataValidFlag;
+		return d->mIsDataValid;
 	}
 
 
-	void Barcode::setDataValidFlag( bool value )
+	void Barcode::setIsDataValid( bool value )
 	{
-		d->mDataValidFlag = value;
+		d->mIsDataValid = value;
 	}
 
 

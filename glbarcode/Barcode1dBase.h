@@ -34,7 +34,11 @@ namespace glbarcode
 	/**
 	 * @class Barcode1dBase Barcode1dBase.h glbarcode/Barcode1dBase.h
 	 *
-	 * Base class for all barcode types.
+	 * The Barcode1dBase class is the base class for all 1D barcode implementations.
+	 * This class provides a common framework for the implementation of 1D barcodes.
+	 * Creating 1D barcode types (or symbologies) would be typically accomplished by
+	 * implementing this class rather than directly implementing the Barcode class.
+	 *
 	 */
 	class Barcode1dBase : public Barcode
 	{
@@ -74,7 +78,7 @@ namespace glbarcode
 
 	protected:
 		/**
-		 * Validate barcode data.
+		 * Data validator.
 		 *
 		 * Required virtual method to test if data is valid for encoding with
 		 * barcode type.
@@ -88,7 +92,7 @@ namespace glbarcode
 
 
 		/**
-		 * Preprocess barcode data.
+		 * Data preprocessor.
 		 *
 		 * Optional virtual method to perform any transformation of the data needed
 		 * before encoding.  (E.g. encoding an extended alphabet into a simpler one).
@@ -101,7 +105,7 @@ namespace glbarcode
 
 
 		/**
-		 * Encode barcode data
+		 * Data encoder.
 		 *
 		 * Required virtual method to encode data such that it can be later vectorized.
 		 * The encoded data is usually a list of characters that represent an atomic
@@ -115,7 +119,7 @@ namespace glbarcode
 
 
 		/**
-		 * Prepare text
+		 * Prepare text.
 		 *
 		 * Optional virtual method to prepare text to be displayed as part of barcode.
 		 *
@@ -127,7 +131,7 @@ namespace glbarcode
 
 
 		/**
-		 * Vectorize encoded data
+		 * Vectorize encoded data.
 		 *
 		 * Required virtual method to convert encoded data into a list of drawing
 		 * primitives which can later be rendered.

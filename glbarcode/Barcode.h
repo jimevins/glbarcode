@@ -39,7 +39,13 @@ namespace glbarcode
 	/**
 	 * @class Barcode Barcode.h glbarcode/Barcode.h
 	 *
-	 * Base class for all barcode types.
+	 * The Barcode class is the base class for all barcode implementations.  This class
+	 * provides the public interfaces and basic infrastructure for all barcode implementations.
+	 * Implementations would not typically directly implement this class, but instead would implement
+	 * either Barcode1dBase (for 1D symbologies) or Barcode2dBase (for 2D symbologies).
+	 *
+	 * See Barcode1dBase or Barcode2dBase.
+	 *
 	 */
 	class Barcode : public gbcBarcode
 	{
@@ -59,37 +65,45 @@ namespace glbarcode
 
 
 		/**
-		 * Set accessor for "showText" parameter.
+		 * Set accessor for "showText" property.
 		 *
 		 * @param[in] value Boolean value
 		 *
-		 * @returns A reference to this Barcode object for parameter chaining
+		 * @returns A reference to this Barcode object for property chaining
+		 *
+		 * @sa showText()
 		 */
 		Barcode& setShowText( bool value );
 
 
 		/**
-		 * Get accessor for "showText" parameter.
+		 * Get accessor for "showText" property.
 		 *
-		 * @returns Value of boolean "showText" parameter
+		 * @returns Value of boolean "showText" property
+		 *
+		 * @sa setShowText()
 		 */
 		bool showText( void ) const;
 
 
 		/**
-		 * Set accessor for "checksum" parameter.
+		 * Set accessor for "checksum" property.
 		 *
 		 * @param[in] value Boolean value
 		 *
-		 * @returns A reference to this Barcode object for parameter chaining
+		 * @returns A reference to this Barcode object for property chaining
+		 *
+		 * @sa checksum()
 		 */
 		Barcode& setChecksum( bool value );
 
 
 		/**
-		 * Get accessor for "checksum" parameter.
+		 * Get accessor for "checksum" property.
 		 *
-		 * @returns Value of boolean "checksum" parameter
+		 * @returns Value of boolean "checksum" property
+		 *
+		 * @sa setChecksum()
 		 */
 		bool checksum( void ) const;
 
@@ -121,6 +135,8 @@ namespace glbarcode
 		 *
 		 * @return True if barcode data is empty
 		 * @return False if barcode data is not empty
+		 *
+		 * @sa setIsEmpty()
 		 */
 		bool isEmpty( void ) const;
 
@@ -130,6 +146,8 @@ namespace glbarcode
 		 *
 		 * @return True if barcode data is valid
 		 * @return False if barcode data is not valid for implemented barcode type
+		 *
+		 * @sa setIsDataValid()
 		 */
 		bool isDataValid( void ) const;
 
@@ -138,6 +156,8 @@ namespace glbarcode
 		 * Get actual width of barcode (may differ from requested width).
 		 *
 		 * @return Actual width of barcode (points)
+		 *
+		 * @sa setWidth()
 		 */
 		double width( void ) const;
 
@@ -146,6 +166,8 @@ namespace glbarcode
 		 * Get actual height of barcode (may differ from requested height).
 		 *
 		 * @return Actual height of barcode (points)
+		 *
+		 * @sa setHeight()
 		 */
 		double height( void ) const;
 
@@ -232,23 +254,27 @@ namespace glbarcode
 
 
 		/**
-		 * Set empty flag.
+		 * Set is empty property.
 		 *
-		 * To be used by build() implementations to indicate if input data is empty
+		 * To be used by build() implementations to indicate if input data is empty.
 		 *
 		 * @param[in] value Boolean value of flag
+		 *
+		 * @sa isEmpty()
 		 */
-		void setEmptyFlag( bool value );
+		void setIsEmpty( bool value );
 
 
 		/**
-		 * Set data valid flag.
+		 * Set is data valid property.
 		 *
-		 * To be used by build() implementations to indicate if input data is valid or not
+		 * To be used by build() implementations to indicate if input data is valid or not.
 		 *
 		 * @param[in] value Boolean value of flag
+		 *
+		 * @sa isDataValid()
 		 */
-		void setDataValidFlag( bool value );
+		void setIsDataValid( bool value );
 
 
 		/**
@@ -257,6 +283,8 @@ namespace glbarcode
 		 * To be used by build() implementations to override requested width of barcode.
 		 *
 		 * @param[in] w Actual width of barcode (points)
+		 *
+		 * @sa width()
 		 */
 		void setWidth( double w );
 
@@ -267,6 +295,8 @@ namespace glbarcode
 		 * To be used by build() implementations to override requested height of barcode.
 		 *
 		 * @param[in] h Actual height of barcode (points)
+		 *
+		 * @sa height()
 		 */
 		void setHeight( double h );
 

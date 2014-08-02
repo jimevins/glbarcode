@@ -60,26 +60,26 @@ namespace glbarcode
 
 		if ( rawData.empty() )
 		{
-			setEmptyFlag( true );
-			setDataValidFlag( false );
+			setIsEmpty( true );
+			setIsDataValid( false );
 
 			setWidth( 0 );
 			setHeight( 0 );
 		}
 		else
 		{
-			setEmptyFlag( false );
+			setIsEmpty( false );
 
 			if ( !validate( rawData ) )
 			{
-				setDataValidFlag( false );
+				setIsDataValid( false );
 
 				setWidth( 0 );
 				setHeight( 0 );
 			}
 			else
 			{
-				setDataValidFlag( true );
+				setIsDataValid( true );
 
 				cookedData  = preprocess( rawData );
 				codedData   = encode( cookedData );
