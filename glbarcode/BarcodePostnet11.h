@@ -31,16 +31,24 @@ namespace glbarcode
 	/**
 	 * @class BarcodePostnet11 BarcodePostnet11.h glbarcode/BarcodePostnet11.h
 	 *
-	 * Postnet-11 barcode (ZIP only), extends BarcodePostnet
+	 * *POSTNET-11* barcode (ZIP only), extends BarcodePostnet
 	 *
-	 * @image html sample-postnet-11.svg "Sample 11 digit USPS Postnet Barcode"
+	 * @image html sample-postnet-11.svg "Sample 11 digit USPS POSTNET Barcode"
+	 *
+	 * 
+	 * ### Input Data Format ###
+	 * 
+	 * Input data requirements are identical to BarcodePostnet, except the
+	 * validator only accepts 11 digits (ZIP+4+DC) of input.
+	 *
+	 * See BarcodePostnet.
 	 *
 	 */
 	class BarcodePostnet11 : public BarcodePostnet
 	{
 	public:
 		/**
-		 * Static Postnet-11 barcode creation method
+		 * Static POSTNET-11 barcode creation method
 		 *
 		 * Used by glbarcode::BarcodeFactory
 		 */

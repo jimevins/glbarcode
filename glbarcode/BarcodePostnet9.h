@@ -31,16 +31,24 @@ namespace glbarcode
 	/**
 	 * @class BarcodePostnet9 BarcodePostnet9.h glbarcode/BarcodePostnet9.h
 	 *
-	 * Postnet-9 barcode (ZIP+4 only), extends BarcodePostnet
+	 * *POSTNET-9* barcode (ZIP+4 only), extends BarcodePostnet
 	 *
-	 * @image html sample-postnet-9.svg "Sample 9 digit USPS Postnet Barcode"
+	 * @image html sample-postnet-9.svg "Sample 9 digit USPS POSTNET Barcode"
+	 *
+	 * 
+	 * ### Input Data Format ###
+	 * 
+	 * Input data requirements are identical to BarcodePostnet, except the
+	 * validator only accepts 9 digits (ZIP+4) of input.
+	 *
+	 * See BarcodePostnet.
 	 *
 	 */
 	class BarcodePostnet9 : public BarcodePostnet
 	{
 	public:
 		/**
-		 * Static Postnet-9 barcode creation method
+		 * Static POSTNET-9 barcode creation method
 		 *
 		 * Used by glbarcode::BarcodeFactory
 		 */

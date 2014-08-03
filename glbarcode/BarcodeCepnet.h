@@ -31,9 +31,17 @@ namespace glbarcode
 	/**
 	 * @class BarcodeCepnet BarcodeCepnet.h glbarcode/BarcodeCepnet.h
 	 *
-	 * 8 digit CEPNET barcode (Brazillian Post, based on POSTNET), extends BarcodePostnet
+	 * 8 digit *CEPNET* barcode (Brazillian Post, based on POSTNET), extends BarcodePostnet
 	 *
 	 * @image html sample-cepnet.svg "Sample Brazillian Post CEPNET Barcode"
+	 *
+	 * 
+	 * ### Input Data Format ###
+	 * 
+	 * Input data requirements are identical to BarcodePostnet, except the
+	 * validator only accepts 8 digits of input.
+	 *
+	 * See BarcodePostnet.
 	 *
 	 */
 	class BarcodeCepnet : public BarcodePostnet

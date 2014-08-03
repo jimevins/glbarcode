@@ -31,9 +31,34 @@ namespace glbarcode
 	/**
 	 * @class BarcodePostnet BarcodePostnet.h glbarcode/BarcodePostnet.h
 	 *
-	 * Postnet barcode (All USPS sizes: ZIP, ZIP+4, ZIP+4+DC), implements Barcode1dBase
+	 * *POSTNET* barcode (All USPS sizes: ZIP, ZIP+4, ZIP+4+DC).
 	 *
-	 * @image html sample-postnet.svg "Sample USPS Postnet Barcode"
+	 * @image html sample-postnet.svg "Sample USPS POSTNET Barcode"
+	 *
+	 *
+	 * ### Input Data Format ###
+	 * 
+	 * The *POSTNET* specification defines 10 characters, consisting solely
+	 * of decimal digits (0-9).  The BarcodePostnet validator and encoder will
+	 * ignore spaces and dashes (-).  The validator will only accept input
+	 * data with 5 digits (ZIP), 9 digits (ZIP+4) or 11 digits (ZIP+4+DC).
+	 *
+	 *
+	 * ### Checksum Property ###
+	 *
+	 * The *checksum* property is ignored.  A mandatory check digit will
+	 * always be automatically generated and appended to the input data
+	 * prior to encoding.
+	 * 
+	 *
+	 * ### Show Text Property ###
+	 *
+	 * The *Show Text* property is ignored.
+	 *
+	 *
+	 * ### References ###
+	 *
+	 * - http://en.wikipedia.org/wiki/POSTNET
 	 *
 	 */
 	class BarcodePostnet : public Barcode1dBase
