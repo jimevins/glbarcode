@@ -130,28 +130,28 @@ namespace glbarcode
 
 		if ( (w <= minW) && (h <= minH) )
 		{
-			scale = MIN_CELL_SIZE;
+			scale = 1;
 			w     = minW;
 			h     = minH;
 		}
 		else if ( w <= minW )
 		{
-			scale = ( h / minH ) * MIN_CELL_SIZE;
+			scale = h / minH;
 			w     = scale * minW;
 		}
 		else if ( h <= minH )
 		{
-			scale = ( w / minW ) * MIN_CELL_SIZE;
+			scale = w / minW;
 			h     = scale * minH;
 		}
 		else
 		{
-			scale = std::min( w / minW, h / minH ) * MIN_CELL_SIZE;
+			scale = std::min( w / minW, h / minH );
 			w     = scale * minW;
 			h     = scale * minH;
 		}
-		double cellSize  = scale;
-		double quietSize = scale;
+		double cellSize  = scale * MIN_CELL_SIZE;
+		double quietSize = scale * MIN_CELL_SIZE;
 		
 		
 		for ( int iy = 0; iy < encodedData.ny(); iy++ )
