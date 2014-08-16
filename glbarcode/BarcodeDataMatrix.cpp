@@ -653,7 +653,7 @@ namespace glbarcode
 				Matrix<bool> region = matrix.subMatrix( iXregion*p->nXregion, iYregion*p->nYregion,
 									p->nXregion, p->nYregion );
 
-				encodedData.insert( iXregion*xstride + 1, iYregion*ystride + 1, region );
+				encodedData.setSubMatrix( iXregion*xstride + 1, iYregion*ystride + 1, region );
 				finderPattern( encodedData, iXregion*xstride, iYregion*ystride, xstride, ystride );
 			}
 		}

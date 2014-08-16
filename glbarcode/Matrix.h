@@ -169,9 +169,9 @@ namespace glbarcode
 
 
 		/**
-		 * Insert matrix into this matrix
+		 * Set sub-matrix
 		 */
-		inline void insert( int x0, int y0, Matrix<T> & a )
+		inline void setSubMatrix( int x0, int y0, Matrix<T> & a )
 		{
 			for ( int iy = 0; iy < a.ny(); iy++ )
 			{
@@ -190,7 +190,7 @@ namespace glbarcode
 
 
 		/**
-		 * Fill matrix
+		 * Fill matrix with single value
 		 */
 		inline void fill( T val )
 		{
