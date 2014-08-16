@@ -36,7 +36,7 @@ namespace glbarcode
 	/**
 	 * @class Barcode2dBase Barcode2dBase.h glbarcode/Barcode2dBase.h
 	 *
-	 * The Barcode1dBase class is the base class for all 2D barcode implementations.
+	 * The Barcode2dBase class is the base class for all 2D barcode implementations.
 	 * This class provides a common framework for the implementation of 2D barcodes.
 	 * Creating 2D barcode types (or symbologies) would be typically accomplished by
 	 * implementing this class rather than directly implementing the Barcode class.
