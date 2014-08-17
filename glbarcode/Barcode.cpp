@@ -174,15 +174,15 @@ namespace glbarcode
 	}
 
 
-	void Barcode::addText( double x, double y, double fsize, const std::string& s )
+	void Barcode::addText( double x, double y, double size, const std::string& text )
 	{
-		d->mPrimitives.push_back( new DrawingPrimitiveText( x, y, fsize, s ) );
+		d->mPrimitives.push_back( new DrawingPrimitiveText( x, y, size, text ) );
 	}
 
 
-	void Barcode::addRing( double x, double y, double r, double lwidth )
+	void Barcode::addRing( double x, double y, double r, double w )
 	{
-		d->mPrimitives.push_back( new DrawingPrimitiveRing( x, y, r, lwidth ) );
+		d->mPrimitives.push_back( new DrawingPrimitiveRing( x, y, r, w ) );
 	}
 
 

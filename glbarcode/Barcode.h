@@ -218,10 +218,10 @@ namespace glbarcode
 		 *
 		 * @param[in] x     X coordinate of text's origin (points)
 		 * @param[in] y     Y coordinate of text's origin (points)
-		 * @param[in] fsize Font size of text (points)
-		 * @param[in] s     Text
+		 * @param[in] size  Font size of text (points)
+		 * @param[in] text  Text
 		 */
-		void addText( double x, double y, double fsize, const std::string& s );
+		void addText( double x, double y, double size, const std::string& text );
 
 
 		/**
@@ -234,9 +234,9 @@ namespace glbarcode
 		 * @param[in] x      X coordinate of ring's origin (points)
 		 * @param[in] y      Y coordinate of ring's origin (points)
 		 * @param[in] r      Radius of ring (points)
-		 * @param[in] lwidth Line width of ring (points)
+		 * @param[in] w      Line width of ring (points)
 		 */
-		void addRing( double x, double y, double r, double lwidth );
+		void addRing( double x, double y, double r, double w );
 
 
 		/**

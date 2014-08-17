@@ -88,6 +88,8 @@ namespace glbarcode
 
 		/**
 		 * Is barcode type supported?
+		 *
+		 * @param[in] typeId Barcode type ID string
 		 */
 		static bool isTypeSupported( const std::string& typeId );
 
