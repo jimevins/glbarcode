@@ -119,45 +119,45 @@ namespace glbarcode
 	}
 
 
-	void RendererSvg::drawLine( const DrawingPrimitiveLine* line )
+	void RendererSvg::drawLine( double x, double y, double w, double h )
 	{
-		double x = line->x() + line->w()/2; /* Offset line origin by 1/2 line width. */
+		double x1 = x + w/2; /* Offset line origin by 1/2 line width. */
 
 		fprintf( d->fp, "  <line x1=\"%f\" y1=\"%f\" x2=\"%f\" y2=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
-			 x, line->y(), x, line->y()+line->h(), line->w() );
+			 x1, y, x1, y+h, w );
 	}
 
 
-	void RendererSvg::drawBox( const DrawingPrimitiveBox* box )
+	void RendererSvg::drawBox( double x, double y, double w, double h )
 	{
 		fprintf( d->fp, "  <rect x=\"%f\" y=\"%f\" width=\"%f\" height=\"%f\" shape-rendering=\"crispEdges\" style=\"fill:rgb(0,0,0)\" />\n",
-			box->x(), box->y(), box->w(), box->h() );
+			x, y, w, h );
 	}
 
 
-	void RendererSvg::drawText( const DrawingPrimitiveText* text )
+	void RendererSvg::drawText( double x, double y, double size, const std::string& text )
 	{
 		fprintf( d->fp, "  <text x=\"%f\" y=\"%f\" font-size=\"%f\" style=\"font-family:monospace;text-anchor:middle;fill:rgb(0,0,0)\" >%s</text>\n",
-			 text->x(), text->y(), text->size(), text->text().c_str() );
+			 x, y, size, text.c_str() );
 	}
 
 
-	void RendererSvg::drawRing( const DrawingPrimitiveRing* ring )
+	void RendererSvg::drawRing( double x, double y, double r, double w )
 	{
 		fprintf( d->fp, "  <circle cx=\"%f\" cy=\"%f\" r=\"%f\" stroke-width=\"%f\" style=\"stroke:rgb(0,0,0)\" />\n",
-			 ring->x(), ring->y(), ring->r(), ring->w() );
+			 x, y, r, w );
 	}
 
 
-	void RendererSvg::drawHexagon( const DrawingPrimitiveHexagon* hexagon )
+	void RendererSvg::drawHexagon( double x, double y, double h )
 	{
 		fprintf( d->fp, "  <polygon points=\"%f,%f %f,%f %f,%f %f,%f %f,%f %f,%f\" style=\"fill:rgb(0,0,0)\" />\n",
-			 hexagon->x(),                      hexagon->y(),
-			 hexagon->x() + 0.433*hexagon->h(), hexagon->y() + 0.25*hexagon->h(),
-			 hexagon->x() + 0.433*hexagon->h(), hexagon->y() + 0.75*hexagon->h(),
-			 hexagon->x(),                      hexagon->y() +      hexagon->h(),
-			 hexagon->x() - 0.433*hexagon->h(), hexagon->y() + 0.75*hexagon->h(),
-			 hexagon->x() - 0.433*hexagon->h(), hexagon->y() + 0.25*hexagon->h() );
+			 x,           y,
+			 x + 0.433*h, y + 0.25*h,
+			 x + 0.433*h, y + 0.75*h,
+			 x,           y +      h,
+			 x - 0.433*h, y + 0.75*h,
+			 x - 0.433*h, y + 0.25*h );
 	}
 
 

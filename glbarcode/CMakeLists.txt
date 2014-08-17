@@ -21,13 +21,16 @@ set (PUBLIC_HEADERS
   BarcodeUpcBase.h
   BarcodeQrcode.h
   Constants.h
-  DrawingPrimitives.h
   Matrix.h
   Renderer.h
   RendererSvg.h
   RendererEps.h
   RendererDebug.h
   ${CMAKE_CURRENT_BINARY_DIR}/Version.h
+)
+
+set (PRIVATE_HEADERS
+  DrawingPrimitives.h
 )
 
 set (LIB_SOURCES

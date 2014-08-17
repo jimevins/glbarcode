@@ -180,7 +180,7 @@ namespace glbarcode
 
 
 		/**
-		 * Add line drawing primitive (DrawingPrimitiveLine)
+		 * Add line drawing primitive
 		 *
 		 * To be used by build() implementations during vectorization.
 		 *
@@ -195,7 +195,7 @@ namespace glbarcode
 
 
 		/**
-		 * Add box drawing primitive (DrawingPrimitiveBox)
+		 * Add box drawing primitive
 		 *
 		 * To be used by build() implementations during vectorization.
 		 *
@@ -210,7 +210,7 @@ namespace glbarcode
 
 
 		/**
-		 * Add text drawing primitive (DrawingPrimitiveText)
+		 * Add text drawing primitive
 		 *
 		 * To be used by build() implementations during vectorization.
 		 *
@@ -225,7 +225,7 @@ namespace glbarcode
 
 
 		/**
-		 * Add ring drawing primitive (DrawingPrimitiveRing)
+		 * Add ring drawing primitive
 		 *
 		 * To be used by build() implementations during vectorization.
 		 *
@@ -240,7 +240,7 @@ namespace glbarcode
 
 
 		/**
-		 * Add hexagon drawing primitive (DrawingPrimitiveHexagon)
+		 * Add hexagon drawing primitive
 		 *
 		 * To be used by build() implementations during vectorization.
 		 *

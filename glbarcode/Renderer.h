@@ -36,6 +36,9 @@ extern "C" struct gbcRenderer {};
 namespace glbarcode
 {
 
+	class DrawingPrimitive; /* Forward reference to private drawing primitive class. */
+
+
 	/**
 	 * @class Renderer Renderer.h glbarcode/Renderer.h
 	 *
@@ -79,61 +82,75 @@ namespace glbarcode
 		/**
 		 * Draw line primitive.
 		 * 
-		 * Required virtual method to draw or render DrawingPrimitiveLine.
+		 * Required virtual method to draw or render line drawing primitive.
 		 *
 		 * @image html figure-primitive-line.svg "Line primitive properties"
 		 *
-		 * @param[in] line Line primitive to draw
+		 * @param[in] x X coordinate of line's origin (points)
+		 * @param[in] y Y coordinate of line's origin (points)
+		 * @param[in] w Line width (points)
+		 * @param[in] h Line height (points)
 		 */
-		virtual void drawLine( const DrawingPrimitiveLine* line ) = 0;
+		virtual void drawLine( double x, double y, double w, double h ) = 0;
 
 
 		/**
 		 * Draw box primitive.
 		 * 
-		 * Required virtual method to draw or render DrawingPrimitiveBox.
+		 * Required virtual method to draw or render box drawing primitive.
 		 *
 		 * @image html figure-primitive-box.svg "Box primitive properties"
 		 *
-		 * @param[in] box Box primitive to draw
+		 * @param[in] x X coordinate of box's origin (points)
+		 * @param[in] y Y coordinate of box's origin (points)
+		 * @param[in] w Width of box (points)
+		 * @param[in] h Height of box (points)
 		 */
-		virtual void drawBox( const DrawingPrimitiveBox* box ) = 0;
+		virtual void drawBox( double x, double y, double w, double h ) = 0;
 
 
 		/**
 		 * Draw text primitive.
 		 * 
-		 * Required virtual method to draw or render DrawingPrimitiveText.
+		 * Required virtual method to draw or render text drawing primitive.
 		 *
 		 * @image html figure-primitive-text.svg "Text primitive properties"
 		 *
-		 * @param[in] text Text primitive to draw
+		 * @param[in] x    X coordinate of text's origin (points)
+		 * @param[in] y    Y coordinate of text's origin (points)
+		 * @param[in] size Font size of text (points)
+		 * @param[in] text Text
 		 */
-		virtual void drawText( const DrawingPrimitiveText* text ) = 0;
+		virtual void drawText( double x, double y, double size, const std::string& text ) = 0;
 
 
 		/**
 		 * Draw ring primitive.
 		 * 
-		 * Required virtual method to draw or render DrawingPrimitiveRing.
+		 * Required virtual method to draw or render ring drawing primitive.
 		 *
 		 * @image html figure-primitive-ring.svg "Ring primitive properties"
 		 *
-		 * @param[in] ring Ring primitive to draw
+		 * @param[in] x X coordinate of ring's origin (points)
+		 * @param[in] y Y coordinate of ring's origin (points)
+		 * @param[in] r Radius of ring (points)
+		 * @param[in] w Line width of ring (points)
 		 */
-		virtual void drawRing( const DrawingPrimitiveRing* ring ) = 0;
+		virtual void drawRing( double x, double y, double r, double w ) = 0;
 
 
 		/**
 		 * Draw hexagon primitive.
 		 * 
-		 * Required virtual method to draw or render DrawingPrimitiveHexagon.
+		 * Required virtual method to draw or render hexagon drawing primitive.
 		 *
 		 * @image html figure-primitive-hexagon.svg "Hexagon primitive properties"
 		 *
-		 * @param[in] hexagon Hexagon primitive to draw
+		 * @param[in] x X coordinate of hexagon's origin (points)
+		 * @param[in] y Y coordinate of hexagon's origin (points)
+		 * @param[in] h Height of hexagon (points)
 		 */
-		virtual void drawHexagon( const DrawingPrimitiveHexagon* hexagon ) = 0;
+		virtual void drawHexagon( double x, double y, double h ) = 0;
 
 	};
 

@@ -52,38 +52,33 @@ namespace glbarcode
 		}
 
 
-		void drawLine( const DrawingPrimitiveLine* line )
+		void drawLine( double x, double y, double w, double h )
 		{
-			printf( "\tDRAW_LINE( x = %f, y = %f, w = %f, h = %f )\n",
-				line->x(), line->y(), line->w(), line->h() );
+			printf( "\tDRAW_LINE( x = %f, y = %f, w = %f, h = %f )\n", x, y, w, h );
 		}
 
 
-		void drawBox( const DrawingPrimitiveBox* box )
+		void drawBox( double x, double y, double w, double h )
 		{
-			printf( "\tDRAW_BOX( x = %f, y = %f, w = %f, h = %f )\n",
-				box->x(), box->y(), box->w(), box->h() );
+			printf( "\tDRAW_BOX( x = %f, y = %f, w = %f, h = %f )\n", x, y, w, h );
 		}
 
 
-		void drawText( const DrawingPrimitiveText* text )
+		void drawText( double x, double y, double size, const std::string& text )
 		{
-			printf( "\tDRAW_TEXT( x = %f, y = %f, size = %f, text = \"%s\" )\n",
-			        text->x(), text->y(), text->size(), text->text().c_str() );
+			printf( "\tDRAW_TEXT( x = %f, y = %f, size = %f, text = \"%s\" )\n", x, y, size, text.c_str() );
 		}
 
 
-		void drawRing( const DrawingPrimitiveRing* ring )
+		void drawRing( double x, double y, double r, double w )
 		{
-			printf( "\tDRAW_RING( x = %f, y = %f, r = %f, w = %f )\n",
-			        ring->x(), ring->y(), ring->r(), ring->w() );
+			printf( "\tDRAW_RING( x = %f, y = %f, r = %f, w = %f )\n", x, y, r, w );
 		}
 
 
-		void drawHexagon( const DrawingPrimitiveHexagon* hexagon )
+		void drawHexagon( double x, double y, double h )
 		{
-			printf( "\tDRAW_HEXAGON( x = %f, y = %f, h = %f )\n",
-				hexagon->x(), hexagon->y(), hexagon->h() );
+			printf( "\tDRAW_HEXAGON( x = %f, y = %f, h = %f )\n", x, y, h );
 		}
 
 	};
