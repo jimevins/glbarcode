@@ -47,28 +47,18 @@ glbarcode::BarcodeCode39 bc;
 <!-- -------------------------------------------------------------------------------------------------------------------------- -->
 @section the_factory The Barcode Factory
 
-Barcodes can also be instantiated using the glbarcode::Factory barcode factory.  glbarcode::Factory should be initialized with the @c init() method prior to its first use.  For example:
+Barcodes can also be instantiated using the glbarcode::Factory barcode factory.
 
-@code{.cpp}
-#include <glbarcode/Factory.h>
-	 
-int main( int argc, char **argv )
-{
-	/* Initialize barcode factory. */
-	glbarcode::Factory::init();
-	...
-@endcode
-
-A list (@c const @c std::list<std::string>) of supported barcode types can be obtained with the @c getSupportedTypes() method.
+A list (@c TypeIdList) of supported barcode type IDs can be obtained with the @c getSupportedTypes() method.  A type ID is
+simply a standard string (std::string).
 For example:
 
 @code{.cpp}
-std::list<std::string> supportedTypes = glbarcode::Factory::getSupportedTypes();
-std::list<std::string>::iterator type;
+glbarcode::TypeIdList typeIds = glbarcode::Factory::getSupportedTypes();
  	
-for ( type = supportedTypes.begin(); type != supportedTypes.end(); type++ )
+for ( glbarcode::TypeIdList::iterator iter = typeIds.begin(); iter != typeIds.end(); iter++ )
 {
-    std::cerr << *type << std::endl;
+    std::cerr << *iter << std::endl;
 }
 @endcode
 
@@ -92,7 +82,7 @@ The glbarcode::Barcode class currently supports the following options that may b
     is not honored by all barcode types.
 
 @li @b checksum is a boolean option to control whether or not a checksum or check digit is automatically generated for the barcode.
-    This option is not honored by all barcode types (i.e. this behaviour is mandatory for some barcode types).
+    This option is not honored by all barcode types.
 
 Options are set using the appropriate @a set accessor methods.  These @a set accessors are designed to allow chaining of multiple
 accessors as in the following example code:
@@ -128,7 +118,7 @@ Individual concrete barcode classes may also implement options specific to its b
 <!-- -------------------------------------------------------------------------------------------------------------------------- -->
 @section building Building Barcodes
 
-A barcode is "built" using the glbarcode::Barcode::build() method.  It hase the following signature:
+A barcode is "built" using the glbarcode::Barcode::build() method:
 
 @code{.cpp}
 glbarcode::Barcode::build( std::string data,

@@ -26,6 +26,7 @@ set (PUBLIC_HEADERS
   RendererSvg.h
   RendererEps.h
   RendererDebug.h
+  TypeIdList.h
   ${CMAKE_CURRENT_BINARY_DIR}/Version.h
 )
 

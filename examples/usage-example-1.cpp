@@ -5,9 +5,6 @@ using namespace glbarcode;
  
 int main( int argc, char **argv )
 {
-	/* Initialize barcode factory. */
-        Factory::init();
- 
         /* Create barcode object. */
         Barcode *bc = Factory::createBarcode( "code39" );
  

@@ -59,8 +59,8 @@ The first part is the general user manual:
 
 The second part is the detailed API reference:
 
-- <a href="annotated.html">Class List</a>
-- <a href="files.html">Namespace List</a>
+- <a class="el" href="annotated.html">Class List</a>
+- <a class="el" href="files.html">File List</a>
 
 
 glbarcode++ License

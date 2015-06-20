@@ -29,3 +29,12 @@ target_link_libraries(usage-example-1
   ${Lib_Name}
 )
 
+add_executable(mybarcode-example
+  MyBarcode/main.cpp
+  MyBarcode/MyBarcode.cpp
+)
+
+target_link_libraries(mybarcode-example
+  ${Lib_Name}
+)
+

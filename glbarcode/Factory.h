@@ -24,8 +24,8 @@
 #include "Barcode.h"
 
 #include <string>
-#include <vector>
 #include <map>
+#include "TypeIdList.h"
 
 
 /**
@@ -63,7 +63,7 @@ namespace glbarcode
 		 * Initialize barcode factory.
 		 *
 		 * Initializes the barcode factory and registers all built-in Barcode types.  It
-		 * is optional for an application to call init(), because libglabels++ will automatically
+		 * is optional for an application to call init(), because glbarcode++ will automatically
 		 * initialize the factory on demand.
 		 */
 		static void init( void );
@@ -97,7 +97,7 @@ namespace glbarcode
 		/**
 		 * Get list of supported types.
 		 */
-		static const std::vector<std::string> getSupportedTypes( void );
+		static TypeIdList getSupportedTypes( void );
 
 
 	private:
@@ -120,7 +120,7 @@ namespace glbarcode
 		/**
 		 * Supported barcode types.
 		 */
-		static std::vector<std::string> mSupportedTypes;
+		static TypeIdList mSupportedTypes;
 
 	};
 

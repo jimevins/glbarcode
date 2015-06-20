@@ -61,7 +61,7 @@ extern "C" {
 
 
 	/**
-	 * Get list of suppoted types.
+	 * Get list of supported types.
 	 *
 	 * @return Newly allocated list of type ID strings. Terminated by NULL.
 	 */

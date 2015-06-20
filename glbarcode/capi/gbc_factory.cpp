@@ -33,7 +33,7 @@ using namespace glbarcode;
 
 void gbc_factory_init( void )
 {
-	return Factory::init();
+	Factory::init();
 }
 
 
@@ -51,14 +51,16 @@ bool gbc_factory_is_type_supported( char *type_id )
 
 char ** gbc_factory_get_supported_types( void )
 {
-	std::vector<std::string> supported_types = Factory::getSupportedTypes();
+	TypeIdList supported_types = Factory::getSupportedTypes();
 	int n = supported_types.size();
 
 	char **list = new char*[ n + 1 ];
 
+	TypeIdList::iterator iTypeId = supported_types.begin();
 	for ( int i = 0; i < n; i++ )
 	{
-		list[i] = strdup( supported_types[i].c_str() );
+		list[i] = strdup( iTypeId->c_str() );
+		iTypeId++;
 	}
 	list[n] = NULL;
 

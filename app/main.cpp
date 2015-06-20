@@ -63,16 +63,18 @@ void usage( void )
 	std::cerr << std::endl;
 	std::cerr << "Supported barcode types:" << std::endl;
 
-	std::vector<std::string> supportedTypes = Factory::getSupportedTypes();
-	for ( int i = 0; i < supportedTypes.size(); i++ )
+	TypeIdList typeIds = Factory::getSupportedTypes();
+	for ( TypeIdList::iterator i = typeIds.begin(); i != typeIds.end(); i++ )
 	{
-		std::cerr << "  " << supportedTypes[i] << std::endl;
+		std::cerr << "  " << *i << std::endl;
 	}
 
 	std::cerr << std::endl;
 	std::cerr << "Supported output formats:" << std::endl;
 	std::cerr << "  svg" << std::endl;
 	std::cerr << "  eps" << std::endl;
+
+	std::cerr << std::endl;
 
 	exit( EXIT_SUCCESS );
 }
