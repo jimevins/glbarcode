@@ -141,7 +141,7 @@ where
 
 
 <!-- -------------------------------------------------------------------------------------------------------------------------- -->
-@section rendering Renderering Barcodes
+@section rendering Rendering Barcodes
 
 Barcodes are rendered using the glbarcode::Barcode::render() method:
 
