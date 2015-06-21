@@ -131,35 +131,38 @@ $(document).ready(function(){initNavTree('Renderer_8h_source.html','');});
 <div class="line"><a name="l00047"></a><span class="lineno"><a class="line" href="classglbarcode_1_1Renderer.html">   47</a></span>&#160;        <span class="keyword">class </span><a class="code" href="classglbarcode_1_1Renderer.html">Renderer</a> : <span class="keyword">public</span> <a class="code" href="structgbcRenderer.html">gbcRenderer</a></div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        {</div>
 <div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a0ce521ad09461d4723c1aee271d81c9e">render</a>( <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h, <span class="keyword">const</span> std::list&lt;DrawingPrimitive*&gt;&amp; primitives );</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;        <span class="keyword">protected</span>:</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a9e28dc5027532c18d3af63ca577bdafb">drawBegin</a>( <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h ) = 0;</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a9a2b73f2a364e7b33fc33327600d66f2">drawEnd</a>( <span class="keywordtype">void</span> ) = 0;</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#aa6b7f15d833cb7f85d83f99ba6a861cb">drawLine</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h ) = 0;</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a079150f3ce479325dd7caaa21e6367a8">drawBox</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h ) = 0;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a668f4582af9393964e54ad70c180ccdf">drawText</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> size, <span class="keyword">const</span> std::string&amp; text ) = 0;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#adbac1f7172dfa6d6e724773a3c24e919">drawRing</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> r, <span class="keywordtype">double</span> w ) = 0;</div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;</div>
-<div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a158dd0fa097ff95f42580814d33e46ca">drawHexagon</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> h ) = 0;</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;        };</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;}</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;<span class="preprocessor">#endif // glbarcode_Renderer_h</span></div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;                <span class="keyword">virtual</span> <a class="code" href="classglbarcode_1_1Renderer.html#a8a7a395a618718572347c5f628afacae">~Renderer</a>();</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a0ce521ad09461d4723c1aee271d81c9e">render</a>( <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h, <span class="keyword">const</span> std::list&lt;DrawingPrimitive*&gt;&amp; primitives );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;        <span class="keyword">protected</span>:</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a9e28dc5027532c18d3af63ca577bdafb">drawBegin</a>( <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h ) = 0;</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a9a2b73f2a364e7b33fc33327600d66f2">drawEnd</a>( <span class="keywordtype">void</span> ) = 0;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#aa6b7f15d833cb7f85d83f99ba6a861cb">drawLine</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h ) = 0;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a079150f3ce479325dd7caaa21e6367a8">drawBox</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h ) = 0;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a668f4582af9393964e54ad70c180ccdf">drawText</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> size, <span class="keyword">const</span> std::string&amp; text ) = 0;</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;</div>
+<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;</div>
+<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#adbac1f7172dfa6d6e724773a3c24e919">drawRing</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> r, <span class="keywordtype">double</span> w ) = 0;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;</div>
+<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160;</div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;                <span class="keyword">virtual</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Renderer.html#a158dd0fa097ff95f42580814d33e46ca">drawHexagon</a>( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> h ) = 0;</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;</div>
+<div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;        };</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;</div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;}</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;</div>
+<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;<span class="preprocessor">#endif // glbarcode_Renderer_h</span></div>
 <div class="ttc" id="classglbarcode_1_1Renderer_html_a9e28dc5027532c18d3af63ca577bdafb"><div class="ttname"><a href="classglbarcode_1_1Renderer.html#a9e28dc5027532c18d3af63ca577bdafb">glbarcode::Renderer::drawBegin</a></div><div class="ttdeci">virtual void drawBegin(double w, double h)=0</div></div>
 <div class="ttc" id="classglbarcode_1_1Renderer_html_a668f4582af9393964e54ad70c180ccdf"><div class="ttname"><a href="classglbarcode_1_1Renderer.html#a668f4582af9393964e54ad70c180ccdf">glbarcode::Renderer::drawText</a></div><div class="ttdeci">virtual void drawText(double x, double y, double size, const std::string &amp;text)=0</div></div>
 <div class="ttc" id="classglbarcode_1_1Renderer_html_a158dd0fa097ff95f42580814d33e46ca"><div class="ttname"><a href="classglbarcode_1_1Renderer.html#a158dd0fa097ff95f42580814d33e46ca">glbarcode::Renderer::drawHexagon</a></div><div class="ttdeci">virtual void drawHexagon(double x, double y, double h)=0</div></div>
@@ -168,6 +171,7 @@ $(document).ready(function(){initNavTree('Renderer_8h_source.html','');});
 <div class="ttc" id="classglbarcode_1_1Renderer_html_adbac1f7172dfa6d6e724773a3c24e919"><div class="ttname"><a href="classglbarcode_1_1Renderer.html#adbac1f7172dfa6d6e724773a3c24e919">glbarcode::Renderer::drawRing</a></div><div class="ttdeci">virtual void drawRing(double x, double y, double r, double w)=0</div></div>
 <div class="ttc" id="structgbcRenderer_html"><div class="ttname"><a href="structgbcRenderer.html">gbcRenderer</a></div><div class="ttdef"><b>Definition:</b> Renderer.h:33</div></div>
 <div class="ttc" id="classglbarcode_1_1Renderer_html_a079150f3ce479325dd7caaa21e6367a8"><div class="ttname"><a href="classglbarcode_1_1Renderer.html#a079150f3ce479325dd7caaa21e6367a8">glbarcode::Renderer::drawBox</a></div><div class="ttdeci">virtual void drawBox(double x, double y, double w, double h)=0</div></div>
+<div class="ttc" id="classglbarcode_1_1Renderer_html_a8a7a395a618718572347c5f628afacae"><div class="ttname"><a href="classglbarcode_1_1Renderer.html#a8a7a395a618718572347c5f628afacae">glbarcode::Renderer::~Renderer</a></div><div class="ttdeci">virtual ~Renderer()</div></div>
 <div class="ttc" id="classglbarcode_1_1Renderer_html_a0ce521ad09461d4723c1aee271d81c9e"><div class="ttname"><a href="classglbarcode_1_1Renderer.html#a0ce521ad09461d4723c1aee271d81c9e">glbarcode::Renderer::render</a></div><div class="ttdeci">void render(double w, double h, const std::list&lt; DrawingPrimitive * &gt; &amp;primitives)</div></div>
 <div class="ttc" id="classglbarcode_1_1Renderer_html_aa6b7f15d833cb7f85d83f99ba6a861cb"><div class="ttname"><a href="classglbarcode_1_1Renderer.html#aa6b7f15d833cb7f85d83f99ba6a861cb">glbarcode::Renderer::drawLine</a></div><div class="ttdeci">virtual void drawLine(double x, double y, double w, double h)=0</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -176,7 +180,7 @@ $(document).ready(function(){initNavTree('Renderer_8h_source.html','');});
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f4b827c7c3ffa052657aad88689c8160.html">glbarcode</a></li><li class="navelem"><a class="el" href="Renderer_8h.html">Renderer.h</a></li>
-    <li class="footer">Generated on Sat Jun 20 2015 20:44:50 for glbarcode++ by
+    <li class="footer">Generated on Sun Jun 21 2015 10:13:48 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -1,4 +1,4 @@
 <map id="glbarcode::RendererEps" name="glbarcode::RendererEps">
-<area shape="rect" id="node2" href="$classglbarcode_1_1Renderer.html" title="{glbarcode::Renderer\n||+ render()\l# drawBegin()\l# drawEnd()\l# drawLine()\l# drawBox()\l# drawText()\l# drawRing()\l# drawHexagon()\l}" alt="" coords="17,131,156,311"/>
+<area shape="rect" id="node2" href="$classglbarcode_1_1Renderer.html" title="{glbarcode::Renderer\n||+ ~Renderer()\l+ render()\l# drawBegin()\l# drawEnd()\l# drawLine()\l# drawBox()\l# drawText()\l# drawRing()\l# drawHexagon()\l}" alt="" coords="17,131,156,325"/>
 <area shape="rect" id="node3" href="$structgbcRenderer.html" title="{gbcRenderer\n||}" alt="" coords="39,5,135,83"/>
 </map>

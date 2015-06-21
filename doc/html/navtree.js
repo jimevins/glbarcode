@@ -7,7 +7,7 @@ var NAVTREE =
       [ "The Barcode Factory", "usage.html#the_factory", null ],
       [ "Options", "usage.html#options", null ],
       [ "Building Barcodes", "usage.html#building", null ],
-      [ "Renderering Barcodes", "usage.html#rendering", null ],
+      [ "Rendering Barcodes", "usage.html#rendering", null ],
       [ "Putting It All Together", "usage.html#putting_together", null ]
     ] ],
     [ "Extending", "extending.html", "extending" ],
@@ -39,7 +39,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Barcode1dBase_8h.html",
-"usage.html#the_factory"
+"usage.html#rendering"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

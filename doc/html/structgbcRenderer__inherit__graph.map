@@ -1,6 +1,6 @@
 <map id="gbcRenderer" name="gbcRenderer">
-<area shape="rect" id="node2" href="$classglbarcode_1_1Renderer.html" title="{glbarcode::Renderer\n||+ render()\l# drawBegin()\l# drawEnd()\l# drawLine()\l# drawBox()\l# drawText()\l# drawRing()\l# drawHexagon()\l}" alt="" coords="219,131,357,311"/>
-<area shape="rect" id="node3" href="$classglbarcode_1_1RendererDebug.html" title="{glbarcode::RendererDebug\n||}" alt="" coords="5,404,181,481"/>
-<area shape="rect" id="node4" href="$classglbarcode_1_1RendererEps.html" title="{glbarcode::RendererEps\n||+ RendererEps()\l+ RendererEps()\l+ RendererEps()\l+ ~RendererEps()\l+ operator=()\l+ filename()\l+ setFilename()\l}" alt="" coords="207,360,369,525"/>
-<area shape="rect" id="node5" href="$classglbarcode_1_1RendererSvg.html" title="{glbarcode::RendererSvg\n||+ RendererSvg()\l+ RendererSvg()\l+ RendererSvg()\l+ ~RendererSvg()\l+ operator=()\l+ filename()\l+ setFilename()\l}" alt="" coords="393,360,556,525"/>
+<area shape="rect" id="node2" href="$classglbarcode_1_1Renderer.html" title="{glbarcode::Renderer\n||+ ~Renderer()\l+ render()\l# drawBegin()\l# drawEnd()\l# drawLine()\l# drawBox()\l# drawText()\l# drawRing()\l# drawHexagon()\l}" alt="" coords="219,131,357,325"/>
+<area shape="rect" id="node3" href="$classglbarcode_1_1RendererDebug.html" title="{glbarcode::RendererDebug\n||}" alt="" coords="5,417,181,495"/>
+<area shape="rect" id="node4" href="$classglbarcode_1_1RendererEps.html" title="{glbarcode::RendererEps\n||+ RendererEps()\l+ RendererEps()\l+ RendererEps()\l+ ~RendererEps()\l+ operator=()\l+ filename()\l+ setFilename()\l}" alt="" coords="207,373,369,539"/>
+<area shape="rect" id="node5" href="$classglbarcode_1_1RendererSvg.html" title="{glbarcode::RendererSvg\n||+ RendererSvg()\l+ RendererSvg()\l+ RendererSvg()\l+ ~RendererSvg()\l+ operator=()\l+ filename()\l+ setFilename()\l}" alt="" coords="393,373,556,539"/>
 </map>
