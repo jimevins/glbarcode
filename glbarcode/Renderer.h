@@ -48,6 +48,12 @@ namespace glbarcode
 	{
 	public:
 		/**
+		 * Destructor.
+		 */
+		virtual ~Renderer();
+
+
+		/**
 		 * Render list of primitives.
 		 *
 		 * @param[in] w          Width of barcode bounding box (points)
