@@ -14,6 +14,11 @@ A copy of the doxygen generated manual for glbarcode++ can be found
 [here](http://jimevins.github.io/glbarcode).
 
 
+Download
+--------
+[Latest release](https://github.com/jimevins/glbarcode/releases/latest).
+
+
 Building
 --------
 
