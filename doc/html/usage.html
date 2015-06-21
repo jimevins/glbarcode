@@ -134,33 +134,23 @@ Concrete Barcode Classes</h1>
 <tr>
 <td><a class="el" href="classglbarcode_1_1BarcodeQrcode.html">glbarcode::BarcodeQrcode</a> </td><td>QR Code </td><td>"qrcode" </td><td>Simple front-end to libqrencode. </td></tr>
 </table>
-<h1><a class="anchor" id="the_factory"></a>
+<p>For example, to instantiate a Code39 barcode object:</p>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="BarcodeCode39_8h.html">glbarcode/BarcodeCode39.h</a>&gt;</span></div>
+<div class="line">         </div>
+<div class="line"><a class="code" href="classglbarcode_1_1BarcodeCode39.html">glbarcode::BarcodeCode39</a> bc;</div>
+</div><!-- fragment --><h1><a class="anchor" id="the_factory"></a>
 The Barcode Factory</h1>
-<p>Barcodes can also be instantiated using the <a class="el" href="classglbarcode_1_1Factory.html">glbarcode::Factory</a> barcode factory. <a class="el" href="classglbarcode_1_1Factory.html">glbarcode::Factory</a> must be initialized with the <code>init()</code> method. For example:</p>
-<div class="fragment"><div class="line"><span class="keyword">using namespace </span>glbarcode;</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">/* Initialize barcode factory. */</span></div>
-<div class="line"><a class="code" href="classglbarcode_1_1Factory.html#a5b89c50ed6d334ff3c73d48fe0a2d4e2">Factory::init</a>();</div>
-</div><!-- fragment --><p>A list (<code>const</code> <code>std::list&lt;std::string&gt;</code>) of supported barcode types can be obtained with the <code>getSupportedTypes()</code> method. For example:</p>
-<div class="fragment"><div class="line"><span class="keyword">using namespace </span>glbarcode;</div>
-<div class="line"> </div>
-<div class="line"><span class="comment">/* Initialize barcode factory. */</span></div>
-<div class="line"><a class="code" href="classglbarcode_1_1Factory.html#a5b89c50ed6d334ff3c73d48fe0a2d4e2">Factory::init</a>();</div>
-<div class="line"> </div>
-<div class="line">std::list&lt;std::string&gt; supportedTypes = factory::getSupportedTypes();</div>
-<div class="line">std::list&lt;std::string&gt;::iterator type;</div>
-<div class="line"> </div>
-<div class="line"><span class="keywordflow">for</span> ( type = supportedTypes.begin(); type != supportedTypes.end(); type++ )</div>
+<p>Barcodes can also be instantiated using the <a class="el" href="classglbarcode_1_1Factory.html">glbarcode::Factory</a> barcode factory.</p>
+<p>A list (<code>TypeIdList</code>) of supported barcode type IDs can be obtained with the <code>getSupportedTypes()</code> method. A type ID is simply a standard string (std::string). For example:</p>
+<div class="fragment"><div class="line"><a class="code" href="classglbarcode_1_1TypeIdList.html">glbarcode::TypeIdList</a> typeIds = <a class="code" href="classglbarcode_1_1Factory.html#adfa9bfc91bdb6a84b017c563984a5530">glbarcode::Factory::getSupportedTypes</a>();</div>
+<div class="line">        </div>
+<div class="line"><span class="keywordflow">for</span> ( glbarcode::TypeIdList::iterator iter = typeIds.begin(); iter != typeIds.end(); iter++ )</div>
 <div class="line">{</div>
-<div class="line">    std::cerr &lt;&lt; *type &lt;&lt; std::endl;</div>
+<div class="line">    std::cerr &lt;&lt; *iter &lt;&lt; std::endl;</div>
 <div class="line">}</div>
-</div><!-- fragment --><p>Finally, a barcode is instantiated using the <code>createBarcode()</code> method:</p>
-<div class="fragment"><div class="line"><a class="code" href="classglbarcode_1_1Barcode.html">glbarcode::Barcode</a> *</div>
-<div class="line"><a class="code" href="classglbarcode_1_1Factory.html#a0aaa36d1132e57934505525cb5438d5e">glbarcode::Factory::createBarcode</a>( std::string typeId );</div>
-</div><!-- fragment --><p>where</p>
-<ul>
-<li><code>typeId</code> is a <code>string</code> containing a type ID. See table in <a class="el" href="usage.html#barcode_classes">Concrete Barcode Classes</a>. Valid IDs can also be obtained using the <code>getSupportedTypes()</code> method as described above.</li>
-</ul>
+</div><!-- fragment --><p>Finally, a barcode is instantiated using the <code>createBarcode()</code> method. For example, to instantiate a Code39 barcode object:</p>
+<div class="fragment"><div class="line"><a class="code" href="classglbarcode_1_1Barcode.html">glbarcode::Barcode</a> *bc = <a class="code" href="classglbarcode_1_1Factory.html#a0aaa36d1132e57934505525cb5438d5e">glbarcode::Factory::createBarcode</a>( <span class="stringliteral">&quot;code39&quot;</span> );</div>
+</div><!-- fragment --><p>where "code39" is the corresponding type ID string from the table in <a class="el" href="usage.html#barcode_classes">Concrete Barcode Classes</a>. Valid IDs can also be obtained using the <code>getSupportedTypes()</code> method as described above.</p>
 <h1><a class="anchor" id="options"></a>
 Options</h1>
 <p>The <a class="el" href="classglbarcode_1_1Barcode.html">glbarcode::Barcode</a> class currently supports the following options that may be applied to any barcode type:</p>
@@ -168,7 +158,7 @@ Options</h1>
 <li><b>showText</b> is a boolean option to control whether or not text is included in the final barcode rendering. This option is not honored by all barcode types.</li>
 </ul>
 <ul>
-<li><b>checksum</b> is a boolean option to control whether or not a checksum or check digit is automatically generated for the barcode. This option is not honored by all barcode types (i.e. this behaviour is mandatory for some barcode types).</li>
+<li><b>checksum</b> is a boolean option to control whether or not a checksum or check digit is automatically generated for the barcode. This option is not honored by all barcode types.</li>
 </ul>
 <p>Options are set using the appropriate <em>set</em> accessor methods. These <em>set</em> accessors are designed to allow chaining of multiple accessors as in the following example code:</p>
 <div class="fragment"><div class="line"><span class="keyword">using namespace </span>glbarcode;</div>
@@ -190,7 +180,7 @@ Options</h1>
 </div><!-- fragment --><p>Individual concrete barcode classes may also implement options specific to its barcode type or symbology.</p>
 <h1><a class="anchor" id="building"></a>
 Building Barcodes</h1>
-<p>A barcode is "built" using the <a class="el" href="classglbarcode_1_1Barcode.html#a4ad4cde8904711940a6060f83cbe79e3">glbarcode::Barcode::build()</a> method. It hase the following signature:</p>
+<p>A barcode is "built" using the <a class="el" href="classglbarcode_1_1Barcode.html#a4ad4cde8904711940a6060f83cbe79e3">glbarcode::Barcode::build()</a> method:</p>
 <div class="fragment"><div class="line"><a class="code" href="classglbarcode_1_1Barcode.html#a4ad4cde8904711940a6060f83cbe79e3">glbarcode::Barcode::build</a>( std::string data,</div>
 <div class="line">                           <span class="keywordtype">double</span>      w,</div>
 <div class="line">                           <span class="keywordtype">double</span>      h );</div>
@@ -232,38 +222,25 @@ Renderering Barcodes</h1>
 </div><!-- fragment --><h1><a class="anchor" id="putting_together"></a>
 Putting It All Together</h1>
 <p>The following simple program will create a Code39 barcode object encoding the data "EXAMPLE-123" and rendering it to an SVG file named "Example.svg":</p>
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="Factory_8h.html">glbarcode/Factory.h</a>&gt;</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#include &lt;<a class="code" href="RendererSvg_8h.html">glbarcode/RendererSvg.h</a>&gt;</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;</div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">using namespace </span>glbarcode;</div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv )</div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;{</div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;        <span class="comment">/* Initialize barcode factory. */</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;        <a class="code" href="classglbarcode_1_1Factory.html#a5b89c50ed6d334ff3c73d48fe0a2d4e2">Factory::init</a>();</div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;</div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;        <span class="comment">/* Create barcode object. */</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;        <a class="code" href="classglbarcode_1_1Barcode.html">Barcode</a> *bc = <a class="code" href="classglbarcode_1_1Factory.html#a0aaa36d1132e57934505525cb5438d5e">Factory::createBarcode</a>( <span class="stringliteral">&quot;code39&quot;</span> );</div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;</div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;        <span class="comment">/* Set barcode options to show text and generate check digit, and then build */</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;        bc-&gt;<a class="code" href="classglbarcode_1_1Barcode.html#a87207581be155a1873899bb6c38897ff">setChecksum</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#a10f90e14d57f6c019c79572102ee79ec">setShowText</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#a4ad4cde8904711940a6060f83cbe79e3">build</a>( <span class="stringliteral">&quot;EXAMPLE-123&quot;</span>, 288, 72 );</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;        <span class="comment">/* Render barcode. */</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;        bc-&gt;<a class="code" href="classglbarcode_1_1Barcode.html#ac1a770020b4915e4d324dd18af3a06f5">render</a>( <a class="code" href="classglbarcode_1_1RendererSvg.html">RendererSvg</a>().setFilename( <span class="stringliteral">&quot;Example.svg&quot;</span> ) );</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="comment">/* Cleanup. */</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        <span class="keyword">delete</span> bc;</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;}</div>
-<div class="ttc" id="RendererSvg_8h_html"><div class="ttname"><a href="RendererSvg_8h.html">RendererSvg.h</a></div></div>
-<div class="ttc" id="classglbarcode_1_1Factory_html_a0aaa36d1132e57934505525cb5438d5e"><div class="ttname"><a href="classglbarcode_1_1Factory.html#a0aaa36d1132e57934505525cb5438d5e">glbarcode::Factory::createBarcode</a></div><div class="ttdeci">static Barcode * createBarcode(const std::string &amp;typeId)</div></div>
-<div class="ttc" id="classglbarcode_1_1Barcode_html_a4ad4cde8904711940a6060f83cbe79e3"><div class="ttname"><a href="classglbarcode_1_1Barcode.html#a4ad4cde8904711940a6060f83cbe79e3">glbarcode::Barcode::build</a></div><div class="ttdeci">virtual Barcode &amp; build(const std::string &amp;data, double w=0, double h=0)=0</div></div>
-<div class="ttc" id="classglbarcode_1_1Barcode_html_ac1a770020b4915e4d324dd18af3a06f5"><div class="ttname"><a href="classglbarcode_1_1Barcode.html#ac1a770020b4915e4d324dd18af3a06f5">glbarcode::Barcode::render</a></div><div class="ttdeci">void render(Renderer &amp;renderer)</div></div>
-<div class="ttc" id="classglbarcode_1_1Barcode_html_a10f90e14d57f6c019c79572102ee79ec"><div class="ttname"><a href="classglbarcode_1_1Barcode.html#a10f90e14d57f6c019c79572102ee79ec">glbarcode::Barcode::setShowText</a></div><div class="ttdeci">Barcode &amp; setShowText(bool value)</div></div>
-<div class="ttc" id="Factory_8h_html"><div class="ttname"><a href="Factory_8h.html">Factory.h</a></div></div>
-<div class="ttc" id="classglbarcode_1_1Factory_html_a5b89c50ed6d334ff3c73d48fe0a2d4e2"><div class="ttname"><a href="classglbarcode_1_1Factory.html#a5b89c50ed6d334ff3c73d48fe0a2d4e2">glbarcode::Factory::init</a></div><div class="ttdeci">static void init(void)</div></div>
-<div class="ttc" id="classglbarcode_1_1RendererSvg_html"><div class="ttname"><a href="classglbarcode_1_1RendererSvg.html">glbarcode::RendererSvg</a></div><div class="ttdef"><b>Definition:</b> RendererSvg.h:38</div></div>
-<div class="ttc" id="classglbarcode_1_1Barcode_html_a87207581be155a1873899bb6c38897ff"><div class="ttname"><a href="classglbarcode_1_1Barcode.html#a87207581be155a1873899bb6c38897ff">glbarcode::Barcode::setChecksum</a></div><div class="ttdeci">Barcode &amp; setChecksum(bool value)</div></div>
-<div class="ttc" id="classglbarcode_1_1Barcode_html"><div class="ttname"><a href="classglbarcode_1_1Barcode.html">glbarcode::Barcode</a></div><div class="ttdef"><b>Definition:</b> Barcode.h:44</div></div>
+<div class="fragment"><div class="line"><span class="preprocessor">#include &lt;<a class="code" href="Factory_8h.html">glbarcode/Factory.h</a>&gt;</span></div>
+<div class="line"><span class="preprocessor">#include &lt;<a class="code" href="RendererSvg_8h.html">glbarcode/RendererSvg.h</a>&gt;</span></div>
+<div class="line"> </div>
+<div class="line"><span class="keyword">using namespace </span>glbarcode;</div>
+<div class="line"> </div>
+<div class="line"><span class="keywordtype">int</span> main( <span class="keywordtype">int</span> argc, <span class="keywordtype">char</span> **argv )</div>
+<div class="line">{</div>
+<div class="line">        <span class="comment">/* Create barcode object. */</span></div>
+<div class="line">        <a class="code" href="classglbarcode_1_1Barcode.html">Barcode</a> *bc = <a class="code" href="classglbarcode_1_1Factory.html#a0aaa36d1132e57934505525cb5438d5e">Factory::createBarcode</a>( <span class="stringliteral">&quot;code39&quot;</span> );</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">/* Set barcode options to show text and generate check digit, and then build */</span></div>
+<div class="line">        bc-&gt;<a class="code" href="classglbarcode_1_1Barcode.html#a87207581be155a1873899bb6c38897ff">setChecksum</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#a10f90e14d57f6c019c79572102ee79ec">setShowText</a>(<span class="keyword">true</span>).<a class="code" href="classglbarcode_1_1Barcode.html#a4ad4cde8904711940a6060f83cbe79e3">build</a>( <span class="stringliteral">&quot;EXAMPLE-123&quot;</span>, 288, 72 );</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">/* Render barcode. */</span></div>
+<div class="line">        bc-&gt;<a class="code" href="classglbarcode_1_1Barcode.html#ac1a770020b4915e4d324dd18af3a06f5">render</a>( <a class="code" href="classglbarcode_1_1RendererSvg.html">RendererSvg</a>().setFilename( <span class="stringliteral">&quot;Example.svg&quot;</span> ) );</div>
+<div class="line"> </div>
+<div class="line">        <span class="comment">/* Cleanup. */</span></div>
+<div class="line">        <span class="keyword">delete</span> bc;</div>
+<div class="line">}</div>
 </div><!-- fragment --><p>This example will produce the following SVG file:</p>
 <div class="image">
 <img src="Example.svg" alt="Example.svg"/>
@@ -274,7 +251,7 @@ Output of above example 'Example.svg'</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Jul 24 2014 22:03:33 for glbarcode++ by
+    <li class="footer">Generated on Sat Jun 20 2015 20:44:50 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

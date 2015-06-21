@@ -1,12 +1,5 @@
 var hierarchy =
 [
-    [ "glbarcode::DrawingPrimitive", "classglbarcode_1_1DrawingPrimitive.html", [
-      [ "glbarcode::DrawingPrimitiveBox", "classglbarcode_1_1DrawingPrimitiveBox.html", null ],
-      [ "glbarcode::DrawingPrimitiveHexagon", "classglbarcode_1_1DrawingPrimitiveHexagon.html", null ],
-      [ "glbarcode::DrawingPrimitiveLine", "classglbarcode_1_1DrawingPrimitiveLine.html", null ],
-      [ "glbarcode::DrawingPrimitiveRing", "classglbarcode_1_1DrawingPrimitiveRing.html", null ],
-      [ "glbarcode::DrawingPrimitiveText", "classglbarcode_1_1DrawingPrimitiveText.html", null ]
-    ] ],
     [ "gbcBarcode", "structgbcBarcode.html", [
       [ "glbarcode::Barcode", "classglbarcode_1_1Barcode.html", [
         [ "glbarcode::Barcode1dBase", "classglbarcode_1_1Barcode1dBase.html", [
@@ -40,6 +33,9 @@ var hierarchy =
         [ "glbarcode::RendererEps", "classglbarcode_1_1RendererEps.html", null ],
         [ "glbarcode::RendererSvg", "classglbarcode_1_1RendererSvg.html", null ]
       ] ]
+    ] ],
+    [ "std::list< T >", null, [
+      [ "glbarcode::TypeIdList", "classglbarcode_1_1TypeIdList.html", null ]
     ] ],
     [ "glbarcode::Matrix< T >", "classglbarcode_1_1Matrix.html", null ]
 ];

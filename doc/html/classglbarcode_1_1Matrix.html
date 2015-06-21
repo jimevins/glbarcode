@@ -118,8 +118,8 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:aef2249ced77036e64064e84b1a84081d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac426e99951751ee21ee806f48ee9d941"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classglbarcode_1_1Matrix.html">Matrix</a>&lt; T &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Matrix.html#ac426e99951751ee21ee806f48ee9d941">subMatrix</a> (int x0, int y0, int <a class="el" href="classglbarcode_1_1Matrix.html#aa9a302b42d94ab0202bb1a8ad7d8f376">nx</a>, int <a class="el" href="classglbarcode_1_1Matrix.html#aef2249ced77036e64064e84b1a84081d">ny</a>)</td></tr>
 <tr class="separator:ac426e99951751ee21ee806f48ee9d941"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a465959b82f945ffca526d98d68231e95"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Matrix.html#a465959b82f945ffca526d98d68231e95">insert</a> (int x0, int y0, <a class="el" href="classglbarcode_1_1Matrix.html">Matrix</a>&lt; T &gt; &amp;a)</td></tr>
-<tr class="separator:a465959b82f945ffca526d98d68231e95"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5c1e87827729d884060c5bd7008ed81"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Matrix.html#ab5c1e87827729d884060c5bd7008ed81">setSubMatrix</a> (int x0, int y0, <a class="el" href="classglbarcode_1_1Matrix.html">Matrix</a>&lt; T &gt; &amp;a)</td></tr>
+<tr class="separator:ab5c1e87827729d884060c5bd7008ed81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abc4febbe7c0f826e2146a0f7fc8ef563"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Matrix.html#abc4febbe7c0f826e2146a0f7fc8ef563">fill</a> (T val)</td></tr>
 <tr class="separator:abc4febbe7c0f826e2146a0f7fc8ef563"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -324,50 +324,7 @@ template&lt;class T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Fill matrix </p>
-
-</div>
-</div>
-<a class="anchor" id="a465959b82f945ffca526d98d68231e95"></a>
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;class T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void <a class="el" href="classglbarcode_1_1Matrix.html">glbarcode::Matrix</a>&lt; T &gt;::insert </td>
-          <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>x0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>y0</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="classglbarcode_1_1Matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
-          <td class="paramname"><em>a</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Insert matrix into this matrix </p>
+<p>Fill matrix with single value </p>
 
 </div>
 </div>
@@ -518,6 +475,49 @@ template&lt;class T&gt; </div>
 
 </div>
 </div>
+<a class="anchor" id="ab5c1e87827729d884060c5bd7008ed81"></a>
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void <a class="el" href="classglbarcode_1_1Matrix.html">glbarcode::Matrix</a>&lt; T &gt;::setSubMatrix </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>x0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>y0</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classglbarcode_1_1Matrix.html">Matrix</a>&lt; T &gt; &amp;&#160;</td>
+          <td class="paramname"><em>a</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Set sub-matrix </p>
+
+</div>
+</div>
 <a class="anchor" id="ac426e99951751ee21ee806f48ee9d941"></a>
 <div class="memitem">
 <div class="memproto">
@@ -576,7 +576,7 @@ template&lt;class T&gt; </div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceglbarcode.html">glbarcode</a></li><li class="navelem"><a class="el" href="classglbarcode_1_1Matrix.html">Matrix</a></li>
-    <li class="footer">Generated on Thu Jul 24 2014 22:03:34 for glbarcode++ by
+    <li class="footer">Generated on Sat Jun 20 2015 20:44:51 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

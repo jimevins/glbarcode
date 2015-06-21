@@ -1,6 +1,6 @@
 <map id="glbarcode::BarcodeCepnet" name="glbarcode::BarcodeCepnet">
 <area shape="rect" id="node2" href="$classglbarcode_1_1BarcodePostnet.html" title="{glbarcode::BarcodePostnet\n||+ create()\l# validateDigits()\l}" alt="" coords="5,795,184,887"/>
 <area shape="rect" id="node3" href="$classglbarcode_1_1Barcode1dBase.html" title="{glbarcode::Barcode1dBase\n||+ ~Barcode1dBase()\l+ build()\l# Barcode1dBase()\l# validate()\l# preprocess()\l# encode()\l# prepareText()\l# vectorize()\l}" alt="" coords="5,566,184,746"/>
-<area shape="rect" id="node4" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ setShowText()\l+ showText()\l+ setChecksum()\l+ checksum()\l+ build()\l+ render()\l+ isEmpty()\l+ isDataValid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# addLine()\l# addBox()\l# addText()\l# addRing()\l# addHexagon()\l# setEmptyFlag()\l# setDataValidFlag()\l# setWidth()\l# setHeight()\l}" alt="" coords="24,131,164,517"/>
+<area shape="rect" id="node4" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ setShowText()\l+ showText()\l+ setChecksum()\l+ checksum()\l+ build()\l+ render()\l+ isEmpty()\l+ isDataValid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# addLine()\l# addBox()\l# addText()\l# addRing()\l# addHexagon()\l# setIsEmpty()\l# setIsDataValid()\l# setWidth()\l# setHeight()\l}" alt="" coords="27,131,161,517"/>
 <area shape="rect" id="node5" href="$structgbcBarcode.html" title="{gbcBarcode\n||}" alt="" coords="49,5,140,83"/>
 </map>

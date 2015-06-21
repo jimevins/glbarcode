@@ -51,14 +51,6 @@ var dir_f4b827c7c3ffa052657aad88689c8160 =
       [ "BarcodeUpcBase", "classglbarcode_1_1BarcodeUpcBase.html", "classglbarcode_1_1BarcodeUpcBase" ]
     ] ],
     [ "Constants.h", "Constants_8h.html", "Constants_8h" ],
-    [ "DrawingPrimitives.h", "DrawingPrimitives_8h.html", [
-      [ "DrawingPrimitive", "classglbarcode_1_1DrawingPrimitive.html", "classglbarcode_1_1DrawingPrimitive" ],
-      [ "DrawingPrimitiveLine", "classglbarcode_1_1DrawingPrimitiveLine.html", "classglbarcode_1_1DrawingPrimitiveLine" ],
-      [ "DrawingPrimitiveBox", "classglbarcode_1_1DrawingPrimitiveBox.html", "classglbarcode_1_1DrawingPrimitiveBox" ],
-      [ "DrawingPrimitiveText", "classglbarcode_1_1DrawingPrimitiveText.html", "classglbarcode_1_1DrawingPrimitiveText" ],
-      [ "DrawingPrimitiveRing", "classglbarcode_1_1DrawingPrimitiveRing.html", "classglbarcode_1_1DrawingPrimitiveRing" ],
-      [ "DrawingPrimitiveHexagon", "classglbarcode_1_1DrawingPrimitiveHexagon.html", "classglbarcode_1_1DrawingPrimitiveHexagon" ]
-    ] ],
     [ "Factory.h", "Factory_8h.html", [
       [ "gbcFactory", "structgbcFactory.html", null ],
       [ "Factory", "classglbarcode_1_1Factory.html", "classglbarcode_1_1Factory" ]
@@ -78,5 +70,8 @@ var dir_f4b827c7c3ffa052657aad88689c8160 =
     ] ],
     [ "RendererSvg.h", "RendererSvg_8h.html", [
       [ "RendererSvg", "classglbarcode_1_1RendererSvg.html", "classglbarcode_1_1RendererSvg" ]
+    ] ],
+    [ "TypeIdList.h", "TypeIdList_8h.html", [
+      [ "TypeIdList", "classglbarcode_1_1TypeIdList.html", null ]
     ] ]
 ];

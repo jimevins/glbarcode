@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['text',['text',['../classglbarcode_1_1DrawingPrimitiveText.html#abf2705e281e9bb5a7bb8e84c280c71b4',1,'glbarcode::DrawingPrimitiveText']]]
+  ['typeidlist',['TypeIdList',['../classglbarcode_1_1TypeIdList.html',1,'glbarcode']]],
+  ['typeidlist_2eh',['TypeIdList.h',['../TypeIdList_8h.html',1,'']]]
 ];

@@ -90,14 +90,14 @@ $(document).ready(function(){initNavTree('drawing_primitives.html','');});
 <div class="title">Drawing Primitives </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><p>The main characteristic of glbarcode++ that contributes to its extensibility is that barcodes are internally represented in a format that is independent of both symbology and output format. This format is a collection atomic drawing elements or "Drawing Primitives."</p>
-<p>All drawing primitives are derived from the <a class="el" href="classglbarcode_1_1DrawingPrimitive.html">glbarcode::DrawingPrimitive</a> class. This class provides the following properties:</p>
+<div class="textblock"><p>The main characteristic of glbarcode++ that contributes to its extensibility is that barcodes are internally represented in a format that is independent of both symbology and output format. This format is a collection of atomic drawing elements or "Drawing Primitives."</p>
+<p>All drawing primitives are derived from the glbarcode::DrawingPrimitive class. This class provides the following properties:</p>
 <ul>
 <li><code>x</code> &ndash; X coordinate of the drawing primitives origin (<em>points</em>) as measured from the upper left corner of the barcode. </li>
 <li><code>y</code> &ndash; Y coordinate of the drawing primitives origin (<em>points</em>) as measured from the upper left corner of the barcode.</li>
 </ul>
 <h2>Line Drawing Primitive </h2>
-<p>The line primitive is the primary building block for 1-D barcodes and describes a simple vertical line. It is represented by the <a class="el" href="classglbarcode_1_1DrawingPrimitiveLine.html">glbarcode::DrawingPrimitiveLine</a> class. This class extends <a class="el" href="classglbarcode_1_1DrawingPrimitive.html">glbarcode::DrawingPrimitive</a> and provides the following properties:</p>
+<p>The line primitive is the primary building block for 1-D barcodes and describes a simple vertical line. It is represented by the glbarcode::DrawingPrimitiveLine class. This class extends glbarcode::DrawingPrimitive and provides the following properties:</p>
 <ul>
 <li><code>w</code> &ndash; Line width (<em>points</em>) </li>
 <li><code>h</code> &ndash; Height or length of the line (<em>points</em>)</li>
@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('drawing_primitives.html','');});
 <div class="caption">
 Line primitive properties</div></div>
 <h2>Box Drawing Primitive </h2>
-<p>The box primitive is intended to be the primary building block for 2-D barcodes and describes a solid box. It is represented by the <a class="el" href="classglbarcode_1_1DrawingPrimitiveBox.html">glbarcode::DrawingPrimitiveBox</a> class. This class extends <a class="el" href="classglbarcode_1_1DrawingPrimitive.html">glbarcode::DrawingPrimitive</a> and provides the following properties:</p>
+<p>The box primitive is intended to be the primary building block for 2-D barcodes and describes a solid box. It is represented by the glbarcode::DrawingPrimitiveBox class. This class extends glbarcode::DrawingPrimitive and provides the following properties:</p>
 <ul>
 <li><code>w</code> &ndash; Box width (<em>points</em>) </li>
 <li><code>h</code> &ndash; Box height (<em>points</em>)</li>
@@ -119,7 +119,7 @@ Line primitive properties</div></div>
 <div class="caption">
 Box primitive properties</div></div>
 <h2>Text Drawing Primitive </h2>
-<p>The line primitive is intended to provide a human readable text representing the encoded data. It is represented by the <a class="el" href="classglbarcode_1_1DrawingPrimitiveText.html">glbarcode::DrawingPrimitiveText</a> class. This class extends <a class="el" href="classglbarcode_1_1DrawingPrimitive.html">glbarcode::DrawingPrimitive</a> and provides the following properties:</p>
+<p>The text primitive is intended to provide a human readable text representing the encoded data. It is represented by the glbarcode::DrawingPrimitiveText class. This class extends glbarcode::DrawingPrimitive and provides the following properties:</p>
 <ul>
 <li><code>fsize</code> &ndash; Font size (<em>points</em>) </li>
 <li><code>s</code> &ndash; String containing the text to render</li>
@@ -146,7 +146,7 @@ Hexagon primitive properties</div></div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Jul 24 2014 22:03:33 for glbarcode++ by
+    <li class="footer">Generated on Sat Jun 20 2015 20:44:50 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

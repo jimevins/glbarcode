@@ -139,71 +139,50 @@ $(document).ready(function(){initNavTree('RendererDebug_8h_source.html','');});
 <div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;                }</div>
 <div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;</div>
 <div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;</div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordtype">void</span> drawLine( <span class="keyword">const</span> <a class="code" href="classglbarcode_1_1DrawingPrimitiveLine.html">DrawingPrimitiveLine</a>* line )</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;                <span class="keywordtype">void</span> drawLine( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h )</div>
 <div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;                {</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        printf( <span class="stringliteral">&quot;\tDRAW_LINE( x = %f, y = %f, w = %f, h = %f )\n&quot;</span>,</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                                line-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitive.html#a7b0f6019ee827c0504eba018dfd14d7e">x</a>(), line-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitive.html#a935189d6b419bab2e2a99c450a86c50b">y</a>(), line-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitiveLine.html#a042af8f2afad2938ddd36b407dec3fd1">w</a>(), line-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitiveLine.html#a6484c0d1d315fc3c023c42672def59e9">h</a>() );</div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;                }</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;                        printf( <span class="stringliteral">&quot;\tDRAW_LINE( x = %f, y = %f, w = %f, h = %f )\n&quot;</span>, x, y, w, h );</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;                }</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                <span class="keywordtype">void</span> drawBox( <span class="keyword">const</span> <a class="code" href="classglbarcode_1_1DrawingPrimitiveBox.html">DrawingPrimitiveBox</a>* box )</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                {</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                        printf( <span class="stringliteral">&quot;\tDRAW_BOX( x = %f, y = %f, w = %f, h = %f )\n&quot;</span>,</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;                                box-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitive.html#a7b0f6019ee827c0504eba018dfd14d7e">x</a>(), box-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitive.html#a935189d6b419bab2e2a99c450a86c50b">y</a>(), box-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitiveBox.html#a0416eb69615c328cb5d439a9b6361051">w</a>(), box-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitiveBox.html#ad8baaa475c4d4de7f27b64dfa187f8d7">h</a>() );</div>
-<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;                }</div>
-<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;</div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                <span class="keywordtype">void</span> drawText( <span class="keyword">const</span> <a class="code" href="classglbarcode_1_1DrawingPrimitiveText.html">DrawingPrimitiveText</a>* text )</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                {</div>
-<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;                        printf( <span class="stringliteral">&quot;\tDRAW_TEXT( x = %f, y = %f, size = %f, text = \&quot;%s\&quot; )\n&quot;</span>,</div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                                text-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitive.html#a7b0f6019ee827c0504eba018dfd14d7e">x</a>(), text-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitive.html#a935189d6b419bab2e2a99c450a86c50b">y</a>(), text-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitiveText.html#af86c5ff45735ad0f5d1a80606626312c">size</a>(), text-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitiveText.html#abf2705e281e9bb5a7bb8e84c280c71b4">text</a>().c_str() );</div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                }</div>
-<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;</div>
-<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;</div>
-<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                <span class="keywordtype">void</span> drawRing( <span class="keyword">const</span> <a class="code" href="classglbarcode_1_1DrawingPrimitiveRing.html">DrawingPrimitiveRing</a>* ring )</div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;                {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;                        printf( <span class="stringliteral">&quot;\tDRAW_RING( x = %f, y = %f, r = %f, w = %f )\n&quot;</span>,</div>
-<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                                ring-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitive.html#a7b0f6019ee827c0504eba018dfd14d7e">x</a>(), ring-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitive.html#a935189d6b419bab2e2a99c450a86c50b">y</a>(), ring-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitiveRing.html#a04c95c49b0832857dcdbb7cfda3c662f">r</a>(), ring-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitiveRing.html#af1bbdd8711324b9c82c1bd5f21ae6179">w</a>() );</div>
-<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                }</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;</div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;</div>
-<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;                <span class="keywordtype">void</span> drawHexagon( <span class="keyword">const</span> <a class="code" href="classglbarcode_1_1DrawingPrimitiveHexagon.html">DrawingPrimitiveHexagon</a>* hexagon )</div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;                {</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;                        printf( <span class="stringliteral">&quot;\tDRAW_HEXAGON( x = %f, y = %f, h = %f )\n&quot;</span>,</div>
-<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                                hexagon-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitive.html#a7b0f6019ee827c0504eba018dfd14d7e">x</a>(), hexagon-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitive.html#a935189d6b419bab2e2a99c450a86c50b">y</a>(), hexagon-&gt;<a class="code" href="classglbarcode_1_1DrawingPrimitiveHexagon.html#a9ecdcd048661c0a9cb2bed1536ec1695">h</a>() );</div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;                }</div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        };</div>
-<div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;</div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;}</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;<span class="preprocessor">#endif // glbarcode_RendererDebug_h</span></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveHexagon_html_a9ecdcd048661c0a9cb2bed1536ec1695"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveHexagon.html#a9ecdcd048661c0a9cb2bed1536ec1695">glbarcode::DrawingPrimitiveHexagon::h</a></div><div class="ttdeci">double h() const </div></div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                <span class="keywordtype">void</span> drawBox( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> w, <span class="keywordtype">double</span> h )</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;                {</div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;                        printf( <span class="stringliteral">&quot;\tDRAW_BOX( x = %f, y = %f, w = %f, h = %f )\n&quot;</span>, x, y, w, h );</div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;                }</div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;</div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;                <span class="keywordtype">void</span> drawText( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> size, <span class="keyword">const</span> std::string&amp; text )</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;                {</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;                        printf( <span class="stringliteral">&quot;\tDRAW_TEXT( x = %f, y = %f, size = %f, text = \&quot;%s\&quot; )\n&quot;</span>, x, y, size, text.c_str() );</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;                }</div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                <span class="keywordtype">void</span> drawRing( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> r, <span class="keywordtype">double</span> w )</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                {</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;                        printf( <span class="stringliteral">&quot;\tDRAW_RING( x = %f, y = %f, r = %f, w = %f )\n&quot;</span>, x, y, r, w );</div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;                }</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;</div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;                <span class="keywordtype">void</span> drawHexagon( <span class="keywordtype">double</span> x, <span class="keywordtype">double</span> y, <span class="keywordtype">double</span> h )</div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;                {</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;                        printf( <span class="stringliteral">&quot;\tDRAW_HEXAGON( x = %f, y = %f, h = %f )\n&quot;</span>, x, y, h );</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;                }</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;</div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;        };</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;</div>
+<div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;}</div>
+<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;<span class="preprocessor">#endif // glbarcode_RendererDebug_h</span></div>
 <div class="ttc" id="classglbarcode_1_1RendererDebug_html"><div class="ttname"><a href="classglbarcode_1_1RendererDebug.html">glbarcode::RendererDebug</a></div><div class="ttdef"><b>Definition:</b> RendererDebug.h:38</div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveRing_html"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveRing.html">glbarcode::DrawingPrimitiveRing</a></div><div class="ttdef"><b>Definition:</b> DrawingPrimitives.h:192</div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveText_html"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveText.html">glbarcode::DrawingPrimitiveText</a></div><div class="ttdef"><b>Definition:</b> DrawingPrimitives.h:154</div></div>
-<div class="ttc" id="classglbarcode_1_1Renderer_html"><div class="ttname"><a href="classglbarcode_1_1Renderer.html">glbarcode::Renderer</a></div><div class="ttdef"><b>Definition:</b> Renderer.h:44</div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveRing_html_a04c95c49b0832857dcdbb7cfda3c662f"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveRing.html#a04c95c49b0832857dcdbb7cfda3c662f">glbarcode::DrawingPrimitiveRing::r</a></div><div class="ttdeci">double r() const </div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveRing_html_af1bbdd8711324b9c82c1bd5f21ae6179"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveRing.html#af1bbdd8711324b9c82c1bd5f21ae6179">glbarcode::DrawingPrimitiveRing::w</a></div><div class="ttdeci">double w() const </div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveText_html_abf2705e281e9bb5a7bb8e84c280c71b4"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveText.html#abf2705e281e9bb5a7bb8e84c280c71b4">glbarcode::DrawingPrimitiveText::text</a></div><div class="ttdeci">const std::string &amp; text() const </div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveLine_html_a6484c0d1d315fc3c023c42672def59e9"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveLine.html#a6484c0d1d315fc3c023c42672def59e9">glbarcode::DrawingPrimitiveLine::h</a></div><div class="ttdeci">double h() const </div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveHexagon_html"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveHexagon.html">glbarcode::DrawingPrimitiveHexagon</a></div><div class="ttdef"><b>Definition:</b> DrawingPrimitives.h:230</div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveLine_html_a042af8f2afad2938ddd36b407dec3fd1"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveLine.html#a042af8f2afad2938ddd36b407dec3fd1">glbarcode::DrawingPrimitiveLine::w</a></div><div class="ttdeci">double w() const </div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveLine_html"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveLine.html">glbarcode::DrawingPrimitiveLine</a></div><div class="ttdef"><b>Definition:</b> DrawingPrimitives.h:78</div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitive_html_a935189d6b419bab2e2a99c450a86c50b"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitive.html#a935189d6b419bab2e2a99c450a86c50b">glbarcode::DrawingPrimitive::y</a></div><div class="ttdeci">double y() const </div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveBox_html_a0416eb69615c328cb5d439a9b6361051"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveBox.html#a0416eb69615c328cb5d439a9b6361051">glbarcode::DrawingPrimitiveBox::w</a></div><div class="ttdeci">double w() const </div></div>
+<div class="ttc" id="classglbarcode_1_1Renderer_html"><div class="ttname"><a href="classglbarcode_1_1Renderer.html">glbarcode::Renderer</a></div><div class="ttdef"><b>Definition:</b> Renderer.h:47</div></div>
 <div class="ttc" id="Renderer_8h_html"><div class="ttname"><a href="Renderer_8h.html">Renderer.h</a></div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveText_html_af86c5ff45735ad0f5d1a80606626312c"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveText.html#af86c5ff45735ad0f5d1a80606626312c">glbarcode::DrawingPrimitiveText::size</a></div><div class="ttdeci">double size() const </div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveBox_html_ad8baaa475c4d4de7f27b64dfa187f8d7"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveBox.html#ad8baaa475c4d4de7f27b64dfa187f8d7">glbarcode::DrawingPrimitiveBox::h</a></div><div class="ttdeci">double h() const </div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitive_html_a7b0f6019ee827c0504eba018dfd14d7e"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitive.html#a7b0f6019ee827c0504eba018dfd14d7e">glbarcode::DrawingPrimitive::x</a></div><div class="ttdeci">double x() const </div></div>
-<div class="ttc" id="classglbarcode_1_1DrawingPrimitiveBox_html"><div class="ttname"><a href="classglbarcode_1_1DrawingPrimitiveBox.html">glbarcode::DrawingPrimitiveBox</a></div><div class="ttdef"><b>Definition:</b> DrawingPrimitives.h:116</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f4b827c7c3ffa052657aad88689c8160.html">glbarcode</a></li><li class="navelem"><a class="el" href="RendererDebug_8h.html">RendererDebug.h</a></li>
-    <li class="footer">Generated on Thu Jul 24 2014 22:03:33 for glbarcode++ by
+    <li class="footer">Generated on Sat Jun 20 2015 20:44:50 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

@@ -104,7 +104,7 @@ Inheritance diagram for glbarcode::Renderer:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a0ce521ad09461d4723c1aee271d81c9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#a0ce521ad09461d4723c1aee271d81c9e">render</a> (double w, double h, const std::list&lt; <a class="el" href="classglbarcode_1_1DrawingPrimitive.html">DrawingPrimitive</a> * &gt; &amp;primitives)</td></tr>
+<tr class="memitem:a0ce521ad09461d4723c1aee271d81c9e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#a0ce521ad09461d4723c1aee271d81c9e">render</a> (double w, double h, const std::list&lt; DrawingPrimitive * &gt; &amp;primitives)</td></tr>
 <tr class="separator:a0ce521ad09461d4723c1aee271d81c9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pro-methods"></a>
@@ -113,16 +113,16 @@ Protected Member Functions</h2></td></tr>
 <tr class="separator:a9e28dc5027532c18d3af63ca577bdafb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9a2b73f2a364e7b33fc33327600d66f2"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#a9a2b73f2a364e7b33fc33327600d66f2">drawEnd</a> (void)=0</td></tr>
 <tr class="separator:a9a2b73f2a364e7b33fc33327600d66f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa9bc41aea2a50243af13c1323f512d1c"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#aa9bc41aea2a50243af13c1323f512d1c">drawLine</a> (const <a class="el" href="classglbarcode_1_1DrawingPrimitiveLine.html">DrawingPrimitiveLine</a> *line)=0</td></tr>
-<tr class="separator:aa9bc41aea2a50243af13c1323f512d1c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a71e12eebec893d880872549f05fcad40"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#a71e12eebec893d880872549f05fcad40">drawBox</a> (const <a class="el" href="classglbarcode_1_1DrawingPrimitiveBox.html">DrawingPrimitiveBox</a> *box)=0</td></tr>
-<tr class="separator:a71e12eebec893d880872549f05fcad40"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a653870b580bf67b82b6446ef4cc47c25"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#a653870b580bf67b82b6446ef4cc47c25">drawText</a> (const <a class="el" href="classglbarcode_1_1DrawingPrimitiveText.html">DrawingPrimitiveText</a> *text)=0</td></tr>
-<tr class="separator:a653870b580bf67b82b6446ef4cc47c25"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a693101fd0a73003a2bb31b0290c6345a"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#a693101fd0a73003a2bb31b0290c6345a">drawRing</a> (const <a class="el" href="classglbarcode_1_1DrawingPrimitiveRing.html">DrawingPrimitiveRing</a> *ring)=0</td></tr>
-<tr class="separator:a693101fd0a73003a2bb31b0290c6345a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4cc694853d65162f400de451e279fe71"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#a4cc694853d65162f400de451e279fe71">drawHexagon</a> (const <a class="el" href="classglbarcode_1_1DrawingPrimitiveHexagon.html">DrawingPrimitiveHexagon</a> *hexagon)=0</td></tr>
-<tr class="separator:a4cc694853d65162f400de451e279fe71"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa6b7f15d833cb7f85d83f99ba6a861cb"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#aa6b7f15d833cb7f85d83f99ba6a861cb">drawLine</a> (double x, double y, double w, double h)=0</td></tr>
+<tr class="separator:aa6b7f15d833cb7f85d83f99ba6a861cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a079150f3ce479325dd7caaa21e6367a8"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#a079150f3ce479325dd7caaa21e6367a8">drawBox</a> (double x, double y, double w, double h)=0</td></tr>
+<tr class="separator:a079150f3ce479325dd7caaa21e6367a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a668f4582af9393964e54ad70c180ccdf"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#a668f4582af9393964e54ad70c180ccdf">drawText</a> (double x, double y, double size, const std::string &amp;text)=0</td></tr>
+<tr class="separator:a668f4582af9393964e54ad70c180ccdf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adbac1f7172dfa6d6e724773a3c24e919"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#adbac1f7172dfa6d6e724773a3c24e919">drawRing</a> (double x, double y, double r, double w)=0</td></tr>
+<tr class="separator:adbac1f7172dfa6d6e724773a3c24e919"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a158dd0fa097ff95f42580814d33e46ca"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Renderer.html#a158dd0fa097ff95f42580814d33e46ca">drawHexagon</a> (double x, double y, double h)=0</td></tr>
+<tr class="separator:a158dd0fa097ff95f42580814d33e46ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Base class for all renderers. </p>
@@ -170,7 +170,7 @@ Protected Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a71e12eebec893d880872549f05fcad40"></a>
+<a class="anchor" id="a079150f3ce479325dd7caaa21e6367a8"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -180,9 +180,31 @@ Protected Member Functions</h2></td></tr>
         <tr>
           <td class="memname">virtual void glbarcode::Renderer::drawBox </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classglbarcode_1_1DrawingPrimitiveBox.html">DrawingPrimitiveBox</a> *&#160;</td>
-          <td class="paramname"><em>box</em></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -192,14 +214,17 @@ Protected Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Draw box primitive.</p>
-<p>Required virtual method to draw or render <a class="el" href="classglbarcode_1_1DrawingPrimitiveBox.html">DrawingPrimitiveBox</a>.</p>
+<p>Required virtual method to draw or render box drawing primitive.</p>
 <div class="image">
 <img src="figure-primitive-box.svg" alt="figure-primitive-box.svg"/>
 <div class="caption">
 Box primitive properties</div></div>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">box</td><td>Box primitive to draw </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X coordinate of box's origin (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y coordinate of box's origin (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Width of box (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of box (points) </td></tr>
   </table>
   </dd>
 </dl>
@@ -232,7 +257,7 @@ Box primitive properties</div></div>
 
 </div>
 </div>
-<a class="anchor" id="a4cc694853d65162f400de451e279fe71"></a>
+<a class="anchor" id="a158dd0fa097ff95f42580814d33e46ca"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -242,9 +267,25 @@ Box primitive properties</div></div>
         <tr>
           <td class="memname">virtual void glbarcode::Renderer::drawHexagon </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classglbarcode_1_1DrawingPrimitiveHexagon.html">DrawingPrimitiveHexagon</a> *&#160;</td>
-          <td class="paramname"><em>hexagon</em></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -254,21 +295,23 @@ Box primitive properties</div></div>
 </table>
 </div><div class="memdoc">
 <p>Draw hexagon primitive.</p>
-<p>Required virtual method to draw or render <a class="el" href="classglbarcode_1_1DrawingPrimitiveHexagon.html">DrawingPrimitiveHexagon</a>.</p>
+<p>Required virtual method to draw or render hexagon drawing primitive.</p>
 <div class="image">
 <img src="figure-primitive-hexagon.svg" alt="figure-primitive-hexagon.svg"/>
 <div class="caption">
 Hexagon primitive properties</div></div>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">hexagon</td><td>Hexagon primitive to draw </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X coordinate of hexagon's origin (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y coordinate of hexagon's origin (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Height of hexagon (points) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="aa9bc41aea2a50243af13c1323f512d1c"></a>
+<a class="anchor" id="aa6b7f15d833cb7f85d83f99ba6a861cb"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -278,9 +321,31 @@ Hexagon primitive properties</div></div>
         <tr>
           <td class="memname">virtual void glbarcode::Renderer::drawLine </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classglbarcode_1_1DrawingPrimitiveLine.html">DrawingPrimitiveLine</a> *&#160;</td>
-          <td class="paramname"><em>line</em></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>w</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>h</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -290,21 +355,24 @@ Hexagon primitive properties</div></div>
 </table>
 </div><div class="memdoc">
 <p>Draw line primitive.</p>
-<p>Required virtual method to draw or render <a class="el" href="classglbarcode_1_1DrawingPrimitiveLine.html">DrawingPrimitiveLine</a>.</p>
+<p>Required virtual method to draw or render line drawing primitive.</p>
 <div class="image">
 <img src="figure-primitive-line.svg" alt="figure-primitive-line.svg"/>
 <div class="caption">
 Line primitive properties</div></div>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">line</td><td>Line primitive to draw </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X coordinate of line's origin (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y coordinate of line's origin (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Line width (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">h</td><td>Line height (points) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a693101fd0a73003a2bb31b0290c6345a"></a>
+<a class="anchor" id="adbac1f7172dfa6d6e724773a3c24e919"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -314,9 +382,31 @@ Line primitive properties</div></div>
         <tr>
           <td class="memname">virtual void glbarcode::Renderer::drawRing </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classglbarcode_1_1DrawingPrimitiveRing.html">DrawingPrimitiveRing</a> *&#160;</td>
-          <td class="paramname"><em>ring</em></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>r</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>w</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -326,21 +416,24 @@ Line primitive properties</div></div>
 </table>
 </div><div class="memdoc">
 <p>Draw ring primitive.</p>
-<p>Required virtual method to draw or render <a class="el" href="classglbarcode_1_1DrawingPrimitiveRing.html">DrawingPrimitiveRing</a>.</p>
+<p>Required virtual method to draw or render ring drawing primitive.</p>
 <div class="image">
 <img src="figure-primitive-ring.svg" alt="figure-primitive-ring.svg"/>
 <div class="caption">
 Ring primitive properties</div></div>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">ring</td><td>Ring primitive to draw </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X coordinate of ring's origin (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y coordinate of ring's origin (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">r</td><td>Radius of ring (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">w</td><td>Line width of ring (points) </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a class="anchor" id="a653870b580bf67b82b6446ef4cc47c25"></a>
+<a class="anchor" id="a668f4582af9393964e54ad70c180ccdf"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -350,9 +443,31 @@ Ring primitive properties</div></div>
         <tr>
           <td class="memname">virtual void glbarcode::Renderer::drawText </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classglbarcode_1_1DrawingPrimitiveText.html">DrawingPrimitiveText</a> *&#160;</td>
-          <td class="paramname"><em>text</em></td><td>)</td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>x</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>y</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">double&#160;</td>
+          <td class="paramname"><em>size</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>text</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -362,14 +477,17 @@ Ring primitive properties</div></div>
 </table>
 </div><div class="memdoc">
 <p>Draw text primitive.</p>
-<p>Required virtual method to draw or render <a class="el" href="classglbarcode_1_1DrawingPrimitiveText.html">DrawingPrimitiveText</a>.</p>
+<p>Required virtual method to draw or render text drawing primitive.</p>
 <div class="image">
 <img src="figure-primitive-text.svg" alt="figure-primitive-text.svg"/>
 <div class="caption">
 Text primitive properties</div></div>
  <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>Text primitive to draw </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">x</td><td>X coordinate of text's origin (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">y</td><td>Y coordinate of text's origin (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">size</td><td>Font size of text (points) </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">text</td><td>Text </td></tr>
   </table>
   </dd>
 </dl>
@@ -395,7 +513,7 @@ Text primitive properties</div></div>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">const std::list&lt; <a class="el" href="classglbarcode_1_1DrawingPrimitive.html">DrawingPrimitive</a> * &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::list&lt; DrawingPrimitive * &gt; &amp;&#160;</td>
           <td class="paramname"><em>primitives</em>&#160;</td>
         </tr>
         <tr>
@@ -426,7 +544,7 @@ Text primitive properties</div></div>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceglbarcode.html">glbarcode</a></li><li class="navelem"><a class="el" href="classglbarcode_1_1Renderer.html">Renderer</a></li>
-    <li class="footer">Generated on Thu Jul 24 2014 22:03:34 for glbarcode++ by
+    <li class="footer">Generated on Sat Jun 20 2015 20:44:51 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

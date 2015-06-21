@@ -117,9 +117,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a17a0dc24fed9af1924fe7e4b59ee651b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c2ebd5917081bdde6fe9e107ffb4649"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Factory.html#a6c2ebd5917081bdde6fe9e107ffb4649">isTypeSupported</a> (const std::string &amp;typeId)</td></tr>
 <tr class="separator:a6c2ebd5917081bdde6fe9e107ffb4649"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adc4853da827f0602c41e048ce406d29b"><td class="memItemLeft" align="right" valign="top">static const std::vector<br class="typebreak"/>
-&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Factory.html#adc4853da827f0602c41e048ce406d29b">getSupportedTypes</a> (void)</td></tr>
-<tr class="separator:adc4853da827f0602c41e048ce406d29b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adfa9bfc91bdb6a84b017c563984a5530"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="classglbarcode_1_1TypeIdList.html">TypeIdList</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classglbarcode_1_1Factory.html#adfa9bfc91bdb6a84b017c563984a5530">getSupportedTypes</a> (void)</td></tr>
+<tr class="separator:adfa9bfc91bdb6a84b017c563984a5530"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Singleton <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> factory class. </p>
@@ -169,7 +168,7 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="adc4853da827f0602c41e048ce406d29b"></a>
+<a class="anchor" id="adfa9bfc91bdb6a84b017c563984a5530"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -177,7 +176,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static const std::vector&lt;std::string&gt; glbarcode::Factory::getSupportedTypes </td>
+          <td class="memname">static <a class="el" href="classglbarcode_1_1TypeIdList.html">TypeIdList</a> glbarcode::Factory::getSupportedTypes </td>
           <td>(</td>
           <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
@@ -216,7 +215,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 <p>Initialize barcode factory.</p>
-<p>Initializes the barcode factory and registers all built-in <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> types. It is optional for an application to call <a class="el" href="classglbarcode_1_1Factory.html#a5b89c50ed6d334ff3c73d48fe0a2d4e2">init()</a>, because libglabels++ will automatically initialize the factory on demand. </p>
+<p>Initializes the barcode factory and registers all built-in <a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> types. It is optional for an application to call <a class="el" href="classglbarcode_1_1Factory.html#a5b89c50ed6d334ff3c73d48fe0a2d4e2">init()</a>, because glbarcode++ will automatically initialize the factory on demand. </p>
 
 </div>
 </div>
@@ -241,7 +240,13 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Is barcode type supported? </p>
+<p>Is barcode type supported?</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">typeId</td><td><a class="el" href="classglbarcode_1_1Barcode.html">Barcode</a> type ID string </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -296,7 +301,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespaceglbarcode.html">glbarcode</a></li><li class="navelem"><a class="el" href="classglbarcode_1_1Factory.html">Factory</a></li>
-    <li class="footer">Generated on Thu Jul 24 2014 22:03:34 for glbarcode++ by
+    <li class="footer">Generated on Sat Jun 20 2015 20:44:51 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

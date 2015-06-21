@@ -1,6 +1,6 @@
 <map id="glbarcode::BarcodeCode39Ext" name="glbarcode::BarcodeCode39Ext">
 <area shape="rect" id="node2" href="$classglbarcode_1_1BarcodeCode39.html" title="{glbarcode::BarcodeCode39\n||+ create()\l}" alt="" coords="15,795,193,872"/>
 <area shape="rect" id="node3" href="$classglbarcode_1_1Barcode1dBase.html" title="{glbarcode::Barcode1dBase\n||+ ~Barcode1dBase()\l+ build()\l# Barcode1dBase()\l# validate()\l# preprocess()\l# encode()\l# prepareText()\l# vectorize()\l}" alt="" coords="15,566,193,746"/>
-<area shape="rect" id="node4" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ setShowText()\l+ showText()\l+ setChecksum()\l+ checksum()\l+ build()\l+ render()\l+ isEmpty()\l+ isDataValid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# addLine()\l# addBox()\l# addText()\l# addRing()\l# addHexagon()\l# setEmptyFlag()\l# setDataValidFlag()\l# setWidth()\l# setHeight()\l}" alt="" coords="33,131,173,517"/>
+<area shape="rect" id="node4" href="$classglbarcode_1_1Barcode.html" title="{glbarcode::Barcode\n||+ ~Barcode()\l+ setShowText()\l+ showText()\l+ setChecksum()\l+ checksum()\l+ build()\l+ render()\l+ isEmpty()\l+ isDataValid()\l+ width()\l+ height()\l# Barcode()\l# clear()\l# addLine()\l# addBox()\l# addText()\l# addRing()\l# addHexagon()\l# setIsEmpty()\l# setIsDataValid()\l# setWidth()\l# setHeight()\l}" alt="" coords="37,131,171,517"/>
 <area shape="rect" id="node5" href="$structgbcBarcode.html" title="{gbcBarcode\n||}" alt="" coords="59,5,149,83"/>
 </map>

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['r',['r',['../classglbarcode_1_1DrawingPrimitiveRing.html#a04c95c49b0832857dcdbb7cfda3c662f',1,'glbarcode::DrawingPrimitiveRing']]],
   ['registertype',['registerType',['../classglbarcode_1_1Factory.html#a17a0dc24fed9af1924fe7e4b59ee651b',1,'glbarcode::Factory']]],
   ['render',['render',['../classglbarcode_1_1Barcode.html#ac1a770020b4915e4d324dd18af3a06f5',1,'glbarcode::Barcode::render()'],['../classglbarcode_1_1Renderer.html#a0ce521ad09461d4723c1aee271d81c9e',1,'glbarcode::Renderer::render()']]],
   ['renderer',['Renderer',['../classglbarcode_1_1Renderer.html',1,'glbarcode']]],

@@ -24,5 +24,5 @@ var searchData=
   ['gbc_5frenderer_5fsvg_5fget_5ffilename',['gbc_renderer_svg_get_filename',['../gbc__renderer__svg_8h.html#a81d987fd44c74dbb3321569dda4ecabd',1,'gbc_renderer_svg.h']]],
   ['gbc_5frenderer_5fsvg_5fnew',['gbc_renderer_svg_new',['../gbc__renderer__svg_8h.html#a7371b7f1c917c0b24d30b0d390f23146',1,'gbc_renderer_svg.h']]],
   ['gbc_5frenderer_5fsvg_5fset_5ffilename',['gbc_renderer_svg_set_filename',['../gbc__renderer__svg_8h.html#a3b29ed2188123ba774450236f7a07f8e',1,'gbc_renderer_svg.h']]],
-  ['getsupportedtypes',['getSupportedTypes',['../classglbarcode_1_1Factory.html#adc4853da827f0602c41e048ce406d29b',1,'glbarcode::Factory']]]
+  ['getsupportedtypes',['getSupportedTypes',['../classglbarcode_1_1Factory.html#adfa9bfc91bdb6a84b017c563984a5530',1,'glbarcode::Factory']]]
 ];

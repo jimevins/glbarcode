@@ -39,7 +39,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "Barcode1dBase_8h.html",
-"globals_defs.html"
+"usage.html#the_factory"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

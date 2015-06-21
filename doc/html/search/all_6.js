@@ -45,7 +45,7 @@ var searchData=
   ['gbcrendererdebug',['gbcRendererDebug',['../gbc__renderer__debug_8h.html#acccd7dcf0b834ddc9d1b9192f567bdd5',1,'gbc_renderer_debug.h']]],
   ['gbcrenderereps',['gbcRendererEps',['../gbc__renderer__eps_8h.html#a3fd54bfd296d55ff217a219a78daf8c9',1,'gbc_renderer_eps.h']]],
   ['gbcrenderersvg',['gbcRendererSvg',['../gbc__renderer__svg_8h.html#aada40c12f6a333e683c8359260acbf81',1,'gbc_renderer_svg.h']]],
-  ['getsupportedtypes',['getSupportedTypes',['../classglbarcode_1_1Factory.html#adc4853da827f0602c41e048ce406d29b',1,'glbarcode::Factory']]],
+  ['getsupportedtypes',['getSupportedTypes',['../classglbarcode_1_1Factory.html#adfa9bfc91bdb6a84b017c563984a5530',1,'glbarcode::Factory']]],
   ['glbarcode',['glbarcode',['../namespaceglbarcode.html',1,'']]],
   ['gnu_20lesser_20general_20public_20license',['GNU Lesser General Public License',['../lgpl.html',1,'']]],
   ['version',['Version',['../namespaceglbarcode_1_1Version.html',1,'glbarcode']]]

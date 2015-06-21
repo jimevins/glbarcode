@@ -1,8 +1,3 @@
 <map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node1" href="$classglbarcode_1_1DrawingPrimitive.html" title="glbarcode::DrawingPrimitive" alt="" coords="6,123,191,149"/>
-<area shape="rect" id="node2" href="$classglbarcode_1_1DrawingPrimitiveBox.html" title="glbarcode::DrawingPrimitiveBox" alt="" coords="243,5,451,32"/>
-<area shape="rect" id="node3" href="$classglbarcode_1_1DrawingPrimitiveHexagon.html" title="glbarcode::DrawingPrimitive\lHexagon" alt="" coords="254,57,439,98"/>
-<area shape="rect" id="node4" href="$classglbarcode_1_1DrawingPrimitiveLine.html" title="glbarcode::DrawingPrimitiveLine" alt="" coords="242,123,451,149"/>
-<area shape="rect" id="node5" href="$classglbarcode_1_1DrawingPrimitiveRing.html" title="glbarcode::DrawingPrimitiveRing" alt="" coords="241,173,453,200"/>
-<area shape="rect" id="node6" href="$classglbarcode_1_1DrawingPrimitiveText.html" title="glbarcode::DrawingPrimitiveText" alt="" coords="241,224,452,251"/>
+<area shape="rect" id="node1" href="$classglbarcode_1_1Matrix.html" title="glbarcode::Matrix\&lt; T \&gt;" alt="" coords="5,5,160,32"/>
 </map>

@@ -1,7 +1,0 @@
-<map id="glbarcode::DrawingPrimitive" name="glbarcode::DrawingPrimitive">
-<area shape="rect" id="node2" href="$classglbarcode_1_1DrawingPrimitiveBox.html" title="{glbarcode::DrawingPrimitiveBox\n||+ DrawingPrimitiveBox()\l+ w()\l+ h()\l}" alt="" coords="5,176,213,283"/>
-<area shape="rect" id="node3" href="$classglbarcode_1_1DrawingPrimitiveHexagon.html" title="{glbarcode::DrawingPrimitive\lHexagon\n||+ DrawingPrimitiveHexagon()\l+ h()\l}" alt="" coords="238,176,431,283"/>
-<area shape="rect" id="node4" href="$classglbarcode_1_1DrawingPrimitiveLine.html" title="{glbarcode::DrawingPrimitiveLine\n||+ DrawingPrimitiveLine()\l+ w()\l+ h()\l}" alt="" coords="455,176,664,283"/>
-<area shape="rect" id="node5" href="$classglbarcode_1_1DrawingPrimitiveRing.html" title="{glbarcode::DrawingPrimitiveRing\n||+ DrawingPrimitiveRing()\l+ r()\l+ w()\l}" alt="" coords="689,176,900,283"/>
-<area shape="rect" id="node6" href="$classglbarcode_1_1DrawingPrimitiveText.html" title="{glbarcode::DrawingPrimitiveText\n||+ DrawingPrimitiveText()\l+ size()\l+ text()\l}" alt="" coords="924,176,1133,283"/>
-</map>

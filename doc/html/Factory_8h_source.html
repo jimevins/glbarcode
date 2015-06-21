@@ -116,8 +116,8 @@ $(document).ready(function(){initNavTree('Factory_8h_source.html','');});
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="Barcode_8h.html">Barcode.h</a>&quot;</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#include &lt;map&gt;</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="TypeIdList_8h.html">TypeIdList.h</a>&quot;</span></div>
 <div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;</div>
 <div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="structgbcFactory.html">   34</a></span>&#160;<span class="keyword">extern</span> <span class="stringliteral">&quot;C&quot;</span> <span class="keyword">struct </span><a class="code" href="structgbcFactory.html">gbcFactory</a> {};</div>
@@ -146,45 +146,47 @@ $(document).ready(function(){initNavTree('Factory_8h_source.html','');});
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code" href="classglbarcode_1_1Factory.html#a17a0dc24fed9af1924fe7e4b59ee651b">registerType</a>( <span class="keyword">const</span> std::string&amp; typeId, <a class="code" href="classglbarcode_1_1Factory.html#a10755cf24c12f36cc6e6132bd18acc36">BarcodeCreateFct</a> fct );</div>
 <div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;</div>
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;</div>
-<div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classglbarcode_1_1Factory.html#a6c2ebd5917081bdde6fe9e107ffb4649">isTypeSupported</a>( <span class="keyword">const</span> std::string&amp; typeId );</div>
-<div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;</div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                <span class="keyword">static</span> <span class="keyword">const</span> std::vector&lt;std::string&gt; <a class="code" href="classglbarcode_1_1Factory.html#adc4853da827f0602c41e048ce406d29b">getSupportedTypes</a>( <span class="keywordtype">void</span> );</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">void</span> internalRegisterType( <span class="keyword">const</span> std::string&amp; typeId, <a class="code" href="classglbarcode_1_1Factory.html#a10755cf24c12f36cc6e6132bd18acc36">BarcodeCreateFct</a> fct );</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;</div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;</div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;                <span class="keyword">typedef</span> std::map&lt;std::string,BarcodeCreateFct&gt; BarcodeTypeMap;</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                <span class="keyword">static</span> BarcodeTypeMap mBarcodeTypeMap;</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;</div>
-<div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;                <span class="keyword">static</span> std::vector&lt;std::string&gt; mSupportedTypes;</div>
-<div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;        };</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">bool</span> <a class="code" href="classglbarcode_1_1Factory.html#a6c2ebd5917081bdde6fe9e107ffb4649">isTypeSupported</a>( <span class="keyword">const</span> std::string&amp; typeId );</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;                <span class="keyword">static</span> <a class="code" href="classglbarcode_1_1TypeIdList.html">TypeIdList</a> <a class="code" href="classglbarcode_1_1Factory.html#adfa9bfc91bdb6a84b017c563984a5530">getSupportedTypes</a>( <span class="keywordtype">void</span> );</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;                <span class="keyword">static</span> <span class="keywordtype">void</span> internalRegisterType( <span class="keyword">const</span> std::string&amp; typeId, <a class="code" href="classglbarcode_1_1Factory.html#a10755cf24c12f36cc6e6132bd18acc36">BarcodeCreateFct</a> fct );</div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;</div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;                <span class="keyword">typedef</span> std::map&lt;std::string,BarcodeCreateFct&gt; BarcodeTypeMap;</div>
+<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;                <span class="keyword">static</span> BarcodeTypeMap mBarcodeTypeMap;</div>
+<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;</div>
+<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;                <span class="keyword">static</span> <a class="code" href="classglbarcode_1_1TypeIdList.html">TypeIdList</a> mSupportedTypes;</div>
 <div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;</div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;}</div>
+<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;        };</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;</div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;<span class="preprocessor">#endif // glbarcode_Factory_h</span></div>
-<div class="ttc" id="classglbarcode_1_1Factory_html_adc4853da827f0602c41e048ce406d29b"><div class="ttname"><a href="classglbarcode_1_1Factory.html#adc4853da827f0602c41e048ce406d29b">glbarcode::Factory::getSupportedTypes</a></div><div class="ttdeci">static const std::vector&lt; std::string &gt; getSupportedTypes(void)</div></div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;}</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;<span class="preprocessor">#endif // glbarcode_Factory_h</span></div>
 <div class="ttc" id="classglbarcode_1_1Factory_html_a0aaa36d1132e57934505525cb5438d5e"><div class="ttname"><a href="classglbarcode_1_1Factory.html#a0aaa36d1132e57934505525cb5438d5e">glbarcode::Factory::createBarcode</a></div><div class="ttdeci">static Barcode * createBarcode(const std::string &amp;typeId)</div></div>
 <div class="ttc" id="Barcode_8h_html"><div class="ttname"><a href="Barcode_8h.html">Barcode.h</a></div></div>
+<div class="ttc" id="classglbarcode_1_1TypeIdList_html"><div class="ttname"><a href="classglbarcode_1_1TypeIdList.html">glbarcode::TypeIdList</a></div><div class="ttdef"><b>Definition:</b> TypeIdList.h:37</div></div>
+<div class="ttc" id="classglbarcode_1_1Factory_html_adfa9bfc91bdb6a84b017c563984a5530"><div class="ttname"><a href="classglbarcode_1_1Factory.html#adfa9bfc91bdb6a84b017c563984a5530">glbarcode::Factory::getSupportedTypes</a></div><div class="ttdeci">static TypeIdList getSupportedTypes(void)</div></div>
 <div class="ttc" id="classglbarcode_1_1Factory_html_a6c2ebd5917081bdde6fe9e107ffb4649"><div class="ttname"><a href="classglbarcode_1_1Factory.html#a6c2ebd5917081bdde6fe9e107ffb4649">glbarcode::Factory::isTypeSupported</a></div><div class="ttdeci">static bool isTypeSupported(const std::string &amp;typeId)</div></div>
 <div class="ttc" id="classglbarcode_1_1Factory_html_a5b89c50ed6d334ff3c73d48fe0a2d4e2"><div class="ttname"><a href="classglbarcode_1_1Factory.html#a5b89c50ed6d334ff3c73d48fe0a2d4e2">glbarcode::Factory::init</a></div><div class="ttdeci">static void init(void)</div></div>
 <div class="ttc" id="structgbcFactory_html"><div class="ttname"><a href="structgbcFactory.html">gbcFactory</a></div><div class="ttdef"><b>Definition:</b> Factory.h:34</div></div>
+<div class="ttc" id="TypeIdList_8h_html"><div class="ttname"><a href="TypeIdList_8h.html">TypeIdList.h</a></div></div>
 <div class="ttc" id="classglbarcode_1_1Factory_html_a10755cf24c12f36cc6e6132bd18acc36"><div class="ttname"><a href="classglbarcode_1_1Factory.html#a10755cf24c12f36cc6e6132bd18acc36">glbarcode::Factory::BarcodeCreateFct</a></div><div class="ttdeci">Barcode *(* BarcodeCreateFct)(void)</div><div class="ttdef"><b>Definition:</b> Factory.h:51</div></div>
 <div class="ttc" id="classglbarcode_1_1Factory_html_a17a0dc24fed9af1924fe7e4b59ee651b"><div class="ttname"><a href="classglbarcode_1_1Factory.html#a17a0dc24fed9af1924fe7e4b59ee651b">glbarcode::Factory::registerType</a></div><div class="ttdeci">static void registerType(const std::string &amp;typeId, BarcodeCreateFct fct)</div></div>
 <div class="ttc" id="classglbarcode_1_1Factory_html"><div class="ttname"><a href="classglbarcode_1_1Factory.html">glbarcode::Factory</a></div><div class="ttdef"><b>Definition:</b> Factory.h:44</div></div>
-<div class="ttc" id="classglbarcode_1_1Barcode_html"><div class="ttname"><a href="classglbarcode_1_1Barcode.html">glbarcode::Barcode</a></div><div class="ttdef"><b>Definition:</b> Barcode.h:44</div></div>
+<div class="ttc" id="classglbarcode_1_1Barcode_html"><div class="ttname"><a href="classglbarcode_1_1Barcode.html">glbarcode::Barcode</a></div><div class="ttdef"><b>Definition:</b> Barcode.h:50</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_f4b827c7c3ffa052657aad88689c8160.html">glbarcode</a></li><li class="navelem"><a class="el" href="Factory_8h.html">Factory.h</a></li>
-    <li class="footer">Generated on Thu Jul 24 2014 22:03:33 for glbarcode++ by
+    <li class="footer">Generated on Sat Jun 20 2015 20:44:50 for glbarcode++ by
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.6 </li>
   </ul>

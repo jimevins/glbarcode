@@ -18,16 +18,11 @@ var namespaceglbarcode =
     [ "BarcodeQrcode", "classglbarcode_1_1BarcodeQrcode.html", null ],
     [ "BarcodeUpcA", "classglbarcode_1_1BarcodeUpcA.html", "classglbarcode_1_1BarcodeUpcA" ],
     [ "BarcodeUpcBase", "classglbarcode_1_1BarcodeUpcBase.html", "classglbarcode_1_1BarcodeUpcBase" ],
-    [ "DrawingPrimitive", "classglbarcode_1_1DrawingPrimitive.html", "classglbarcode_1_1DrawingPrimitive" ],
-    [ "DrawingPrimitiveLine", "classglbarcode_1_1DrawingPrimitiveLine.html", "classglbarcode_1_1DrawingPrimitiveLine" ],
-    [ "DrawingPrimitiveBox", "classglbarcode_1_1DrawingPrimitiveBox.html", "classglbarcode_1_1DrawingPrimitiveBox" ],
-    [ "DrawingPrimitiveText", "classglbarcode_1_1DrawingPrimitiveText.html", "classglbarcode_1_1DrawingPrimitiveText" ],
-    [ "DrawingPrimitiveRing", "classglbarcode_1_1DrawingPrimitiveRing.html", "classglbarcode_1_1DrawingPrimitiveRing" ],
-    [ "DrawingPrimitiveHexagon", "classglbarcode_1_1DrawingPrimitiveHexagon.html", "classglbarcode_1_1DrawingPrimitiveHexagon" ],
     [ "Factory", "classglbarcode_1_1Factory.html", "classglbarcode_1_1Factory" ],
     [ "Matrix", "classglbarcode_1_1Matrix.html", "classglbarcode_1_1Matrix" ],
     [ "Renderer", "classglbarcode_1_1Renderer.html", "classglbarcode_1_1Renderer" ],
     [ "RendererDebug", "classglbarcode_1_1RendererDebug.html", null ],
     [ "RendererEps", "classglbarcode_1_1RendererEps.html", "classglbarcode_1_1RendererEps" ],
-    [ "RendererSvg", "classglbarcode_1_1RendererSvg.html", "classglbarcode_1_1RendererSvg" ]
+    [ "RendererSvg", "classglbarcode_1_1RendererSvg.html", "classglbarcode_1_1RendererSvg" ],
+    [ "TypeIdList", "classglbarcode_1_1TypeIdList.html", null ]
 ];
