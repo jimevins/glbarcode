@@ -91,7 +91,7 @@ namespace glbarcode
 	bool BarcodePostnet::validate( const std::string& rawData )
 	{
 		int nDigits = 0;
-		for ( int i = 0; i < rawData.size(); i++ )
+		for ( unsigned int i = 0; i < rawData.size(); i++ )
 		{
 			if ( isdigit( rawData[i] ) )
 			{
@@ -120,7 +120,7 @@ namespace glbarcode
 
 		/* process each digit, adding approptiate symbol */
 		int sum = 0;
-		for ( int i = 0; i < cookedData.size(); i++ )
+		for ( unsigned int i = 0; i < cookedData.size(); i++ )
 		{
 			if ( isdigit( cookedData[i] ) )
 			{
@@ -151,7 +151,7 @@ namespace glbarcode
 					double&            h )
 	{
 		double x = POSTNET_HORIZ_MARGIN;
-		for ( int i=0; i < codedData.size(); i++ )
+		for ( unsigned int i=0; i < codedData.size(); i++ )
 		{
 			double length, width;
 

@@ -371,7 +371,7 @@ namespace glbarcode
 			return false;
 		}
 
-		for ( int i = 0; i < rawData.size(); i++ )
+		for ( unsigned int i = 0; i < rawData.size(); i++ )
 		{
 			if ( !isdigit( rawData[i] ) )
 			{
@@ -512,7 +512,7 @@ namespace glbarcode
 					double&            h )
 	{
 		double x = ONECODE_HORIZ_MARGIN;
-		for ( int i = 0; i < codedData.size(); i++ )
+		for ( unsigned int i = 0; i < codedData.size(); i++ )
 		{
 			double y = ONECODE_VERT_MARGIN;
 			double length;

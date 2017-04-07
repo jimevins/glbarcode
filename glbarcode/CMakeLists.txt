@@ -1,7 +1,3 @@
-cmake_minimum_required (VERSION 2.8)
-
-project (lib CXX)
-
 set (PUBLIC_HEADERS
   Factory.h
   Barcode.h

@@ -78,7 +78,7 @@ namespace glbarcode
 	 */
 	bool BarcodeCode39Ext::validate( const std::string& rawData )
 	{
-		for ( int i = 0; i < rawData.size(); i++ )
+		for ( unsigned int i = 0; i < rawData.size(); i++ )
 		{
 			if ( (rawData[i] < 0) || (rawData[i] > 0x7F) )
 			{
@@ -97,9 +97,9 @@ namespace glbarcode
 	{
 		std::string cookedData;
 
-		for ( int i = 0; i < rawData.size(); i++ )
+		for ( unsigned int i = 0; i < rawData.size(); i++ )
 		{
-			cookedData += asciiMap[ rawData[i] ];
+			cookedData += asciiMap[ int(rawData[i]) ];
 		}
 
 		return cookedData;

@@ -114,7 +114,7 @@ namespace glbarcode
 	 */
 	bool BarcodeCode39::validate( const std::string& rawData )
 	{
-		for ( int i = 0; i < rawData.size(); i++ )
+		for ( unsigned int i = 0; i < rawData.size(); i++ )
 		{
 			char c = toupper( rawData[i] );
 
@@ -140,7 +140,7 @@ namespace glbarcode
 		code += "i";
 
 		int sum = 0;
-		for ( int i=0; i < cookedData.size(); i++ )
+		for ( unsigned int i=0; i < cookedData.size(); i++ )
 		{
 			int cValue = alphabet.find( toupper( cookedData[i] ) );
 
@@ -170,7 +170,7 @@ namespace glbarcode
 	{
 		std::string displayText;
 
-		for ( int i = 0; i < rawData.size(); i++ )
+		for ( unsigned int i = 0; i < rawData.size(); i++ )
 		{
 			displayText += toupper( rawData[i] );
 		}
@@ -230,7 +230,7 @@ namespace glbarcode
 
 		/* Now traverse the code string and draw each bar */
 		double x1 = xQuiet;
-		for ( int i=0; i < codedData.size(); i++ )
+		for ( unsigned int i=0; i < codedData.size(); i++ )
 		{
 			double lwidth;
 				

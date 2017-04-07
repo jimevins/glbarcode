@@ -1,6 +1,6 @@
-cmake_minimum_required (VERSION 2.8)
+cmake_minimum_required (VERSION 2.8.12)
 
-project (GLBARCODE_PP)
+project (glbarcodepp)
 
 
 set (Package_Name "glbarcode++")
@@ -20,7 +20,11 @@ set (Lib_Name ${Short_Name}-${API_Version})
 set (CAPI_Lib_Name ${Short_Name}-capi-${API_Version})
 
 
-add_definitions (-g)
+set (CMAKE_CXX_FLAGS "-std=c++11 -g")
+set (CMAKE_C_FLAGS "-g")
+
+# Uncomment to build with pedantic flags
+#set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Werror -Wall -Wpedantic")
 
 
 #

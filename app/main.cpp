@@ -98,7 +98,7 @@ int main( int argc, char **argv )
 	double      h             = 72;
 	bool        textFlag      = false;
 	bool        checksumFlag  = false;
-	double      ppi           = 72;
+	//double      ppi           = 72;
 	std::string oformat       = "svg";
 	std::string ofilename     = "-";
 
@@ -165,7 +165,7 @@ int main( int argc, char **argv )
 			ofilename = optarg;
 			break;
 		case 'r':
-			ppi = atof( optarg );
+			//ppi = atof( optarg );
 			break;
 		case 0:
 			usage();

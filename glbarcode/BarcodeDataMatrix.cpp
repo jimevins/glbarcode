@@ -266,7 +266,7 @@ namespace
 		/*
 		 * Encode data into codewords using ASCII encoding method.
 		 */
-		for ( int i = 0; i < data.size(); i++ )
+		for ( unsigned int i = 0; i < data.size(); i++ )
 		{
 			uint8_t c = data[i];
 

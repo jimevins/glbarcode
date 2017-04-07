@@ -61,7 +61,7 @@ namespace glbarcode
 	{
 		std::string cookedData;
 
-		for ( int i = 0; i < rawData.size(); i++ )
+		for ( unsigned int i = 0; i < rawData.size(); i++ )
 		{
 			if ( isdigit( rawData[i] ) )
 			{

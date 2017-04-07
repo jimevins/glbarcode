@@ -1,15 +1,10 @@
-cmake_minimum_required (VERSION 2.8)
-
-project (test C)
-
-
 include_directories(
-  ${GLBARCODE_PP_SOURCE_DIR}
+  ${glbarcodepp_SOURCE_DIR}
 )
 
 link_directories(
-  ${GLBARCODE_PP_SOURCE_DIR}/glbarcode
-  ${GLBARCODE_PP_SOURCE_DIR}/glbarcode/capi
+  ${glbarcodepp_SOURCE_DIR}/glbarcode
+  ${glbarcodepp_SOURCE_DIR}/glbarcode/capi
 )
 
 

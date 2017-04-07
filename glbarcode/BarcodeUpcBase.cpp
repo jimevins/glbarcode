@@ -99,7 +99,7 @@ namespace glbarcode
 	{
 		int nDigits = 0;
 
-		for ( int i = 0; i < rawData.size(); i++ )
+		for ( unsigned int i = 0; i < rawData.size(); i++ )
 		{
 			if ( isdigit( rawData[i] ) )
 			{
@@ -192,7 +192,7 @@ namespace glbarcode
 	{
 		std::string displayText;
 
-		for ( int i = 0; i < rawData.size(); i++ )
+		for ( unsigned int i = 0; i < rawData.size(); i++ )
 		{
 			if ( isdigit( rawData[i] ) )
 			{

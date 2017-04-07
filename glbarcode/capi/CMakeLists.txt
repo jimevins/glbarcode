@@ -1,10 +1,6 @@
-cmake_minimum_required (VERSION 2.8)
-
-project (lib CXX)
-
 include_directories (
+  ${glbarcodepp_SOURCE_DIR}
   ${CMAKE_CURRENT_BINARY_DIR}
-  ${GLBARCODE_PP_SOURCE_DIR}
 )
 
 set (PUBLIC_HEADERS
